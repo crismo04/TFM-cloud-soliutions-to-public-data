@@ -1,0 +1,151 @@
+\chapter{Tablas de SQL}
+\label{Appendix:Key1}
+
+A continuación vamos a listar todas las tablas que hemos creado en SQL para almacenar los datos del paciente y qué es lo que se guarda en cada campo.
+
+\begin{itemize}
+	\item \textbf{ Tabla POST}: En esta tabla se guardan datos correspondientes a las publicaciones en los tablones de Facebook por parte del paciente. Sus campos son:
+	\begin{itemize}
+		\item \textit{ post\_id}: Es la clave primaria de la tabla para establecer un identificador de post.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece este post.
+		\item \textit{ timestamp}: Es la fecha en la que se publicó el post, guardada en formato de marca temporal. La marca temporal es el tiempo en segundos que ha pasado desde epoch ( 1-1-1900).
+		\item \textit{ update\_timestamp}: Es la fecha de modificación del post en el formato marca temporal.
+		\item \textit{ title}: Título del Post.
+		\item \textit{ data\_post}: Es el texto agregado al post.
+		\item \textit{ ext\_context\_url}: Es la Url a contenido externo de Facebook (publicación de Instagram, artículos de periódicos...).
+	\end{itemize}
+	\item \textbf{ Tabla POST\_MEDIA}: En esta tabla se guardan los datos correspondientes a los archivos adjuntos al post. Suelen ser fotos.
+	\begin{itemize}
+		\item \textit{ post\_media\_id}: Es la clave primaria de la tabla para establecer un identificador del archivo adjunto.
+		\item \textit{ post\_id}: Es la clave foránea que referencia a qué post pertenecen este archivo.
+		\item \textit{ creation\_timestamp}: Es la fecha en la que se subió el archivo que se adjunta al post guardada en formato de marca temporal.
+		\item \textit{ description}: Texto relacionado con el archivo adjunto.
+		\item \textit{ title}: Título del archivo adjunto.
+		\item \textit{ uri}: Es el enlace a la carpeta donde está el archivo adjunto.
+	\end{itemize}
+	\item \textbf{ POST\_PLACE}: En esta tabla se guardan los datos referentes a la ubicación del post.
+	\begin{itemize}
+		\item \textit{ post\_place\_id}: Es la clave primaria de la tabla para establecer un identificador de la ubicación el post.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece este post.
+		\item \textit{ address}: Es la dirección de la ubicación.
+		\item \textit{ coordinate\_latitude}: Es la latitud de las coordenadas.
+		\item \textit{ coordinate\_longitude}: Es la longitud de las coordenadas.
+		\item \textit{ name}: Es el nombre del lugar.
+		\item \textit{ url}: Es la Url a la página que tiene Facebook creada de ese lugar.
+	\end{itemize}
+	\item \textbf{ POST\_TAGS}: Son las personas que están etiquetadas en el post.
+	\begin{itemize}
+		\item \textit{ post\_Tag\_id}: Es la clave primaria de la tabla para establecer un identificador de las etiquetas del post.
+		\item \textit{ post\_id}: Es la clave foránea que referencia a qué post pertenece la gente etiquetada.
+		\item \textit{ tags}: Son las personas etiquetadas en el post.
+	\end{itemize}
+	\item \textbf{ FRIENDS}: En esta tabla se guardan todos las personas que el paciente tiene agregadas en Facebook como amigos.
+	\begin{itemize}
+		\item \textit{ friend\_id}: Es la clave primaria de la tabla para establecer un identificador a los amigos del paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece este amigo.
+		\item \textit{ timestamp}: Es la fecha en la que se inició la relación por Facebook entre el amigo y el paciente guardada en formato de marca temporal.
+		\item \textit{ name}: Es el nombre del amigo.
+	\end{itemize}
+	\item \textbf{ REACTIONS}: En esta tabla se guardan las reacciones (LIKES, LOVE...) que ha tenido el paciente a comentarios, publicaciones, páginas, enlaces o fotos.
+	\begin{itemize}
+		\item \textit{ reaction\_id}: Es la clave primaria de la tabla para establecer un identificador de la reacción del paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta reacción.
+		\item \textit{ timestamp}: Es la fecha en la que el paciente reacciono.
+		\item \textit{ title}: En el título se indica a qué o a quien ha reaccionado el paciente.
+		\item \textit{ reaction}: Es el tipo de reacción que ha tenido el paciente (Like, Love, Care, Haha, Wow, Sad and Angry).
+	\end{itemize}
+	\item \textbf{ COMMENTS}: En esta tabla se guardan los comentarios realizados por el paciente en Facebook.
+	\begin{itemize}
+		\item \textit{ comment\_id}: Es la clave primaria de la tabla para establecer un identificador del comentario escrito por el paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece este comentario.
+		\item \textit{ timestamp}: Es la fecha en la que el paciente redacto el comentario.
+		\item \textit{ title}: En el título se indica a qué o a quien ha comentado el paciente.
+		\item \textit{ comment}: Es el texto que escribió el paciente.
+	\end{itemize}
+	\item \textbf{ PHOTOS}: En esta tabla se guardan las fotos subidas por el paciente a la red social.
+	\begin{itemize}
+		\item \textit{ photo\_id}: Es la clave primaria de la tabla para establecer un identificador de la foto subida por el paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta foto.
+		\item \textit{ creation\_timestamp}: Es la fecha en la que el paciente subió esta foto.
+		\item \textit{ uri}: Es el enlace a la carpeta donde está almacenada la foto.
+		\item \textit{ cover}: Valor que determina si es la foto de portada del álbum.
+		\item \textit{ title}: En este campo se indica a que álbum pertenece la foto.
+		\item \textit{ description}: Pie de foto.
+	\end{itemize}
+	\item \textbf{ PAGES}: en esta tabla se guardan las páginas de Facebook que sigue el usuario.
+	\begin{itemize}
+		\item \textit{ page\_id}: Es la clave primaria de la tabla para establecer un identificador de la página que sigue el paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta página.
+		\item \textit{ timestamp}: Es la fecha en la que el paciente empezó a seguir esta página.
+		\item \textit{ name}: Es el nombre de la página.
+	\end{itemize}
+	\item \textbf{ PUNTUACIONES\_AMIGOS}: En esta tabla se guarda una valoración de las páginas y los amigos con los que el paciente más interactuaba ya fuese con comentarios reacciones o fotos en las que salen juntos.
+	\begin{itemize}
+		\item \textit{ mencion\_id}: Es la clave primaria de la tabla para establecer un identificador del amigo o página que tiene relación con el paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta puntuación.
+		\item \textit{ puntuación}: Es la puntuación con la que se valora la interacción que tenía el amigo o la página con el paciente.
+		\item \textit{ name}: Es el nombre de la página o del amigo del paciente.
+	\end{itemize}
+	\item \textbf{ PROFILE\_INFORMATION}: En esta tabla se guardan los datos básicos del usuario que tiene publicados en Facebook.
+	\begin{itemize}
+		\item \textit{ profile\_id}: Es la clave primaria de la tabla para establecer un identificador del paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta información.
+		\item \textit{ full\_name}: Es el nombre completo del paciente.
+		\item \textit{ birthday}: Es la fecha de nacimiento del paciente.
+		\item \textit{ gender}: Es el género del paciente.
+		\item \textit{ current\_city}: Es la ciudad en la que actualmente reside el paciente según Facebook.
+		\item \textit{ hometown}: Es la ciudad origen del paciente.
+		\item \textit{ registration\_timestamp}: Es la fecha de registro del paciente.
+	\end{itemize}
+	\item \textbf{ FAMILY}: En esta tabla se guardan los amigos que tienen un vínculo familiar con el paciente.
+	\begin{itemize}
+		\item \textit{ fam\_id}: Es la clave primaria de la tabla para establecer un identificador del familiar del paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece este familiar.
+		\item \textit{ name}: Es el nombre del familiar.
+		\item \textit{ relation}: Es la relación familiar entre el amigo y el paciente.
+	\end{itemize}
+	\item \textbf{ EDUCATION}: En esta tabla se guarda los lugares en los que el paciente se formó académicamente y laboralmente.
+	\begin{itemize}
+		\item \textit{ educ\_id}: Es la clave primaria de la tabla para establecer un identificador de los datos de formación paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta información.
+		\item \textit{ name}: Es el nombre del lugar donde estudió, se formó o trabajó el paciente.
+		\item \textit{ start}: Es la fecha en la que inicio esta experiencia.
+		\item \textit{ end}: Es la fecha en la que terminó esta experiencia.
+		\item \textit{ graduated}: Valor que determina si se graduó en la formación.
+		\item \textit{ description}: Campo que especifica que era lo que llevaba a cabo el paciente.
+	\end{itemize}
+	\item \textbf{GOOGLE\_CALENDAR}: En esta tabla se guardan los eventos fijados por el usuario en el calendario de Google.
+	\begin{itemize}
+		\item \textit{ cal\_id}: Es la clave primaria de la tabla para establecer un identificador de los datos de eventos del paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta información.
+		\item \textit{ Location}: Es el sitio donde tuvo lugar el evento.
+		\item \textit{ Summary}: Es la descripción del evento.
+		\item \textit{ Timestamp}: Es la fecha en la que se fijo el evento.
+	\end{itemize}
+	\item \textbf{GOOGLE\_RESEÑAS}: En esta tabla se guardan las reseñas publicadas en Google por el usuario.
+	\begin{itemize}
+		\item \textit{ resenia\_id}: Es la clave primaria de la tabla para establecer un identificador de las reseñas publicadas en Google por el paciente.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta información.
+		\item \textit{ Name}: Nombre del establecimiento sobre el que se publicó la reseñas.
+		\item \textit{ address}: Es la dirección del establecimiento.
+		\item \textit{ date}: Es la fecha en la que se publicó la reseña.
+		\item \textit{ comment}: Almacena el comentario que el paciente puso del establecimiento.
+		\item \textit{ stars}: Son las estrellas con las que se calificó al establecimiento.
+		\item \textit{ Longitude}: Coordenadas del establecimiento.
+		\item \textit{ Latitude}:  Coordenadas del establecimiento.
+	\end{itemize}
+	\item \textbf{RESENIAS\_PUNTUACION}: En esta tabla se guardan las reseñas más destacadas pasadas por nuestro analizador de texto.
+	\begin{itemize}
+		\item \textit{ punt\_id}: Es la clave primaria de la tabla para establecer un identificador a las reseñas más destacadas.
+		\item \textit{ resenia\_id}: Es la clave foránea que referencia a qué reseña se refiere.
+		\item \textit{ puntuacion}: Son los puntos devueltos por nuestro analizador de sentimiento.
+	\end{itemize}
+	\item \textbf{PROCESED\_FOTOS}: En esta tabla se guardan las fotos.
+	\begin{itemize}
+		\item \textit{p\_fotos\_id}: Es la clave primaria de la tabla para establecer un identificador a las fotos.
+		\item \textit{ user\_id}: Es la clave foránea que referencia a qué usuario pertenece esta información.
+		\item \textit{ description}: Es el comentario que añadió el paciente a la foto.
+		\item \textit{cover}: Valor que determina si la foto es de portada o no.
+		\item \textit{uri}: Es la uri a la carpeta donde está el jpg.
+	\end{itemize}
+\end{itemize}

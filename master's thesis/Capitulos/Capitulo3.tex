@@ -1,0 +1,420 @@
+\chapter{Materiales y metodos}
+\label{cap:Capítulo 3}
+En este capítulo vamos a describir el proceso previo a la implementación de la aplicación, es decir, el estudio de las distintas tecnologías, lenguajes de programación y herramientas que nos permitan llevarla a cabo, así como las que hemos descartado. Todo esto estará centrado en las tecnologías útiles para crear un libro de vida, del cual ya hemos hablado en el capítulo anterior.
+
+\section{Investigación}
+
+ Aquí vamos a desarrollar todas las opciones que hemos barajado en cuanto a qué redes sociales usar y por qué, así como qué datos de los que hemos extraído son útiles y nos van a servir para la creación del libro de vida. Como ya hemos mencionado en el estado de la cuestión, el libro de vida tiene numerosos beneficios, tanto para la persona protagonista, como para todo su círculo de familiares y cuidadores, por este motivo, es importante recoger una cantidad de datos útiles suficiente, que puedan aportar valor a la realización del mismo y al tratamiento del paciente. Estos datos son los que vamos a detallar en los siguientes apartados.
+
+\subsection{Fuentes de datos}
+
+En la actualidad la red está plagada de numerosas webs y aplicaciones que permiten a las personas conectar con sus amigos o seres queridos, así como facilitarles la vida con numerosas tareas diarias, como desplazarse por una ciudad sin perderse, por ejemplo. En este apartado hemos tenido que filtrar las redes más útiles para el propósito de nuestro proyecto, teniendo en cuenta las características de nuestro público objetivo. Las listaremos a continuación:
+
+	\begin{itemize}
+		\item \textbf{Twitter}: Es un servicio de comunicación bidireccional con el que puedes compartir información de diverso tipo de una forma rápida, sencilla y gratuita. Principalmente es un servicio de microblogueo. Hemos decidido descartar esta red social porque actualmente la gente la utiliza para estar a la última de todas las noticias de actualidad en vez de compartir su vida, además tiene fama de ser una comunidad bastante negativa y consideramos que el libro de vida tiene que tocar los aspectos más alegres de la vida de las personas.
+		
+		\item \textbf{Tiktok}: Es una aplicación que permite grabar, editar y compartir videos cortos (de 15 a 60 segundos) en bucle y con posibilidad de añadir fondos musicales, efectos de sonido, filtros o efectos visuales. Aunque esta red social está actualmente muy de moda la hemos descartado en el proyecto porque la volatilidad y la importancia de sus vídeos en la vida de las personas es más reducida que en el resto de redes.
+		
+		\item \textbf{Instagram}: Es una red social que permite a sus usuarios subir imágenes y vídeos con múltiples efectos fotográficos como filtros, marcos, etc. Hemos decidido no utilizarla porque al estar muy ligada a Facebook, podemos abarcar el contenido de esta red desde la otra. Además, esta aplicación ya está en cierta manera estructurada como un libro de vida, por lo que no nos parecía que tuviera tantas cosas que aportar.
+		
+		\item \textbf{Facebook}: Es una red social creada para poder mantener en contacto a personas, y que éstos puedan compartir información, noticias y contenidos audiovisuales con sus propios amigos y familiares. Es uno de los canales digital más conocidos por todos los usuarios que navegan hoy en día por internet, así como uno de los pioneros en este ámbito. Nos hemos decantado por incluir los datos de esta red porque prácticamente todo el mundo tiene aquí a sus familiares y amigos, y es la más completa para generar un libro de vida. Otro de los motivos por los que hemos elegido Facebook es que las pérdidas de memoria empiezan a aparecer después de los cuarenta años y esta es la red social más utilizada por gente de esta edad \citep{Edad-redes-sociales}. Además, es la red social en la que más podíamos aportar, ya que debido a la dificultad para extraer datos, hace que no existan muchos trabajos parecidos al nuestro.
+		
+		\item \textbf{Goolge}: Es una de las mayores empresas tecnológicas dedicadas a la recogida y tratamiento de datos, por lo que, a pesar de no ser una red social (ya que Google+ dejo de funcionar en 2019), decidimos estudiarla y ver si guardaba algún dato interesante para la creación de un libro de vida. Al tener tantas aplicaciones, Google guarda una inmensa cantidad de datos sin que el usuario sé dé siquiera cuenta, algunos de los cuales hemos visto que tienen utilidad para nuestro proyecto, como por ejemplo un apartado en el que se almacenan las reseñas de los lugares que el usuario ha visitado, o los enlaces y páginas que el usuario ha guardado en favoritos. Como la mayoría de personas usan Google para su día a día, es muy posible que todos los pacientes tengan al menos uno de estos datos, por lo que vimos de una gran utilidad añadir alguno de estos a nuestro proyecto.
+		
+	\end{itemize}
+
+
+Después de analizar todas estas redes sociales con sus pros y sus contras mencionados (y algunas menos importantes que no nos ha parecido útil detallar, como Reddit o cuentas en dispositivos personales), nos decantamos por utilizar Facebook y Google, en resumen, por ser dos de las mayores empresas en el área de recopilación de datos y por tener una base de usuarios que encajan con nuestro público objetivo. Estas dos Empresas guardan una cantidad masiva de datos para cada usuario que se registra en ellas, y de todos estos datos solo algunos nos van a ser útiles para nuestro objetivo, pues hay algunos demasiado privados, como cuentas e inicios de sesión, otros que no tienen ningún interés o no aportan datos e incluso datos que se repiten en varios apartados. Por esta razón, vamos a listar a continuación los datos que estas empresas permiten descargar (a fecha de la creación de este proyecto), así como un análisis de los mismos y si tienen utilidad para nosotros.
+
+
+\subsection{Datos de Facebook}
+
+Estos son los apartados que existen en Facebook a fecha de la publicación de esta memoria, es posible que en el futuro estos datos cambien, ya que durante el desarrollo, han cambiado varias veces. A continuación vamos a definir cuáles nos son útiles para la generación del libro de vida (en negrita) y cuáles no hemos considerado oportuno tratar.
+
+\begin{itemize}
+	\item \textbf{Publicaciones}: Esto es lo que definimos como los posts que es el núcleo de nuestra aplicación pues es donde el usuario tiene el grueso de sus datos, ya que cualquier tipo de interacción en la red social es guardada como un post dentro del perfil de usuario. Muchas de las siguientes carpetas nombradas en este apartado son redundantes respecto a esta, por eso la hemos elegido como la principal.
+	
+	\item \textbf{Fotos}: Están dentro de post, ya que cuando publicas una foto se crea un post automáticamente, pero hay algunos datos que se guardan en esta carpeta que nos han parecido útiles y que post no almacena, por lo que los hemos extraído de este apartado.
+	
+	\item \textbf{Tus lugares}: Los lugares y sitios visitados, pueden ser muy importantes para el paciente, ya que suelen referenciar a viajes y momentos únicos. Además, se pueden enlazar con qué amigos ha compartido la experiencia en ese mismo lugar, e incluso las fotos publicadas en el mismo.
+	
+	\item \textbf{Comentarios}:Los hemos considerado muy útiles, ya que, al ser texto, se pueden estudiar a través de análisis sentimientos y relacionar las personas mencionadas con sentimientos negativos o positivos, aportando un gran valor a la relación con la o las personas involucradas.
+	
+	\item \textbf{Me gusta y reacciones}: Nos han resultado útiles, ya que nos han permitido afinar la puntuación que le damos a los amigos y páginas del paciente en función del tipo de reacción. Hemos visto que eran siete tipos de reacciones y que podía ser útil asignarle una puntuación a cada una.
+	
+	\item \textbf{Amigos}: Claramente, nos han resultado útiles para descubrir cuáles son los principales lazos de unión para el paciente, por lo que son una parte indispensable y otro de los grandes pilares de nuestra aplicación, ya que los podemos cruzar con el resto de datos para asignarles un valor dependiendo de sus interacciones con el paciente.
+		
+	\item \textbf{Cuentas que sigues}: Útil para determinar los gustos del paciente, ya que hay cuentas empresariales o de grupos que aportan valor a lo que el usuario considera interesante.
+	
+	\item \textbf{Información de perfil}: Nos ha sido de gran utilidad para obtener la información laboral, académica y residencial del paciente, que aunque es una información básica, aporta información adicional para el tratamiento.
+	
+	\item \textbf{Páginas}: Son muy útiles para obtener información a cerca de los gustos del paciente, ya que contienen todas las páginas de eventos y marcas con las que el paciente ha interactuado, las cuales podemos analizar para ver sus reacciones positivas y negativas y sacar así un ranking de las más valoradas por el usuario, al igual que hacemos por ejemplo, con los comentarios de amigos.
+	
+	\item Vídeos: Los vídeos de Facebook pueden llegar a ocupar mucho espacio, y son más difíciles de tratar, por lo que este volumen e información nos ha parecido excesivo para el nivel de aportación que generan respecto a las fotos.
+	
+	\item Historias: Al ser efímeras las hemos considerado menos relevantes que las fotos, que es donde el usuario plasma los momentos más importantes.
+	
+	\item Mensajes: Aunque creíamos que tiene gran utilidad, por motivos como su gran tamaño, el cual hacía que la aplicación se demorase demasiado al tratarlos, o la privacidad hemos decidido descartarlos.
+	
+	\item Grupos y eventos: Si el usuario ha reaccionado a estos grupos, esta información ya se encuentran dentro de los post.
+	
+	\item Marketplace e historial de pagos: Por temas de privacidad principalmente ha sido descartado.
+	
+	\item Elementos guardados y colecciones: Información sobre gustos ya recogida con más precisión en páginas y likes.
+
+	
+	\item Facebook Gaming: Poco relevante para generar una historia de vida, ya que se trata de minijuegos de Facebook.
+	
+	\item Other Acivity: Recoge los toques que has dado o recibido por lo que no nos servía mucho para el libro.
+	
+	\item Interacciones: Similar a likes, reacciones y comentarios. Aunque los engloba no es tan preciso como analizar los anteriores.
+	
+	\item Papelera: Ningún dato de interés para un libro de vida, ya que son cosas que el usuario ha descartado o que quería eliminar de su cuenta.
+	
+	\item Vídeos cortos: Son GIFs y vídeos poco importantes, que el usuario manda en los chats, por lo que a la hora de construir un libro de vida no aporta y decidimos descartarlos.
+	
+	\item Recompensas: Recompensas en juegos de Facebook sin ningún valor para el libro.
+	
+	\item Historial de búsqueda: Son búsquedas en Facebook, que no se asocian a personas ni páginas concretas y no aportan gran información, por lo que decidimos descartarlos.
+	
+	\item Ubicación: Similar a lugares, pero con menos datos sobre lo que ha realizado el usuario en estos, por lo que los descartamos en pos de los primeros.
+	
+	\item Seguridad e información de login: Se la pedimos al usuario para registrarse, por lo que no es necesaria, además de tener también problemas de privacidad.
+	
+	\item Grabaciones y transcripciones de voz: Podría ser útil, pero es difícil gestionar y tratar ese volumen de datos en formato audio, para la información que podría aportar.
+	
+\end{itemize}
+
+\subsection{Datos de Google}
+
+Estos son los apartados que existen en el ``Takeout'' de Google (la web para descargar tus datos personales que la empresa almacena sobre ti) a fecha de la publicación de esta memoria. Es posible que Google en el futuro también decida modificarlos. A continuación vamos a definir cuáles nos son útiles para la generación del libro de vida (en negrita) y cuáles no hemos considerado oportuno tratar.
+
+\begin{itemize}
+	
+	\item \textbf{Calendar}: Contiene los datos de tu calendario en formato iCalendar (.ics), esto es, eventos a los que has asistido, los cumpleaños que te has guardado, recordatorios, etc. Hemos decidido coger estos datos, porque pueden marcar fechas importantes en la vida de la persona o cumpleaños de amigos cercanos entre otros datos de interés.
+	
+	\item \textbf{Google Fotos}: Almacena las fotos y vídeos de Google Fotos y otros servicios de Google, como Google+, Blogger y Hangouts, es decir, recopila todas las fotos que Google tiene de ti. Aunque hay que tener en cuanta que seguramente sea el archivo más pesado, sí que nos puede ser útil para la creación del libro porque en los metadatos de estas fotos nos dan mucha información de cuando y donde se ha tomado esta, así como si el usuario la ha guardado en favoritos.
+	
+	\item \textbf{Maps (Tus sitios)}: Son los registros de tus sitios destacados y tus reseñas de sitios y establecimientos. Este archivo contiene información de los lugares que te gustan o en los que has escrito una reseña. Están de una manera mucho más comprimida y fácil de analizar que en otros apartados con lugares, como por ejemplo ``ubicación'' y ``maps'', además de que aquí está la valoración del sitio, por lo que hemos decidió usarlos para añadirlos a lugares.
+	
+	\item \textbf{Perfil}: Configuración e imágenes del perfil de Google del usuario. Estas imágenes de perfil de Google podrían resultar útiles para el libro de vida, ya que suelen ser las fotos a las que el paciente más importancia le da.
+	
+	\item \textbf{Save}: Guarda colecciones de varias cosas que el usuario ha decidido salvar (imágenes, sitios, páginas web, etc.) de Maps o de las búsquedas en Google. Es decir, cosas que al usuario le han parecido interesantes y que por tanto, creemos pueden tener utilidad para gustos, para imágenes o para lugares importantes en la vida del paciente.
+	
+	\item Arts y Culture: Guarda las galerías que has creado o visitado en Google Arts y Culture. Podría contener información sobre gustos, pero son datos muy específicos para un libro de vida.
+	
+	\item Chrome: Recopila los marcadores, el historial y otros ajustes de Chrome, que aunque podrían ser útiles para gustos, la delicadeza de los datos del historial y la dificultad para filtrar nos ha hecho decantarnos por no utilizarlos.
+	
+	\item Contactos: Son los contactos y las fotos de los contactos que has añadido, así como los que se han guardado durante las interacciones en productos de Google como Gmail. Lo descartamos porque no se puede hacer coincidir con las listas de amigos de Facebook de una manera eficaz, ya que no se corresponde el nombre del contacto con la cuenta de Facebook.
+	
+	\item Correo: Almacena mensajes y archivos adjuntos de la cuenta de Gmail del usuario en formato MBOX y configuración de usuario de tu cuenta de Gmail en formato JSON. No los hemos recogido porque no nos ha parecido útil para un libro de vida, ya que se suele usar para temas formales, más que para comunicarte con amigos.
+	
+	\item Cuenta de Google: Datos sobre el registro y la actividad básica de la cuenta, nada que no hayamos recogido ya en otros apartados.
+	
+	\item Drive: Guarda los archivos de tu propiedad que tienes almacenados en Mi unidad y en Ordenadores. Hay de todo, es difícil filtrar y la mayoría van a ser trabajos o documentos, ya que las fotos se almacenan en ``Fotos'', por lo que lo hemos descartado.
+	
+	\item Fit: Son los datos de actividad de Google Fit, lo cual es sensible por ser temas de salud y poco útil, solo serviría para saber la actividad física del paciente, lo cual no es relevante par aun libro de vida.
+	
+	\item Google My Business: Todos los datos relacionados con la empresa del usuario, si es que tiene. Es poco útil para recuerdos que añadir a un libro de vida.
+	
+	\item Google Play Libros: Los títulos y los autores de los libros que hayas comprado en Google Play Libros o subido a esta plataforma, así como las notas y marcadores. En este, y el resto de apartados de Google Play, hemos descartado los datos porque aunque son cosas que pueden dar información sobre gustos, no son datos demasiado valiosos para un libro de vida, ya que estos elementos, si son muy queridos, se suelen adquirir en formato físico.
+	
+	\item Google Play Música: Una lista con las canciones, las playlists, las emisoras de radio, las subidas y las compras de la colección de Google Play Música, así como el historial de búsqueda y de reproducciones.
+	
+	\item Google Play Películas: Las preferencias, servicios, lista y valoraciones de Google Play Películas.
+	
+	\item Google Play Store: Datos sobre las descargas de aplicaciones y juegos, las puntuaciones y los pedidos
+	
+	\item Google Shopping: Recopila el historial de pedidos, datos de programas de fidelización, direcciones y reseñas de Google Shopping. Al ser información privada de pedidos y compras, no nos hemos querido meter a analizarlo.
+	
+	\item Hangouts: Almacena el historial de conversaciones y archivos adjuntos de Hangouts. Como la utilización de esta aplicación es mínima, no los hemos considerado.
+	
+	\item Historial de ubicaciones: Los datos del historial de ubicaciones recogidos mientras tenías el historial de ubicaciones activado. Guarda información sobre viajes y lugares que has visitado, pero es tan extenso (ya que Google recopila información de cada movimiento), que no hemos visto nada eficiente coger estos datos, porque, además tenemos los más importantes en ``Tus sitios''.
+	
+	\item Keep: Registra las notas y los archivos multimedia adjuntos almacenados en Google Keep. Aunque se pueden guardar fotos y notas personales, estas tienen, por lo general, poca relevancia en la vida del usuario.
+	
+	\item Maps: Guarda las preferencias y sitios personales de Maps, es decir, lugares que te gustan, pero, al igual que en la ubicación, aportan poca información para los Gigabytes de datos que suele ocupar, por lo que nos quedaremos con el apartado de "Tus sitios" únicamente
+	
+	\item Mi actividad: Registros de los datos de actividad, junto con archivos adjuntos a esta, los cuales no aportan a la información ya recogida.
+	
+	\item My Maps: Mapas, capas, funciones y elementos multimedia almacenados en My Maps sin utilidad para el proyecto.
+	
+	\item Publicaciones en Google: Los datos del historial de Publicaciones en Google, como las colecciones de cuentas, las publicaciones, los cameos, los datos de métricas, y todas las imágenes y los vídeos que has subido aquí. Al no ser datos personales \textit{per se}, sino más bien aportaciones, no los hemos considerado.
+	
+	\item Recordatorios: Recordatorios que has creado con Google, como cumpleaños de amigos, cosa que ya recogemos en Calendar de forma más amplia, por lo que este apartado no lo hemos considerado.
+	
+	\item Search Contributions: Las valoraciones, las reseñas, los comentarios y otras contribuciones que has hecho en la Búsqueda de Google, que no consideramos muy importantes al tener ya los lugares guardados, que sí que pueden aportar más que las reseñas a las búsquedas.
+	
+	\item Servicios de Juegos de Google Play: Los datos, incluidos los logros y las puntuaciones, de los juegos de móvil a los que juegas, sin mucha información aparte de algún interés por algún juego, pero que no hemos considerado importante.
+	
+	\item Street View: Las imágenes y los vídeos que has subido a Google Street View, es decir, más información de mapas que no aporta a lo que ya tenemos.
+	
+	\item Tareas: Los datos de las tareas pendientes y completadas del usuario, que no aporta información a los datos que ya recogemos en calendar.
+	
+	\item YouTube y YouTube Music: El historial de reproducciones y búsqueda, los vídeos, los comentarios y otro contenido que hayas creado en YouTube y YouTube Music. Ya que Youtube es la mayor plataforma de contenido de vídeo en el mundo y que solo podría tener información sobre los gustos del paciente, lo hemos considerado fuera del alcance de este proyecto.
+	
+\end{itemize}
+
+\section{Análisis de requisitos}
+En un proyecto como este, basado en el código que programemos, uno de los puntos más importantes es la elección de los lenguajes de programación, librerías y herramientas a utilizar. Basándonos en nuestros conocimientos adquiridos tanto en la carrera, como fuera de ella, como investigando para este proyecto y en la utilidad de las tecnologías, listaremos a continuación los lenguajes, herramientas y tecnologías tanto utilizadas como consideradas para llevar a cabo este proyecto.
+
+\subsection{Lenguajes} 
+
+Estos son los lenguajes que hemos utilizado, por considerarlos los más oportunos, así como los que hemos analizado, pero finalmente se han descartado o se han dejado de utilizar durante en desarrollo del proyecto por diferentes inconvenientes.
+
+	\subsubsection{Principales}
+	\subsubsection*{PYTHON}
+		Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Nosotros nos hemos decantado por una programación orientada a objetos combinada con imperativa, por parecernos la más organizada y funcional.
+		
+		Utilizamos Python en la mayor parte de la aplicación, principalmente en el back-end y el tratamiento de datos, ya que nos permite enlazar con facilidad las distintas tecnologías, además de ser uno de los lenguajes más útiles para el tratamiento de datos, con miles de librerías sustentadas por una gran comunidad de usuarios. Esto nos ha permitido ahorrar esfuerzo y tiempo en cosas como implementar la interfaz para obtener los datos y tratarlos. Pese a no ser un lenguaje que hemos estudiado en la carrera, las ventajas anteriormente citadas y su popularidad creciente en el mercado laboral, nos motivaron para aprenderlo y utilizarlo en este proyecto. 
+		
+	\subsubsection*{SQL}
+		SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad.
+		Utilizamos SQL para almacenar información en las tablas relacionales, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos. 
+		
+		Este es uno de los apartados en los que más nos ha costado decidir, ya que había opciones como Mongo, o un dataframe en Python, como los que permite crear Pandas, que tenían también mucha potencia a la hora de tratar datos, al final nos hemos decantado por una base de datos SQL, porque una base de datos no relacional como Mongo, es más difícil de normalizar y de tratar los datos, esta no escala bien cuando tienes una gran cantidad de datos con grafos (personas, comentarios, etc.). Esto era una facilidad que nos daba SQL, ya que queríamos modularizar el proceso y tratar diferentes tablas de gran volumen para facilitar el trabajo futuro. 
+		
+		Por otro lado, los dataframes tenían un tiempo de respuesta más lento de lo que deseábamos para el volumen de datos que puede llegar a tener Facebook, pudiendo sobrepasar la potencia de la memoria para tratarlos, además, no nos daban tampoco la modularidad deseada, ya que se quedaba todo dentro del mismo código. Otro motivo es que la base de datos relacional nos permitía hilar los múltiples contenidos de media, tags y places que puede contener un único post dentro de Facebook, o poder combinar estos datos con los de Google, facilitándonos la extracción de los datos que pensábamos más relevantes.
+		
+	\subsubsection*{React JS}
+	 	React es una biblioteca JavaScript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y la comunidad de software libre, con más de mil desarrolladores libres contribuyendo. Hemos elegido React por la cantidad de componentes gráficos que tiene para el desarrollo Web, los cuales nos han permitido desarrollar una interfaz bonita y amigable para el terapeuta y paciente que van a darle uso.
+	 	
+	 	También hemos elegido React porque nuestros tutores nos lo recomendaron y nos ha parecido más actualizado a lo que aprendimos cuando cursamos la asignatura Aplicaciones Web, en la que se creaban webs con PHP y HTML, lo cual nos parece una forma un poco obsoleta. Esto nos ha permitido adquirir nuevos conocimientos más modernos sobre el desarrollo de aplicaciones web y crear una interfaz mucho más eficazmente de lo que podríamos haber logrado con otras tecnologías, y con una apariencia más amigable. Además, React permite que las aplicaciones que implementes, se puedan visualizar también correctamente en dispositivos móviles o Tablets, cosa que nos ha perecido útil, ya que en algunos casos es posible que se utilice desde una tableta, o cualquier otro dispositivo.
+	 	
+		Para la implementación de la interfaz hemos investigado varios componentes de código libre que pudieran ayudar a la visualización de todo lo que nuestra aplicación necesitaba, como pueden ser tablas, galerías de imágenes o líneas de tiempo \citep{ReactComp}. React proporciona una forma sencilla de unir todos estos componentes que la comunidad crea, modificarlos a nuestro gusto, y gestionar nuestros datos, los cuales vienen del Backend creado en Python con la ayuda de Flask, y que aquí tratamos y adaptamos para poder utilizar en los ya citados componentes.
+	 	
+	\subsubsection*{\LaTeX}
+		\LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios.       
+		Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
+		
+ 	\subsubsection{Secundarios}
+ 	\subsubsection*{JavaScript native}
+		JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.    
+		Utilizamos JavaScript para la creación del tutorial de descarga de datos de Facebook. También porque Selenium usa JavaScript para sus operaciones, además, es la base de React, en el cual está implementada nuestra interfaz y que ya explicamos anteriormente.
+		
+ 	\subsubsection*{HTML}
+		HTML (hypertext markup language) se utiliza para el desarrollo y creación de páginas web. Se compone de una serie de etiquetas que el navegador interpreta. Entre las etiquetas que se incluyen dentro del lenguaje HTML se encuentran: hipervínculos, etiquetas para imágenes, saltos de página, entre otras.
+		Hemos utilizado HTML para la creación del grid en el tutorial. Lo intentamos utilizar para mostrar las tablas resultado en la interfaz de Tkinter, pero las librerías que combinan estas dos tecnologías están bastante limitadas, ya que no nos proporcionaban el elemento TableRow (<tr>), por lo que al final decidimos usar la propia librería de Tkinter, que tiene un elemento treeview (que al final también descartamos). Finalmente, lo usamos en la nueva interfaz web con React, ya que tiene elementos los cuales es necesario definirlos con HTML.
+		
+ 	\subsubsection{Descartados}
+ 		\subsubsection*{Java y C++}
+ 			Java/ C++ son otras alternativas a Python, más dirigidas a la programación orientada a objetos, pero pese a conocerlas más por haberlas estudiado en la carrera y ser lenguajes robustos, no nos daban tantas herramientas como las que ofrece Python para el tratamiento de datos.
+ 		
+ 		\subsubsection*{Mongo, GraphQL y otros lenguajes de BBDD}
+ 			Una de las decisiones más difíciles ha sido elegir entre una base de datos relacional, una base de datos no relacional (como Mongo DB o GraphQL) o usar simplemente un dataframe como pandas.
+ 		  
+ 			Una base de datos de grafos (Como Mongo o GraphQL) es una base de datos que utiliza estructuras de grafos para consultas semánticas con nodos y propiedades para representar y almacenar datos. Basándose en aristas y relaciones. El grafo relaciona los elementos de datos del almacén con una colección de nodos y aristas, y las aristas representan las relaciones entre los nodos. Las relaciones permiten vincular directamente los datos del almacén y, en muchos casos, recuperarlos con una sola operación. Mientras que otras bases de datos calculan las relaciones en el momento de la consulta mediante costosas operaciones JOIN, una base de datos gráfica almacena las conexiones junto con los datos del modelo.
+ 			Estas bases de datos destacan en la gestión de datos altamente conectados y consultas complejas. Por lo que, aunque podrían ser útiles para datos como los de Facebook, la mala escalabilidad nos ha parecido un inconveniente suficientemente grande para no usarlas.
+ 		
+ 			El DataFrame de Pandas por su parte, es una estructura de datos tabular bidimensional, potencialmente heterogénea con ejes. Un DataFrame es una estructura de datos bidimensional, es decir, los datos se alinean de forma tabular en filas y columnas. Consta de tres componentes principales, los datos, las filas y las columnas. Esta tecnología tiene prometedoras funciones para tratar datos en Python, pero nos parecía que los inconvenientes, como su dificultad para tratar grandes volúmenes de datos, tenían más peso en la elección.
+ 		
+ 			En resumen, por el volumen de datos y la modularidad, acabamos descartando estas tecnologías y escogiendo SQL.
+ 			
+ 		\subsubsection*{Php}
+ 			PHP es un lenguaje de programación adaptado al desarrollo web, que puede servir para la creación de webs o aplicaciones web dinámicas o para conectar la parte del servidor y la interfaz de usuario. Hemos descartado este lenguaje por parecernos obsoleto, prefiriendo crear el front-end de nuestra aplicación en React, y porque la parte del back-end de nuestra aplicación estaba escrita en Python, el cual cuenta con la librería Flask para la creación del mismo y la conexión con la interfaz, la cual nos parece una forma más elegante de implementarlo.
+ 			
+ 	\subsection{Herramientas}
+ 	
+ 		A continuación listamos las herramientas que hemos creído más adecuadas para el proyecto y también las que hemos estudiado pero sin llegar a utilizar.
+ 		
+ 	\subsubsection{Principales}		
+ 		\subsubsection*{XAMPP}
+			XAMPP es un servidor independiente de plataforma, software libre, que consiste principalmente en la base de datos MySQL, el servidor web Apache y los intérpretes para lenguajes de script: PHP y Perl.   
+			Utilizamos XAMPP para conectar la base de datos con nuestra aplicación y visualizar los datos de las tablas en su página de administración (phpMyAdmin), lo cual nos ha parecido una gran manera de visualizar estos datos y probar código SQL aislado para luego añadirlo a nuestro programa.
+			
+ 		\subsubsection*{Visual Studio Code}
+			Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código. 
+			  
+			Utilizamos Visual Studio Code como entorno de desarrollo software, ya que comparándolo con otras alternativas que nos brindan en la carrera, lo creemos bastante más útil, sobre todo para la programación en Python o React.
+			
+			Lo que nos ha hecho decantarnos por él por encima del resto, es la gran comunidad que tiene detrás, la cual cuenta con un gran número de tutoriales y extensiones que nos facilitan mucho la programación y la integración con otras aplicaciones como Github. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
+			
+ 		\subsubsection*{Github}
+			GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de código fuente de programas de ordenador.  
+			 
+			Utilizamos GitHub como sistema de control de versiones y repositorio de código por su tremenda utilidad para comunicarnos y trabajar en paralelo, lo cual ha sido una necesidad en los tiempos de pandemia en los que este proyecto se ha realizado. Esto nos ha asegurado no perder nada de progreso y llevar un control del avance del proyecto en todo momento. Además nuestros tutores nos facilitaron un repositorio privado en el que nos asegurábamos la seguridad del código, por lo que su uso era casi una obligación frente a otras alternativas.
+			
+ 		\subsubsection*{Discord y aplicaciones de trabajo remoto}
+			Discord es un servicio de mensajería instantánea freeware de chat de voz VolP, video y chat por texto. Funciona a través de servidores y está separado en canales de texto o de voz. Es una de las apps más populares y con mayores utilidades.    
+			
+			Con la situación extraordinaria en la que nos ha tocado realizar este proyecto, la utilización de estas aplicaciones de trabajo remoto se nos ha hecho indispensable. Hemos utilizado Discord como aplicación principal para la comunicación entre los integrantes del proyecto, pudiendo ver con esta los avances que íbamos realizando en las diferentes partes del proyecto a tiempo real y brindarnos ayuda entre nosotros, la cual ha sido esencial en la realización de todo el mismo.
+			
+ 		\subsubsection*{TeXstudio y MiKTeX}
+			TeXstudio es un editor de \LaTeX\space de código abierto y Multiplataforma con una interfaz similar a Texmaker. TeXstudio es un IDE de \LaTeX\space que proporciona un soporte moderno de escritura, como la corrección ortográfica interactiva, plegado de código y resaltado de sintaxis, por lo que lo hemos considerado ideal para la elaboración de este documento.
+			Mientras que MiKTeX es el gestor de paquetes integrado, que instala los paquetes que hacen falta para el correcto funcionamiento de TeXstudio y para la creación de este documento.
+			
+		\subsubsection*{Node.js}	
+			Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript, es un entorno controlado por eventos diseñado para crear aplicaciones escalables, permitiéndote establecer y gestionar múltiples conexiones al mismo tiempo.
+			Nos pareció el entorno más potente para la creación de nuestra aplicación y lo usamos en tiempo de ejecución para visualizar la interfaz y para instalarnos todos los componentes y estilos que hemos decidido utilizar en la misma.
+			
+		
+		\subsubsection*{Draw.io}
+			Draw.io es una herramienta de diagramación gratuita con la que se puede dibujar cualquier tipo de mapas mentales, mapas conceptuales, esquemas o diferentes representaciones gráficas, como diagrama de jerarquía o conjuntos.
+			Utilizamos esta herramienta durante la primera fase de diseño para poder compenetrarnos y tener una idea clara de la aplicación que íbamos a realizar.
+			También la hemos usado para la creación de mockups en la parte del diseño web para tener una idea más clara de como queríamos que fuera.
+			
+		\subsubsection*{PlantUML}	
+			Es un proyecto open source, a la vez que un lenguaje de programación, que permite crear diagramas de diferentes tipos en un formato UML, como pueden ser diagramas de casos de uso, de Componentes o de Actividad, etc. Estos diagramas se programan en el lenguaje PlantUML y se pueden exportar en diversos formatos. Lo hemos utilizado para la creación de los diagramas de diseño finales de la aplicación, realizados para tener una idea clara y concisa de como iba a ser esta.
+				
+		
+ 	\subsubsection{Descartadas}
+ 		   \subsubsection*{Microsoft Visual Studio y Eclipse}
+ 		   Eclipse, Visual Studio Pro u otros entornos que también valoramos fueron finalmente descartados, porque, a pesar de conocerlos por diversas asignaturas, no proporcionan la comunidad de VScode y esto nos complicaba el hecho de programar y enlazar con otras aplicaciones.
+ 		   
+ 		   \subsubsection*{Gitlab y Google Drive}
+ 		   Gitlab, Google Drive u otro control de versiones son (aun con la barrera de la complejidad de aprender a usar un control de versiones) la mejora en cuanto a la programación en paralelo, al ser dos integrantes en este TFG, es sustancial, por lo que, aun habiendo usado Drive para almacenar ciertos ficheros, al final utilizamos principalmente las funcionalidades que nos proporcionaba Github. Gitlab fue descartado por la posibilidad de tener un directorio privado en Github.
+ 		   
+ 		   \subsubsection*{TexWorks y Overleaf}
+ 		   Algunos de los motivos por los que descartamos el editor en línea Overleaf es por la seguridad del documento, ya que con editores locales como TexStudio nos asegurábamos totalmente de ello. Otro motivo era que no podíamos permitirnos la posibilidad de que la página se cayese o cerrase el servicio y nos dejase en la estacada. Y por último que no tiene el control del proceso de compilación que tenemos usando un editor instalado.   
+ 		   Respecto a TexWorks sabemos que tiene un gran parecido a TexStudio, pero ya que debíamos decantarnos por uno de los dos elegimos TexStudio.
+ 		   
+ 		   \subsubsection*{Heidi DB}
+ 		   HeidiSQL, inicialmente conocido como MySQL-Front, es un software libre y de código abierto que permite conectarse a servidores MySQL, así como Microsoft SQL Server y PostgreSQL. Es la alternativa a usar XAMPP y Maria DB, tiene potencia para gestionar las BBDD sin necesidad de tener un gran conocimiento en SQL.    
+ 		   Nos decidimos por XAMPP porque nos parecía que nuestro conocimiento en SQL nos iba a facilitar el uso de estas herramientas sin necesidad de la ayuda que proporciona Heidi.
+ 		   
+ 	\subsection{Tecnologías}
+ 	
+ 	En este apartado vamos a explicar todas las tecnologías, librerías de Python y componentes de React (entre otras cosas) que hemos encontrado, así como los que finalmente nos decantamos por utilizar, explicando que son y para qué las utilizamos.
+ 	
+ 	\subsubsection{Principales}	
+ 		\subsubsection*{Tkinter}
+ 			Tkinter es un binding de la biblioteca gráfica Tcl/Tk para el lenguaje de programación Python. Se considera un estándar para la interfaz gráfica de usuario para Python y es el que viene por defecto con la instalación para Microsoft Windows \citep{tkinter}. 
+  
+ 			Utilizamos Tkinter por su facilidad y simpleza para la creación de la interfaz gráfica de usuario en el apartado de descarga de datos. Es una librería que recuerda bastante al lenguaje de programación CSS que ya conocemos por asignaturas como Aplicaciones Web y que nos proporciona una interfaz simple y eficaz para que le resulte más fácil de manejar a los usuarios.
+ 		
+ 		\subsubsection*{Sqlite3}
+ 			SQLite es un sistema de gestión de bases de datos relacional compatible con ACID, contenida en una relativamente pequeña biblioteca escrita en C \citep{sqlite3}.   
+ 		
+ 	    	Utilizamos esta tecnología porque es una base de datos muy compacta, que nos sirve para almacenar en local el estado de la descarga de datos por parte del usuario, así como la última fecha de descarga, lo que nos sirve para comprobar si deben volver a pasar por el proceso de descarga, el cual puede ser tedioso. Es una de las bases de datos que menos espacio ocupa y de las más rápidas, por lo que era perfecta para esta necesidad.
+ 		
+ 		\subsubsection*{Selenium}
+ 			Selenium es un entorno de pruebas de software para aplicaciones basadas en la web. Selenium provee una herramienta de grabar/reproducir para crear pruebas sin usar un lenguaje de scripting para pruebas \citep{selenium}.   
+ 		
+ 		   	Hemos utilizado Selenium para la automatización de la descarga de datos. Facebook rehúsa mucho en cuanto al scraping de sus datos, complicando bastante esta operación, por lo que tras muchos intentos y cambios por parte de la aplicación que dejaron nuestro código obsoleto, creímos que lo mejor era usarlo para crear un tutorial que facilitara las cosas al terapeuta. Esto nos ha facilitado el camino, pues nos hemos desentendido del manejo de datos personales, al no tener que almacenar la contraseña de los usuarios, además de hacerlo más reutilizable ante los numerosos cambios de formato de Facebook. 
+ 		   
+ 		   	Dentro de Selenium hemos utilizado WebDriverWait para esperas, webdriver, que es la que gestiona la mayor parte del proceso y controla Google Chrome y expected-conditions, que junto a WebDriverWait, sirve para gestionar las condiciones de espera. \citep{tutorialWebDriver}.
+ 		  
+ 		\subsubsection*{Os y Sys}
+ 			Os y Sys son módulos de Python que permiten realizar operaciones relacionadas del Sistema Operativo como crear una carpeta, listar contenidos de una carpeta, conocer acerca de un proceso, finalizar un proceso, etc. \citep{os}, \citep{sys}.   
+ 		
+ 		   	Estas dos librerías de Python las hemos utilizado para el manejo de ficheros y rutas dentro de la aplicación, haciendo que sea exportable a otros equipos sin necesidad de especificar rutas o configurar demasiados parámetros, entre otras cosas como el manejo de carpetas y datos dentro del sistema operativo.
+ 		   	
+ 		\subsubsection*{GoogleTrans y Google\_trans\_new}
+ 			estas son dos bibliotecas de Python que permite traducir el idioma de un texto a través de la tecnología de Google \citep{trans}.  
+ 		 
+ 		   	Hemos utilizado estas librerías para traducir el texto de los comentarios publicados por el paciente, así como las reseñas de Google u otros textos, para después poder analizar el sentimiento de estos, pues las alternativas para analizar texto en español eran de un nivel inferior, y haciendo pruebas hemos comprobado que los resultados eran mejores con el método de traducción. Hemos utilizado las dos durante el desarrollo porque diversas actualizaciones dieron problemas y tuvimos que variar entre ellas un par de veces.
+ 		   	
+ 		\subsubsection*{Text2emotion}
+ 			Text2emotion es un paquete de Python que permite extraer las emociones de un texto \citep{Text2}.   
+ 		
+ 		   Hemos utilizado Text2emotion para analizar los sentimientos de los comentarios publicados por el paciente, y dar así una puntuación a los textos que hemos extraído de los datos de Facebook y Google. Esta aplicación separa los textos que analiza en 5 categorías: Angry, Fear, Happy, Sad y Surprise. Hemos dado una puntuación a cada uno de estos sentimientos para completar con ello una puntuación total con la que darle una nueva capa de significado a los datos.
+ 		   
+ 		\subsubsection*{ZipFile} 
+ 			ZipFile es un módulo de Python que proporciona herramientas para crear, leer, escribir, agregar y listar un archivo ZIP.   
+ 		
+ 		   	Utilizamos ZipFile para descomprimir los datos personales del paciente, ya que al descargarlos de Facebook y Google, estos vienen en formato ZIP e incluso varias carpetas, y queríamos hacer el proceso lo más automático posible, evitando que el terapeuta tuviera que intervenir para cosas como descomprimir archivos.
+ 		   	
+ 		 \subsubsection*{Inspect} 
+ 		 	Inspect proporciona varias funciones útiles para ayudar a obtener información sobre objetos vivos como módulos, clases, métodos, funciones, tracebacks, objetos de marco y objetos de código \citep{inspect}.
+ 		 
+ 		 	 La hemos utilizado para sacar la carpeta en la que el proyecto está alojado dentro del ordenador del usuario y que así la aplicación funcione correctamente en cualquier equipo, sin necesidad de especificar carpetas. 
+ 		 \subsubsection*{Time} 
+ 		 	Este módulo proporciona varias funciones relacionadas con el tiempo \citep{time}.
+ 		 
+ 		  	Lo usamos para proporcionar un ID de usuario único y dependiente de epoch y para gestionar las fechas que vienen en los datos de Facebook y Google, ya que estas tienen diversos formatos.
+ 		  	
+ 		 \subsubsection*{Shutil} 
+ 		 	Librería que ofrece varias operaciones de alto nivel en archivos y colecciones de archivos  \citep{shutil}.
+ 		 
+ 		  	La utilizamos para la limpieza de datos en caso de que el usuario quiera volver a descargarlos, para evitar duplicados y para mover las fotos para que React pueda tener acceso a ellas. 
+ 		 
+ 		 \subsubsection*{Stat}
+ 		 	Librería para dar permisos de escritura en diversos sistemas operativos \citep{stat}.
+ 		 
+ 		  	La utilizamos para tratar la carpeta con datos y al igual que con shutil, borrar los datos que ya no sirven. 
+ 		  	
+ 		 \subsubsection*{mysql.connector} 
+ 		 	Es una librería que permite que los programas de Python accedan a las bases de datos MySQL, utilizando una API que cumple con la Especificación de la API de la base de datos de Python v2 \citep{MySQLConnector}.
+ 		 
+ 			La utilizamos para establecer la conexión con la base de datos SQL y ejecutar consultas y operaciones.
+ 			
+ 		 					
+ 		 \subsubsection*{Flask}
+ 		 Flask es un framework de Python para crear aplicaciones web de forma rápida y sencilla, lo cual nos ha permitido conectar nuestra aplicación web con los datos de Python en muy pocas líneas y de una manera eficiente, pudiendo manejar y pasar datos, así como tener una web de desarrollo donde hacer pruebas.
+ 		 	
+ 		 
+ 		 \subsubsection*{Librería JSON} 
+ 		 	Librería para trabajar con datos JSON \cite{JsonPython}. 
+ 		 
+ 		 	La utilizamos a la hora de parsear los datos de Google y Facebook pues la gran mayoría viene en este formato. También para pasar datos al Back-end de Flask, pues esta librería maneja mucho mejor este tipo de datos. Además de por una función de decodificar y codificar los datos string a UTF-8 de manera sencilla.
+ 		 	
+ 		 \subsubsection*{Webbrowser} 
+ 		 	Proporciona una interfaz de alto nivel que permite mostrar documentos basados en la web a los usuarios \citep{webbrowser}.
+ 		 
+ 		  	Nosotros lo usamos para redirigir al usuario a la página de descarga de datos de Google y que así no tenga que buscarla en su navegador.
+ 		 
+ 		 \subsubsection*{Re} 
+ 		 	Proporciona operaciones de coincidencia de expresiones regulares similares a las que se encuentran en Perl \citep{re}.
+ 		 
+ 		 	Hemos utilizado esta librería para limpiar de signos de puntuación, números y links los comentarios del usuario antes de puntuarlos.
+ 		 
+ 		 \subsubsection*{String} 
+ 		 	Proporciona operaciones de cadenas de caracteres \citep{String}.
+ 		 
+ 		 	La utilizamos en el archivo LogicTables.py para extraer la información útil de las publicaciones, comentarios y reacciones de Facebook entre otras cosas menores.
+ 		 
+ 		 \subsubsection*{Jicson} 
+ 		 	Librería que permite transformar del formato ICS (ICalendar) a JSON \citep{Jicson}.
+ 		 
+ 		 	Hemos utilizado esta librería para poder tratar el calendario de Google, ya que es más sencillo trabajar con datos JSON.
+ 		 
+ 		 \subsubsection*{CSV} 
+ 		 	El módulo CSV implementa clases para leer y escribir datos tabulares en formato CSV \citep{CSV}.
+ 		 
+ 		 	Utilizamos la librería CSV para leer los sitios favoritos marcados en Google por el usuario, ya que al contrario que el resto, vienen en este formato y nos parecía más fácil tratarlos en CSV que traducirlos a JSON.
+ 		 	
+		\subsubsection*{React-router}
+			Es una colección de componentes de navegación que se añaden de forma declarativa a su aplicación. Ya sea desde tener una URL que se pueda marcar como favorita o una forma de navegar entre las páginas de React en todo momento. La utilizamos para redirigir al usuario a una página nueva en el navegador.
+			
+ 		\subsubsection*{React-router-dom}
+ 		  	Es una librería de React que nos provee funcionalidades para crear una barra de navegación con BrowserRouter y NavLink, lo que le permite al usuario cambiar de página fácilmente y navegar entre las diferentes páginas que hemos creado.
+
+ 		  \subsubsection*{React-photo-gallery}
+ 		  	Es una librería de React que nos proporciona un componente para mostrar galerías de imágenes. La utilizamos para crear galerías amigables donde mostrar las fotos más destacadas del usuario así como ampliar y visualizarlas dentro de un carrusel de imágenes.
+ 		  
+ 		  \subsubsection*{React-images}
+ 		  	Es un componente para la creación de un carrusel altamente personalizable y compatible con dispositivos móviles para mostrar imágenes en ReactJS. Lo usamos dentro de las galerías de fotos para mostrarlas en formato carrusel cuando el usuario pincha en las mismas, y así pueda visualizarlas en un tamaño mayor. 
+ 		  
+ 		  \subsubsection*{Simple-react-google-maps}
+ 		  	Componente de React de Google Maps que proporciona todas las características de esta aplicación, el cual hemos usado para la creación de un mapa con los lugares más importantes para el usuario. Este funciona con una ApiKey que nos hemos intentado descargar, pero al ser de pago, hemos terminado usando la versión de desarrollo, la cual nos ha permitido añadir todos los lugares en marcadores visibles en un mapa global.
+ 		  
+ 		  \subsubsection*{React-circle-modal}
+ 		  	Es una librería de React que nos facilita componentes para la creación de ventanas emergentes o pop-ups. La hemos utilizado con el fin de generar ventanas emergentes para lidiar con páginas en las que había que mostrar varios carruseles de fotos.
+ 		  
+ 		  \subsubsection*{React-vertical-timeline-component}
+ 		  	Es un componente de React que permite generar líneas de tiempo.
+ 		  	La hemos utilizado para mostrar la información de fechas del usuario en orden cronológico.
+ 		  
+ 		  \subsubsection*{Rsuite-table}
+ 		  	Es una librería de React que nos proporciona un componente tabla muy editable y parametrizado. La hemos usado para crear tablas que muestren los datos ya tratados en un formato entendible para el terapeuta.
+ 		  
+ 		  \subsubsection*{React-awesome-button}
+ 		  	Es una librería de React que nos facilita componentes para crear un botón.
+ 		  	La hemos utilizado para crear botones que te redirijan a otras páginas, haciendo la interfaz más accesible.
+ 		  	
+ 		  	
+ 		\subsubsection{Descartadas}	
+			
+			\subsubsection*{BeautifulSoup y Scrapy}
+			Ambas son alternativas a Selenium con capacidades parecidas. Beutifull soup lo descartamos porque aun siendo amigable para aprender y utilizar, las dependencias que tiene nos parecían un punto en contra, ya que dificultan su uso. Scrapylo descartamos por estar menos enfocado a Javascript,  lo que nos resultaba menos útil. Además, buscando tutoriales para descargar datos de las redes sociales que utilizamos, la mayoría utilizaban Selenium, por lo que nos acabamos familiarizando con él. 
+			
+			\subsubsection*{Text Analytics y Sentiment Analysis API}
+			Text Analytics y Sentiment Analysis API es una API de Microsoft para el análisis de sentimientos, la cual es bastante potente y dispone de muchas características, pero nos pareció demasiado pesada para nuestro proyecto, además de ser propiedad de una empresa privada, lo que nos traía problemas de licencia. En cambio Text2emotion es una librería bastante sencilla y que nos daba la funcionalidad suficiente para nuestras necesidades, por lo que nos decantamos por esta última.
+								
+			\subsubsection*{Django o Back-end con SQL}
+			
+			Para la parte del back-end, aunque utilizamos Flask, estudiamos tecnologías como Django, un framework de Python para implementar un modelo de vista controlador creado para el desarrollo de webs complejas, o la utilización de las tablas de SQL directamente desde el Front-end, pero esta última opción dejaba todos los datos al descubierto y nos limitaba en la fase de tratamiento de datos. Finalmente, entre Django y Flask, acabamos usando Flask, por ser la más sencilla ante este tipo de aplicaciones.
+	
+
+
+
