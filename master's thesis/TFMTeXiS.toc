@@ -52,28 +52,13 @@
 \contentsline {chapter}{\numberline {5}Conclusions and Future Work}{61}{chapter.75}%
 \contentsline {section}{\numberline {5.1}Future work}{62}{section.76}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {6}Contribución individual}{65}{chapter.77}%
-\contentsline {section}{\numberline {6.1}Cristian Molina Muñoz}{66}{section.78}%
-\contentsline {subsection}{\numberline {6.1.1}Análisis e investigación}{66}{subsection.79}%
-\contentsline {subsection}{\numberline {6.1.2}Descarga de datos}{66}{subsection.80}%
-\contentsline {subsection}{\numberline {6.1.3}Creación de las tablas, parseo de JSON e inserción}{67}{subsection.81}%
-\contentsline {subsection}{\numberline {6.1.4}Tratamiento de los datos}{67}{subsection.82}%
-\contentsline {subsection}{\numberline {6.1.5}Interfaz de usuario}{67}{subsection.83}%
-\contentsline {subsection}{\numberline {6.1.6}Memoria}{68}{subsection.84}%
-\contentsline {section}{\numberline {6.2}Pablo Aguilera Heredero}{69}{section.85}%
-\contentsline {subsection}{\numberline {6.2.1}Análisis e investigación}{69}{subsection.86}%
-\contentsline {subsection}{\numberline {6.2.2}Descarga de datos}{69}{subsection.87}%
-\contentsline {subsection}{\numberline {6.2.3}Creación de las tablas, parseo de JSON e inserción}{69}{subsection.88}%
-\contentsline {subsection}{\numberline {6.2.4}Tratamiento de los datos}{70}{subsection.89}%
-\contentsline {subsection}{\numberline {6.2.5}Interfaz de usuario}{70}{subsection.90}%
-\contentsline {subsection}{\numberline {6.2.6}Memoria}{71}{subsection.91}%
+\contentsline {chapter}{\numberline {A}Tablas de SQL}{65}{appendix.77}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {A}Tablas de SQL}{73}{appendix.92}%
-\contentsline {chapter}{\numberline {B}Manual de usuario y casos de uso}{79}{appendix.93}%
-\contentsline {section}{\numberline {B.1}Guía para la instalación}{79}{section.94}%
-\contentsline {section}{\numberline {B.2}Manual de usuario}{81}{section.95}%
-\contentsline {subsection}{\numberline {B.2.1}Bienvenida y login}{81}{subsection.96}%
-\contentsline {subsection}{\numberline {B.2.2}Descarga de Datos}{83}{subsection.99}%
-\contentsline {subsection}{\numberline {B.2.3}Creación de las tablas}{86}{subsection.107}%
-\contentsline {subsection}{\numberline {B.2.4}Interfaz gráfica para visualizar datos}{91}{subsection.108}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{99}{appendix*.120}%
+\contentsline {chapter}{\numberline {B}Manual de usuario y casos de uso}{71}{appendix.78}%
+\contentsline {section}{\numberline {B.1}Guía para la instalación}{71}{section.79}%
+\contentsline {section}{\numberline {B.2}Manual de usuario}{73}{section.80}%
+\contentsline {subsection}{\numberline {B.2.1}Bienvenida y login}{73}{subsection.81}%
+\contentsline {subsection}{\numberline {B.2.2}Descarga de Datos}{75}{subsection.84}%
+\contentsline {subsection}{\numberline {B.2.3}Creación de las tablas}{78}{subsection.92}%
+\contentsline {subsection}{\numberline {B.2.4}Interfaz gráfica para visualizar datos}{83}{subsection.93}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{91}{appendix*.105}%
