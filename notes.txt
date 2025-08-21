@@ -1,0 +1,45 @@
+----------------------------------------- 
+ Used aplications 
+----------------------------------------- 
+
+--- Source code control version ---
+GitHub desktop - Version 3.5.0 (x64)
+
+
+--- Thesis cretion ---
+TeXstudio - Version 4.8.7 
+
+--- Task controll---
+Trello.com
+
+--- Source code development enviroment ---
+
+----------------------------------------- 
+other links
+----------------------------------------- 
+
+ Base thesis format -> TeXiS_toc.tex 
+
+----------------------------------------- 
+cosas a tener en cuenta
+----------------------------------------- 
+Recordar firmar todas las declaraciones y papeles.
+Revisar licencias de material utilizado
+
+Conviene empezar, no con una definición, sino con un interrogante y un punto de vista como contestación.
+El resto del texto contendrá los argumentos para contestar la cuestión planteada
+
+De lo que se trata es de centrarse en comunicar lo que aporta de nuevo el proyecto. 
+
+
+----------------------------------------- 
+Redacción
+-----------------------------------------
+NO SER SUBJETIVO, NI ADORNAR DEMASIADO
+
+formas impersonales y en voz activa: Se realizaron 4 mediciones
+
+Utilizar el presente para datos ya publicados, pero pasado para hablar del trabajo (Se desarrolló una plataforma…).
+
+Oraciones afirmativas
+
