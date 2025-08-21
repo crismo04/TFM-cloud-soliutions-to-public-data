@@ -15,50 +15,19 @@
 \contentsline {section}{\numberline {2.4}Trabajos anteriores}{6}{section.28}%
 \contentsline {subsection}{\numberline {2.4.1}Trabajos dirigidos a ... }{6}{subsection.29}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {3}Materiales y metodos}{7}{chapter.30}%
-\contentsline {section}{\numberline {3.1}Investigación}{7}{section.31}%
-\contentsline {subsection}{\numberline {3.1.1}Fuentes de datos}{7}{subsection.32}%
-\contentsline {subsection}{\numberline {3.1.2}Datos de Facebook}{9}{subsection.33}%
-\contentsline {subsection}{\numberline {3.1.3}Datos de Google}{11}{subsection.34}%
-\contentsline {section}{\numberline {3.2}Análisis de requisitos}{15}{section.35}%
-\contentsline {subsection}{\numberline {3.2.1}Lenguajes}{15}{subsection.36}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Principales}{15}{subsubsection.37}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Secundarios}{17}{subsubsection.38}%
-\contentsline {subsubsection}{\numberline {3.2.1.3}Descartados}{18}{subsubsection.39}%
-\contentsline {subsection}{\numberline {3.2.2}Herramientas}{19}{subsection.40}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Principales}{19}{subsubsection.41}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Descartadas}{22}{subsubsection.42}%
-\contentsline {subsection}{\numberline {3.2.3}Tecnologías}{23}{subsection.43}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Principales}{23}{subsubsection.44}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Descartadas}{29}{subsubsection.45}%
-\contentsline {chapter}{\numberline {4}Implementación de la aplicación}{31}{chapter.46}%
-\contentsline {section}{\numberline {4.1}Descarga de datos de Facebook}{34}{section.50}%
-\contentsline {subsection}{\numberline {4.1.1}Identificación de usuario}{34}{subsection.52}%
-\contentsline {subsection}{\numberline {4.1.2}Descarga de datos}{36}{subsection.53}%
-\contentsline {subsection}{\numberline {4.1.3}Preparación de carpetas}{36}{subsection.54}%
-\contentsline {section}{\numberline {4.2}Creación de las tablas, parseo de JSON e inserción en las tablas}{37}{section.55}%
-\contentsline {subsection}{\numberline {4.2.1}Creación de tablas SQL}{37}{subsection.57}%
-\contentsline {subsection}{\numberline {4.2.2}Parseo de JSON e inserción en las tablas}{40}{subsection.59}%
-\contentsline {section}{\numberline {4.3}Tratamiento de los datos}{43}{section.60}%
-\contentsline {subsection}{\numberline {4.3.1}Tratamiento}{43}{subsection.62}%
-\contentsline {subsection}{\numberline {4.3.2}Envió de datos a la interfaz}{45}{subsection.63}%
-\contentsline {section}{\numberline {4.4}Interfaz de usuario versión 1.}{47}{section.64}%
-\contentsline {section}{\numberline {4.5}Descarga de datos de Google}{49}{section.66}%
-\contentsline {subsection}{\numberline {4.5.1}Tutorial de descarga y preparación}{50}{subsection.67}%
-\contentsline {subsection}{\numberline {4.5.2}Tratamiento y revalorización de los datos}{51}{subsection.68}%
-\contentsline {section}{\numberline {4.6}Interfaz de usuario versión 2}{53}{section.69}%
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{57}{chapter.73}%
-\contentsline {section}{\numberline {5.1}Trabajo futuro}{58}{section.74}%
-\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{61}{chapter.75}%
-\contentsline {section}{\numberline {5.1}Future work}{62}{section.76}%
+\contentsline {chapter}{\numberline {3}Materiales y métodos}{7}{chapter.30}%
+\contentsline {section}{\numberline {3.1}Materiales}{7}{section.31}%
+\contentsline {subsection}{\numberline {3.1.1}Lenguajes}{7}{subsection.32}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}Lenguajes descartados}{8}{subsubsection.33}%
+\contentsline {subsection}{\numberline {3.1.2}Herramientas}{8}{subsection.34}%
+\contentsline {subsection}{\numberline {3.1.3}Herramientas descartadas}{9}{subsection.35}%
+\contentsline {section}{\numberline {3.2}Metodos}{9}{section.36}%
+\contentsline {subsection}{\numberline {3.2.1}Utilización de la solución}{10}{subsection.37}%
+\contentsline {chapter}{\numberline {4}Resultados}{11}{chapter.38}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{13}{chapter.39}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{15}{chapter.40}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{17}{chapter.41}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Tablas de SQL}{65}{appendix.77}%
+\contentsline {chapter}{\numberline {A}Manual de usuario y casos de uso}{19}{appendix.42}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {B}Manual de usuario y casos de uso}{71}{appendix.78}%
-\contentsline {section}{\numberline {B.1}Guía para la instalación}{71}{section.79}%
-\contentsline {section}{\numberline {B.2}Manual de usuario}{73}{section.80}%
-\contentsline {subsection}{\numberline {B.2.1}Bienvenida y login}{73}{subsection.81}%
-\contentsline {subsection}{\numberline {B.2.2}Descarga de Datos}{75}{subsection.84}%
-\contentsline {subsection}{\numberline {B.2.3}Creación de las tablas}{78}{subsection.92}%
-\contentsline {subsection}{\numberline {B.2.4}Interfaz gráfica para visualizar datos}{83}{subsection.93}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{91}{appendix*.105}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{21}{appendix*.43}%
