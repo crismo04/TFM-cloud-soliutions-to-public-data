@@ -1,3 +1,5 @@
+
+
 ----------------------------------------- 
  Used aplications 
 ----------------------------------------- 
@@ -19,6 +21,11 @@ other links
 ----------------------------------------- 
 
  Base thesis format -> TeXiS_toc.tex 
+
+
+[
+TENER EN CUENTA QUE PARA QUE APAREZCA LA BIBLIOGRAFIA HAY QUE DARLE AL PLAY DOS VECES
+]
 
 ----------------------------------------- 
 cosas a tener en cuenta

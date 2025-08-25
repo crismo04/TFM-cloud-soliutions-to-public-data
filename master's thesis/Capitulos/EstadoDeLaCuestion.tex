@@ -1,7 +1,7 @@
 \chapter{Estado de la Cuestión}
 \label{cap:estadoDeLaCuestion}
 
-En este apartado expondremos el estado actual de los puntos principales de nuestro proyecto según las investigaciones realizadas, así como los trabajos o artículos relacionados con los temas a tratar. Estos son, entre otros, trabajos relacionados con los principales proveedores Cloud y su comparación, trabajos que traten con grandes volúmenes de datos públicos, o trabajos que utilicen diferentes IAs para el tratamiento de datos y la obtención de conclusiones a partir de estos. 
+En este apartado expondremos el estado actual de los puntos principales de nuestro proyecto según las investigaciones realizadas, así como los trabajos o artículos relacionados con los temas a tratar. Estos son, entre otros, trabajos relacionados con los principales proveedores Cloud y su comparación, trabajos que traten con grandes volúmenes de datos públicos, o trabajos que utilicen diferentes \ac{IA}s para el tratamiento de datos y la obtención de conclusiones a partir de estos. 
 
 Aunque también usaremos datos, estudios y aplicaciones de otras partes del globo, nos intentaremos centrar en datos del territorio español, ya que la cantidad de datos de toda la web es inmensa y de esta manera acotaremos el alcance del proyecto y contribuiremos a aprovechar datos que no han sido tan explotados y explorados como pueden ser los datos abiertos de Google \citep{googleDataCommon} o Amazon \citep{AWSDataCommon} . 
 
@@ -47,110 +47,109 @@ Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, 
 \section{Nubes}
 
 
-\subsection{Principales Proveedores de Cloud y sus Free Tiers}
+\subsection{Principales Proveedores de Nube y sus Capas Gratuitas}
 \label{sec:cloud-free-tiers}
 
-A continuación detallaremos las pruebas gratuitas de los principales proveedores de servicios en la nube, información crucial para la selección tecnológica de este proyecto. Solo se listaran sus principales servicios, ya que la lista total es muy extensa \citep{free-for-dev}.
+A continuación detallaremos las pruebas gratuitas de los principales proveedores de servicios en la nube, información crucial para la selección tecnológica de este proyecto. Solo se listarán sus principales servicios, ya que la lista total es muy extensa \citep{free-for-dev}.
 
 \subsubsection*{Google Cloud Platform}
 \begin{itemize}
-	\item \textbf{App Engine}: 28 horas/día de instancias frontend, 9 horas/día de backend
-	\item \textbf{Cloud Firestore}: 1GB almacenamiento, 50.000 lecturas, 20.000 escrituras, 20.000 borrados por día
-	\item \textbf{Compute Engine}: 1 e2-micro no preemptible, 30GB HDD, 5GB de snapshots (regiones restringidas)
-	\item \textbf{Cloud Storage}: 5GB, 1GB de egress de red
-	\item \textbf{Cloud Shell}: Shell Linux basado en web con 5GB de almacenamiento persistente. Límite de 60 horas/semana
-	\item \textbf{Cloud Pub/Sub}: 10GB de mensajes por mes
-	\item \textbf{Cloud Functions}: 2 millones de invocaciones por mes
-	\item \textbf{Cloud Run}: 2 millones de requests por mes, 360.000 GB-seconds de memoria, 180.000 vCPU-seconds
-	\item \textbf{Google Kubernetes Engine}: Sin fee de gestión de clusters para un cluster zonal
-	\item \textbf{BigQuery}: 1 TB de consultas por mes, 10 GB de almacenamiento
-	\item \textbf{Cloud Build}: 120 minutos-build por día
-	\item \textbf{Cloud Source Repositories}: Hasta 5 usuarios, 50 GB almacenamiento, 50 GB egress
-	\item \textbf{Google Colab}: Entorno gratuito de desarrollo con Jupyter Notebooks
+	\item \textbf{App Engine}: 28 horas/día de ejecución 'frontend', 9 horas/día de ejecución 'backend'.
+	\item \textbf{Cloud Firestore}: 1GB almacenamiento, 50.000 lecturas, 20.000 escrituras, 20.000 borrados por día.
+	\item \textbf{Compute Engine}: 1 e2-micro no susceptible de interrupción, 30GB disco duro, 5GB de instantáneas, con regiones restringidas.
+	\item \textbf{Cloud Storage}: 5GB, 1GB de tráfico de salida de red.
+	\item \textbf{Cloud Shell}: Terminal Linux basado en web con 5GB de almacenamiento persistente. Límite de 60 horas/semana.
+	\item \textbf{Cloud Pub/Sub}: 10GB de mensajes por mes.
+	\item \textbf{Cloud Functions}: 2 millones de invocaciones por mes.
+	\item \textbf{Cloud Run}: 2M de peticiones por mes, 360.000 GB/segundos de memoria, 180.000 segundos de CPU virtual.
+	\item \textbf{Google Kubernetes Engine}: Sin tarifa de gestión de clústeres para un clúster zonal.
+	\item \textbf{BigQuery}: 1 TB de consultas por mes, 10 GB de almacenamiento.
+	\item \textbf{Cloud Build}: 120 minutos de construcción por día.
+	\item \textbf{Cloud Source Repositories}: Hasta 5 usuarios, 50 GB de almacenamiento, 50 GB de tráfico de salida.
+	\item \textbf{Google Colab}: Entorno gratuito de desarrollo con 'Jupyter Notebooks'.
 	\item \textbf{Lista completa}: \url{https://cloud.google.com/free}
 \end{itemize}
 
 \subsubsection*{Amazon Web Services}
 \begin{itemize}
-	\item \textbf{CloudFront}: 1TB egress por mes y 2M invocaciones de funciones
-	\item \textbf{CloudWatch}: 10 métricas personalizadas y 10 alarmas
-	\item \textbf{CodeBuild}: 100min de tiempo de build por mes
-	\item \textbf{CodeCommit}: 5 usuarios activos, 50GB almacenamiento, 10000 requests por mes
-	\item \textbf{CodePipeline}: 1 pipeline activo por mes
-	\item \textbf{DynamoDB}: 25GB base de datos NoSQL
-	\item \textbf{EC2}: 750 horas/mes de t2.micro o t3.micro (12 meses)
-	\item \textbf{EBS}: 30GB por mes de SSD propósito general o magnético (12 meses)
-	\item \textbf{Elastic Load Balancing}: 750 horas por mes (12 meses)
-	\item \textbf{RDS}: 750 horas/mes de db.t2.micro, 20GB almacenamiento SSD (12 meses)
-	\item \textbf{S3}: 5GB almacenamiento estándar, 20K Get requests, 2K Put requests (12 meses)
-	\item \textbf{Glacier}: 10GB almacenamiento a largo plazo
-	\item \textbf{Lambda}: 1 millón de requests por mes
-	\item \textbf{SNS}: 1 millón de publicaciones por mes
-	\item \textbf{SES}: 3.000 mensajes por mes (12 meses)
-	\item \textbf{SQS}: 1 millón de requests de colas de mensajería
+	\item \textbf{CloudFront}: 1TB de tráfico de salida por mes y 2M invocaciones de funciones.
+	\item \textbf{CloudWatch}: 10 métricas personalizadas y 10 alarmas.
+	\item \textbf{CodeBuild}: 100min de tiempo de ejecución por mes.
+	\item \textbf{CodeCommit}: 5 usuarios activos, 50GB almacenamiento, 10000 peticiones por mes.
+	\item \textbf{CodePipeline}: 1 pipeline activo por mes.
+	\item \textbf{DynamoDB}: 25GB base de datos NoSQL.
+	\item \textbf{EC2}: 750 horas/mes de t2.micro o t3.micro, 12 meses.
+	\item \textbf{EBS}: 30GB por mes de SSD propósito general o magnético, 12 meses.
+	\item \textbf{Elastic Load Balancing}: 750 horas por mes, 12 meses.
+	\item \textbf{RDS}: 750 horas/mes de db.t2.micro, 20GB almacenamiento SSD, 12 meses.
+	\item \textbf{S3}: 5GB almacenamiento estándar, 20K peticiones Get, 2K peticiones Put, 12 meses.
+	\item \textbf{Glacier}: 10GB almacenamiento a largo plazo.
+	\item \textbf{Lambda}: 1 millón de peticiones por mes.
+	\item \textbf{SNS}: 1 millón de publicaciones por mes.
+	\item \textbf{SES}: 3.000 mensajes por mes, 12 meses.
+	\item \textbf{SQS}: 1 millón de peticiones de colas de mensajería.
 	\item \textbf{Lista completa}: \url{https://aws.amazon.com/free/}
 \end{itemize}
 
 \subsubsection*{Microsoft Azure}
 \begin{itemize}
-	\item \textbf{Virtual Machines}: 1 B1S Linux VM, 1 B1S Windows VM (12 meses)
-	\item \textbf{App Service}: 10 web, mobile o API apps (60 minutos CPU/día)
-	\item \textbf{Functions}: 1 millón de requests por mes
-	\item \textbf{DevTest Labs}: Entornos de desarrollo y testing
-	\item \textbf{Active Directory}: 500.000 objetos
-	\item \textbf{Active Directory B2C}: 50.000 usuarios almacenados mensuales
-	\item \textbf{Azure DevOps}: 5 usuarios activos, repositorios Git privados ilimitados
-	\item \textbf{Azure Pipelines}: 10 jobs paralelos gratis con minutos ilimitados para open source
-	\item \textbf{Microsoft IoT Hub}: 8.000 mensajes por día
-	\item \textbf{Load Balancer}: 1 IP pública load-balanced gratuita (VIP)
-	\item \textbf{Notification Hubs}: 1 millón de notificaciones push
-	\item \textbf{Bandwidth}: 15GB inbound (12 meses) \& 5GB egress por mes
-	\item \textbf{Cosmos DB}: 25GB almacenamiento y 1000 RUs de throughput
-	\item \textbf{Static Web Apps}: Apps estáticas con SSL gratis, autenticación y dominios custom
-	\item \textbf{Storage}: 5GB LRS File o Blob storage (12 meses)
-	\item \textbf{Cognitive Services}: APIs de AI/ML con transacciones limitadas gratis
-	\item \textbf{Cognitive Search}: Búsqueda basada en AI, gratis para 10.000 documentos
-	\item \textbf{Azure Kubernetes Service}: Servicio Kubernetes gestionado, gestión de clusters gratis
-	\item \textbf{Event Grid}: 100K operaciones/mes
+	\item \textbf{Virtual Machines}: 1 B1S Linux VM, 1 B1S Windows VM, 12 meses.
+	\item \textbf{App Service}: 10 aplicaciones web, móviles o de API, con 60 minutos CPU/día.
+	\item \textbf{Functions}: 1 millón de peticiones por mes.
+	\item \textbf{DevTest Labs}: Entornos de desarrollo y pruebas.
+	\item \textbf{Active Directory}: 500.000 objetos.
+	\item \textbf{Azure DevOps}: 5 usuarios activos, repositorios Git privados ilimitados.
+	\item \textbf{Azure Pipelines}: 10 trabajos paralelos con minutos ilimitados para código abierto.
+	\item \textbf{Microsoft IoT Hub}: 8.000 mensajes por día.
+	\item \textbf{Load Balancer}: 1 IP pública con balanceo de carga gratuita.
+	\item \textbf{Notification Hubs}: 1 millón de notificaciones 'push'.
+	\item \textbf{Ancho de banda}: 15GB de entrada y 5GB de salida por mes, 12 meses.
+	\item \textbf{Cosmos DB}: 25GB almacenamiento y 1000 unidades de solicitud de rendimiento
+	\item \textbf{Static Web Apps}: Aplicaciones estáticas con SSL, autenticación y dominios personalizados
+	\item \textbf{Storage}: 5GB almacenamiento de archivos o 'blobs' con redundancia local, 12 meses.
+	\item \textbf{Cognitive Services}: APIs de IA/ML con transacciones limitadas.
+	\item \textbf{Cognitive Search}: Búsqueda basada en IA, para 10.000 documentos.
+	\item \textbf{Azure Kubernetes Service}: Servicio Kubernetes gestionado, gestión de clústeres.
+	\item \textbf{Event Grid}: 100K operaciones/mes.
 	\item \textbf{Lista completa}: \url{https://azure.microsoft.com/free/}
 \end{itemize}
 
 \subsubsection*{Oracle Cloud}
 \begin{itemize}
-	\item \textbf{Compute}: 2 VMs AMD con 1/8 OCPU y 1 GB memoria cada una
-	\item \textbf{Block Volume}: 2 volúmenes, 200 GB total (para compute)
-	\item \textbf{Object Storage}: 10 GB
-	\item \textbf{Load balancer}: 1 instancia con 10 Mbps
-	\item \textbf{Databases}: 2 DBs, 20 GB cada una
-	\item \textbf{Monitoring}: 500 millones de datos de ingestion, 1 billón de recuperación
-	\item \textbf{Bandwidth}: 10 TB egress por mes, velocidad limitada a 50 Mbps
-	\item \textbf{Public IP}: 2 IPv4 para VMs, 1 IPv4 para load balancer
-	\item \textbf{Notifications}: 1 millón de opciones de entrega por mes, 1000 emails enviados por mes
+	\item \textbf{Compute}: 2 máquinas virtuales AMD con 1/8 OCPU y 1 GB memoria cada una.
+	\item \textbf{Block Volume}: 2 volúmenes, 200 GB total para computación.
+	\item \textbf{Object Storage}: 10 GB.
+	\item \textbf{Load Balancer}: 1 instancia con 10 Mbps.
+	\item \textbf{Databases}: 2 bases de datos, 20 GB cada una.
+	\item \textbf{Monitoring}: 500 millones de puntos de ingesta de datos, 1 millardo de recuperación.
+	\item \textbf{Ancho de banda}: 10 TB de tráfico de salida por mes, velocidad limitada a 50 Mbps.
+	\item \textbf{IP Pública}: 2 IPv4 para máquinas virtuales, 1 IPv4 para balanceador de carga.
+	\item \textbf{Notifications}: 1 millón de opciones de entrega por mes, 1000 emails enviados por mes.
 	\item \textbf{Lista completa}: \url{https://www.oracle.com/cloud/free/}
 \end{itemize}
 
 \subsubsection*{IBM Cloud}
 \begin{itemize}
-	\item \textbf{Cloudant database}: 1 GB de almacenamiento de datos
-	\item \textbf{Db2 database}: 100MB de almacenamiento de datos
-	\item \textbf{API Connect}: 50.000 llamadas API por mes
-	\item \textbf{Availability Monitoring}: 3 millones de datos por mes
-	\item \textbf{Log Analysis}: 500MB de logs diarios
+	\item \textbf{Cloudant database}: 1 GB de almacenamiento de datos.
+	\item \textbf{Db2 database}: 100MB de almacenamiento de datos.
+	\item \textbf{API Connect}: 50.000 llamadas API por mes.
+	\item \textbf{Availability Monitoring}: 3 millones de puntos de datos por mes.
+	\item \textbf{Log Analysis}: 500MB de registros diarios.
 	\item \textbf{Lista completa}: \url{https://www.ibm.com/cloud/free/}
 \end{itemize}
 
 \subsubsection*{Cloudflare}
 \begin{itemize}
-	\item \textbf{Application Services}: DNS gratis, DDoS Protection, CDN con SSL gratis, WAF
-	\item \textbf{Zero Trust \& SASE}: Hasta 50 usuarios, 24 horas de logging de actividad
-	\item \textbf{Cloudflare Tunnel}: Exponer puertos HTTP locales through tunnel
-	\item \textbf{Workers}: Desplegar código serverless - 100k requests diarios
-	\item \textbf{Workers KV}: 100k lecturas diarias, 1000 escrituras diarias, 1 GB datos almacenados
-	\item \textbf{R2}: 10 GB por mes, 1 millón operaciones Class A por mes
-	\item \textbf{D1}: 5 millones de filas leídas por día, 100k filas escritas por día, 1 GB almacenamiento
-	\item \textbf{Pages}: Desplegar web apps - 500 builds mensuales, 100 dominios custom
-	\item \textbf{Queues}: 1 millón de operaciones por mes
-	\item \textbf{TURN}: 1TB de tráfico saliente gratis por mes
+	\item \textbf{Application Services}: DNS, Protección DDoS, CDN con SSL, Firewall de aplicaciones web.
+	\item \textbf{Zero Trust \& SASE}: Hasta 50 usuarios, 24 horas de registro de actividad.
+	\item \textbf{Cloudflare Tunnel}: Exponer puertos HTTP locales a través de túnel.
+	\item \textbf{Workers}: Desplegar código sin servidor - 100k peticiones diarias.
+	\item \textbf{Workers KV}: 100k lecturas diarias, 1000 escrituras diarias, 1 GB datos almacenados.
+	\item \textbf{R2}: 10 GB por mes, 1 millón operaciones por mes.
+	\item \textbf{D1}: 5 millones de filas leídas por día, 100k filas escritas por día, 1 GB almacenamiento.
+	\item \textbf{Pages}: Desplegar aplicaciones web - 500 despliegues mensuales, 100 dominios personalizados.
+	\item \textbf{Queues}: 1 millón de operaciones por mes.
+	\item \textbf{TURN}: 1TB de tráfico saliente por mes.
 	\item \textbf{Lista completa}: \url{https://www.cloudflare.com/plans/free/}
 \end{itemize}
 
@@ -158,53 +157,46 @@ También, aunque no son nubes propiamente dichas, hemos querido añadir en esta 
 
 \subsubsection*{Hugging Face Spaces}
 \begin{itemize}
-	\item \textbf{Tipo}: Plataforma para desplegar, compartir y descubrir modelos de Machine Learning (MLOps).
-	\item \textbf{Relevancia}: Esencial para proyectos de IA. Permite desplegar demos de modelos con interfaz web (Gradio/Streamlit) gratis de forma extremadamente sencilla.
-	\item \textbf{Free Tier - CPU}: 
+	\item \textbf{Tipo}: Plataforma para desplegar, compartir y descubrir modelos de Aprendizaje Automático (MLOps). Esencial para proyectos de IA. Permite desplegar demostraciones de modelos con interfaz web de forma sencilla.
+	\item \textbf{Capa Gratuita - CPU}: 
 	\begin{itemize}
-		\item 2 vCPUs por Space.
+		\item 2 CPUs virtuales por espacio.
 		\item 16 GB de RAM.
 		\item Espacio de almacenamiento: 50 GB (para modelos, datos y código).
-		\item Ancho de banda: 100 MB/hour para CPUs.
-		\item \textbf{Auto-off}: Los Spaces se duermen tras 48 horas de inactividad para ahorrar recursos, reactivándose con la siguiente visita.
+		\item Ancho de banda: 100 MB/hora para CPUs.
+		\item \textbf{Apagado automático}: Los espacios se suspenden tras 48 horas de inactividad para ahorrar recursos, reactivándose con la siguiente visita.
 	\end{itemize}
-	\item \textbf{Free Tier - GPU (T4)}: 
+	\item \textbf{Capa Gratuita - GPU (T4)}: 
 	\begin{itemize}
-		\item Acceso a una GPU NVIDIA T4 por Space.
+		\item Acceso a una GPU NVIDIA T4 por espacio.
 		\item 16 GB de RAM.
 		\item Espacio de almacenamiento: 50 GB.
-		\item Ancho de banda: 30 MB/hour para GPUs.
-		\item Uso: Hasta 30 horas de uso de GPU \textbf{por mes} (de forma puntual, sujeto a disponibilidad).
-		\item \textbf{Auto-off}: Las GPU se apagan automáticamente tras 1 hora de inactividad.
+		\item Ancho de banda: 30 MB/hora para GPUs.
+		\item Uso: Hasta 30 horas de uso de GPU por mes, pero sujeto a disponibilidad.
+		\item \textbf{Apagado automático}: Las GPU se apagan automáticamente tras 1 hora de inactividad.
 	\end{itemize}
-	\item \textbf{Enfoque}: Despliegue, demostración y sharing de modelos de IA. Integración nativa con el Hub de modelos y datasets.
+	\item \textbf{Enfoque}: Despliegue, demostración y compartición de modelos de IA. Integración nativa con el Hub de modelos y conjuntos de datos.
 	\item \textbf{URL}: \url{https://huggingface.co/spaces}
-	\item \textbf{Nota}: La opción ideal para crear una demostración interactiva y pública de los resultados de tu proyecto. La gestión de la GPU es perfecta para inferencia y demostraciones, no para entrenamientos largos.
 \end{itemize}
 
 \subsubsection*{Kaggle Kernels/Notebooks}
 \begin{itemize}
-	\item \textbf{Tipo}: Entorno de ejecución para notebooks Jupyter en la nube (Kaggle Notebooks).
-	\item \textbf{Relevancia}: Proporciona acceso gratuito a aceleradores hardware de gama alta, eliminando la barrera de entrada para entrenar modelos complejos.
-	\item \textbf{Free Tier - Sesiones de Ejecución}:
+	\item \textbf{Tipo}: Entorno de ejecución para cuadernos 'Jupyter' en la nube. Proporciona acceso gratuito a aceleradores hardware de gama alta, eliminando la barrera de entrada para entrenar modelos complejos.
+	\item \textbf{Capa Gratuita - Sesiones de Ejecución}:
 	\begin{itemize}
-		\item \textbf{GPU (NVIDIA Tesla P100)}: Hasta \textbf{30 horas por semana} (4.3h/día aporx.).
-		\item \textbf{TPU (v3)}: Hasta \textbf{20 horas por semana} (2.8h/día aporx.).
-		\item \textbf{CPU}: 20 horas por semana (sin límite de sesiones concurrentes, pero con límite de tiempo total).
+		\item \textbf{GPU (NVIDIA Tesla P100)}: Hasta 30 horas por semana (4.3h/día aprox.).
+		\item \textbf{TPU (v3)}: Hasta 20 horas por semana (2.8h/día aprox.).
+		\item \textbf{CPU}: 20 horas de tiempo total por semana, sin límite de sesiones concurrentes.
 	\end{itemize}
 	\item \textbf{Límites por Sesión}:
 	\begin{itemize}
-		\item \textbf{Tiempo máximo de ejecución}: 12 horas por sesión (tras este tiempo, el kernel se detiene automáticamente).
-		\item \textbf{Internet}: Los notebooks deben tener la opción de Internet activada manualmente para acceder a datos externos o instalar librerías.
-		\item \textbf{Almacenamiento Volátil}: 20 GB de espacio temporal de disco (los datos no persistían entre sesiones, aunque se puede usar el sistema de datasets de Kaggle para almacenamiento persistente).
+		\item \textbf{Tiempo máximo de ejecución}: 12 horas por sesión. Tras este tiempo, el kernel se detiene automáticamente.
+		\item \textbf{Internet}: Los cuadernos deben tener la opción de Internet activada manualmente para acceder a datos externos o instalar librerías.
+		\item \textbf{Almacenamiento Volátil}: 20 GB de espacio temporal de disco. Los datos no persisten entre sesiones, aunque se puede usar el sistema de conjuntos de datos de Kaggle para almacenamiento persistente.
 	\end{itemize}
-	\item \textbf{Enfoque}: Análisis exploratorio de datos, competiciones de ML (\textit{kaggle competitions}) y, crucialmente, \textbf{entrenamiento de modelos} que requieran GPU/TPU.
+	\item \textbf{Enfoque}: Análisis exploratorio de datos, competiciones de ML y, crucialmente, \textbf{entrenamiento de modelos} que requieran GPU/TPU.
 	\item \textbf{URL}: \url{https://www.kaggle.com/code}
-	\item \textbf{Nota}: Es la mejor plataforma gratuita para la fase de experimentación y entrenamiento de modelos de tu proyecto. Su límite semanal de GPU es muy generoso para un proyecto académico.
 \end{itemize}
-
-
-
 
 
 	\subsection{Trabajos anteriores}
