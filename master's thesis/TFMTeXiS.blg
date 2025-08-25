@@ -1,0 +1,158 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: TFMTeXiS.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: Cascaras/cover.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: Cascaras/autorizacion.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: Cascaras/dedicatoria.aux
+Reallocating 'name_of_file' (item size: 1) to 29 items.
+A level-1 auxiliary file: Cascaras/agradecimientos.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: Cascaras/resumen.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: Cascaras/abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: TeXiS/TeXiS_toc.aux
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+A level-1 auxiliary file: Capitulos/Introduccion.aux
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+A level-1 auxiliary file: Capitulos/Introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 33 items.
+A level-1 auxiliary file: Capitulos/EstadoDeLaCuestion.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: Capitulos/Capitulo3.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: Capitulos/Capitulo4.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: Capitulos/Capitulo5.aux
+Reallocating 'name_of_file' (item size: 1) to 40 items.
+A level-1 auxiliary file: Capitulos/ConclusionesTrabajoFuturo.aux
+Reallocating 'name_of_file' (item size: 1) to 36 items.
+A level-1 auxiliary file: Capitulos/ConclusionsFutureWork.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: Apendices/appendixA.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: Apendices/appendixB.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: Cascaras/bibliografia.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+The style file: TeXiS/TeXiS.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: TeXiS/TeXiS_acron.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: Cascaras/fin.aux
+Database file #1: biblio.bib
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry AWSDataCommon
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry awesomePublicDatasets
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry DatosGeneralesCNMC
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025{\natexlab{a}}
+---the literal stack isn't empty for entry JaimeGomezObregon
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025{\natexlab{b}}
+---the literal stack isn't empty for entry JaimeGomezObregonDonacion
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025{\natexlab{c}}
+---the literal stack isn't empty for entry JaimeGomezObregonSubvenciones
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry googleDataCommon
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2024
+---the literal stack isn't empty for entry DatosMercadosEspanna
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry BigDataStadisticsMarket
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2013
+---the literal stack isn't empty for entry HistoryOfBigData
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry free-for-dev
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry BigDataStatista
+while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--there's a number but no volume in TransparenciaEcuador
+ptr=1, stack=
+2016
+---the literal stack isn't empty for entry webRGPD2016Europa
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2023
+---the literal stack isn't empty for entry webLGD2023Europa
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2024
+---the literal stack isn't empty for entry webRIA2024Europa
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry UniversiDATA
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry wikiInformationAge
+while executing---line 1842 of file TeXiS/TeXiS.bst
+You've used 36 entries,
+            2962 wiz_defined-function locations,
+            1276 strings with 17854 characters,
+and the built_in function-call counts, 14583 in all, are:
+= -- 1228
+> -- 400
+< -- 40
++ -- 164
+- -- 123
+* -- 779
+:= -- 2440
+add.period$ -- 112
+call.type$ -- 36
+change.case$ -- 223
+chr.to.int$ -- 33
+cite$ -- 37
+duplicate$ -- 1212
+empty$ -- 1104
+format.name$ -- 173
+if$ -- 2830
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 228
+newline$ -- 188
+num.names$ -- 144
+pop$ -- 531
+preamble$ -- 1
+purify$ -- 185
+quote$ -- 0
+skip$ -- 519
+stack$ -- 0
+substring$ -- 463
+swap$ -- 491
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 357
+warning$ -- 1
+while$ -- 115
+width$ -- 0
+write$ -- 416
+(There were 17 error messages)

@@ -130,16 +130,17 @@
 %
 % http://www.ctan.org/tex-archive/help/Catalogue/entries/glosstex.html
 \ifx\generaacronimos\undefined
-  % No queremos acrónimos. Como no incluiremos el paquete glosstex
-  % redefinimos sus comandos para que no cruja si se han usado.
-  \newcommand{\glosstex}[1]{}
-  \newcommand{\acronym}[1]{}
-  \newcommand{\ac}[1]{#1}
-  \newcommand{\acs}[1]{#1}
-  \newcommand{\acl}[1]{#1}
-  \newcommand{\acf}[1]{#1}
+% No queremos acrónimos
+\newcommand{\ac}[1]{#1}
+\newcommand{\acs}[1]{#1}
+\newcommand{\acl}[1]{#1}
+\newcommand{\acf}[1]{#1}
 \else
-  \usepackage{glosstex}
+% Comandos simples para acrónimos (sin glosstex)
+\newcommand{\ac}[1]{\textbf{#1}}
+\newcommand{\acs}[1]{#1}
+\newcommand{\acl}[1]{#1}
+\newcommand{\acf}[1]{\textbf{#1} (Forma Completa)}
 \fi
 
 % shortvrb supuestamente define algunas macros cómodas como carácteres
