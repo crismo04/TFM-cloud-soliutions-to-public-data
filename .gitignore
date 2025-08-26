@@ -1,6 +1,7 @@
 # Project specific gitignore
 tmp/
 data/
+notes.txt
 
 # Git provided python gitignore ------->
 # Byte-compiled / optimized / DLL files
