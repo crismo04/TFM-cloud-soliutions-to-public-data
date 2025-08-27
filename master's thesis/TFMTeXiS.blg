@@ -40,8 +40,6 @@ A level-1 auxiliary file: Cascaras/bibliografia.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 The style file: TeXiS/TeXiS.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: TeXiS/TeXiS_acron.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
@@ -49,13 +47,22 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry AWSDataCommon
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in Datathon2016Anslow
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry awesomePublicDatasets
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
+2009
+---the literal stack isn't empty for entry Benington19032009
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry DatosGeneralesCNMC
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry PlanttesDataAPP
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
 2025{\natexlab{a}}
@@ -70,12 +77,27 @@ ptr=1, stack=
 ---the literal stack isn't empty for entry JaimeGomezObregonSubvenciones
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
+2025{\natexlab{a}}
+---the literal stack isn't empty for entry EventosDatathonGOB
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025{\natexlab{b}}
+---the literal stack isn't empty for entry EventosDatosAbiertosGOB
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry googleDataCommon
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in HerreraCapriz2024
 ptr=1, stack=
 2024
 ---the literal stack isn't empty for entry DatosMercadosEspanna
+while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in MelendrezMoreto2016Auditoria
+Warning--empty journal in moore1995creating
+ptr=1, stack=
+2025
+---the literal stack isn't empty for entry OpenKnowledgeFoundation
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
 2025
@@ -107,6 +129,14 @@ ptr=1, stack=
 ---the literal stack isn't empty for entry webRIA2024Europa
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
+2020
+---the literal stack isn't empty for entry UniversiDATAAnalisis
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2024
+---the literal stack isn't empty for entry UniversiDATADatathon
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry UniversiDATA
 while executing---line 1842 of file TeXiS/TeXiS.bst
@@ -114,45 +144,45 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry wikiInformationAge
 while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 36 entries,
+You've used 57 entries,
             2962 wiz_defined-function locations,
-            1276 strings with 17854 characters,
-and the built_in function-call counts, 14583 in all, are:
-= -- 1228
-> -- 400
-< -- 40
-+ -- 164
-- -- 123
-* -- 779
-:= -- 2440
-add.period$ -- 112
-call.type$ -- 36
-change.case$ -- 223
-chr.to.int$ -- 33
-cite$ -- 37
-duplicate$ -- 1212
-empty$ -- 1104
-format.name$ -- 173
-if$ -- 2830
-int.to.chr$ -- 4
+            1392 strings with 21683 characters,
+and the built_in function-call counts, 24547 in all, are:
+= -- 2031
+> -- 674
+< -- 68
++ -- 282
+- -- 210
+* -- 1335
+:= -- 3981
+add.period$ -- 178
+call.type$ -- 57
+change.case$ -- 358
+chr.to.int$ -- 52
+cite$ -- 62
+duplicate$ -- 2089
+empty$ -- 1885
+format.name$ -- 285
+if$ -- 4813
+int.to.chr$ -- 6
 int.to.str$ -- 1
-missing$ -- 228
-newline$ -- 188
-num.names$ -- 144
-pop$ -- 531
+missing$ -- 398
+newline$ -- 296
+num.names$ -- 228
+pop$ -- 916
 preamble$ -- 1
-purify$ -- 185
+purify$ -- 298
 quote$ -- 0
-skip$ -- 519
+skip$ -- 901
 stack$ -- 0
-substring$ -- 463
-swap$ -- 491
-text.length$ -- 5
+substring$ -- 818
+swap$ -- 884
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 357
-warning$ -- 1
-while$ -- 115
+type$ -- 564
+warning$ -- 5
+while$ -- 188
 width$ -- 0
-write$ -- 416
-(There were 17 error messages)
+write$ -- 669
+(There were 24 error messages)

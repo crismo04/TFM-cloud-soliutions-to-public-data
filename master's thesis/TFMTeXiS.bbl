@@ -1,10 +1,17 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{57}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Amazon(2025)}]{AWSDataCommon}
 {\sc Amazon}.
 \newblock Datos abiertos en aws.
 \newblock Disponible en \url{https://aws.amazon.com/es/opendata/}.
+
+\bibitem[{Anslow et\ al.(2016)Anslow, Brosz, Maurer y
+  Boyes}]{Datathon2016Anslow}
+{\sc Anslow, C.}, {\sc Brosz, J.}, {\sc Maurer, F.} y {\sc Boyes, M.}
+\newblock Datathons: An experience report of data hackathons for data science
+  education.
+\newblock p\'agina 615–620, 2016.
 
 \bibitem[{{Awesome data}(2025)}]{awesomePublicDatasets}
 {\sc {Awesome data}}.
@@ -17,6 +24,19 @@
 \newblock Portal de datos abiertos del ayuntamiento de madrid.
 \newblock 2025.
 
+\bibitem[{Benington(2009)}]{Benington19032009}
+{\sc Benington, J.}
+\newblock Creating the public in order to create public value?
+\newblock {\em International Journal of Public Administration\/}, vol.\
+  32(3-4), Disponible en \url{https://doi.org/10.1080/01900690902749578}.
+
+\bibitem[{BOZEMAN(2007)}]{bozeman2007public}
+{\sc BOZEMAN, B.}
+\newblock {\em Public Values and Public Interest: Counterbalancing Economic
+  Individualism\/}.
+\newblock Georgetown University Press, 2007.
+\newblock ISBN 9781589011779.
+
 \bibitem[{Brown et\ al.(2011)Brown, Chui y Manyika}]{brown2011you}
 {\sc Brown, B.}, {\sc Chui, M.} y {\sc Manyika, J.}
 \newblock Are you ready for the era of 'big data'.
@@ -27,6 +47,11 @@
 \newblock Telecomunicaciones anual datos generales cnmc.
 \newblock Disponible en
   \url{https://data.cnmc.es/telecomunicaciones-y-sector-audiovisual/datos-anuales/datos-generales/telecomunicaciones-anual}.
+
+\bibitem[{Concepción De~Linares(2025)}]{PlanttesDataAPP}
+{\sc Concepción De~Linares, J.~B.}
+\newblock Planttes.
+\newblock Disponible en \url{https://www.planttes.com/?lang=en}.
 
 \bibitem[{{Congreso de los Estados Unidos de America}(1996)}]{webHIPAA1996EEUU}
 {\sc {Congreso de los Estados Unidos de America}}.
@@ -54,6 +79,19 @@
 \newblock California consumer privacy act (ccpa).
 \newblock 2018.
 
+\bibitem[{Ferrer-Sapena~A.(2011)}]{OperGovernment2011}
+{\sc Ferrer-Sapena~A., A.-B.~R., Peset~F.}
+\newblock Acceso a los datos públicos y su reutilización: Open data y open
+  government.
+\newblock {\em El Profesional de la Información\/}, p\'aginas 260--269, 2011.
+
+\bibitem[{Giulia~Carsaniga(2022)}]{UseCaseObservatory2022V1}
+{\sc Giulia~Carsaniga, D.~R., Jochem~Dogger}.
+\newblock The use case observatory a 3-year monitoring of 30 reuse cases to
+  understand the economic, governmental, social and environmental impact of
+  open data volume i.
+\newblock {\em Publications Office of the European Union\/}, 2022.
+
 \bibitem[{Gómez-Obregón(2025{\natexlab{a}})}]{JaimeGomezObregon}
 {\sc Gómez-Obregón, J.}
 \newblock Jaime gómez-obregón.
@@ -72,15 +110,34 @@
 \newblock Disponible en
   \url{https://github.com/JaimeObregon/subvenciones/tree/main/files}.
 
-\bibitem[{{Gobierno de España}(2025)}]{PortalDatosGob}
+\bibitem[{{Gobierno de España}(2025{\natexlab{a}})}]{EventosDatathonGOB}
+{\sc {Gobierno de España}}.
+\newblock Eventos datathon gobierno de españa.
+\newblock Disponible en \url{https://datos.gob.es/es/event-tags/datathon}.
+
+\bibitem[{{Gobierno de España}(2025{\natexlab{b}})}]{EventosDatosAbiertosGOB}
+{\sc {Gobierno de España}}.
+\newblock Eventos datos abiertos gobierno de españa.
+\newblock Disponible en
+  \url{https://datos.gob.es/es/eventos/etiquetas/datos-abiertos-1918}.
+
+\bibitem[{{Gobierno de España}(2025{\natexlab{c}})}]{PortalDatosGob}
 {\sc {Gobierno de España}}.
 \newblock Portal de datos abiertos.
-\newblock 2025.
+\newblock 2025{\natexlab{c}}.
 
 \bibitem[{Google(2025)}]{googleDataCommon}
 {\sc Google}.
 \newblock Data commons.
 \newblock Disponible en \url{https://docs.datacommons.org/custom_dc/}.
+
+\bibitem[{Herrera~Capriz(2024)}]{HerreraCapriz2024}
+{\sc Herrera~Capriz, M.~E.}
+\newblock El valor intangible de la transparencia: un análisis de los datos
+  abiertos de españa en el marco de la corriente "valor público".
+\newblock 2024.
+\newblock Tesis inédita de la Universidad Complutense de Madrid, Facultad de
+  Ciencias de la Información, leída el 08/05/2024.
 
 \bibitem[{{Insights + Analytics}(2024)}]{DatosMercadosEspanna}
 {\sc {Insights + Analytics}, E.}
@@ -110,6 +167,38 @@
 \newblock {\em International Journal of Engineering and Advanced Technology
   (IJEAT) Volume-9 Issue-1\/}, 2019.
 
+\bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
+{\sc Matheus, R.} y {\sc Janssen, M.}
+\newblock A systematic literature study to unravel transparency enabled by open
+  government data: The window theory.
+\newblock {\em Public Performance \& Management Review\/}, vol.\ 43(3),
+  p\'aginas 503--534, 2020.
+
+\bibitem[{Melendrez~Moreto(2016)}]{MelendrezMoreto2016Auditoria}
+{\sc Melendrez~Moreto, I.}
+\newblock Auditoría y metodología de implantación de open data para smart
+  cities.
+\newblock 2016.
+\newblock Máster en Ingeniería Informática, curso 2015-2016.
+
+\bibitem[{Meynhardt(2009)}]{Meynhardt19032009}
+{\sc Meynhardt, T.}
+\newblock Public value inside: What is public value creation?
+\newblock {\em International Journal of Public Administration\/}, vol.\
+  32(3-4), p\'aginas 192--219, 2009.
+
+\bibitem[{Moore(1995)}]{moore1995creating}
+{\sc Moore, M.}
+\newblock Creating public value: Strategic management in government.
+\newblock 1995.
+
+\bibitem[{Nijssen(2022)}]{UseCaseObservatory2024V2}
+{\sc Nijssen, D.}
+\newblock The use case observatory a 3-year monitoring of 30 reuse cases to
+  understand the economic, governmental, social and environmental impact of
+  open data volume ii.
+\newblock {\em Publications Office of the European Union\/}, 2022.
+
 \bibitem[{OECD(2023)}]{OECD2023openData}
 {\sc OECD}.
 \newblock 2023 oecd open, useful and re-usable data 'ourdata' index: Results
@@ -117,10 +206,25 @@
 \newblock {\em OECD Public Governance Policy Papers, No. 43, OECD Publishing,
   Paris\/}, 2023.
 
+\bibitem[{{Open Data Charter}(s.f.)}]{Open_Data_Charter}
+{\sc {Open Data Charter}}.
+\newblock ¿qué son los datos abiertos?
+\newblock s.f.
+
+\bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
+{\sc {Open Knowledge Foundation}}.
+\newblock Open definition.
+\newblock Disponible en \url{https://opendefinition.org/}.
+
 \bibitem[{Pangarkar(2025)}]{BigDataStadisticsMarket}
 {\sc Pangarkar, T.}
 \newblock Big data statistics 2025 by patterns in the dimensions.
 \newblock Disponible en \url{https://scoop.market.us/big-data-statistics/}.
+
+\bibitem[{{Portal Europeo de Datos}(2025)}]{dataEuropaOpenData}
+{\sc {Portal Europeo de Datos}}.
+\newblock ¿qué son los datos abiertos?
+\newblock 2025.
 
 \bibitem[{Press(2013)}]{HistoryOfBigData}
 {\sc Press, G.}
@@ -159,14 +263,19 @@
   china.
 \newblock 2021{\natexlab{b}}.
 
+\bibitem[{Talbot(2011)}]{Talbot01012011}
+{\sc Talbot, C.}
+\newblock Paradoxes and prospects of 'public value'.
+\newblock {\em Public Money \& Management\/}, vol.\ 31(1), 2011.
+
 \bibitem[{Taylor(2025)}]{BigDataStatista}
 {\sc Taylor, P.}
 \newblock Big data - statistics and facts.
 \newblock Disponible en
   \url{https://www.statista.com/topics/1464/big-data/#topicOverview}.
 
-\bibitem[{De~la Torre y Núñez(2023)}]{TransparenciaEcuador}
-{\sc De~la Torre, S.} y {\sc Núñez, S.}
+\bibitem[{Soledad De~la Torre(2023)}]{TransparenciaEcuador}
+{\sc Soledad De~la Torre, S.~N.}
 \newblock Transparencia en la administración pública municipal del ecuador.
 \newblock {\em Estudios de la Gestión\/}, (14), p\'aginas 53--73, 2023.
 \newblock Copyright - Copyright null 2023; Última actualización - 2024-12-12;
@@ -194,6 +303,17 @@
 \newblock Portal de datos abiertos.
 \newblock 2025.
 
+\bibitem[{UniversiDATA(2020)}]{UniversiDATAAnalisis}
+{\sc UniversiDATA}.
+\newblock Análisis de desplazamientos interurbanos en estudiantes.
+\newblock Disponible en
+  \url{https://www.universidata.es/analisis/%C2%BFqu%C3%A9-distancia-tienen-que-recorrer-los-estudiantes-para-ir-clase}.
+
+\bibitem[{UniversiDATA(2024)}]{UniversiDATADatathon}
+{\sc UniversiDATA}.
+\newblock Ii datathon universidata.
+\newblock Disponible en \url{https://www.universidata.es/datathon/}.
+
 \bibitem[{UniversiDATA(2025)}]{UniversiDATA}
 {\sc UniversiDATA}.
 \newblock Universidata.
@@ -203,6 +323,16 @@
 {\sc {Universitat Autònoma de Barcelona}}.
 \newblock infoparticipa.
 \newblock 2025.
+
+\bibitem[{Verhulst et\ al.(2020)Verhulst, Young, Zahuranec, Calderon, Gee y
+  Aaronson}]{verhulst2020}
+{\sc Verhulst, S.}, {\sc Young, A.}, {\sc Zahuranec, A.}, {\sc Calderon, A.},
+  {\sc Gee, M.} y {\sc Aaronson, S.}
+\newblock The emergence of a third wave of open data: How to accelerate the
+  re-use of data for public interest purposes while ensuring data rights and
+  community flourishing.
+\newblock {\em International Journal of Public Administration\/}, p\'agina\ 8,
+  2020.
 
 \bibitem[{Wikipedia(2025)}]{wikiInformationAge}
 {\sc Wikipedia}.

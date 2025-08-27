@@ -3,37 +3,42 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.8}%
 \contentsline {section}{\numberline {1.1}Motivación}{1}{section.9}%
-\contentsline {section}{\numberline {1.2}Plan de trabajo}{1}{section.10}%
-\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.16}%
-\contentsline {section}{\numberline {1.1}Motivation}{3}{section.17}%
-\contentsline {section}{\numberline {1.2}Work plan}{3}{section.18}%
+\contentsline {section}{\numberline {1.2}Objetivos y alcance}{1}{section.10}%
+\contentsline {section}{\numberline {1.3}Plan de trabajo}{1}{section.11}%
+\contentsline {section}{\numberline {1.4}Estructura de esta memoria}{2}{section.18}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.19}%
+\contentsline {section}{\numberline {1.1}Motivation}{3}{section.20}%
+\contentsline {section}{\numberline {1.2}Work plan}{3}{section.21}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {2}Estado de la Cuestión}{5}{chapter.24}%
-\contentsline {section}{\numberline {2.1}Datos}{5}{section.25}%
-\contentsline {subsection}{\numberline {2.1.1}Trabajos anteriores}{7}{subsection.26}%
-\contentsline {subsection}{\numberline {2.1.2}Conjuntos de datos}{8}{subsection.27}%
-\contentsline {section}{\numberline {2.2}Nubes}{8}{section.28}%
-\contentsline {subsection}{\numberline {2.2.1}Principales Proveedores de Nube y sus Capas Gratuitas}{8}{subsection.29}%
-\contentsline {subsection}{\numberline {2.2.2}Trabajos anteriores}{14}{subsection.30}%
-\contentsline {section}{\numberline {2.3}Inteligencia Artificial}{14}{section.31}%
-\contentsline {subsection}{\numberline {2.3.1}Trabajos anteriores}{14}{subsection.32}%
+\contentsline {chapter}{\numberline {2}Estado de la Cuestión}{5}{chapter.27}%
+\contentsline {section}{\numberline {2.1}Datos}{5}{section.28}%
+\contentsline {subsection}{\numberline {2.1.1}Trabajos anteriores}{8}{subsection.29}%
+\contentsline {subsection}{\numberline {2.1.2}Conjuntos de datos}{10}{subsection.30}%
+\contentsline {subsection}{\numberline {2.1.3}Gobierno de los datos}{10}{subsection.31}%
+\contentsline {section}{\numberline {2.2}Nubes}{11}{section.32}%
+\contentsline {subsection}{\numberline {2.2.1}Principales Proveedores de Nube y sus Capas Gratuitas}{11}{subsection.33}%
+\contentsline {subsection}{\numberline {2.2.2}Otras herramientas útiles}{15}{subsection.34}%
+\contentsline {subsection}{\numberline {2.2.3}Trabajos anteriores}{16}{subsection.35}%
+\contentsline {section}{\numberline {2.3}Inteligencia Artificial}{16}{section.36}%
+\contentsline {subsection}{\numberline {2.3.1}Trabajos anteriores}{17}{subsection.37}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {3}Materiales y métodos}{15}{chapter.33}%
-\contentsline {section}{\numberline {3.1}Materiales}{15}{section.34}%
-\contentsline {subsection}{\numberline {3.1.1}Lenguajes}{15}{subsection.35}%
-\contentsline {subsubsection}{\numberline {3.1.1.1}Lenguajes descartados}{16}{subsubsection.36}%
-\contentsline {subsection}{\numberline {3.1.2}Herramientas}{16}{subsection.37}%
-\contentsline {subsection}{\numberline {3.1.3}Herramientas descartadas}{17}{subsection.38}%
-\contentsline {section}{\numberline {3.2}Metodos}{17}{section.39}%
-\contentsline {subsection}{\numberline {3.2.1}Utilización de la solución}{18}{subsection.40}%
-\contentsline {chapter}{\numberline {4}Resultados}{19}{chapter.41}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{21}{chapter.42}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{23}{chapter.43}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{25}{chapter.44}%
+\contentsline {chapter}{\numberline {3}Materiales y métodos}{19}{chapter.38}%
+\contentsline {section}{\numberline {3.1}Datos}{19}{section.39}%
+\contentsline {section}{\numberline {3.2}Materiales}{19}{section.40}%
+\contentsline {subsection}{\numberline {3.2.1}Lenguajes}{20}{subsection.41}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Lenguajes descartados}{20}{subsubsection.42}%
+\contentsline {subsection}{\numberline {3.2.2}Herramientas}{20}{subsection.43}%
+\contentsline {subsection}{\numberline {3.2.3}Herramientas descartadas}{21}{subsection.44}%
+\contentsline {section}{\numberline {3.3}Metodos}{21}{section.45}%
+\contentsline {subsection}{\numberline {3.3.1}Utilización de la solución}{21}{subsection.46}%
+\contentsline {chapter}{\numberline {4}Resultados}{23}{chapter.47}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{25}{chapter.48}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{27}{chapter.49}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{29}{chapter.50}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Definiciones y acornimos}{27}{appendix.45}%
-\contentsline {subsection}{\numberline {A.0.1}Definiciones}{27}{subsection.46}%
-\contentsline {subsection}{\numberline {A.0.2}Acronimos}{27}{subsection.47}%
+\contentsline {chapter}{\numberline {A}Definiciones y acornimos}{31}{appendix.51}%
+\contentsline {subsection}{\numberline {A.0.1}Definiciones}{31}{subsection.52}%
+\contentsline {subsection}{\numberline {A.0.2}Acronimos}{36}{subsection.61}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {B}Manual de usuario y casos de uso}{31}{appendix.48}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{33}{appendix*.49}%
+\contentsline {chapter}{\numberline {B}Manual de usuario y casos de uso}{39}{appendix.62}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{41}{appendix*.63}%
