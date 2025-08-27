@@ -15,7 +15,7 @@ Llevamos mucho tiempo escuchando que vivimos en la era de la información o de l
 
 En España, los datos también muestran un aumento significativo, según los datos de telecomunicaciones del CNMC, los cuales se han analizado con este mismo proyecto \citep{DatosGeneralesCNMC} [TODO], el uso de datos generales en las principales empresas es de 0.092 Zettabytes de datos en 2024.
 Esto es solo un 0.06\% del volumen global, lo cual no cuadra del todo con otras estimaciones \citep{DatosMercadosEspanna}, que por volumen de mercado sitúan a España en un 0.9\% del volumen global, lo cual se puede explicar debido a que el CNMC solo toma en cuenta datos de las principales empresas de telecomunicaciones. 
-Aun con estas discrepancias en cuanto a números, lo que esta claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta mas difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
+Aún con estas discrepancias en cuanto a números, lo que esta claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta mas difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
 
 Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos por que su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicara mas en detalle en el apartado de Materiales y métodos \ref{cap:Materiales y metodos} [TODO].
 
@@ -51,7 +51,7 @@ Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, 
 	
 	En cuanto a trabajos mas práctico-tecnológicos, hay muchos de ellos donde destacar, la Unión Europea en sus estudios de casos de uso sobre datos públicos, tiene mas de 600 casos estudiados, 150 con impacto significativo, 30 participaron en el estudio del volumen 1 \citep{UseCaseObservatory2022V1} y finalmente 13 en el volumen dos del mismo \citep{UseCaseObservatory2024V2}, de los cuales me gustaría destacar 3 españoles y uno Frances:
 	\begin{itemize}
-		\item \textbf{UniversiDATA:} Un portal que integra seis universidades españolas para el análisis avanzado y dinámico de datos abiertos con el objetivo de crear resultados interactivos y en tiempo real, facilitando el uso compartido de recursos y mejorando la comprensión de datos abiertos \citep{UniversiDATA}. El equipo también fomentaba el uso de sus datos con diferentes análisis propios \citep{UniversiDATAAnalisis} o el lanzamiento de eventos centrados en datos (o ``Datathones'' [D\ref{def7}] \citep{UniversiDATADatathon} de los cuales hablaremos a continuación). También resuelven dudas de usuarios e investigadores en los conjuntos de datos o análisis a través de comentarios, fomentando aun mas la comprensión de los datos 
+		\item \textbf{UniversiDATA:} Un portal que integra seis universidades españolas para el análisis avanzado y dinámico de datos abiertos con el objetivo de crear resultados interactivos y en tiempo real, facilitando el uso compartido de recursos y mejorando la comprensión de datos abiertos \citep{UniversiDATA}. El equipo también fomentaba el uso de sus datos con diferentes análisis propios \citep{UniversiDATAAnalisis} o el lanzamiento de eventos centrados en datos (o ``Datathones'' [D\ref{def7}] \citep{UniversiDATADatathon} de los cuales hablaremos a continuación). También resuelven dudas de usuarios e investigadores en los conjuntos de datos o análisis a través de comentarios, fomentando aún mas la comprensión de los datos 
 		\item \textbf{Tangible Data:} Transforma datos espaciales digitales en esculturas físicas accesibles.
 		\item \textbf{Planttes:} Aplicación que informa sobre la floración de plantas y su impacto en las alergias al polen, combinando datos abiertos con aportaciones de usuarios, fomentando la concienciación, información y educación sobre alergias \citep{PlanttesDataAPP}.
 		\item \textbf{Planttes:} Aplicación que informa sobre la floración de plantas y su impacto en las alergias al polen, combinando datos abiertos con aportaciones de usuarios, fomentando la concienciación, información y educación sobre alergias \citep{PlanttesDataAPP}.
@@ -82,6 +82,7 @@ Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, 
 	
 \section{Nubes}
 
+La capacidad real de extraer valor de los volúmenes masivos de datos abiertos detallados en la sección anterior está intrínsecamente ligada a la disponibilidad de recursos computacionales potentes, escalables y económicamente accesibles. Y aunque se lleva años hablando de soluciones como las nubes distribuidas [D\ref{def8}], el paradigma de la computación en la nube gestionada (\textit{cloud computing}), con planeas gratuitos, es de lo mas relevante para democratizar este acceso, permitiendo a investigadores, startups e instituciones públicas superar las limitaciones del hardware local.
 
 \subsection{Principales Proveedores de Nube y sus Capas Gratuitas}
 \label{sec:cloud-free-tiers}
@@ -246,6 +247,9 @@ También, aunque no son nubes propiamente dichas, hemos querido añadir en esta 
 \section{Inteligencia Artificial}
 
 [TODO]
+
+
+El mencionado edge computing es \ref{tab:nube_distribuida} es especialmente importante en el uso de aplicaciones de IA,
 
 Tener en cuenta también la nueva normativa que la Unión europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa}, el cual se ha tenido de base para el uso de IA en este proyecto, intentando aplicar buenas practicas al uso de las mismas, así como documentar las fuentes de datos, métodos de anonimización y posibles sesgos.
 	

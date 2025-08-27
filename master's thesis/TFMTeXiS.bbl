@@ -1,10 +1,20 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{71}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Akash()}]{akashCloud}
+{\sc Akash}.
+\newblock The decentralized cloud built for ai's next frontier.
+\newblock ????
 
 \bibitem[{Amazon(2025)}]{AWSDataCommon}
 {\sc Amazon}.
 \newblock Datos abiertos en aws.
 \newblock Disponible en \url{https://aws.amazon.com/es/opendata/}.
+
+\bibitem[{Anderson(2004)}]{Anderson2004BOINC}
+{\sc Anderson, D.}
+\newblock Boinc: a system for public-resource computing and storage.
+\newblock 2004.
 
 \bibitem[{Anslow et\ al.(2016)Anslow, Brosz, Maurer y
   Boyes}]{Datathon2016Anslow}
@@ -12,6 +22,12 @@
 \newblock Datathons: An experience report of data hackathons for data science
   education.
 \newblock p\'agina 615–620, 2016.
+
+\bibitem[{Arellano~Bruno(2019)}]{ArellanoBruno2019UsoDeGeolocalizacion}
+{\sc Arellano~Bruno, J.~B.}
+\newblock Uso de geolocalización y de fuentes de datos abiertas para la
+  creación de servicios turísticos por la ciudad de madrid.
+\newblock 2019.
 
 \bibitem[{{Awesome data}(2025)}]{awesomePublicDatasets}
 {\sc {Awesome data}}.
@@ -48,7 +64,12 @@
 \newblock Disponible en
   \url{https://data.cnmc.es/telecomunicaciones-y-sector-audiovisual/datos-anuales/datos-generales/telecomunicaciones-anual}.
 
-\bibitem[{Concepción De~Linares(2025)}]{PlanttesDataAPP}
+\bibitem[{Concepción De~Linares(2025{\natexlab{a}})}]{OpenFoodFactsDataAPP}
+{\sc Concepción De~Linares, J.~B.}
+\newblock Open food facts.
+\newblock Disponible en \url{https://fr-en.openfoodfacts.org/}.
+
+\bibitem[{Concepción De~Linares(2025{\natexlab{b}})}]{PlanttesDataAPP}
 {\sc Concepción De~Linares, J.~B.}
 \newblock Planttes.
 \newblock Disponible en \url{https://www.planttes.com/?lang=en}.
@@ -68,6 +89,11 @@
 {\sc Cornella, A.}
 \newblock Conferencia - cómo sobrevivir a la infoxicación.
 \newblock 2000.
+
+\bibitem[{{Danysoft}()}]{12Botnets}
+{\sc {Danysoft}}.
+\newblock El ataque de los botnets.
+\newblock ????
 
 \bibitem[{{Esri España}(2025)}]{PortalEsriEspanna}
 {\sc {Esri España}}.
@@ -126,10 +152,20 @@
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{c}}.
 
+\bibitem[{{Golem Network}()}]{GolemNetwork}
+{\sc {Golem Network}}.
+\newblock Golem network.
+\newblock ????
+
 \bibitem[{Google(2025)}]{googleDataCommon}
 {\sc Google}.
 \newblock Data commons.
 \newblock Disponible en \url{https://docs.datacommons.org/custom_dc/}.
+
+\bibitem[{{Google Cloud}()}]{distributedGCP}
+{\sc {Google Cloud}}.
+\newblock Amplía la infraestructura y la ia de google cloud on-premise.
+\newblock ????
 
 \bibitem[{Herrera~Capriz(2024)}]{HerreraCapriz2024}
 {\sc Herrera~Capriz, M.~E.}
@@ -167,6 +203,12 @@
 \newblock {\em International Journal of Engineering and Advanced Technology
   (IJEAT) Volume-9 Issue-1\/}, 2019.
 
+\bibitem[{LLamocca~Portela(2016)}]{LLamoccaPortela2016Integracion}
+{\sc LLamocca~Portela, P.}
+\newblock Integración y visualización de datos abiertos medioambientales.
+\newblock 2016.
+\newblock Máster en Ingeniería Informática, curso 2015-2016.
+
 \bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
 {\sc Matheus, R.} y {\sc Janssen, M.}
 \newblock A systematic literature study to unravel transparency enabled by open
@@ -179,7 +221,9 @@
 \newblock Auditoría y metodología de implantación de open data para smart
   cities.
 \newblock 2016.
-\newblock Máster en Ingeniería Informática, curso 2015-2016.
+\newblock Máster en Ingeniería Informática, curso 2015-2016, a destacar:
+  gran compilacion de datasets, conceptos interesantes como cinco estrellas del
+  Open Data, manual de CKAN.
 
 \bibitem[{Meynhardt(2009)}]{Meynhardt19032009}
 {\sc Meynhardt, T.}
@@ -199,6 +243,13 @@
   open data volume ii.
 \newblock {\em Publications Office of the European Union\/}, 2022.
 
+\bibitem[{Nov et\ al.(2010)Nov, Anderson y Arazy}]{Anderson2010Volunteer}
+{\sc Nov, O.}, {\sc Anderson, D.} y {\sc Arazy, O.}
+\newblock Volunteer computing: A model of the factors determining contribution
+  to community-based scientific research.
+\newblock {\em Proceedings of the 19th International Conference on World Wide
+  Web, WWW '10\/}, p\'aginas 741--750, 2010.
+
 \bibitem[{OECD(2023)}]{OECD2023openData}
 {\sc OECD}.
 \newblock 2023 oecd open, useful and re-usable data 'ourdata' index: Results
@@ -206,10 +257,10 @@
 \newblock {\em OECD Public Governance Policy Papers, No. 43, OECD Publishing,
   Paris\/}, 2023.
 
-\bibitem[{{Open Data Charter}(s.f.)}]{Open_Data_Charter}
+\bibitem[{{Open Data Charter}()}]{Open_Data_Charter}
 {\sc {Open Data Charter}}.
 \newblock ¿qué son los datos abiertos?
-\newblock s.f.
+\newblock ????
 
 \bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
 {\sc {Open Knowledge Foundation}}.
@@ -232,6 +283,11 @@
 \newblock Disponible en
   \url{https://www.forbes.com/sites/gilpress/2013/05/09/a-very-short-history-of-big-data/}.
 
+\bibitem[{{radwere}()}]{MydoomDDoSMalware}
+{\sc {radwere}}.
+\newblock What is mydoom malware?
+\newblock ????
+
 \bibitem[{Ramos-Simón(2017)}]{LicenciasLibres2017Datos}
 {\sc Ramos-Simón, L.~F.}
 \newblock El uso de las licencias libres en los datos públicos abiertos.
@@ -245,10 +301,20 @@
 \newblock Portal de datos abiertos de los registradores de españa.
 \newblock 2025.
 
+\bibitem[{{Render Network}()}]{rendernetwork}
+{\sc {Render Network}}.
+\newblock The distributed gpu render network.
+\newblock ????
+
 \bibitem[{R.I.Pienaar(2025)}]{free-for-dev}
 {\sc R.I.Pienaar}.
 \newblock Free for devs.
 \newblock Disponible en \url{https://github.com/ripienaar/free-for-dev}.
+
+\bibitem[{{SONM}()}]{SONMWhitepaper}
+{\sc {SONM}}.
+\newblock Sonm whitepaper.
+\newblock ????
 
 \bibitem[{{Standing Committee of the National People's
   Congress}(2021{\natexlab{a}})}]{webDSL2021China}
@@ -324,6 +390,12 @@
 \newblock infoparticipa.
 \newblock 2025.
 
+\bibitem[{Uriarte y De~Nicola(2018)}]{BlockchainBasedDecentralisedCloud2018}
+{\sc Uriarte, R.~B.} y {\sc De~Nicola, R.}
+\newblock Blockchain-based decentralised cloud/fog solutions: Challenges,
+  opportunities and standards.
+\newblock {\em IEEE Communications Standards Magazine\/}, 2018.
+
 \bibitem[{Verhulst et\ al.(2020)Verhulst, Young, Zahuranec, Calderon, Gee y
   Aaronson}]{verhulst2020}
 {\sc Verhulst, S.}, {\sc Young, A.}, {\sc Zahuranec, A.}, {\sc Calderon, A.},
@@ -338,5 +410,11 @@
 {\sc Wikipedia}.
 \newblock Information age.
 \newblock Disponible en \url{https://en.wikipedia.org/wiki/Information_Age}.
+
+\bibitem[{{Wikipedia contributors}(2025)}]{enwiki_1278525134}
+{\sc {Wikipedia contributors}}.
+\newblock Dew computing --- {Wikipedia}.
+\newblock 2025.
+\newblock [Online; accessed 27-August-2025].
 
 \end{thebibliography}

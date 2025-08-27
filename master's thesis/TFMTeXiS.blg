@@ -43,11 +43,14 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
+Warning--empty year in akashCloud; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry AWSDataCommon
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in Anderson2004BOINC
 Warning--empty journal in Datathon2016Anslow
+Warning--empty journal in ArellanoBruno2019UsoDeGeolocalizacion
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry awesomePublicDatasets
@@ -61,9 +64,14 @@ ptr=1, stack=
 ---the literal stack isn't empty for entry DatosGeneralesCNMC
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
-2025
+2025{\natexlab{a}}
+---the literal stack isn't empty for entry OpenFoodFactsDataAPP
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2025{\natexlab{b}}
 ---the literal stack isn't empty for entry PlanttesDataAPP
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in 12Botnets; set to ????
 ptr=1, stack=
 2025{\natexlab{a}}
 ---the literal stack isn't empty for entry JaimeGomezObregon
@@ -84,17 +92,21 @@ ptr=1, stack=
 2025{\natexlab{b}}
 ---the literal stack isn't empty for entry EventosDatosAbiertosGOB
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in GolemNetwork; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry googleDataCommon
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in distributedGCP; set to ????
 Warning--empty journal in HerreraCapriz2024
 ptr=1, stack=
 2024
 ---the literal stack isn't empty for entry DatosMercadosEspanna
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in LLamoccaPortela2016Integracion
 Warning--empty journal in MelendrezMoreto2016Auditoria
 Warning--empty journal in moore1995creating
+Warning--empty year in Open_Data_Charter; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry OpenKnowledgeFoundation
@@ -107,10 +119,13 @@ ptr=1, stack=
 2013
 ---the literal stack isn't empty for entry HistoryOfBigData
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in MydoomDDoSMalware; set to ????
+Warning--empty year in rendernetwork; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry free-for-dev
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in SONMWhitepaper; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry BigDataStatista
@@ -144,45 +159,45 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry wikiInformationAge
 while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 57 entries,
+You've used 71 entries,
             2962 wiz_defined-function locations,
-            1392 strings with 21683 characters,
-and the built_in function-call counts, 24547 in all, are:
-= -- 2031
-> -- 674
-< -- 68
-+ -- 282
-- -- 210
-* -- 1335
-:= -- 3981
-add.period$ -- 178
-call.type$ -- 57
-change.case$ -- 358
-chr.to.int$ -- 52
-cite$ -- 62
-duplicate$ -- 2089
-empty$ -- 1885
-format.name$ -- 285
-if$ -- 4813
-int.to.chr$ -- 6
+            1456 strings with 23669 characters,
+and the built_in function-call counts, 30324 in all, are:
+= -- 2512
+> -- 838
+< -- 82
++ -- 352
+- -- 261
+* -- 1653
+:= -- 4941
+add.period$ -- 222
+call.type$ -- 71
+change.case$ -- 447
+chr.to.int$ -- 65
+cite$ -- 87
+duplicate$ -- 2562
+empty$ -- 2310
+format.name$ -- 356
+if$ -- 5922
+int.to.chr$ -- 7
 int.to.str$ -- 1
-missing$ -- 398
-newline$ -- 296
-num.names$ -- 228
-pop$ -- 916
+missing$ -- 490
+newline$ -- 368
+num.names$ -- 284
+pop$ -- 1181
 preamble$ -- 1
-purify$ -- 298
+purify$ -- 371
 quote$ -- 0
-skip$ -- 901
+skip$ -- 1083
 stack$ -- 0
-substring$ -- 818
-swap$ -- 884
-text.length$ -- 14
+substring$ -- 1008
+swap$ -- 1052
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 564
-warning$ -- 5
-while$ -- 188
+type$ -- 704
+warning$ -- 16
+while$ -- 232
 width$ -- 0
-write$ -- 669
-(There were 24 error messages)
+write$ -- 830
+(There were 25 error messages)
