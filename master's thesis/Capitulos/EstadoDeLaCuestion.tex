@@ -5,41 +5,39 @@
 
 -
 
-En este apartado expondremos el estado actual de los puntos principales de nuestro proyectos, así como los trabajos o artículos relacionados con los temas a tratar: trabajos relacionados con los principales proveedores Cloud y su comparación, trabajos que traten con grandes volúmenes de datos públicos o que estudien los datos públicos, o trabajos que utilicen diferentes IAs para el tratamiento de datos y la obtención de conclusiones a partir de estos. 
-
-Aunque también usaremos datos, estudios y aplicaciones de otras partes del globo, nos intentaremos centrar en datos del territorio español, ya que la cantidad de datos de toda la web es inmensa y de esta manera acotaremos el alcance del proyecto y contribuiremos a aprovechar datos que no han sido tan explotados y explorados como pueden ser los datos abiertos de Google \citep{googleDataCommon} o Amazon \citep{AWSDataCommon}. 
+En este apartado expondremos el estado actual de los puntos principales de nuestro proyectos, así como los trabajos o artículos relacionados con los temas a tratar: trabajos relacionados con los principales proveedores Cloud y su comparación, trabajos que traten con grandes volúmenes de datos públicos o que estudien los datos públicos, o trabajos que utilicen diferentes IAs para el tratamiento de datos y la obtención de conclusiones a partir de estos. No es una tarea fácil, ya que los artículos relacionados en Google Scholar se cuentan por millones al buscar "data", "Artificial Inteligence" o "cloud computing", por lo que, aunque también usaremos conjuntos de datos, estudios y aplicaciones de otras partes del globo, nos intentaremos centrar en datos del territorio español, de esta manera acotaremos el alcance del proyecto y contribuiremos a aprovechar datos que no han sido tan explotados y explorados como pueden ser los datos abiertos de Google \citep{googleDataCommon} o Amazon \citep{AWSDataCommon}. 
 
 \section{Datos}
+\label{sec:EstudiosDatos}
 
-Llevamos mucho tiempo escuchando que vivimos en la era de la información o de los dato, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando la primera vez que se acuño en 2005 el termino ``web 2.0''  y ``Big data''  \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente Inteligencia Artificial, llegaran a generan ,según proyecciones, la asombrosa cifra de 149 Zettabytes de datos en 2024, ¡¡23 ceros en bytes!! \citep{BigDataStatista} \& \citep{BigDataStadisticsMarket}. Esta evolución no ha sido lineal ni uniforme, sino que ha estado marcada por distintos enfoques, motivaciones y metodologías en todo el mundo en lo que se denominan las tres olas de datos abiertos [D\ref{def5}] , diferentes etapas evolutivas por las que ha transitado el movimiento de apertura de datos
+Llevamos mucho tiempo escuchando que vivimos en la era de la información o de los dato, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando la primera vez que se acuño en 2005 el termino ``web 2.0''  y ``Big data''  \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente Inteligencia Artificial, llegaran a generan, según proyecciones, la asombrosa cifra de 149 Zettabytes de datos en 2024, ¡23 ceros en bytes! \citep{BigDataStatista} \& \citep{BigDataStadisticsMarket}. Esta evolución no ha sido lineal ni uniforme, sino que ha estado marcada por distintos enfoques, motivaciones y metodologías en todo el mundo en lo que se denominan las tres olas de datos abiertos [D\ref{def5}] , diferentes etapas evolutivas por las que ha transitado el movimiento de apertura de datos
 
 En España, los datos también muestran un aumento significativo, según los datos de telecomunicaciones del CNMC, los cuales se han analizado con este mismo proyecto \citep{DatosGeneralesCNMC} [TODO], el uso de datos generales en las principales empresas es de 0.092 Zettabytes de datos en 2024.
 Esto es solo un 0.06\% del volumen global, lo cual no cuadra del todo con otras estimaciones \citep{DatosMercadosEspanna}, que por volumen de mercado sitúan a España en un 0.9\% del volumen global, lo cual se puede explicar debido a que el CNMC solo toma en cuenta datos de las principales empresas de telecomunicaciones. 
-Aún con estas discrepancias en cuanto a números, lo que esta claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta mas difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
+Aún con estas discrepancias en cuanto a números, lo que esta claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta más difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
 
-Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos por que su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicara mas en detalle en el apartado de Materiales y métodos \ref{cap:Materiales y metodos} [TODO].
+Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos por que su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicara más en detalle en el apartado de Materiales y métodos \ref{cap:Materiales y metodos} [TODO].
 
 Lo primero para la realización de este proyecto, es la obtención de datos públicos, o datos abiertos [D\ref{def4}]. Esto presenta tres grandes complicaciones a tener en cuenta:
 
 La primera es que \textbf{no todos los datos que deberían ser públicos lo son}, y cuando lo son, su acceso y tratamiento es complicado, ya sea a conciencia o por indolencia. Según la OECD \citep{OECD2023openData}, sólo el 48\% de los conjuntos de datos de gran valor están disponibles como datos abiertos en los países estudiados, datos que bajan al 30\% cuando se trata de datos financieros. y estudios de otras partes del mundo también avalan esta reticencia a la correcta apertura de información publica \citep{TransparenciaEcuador}, \citep{TransparenciaMexico}.
 
-La segunda causa es \textbf{la regulación}, el tratamiento de datos en Europa debe seguir la RGPD de 2016 y las regulaciones propias de cada estado \citep{LicenciasLibres2017Datos} \& \citep{webRGPD2016Europa}, así como la mas reciente Ley de Gobernanza de Datos \citep{webLGD2023Europa} \& \citep{DatosAbiertos2022Cloud}. Para cumplir con estas normativas, en este proyecto nos centraremos en el uso de datos oficiales abiertos, evitando técnicas como el ``scraping'' que pueden estar sujetas a controversia a la vista de estas regulaciones. También se verificaran las licencias de todos los datos y modelos utilizados para asegurarnos de que no incumplimos ninguna de las regulaciones existentes.
+La segunda causa es \textbf{la regulación}, el tratamiento de datos en Europa debe seguir la RGPD de 2016 y las regulaciones propias de cada estado \citep{LicenciasLibres2017Datos} \& \citep{webRGPD2016Europa}, así como la más reciente Ley de Gobernanza de Datos \citep{webLGD2023Europa} \& \citep{DatosAbiertos2022Cloud}. Para cumplir con estas normativas, en este proyecto nos centraremos en el uso de datos oficiales abiertos, evitando técnicas como el ``scraping'' que pueden estar sujetas a controversia a la vista de estas regulaciones. También se verificarán las licencias de todos los datos y modelos utilizados para asegurarnos de que no incumplimos ninguna de las regulaciones existentes.
 
-En cuanto a datos de otros países fuera de la Unión Europea, tenemos panoramas diversos los cuales vale la pena mencionar, desde una regulación mas laxa en Estados Unidos, hasta un control estricto en países como China. Estos datos no se utilizaran en este trabajo por temas de alcance, ya que se prefiere dar prioridad a fuentes de datos nacionales, pero las herramientas desarrolladas serian aplicables a estos mismos datos cumpliendo sus normativas.
+En cuanto a datos de otros países fuera de la Unión Europea, tenemos panoramas diversos los cuales vale la pena mencionar, desde una regulación más laxa en Estados Unidos, hasta un control estricto en países como China. Estos datos no se utilizaran en este trabajo por temas de alcance, ya que se prefiere dar prioridad a fuentes de datos nacionales, pero las herramientas desarrolladas serian aplicables a estos mismos datos cumpliendo sus normativas.
 
 En Estados Unidos, el panorama es sobretodo abierto, pero fragmentado. Cuentan con regulaciones sectoriales, como la ``Health Insurance Portability and Accountability Act'' (HIPAA) para datos médicos \citep{webHIPAA1996EEUU} y regulaciones estatales como la ``California Consumer Privacy Act'' (CCPA) \citep{webCCPA2018California} para proteger derechos individuales. También existe una legislación nacional que promueve los datos abiertos, la ``OPEN Government Data Act'' (2019) \citep{webOGDA2019EEUU}, que establece que los datos gubernamentales deben ser abiertos y utilizables.
 
 Por su parte, China ha establecido un marco regulatorio estricto con leyes como la ``Personal Information Protection Law'' (PIPL) \citep{webPIPL2021China}, que habla de principios de consentimiento y derechos del individuo, y la ``Data Security Law'' (DSL) \citep{webDSL2021China}, que prioriza la seguridad nacional y el control sobre los datos generados en el país.
 
 
-Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, los datos pueden estar en formatos diferentes, y la cantidad de herramientas para su tratamiento va en aumento, y hay que tener en cuenta también la integración, el procesamiento escalable a la cantidad de datos en aumento y el gobierno de los flujos de datos y modelos en un entorno ``cloud'' que está en evolución constante. Por ello, en este trabajo se ha optado por emplear herramientas ampliamente extendidas, soportadas, y principalmente abiertas, así como intentar hacer del conjunto de ellas lo mas amplio posible, para estudiar y comparar un amplio abanico de soluciones.
-
+Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, los datos pueden estar en formatos diferentes, y la cantidad de herramientas para su tratamiento va en aumento, y hay que tener en cuenta también la integración, el procesamiento escalable a la cantidad de datos en aumento y el gobierno de los flujos de datos y modelos en un entorno ``cloud'' que está en evolución constante. Por ello, en este trabajo se ha optado por emplear herramientas ampliamente extendidas, soportadas, y principalmente abiertas, así como intentar hacer del conjunto de ellas lo más amplio posible, para estudiar y comparar un amplio abanico de soluciones.
 
 	\subsection{Trabajos anteriores}
 	
 	A parte de todas las referencias ya incluidas en esta sección, me gustaría destacar todo el trabajo de Jaime Gómez-Obregón para liberar y hacer accesibles los datos de España \citep{JaimeGomezObregon}, con acciones como publicar las subvenciones a las empresas en España a través del portal ministerial y hacerlas accesibles  \citep{JaimeGomezObregonSubvenciones}, o estudios sobre donaciones sospechosas de corrupción \citep{JaimeGomezObregonDonacion}. Todo este trabajo ha guiado también a este proyecto hacia un uso ético de los datos.
 	
-	Sobre ``Big data'' y datos públicos, han surgido trabajos en España desde sus inicios \citep{OperGovernment2011} [D\ref{def2}] desde diversos campos como las Ciencias de la Información, y uno de los mas completos que he podido encontrar en nuestro territorio es \citep{HerreraCapriz2024}, un reciente y extenso trabajo sobre los datos abiertos en España donde, partiendo de una extensa experiencia en la administración pública, la autora busca combinar dos campos con demandas complementarias bajo el marco teórico de la ``Teoría de la Ventana'' [D\ref{def6}] y estudios anteriores de valor público \citep{Meynhardt19032009}:
+	Sobre ``Big data'' y datos públicos, han surgido trabajos en España desde sus inicios \citep{OperGovernment2011} [D\ref{def2}] desde diversos campos como las Ciencias de la Información, y uno de los más completos que he podido encontrar en nuestro territorio es \citep{HerreraCapriz2024}, un reciente y extenso trabajo sobre los datos abiertos en España donde, partiendo de una extensa experiencia en la administración pública, la autora busca combinar dos campos con demandas complementarias bajo el marco teórico de la ``Teoría de la Ventana'' [D\ref{def6}] y estudios anteriores de valor público \citep{Meynhardt19032009}:
 	\begin{itemize}
 		\item Los Estudios de \textbf{Valor Público} [D\ref{def3}]: Carecen de una extensa evidencia empírica sólida.
 		\item La \textbf{transparencia y los Datos Abiertos} [D\ref{def4}]: Carecen de medición del valor final que generan para los ciudadanos.
@@ -49,16 +47,16 @@ Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, 
 	
 	Destaco la gran labor de investigación sobre datos abiertos del trabajo, que ha sido clave como base para la realización de este mismo proyecto y la utilidad de los resultados, que influenciara en la utilización de los datos públicos de este proyecto.
 	
-	En cuanto a trabajos mas práctico-tecnológicos, hay muchos de ellos donde destacar, la Unión Europea en sus estudios de casos de uso sobre datos públicos, tiene mas de 600 casos estudiados, 150 con impacto significativo, 30 participaron en el estudio del volumen 1 \citep{UseCaseObservatory2022V1} y finalmente 13 en el volumen dos del mismo \citep{UseCaseObservatory2024V2}, de los cuales me gustaría destacar 3 españoles y uno Frances:
+	En cuanto a trabajos más práctico-tecnológicos, hay muchos de ellos donde destacar, la Unión Europea en sus estudios de casos de uso sobre datos públicos, tiene más de 600 casos estudiados, 150 con impacto significativo, 30 participaron en el estudio del volumen 1 \citep{UseCaseObservatory2022V1} y finalmente 13 en el volumen dos del mismo \citep{UseCaseObservatory2024V2}, de los cuales me gustaría destacar 3 españoles y uno Frances:
 	\begin{itemize}
-		\item \textbf{UniversiDATA:} Un portal que integra seis universidades españolas para el análisis avanzado y dinámico de datos abiertos con el objetivo de crear resultados interactivos y en tiempo real, facilitando el uso compartido de recursos y mejorando la comprensión de datos abiertos \citep{UniversiDATA}. El equipo también fomentaba el uso de sus datos con diferentes análisis propios \citep{UniversiDATAAnalisis} o el lanzamiento de eventos centrados en datos (o ``Datathones'' [D\ref{def7}] \citep{UniversiDATADatathon} de los cuales hablaremos a continuación). También resuelven dudas de usuarios e investigadores en los conjuntos de datos o análisis a través de comentarios, fomentando aún mas la comprensión de los datos 
+		\item \textbf{UniversiDATA:} Un portal que integra seis universidades españolas para el análisis avanzado y dinámico de datos abiertos con el objetivo de crear resultados interactivos y en tiempo real, facilitando el uso compartido de recursos y mejorando la comprensión de datos abiertos \citep{UniversiDATA}. El equipo también fomentaba el uso de sus datos con diferentes análisis propios \citep{UniversiDATAAnalisis} o el lanzamiento de eventos centrados en datos (o ``Datathones'' [D\ref{def7}] \citep{UniversiDATADatathon} de los cuales hablaremos a continuación). También resuelven dudas de usuarios e investigadores en los conjuntos de datos o análisis a través de comentarios, fomentando aún más la comprensión de los datos 
 		\item \textbf{Tangible Data:} Transforma datos espaciales digitales en esculturas físicas accesibles.
 		\item \textbf{Planttes:} Aplicación que informa sobre la floración de plantas y su impacto en las alergias al polen, combinando datos abiertos con aportaciones de usuarios, fomentando la concienciación, información y educación sobre alergias \citep{PlanttesDataAPP}.
 		\item \textbf{Planttes:} Aplicación que informa sobre la floración de plantas y su impacto en las alergias al polen, combinando datos abiertos con aportaciones de usuarios, fomentando la concienciación, información y educación sobre alergias \citep{PlanttesDataAPP}.
-		\item \textbf{Open Food Facts:} Aplicación que informa sobre detalles de productos de supermercado, queriendo nombrarla por la enorme cantidad de datos que ha conseguido recopilar de usuarios de todo el mundo y lo intuitiva que es a la hora de usar toda esta cantidad de datos (mas de 1 millón de productos). \citep{OpenFoodFactsDataAPP}.
+		\item \textbf{Open Food Facts:} Aplicación que informa sobre detalles de productos de supermercado, queriendo nombrarla por la enorme cantidad de datos que ha conseguido recopilar de usuarios de todo el mundo y lo intuitiva que es a la hora de usar toda esta cantidad de datos (más de 1 millón de productos). \citep{OpenFoodFactsDataAPP}.
 	\end{itemize}
 	
-	Como ya hemos comentado otra fuente importante de proyectos relacionados con datos serian los ``Datathones'' [D\ref{def7}], de los cuales pueden salir decenas de proyectos relacionados con datos abiertos en muy poco tiempo y que seria inabarcable mencionar este proyecto debido a los mas de 20 Datathones diferentes encontrados y los múltiples proyectos que hay en cada uno, pero si que me gustaría mencionar iniciativas como la del gobierno de España \citep{EventosDatosAbiertosGOB} y \citep{EventosDatathonGOB} con mas de 4o eventos sobre datos a fecha de publicación de este trabajo.
+	Como ya hemos comentado otra fuente importante de proyectos relacionados con datos serian los ``Datathones'' [D\ref{def7}], de los cuales pueden salir decenas de proyectos relacionados con datos abiertos en muy poco tiempo y que seria inabarcable mencionar este proyecto debido a los más de 20 Datathones diferentes encontrados y los múltiples proyectos que hay en cada uno, pero si que me gustaría mencionar iniciativas como la del gobierno de España \citep{EventosDatosAbiertosGOB} y \citep{EventosDatathonGOB} con más de 4o eventos sobre datos a fecha de publicación de este trabajo.
 	
 	Por ultimo, también me gustaría mencionar trabajos académicos de compañeros que también han implementado soluciones con datos públicos, que aunque son algo antiguos, siguen aportando valor:
 	
@@ -67,7 +65,7 @@ Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, 
 			
 			\item \textbf{``Uso de geolocalización y de fuentes de datos abiertas para la creación de servicios turísticos por la ciudad de Madrid''} \citep{LLamoccaPortela2016Integracion}: El cual utiliza datos abiertos de geolocalización en Madrid para buscar sitios cercanos en una app móvil.
 			
-			\item \textbf{``Integración y visualización de datos abiertos medioambientales''} \citep{ArellanoBruno2019UsoDeGeolocalizacion}: También hace un análisis extensivo de los datos abiertos, de las definiciones para evaluar estos datos y de herramientas como ``CKAN''. Ademas, comenta iniciativas de limpieza de datos interesantes como ``Data Tamer'' o ``Data Wrangler''. Finalmente, crea una aplicación para el uso de datos medioambientales en tiempo real.
+			\item \textbf{``Integración y visualización de datos abiertos medioambientales''} \citep{ArellanoBruno2019UsoDeGeolocalizacion}: También hace un análisis extensivo de los datos abiertos, de las definiciones para evaluar estos datos y de herramientas como ``CKAN''. Además, comenta iniciativas de limpieza de datos interesantes como ``Data Tamer'' o ``Data Wrangler''. Finalmente, crea una aplicación para el uso de datos medioambientales en tiempo real.
 	\end{itemize}
 	
 	\subsection{Conjuntos de datos}
@@ -76,20 +74,36 @@ Por ultimo, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, 
 	
 	Todos estos portales y aplicaciones son de gran importancia y constituyen la base material sobre la que se sustentan trabajos como el presente. Los conjuntos de datos escogidos se detallan en el apartado \ref{sec:Materiales_datos} Datos.
 	
-	\subsection{Gobierno de los datos}
+	\subsection{--- Gobierno de los datos}
 	
 	[TODO]
 	
+	
 \section{Nubes}
+\label{sec:EstudiosNubes}
 
-La capacidad real de extraer valor de los volúmenes masivos de datos abiertos detallados en la sección anterior está intrínsecamente ligada a la disponibilidad de recursos computacionales potentes, escalables y económicamente accesibles. Y aunque se lleva años hablando de soluciones como las nubes distribuidas [D\ref{def8}], el paradigma de la computación en la nube gestionada (\textit{cloud computing}), con planeas gratuitos, es de lo mas relevante para democratizar este acceso, permitiendo a investigadores, startups e instituciones públicas superar las limitaciones del hardware local.
+La capacidad real de extraer valor de los volúmenes masivos de datos abiertos detallados en la sección anterior está intrínsecamente ligada a la disponibilidad de recursos computacionales potentes, escalables y económicamente accesibles. Y aunque se lleva años hablando de soluciones como las nubes distribuidas [D\ref{def8}], el paradigma de la computación en la nube gestionada (o publica, que no abierta)  (\textit{cloud computing}), con planeas gratuitos, es muy relevante para democratizar este acceso, permitiendo a investigadores, startups e instituciones públicas superar las limitaciones del hardware local.
+
+Estas nubes gestionadas nos proporcionan unidades de procesamiento gráfico (GPUs) y tensorial (TPUs) bajo demanda, además de un ecosistema completo de servicios gestionados diseñados específicamente para el ciclo de vida completo de los datos y la IA, con la seguridad propia de estas soluciones. Para este trabajo se ha optado por esta solución, ya las fuentes de datos a tratar se han seleccionado para evitar datos sensibles. 
+Otra opción posible sería la nube híbrida, , que combina el control de una infraestructura privada (``On premise'') con la escalabilidad y economía de la nube pública. Esto es ideal para cargas con datos sensibles, pero complicaría en enfoque de este proyecto. 
+Para ayudarnos mejor a valorar todas las opciones, vamos a listar la oferta gratuita de algunas de las nubes estudiadas \citep{MicrosoftCloudTerminology}, \citep{lisdorf2021cloud}.
+
+En el panorama nacional, Eurostat muestra que el 35.8\% de las empresas españolas usaban tecnologías cloud en 2024, tendencia que va en aumento (pronosticando un 17\% más para los próximos años: \cite{EspannaCloudGroeth2033}), pero que se encuentra por debajo en comparación con Europa, donde se usa en más del 45\% de las empresas \citep{EurostatCloudUsage}. de cara al futuro, mientras la estrategia europea el edge computing frente a la cloud privada para ganar autonomía tecnológica y soberanía de datos \citep{EuroDigitalStrategyEdge}, el enfoque del Plan de Digitalización español \citep{GobEspana2021PlanDigitalizacion} no se aleja de la nube pública, sino que aboga por un modelo híbrido soberano (como su infraestructura NubeSARA) . [TODO] añadir nubesara.
+
+[TODO] explicar mas sobre las opciones de cloud es españa y las opciones gratuitas en europa.
+
+Teléfonica Tech vende una especie de nube pública basada en VMware, pero principalmente son servicios gestionados multi-cloud \citep{TelefonicaTechCloudPlatform}.
 
 \subsection{Principales Proveedores de Nube y sus Capas Gratuitas}
 \label{sec:cloud-free-tiers}
 
-A continuación detallaremos las pruebas gratuitas de los principales proveedores de servicios en la nube, información crucial para la selección tecnológica de este proyecto. Solo se listarán sus principales servicios, ya que la lista total es muy extensa \citep{free-for-dev}.
+A continuación detallaremos las pruebas gratuitas de los principales proveedores de servicios en la nube, información crucial para la selección tecnológica de este proyecto. \citep{free-for-dev}.
 
 \subsubsection*{Google Cloud Platform}
+
+Ecosistema de servicios en la nube Google con infraestructura escalable, herramientas de análisis y soluciones de inteligencia artificial gestionadas que cubre todo el ciclo de vida de los datos y aplicaciones. A parte de las aplicaciones listadas y muchas mas que se pueden encontrar en su \textbf{Lista completa}: \url{https://cloud.google.com/free}, Google también ofrece 300€ para exceder estos limites los primeros 3 meses de prueba, lo cual puede ayudar enormemente a proyectos de tamaño medio.
+
+Servicios específicos:
 \begin{itemize}
 	\item \textbf{App Engine}: 28 horas/día de ejecución ``frontend'', 9 horas/día de ejecución ``backend''.
 	\item \textbf{Cloud Firestore}: 1GB almacenamiento, 50.000 lecturas, 20.000 escrituras, 20.000 borrados por día.
@@ -104,10 +118,13 @@ A continuación detallaremos las pruebas gratuitas de los principales proveedore
 	\item \textbf{Cloud Build}: 120 minutos de construcción por día.
 	\item \textbf{Cloud Source Repositories}: Hasta 5 usuarios, 50 GB de almacenamiento, 50 GB de tráfico de salida.
 	\item \textbf{Google Colab}: Entorno gratuito de desarrollo con ``Jupyter Notebooks''.
-	\item \textbf{Lista completa}: \url{https://cloud.google.com/free}
 \end{itemize}
 
 \subsubsection*{Amazon Web Services}
+
+Plataforma de cloud computing más usada a nivel empresarial, con una enorme cantidad de servicios, desde cómputo básico hasta servicios de IA, machine learning, IoT, etc. Tiene una capa gratuita de 12 meses, aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://aws.amazon.com/free/}
+
+Servicios específicos:
 \begin{itemize}
 	\item \textbf{CloudFront}: 1TB de tráfico de salida por mes y 2M invocaciones de funciones.
 	\item \textbf{CloudWatch}: 10 métricas personalizadas y 10 alarmas.
@@ -125,10 +142,13 @@ A continuación detallaremos las pruebas gratuitas de los principales proveedore
 	\item \textbf{SNS}: 1 millón de publicaciones por mes.
 	\item \textbf{SES}: 3.000 mensajes por mes, 12 meses.
 	\item \textbf{SQS}: 1 millón de peticiones de colas de mensajería.
-	\item \textbf{Lista completa}: \url{https://aws.amazon.com/free/}
 \end{itemize}
 
 \subsubsection*{Microsoft Azure}
+
+Ecosistema cloud de Microsoft, muy integrado con todas sus herramientas empresariales y de desarrollo, como la suite de DevOps, copilot y más soluciones de IA, enfoque en el lenguaje .NET. También tiene una capa gratuita de 12 meses,Aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://azure.microsoft.com/free/}
+
+Servicios específicos:
 \begin{itemize}
 	\item \textbf{Virtual Machines}: 1 B1S Linux VM, 1 B1S Windows VM, 12 meses.
 	\item \textbf{App Service}: 10 aplicaciones web, móviles o de API, con 60 minutos CPU/día.
@@ -148,10 +168,13 @@ A continuación detallaremos las pruebas gratuitas de los principales proveedore
 	\item \textbf{Cognitive Search}: Búsqueda basada en IA, para 10.000 documentos.
 	\item \textbf{Azure Kubernetes Service}: Servicio Kubernetes gestionado, gestión de clústeres.
 	\item \textbf{Event Grid}: 100K operaciones/mes.
-	\item \textbf{Lista completa}: \url{https://azure.microsoft.com/free/}
 \end{itemize}
 
 \subsubsection*{Oracle Cloud}
+
+Nube especializada en bases de datos de alto rendimiento (Oracle Database), aplicaciones Java, y soluciones de analytics. Ofrece una capa gratuitia con recursos que no expiran, aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://www.oracle.com/cloud/free/}
+
+Servicios específicos:
 \begin{itemize}
 	\item \textbf{Compute}: 2 máquinas virtuales AMD con 1/8 OCPU y 1 GB memoria cada una.
 	\item \textbf{Block Volume}: 2 volúmenes, 200 GB total para computación.
@@ -162,20 +185,25 @@ A continuación detallaremos las pruebas gratuitas de los principales proveedore
 	\item \textbf{Ancho de banda}: 10 TB de tráfico de salida por mes, velocidad limitada a 50 Mbps.
 	\item \textbf{IP Pública}: 2 IPv4 para máquinas virtuales, 1 IPv4 para balanceador de carga.
 	\item \textbf{Notifications}: 1 millón de opciones de entrega por mes, 1000 emails enviados por mes.
-	\item \textbf{Lista completa}: \url{https://www.oracle.com/cloud/free/}
 \end{itemize}
 
 \subsubsection*{IBM Cloud}
+
+Plataforma centrada en la transformación digital de grandes empresas con necesidades híbridas y multicloud, aunque también con una capa gratuita. Se puede consultar la \textbf{Lista completa} de servicios aquí: \url{https://www.ibm.com/cloud/free/}
+
+Servicios específicos:
 \begin{itemize}
 	\item \textbf{Cloudant database}: 1 GB de almacenamiento de datos.
 	\item \textbf{Db2 database}: 100MB de almacenamiento de datos.
 	\item \textbf{API Connect}: 50.000 llamadas API por mes.
 	\item \textbf{Availability Monitoring}: 3 millones de puntos de datos por mes.
 	\item \textbf{Log Analysis}: 500MB de registros diarios.
-	\item \textbf{Lista completa}: \url{https://www.ibm.com/cloud/free/}
 \end{itemize}
 
 \subsubsection*{Cloudflare}
+
+Plataforma especializada en rendimiento web, seguridad y confiabilidad. Aunque no es una nube generalista, sino más bien una red global que acelera y protege sitios web, APIs y aplicaciones mediante su CDN, DNS, servicios de seguridad, etc. De todas formas tambien tiene capa gratuita, la \textbf{Lista completa} se encuentra en: \url{https://www.cloudflare.com/plans/free/}
+
 \begin{itemize}
 	\item \textbf{Application Services}: DNS, Protección DDoS, CDN con SSL, Firewall de aplicaciones web.
 	\item \textbf{Zero Trust \& SASE}: Hasta 50 usuarios, 24 horas de registro de actividad.
@@ -187,7 +215,6 @@ A continuación detallaremos las pruebas gratuitas de los principales proveedore
 	\item \textbf{Pages}: Desplegar aplicaciones web - 500 despliegues mensuales, 100 dominios personalizados.
 	\item \textbf{Queues}: 1 millón de operaciones por mes.
 	\item \textbf{TURN}: 1TB de tráfico saliente por mes.
-	\item \textbf{Lista completa}: \url{https://www.cloudflare.com/plans/free/}
 \end{itemize}
 
 \subsection{Otras herramientas útiles}
@@ -238,13 +265,23 @@ También, aunque no son nubes propiamente dichas, hemos querido añadir en esta 
 \end{itemize}
 
 \subsubsection*{Open Data Editor}
-[TODO]  https://okfn.org/en/projects/open-data-editor/
+	Herramienta de código abierto \url{https://okfn.org/en/projects/open-data-editor/} diseñada para la gestión y publicación de datos abiertos. Desarrollada por la ``Open Knowledge Foundation'', facilita la creación, validación y limpieza de conjuntos de datos en formatos abiertos, con un enfoque en la usabilidad para usuarios no técnicos, para garantizar la calidad y accesibilidad de los datos públicos. Funcionalidades clave:
+	\begin{itemize}
+		\item Creación y edición tabular de datos.
+		\item Validación de esquemas y meta datos.
+		\item Integración con plataformas de datos abiertos (CKAN, S3, etc.).
+		\item Exportación a formatos estandarizados (CSV, JSON, XLSX).
+	\end{itemize}
 
 
 	\subsection{Trabajos anteriores}
 
+	La literatura referente a la computación en la nube es muy extensa, citare solamente algunos ejemplos, como es el caso del libro \textbf{``Cloud Computing Technology''} \citep{huawei2023cloud}, aunque su traducción al ingles no es excelente, agrupa todos los conceptos de el panorama cloud actual, así como los elementos que todas las nubes comparten entre si, y da un panorama de la situación cloud en china, lo cual amplia los horizontes del conocimiento cloud. También el trabajo de \citep{nigro2022}, que estudia las oportunidades, desafíos y antecedentes de la computación en la nube, o el trabajo de \citep{bommala2024}, que tiene un enfoque muy interesante, denominando al ecosistema ``cloud verse'' y enfocándose en las innovaciones de los últimos años (infraestructuras de nube híbrida, modelos de computación sin servidor o ``serverless'', ``edge computing'', integración de IA, etc.) con un interesante  enfoque en seguridad y cumplimiento de normativas, la integración de ``blockchain'' y el énfasis en la computación en la nube "verde" y sostenible . 
+
+	También querría destacar trabajos de compañeros como \textbf{``Optimización de infraestructuras de Cloud Computing basadas en máquinas virtuales''} \citep{sanchez2023optimizacion}, el cual hace una excelente labor de investigación de todo lo relacionado con la computación en la nube para predecir el consumo futuro de recursos en máquinas virtuales de Azure (con sus datos públicos), y así mejorar la eficiencia y la gestión de la infraestructura.
 
 \section{Inteligencia Artificial}
+\label{sec:EstudiosIA}
 
 [TODO]
 

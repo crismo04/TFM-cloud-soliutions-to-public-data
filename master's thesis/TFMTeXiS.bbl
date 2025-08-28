@@ -1,9 +1,14 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{83}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Akash()}]{akashCloud}
 {\sc Akash}.
 \newblock The decentralized cloud built for ai's next frontier.
+\newblock ????
+
+\bibitem[{Albert~Barron()}]{cloudPizza2014}
+{\sc Albert~Barron, t. p. C.~M.}
+\newblock Pizza as a service.
 \newblock ????
 
 \bibitem[{Amazon(2025)}]{AWSDataCommon}
@@ -45,6 +50,11 @@
 \newblock Creating the public in order to create public value?
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), Disponible en \url{https://doi.org/10.1080/01900690902749578}.
+
+\bibitem[{Bommala et\ al.(2024)}]{bommala2024}
+{\sc Bommala, H.} {\sc et\ al.}
+\newblock Cloud verse: mapping the new frontiers of cloud computing.
+\newblock vol. 392, p\'agina 01081, 2024.
 
 \bibitem[{BOZEMAN(2007)}]{bozeman2007public}
 {\sc BOZEMAN, B.}
@@ -105,6 +115,16 @@
 \newblock California consumer privacy act (ccpa).
 \newblock 2018.
 
+\bibitem[{{European commission}()}]{EuroDigitalStrategyEdge}
+{\sc {European commission}}.
+\newblock Cloud computing.
+\newblock ????
+
+\bibitem[{Eurostat()}]{EurostatCloudUsage}
+{\sc Eurostat}.
+\newblock Cloud computing services by size class of enterprise.
+\newblock ????
+
 \bibitem[{Ferrer-Sapena~A.(2011)}]{OperGovernment2011}
 {\sc Ferrer-Sapena~A., A.-B.~R., Peset~F.}
 \newblock Acceso a los datos públicos y su reutilización: Open data y open
@@ -135,6 +155,11 @@
 \newblock Subvenciones - jaime gómez-obregón.
 \newblock Disponible en
   \url{https://github.com/JaimeObregon/subvenciones/tree/main/files}.
+
+\bibitem[{{Gobierno de España}(2021)}]{GobEspana2021PlanDigitalizacion}
+{\sc {Gobierno de España}}.
+\newblock {\em Plan de Digitalización de las Administraciones Públicas
+  2021-2025\/}, 2021.
 
 \bibitem[{{Gobierno de España}(2025{\natexlab{a}})}]{EventosDatathonGOB}
 {\sc {Gobierno de España}}.
@@ -175,6 +200,13 @@
 \newblock Tesis inédita de la Universidad Complutense de Madrid, Facultad de
   Ciencias de la Información, leída el 08/05/2024.
 
+\bibitem[{{Huawei Technologies Co., Ltd.}(2023)}]{huawei2023cloud}
+{\sc {Huawei Technologies Co., Ltd.}}
+\newblock {\em Cloud Computing Technology\/}.
+\newblock Springer and Posts \& Telecom Press, Singapore and Beijing, 2023.
+\newblock ISBN 978-981-19-3026-3.
+\newblock Open access book.
+
 \bibitem[{{Insights + Analytics}(2024)}]{DatosMercadosEspanna}
 {\sc {Insights + Analytics}, E.}
 \newblock Datos para espaÑa y mundiales de investigaciÓn de mercados 2023.
@@ -203,11 +235,23 @@
 \newblock {\em International Journal of Engineering and Advanced Technology
   (IJEAT) Volume-9 Issue-1\/}, 2019.
 
+\bibitem[{Lisdorf(2021)}]{lisdorf2021cloud}
+{\sc Lisdorf, A.}
+\newblock {\em Cloud Computing Basics: A Non-Technical Introduction\/}.
+\newblock Apress, 2021.
+\newblock ISBN 978-1-4842-6921-3.
+\newblock Accessed: 2025-08-27.
+
 \bibitem[{LLamocca~Portela(2016)}]{LLamoccaPortela2016Integracion}
 {\sc LLamocca~Portela, P.}
 \newblock Integración y visualización de datos abiertos medioambientales.
 \newblock 2016.
 \newblock Máster en Ingeniería Informática, curso 2015-2016.
+
+\bibitem[{{Market report analytics}()}]{EspannaCloudGroeth2033}
+{\sc {Market report analytics}}.
+\newblock Spain cloud computing market market’s growth blueprint.
+\newblock ????
 
 \bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
 {\sc Matheus, R.} y {\sc Janssen, M.}
@@ -231,10 +275,21 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), p\'aginas 192--219, 2009.
 
+\bibitem[{Microsoft()}]{MicrosoftCloudTerminology}
+{\sc Microsoft}.
+\newblock Cloud computing terminology.
+\newblock ????
+
 \bibitem[{Moore(1995)}]{moore1995creating}
 {\sc Moore, M.}
 \newblock Creating public value: Strategic management in government.
 \newblock 1995.
+
+\bibitem[{Nigro(2022)}]{nigro2022}
+{\sc Nigro, H.}
+\newblock Cloud computing: Retos y oportunidades.
+\newblock {\em Rev. Ingeniería, Matemáticas y Ciencias de la Información\/},
+  vol.\ 9(18), p\'aginas 11--16, 2022.
 
 \bibitem[{Nijssen(2022)}]{UseCaseObservatory2024V2}
 {\sc Nijssen, D.}
@@ -272,6 +327,14 @@
 \newblock Big data statistics 2025 by patterns in the dimensions.
 \newblock Disponible en \url{https://scoop.market.us/big-data-statistics/}.
 
+\bibitem[{Sánchez~de Paz(2023)}]{sanchez2023optimizacion}
+{\sc Sánchez~de Paz, M.}
+\newblock Optimización de infraestructuras de cloud computing basadas en
+  máquinas virtuales.
+\newblock 2023.
+\newblock Trabajo de Fin de Máster en Ingeniería Informática, Curso
+  2022/2023.
+
 \bibitem[{{Portal Europeo de Datos}(2025)}]{dataEuropaOpenData}
 {\sc {Portal Europeo de Datos}}.
 \newblock ¿qué son los datos abiertos?
@@ -295,6 +358,12 @@
   p\'aginas 1--16, 2017.
 \newblock Copyright - Copyright Consejo Superior de Investigaciones
   Científicas Jul/Sep 2017; Última actualización - 2017-10-04.
+
+\bibitem[{Ray(2018)}]{DewComputing2018}
+{\sc Ray, P.~P.}
+\newblock An introduction to dew computing: Definition, concept and
+  implications.
+\newblock {\em IEEE Access\/}, vol.\ 6, p\'aginas 723--737, 2018.
 
 \bibitem[{{Registradores de España}(2025)}]{PortalRegistradores}
 {\sc {Registradores de España}}.
@@ -339,6 +408,11 @@
 \newblock Big data - statistics and facts.
 \newblock Disponible en
   \url{https://www.statista.com/topics/1464/big-data/#topicOverview}.
+
+\bibitem[{Telefónica()}]{TelefonicaTechCloudPlatform}
+{\sc Telefónica}.
+\newblock Telefónica tech cloud platform.
+\newblock ????
 
 \bibitem[{Soledad De~la Torre(2023)}]{TransparenciaEcuador}
 {\sc Soledad De~la Torre, S.~N.}
@@ -410,11 +484,5 @@
 {\sc Wikipedia}.
 \newblock Information age.
 \newblock Disponible en \url{https://en.wikipedia.org/wiki/Information_Age}.
-
-\bibitem[{{Wikipedia contributors}(2025)}]{enwiki_1278525134}
-{\sc {Wikipedia contributors}}.
-\newblock Dew computing --- {Wikipedia}.
-\newblock 2025.
-\newblock [Online; accessed 27-August-2025].
 
 \end{thebibliography}

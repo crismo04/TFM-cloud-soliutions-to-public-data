@@ -43,7 +43,9 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
+Warning--I didn't find a database entry for ""
 Warning--empty year in akashCloud; set to ????
+Warning--empty year in cloudPizza2014; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry AWSDataCommon
@@ -59,6 +61,7 @@ ptr=1, stack=
 2009
 ---the literal stack isn't empty for entry Benington19032009
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in bommala2024
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry DatosGeneralesCNMC
@@ -72,6 +75,8 @@ ptr=1, stack=
 ---the literal stack isn't empty for entry PlanttesDataAPP
 while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty year in 12Botnets; set to ????
+Warning--empty year in EuroDigitalStrategyEdge; set to ????
+Warning--empty year in EurostatCloudUsage; set to ????
 ptr=1, stack=
 2025{\natexlab{a}}
 ---the literal stack isn't empty for entry JaimeGomezObregon
@@ -104,7 +109,9 @@ ptr=1, stack=
 ---the literal stack isn't empty for entry DatosMercadosEspanna
 while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in LLamoccaPortela2016Integracion
+Warning--empty year in EspannaCloudGroeth2033; set to ????
 Warning--empty journal in MelendrezMoreto2016Auditoria
+Warning--empty year in MicrosoftCloudTerminology; set to ????
 Warning--empty journal in moore1995creating
 Warning--empty year in Open_Data_Charter; set to ????
 ptr=1, stack=
@@ -115,6 +122,7 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry BigDataStadisticsMarket
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in sanchez2023optimizacion
 ptr=1, stack=
 2013
 ---the literal stack isn't empty for entry HistoryOfBigData
@@ -130,6 +138,7 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry BigDataStatista
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in TelefonicaTechCloudPlatform; set to ????
 Warning--there's a number but no volume in TransparenciaEcuador
 ptr=1, stack=
 2016
@@ -159,45 +168,45 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry wikiInformationAge
 while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 71 entries,
+You've used 83 entries,
             2962 wiz_defined-function locations,
-            1456 strings with 23669 characters,
-and the built_in function-call counts, 30324 in all, are:
-= -- 2512
-> -- 838
-< -- 82
-+ -- 352
-- -- 261
-* -- 1653
-:= -- 4941
-add.period$ -- 222
-call.type$ -- 71
-change.case$ -- 447
-chr.to.int$ -- 65
-cite$ -- 87
-duplicate$ -- 2562
-empty$ -- 2310
-format.name$ -- 356
-if$ -- 5922
+            1520 strings with 25313 characters,
+and the built_in function-call counts, 35714 in all, are:
+= -- 2960
+> -- 966
+< -- 100
++ -- 405
+- -- 300
+* -- 1942
+:= -- 5789
+add.period$ -- 261
+call.type$ -- 83
+change.case$ -- 518
+chr.to.int$ -- 77
+cite$ -- 107
+duplicate$ -- 3016
+empty$ -- 2739
+format.name$ -- 410
+if$ -- 7005
 int.to.chr$ -- 7
 int.to.str$ -- 1
-missing$ -- 490
-newline$ -- 368
-num.names$ -- 284
-pop$ -- 1181
+missing$ -- 578
+newline$ -- 431
+num.names$ -- 332
+pop$ -- 1398
 preamble$ -- 1
-purify$ -- 371
+purify$ -- 431
 quote$ -- 0
-skip$ -- 1083
+skip$ -- 1278
 stack$ -- 0
-substring$ -- 1008
-swap$ -- 1052
-text.length$ -- 15
+substring$ -- 1219
+swap$ -- 1247
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 704
-warning$ -- 16
-while$ -- 232
+type$ -- 818
+warning$ -- 24
+while$ -- 274
 width$ -- 0
-write$ -- 830
+write$ -- 976
 (There were 25 error messages)
