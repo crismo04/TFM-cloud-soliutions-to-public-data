@@ -1,4 +1,4 @@
-\begin{thebibliography}{83}
+\begin{thebibliography}{97}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Akash()}]{akashCloud}
@@ -51,6 +51,11 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), Disponible en \url{https://doi.org/10.1080/01900690902749578}.
 
+\bibitem[{Bobrov(2025)}]{MedallionMedium}
+{\sc Bobrov, K.}
+\newblock Data engineering: Now with 30% more bull****.
+\newblock 2025.
+
 \bibitem[{Bommala et\ al.(2024)}]{bommala2024}
 {\sc Bommala, H.} {\sc et\ al.}
 \newblock Cloud verse: mapping the new frontiers of cloud computing.
@@ -67,6 +72,11 @@
 {\sc Brown, B.}, {\sc Chui, M.} y {\sc Manyika, J.}
 \newblock Are you ready for the era of 'big data'.
 \newblock {\em McKinsey Quarterly\/}, vol.\ 4(1), p\'aginas 24--35, 2011.
+
+\bibitem[{clouding.io()}]{cloudingIO}
+{\sc clouding.io}.
+\newblock clouding.io, infraestructura cloud a tu servicio.
+\newblock ????
 
 \bibitem[{CNMC(2025)}]{DatosGeneralesCNMC}
 {\sc CNMC}.
@@ -115,10 +125,28 @@
 \newblock California consumer privacy act (ccpa).
 \newblock 2018.
 
-\bibitem[{{European commission}()}]{EuroDigitalStrategyEdge}
-{\sc {European commission}}.
+\bibitem[{{European Commission}({\natexlab{a}})}]{EuroDigitalStrategyEdge}
+{\sc {European Commission}}.
 \newblock Cloud computing.
-\newblock ????
+\newblock ????{\natexlab{a}}.
+
+\bibitem[{{European Commission}({\natexlab{b}})}]{BDTIEuropeProject}
+{\sc {European Commission}}.
+\newblock From hype to action using the big data test infrastructure (bdti).
+\newblock ????{\natexlab{b}}.
+
+\bibitem[{{European Commission}({\natexlab{c}})}]{SIMPLEuropeProject}
+{\sc {European Commission}}.
+\newblock Simpl: Cloud-to-edge federations empowering eu data spaces.
+\newblock ????{\natexlab{c}}.
+
+\bibitem[{{European Parliament}(2022)}]{EU_DGA_2022}
+{\sc {European Parliament}, C.}
+\newblock Regulation (eu) 2022/868 of the european parliament and of the
+  council of 30 may 2022 on european data governance and amending regulation
+  (eu) 2018/1724 (data governance act).
+\newblock Official Journal of the European Union, L 152, pp. 1-44, 2022.
+\newblock Accessed: 28 August 2025.
 
 \bibitem[{Eurostat()}]{EurostatCloudUsage}
 {\sc Eurostat}.
@@ -131,12 +159,22 @@
   government.
 \newblock {\em El Profesional de la Información\/}, p\'aginas 260--269, 2011.
 
+\bibitem[{Gigas()}]{gigasCloud}
+{\sc Gigas}.
+\newblock Gigas - cloud hosting solutions.
+\newblock ????
+
 \bibitem[{Giulia~Carsaniga(2022)}]{UseCaseObservatory2022V1}
 {\sc Giulia~Carsaniga, D.~R., Jochem~Dogger}.
 \newblock The use case observatory a 3-year monitoring of 30 reuse cases to
   understand the economic, governmental, social and environmental impact of
   open data volume i.
 \newblock {\em Publications Office of the European Union\/}, 2022.
+
+\bibitem[{GmbH()}]{nextcloudCloud}
+{\sc GmbH, N.}
+\newblock Nextcloud - your own private cloud.
+\newblock ????
 
 \bibitem[{Gómez-Obregón(2025{\natexlab{a}})}]{JaimeGomezObregon}
 {\sc Gómez-Obregón, J.}
@@ -156,10 +194,22 @@
 \newblock Disponible en
   \url{https://github.com/JaimeObregon/subvenciones/tree/main/files}.
 
-\bibitem[{{Gobierno de España}(2021)}]{GobEspana2021PlanDigitalizacion}
+\bibitem[{{Gobierno de España}()}]{InfoNubeSARA}
 {\sc {Gobierno de España}}.
-\newblock {\em Plan de Digitalización de las Administraciones Públicas
-  2021-2025\/}, 2021.
+\newblock Nubesara.
+\newblock ????
+
+\bibitem[{{Gobierno de España}(2021{\natexlab{a}})}]{GobEspana2021BDTI}
+{\sc {Gobierno de España}}.
+\newblock Big data test infrastructure: Un entorno gratuito para que las aa.pp
+  experimenten con sus datos abiertos.
+\newblock 2021{\natexlab{a}}.
+
+\bibitem[{{Gobierno de
+  España}(2021{\natexlab{b}})}]{GobEspana2021PlanDigitalizacion}
+{\sc {Gobierno de España}}.
+\newblock Plan de digitalización de las administraciones públicas 2021-2025.
+\newblock 2021{\natexlab{b}}.
 
 \bibitem[{{Gobierno de España}(2025{\natexlab{a}})}]{EventosDatathonGOB}
 {\sc {Gobierno de España}}.
@@ -275,10 +325,15 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), p\'aginas 192--219, 2009.
 
-\bibitem[{Microsoft()}]{MicrosoftCloudTerminology}
+\bibitem[{Microsoft({\natexlab{a}})}]{MicrosoftCloudTerminology}
 {\sc Microsoft}.
 \newblock Cloud computing terminology.
-\newblock ????
+\newblock ????{\natexlab{a}}.
+
+\bibitem[{Microsoft({\natexlab{b}})}]{MedallionMicrosoft}
+{\sc Microsoft}.
+\newblock What is the medallion lakehouse architecture?
+\newblock ????{\natexlab{b}}.
 
 \bibitem[{Moore(1995)}]{moore1995creating}
 {\sc Moore, M.}
@@ -305,6 +360,11 @@
 \newblock {\em Proceedings of the 19th International Conference on World Wide
   Web, WWW '10\/}, p\'aginas 741--750, 2010.
 
+\bibitem[{{OECD}(2019)}]{OECD2019}
+{\sc {OECD}}.
+\newblock {\em The Path to Becoming a Data-Driven Public Sector\/}.
+\newblock OECD Digital Government Studies. OECD Publishing, 2019.
+
 \bibitem[{OECD(2023)}]{OECD2023openData}
 {\sc OECD}.
 \newblock 2023 oecd open, useful and re-usable data 'ourdata' index: Results
@@ -321,6 +381,11 @@
 {\sc {Open Knowledge Foundation}}.
 \newblock Open definition.
 \newblock Disponible en \url{https://opendefinition.org/}.
+
+\bibitem[{OVHCloud()}]{OVHCloudFree}
+{\sc OVHCloud}.
+\newblock Public cloud free trial ovhcloud.
+\newblock ????
 
 \bibitem[{Pangarkar(2025)}]{BigDataStadisticsMarket}
 {\sc Pangarkar, T.}
@@ -339,6 +404,11 @@
 {\sc {Portal Europeo de Datos}}.
 \newblock ¿qué son los datos abiertos?
 \newblock 2025.
+
+\bibitem[{PreparaTIC()}]{InfoPreparaTICNubeSARA}
+{\sc PreparaTIC}.
+\newblock Servicio nubesara. casos prÁcticos y ejemplos de aplicaciÓn.
+\newblock ????
 
 \bibitem[{Press(2013)}]{HistoryOfBigData}
 {\sc Press, G.}
@@ -413,6 +483,18 @@
 {\sc Telefónica}.
 \newblock Telefónica tech cloud platform.
 \newblock ????
+
+\bibitem[{Theodorakopoulos~Leonidas(2024)}]{DataManagement2024Theodorakopoulos}
+{\sc Theodorakopoulos~Leonidas, S.~Y., Theodoropoulou~Alexandra}.
+\newblock A state-of-the-art review in big data management engineering:
+  Real-life case studies, challenges, and future research directions.
+\newblock {\em Eng\/}, vol.\ 5(3), p\'agina 1266, 2024.
+\newblock Copyright - © 2024 by the authors. Licensee MDPI, Basel,
+  Switzerland. This article is an open access article distributed under the
+  terms and conditions of the Creative Commons Attribution (CC BY) license
+  (https://creativecommons.org/licenses/by/4.0/). Notwithstanding the ProQuest
+  Terms and Conditions, you may use this content in accordance with the terms
+  of the License; Última actualización - 2024-09-27.
 
 \bibitem[{Soledad De~la Torre(2023)}]{TransparenciaEcuador}
 {\sc Soledad De~la Torre, S.~N.}

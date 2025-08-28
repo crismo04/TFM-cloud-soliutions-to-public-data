@@ -43,7 +43,6 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
-Warning--I didn't find a database entry for ""
 Warning--empty year in akashCloud; set to ????
 Warning--empty year in cloudPizza2014; set to ????
 ptr=1, stack=
@@ -62,6 +61,7 @@ ptr=1, stack=
 ---the literal stack isn't empty for entry Benington19032009
 while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in bommala2024
+Warning--empty year in cloudingIO; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry DatosGeneralesCNMC
@@ -76,7 +76,11 @@ ptr=1, stack=
 while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty year in 12Botnets; set to ????
 Warning--empty year in EuroDigitalStrategyEdge; set to ????
+Warning--empty year in BDTIEuropeProject; set to ????
+Warning--empty year in SIMPLEuropeProject; set to ????
 Warning--empty year in EurostatCloudUsage; set to ????
+Warning--empty year in gigasCloud; set to ????
+Warning--empty year in nextcloudCloud; set to ????
 ptr=1, stack=
 2025{\natexlab{a}}
 ---the literal stack isn't empty for entry JaimeGomezObregon
@@ -89,6 +93,7 @@ ptr=1, stack=
 2025{\natexlab{c}}
 ---the literal stack isn't empty for entry JaimeGomezObregonSubvenciones
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in InfoNubeSARA; set to ????
 ptr=1, stack=
 2025{\natexlab{a}}
 ---the literal stack isn't empty for entry EventosDatathonGOB
@@ -112,17 +117,20 @@ Warning--empty journal in LLamoccaPortela2016Integracion
 Warning--empty year in EspannaCloudGroeth2033; set to ????
 Warning--empty journal in MelendrezMoreto2016Auditoria
 Warning--empty year in MicrosoftCloudTerminology; set to ????
+Warning--empty year in MedallionMicrosoft; set to ????
 Warning--empty journal in moore1995creating
 Warning--empty year in Open_Data_Charter; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry OpenKnowledgeFoundation
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in OVHCloudFree; set to ????
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry BigDataStadisticsMarket
 while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in sanchez2023optimizacion
+Warning--empty year in InfoPreparaTICNubeSARA; set to ????
 ptr=1, stack=
 2013
 ---the literal stack isn't empty for entry HistoryOfBigData
@@ -168,45 +176,45 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry wikiInformationAge
 while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 83 entries,
+You've used 97 entries,
             2962 wiz_defined-function locations,
-            1520 strings with 25313 characters,
-and the built_in function-call counts, 35714 in all, are:
-= -- 2960
-> -- 966
-< -- 100
-+ -- 405
-- -- 300
-* -- 1942
-:= -- 5789
-add.period$ -- 261
-call.type$ -- 83
-change.case$ -- 518
-chr.to.int$ -- 77
-cite$ -- 107
-duplicate$ -- 3016
-empty$ -- 2739
-format.name$ -- 410
-if$ -- 7005
-int.to.chr$ -- 7
+            1581 strings with 27402 characters,
+and the built_in function-call counts, 41097 in all, are:
+= -- 3427
+> -- 1106
+< -- 116
++ -- 469
+- -- 342
+* -- 2220
+:= -- 6713
+add.period$ -- 307
+call.type$ -- 97
+change.case$ -- 604
+chr.to.int$ -- 87
+cite$ -- 130
+duplicate$ -- 3440
+empty$ -- 3132
+format.name$ -- 466
+if$ -- 8042
+int.to.chr$ -- 11
 int.to.str$ -- 1
-missing$ -- 578
-newline$ -- 431
-num.names$ -- 332
-pop$ -- 1398
+missing$ -- 658
+newline$ -- 504
+num.names$ -- 388
+pop$ -- 1622
 preamble$ -- 1
-purify$ -- 431
+purify$ -- 501
 quote$ -- 0
-skip$ -- 1278
+skip$ -- 1440
 stack$ -- 0
-substring$ -- 1219
-swap$ -- 1247
-text.length$ -- 21
+substring$ -- 1401
+swap$ -- 1403
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 818
-warning$ -- 24
-while$ -- 274
+type$ -- 955
+warning$ -- 33
+while$ -- 318
 width$ -- 0
-write$ -- 976
+write$ -- 1140
 (There were 25 error messages)
