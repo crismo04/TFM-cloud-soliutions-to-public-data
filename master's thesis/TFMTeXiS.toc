@@ -40,11 +40,11 @@
 \contentsline {chapter}{\numberline {6}Conclusions and Future Work}{35}{chapter.53}%
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {A}Definiciones y acrónimos}{37}{appendix.54}%
-\contentsline {subsection}{\numberline {A.0.1}Definiciones}{37}{subsection.55}%
-\contentsline {subsubsection}{\numberline {A.0.1.1}Referente a datos}{37}{subsubsection.56}%
-\contentsline {subsubsection}{\numberline {A.0.1.2}Referente a Cloud}{42}{subsubsection.67}%
-\contentsline {subsubsection}{\numberline {A.0.1.3}Referente a Inteligencia Artificial}{47}{subsubsection.73}%
-\contentsline {subsection}{\numberline {A.0.2}Acrónimos}{48}{subsection.74}%
+\contentsline {section}{\numberline {A.1}Definiciones}{37}{section.55}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{37}{subsection.56}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{42}{subsection.67}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{47}{subsection.73}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{48}{section.74}%
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {B}Manual de usuario y casos de uso}{51}{appendix.75}%
 \contentsline {chapter}{Bibliograf\'{\i }a}{53}{appendix*.76}%
