@@ -7,7 +7,7 @@
 
 ]
 
-En este capítulo vamos a describir el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas, incluso algunos de los valorados en la sección \ref{cap:estadoDeLaCuestion}, pero descartados, así como los motivos para ello. También se definirán los métodos de desarrollo y modelo de trabajo.
+En este capítulo vamos a describir el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas, incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión}, pero descartados, así como los motivos para ello. También se definirán los métodos de desarrollo y modelo de trabajo. \\
 
 
 \section{Métodos}
@@ -26,7 +26,7 @@ Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en 
 
 \subsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
 
-Como ya hemos definido en la sección \ref{sec:EstudiosDatosGobernanza}, La gobernanza de datos en este proyecto se implementará adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo es garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se realice de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, si que me gustaría adaptarlas a mi trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
+Como ya hemos definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementará adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo es garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se realice de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, si que me gustaría adaptarlas a mi trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
 
 \subsubsection*{1. Capa Estratégica: Liderazgo y Visión}
 
@@ -64,7 +64,7 @@ Esta última capa, corresponde a la implementación práctica de la estrategia, 
 	\item \textbf{Arquitectura de datos y ciclo de valor:} Se diseñará un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubra todo el ciclo de vida del dato: 
 	\begin{itemize}
 		\item \textbf{Adquisición:} Descarga de conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso. 
-		\item \textbf{Almacenamiento y gestión:} Organización en buckets con estructura clara siguiendo la arquitectura de medalla [D \ref{def11}]. Este enfoque facilita la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery.
+		\item \textbf{Almacenamiento y gestión:} Organización en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilita la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery.
 		\item \textbf{Procesamiento y transformación:} Limpieza, anonimización y feature engineering en entornos gestionados como Dataflow o Vertex AI Workbench. Se mantendrá un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
 		\item \textbf{Uso/compartición:} uso de diversas técnicas de IA para la identificación de patrones en los datos, incluyendo \textit{encoders} para la representación eficiente de datos complejos, algoritmos de \textit{k-Nearest Neighbors (k-NN)} para clasificación o regresión basados en similitud, o incluso la aplicación de modelos de \textit{IA generativa} para explorar la estructura subyacente de los datos o aportar perspectivas. Publicación de resultados bajo licencias abiertas, priorizando la transparencia.
 	\end{itemize}
