@@ -43,6 +43,10 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
+Repeated entry---line 523 of file biblio.bib
+ : @article{Campbell2002DeepBlue
+ :                              ,
+I'm skipping whatever remains of this entry
 Warning--empty year in akashCloud; set to ????
 Warning--empty year in cloudPizza2014; set to ????
 ptr=1, stack=
@@ -60,7 +64,9 @@ ptr=1, stack=
 2009
 ---the literal stack isn't empty for entry Benington19032009
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty year in Bit2BrainHistoriaIA; set to ????
 Warning--empty journal in bommala2024
+Warning--empty journal in Cheok2023AIHistory
 Warning--empty year in cloudingIO; set to ????
 ptr=1, stack=
 2025
@@ -113,12 +119,15 @@ ptr=1, stack=
 2024
 ---the literal stack isn't empty for entry DatosMercadosEspanna
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in OpenNebula2014Kumar
 Warning--empty journal in LLamoccaPortela2016Integracion
 Warning--empty year in EspannaCloudGroeth2033; set to ????
 Warning--empty journal in MelendrezMoreto2016Auditoria
+Warning--empty journal in Meneses2023Madrid
 Warning--empty year in MicrosoftCloudTerminology; set to ????
 Warning--empty year in MedallionMicrosoft; set to ????
 Warning--empty journal in moore1995creating
+Warning--empty journal in ontsi2025indicadores
 Warning--empty year in Open_Data_Charter; set to ????
 ptr=1, stack=
 2025
@@ -141,6 +150,7 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry free-for-dev
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in SaizSantos2023
 Warning--empty year in SONMWhitepaper; set to ????
 ptr=1, stack=
 2025
@@ -172,49 +182,52 @@ ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry UniversiDATA
 while executing---line 1842 of file TeXiS/TeXiS.bst
+Warning--empty journal in vaswani2017attention
+Warning--empty journal in PrivateIaaSComparative2016
+Warning--empty journal in Werbos1974Backpropagation
 ptr=1, stack=
 2025
 ---the literal stack isn't empty for entry wikiInformationAge
 while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 97 entries,
+You've used 113 entries,
             2962 wiz_defined-function locations,
-            1581 strings with 27402 characters,
-and the built_in function-call counts, 41097 in all, are:
-= -- 3427
-> -- 1106
-< -- 116
-+ -- 469
-- -- 342
-* -- 2220
-:= -- 6713
-add.period$ -- 307
-call.type$ -- 97
-change.case$ -- 604
-chr.to.int$ -- 87
-cite$ -- 130
-duplicate$ -- 3440
-empty$ -- 3132
-format.name$ -- 466
-if$ -- 8042
-int.to.chr$ -- 11
+            1681 strings with 31125 characters,
+and the built_in function-call counts, 50830 in all, are:
+= -- 4191
+> -- 1482
+< -- 136
++ -- 619
+- -- 471
+* -- 2916
+:= -- 8139
+add.period$ -- 361
+call.type$ -- 113
+change.case$ -- 731
+chr.to.int$ -- 102
+cite$ -- 155
+duplicate$ -- 4238
+empty$ -- 3827
+format.name$ -- 633
+if$ -- 9961
+int.to.chr$ -- 12
 int.to.str$ -- 1
-missing$ -- 658
-newline$ -- 504
-num.names$ -- 388
-pop$ -- 1622
+missing$ -- 819
+newline$ -- 590
+num.names$ -- 452
+pop$ -- 1997
 preamble$ -- 1
-purify$ -- 501
+purify$ -- 608
 quote$ -- 0
-skip$ -- 1440
+skip$ -- 1754
 stack$ -- 0
-substring$ -- 1401
-swap$ -- 1403
-text.length$ -- 23
+substring$ -- 1789
+swap$ -- 1819
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 955
-warning$ -- 33
-while$ -- 318
+type$ -- 1115
+warning$ -- 42
+while$ -- 382
 width$ -- 0
-write$ -- 1140
-(There were 25 error messages)
+write$ -- 1340
+(There were 26 error messages)

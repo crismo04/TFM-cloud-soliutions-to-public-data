@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{113}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Akash()}]{akashCloud}
@@ -45,11 +45,23 @@
 \newblock Portal de datos abiertos del ayuntamiento de madrid.
 \newblock 2025.
 
+\bibitem[{Bengio et\ al.(2003)Bengio, Ducharme, Vincent y
+  Jauvin}]{bengio2003neural}
+{\sc Bengio, Y.}, {\sc Ducharme, R.}, {\sc Vincent, P.} y {\sc Jauvin, C.}
+\newblock A neural probabilistic language model.
+\newblock {\em Journal of Machine Learning Research\/}, vol.\ 3(Feb), p\'aginas
+  1137--1155, 2003.
+
 \bibitem[{Benington(2009)}]{Benington19032009}
 {\sc Benington, J.}
 \newblock Creating the public in order to create public value?
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), Disponible en \url{https://doi.org/10.1080/01900690902749578}.
+
+\bibitem[{{bit2brain}()}]{Bit2BrainHistoriaIA}
+{\sc {bit2brain}}.
+\newblock {Historia de la IA Inteligencia Artificial}.
+\newblock ????
 
 \bibitem[{Bobrov(2025)}]{MedallionMedium}
 {\sc Bobrov, K.}
@@ -72,6 +84,19 @@
 {\sc Brown, B.}, {\sc Chui, M.} y {\sc Manyika, J.}
 \newblock Are you ready for the era of 'big data'.
 \newblock {\em McKinsey Quarterly\/}, vol.\ 4(1), p\'aginas 24--35, 2011.
+
+\bibitem[{Campbell et\ al.(2002)Campbell, Hoane~Jr. y
+  Hsu}]{Campbell2002DeepBlue}
+{\sc Campbell, M.}, {\sc Hoane~Jr., A.~J.} y {\sc Hsu, F.-h.}
+\newblock {Deep Blue}.
+\newblock {\em {Artificial Intelligence}\/}, vol. 134(1-2), p\'aginas 57--83,
+  2002.
+
+\bibitem[{Cheok y Zhang(2023)}]{Cheok2023AIHistory}
+{\sc Cheok, A.} y {\sc Zhang, E.}
+\newblock From turing to transformers: A comprehensive review and tutorial on
+  the evolution and applications of generative transformer models.
+\newblock 2023.
 
 \bibitem[{clouding.io()}]{cloudingIO}
 {\sc clouding.io}.
@@ -242,6 +267,18 @@
 \newblock Amplía la infraestructura y la ia de google cloud on-premise.
 \newblock ????
 
+\bibitem[{{Google Trends}(2025)}]{TrendsGoogleIA2025}
+{\sc {Google Trends}}.
+\newblock Google trends artificial intelligence.
+\newblock 2025.
+\newblock Se puede observar un pico en 2011, posiblemente por la salida de
+  Siri, y la tendencia creciente desde 2022 debido a chatGPT. Las cifras
+  representan el interés de búsqueda en relación con el punto más alto del
+  gráfico para la región y el momento determinados. Un valor de 100 es el
+  pico de popularidad del término. Un valor de 50 significa que el término es
+  la mitad de popular. Una puntuación de 0 significa que no había datos
+  suficientes para este término.
+
 \bibitem[{Herrera~Capriz(2024)}]{HerreraCapriz2024}
 {\sc Herrera~Capriz, M.~E.}
 \newblock El valor intangible de la transparencia: un análisis de los datos
@@ -285,6 +322,12 @@
 \newblock {\em International Journal of Engineering and Advanced Technology
   (IJEAT) Volume-9 Issue-1\/}, 2019.
 
+\bibitem[{Kumar et\ al.(2014)Kumar, Adwani, Kumawat y
+  Jangir}]{OpenNebula2014Kumar}
+{\sc Kumar, R.}, {\sc Adwani, L.}, {\sc Kumawat, S.} y {\sc Jangir, S.~K.}
+\newblock Opennebula: Open source {IaaS} cloud computing software platforms.
+\newblock 2014.
+
 \bibitem[{Lisdorf(2021)}]{lisdorf2021cloud}
 {\sc Lisdorf, A.}
 \newblock {\em Cloud Computing Basics: A Non-Technical Introduction\/}.
@@ -319,6 +362,12 @@
   gran compilacion de datasets, conceptos interesantes como cinco estrellas del
   Open Data, manual de CKAN.
 
+\bibitem[{Meneses~Vicente y García~Ruíz(2023)}]{Meneses2023Madrid}
+{\sc Meneses~Vicente, G.} y {\sc García~Ruíz, J.~F.}
+\newblock Madrid, isla de calor.
+\newblock 2023.
+\newblock Trabajo de Fin de Master en Ingeniería Informática.
+
 \bibitem[{Meynhardt(2009)}]{Meynhardt19032009}
 {\sc Meynhardt, T.}
 \newblock Public value inside: What is public value creation?
@@ -340,6 +389,15 @@
 \newblock Creating public value: Strategic management in government.
 \newblock 1995.
 
+\bibitem[{Mosqueira-Rey et\ al.(2023)Mosqueira-Rey, Hernández-Pereira,
+  Alonso-Ríos, Bobes-Bascarán y Ángel Fernández-Leal}]{MosqueiraRey2023}
+{\sc Mosqueira-Rey, E.}, {\sc Hernández-Pereira, E.}, {\sc Alonso-Ríos, D.},
+  {\sc Bobes-Bascarán, J.} y {\sc Ángel Fernández-Leal}.
+\newblock Human-in-the-loop machine learning: a state of the art.
+\newblock {\em Artificial Intelligence Review\/}, vol.\ 56(4), p\'aginas
+  3005--3054, 2023.
+\newblock ISSN 1573-7462.
+
 \bibitem[{Nigro(2022)}]{nigro2022}
 {\sc Nigro, H.}
 \newblock Cloud computing: Retos y oportunidades.
@@ -359,6 +417,14 @@
   to community-based scientific research.
 \newblock {\em Proceedings of the 19th International Conference on World Wide
   Web, WWW '10\/}, p\'aginas 741--750, 2010.
+
+\bibitem[{{Observatorio Nacional de Tecnología y
+  Sociedad}(2025)}]{ontsi2025indicadores}
+{\sc {Observatorio Nacional de Tecnología y Sociedad}}.
+\newblock Indicadores de uso de inteligencia artificial en las empresas
+  españolas. edición 2025 - datos 2024.
+\newblock 2025.
+\newblock NIPO: 230250053, DOI: 10.30923/230250053.
 
 \bibitem[{{OECD}(2019)}]{OECD2019}
 {\sc {OECD}}.
@@ -450,6 +516,26 @@
 \newblock Free for devs.
 \newblock Disponible en \url{https://github.com/ripienaar/free-for-dev}.
 
+\bibitem[{Rosenblatt(1958)}]{rosenblatt1958perceptron}
+{\sc Rosenblatt, F.}
+\newblock The perceptron: A probabilistic model for information storage and
+  organization in the brain.
+\newblock {\em Psychological Review\/}, vol.\ 65(6), p\'aginas 386--408, 1958.
+
+\bibitem[{Santos(2023)}]{SaizSantos2023}
+{\sc Santos, J.~S.}
+\newblock Análisis de datos de la ciudad de madrid.
+\newblock 2023.
+\newblock Trabajo de Fin de Grado en Ingeniería Informática.
+
+\bibitem[{Sapkota et\ al.(2025)Sapkota, Roumeliotis y
+  Karkee}]{Sapkota2025Agentic}
+{\sc Sapkota, R.}, {\sc Roumeliotis, K.~I.} y {\sc Karkee, M.}
+\newblock Ai agents vs. agentic ai: A conceptual taxonomy, applications and
+  challenges.
+\newblock {\em Information Fusion\/}, vol. 126, 2025.
+\newblock ISSN 1566-2535.
+
 \bibitem[{{SONM}()}]{SONMWhitepaper}
 {\sc {SONM}}.
 \newblock Sonm whitepaper.
@@ -520,10 +606,15 @@
 \newblock Reglamento de inteligencia artificial.
 \newblock Disponible en \url{https://eur-lex.europa.eu/eli/reg/2024/1689}.
 
-\bibitem[{{Union Europea}(2025)}]{PortalDatosEuropa}
+\bibitem[{{Union Europea}(2025{\natexlab{a}})}]{EuropeanAlternatives}
+{\sc {Union Europea}}.
+\newblock European alternatives for popular services.
+\newblock 2025{\natexlab{a}}.
+
+\bibitem[{{Union Europea}(2025{\natexlab{b}})}]{PortalDatosEuropa}
 {\sc {Union Europea}}.
 \newblock Portal de datos abiertos.
-\newblock 2025.
+\newblock 2025{\natexlab{b}}.
 
 \bibitem[{UniversiDATA(2020)}]{UniversiDATAAnalisis}
 {\sc UniversiDATA}.
@@ -552,6 +643,14 @@
   opportunities and standards.
 \newblock {\em IEEE Communications Standards Magazine\/}, 2018.
 
+\bibitem[{Vaswani et\ al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+  Gomez, Kaiser y Polosukhin}]{vaswani2017attention}
+{\sc Vaswani, A.}, {\sc Shazeer, N.}, {\sc Parmar, N.}, {\sc Uszkoreit, J.},
+  {\sc Jones, L.}, {\sc Gomez, A.~N.}, {\sc Kaiser, {\L}.} y {\sc Polosukhin,
+  I.}
+\newblock Attention is all you need.
+\newblock p\'aginas 5998--6008, 2017.
+
 \bibitem[{Verhulst et\ al.(2020)Verhulst, Young, Zahuranec, Calderon, Gee y
   Aaronson}]{verhulst2020}
 {\sc Verhulst, S.}, {\sc Young, A.}, {\sc Zahuranec, A.}, {\sc Calderon, A.},
@@ -561,6 +660,20 @@
   community flourishing.
 \newblock {\em International Journal of Public Administration\/}, p\'agina\ 8,
   2020.
+
+\bibitem[{Vogel et\ al.(2016)Vogel, Griebler, Maron¹, Schepke y
+  Fernandes}]{PrivateIaaSComparative2016}
+{\sc Vogel, A.}, {\sc Griebler, D.}, {\sc Maron¹, C.}, {\sc Schepke, C.} y
+  {\sc Fernandes, L.}
+\newblock Private iaas clouds: A comparative analysis of opennebula, cloudstack
+  and openstack.
+\newblock p\'aginas 672--679, 2016.
+
+\bibitem[{Werbos(1974)}]{Werbos1974Backpropagation}
+{\sc Werbos, P.}
+\newblock Beyond regression: New tools for prediction and analysis in the
+  behavioral science. thesis (ph. d.). appl. math. harvard university.
+\newblock 1974.
 
 \bibitem[{Wikipedia(2025)}]{wikiInformationAge}
 {\sc Wikipedia}.
