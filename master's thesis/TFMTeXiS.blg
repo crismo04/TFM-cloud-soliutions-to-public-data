@@ -41,6 +41,7 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
+Warning--I didn't find a database entry for "Brownlee2018"
 Warning--empty journal in Anderson2004BOINC
 Warning--empty journal in Datathon2016Anslow
 Warning--empty journal in ArellanoBruno2019UsoDeGeolocalizacion
@@ -60,45 +61,45 @@ Warning--there's a number but no volume in TransparenciaEcuador
 Warning--empty journal in vaswani2017attention
 Warning--empty journal in PrivateIaaSComparative2016
 Warning--empty journal in Werbos1974Backpropagation
-You've used 124 entries,
+You've used 126 entries,
             2962 wiz_defined-function locations,
-            1718 strings with 33100 characters,
-and the built_in function-call counts, 60506 in all, are:
-= -- 4785
-> -- 2280
-< -- 149
-+ -- 926
-- -- 762
-* -- 3766
-:= -- 9678
-add.period$ -- 398
-call.type$ -- 124
-change.case$ -- 883
-chr.to.int$ -- 114
-cite$ -- 143
-duplicate$ -- 4869
-empty$ -- 4369
-format.name$ -- 943
-if$ -- 11777
-int.to.chr$ -- 11
+            1726 strings with 33287 characters,
+and the built_in function-call counts, 61281 in all, are:
+= -- 4846
+> -- 2300
+< -- 151
++ -- 935
+- -- 768
+* -- 3806
+:= -- 9809
+add.period$ -- 404
+call.type$ -- 126
+change.case$ -- 894
+chr.to.int$ -- 115
+cite$ -- 145
+duplicate$ -- 4933
+empty$ -- 4436
+format.name$ -- 951
+if$ -- 11930
+int.to.chr$ -- 12
 int.to.str$ -- 1
-missing$ -- 965
-newline$ -- 648
-num.names$ -- 496
-pop$ -- 2236
+missing$ -- 978
+newline$ -- 658
+num.names$ -- 504
+pop$ -- 2268
 preamble$ -- 1
-purify$ -- 749
+purify$ -- 759
 quote$ -- 0
-skip$ -- 2006
+skip$ -- 2033
 stack$ -- 0
-substring$ -- 2019
-swap$ -- 2231
+substring$ -- 2041
+swap$ -- 2254
 text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1219
+type$ -- 1236
 warning$ -- 19
-while$ -- 422
+while$ -- 428
 width$ -- 0
-write$ -- 1477
-(There were 19 warnings)
+write$ -- 1500
+(There were 20 warnings)

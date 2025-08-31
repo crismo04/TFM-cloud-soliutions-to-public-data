@@ -1,4 +1,4 @@
-\begin{thebibliography}{124}
+\begin{thebibliography}{126}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -95,11 +95,16 @@
   Implement Them From Scratch\/}.
 \newblock Machine Learning Mastery, 2016.
 
-\bibitem[{Brownlee(2024)}]{Jason2024MLTypes}
+\bibitem[{Brownlee(2024{\natexlab{a}})}]{Brownlee_2016_MLAFS}
+{\sc Brownlee, J.}
+\newblock {\em Machine Learning Algorithms From Scratch\/}.
+\newblock Machine Learning Mastery, 2024{\natexlab{a}}.
+
+\bibitem[{Brownlee(2024{\natexlab{b}})}]{Jason2024MLTypes}
 {\sc Brownlee, J.}
 \newblock A practical guide to choosing the right algorithm for your problem:
   From regression to neural networks.
-\newblock 2024.
+\newblock 2024{\natexlab{b}}.
 
 \bibitem[{Brownlee(s.f)}]{JasonMachinelearningmastery}
 {\sc Brownlee, J.}
@@ -765,5 +770,10 @@
 {\sc Wikipedia}.
 \newblock Information age.
 \newblock 2025.
+
+\bibitem[{Wikipedia(s.f)}]{MachineLearningMethodsList}
+{\sc Wikipedia}.
+\newblock listo of machine learning methods.
+\newblock s.f.
 
 \end{thebibliography}
