@@ -131,13 +131,12 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	
 	\item \textbf{``Data Governance ''} \label{def10} (Gobierno del Dato) se define como un marco integral de políticas, estrategias, estándares, roles y procesos que rigen toda la gestión del ciclo de vida completo de los datos (desde su creación y recopilación hasta su almacenamiento, procesamiento, uso, compartición, archivado y ,finalmente, eliminación) con el objetivo de garantizar su calidad, integridad, seguridad, accesibilidad, interoperabilidad y confiabilidad (\cite{HerreraCapriz2024}, pg 241). La OECD propone que un modelo de ``Data Governance '' exitoso integra tres capas: una capa estratégica (liderazgo y visión); una capa táctica (capacidades de implementación y normativa: comités, formación, directrices, etc.); y una capa de entrega o operativa (de infraestructura y arquitectura: estándares, catálogos de datos, ciclo de valor, etc.) \citep{OECD2019}.
 			
-	\begin{figure}[!tbp]
+	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[scale=0.3]{Imagenes/Bitmap/data_gobernance.png} 
 			\caption{Capas de gobierno del dato, fuente: \citep{OECD2019}.}
 		\end{center}
 	\end{figure}
-	
 	
 	\newpage
 	
@@ -151,7 +150,7 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	
 	En resumen, todo lo englobado a la computación distribuida que hemos comentado se puede ver en esta tabla:
 	
-	\begin{table}[!tbp]
+	\begin{table}[h]
 		\centering
 		\begin{tabular}{|p{0.15\textwidth}|p{0.55\textwidth}|p{0.30\textwidth}|}
 			\hline
@@ -189,7 +188,7 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 		
 		En la \hyperref[figura_A2]{Figura \ref*{figura_A2}} se pueden observar una tabla que simplifica todos estos modelos de cloud por servicio.
 		
-		\begin{figure}[!tbp]
+		\begin{figure}[h]
 			\begin{center}
 				\includegraphics[scale=0.5]{Imagenes/Bitmap/distintos_tipos_clouds.png} 
 				\caption{Distintos tipos de cloud, fuente: \citep{cloudPizza2014}.}
@@ -233,9 +232,16 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 		
 	\subsection{Referente a Inteligencia Artificial}
 		
-	\item La \textbf{``Historia de la Inteligencia Artificial''} \label{def12} se remonta a hace casi un siglo, con la ideas de matemáticos como Alan Turing
+	\item La \textbf{``Historia de la Inteligencia Artificial''} \label{def12} se remonta a hace casi un siglo, con la ideas de matemáticos como Alan Turing, que sentó las bases de la computación y propuso el primer test para evaluar inteligencia artificial \citep{Cheok2023AIHistory}. A partir de ese punto, no han parado de surgir avances en métodos matemáticos y algoritmos impulsando la búsqueda e implementación de modelos prácticos. Hitos como el desarrollo del perceptrón \citep{rosenblatt1958perceptron}, un modelo esencial para las redes neuronales; las cadenas de Markov, usadas como modelos estadísticos (Hidden Markov Model (HMM)); o el desarrollo del ``backpropagation'' que sentó las bases para que el entrenamiento de redes neuronales profundas fuera efectivo \citep{Werbos1974Backpropagation}. 
 	
-	Para que sea mas visual, me gustaría resumir todos los hitos que considero importantes en esta tabla:
+	Los avances, junto con el aumento de la computación siguiendo la ley de Moore, permitió el surgimiento y aumento de las redes neuronales recurrentes \citep{Hopfield1984RNN}, así como su uso para aplicaciones de procesamiento del lenguaje natural \citep{bengio2003neural}. Otro punto de inflexión lo puso Google con su articulo ``Attention Is All You Need'' \citep{vaswani2017attention}, donde definía que lo único que se necesitaba para procesar secuencias de forma eficaz era un mecanismo de atención, eliminando la necesidad de recurrencia y convoluciones, lo que permitió entrenar modelos más potentes sobre conjuntos de datos masivos, sentando las bases técnicas para los Grandes Modelos de Lenguaje (LLMs) como BERT o la serie GPT (Transformadores Pre-entrenados Generativos). 
+	
+	Tomando esta tecnología de los transformers, ``OpenAI'' lanzo diferentes versiones de su modelo GPT hasta culminar con una una interfaz conversacional basada en su modelo GPT-3,: ChatGPT. Esta interfaz se convirtió en una revolución, impulsando un interés público sin precedentes y consolidado a la IA como una herramienta indispensable. En los últimos años han seguido surgiendo modelos con tecnologías como la multimodalidad, donde los agentes combinan el procesamiento de texto escrito con otras fuentes como audio y visión en tiempo real, o el ``Mixture of experts (MoE)'' \citep{Jiang2024Mixtral} donde el modelo utiliza una combinación de múltiples redes neuronales (expertos), activando selectivamente un subconjunto de ellas para procesar cada entrada. Esta explosión en la presencia de la IA en la vida cotidiana, también ha impulsado, sobre todo en Europa, el desarrollo de marcos regulatorios para garantizar un uso responsable y transparente de estas tecnologías \citep{webRIA2024Europa}.
+	
+	\emph{Matiz: Si bien tecnologías de visión por computador o generación de multimedia son pilares fundamentales de la IA moderna y cruciales para los LLMs multimodales, es necesario acotar el alcance de este trabajo. Por lo tanto, esta definicion se centra en los avances relacionados con el procesamiento de datos estructurados y texto, dejando fuera un análisis detallado del tratamiento específico de vídeo, audio e imagen, a pesar de reconocer su enorme relevancia e impacto.}
+		
+		
+	Para facilitar la visualización de esta definición, resumiremos los hitos que consideramos importantes en orden cronológico:
 	\begin{table}[h]
 		\centering
 		\begin{tabular}{@{}r@{\hspace{1em}}|@{\hspace{1em}}p{11cm}@{}}
@@ -247,27 +253,48 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 			1966 & \textbf{Hidden Markov Model} - Modelo estadístico temprano \\ 
 			1967 & \textbf{K-means} - Algoritmo popular de clustering \\
 			1974 & \textbf{Backpropagation} - Algoritmo fundamental para ANN multicapa \\	
-			1982 & \textbf{RNN} - Redes neuronales con memoria \\
+			1982 & \textbf{RNN} - Redes neuronales recurrentes\\
 			1997 & \textbf{LSTM} - RNN con memoria a largo plazo \\
 			\    & \textbf{Deep Blue} vence a Kasparov \\
 			2003 & \textbf{NPLM} Aprendizaje de "embeddings" de palabras, base de  LLM \\
 			2014 & \textbf{GAN} - Generación de datos nuevos \\
 			2016 & \textbf{AlphaGo} - Derroto al campeón del mundo \\
 			2017 & \textbf{Transformers} - Arquitectura basada en atención \\
-			2018 & \textbf{GPT-1}, \textbf{BERT} - Modelos de lenguaje grandes \\
+			2018 & \textbf{BERT}, \textbf{GPT-1} - Modelos de lenguaje grandes (LLM) \\
 			2020 & \textbf{GPT-3} - aumento de las capacidades y parámetros \\
 			2021 & \textbf{DALL-E} - Imágenes desde texto \\
 			2022 & \textbf{ChatGPT} - Interfaz conversacional, aumenta el interés publico \\
-			2023 & \textbf{GPT-4} - Modelo multimodale \\
+			2023 & \textbf{GPT-4} - Modelo multimodal \\
 			\    & \textbf{LLaMA} Modelo Open-Source \\
 			2024 & \textbf{GPT-4o} - Modelo multimodal con voz y visión en tiempo real \\
 			\    & \textbf{EU AI Act} - Regulación integral sobre IA \\
-			2025 & \textbf{DeepSeek} - Nuevo competidor, modelos de bajo costo \\
+			2025 & \textbf{DeepSeek} - LLM de bajo costo \\
 			\    & \textbf{IA Agéntica y especializada} - agentes autónomos, tareas específicas \\
 		\end{tabular}
-		\caption{Historia y evolución de la IA generativa, Fuente: Adaptación de \citep{Cheok2023AIHistory}, \citep{Campbell2002DeepBlue}, \citep{Bit2BrainHistoriaIA}, \citep{Werbos1974Backpropagation}, \citep{rosenblatt1958perceptron}, \citep{Sapkota2025Agentic}, \citep{bengio2003neural}, \citep{webRIA2024Europa}. }
+		\caption{Fuente: Adaptación y actualización de \citep{Cheok2023AIHistory}, complementada con información de \citep{Sapkota2025Agentic}, \citep{Bit2BrainHistoriaIA}, \citep{Campbell2002DeepBlue} y las referencias mencionadas en el texto.}
 	\end{table}
-		
+	
+	\newpage %[TODO] ver si es necesario al final
+	
+	Como frase final, y espero que esperanzadora, incluir que a pesar de que esta tecnología ha pasado por algunas épocas de menor interés publico, los datos de Web parecen mostrar que esta vez la tecnología viene para quedarse [Figura \ref{figura_A3}]. Ya que a pesar de que un ultimo estudio del MIT anuncia que el 95\% de los proyectos con IA reciben retorno cero \citep{challapally2025state}, diversos analistas sostienen que esto no implica una burbuja vacía, sino más bien una fase inicial en la que muchos pilotos fracasaran por problemas de integración o organizativos y no por fallos tecnológicos. Al igual que ocurrió con la burbuja de las dot.com, de la cual emergieron gigantes como Amazon y Google, se espera que también en IA sobrevivan los proyectos con verdadero valor \citep{Video_AIExplained_AIBubble_2025}.
+	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[scale=0.3]{Imagenes/Bitmap/IA_Trends2011_2025.png} 
+			\caption{Tendencias de búsqueda de IA: \citep{TrendsGoogleIA2025},	\emph{Destacar el pico de 2011 por el lanzamiento de Siri (Apple) y la tendencia desde 2022 por la salida de chatGPT.}}
+			\label{figura_A3}
+		\end{center}
+	\end{figure}
+	
+		\item Los tipos de \textbf{Técnicas de ML según aprendizaje} \label{def13} es la forma de clasificar estos modelos dependiendo de la forma en la que los sistemas aprenden patrones, o del grado de supervisión que reciben. Se clasifican en cuatro tipos principales \citep{Sarker2021}: 
+	\begin{itemize}
+		\item \textbf{Aprendizaje Supervisado:} utiliza datos etiquetados para aprender una función que mapea entradas a salidas. Esta orientada a tareas concretas, y sus aplicaciones más comunes incluyen clasificación y regresión, como predecir la cantidad de ventas de un producto. 
+		\item \textbf{Aprendizaje No Supervisado:} analiza datos no etiquetados, buscando estructuras, patrones o relaciones ocultas. Es un enfoque orientado al descubrimiento y exploración, y se aplica típicamente en clusterización, reducción de dimensionalidad o detección de anomalías. 
+		\item \textbf{Aprendizaje Semi-Supervisado:} combina datos etiquetados y no etiquetados, aprovechando la abundancia de datos sin etiqueta para mejorar el rendimiento del modelo más allá de lo que se lograría solo con datos etiquetados. Es útil en contextos donde las etiquetas son costosas o escasas, como en detección de fraude o clasificación de texto. 
+		\item \textbf{Aprendizaje por Refuerzo:} se basa en la interacción de un agente con un entorno, aprendiendo mediante recompensas o penalizaciones para optimizar su comportamiento. Se aplica en tareas de automatización compleja y optimización, como robótica o conducción autónoma.
+	\end{itemize}
+	
+	
 \end{enumerate}
 
 
@@ -281,32 +308,38 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 \begin{description}
 	
 	\item[AI] Inteligencia Artificial (Artificial Intelligence)
+	\item[AI Act] Ley de Inteligencia Artificial (Artificial Intelligence Act)
 	\item[ANN] Redes Neuronales Artificiales (Artificial Neural Network)
 	\item[API] Interfaz de Programación de Aplicaciones (Application Programming Interface)
 	\item[ARIMA] Modelo Autorregresivo Integrado de Medias Móviles (Autoregressive Integrated Moving Average)
 	\item[AWS] Amazon Web Services
 	\item[BDTI] Big Data Test Infrastructure
+	\item[BERT] Representaciones de Codificador Bidireccional de Transformadores (Bidirectional Encoder Representations from Transformers)
 	\item[BOINC] Berkeley Open Infrastructure for Network Computing
 	\item[BTOS] Encuesta sobre Tendencias y Panorama Empresarial (Business Trends and Outlook Survey)
 	\item[CCPA] Ley de Privacidad del Consumidor de California (California Consumer Privacy Act)
 	\item[CDN] Red de Distribución de Contenidos (Content Delivery Network)
 	\item[CIF] Corporate Information Warehouse
 	\item[CKAN] Comprehensive Knowledge Archive Network
+	\item[CNN] Red Neuronal Convolucional (Convolutional Neural Network)
 	\item[CNMC] Comisión Nacional de los Mercados y la Competencia
 	\item[CPU] Unidad Central de Procesamiento (Central Processing Unit)
 	\item[CSV] Valores Separados por Comas (Comma-Separated Values)
 	\item[D1] D1 Database (Base de datos de Cloudflare)
 	\item[DDoS] Ataque de Denegación de Servicio Distribuido (Distributed Denial of Service)
-	\item[DNS] Sistema de Nombres de Dominio (Domain Name System)
 	\item[DevOps] Development and Operations
+	\item[DNS] Sistema de Nombres de Dominio (Domain Name System)
 	\item[DSL] Ley de Seguridad de Datos (Data Security Law) - China
 	\item[EC2] Elastic Compute Cloud (Amazon EC2)
 	\item[EEUU] Estados Unidos
 	\item[EU] European Union (Unión Europea)
+	\item[GAN] Red Generativa Antagónica (Generative Adversarial Network)
 	\item[GCP] Google Cloud Platform
+	\item[GPT] Transformador Pre-entrenado Generativo (Generative Pre-trained Transformer)
 	\item[GPU] Unidad de Procesamiento Gráfico (Graphics Processing Unit)
 	\item[HIPAA] Ley de Portabilidad y Responsabilidad de Seguros de Salud (Health Insurance Portability and Accountability Act)
 	\item[HITL] Human in the loop (mantener al humano en los procesos (blucles) de Inteligencia artificial)
+	\item[HMM] Modelo Oculto de Markov (Hidden Markov Model)
 	\item[HTTP] Hypertext Transfer Protocol
 	\item[IA] Inteligencia Artificial (Artificial Intelligence)
 	\item[IaaS] Infraestructura como Servicio (Infrastructure as a Service)
@@ -320,17 +353,23 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[k-NN] k-Nearest Neighbors (k-Vecinos Más Cercanos). Algoritmo de aprendizaje automático.
 	\item[KV] Key-Value (Almacenamiento Clave-Valor)
 	\item[LGD] Ley de Gobernanza de Datos
+	\item[LLM] Modelo de Lenguaje a Gran Escala (Large Language Model)
+	\item[LSTM] Memoria a Largo-Corto Plazo (Long Short-Term Memory)
+	\item[MIT] Massachusetts Institute of Technology (Instituto de Tecnología de Massachusetts)
 	\item[ML] Aprendizaje Automático (Machine Learning)
 	\item[MLOps] Operaciones de Aprendizaje Automático (Machine Learning Operations)
 	\item[NLP] Procesamiento del Lenguaje Natural (Natural Language Processing)
 	\item[NoSQL] Not only SQL
+	\item[NPLM] Modelo de Lenguaje Neuronal Probabilístico (Neural Probabilistic Language Model)
 	\item[OECD] Organización para la Cooperación y el Desarrollo Económicos (Organisation for Economic Co-operation and Development)
 	\item[OGDA] Ley de Datos Abiertos del Gobierno (OPEN Government Data Act)
 	\item[OKF] Open Knowledge Foundation
 	\item[PaaS] Plataforma como Servicio (Platform as a Service)
 	\item[PIPL] Ley de Protección de Información Personal (Personal Information Protection Law) - China
+	\item[PLN] Procesamiento del Lenguaje Natural (Natural Language Processing)
 	\item[R2] R2 Storage (Almacenamiento de Cloudflare)
 	\item[RAM] Memoria de Acceso Aleatorio (Random Access Memory)
+	\item[RL] Aprendizaje por Refuerzo (Reinforcement Learning)
 	\item[RNN] Redes Neuronales Recurrentes (Recurrent Neural Network)
 	\item[RGPD] Reglamento General de Protección de Datos
 	\item[S3] Simple Storage Service (Amazon S3)

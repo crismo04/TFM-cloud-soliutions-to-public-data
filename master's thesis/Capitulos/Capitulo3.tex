@@ -35,9 +35,9 @@ En esta capa se definen los objetivos generales y principios de la gobernanza de
 \begin{itemize}
 	\item \textbf{Visión:} Convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
 	
-	\item \textbf{Seguridad y soberanía:} Aunque se utilizarán servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configurarán para operar preferentemente dentro de la UE.
+	\item \textbf{Seguridad y soberanía:} Aunque se utilizarán servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configurarán para operar dentro de la UE.
 	
-	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentará en este mismo documento para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis.
+	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentará en este mismo documento para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
 \end{itemize}
 
 
@@ -64,15 +64,37 @@ Esta última capa, corresponde a la implementación práctica de la estrategia, 
 	\item \textbf{Arquitectura de datos y ciclo de valor:} Se diseñará un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubra todo el ciclo de vida del dato: 
 	\begin{itemize}
 		\item \textbf{Adquisición:} Descarga de conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso. 
+		
 		\item \textbf{Almacenamiento y gestión:} Organización en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilita la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery.
+		
 		\item \textbf{Procesamiento y transformación:} Limpieza, anonimización y feature engineering en entornos gestionados como Dataflow o Vertex AI Workbench. Se mantendrá un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
+		
 		\item \textbf{Uso/compartición:} uso de diversas técnicas de IA para la identificación de patrones en los datos, incluyendo \textit{encoders} para la representación eficiente de datos complejos, algoritmos de \textit{k-Nearest Neighbors (k-NN)} para clasificación o regresión basados en similitud, o incluso la aplicación de modelos de \textit{IA generativa} para explorar la estructura subyacente de los datos o aportar perspectivas. Publicación de resultados bajo licencias abiertas, priorizando la transparencia.
+		
 	\end{itemize}
 	
 	\item \textbf{Optimización y sostenibilidad:} Se monitorizará el uso de recursos en las diferentes nubes para mantener el proyecto dentro del coste cero, también se optimizarán las configuraciones de los servicios para asegurar la eficiencia tanto económica como ecológica del proyecto .
 \end{itemize}
 
+\subsubsection{Principios éticos}  \label{sec:Metodos_Principios_EU}
 
+Destacar que en el proyecto, se seguirán rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa}:
+ 
+ \begin{itemize} 
+ 	\item \textbf{Acción y supervisión humanas:} En este trabajo se supervisará tanto cada etapa del desarrollo, como los resultados. Se descartaran aquellos que no cumplan con los criterios éticos establecidos.
+ 	
+ 	\item \textbf{Solidez técnica y seguridad:} Se velará por la mayor excelencia técnica y se definirán principios de seguridad tanto para los datos como para los modelos.
+ 	
+ 	\item \textbf{Gestión de la privacidad y de los datos:} Se abordará cumpliendo estrictamente con los principios del RGPD como se indica en la sección de datos.
+ 	
+ 	\item \textbf{Transparencia:} Documentaré los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso sea comprensible y reproducible. También se documentaran los casos en los que se haya recurrido a la Inteligencia Artificial, indicando claramente las razones para esto.
+ 	
+ 	\item \textbf{Diversidad, no discriminación y equidad:} Se comprobarán los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
+ 	
+ 	\item \textbf{Bienestar social, ambiental y :} El motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
+ 	
+ 	\item \textbf{Rendición de cuentas:} Se mantendrá un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos, lo que permitirá una auditoría clara y una rendición de cuentas transparente.
+ \end{itemize}
 
 \section{Datos} \label{sec:Materiales_datos}
 

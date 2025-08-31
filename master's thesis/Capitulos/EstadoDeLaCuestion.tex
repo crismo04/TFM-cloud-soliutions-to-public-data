@@ -42,7 +42,7 @@ Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos c
 	
 	Por último, la tercera causa es \textbf{la tecnología}, como ya hemos hablado, los datos pueden estar en formatos diferentes, y la cantidad de herramientas para su tratamiento va en aumento, y hay que tener en cuenta también la integración, el procesamiento escalable a la cantidad de datos en aumento y el gobierno de los flujos de datos y modelos en un entorno ``cloud'' que está en evolución constante. Por ello, en este trabajo se ha optado por emplear herramientas ampliamente extendidas, soportadas, y principalmente abiertas, así como intentar hacer del conjunto de ellas lo más amplio posible, para estudiar y comparar un amplio abanico de soluciones. \\
 
-\subsection{Trabajos anteriores}
+\subsection{Trabajos anteriores y relacionados}
 	
 	A parte de todas las referencias ya incluidas en esta sección, nos gustaría destacar todo el trabajo de Jaime Gómez-Obregón para liberar y hacer accesibles los datos de España \citep{JaimeGomezObregon}, con acciones como publicar las subvenciones a las empresas en España a través del portal ministerial y hacerlas accesibles \citep{JaimeGomezObregonSubvenciones}, o estudios sobre donaciones sospechosas de corrupción \citep{JaimeGomezObregonDonacion}. Todo este trabajo ha guiado también a este proyecto hacia un uso ético de los datos.
 	
@@ -76,11 +76,38 @@ Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos c
 			\item \textbf{``Integración y visualización de datos abiertos medioambientales''} \citep{ArellanoBruno2019UsoDeGeolocalizacion}: También hace un análisis extensivo de los datos abiertos, de las definiciones para evaluar estos datos y de herramientas como ``CKAN''. Además, comenta iniciativas de limpieza de datos interesantes como ``Data Tamer'' o ``Data Wrangler''. Finalmente, crea una aplicación para el uso de datos medioambientales en tiempo real. \\
 	\end{itemize} 
 	
-	\subsection{Conjuntos de datos}
+\subsection{Conjuntos de datos}
+
+	Para embarcarse en el tema de los conjuntos de datos, primero tenemos que saber qué tipos de datos hay en el mundo real \citep{Sarker2021} dependiendo de formato y forma, estos pueden ser:
 	
-	habiendo revisado toda la documentación posible, y volviendo a recalcar la prioridad de este proyecto en conjuntos de datos cercanos, quisiera resaltar algunos de los conjuntos encontrados:
+	\begin{itemize}
+		\item \textbf{Estructurados:} Datos con un formato definido, siguiendo un modelo de datos estándar como tablas o bases de datos relacionales ( fechas, direcciones, geolocalización).
+		
+		\item \textbf{No estructurados:} Datos sin un formato o estructura predefinida, mas difíciles de procesar y analizar, principalmente texto y multimedia (correos electrónicos, blogs, PDFs, audio, videos, etc.).
+		
+		\item \textbf{Semi-estructurados (Semi-structured):} Datos que no se almacenan en bases de datos relacionales, pero tienen cierta organización (HTML, XML, JSON o bases de datos NoSQL).
+		
+		\item \textbf{Metadatos (Metadata):} Datos sobre otros datos, que describen información relevante para dar significado a los datos (autor de un documento, tamaño de archivo, fecha de creación palabras clave, etc.).
+	\end{itemize}
+
+	Teniendo esto en cuenta, para el desarrollo de este proyecto donde pretendemos obtener valor de los mismos de la forma mas automática y escalable, se elegirán principalmente datos estructurados, semiestructurados y los metadatos que proporcionen los portales. También, recalcando la prioridad de este proyecto en conjuntos de datos cercanos, me gustaría destacar algunos de los conjuntos de datos e iniciativas mas interesantes encontrados durante el estudio:
 	
-	A nivel institucional, Europa tiene su propio portal para acceder a datos públicos \citep{PortalDatosEuropa}, y a nivel nacional, el Instituto Nacional de Estadística (INE) y la Agencia Tributaria han sido actores clave en la liberación de datos abiertos y el fomento de su reutilización para la investigación e innovación, impulsando proyectos como el Portal de Transparencia del Gobierno de España y las iniciativas de datos abiertos de comunidades autónomas y ayuntamientos \citep{PortalDatosGob}; \citep{PortalDatosMadrid} \& \citep{PortalRegistradores}, los cual se esfuerzan por hacer públicos datos de alto valor \hyperref[def1]{[Definición \ref*{def1}]}. También destacar iniciativas que fomentan su transparencia, como InfoParticipa \citep{PortalInfoparticipa} o iniciativas privadas para la recolección de datos públicos \citep{PortalEsriEspanna}. Por último, también añadir a la interminable lista de datos públicos disponibles iniciativas individuales como ``Awesome public datasets'' \citep{awesomePublicDatasets} que se dedica a recopilar fuentes de datos fiables (aunque en este caso principalmente de Estados Unidos), o iniciativas ya mencionadas como UniversiDATA \citep{UniversiDATA}.
+	\begin{itemize}  %[TODO] mejorar estos datos y referencias, poner los tipos de datos que tiene cada uno por lo menos y el numero de datasets
+		\item \textbf{Internacionales:}  
+		Iniciativas individuales como ``Awesome public datasets'' \citep{awesomePublicDatasets}, que recopila fuentes de datos fiables (aunque principalmente de Estados Unidos).  
+		
+		\item \textbf{Europeos:}  
+		Europa cuenta con su propio portal para acceder a datos públicos \citep{PortalDatosEuropa} con datasets sobre población, educación y ciencia.  
+		
+		\item \textbf{Españoles:}
+		\begin{itemize}
+			\item El Instituto Nacional de Estadística (INE) y la Agencia Tributaria han sido actores clave en la liberación de datos abiertos y el fomento de su reutilización para investigación e innovación.  
+			\item Proyectos como el Portal de Transparencia del Gobierno de España y las iniciativas de datos abiertos de comunidades autónomas y ayuntamientos \citep{PortalDatosGob}; \citep{PortalDatosMadrid} \& \citep{PortalRegistradores}, los cuales se esfuerzan por hacer públicos datos de ``alto valor'' \hyperref[def1]{[Definición \ref*{def1}]}.  
+			\item Iniciativas que fomentan la transparencia, como InfoParticipa \citep{PortalInfoparticipa}.  
+			\item Iniciativas privadas para la recolección de datos públicos \citep{PortalEsriEspanna}.  
+			\item Iniciativas ya mencionadas como UniversiDATA \citep{UniversiDATA}.  
+		\end{itemize}
+	\end{itemize}
 	
 	Todos estos portales y aplicaciones son de gran importancia y constituyen la base material sobre la que se sustentan trabajos como el presente. Los conjuntos de datos escogidos se detallan en el apartado \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}: Materiales y datos}. \\
 	
@@ -304,30 +331,73 @@ Herramientas como \citep{GolemNetwork}, \citep{akashCloud} ó \citep{rendernetwo
 \subsubsection*{OpenNebula}
 Plataforma de código abierto con origen en España y EE.UU \url{https://opennebula.io/}, la cual se centra en virtualización de centros de datos y gestión de nubes privadas, híbridas y públicas. Permite construir y gestionar infraestructuras IaaS (Infraestructura como Servicio) para cloud sobre la infraestructura de tecnología existente. Ofrece funcionalidades para el aprovisionamiento automático, es independiente del proveedor y soporta diversas interfaces de nube, proporcionando flexibilidad, control y soberanía de datos \citep{OpenNebula2014Kumar}, \citep{PrivateIaaSComparative2016}. Sin embargo, pese a ser una opción interesante, es posible que no se tenga en cuenta para este proyecto, que prioriza el acceso inmediato a hardware y servicios de IA gestionados sin coste inicial de infraestructura ni tiempo. \\
  
-\subsection{Trabajos anteriores}
+\subsection{Trabajos anteriores y relacionados}
 
-La literatura referente a la computación en la nube es muy extensa, a parte de toda la literatura ya citada hasta ahora, citare algunos ejemplos mas, como el libro \textbf{``Cloud Computing Technology''} \citep{huawei2023cloud}, aunque su traducción al ingles no es excelente, agrupa todos los conceptos del panorama cloud actual, así como los elementos que todas las nubes comparten entre si, y da un panorama de la situación cloud en china, lo cual amplia los horizontes del conocimiento cloud. También el trabajo de \citep{nigro2022}, que estudia las oportunidades, desafíos y antecedentes de la computación en la nube, o el trabajo de \citep{bommala2024}, que tiene un enfoque muy interesante, denominando al ecosistema ``cloud verse'' y enfocándose en las innovaciones de los últimos años (infraestructuras de nube híbrida, modelos de computación sin servidor o ``serverless'', ``edge computing'', integración de IA, etc.) con un interesante enfoque en seguridad y cumplimiento de normativas, la integración de ``blockchain'' y el énfasis en la computación en la nube "verde" y sostenible. 
+La literatura referente a la computación en la nube es muy extensa, a parte de toda la literatura ya citada hasta ahora, citare algunos ejemplos mas, como el libro \textbf{``Cloud Computing Technology''} \citep{huawei2023cloud}, aunque su traducción al ingles no es excelente, agrupa todos los conceptos del panorama cloud actual, así como los elementos que todas las nubes comparten entre si, y da un panorama de la situación cloud en china, lo cual amplia los horizontes del conocimiento cloud. Otro libro: \citep{Fowdur2021}, cuyo capitulo 2 tiene interesantes definiciones sobre cloud. También el trabajo de \citep{nigro2022}, que estudia las oportunidades, desafíos y antecedentes de la computación en la nube, o el trabajo de \citep{bommala2024}, que tiene un enfoque muy interesante, denominando al ecosistema ``cloud verse'' y enfocándose en las innovaciones de los últimos años (infraestructuras de nube híbrida, modelos de computación sin servidor o ``serverless'', ``edge computing'', integración de IA, etc.) con un interesante enfoque en seguridad y cumplimiento de normativas, la integración de ``blockchain'' y el énfasis en la computación en la nube "verde" y sostenible. 
 
 Aunque no unicamente dirigido a cloud, también vale la pena destacar portales o iniciativas que buscan opciones de código abierto o de fácil acceso a las tecnologías sobre las que trata el articulo y las cuales han sido de mucha ayuda, como la iniciativa de la Unión Europea \citep{EuropeanAlternatives} o compilaciones como \citep{free-for-dev}.
 
 Por último, querría destacar trabajos de compañeros como \textbf{``Optimización de infraestructuras de Cloud Computing basadas en máquinas virtuales''} \citep{sanchez2023optimizacion}, el cual hace una excelente labor de investigación de todo lo relacionado con la computación en la nube para predecir el consumo futuro de recursos en máquinas virtuales de Azure (con sus datos públicos), y así mejorar la eficiencia y la gestión de la infraestructura. \newpage
 
+
+\newpage
+
+
 \section{Inteligencia Artificial}
 \label{sec:EstudiosIA}
 
-La Inteligencia Artificial (IA), y mas específicamente el aprendizaje automático,  esta emergiendo como el paradigma tecnológico más transformador de la década. Aunque desde sus inicios ha pasado por múltiples ``inviernos'' \citep{Cheok2023AIHistory} , el lanzamiento de ``ChatGPT'' en 2022 catapulto la fama de esta tecnología, que parece que esta vez viene para quedarse \citep{TrendsGoogleIA2025}. Estudios del ONTSI \citep{ontsi2025indicadores} revelan que en 2024, el 11,4\% de las empresas españolas de 10 o más empleados usa IA, un dato ligeramente inferior a la media de la UE (13,5\%), aunque por encima de potencias como EE.UU. (5,7\% según OECD, o 7,3\% del total de empresas según BTOS). En cuanto a la población general, en 2024 un 73,8\% de los españoles tenían conocimiento de la existencia de la IA generativa, y un 56,8\% de la utilizó durante el año.
+La Inteligencia Artificial (IA), y mas específicamente el aprendizaje automático (ML), esta emergiendo como el paradigma tecnológico más transformador de la década y uno de los mas importante de la historia \hyperref[def12]{[Definición \ref*{def12}]}. Aunque desde sus inicios ha pasado por algunos ``inviernos'' \citep{Cheok2023AIHistory}, el lanzamiento de ``ChatGPT'' en 2022 catapulto la fama de esta tecnología \hyperref[figura_A3]{[Figura \ref*{figura_A3}]}. Estudios del ONTSI \citep{ontsi2025indicadores} revelan que en 2024, el 11,4\% de las empresas españolas de 10 o más empleados usa IA, un dato ligeramente inferior a la media de la UE (13,5\%), aunque por encima de potencias como EE.UU. (5,7\% según OECD, o 7,3\% del total de empresas según BTOS). En cuanto a la población general, en 2024 un 73,8\% de los españoles tenían conocimiento de la existencia de la IA generativa, y un 56,8\% de la utilizó durante el año.
 
 Aunque esta fama viene dada por los modelos generativos basados en ``transformers'' y modelos generativos  \citep{vaswani2017attention}, la aplicación de esta tecnología aplicación va mas allá de esto, el núcleo de esta revolución reside en  el conjunto de herramientas algorítmicas para el análisis predictivo y la extracción de patrones en datos masivos, lo cual incluye los modelos generativos, pero no exclusivamente. En este proyecto se pretende utilizar ese potencial a través de plataformas cloud como Google Vertex AI, el uso de diferentes modelos de clasificación y clusterización o de detección de anomalías, con el propósito de intentar transformar el vasto volumen de datos públicos, a menudo infrautilizados, en ``insights'' o conclusiones de valor publico.
 
-\emph{Matiz sobre insights automáticos: La IA acelera la identificación de patrones, pero para poder efectuar una interpretación estratégica se necesita el contexto de política pública y la validación humana experta. El principio HITL ``humano en el bucle'' \citep{MosqueiraRey2023} es un requisito metodológico y ético para convertir patrones en decisiones.}
+También aclarar que, por acotar el alcance del proyecto, este trabajo no destacará avances en IA que traten datos multimedia, como vídeos, audios y imágenes, aunque reconocemos el increíble avance que han tenido tecnologías de visión por computador o creación de multimedia y si utilidad en LLMs multimodales, los cuales si entran en el ``scope'' del proyecto. Con esto en mente, veamos como aplicar la inteligencia artificial al proyecto.
+
+\subsection{Modelos de ML}
+
+En esta sección estudiaremos los modelos de aprendizaje automático pertinentes para el análisis predictivo y la extracción de patrones en datos. Aunque se pueden clasificar de otras maneras \hyperref[def13]{[Definición \ref*{def13}]}, nos centraremos en estos tipos de modelos:
+\begin{itemize}
+	\item Clasificación
+	\item Clusterización
+	\item Detección de anomalías
+	\item Series temporales
+\end{itemize}
+Finalmente estudiaremos la tendencia hacia el AutoML, para ver si es posible agilizar aun mas el tratamiento de datos públicos desde su punto de origen hasta la creación de valor. Debido a la utilización principal de datos estructurados y semiestructurados, se priorizaran los modelos adaptados mejor a este tipo de datos \citep{Fowdur2021}.
+
+\subsubsection{Modelos de Clasificación}
+
+[TODO] 
+\citep{Fowdur2021} (Real-Time Cloud Computing and Machine Learning Applications)
+\citep{Sarker2021} Machine Learning: Algorithms, Real-World Applications and Research Directions
+
+\subsubsection{Modelos de Clusterización}
+
+
+\subsubsection{Detección de anomalías}
+
+
+\subsubsection{series temporales}
+
+
+\subsubsection{AutoML}
 
 
 
+\subsection{IA y Datos}
 
-Tener en cuenta también la nueva normativa que la Unión Europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa}, el cual se ha usado de base para el uso de IA en este proyecto, intentando aplicar buenas prácticas al uso de las mismas, así como documentar las fuentes de datos, métodos de anonimización y posibles sesgos.
+
+\subsection{Infraestructura cloud y IA}
+
+
+\subsection{IA, normativa y ética}
+
+También hay que tener en cuenta la nueva normativa que la Unión Europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa}, así como el marco en el que este proyecto se engloba. Este reglamento se ha usado de base para el uso de IA en este proyecto, y aunque la mayor parte de las consideraciones éticas desarrolladas en los últimos años, se centran en modelos de procesamiento del lenguaje natural, (como los estudios conducidos por DeepMind) \citep{gabriel2024ethicsadvancedaiassistants}. En Este aspecto, el presente trabajo se compromete con la ``Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial (IA) de la Universidad Complutense de Madrid'' adjunta en el repositorio de este mismo proyecto. Pero ademas se compromete a seguir los siete estándares definidos por el reglamento de la Unión Europea en \hyperref[sec:Metodos_Principios_EU]{principios éticos de de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
+
+Para terminar, anteriormente se ha hablado sobre la obtención de ``insights'' automáticos: Es sabido que la IA acelera la identificación de patrones, pero para poder efectuar una interpretación estratégica se necesita el contexto de política pública y la validación humana experta. El principio HITL ``humano en el bucle'' \citep{MosqueiraRey2023} es un requisito metodológico y ético para convertir patrones en decisiones, por lo que sera un requisito que seguiremos en este proyecto.
+
+
+\subsection{Trabajos anteriores y relacionados}
 	
-	\subsection{Trabajos anteriores}
-
+	Aunque ya se han nombrado varios anteriormente y en las \hyperref[def12]{[Definiciones \ref*{def12}]}, querría añadir algunas referencias mas, para empezar, el libro \citep{Fowdur2021}, cuyo capitulo 3 hace un profundo análisis sobre diferentes modelos de inteligencia artificial.
 
 	Por último, mencionar trabajos académicos de compañeros con ideas similares a la tratada en este estudio y que han ayudado a guiar el mismo:
 	\begin{itemize}

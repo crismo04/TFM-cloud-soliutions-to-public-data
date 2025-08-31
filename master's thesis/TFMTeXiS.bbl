@@ -1,5 +1,10 @@
-\begin{thebibliography}{113}
+\begin{thebibliography}{119}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
+{\sc {AI Explained}}.
+\newblock An 'ai bubble'? what altman actually said, the facts and nano banana.
+\newblock 2025.
 
 \bibitem[{Akash()}]{akashCloud}
 {\sc Akash}.
@@ -92,6 +97,14 @@
 \newblock {\em {Artificial Intelligence}\/}, vol. 134(1-2), p\'aginas 57--83,
   2002.
 
+\bibitem[{Challapally et\ al.(2025)Challapally, Pease, Raskar y
+  Chari}]{challapally2025state}
+{\sc Challapally, A.}, {\sc Pease, C.}, {\sc Raskar, R.} y {\sc Chari, P.}
+\newblock State of ai in business 2025: The genai divide.
+\newblock 2025.
+\newblock Preliminary findings from AI Implementation Research, Research
+  Period: January--June 2025.
+
 \bibitem[{Cheok y Zhang(2023)}]{Cheok2023AIHistory}
 {\sc Cheok, A.} y {\sc Zhang, E.}
 \newblock From turing to transformers: A comprehensive review and tutorial on
@@ -183,6 +196,40 @@
 \newblock Acceso a los datos públicos y su reutilización: Open data y open
   government.
 \newblock {\em El Profesional de la Información\/}, p\'aginas 260--269, 2011.
+
+\bibitem[{Fowdur(2021)}]{Fowdur2021}
+{\sc Fowdur, T.~P.}
+\newblock {\em Real-Time Cloud Computing and Machine Learning Applications\/}.
+\newblock Computer Science, Technology and Applications. Nova Science
+  Publishers, Incorporated, New York, 2021.
+\newblock ISBN 978-1536198133.
+\newblock Description based upon print version of record.
+
+\bibitem[{Gabriel et\ al.(2024)Gabriel, Manzini, Keeling, Hendricks, Rieser,
+  Iqbal, Tomašev, Ktena, Kenton, Rodriguez, El-Sayed, Brown, Akbulut, Trask,
+  Hughes, Bergman, Shelby, Marchal, Griffin, Mateos-Garcia, Weidinger, Street,
+  Lange, Ingerman, Lentz, Enger, Barakat, Krakovna, Siy, Kurth-Nelson,
+  McCroskery, Bolina, Law, Shanahan, Alberts, Balle, de~Haas, Ibitoye, Dafoe,
+  Goldberg, Krier, Reese, Witherspoon, Hawkins, Rauh, Wallace, Franklin,
+  Goldstein, Lehman, Klenk, Vallor, Biles, Morris, King, y~Arcas, Isaac y
+  Manyika}]{gabriel2024ethicsadvancedaiassistants}
+{\sc Gabriel, I.}, {\sc Manzini, A.}, {\sc Keeling, G.}, {\sc Hendricks,
+  L.~A.}, {\sc Rieser, V.}, {\sc Iqbal, H.}, {\sc Tomašev, N.}, {\sc Ktena,
+  I.}, {\sc Kenton, Z.}, {\sc Rodriguez, M.}, {\sc El-Sayed, S.}, {\sc Brown,
+  S.}, {\sc Akbulut, C.}, {\sc Trask, A.}, {\sc Hughes, E.}, {\sc Bergman,
+  A.~S.}, {\sc Shelby, R.}, {\sc Marchal, N.}, {\sc Griffin, C.}, {\sc
+  Mateos-Garcia, J.}, {\sc Weidinger, L.}, {\sc Street, W.}, {\sc Lange, B.},
+  {\sc Ingerman, A.}, {\sc Lentz, A.}, {\sc Enger, R.}, {\sc Barakat, A.}, {\sc
+  Krakovna, V.}, {\sc Siy, J.~O.}, {\sc Kurth-Nelson, Z.}, {\sc McCroskery,
+  A.}, {\sc Bolina, V.}, {\sc Law, H.}, {\sc Shanahan, M.}, {\sc Alberts, L.},
+  {\sc Balle, B.}, {\sc de~Haas, S.}, {\sc Ibitoye, Y.}, {\sc Dafoe, A.}, {\sc
+  Goldberg, B.}, {\sc Krier, S.}, {\sc Reese, A.}, {\sc Witherspoon, S.}, {\sc
+  Hawkins, W.}, {\sc Rauh, M.}, {\sc Wallace, D.}, {\sc Franklin, M.}, {\sc
+  Goldstein, J.~A.}, {\sc Lehman, J.}, {\sc Klenk, M.}, {\sc Vallor, S.}, {\sc
+  Biles, C.}, {\sc Morris, M.~R.}, {\sc King, H.}, {\sc y~Arcas, B.~A.}, {\sc
+  Isaac, W.} y {\sc Manyika, J.}
+\newblock The ethics of advanced ai assistants.
+\newblock 2024.
 
 \bibitem[{Gigas()}]{gigasCloud}
 {\sc Gigas}.
@@ -287,6 +334,13 @@
 \newblock Tesis inédita de la Universidad Complutense de Madrid, Facultad de
   Ciencias de la Información, leída el 08/05/2024.
 
+\bibitem[{Hopfield(1984)}]{Hopfield1984RNN}
+{\sc Hopfield, J.~J.}
+\newblock Neurons with graded response have collective computational properties
+  like those of two-state neurons.
+\newblock {\em Proc Natl Acad Sci U S A\/}, vol.\ 81(10), p\'aginas 3088--3092,
+  1984.
+
 \bibitem[{{Huawei Technologies Co., Ltd.}(2023)}]{huawei2023cloud}
 {\sc {Huawei Technologies Co., Ltd.}}
 \newblock {\em Cloud Computing Technology\/}.
@@ -299,6 +353,20 @@
 \newblock Datos para espaÑa y mundiales de investigaciÓn de mercados 2023.
 \newblock Disponible en
   \url{https://ia-espana.org/wp-content/uploads/2024/10/NdpdatosEncuentro_16102024.pdf}.
+
+\bibitem[{Jiang et\ al.(2024)Jiang, Sablayrolles, Roux, Mensch, Savary,
+  Bamford, Chaplot, de~las Casas, Hanna, Bressand, Lengyel, Bour, Lample,
+  Lavaud, Saulnier, Lachaux, Stock, Subramanian, Yang, Antoniak, Le~Scao,
+  Gervet, Lavril, Wang, Lacroix y El~Sayed}]{Jiang2024Mixtral}
+{\sc Jiang, A.~Q.}, {\sc Sablayrolles, A.}, {\sc Roux, A.}, {\sc Mensch, A.},
+  {\sc Savary, B.}, {\sc Bamford, C.}, {\sc Chaplot, D.~S.}, {\sc de~las Casas,
+  D.}, {\sc Hanna, E.~B.}, {\sc Bressand, F.}, {\sc Lengyel, G.}, {\sc Bour,
+  G.}, {\sc Lample, G.}, {\sc Lavaud, L.~R.}, {\sc Saulnier, L.}, {\sc Lachaux,
+  M.-A.}, {\sc Stock, P.}, {\sc Subramanian, S.}, {\sc Yang, S.}, {\sc
+  Antoniak, S.}, {\sc Le~Scao, T.}, {\sc Gervet, T.}, {\sc Lavril, T.}, {\sc
+  Wang, T.}, {\sc Lacroix, T.} y {\sc El~Sayed, W.}
+\newblock {Mixtral of Experts}.
+\newblock {\em arXiv preprint arXiv:2401.04088\/}, 2024.
 
 \bibitem[{Jorge y Herrera(2023)}]{TransparenciaMexico}
 {\sc Jorge, R.} y {\sc Herrera, R.}
