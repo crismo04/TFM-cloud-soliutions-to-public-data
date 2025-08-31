@@ -3,28 +3,60 @@
 
 \chapterquote{We can only see a short distance ahead, but we can see plenty there that needs to be done.}{Alan Turing}
 
+\vspace{1cm}
+
+This project is based on three main technologies: Cloud computing, which is understood as the provision of computing services (servers, storage, databases, networking, software, analytics, and more) over the internet, allowing flexible and scalable access to resources without the need to own or manage physical infrastructure; artificial intelligence, which encompasses the development of systems that demonstrate the ability to learn, adapt, reason, and solve complex problems, as well as perceive and understand their environment (either virtual or physical), often through analysis and inference from large volumes of data (More specifically, this project will employ machine learning methodologies, a branch of AI focused on improving performance in specific tasks through algorithms); finally, public big data refers to massive and heterogeneous collections of information generated or collected by governmental or organizational entities, publicly accessible.
+
 \section{Motivation}
 
-We will start at the beginning by defining what the three main elements of this project are, [TODO] 
+The motivation for this project arises from the enormous growth of the three studied technologies, as well as their capacity to create synergies and deliver public value. Within the framework of the European Union, measures are being taken to liberalize large volumes of public data and promote their use by public entities, while also focusing on artificial intelligence and its transformative potential. Society is increasingly aware of the potential of language models, but there is still a long way to go before these can generate social benefits in the most automated way possible. This work aims to focus precisely on that: studying the best way for different actors (individuals, public and private entities) to generate value using these technologies.
 
+\section{Objectives and Scope}
 
-The scope of this project is, on the one hand [TODO]
+The objective and scope of this project are triple:
+\begin{itemize}
+	\item Conduct a comprehensive analysis of the current landscape of cloud computing, artificial intelligence, and the state of public data, identifying the most relevant methodologies, techniques, and services.
+	
+	\item Develop a replicable methodology that allows the use of these data, from their origin to the generation of value, refining this methodology through practical implementation.
+	
+	\item Apply the proposed methodology to various datasets available at the European and national levels, evaluating different models and configurations to identify the most efficient and effective solutions for generating public value from the analyzed information.
+	
+	
+\end{itemize}
 
-\section{Work plan}
+\section{Work Plan}
 
-
-Having defined the scope, I would like to highlight the five phases in which the project has been partitioned, which have been iterated for the creation of several functional prototypes:
-
+Once the scope has been defined, we will highlight the six phases into which the project has been divided, which have been iterated in an agile framework for the creation of several functional releases:
 
 \begin{enumerate}
-	\item \textbf{Research phase.} Search for information about different public data sources, cloud technologies and AI models or tools that help us to treat, filter and understand all the public data collected.
 	
-	\item \textbf{Requirements analysis phase:} [TODO].
+	\item \textbf{Academic research phase:} Search for studies or works about the current state of the three technologies and the latest innovations to establish the theoretical framework and contextualize the foundations of the project.
 	
-	\item \textbf{Implementation phase:} [TODO]
-
-	\item \textbf{Testing phase:} [TODO]
+	\item \textbf{Technical research phase:} Search for information about different public data sources, cloud technologies, and AI models or tools that help process, filter, and understand all the collected public data.
 	
-	\item \textbf{Memory phase:} [TODO] The elaboration of this document, translating the previous phases into text and specifying the development of the project and its results.
-
+	\item \textbf{Requirements analysis phase:} Based on the knowledge acquired, the solution architecture was designed, target public datasets were selected, and a concrete methodology was planned, establishing metrics to evaluate the project's success.
+	
+	\item \textbf{Implementation phase:} Central phase to materialize the solution. This applies the defined methodology to practically integrate all elements: cloud environment configuration, acquisition and cleaning of selected datasets, training of machine learning models, their deployment, and the use of the other technologies.
+	
+	\item \textbf{Testing and evaluation phase:} Assessment of developed prototypes and obtained results, as well as model performance and the quality of the public value generated, taking ethical aspects into account.
+	
+	\item \textbf{Documentation phase:} Cross-cutting stage documenting the steps followed and findings in the preparation of this document, also reflecting the obtained results, conclusions, and future lines of work.
+	
+	
 \end{enumerate}
+
+\section{Structure of this Thesis}
+
+This thesis has been built using \LaTeX\space [\ref{latexDef}] with the help of the \texis\space template. The rest of the thesis is structured in chapters as follows:
+
+\hyperref[cap:estadoDeLaCuestion]{\textbf{Chapter \ref*{cap:estadoDeLaCuestion}: State of the Art}}, which will present the conclusions of the first two research phases: studies, works, frameworks, technologies, datasets, and other tools found. It will also study the current landscape in society regarding these topics.
+
+\hyperref[cap:Materiales y metodos]{\textbf{Chapter \ref*{cap:Materiales y metodos}: Materials and Methods}}, which will cover the next two phases of analysis and implementation, specifying the technologies and datasets finally used in the project, as well as the methodology and steps followed to obtain results.
+
+% [TODO] this chapter may be too long, perhaps split it
+
+\hyperref[cap:Resultados]{\textbf{Chapter \ref*{cap:Resultados}: Results and Future Work}} In this last chapter (which will also be available in English), the results obtained in the project will be concluded, as well as the research lines that inevitably remain open due to the breadth of the topics covered.
+
+\hyperref[Appendix:1]{\textbf{Appendix \ref*{Appendix:1} ``Definitions and Acronyms''}}: To avoid excessive length in certain sections, \textbf{some definitions have been moved to this appendix, appearing in the text as follows: \hyperref[def1]{[Definition \ref*{def1}]}}. Here, the acronyms used throughout the work can also be found [\ref{sec:acronimos}].
+
+% [TODO] Add another appendix with the user manual of the studied technologies?

@@ -33,8 +33,6 @@ Reallocating 'name_of_file' (item size: 1) to 36 items.
 A level-1 auxiliary file: Capitulos/ConclusionsFutureWork.aux
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: Apendices/appendixA.aux
-Reallocating 'name_of_file' (item size: 1) to 24 items.
-A level-1 auxiliary file: Apendices/appendixB.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: Cascaras/bibliografia.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
@@ -43,188 +41,64 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
-Warning--empty year in akashCloud; set to ????
-Warning--empty year in cloudPizza2014; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry AWSDataCommon
-while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in Anderson2004BOINC
 Warning--empty journal in Datathon2016Anslow
 Warning--empty journal in ArellanoBruno2019UsoDeGeolocalizacion
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry awesomePublicDatasets
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2009
----the literal stack isn't empty for entry Benington19032009
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in Bit2BrainHistoriaIA; set to ????
 Warning--empty journal in bommala2024
 Warning--empty journal in challapally2025state
 Warning--empty journal in Cheok2023AIHistory
-Warning--empty year in cloudingIO; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry DatosGeneralesCNMC
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2025{\natexlab{a}}
----the literal stack isn't empty for entry OpenFoodFactsDataAPP
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2025{\natexlab{b}}
----the literal stack isn't empty for entry PlanttesDataAPP
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in 12Botnets; set to ????
-Warning--empty year in EuroDigitalStrategyEdge; set to ????
-Warning--empty year in BDTIEuropeProject; set to ????
-Warning--empty year in SIMPLEuropeProject; set to ????
-Warning--empty year in EurostatCloudUsage; set to ????
-Warning--empty year in gigasCloud; set to ????
-Warning--empty year in nextcloudCloud; set to ????
-ptr=1, stack=
-2025{\natexlab{a}}
----the literal stack isn't empty for entry JaimeGomezObregon
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2025{\natexlab{b}}
----the literal stack isn't empty for entry JaimeGomezObregonDonacion
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2025{\natexlab{c}}
----the literal stack isn't empty for entry JaimeGomezObregonSubvenciones
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in InfoNubeSARA; set to ????
-ptr=1, stack=
-2025{\natexlab{a}}
----the literal stack isn't empty for entry EventosDatathonGOB
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2025{\natexlab{b}}
----the literal stack isn't empty for entry EventosDatosAbiertosGOB
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in GolemNetwork; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry googleDataCommon
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in distributedGCP; set to ????
 Warning--empty journal in HerreraCapriz2024
-ptr=1, stack=
-2024
----the literal stack isn't empty for entry DatosMercadosEspanna
-while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in OpenNebula2014Kumar
 Warning--empty journal in LLamoccaPortela2016Integracion
-Warning--empty year in EspannaCloudGroeth2033; set to ????
 Warning--empty journal in MelendrezMoreto2016Auditoria
 Warning--empty journal in Meneses2023Madrid
-Warning--empty year in MicrosoftCloudTerminology; set to ????
-Warning--empty year in MedallionMicrosoft; set to ????
 Warning--empty journal in moore1995creating
 Warning--empty journal in ontsi2025indicadores
-Warning--empty year in Open_Data_Charter; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry OpenKnowledgeFoundation
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in OVHCloudFree; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry BigDataStadisticsMarket
-while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in sanchez2023optimizacion
-Warning--empty year in InfoPreparaTICNubeSARA; set to ????
-ptr=1, stack=
-2013
----the literal stack isn't empty for entry HistoryOfBigData
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in MydoomDDoSMalware; set to ????
-Warning--empty year in rendernetwork; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry free-for-dev
-while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in SaizSantos2023
-Warning--empty year in SONMWhitepaper; set to ????
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry BigDataStatista
-while executing---line 1842 of file TeXiS/TeXiS.bst
-Warning--empty year in TelefonicaTechCloudPlatform; set to ????
 Warning--there's a number but no volume in TransparenciaEcuador
-ptr=1, stack=
-2016
----the literal stack isn't empty for entry webRGPD2016Europa
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2023
----the literal stack isn't empty for entry webLGD2023Europa
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2024
----the literal stack isn't empty for entry webRIA2024Europa
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2020
----the literal stack isn't empty for entry UniversiDATAAnalisis
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2024
----the literal stack isn't empty for entry UniversiDATADatathon
-while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry UniversiDATA
-while executing---line 1842 of file TeXiS/TeXiS.bst
 Warning--empty journal in vaswani2017attention
 Warning--empty journal in PrivateIaaSComparative2016
 Warning--empty journal in Werbos1974Backpropagation
-ptr=1, stack=
-2025
----the literal stack isn't empty for entry wikiInformationAge
-while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 119 entries,
+You've used 124 entries,
             2962 wiz_defined-function locations,
-            1717 strings with 33740 characters,
-and the built_in function-call counts, 58574 in all, are:
-= -- 4602
-> -- 2214
-< -- 141
-+ -- 899
-- -- 741
-* -- 3746
-:= -- 9322
-add.period$ -- 383
-call.type$ -- 119
-change.case$ -- 852
-chr.to.int$ -- 108
-cite$ -- 162
-duplicate$ -- 4732
-empty$ -- 4217
-format.name$ -- 915
-if$ -- 11359
-int.to.chr$ -- 12
+            1718 strings with 33100 characters,
+and the built_in function-call counts, 60506 in all, are:
+= -- 4785
+> -- 2280
+< -- 149
++ -- 926
+- -- 762
+* -- 3766
+:= -- 9678
+add.period$ -- 398
+call.type$ -- 124
+change.case$ -- 883
+chr.to.int$ -- 114
+cite$ -- 143
+duplicate$ -- 4869
+empty$ -- 4369
+format.name$ -- 943
+if$ -- 11777
+int.to.chr$ -- 11
 int.to.str$ -- 1
-missing$ -- 950
-newline$ -- 623
-num.names$ -- 476
-pop$ -- 2271
+missing$ -- 965
+newline$ -- 648
+num.names$ -- 496
+pop$ -- 2236
 preamble$ -- 1
-purify$ -- 722
+purify$ -- 749
 quote$ -- 0
-skip$ -- 1856
+skip$ -- 2006
 stack$ -- 0
-substring$ -- 1903
-swap$ -- 2176
-text.length$ -- 36
+substring$ -- 2019
+swap$ -- 2231
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1172
-warning$ -- 43
-while$ -- 403
+type$ -- 1219
+warning$ -- 19
+while$ -- 422
 width$ -- 0
-write$ -- 1417
-(There were 25 error messages)
+write$ -- 1477
+(There were 19 warnings)

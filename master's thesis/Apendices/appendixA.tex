@@ -281,25 +281,77 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\begin{figure}[h]
 		\begin{center}
 			\includegraphics[scale=0.3]{Imagenes/Bitmap/IA_Trends2011_2025.png} 
-			\caption{Tendencias de búsqueda de IA: \citep{TrendsGoogleIA2025},	\emph{Destacar el pico de 2011 por el lanzamiento de Siri (Apple) y la tendencia desde 2022 por la salida de chatGPT.}}
+			\caption{Tendencias de búsqueda de IA: \citep{TrendsGoogleIA2025},	\emph{Destacar el pico de 2011 por el lanzamiento de Siri (Apple) y la tendencia desde 2022 por la salida de chatGPT.}} 
 			\label{figura_A3}
 		\end{center}
-	\end{figure}
+	\end{figure} 
 	
-		\item Los tipos de \textbf{Técnicas de ML según aprendizaje} \label{def13} es la forma de clasificar estos modelos dependiendo de la forma en la que los sistemas aprenden patrones, o del grado de supervisión que reciben. Se clasifican en cuatro tipos principales \citep{Sarker2021}: 
+	\vspace{1cm}
+	
+	\item Los tipos de \textbf{Técnicas de ML según aprendizaje} \label{def13} es la forma de clasificar estos modelos dependiendo de la forma en la que los sistemas aprenden patrones, o del grado de supervisión que reciben. Se clasifican en cuatro tipos principales \citep{Sarker2021}: 
 	\begin{itemize}
 		\item \textbf{Aprendizaje Supervisado:} utiliza datos etiquetados para aprender una función que mapea entradas a salidas. Esta orientada a tareas concretas, y sus aplicaciones más comunes incluyen clasificación y regresión, como predecir la cantidad de ventas de un producto. 
+		
 		\item \textbf{Aprendizaje No Supervisado:} analiza datos no etiquetados, buscando estructuras, patrones o relaciones ocultas. Es un enfoque orientado al descubrimiento y exploración, y se aplica típicamente en clusterización, reducción de dimensionalidad o detección de anomalías. 
+		
 		\item \textbf{Aprendizaje Semi-Supervisado:} combina datos etiquetados y no etiquetados, aprovechando la abundancia de datos sin etiqueta para mejorar el rendimiento del modelo más allá de lo que se lograría solo con datos etiquetados. Es útil en contextos donde las etiquetas son costosas o escasas, como en detección de fraude o clasificación de texto. 
-		\item \textbf{Aprendizaje por Refuerzo:} se basa en la interacción de un agente con un entorno, aprendiendo mediante recompensas o penalizaciones para optimizar su comportamiento. Se aplica en tareas de automatización compleja y optimización, como robótica o conducción autónoma.
+		
+		\item \textbf{Aprendizaje por Refuerzo:} se basa en la interacción de un agente con un entorno, aprendiendo mediante recompensas o penalizaciones para optimizar su comportamiento. Se aplica en tareas de automatización compleja y optimización, como robótica o conducción autónoma. \\ \\ 
 	\end{itemize}
 	
+	\item  \textbf{MLOps} \label{def14} u operaciones de aprendizaje automático, son un conjunto de prácticas y herramientas que busca automatizar y gestionar el ciclo de vida completo de un proyecto de machine learning, desde el desarrollo del modelo hasta su despliegue, monitoreo y mantenimiento en producción, basándose en principios de DevOps pero adaptados a las particularidades de los sistemas de ML \citep{Kreuzberger2023MLOps}. Los nueve principios son los siguientes:
+	\begin{enumerate}
+		\item \textbf{Automatización CI/CD:} Integración, entrega y despliegue continuos que automatizan el desarrollo, prueba y puesta en producción de los modelos, proporcionando información rápida sobre el éxito o fracaso de cada paso.
+		
+		\item \textbf{Orquestación del flujo de trabajo (workflow):} Coordinación y gestión de las tareas de un ``pipeline'' o proceso de ML, estableciendo el orden de ejecución y dependencias, típicamente mediante DAGs.
+		
+		\item \textbf{Reproducibilidad:} Capacidad fundamental de replicar el experimento de ML y obtener los mismos resultados.
+		
+		\item \textbf{Control de versiones:} Implica la gestión y el seguimiento riguroso de los cambios en los datos, modelos y código (indispensable para la trazabilidad y el cumplimiento normativo).
+		
+		\item \textbf{Colaboración:} Promueve el trabajo conjunto y una cultura comunicativa y abierta entre los diferentes roles del proyecto para minimizar aislamiento de datos e información.
+		
+		\item \textbf{Entrenamiento y evaluación continuos:} Implica el retrenamiento periódico y automático de los modelos con nuevos datos, incluyendo una evaluación constante de su calidad para asegurar que sigan siendo relevantes, precisos y óptimos en cuanto a rendimiento.
+		
+		\item \textbf{Seguimiento y registro de metadatos:} Documentación detallada de la información relevante de cada ejecución del flujo para asegurar trazabilidad: parámetros utilizados, métricas, código, tiempo de ejecución y los datos utilizados.
+		
+		\item \textbf{Monitoreo continuo:} Observación periódica de los datos, modelos, código, infraestructura y rendimiento del modelo desplegado, con el objetivo de detectar anomalías, errores o bajadas en la calidad.
+		
+		\item \textbf{Bucles de retroalimentación:} Integrar los hallazgos y las lecciones aprendidas del monitoreo y la evaluación de calidad en el proceso de desarrollo.  \\ \\ 
+		
+		
+	\item \textbf{Modelos de Machine learning}.  \label{def15} Estas definiciones se basan en el curso de \citep{JasonMachinelearningmastery}, el libro del mismo autor \citep{Brownlee_2016_MLAFS} y en los libros \citep{Fowdur2021} y \citep{Sarker2021}, así como en la asignatura ``desarrollo de aplicaciones y servicios inteligentes'' impartida por la Universidad Complutense de Madrid. Aunque para estas definiciones \textbf{no} nos centraremos en como efectuar la selección de hiperparámetros (parámetros externos al modelo que lo configuran), nombrar que el rendimiento y complejidad de estos modelos depende de la correcta elección de esta característica. También, por alcance, detallaremos solo los modelos que se han elegido para estudiar en este de entre la gran variedad de ellos que existe \citep{MachineLearningMethodsList}, estos son los siguientes:
+	
+	\begin{enumerate}
+		\item \textbf{Árboles de Decisión (Decision Trees):}
+		Son un método de aprendizaje \textbf{supervisado} no paramétrico utilizado para \textbf{clasificación y regresión}. Consiguen su objetivo dividiendo recursivamente el conjunto de datos de entrenamiento en subconjuntos más pequeños, evaluando todas las posibles divisiones en cada característica de entrada para encontrar el punto de división óptimo que minimice la función de coste. El proceso continúa hasta alcanzar un criterio de detención, obteniendo los nodos terminales que contienen la predicción final (la clase más común o el promedio de valores).
+		
+		\item \textbf{k-Nearest Neighbors (k-NN):}
+		Es un algoritmo de aprendizaje \textbf{supervisado} de "aprendizaje perezoso" (no ejecuta hasta que no se le pida una predicción), utilizado para \textbf{clasificación y regresión}. Consigue su objetivo para nuevos datos calculando la distancia entre este y todos los ejemplos del conjunto de entrenamiento. Luego, selecciona los \emph{k} ejemplos más parecidos (vecinos). Para clasificación, la predicción es la clase más común entre estos \emph{k} vecinos; para regresión, es el promedio de sus valores de salida.
+		
+		\item \textbf{K-means:}
+		Es un algoritmo de aprendizaje \textbf{no supervisado} utilizado para la \textbf{clusterización}. Consigue su objetivo al identificar \emph{k} centroides en el conjunto de datos y luego asigna cada punto de datos al centroide más cercano durante varias iteraciones, estos centroides se actualizan continuamente moviéndose al promedio de todos los puntos asignados a su cluster, y despues de esto los puntos se reasignan, con el fin de minimizar la suma de las distancias cuadradas entre cada punto de datos y su centroide asignado.
+		
+		\item \textbf{Random Forests (Bosques Aleatorios):}
+		Es un método de ensamble de aprendizaje supervisado utilizado para clasificación y regresión. Consigue su objetivo construyendo un "bosque" de múltiples árboles de decisión individuales. Cada árbol se entrena en una submuestra aleatoria del conjunto de datos con reemplazo (bagging), y en cada punto de división se considera solo un subconjunto aleatorio de características. Las predicciones finales se obtienen combinando las predicciones de todos los árboles del bosque: por votación mayoritaria para clasificación o por promedio para regresión, lo que reduce la varianza y mejora la precisión.
+		
+		\item \textbf{XGBoost (Extreme Gradient Boosting):}
+		Es una implementación optimizada y escalable de algoritmos de ``gradient boosting'', un método de ensamble de aprendizaje \textbf{supervisado para clasificación y regresión}. Consigue su objetivo construyendo una serie de modelos individuales de forma secuencial (normalmente árboles de decisión), donde cada nuevo modelo se entrena para corregir los errores residuales de los árboles previos. Para ello, minimiza una ``función de pérdida'' que cuantifica el error del modelo empleando aproximaciones de segundo orden. Esto significa que, computa tanto la pendiente de la función de pérdida (como en el descenso de gradiente básico) como su curvatura para encontrar el mínimo, lo que resulta en una convergencia más rápida y una mayor exactitud. Además, aplica técnicas de regularización avanzadas (L1 y L2) para prevenir el sobre-ajuste y mejorar la generalización. La regularización L1 (Lasso) penaliza la suma de los valores absolutos de los coeficientes, pudiendo llevar algunos a cero y realizando selección de características; la regularización L2 (Ridge) penaliza la suma de los cuadrados de los coeficientes, reduciéndolos sin eliminarlos.
+		
+		\item \textbf{DBSCAN:}
+		Es un algoritmo de aprendizaje \textbf{no supervisado para clusterización} basado en ``densidad''. Consigue su objetivo identificando regiones densas de puntos de datos separadas por regiones de menor densidad, clasificando los puntos como centrales, frontera o de ruido, y forma cada clúster a partir de puntos que están densamente conectados. No requiere que se especifique el número de clústeres de antemano y es capaz de descubrir clústeres de formas arbitrarias, además de identificar valores extremos.
+		
+		\item \textbf{Redes Neuronales Profundas (Deep Neural Networks - DNN):}
+		Brevemente, son modelos de aprendizaje \textbf{supervisado} que incluyen arquitecturas como los perceptrones multicapa (MLP). Consiguen su objetivo aprendiendo representaciones jerárquicas de los datos a través de múltiples capas ocultas de procesamiento (capas ocultas). El proceso de entrenamiento implica la propagación hacia adelante de la entrada para calcular una salida, seguida de la retropropagación ("Backpropagation") del error para ajustar iterativamente los pesos de las conexiones, minimizando la diferencia entre la salida predicha y la esperada. Son aptas para \textbf{clasificación y regresión en datos complejos}. \cite{Brownlee2018, Sarker2021}
+		
+		\item \textbf{Grandes Modelos de Lenguaje (Large Language Models - LLM):}
+		Son un tipo avanzado de Redes Neuronales Profundas, frecuentemente basadas en la arquitectura de ``transformers''. Consiguen su objetivo mediante un pre-entrenamiento masivo en vastos corpus de texto y código, permitiendo aprender patrones complejos de lenguaje, gramática, semántica y contextualización. Su mecanismo de atención les permite ponderar la importancia de diferentes partes de la entrada, facilitando una comprensión profunda y la generación de texto coherente y relevante. Se utilizan para una amplia gama de tareas de procesamiento de lenguaje natural (PNL). \cite{Sarker2021}    \\ \\ 
+	\end{enumerate}
+
+	\item 
+	\end{enumerate}
 	
 \end{enumerate}
-
-
-
-
 \newpage
 
 \section{Acrónimos}
@@ -319,6 +371,7 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[BTOS] Encuesta sobre Tendencias y Panorama Empresarial (Business Trends and Outlook Survey)
 	\item[CCPA] Ley de Privacidad del Consumidor de California (California Consumer Privacy Act)
 	\item[CDN] Red de Distribución de Contenidos (Content Delivery Network)
+	\item[CI/CD] Integración Continua/Entrega Continua (Continuous Integration/Continuous Delivery)
 	\item[CIF] Corporate Information Warehouse
 	\item[CKAN] Comprehensive Knowledge Archive Network
 	\item[CNN] Red Neuronal Convolucional (Convolutional Neural Network)
@@ -326,8 +379,11 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[CPU] Unidad Central de Procesamiento (Central Processing Unit)
 	\item[CSV] Valores Separados por Comas (Comma-Separated Values)
 	\item[D1] D1 Database (Base de datos de Cloudflare)
+	\item[DAGs] Grafos Acíclicos Dirigidos (Directed Acyclic Graphs)
+	\item[DBSCAN] Clustering Espacial Basado en Densidad de Aplicaciones con Ruido (Density-Based Spatial Clustering of Applications with Noise)
 	\item[DDoS] Ataque de Denegación de Servicio Distribuido (Distributed Denial of Service)
 	\item[DevOps] Development and Operations
+	\item[DNN] Redes Neuronales Profundas (Deep Neural Networks)
 	\item[DNS] Sistema de Nombres de Dominio (Domain Name System)
 	\item[DSL] Ley de Seguridad de Datos (Data Security Law) - China
 	\item[EC2] Elastic Compute Cloud (Amazon EC2)
@@ -358,6 +414,7 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[MIT] Massachusetts Institute of Technology (Instituto de Tecnología de Massachusetts)
 	\item[ML] Aprendizaje Automático (Machine Learning)
 	\item[MLOps] Operaciones de Aprendizaje Automático (Machine Learning Operations)
+	\item[MLP] Perceptrón Multicapa (Multi-layer Perceptron)
 	\item[NLP] Procesamiento del Lenguaje Natural (Natural Language Processing)
 	\item[NoSQL] Not only SQL
 	\item[NPLM] Modelo de Lenguaje Neuronal Probabilístico (Neural Probabilistic Language Model)

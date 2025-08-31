@@ -1,25 +1,25 @@
-\begin{thebibliography}{119}
+\begin{thebibliography}{124}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
 {\sc {AI Explained}}.
-\newblock An 'ai bubble'? what altman actually said, the facts and nano banana.
+\newblock An ai bubble? what altman actually said, the facts and nano banana.
 \newblock 2025.
 
-\bibitem[{Akash()}]{akashCloud}
+\bibitem[{Akash(s.f.)}]{akashCloud}
 {\sc Akash}.
 \newblock The decentralized cloud built for ai's next frontier.
-\newblock ????
+\newblock s.f.
 
-\bibitem[{Albert~Barron()}]{cloudPizza2014}
+\bibitem[{Albert~Barron(2015)}]{cloudPizza2014}
 {\sc Albert~Barron, t. p. C.~M.}
 \newblock Pizza as a service.
-\newblock ????
+\newblock 2015.
 
 \bibitem[{Amazon(2025)}]{AWSDataCommon}
 {\sc Amazon}.
 \newblock Datos abiertos en aws.
-\newblock Disponible en \url{https://aws.amazon.com/es/opendata/}.
+\newblock 2025.
 
 \bibitem[{Anderson(2004)}]{Anderson2004BOINC}
 {\sc Anderson, D.}
@@ -42,8 +42,7 @@
 \bibitem[{{Awesome data}(2025)}]{awesomePublicDatasets}
 {\sc {Awesome data}}.
 \newblock Awesome public datasets.
-\newblock Disponible en
-  \url{https://github.com/awesomedata/awesome-public-datasets}.
+\newblock 2025.
 
 \bibitem[{{Ayuntamiento de Madrid}(2025)}]{PortalDatosMadrid}
 {\sc {Ayuntamiento de Madrid}}.
@@ -61,12 +60,12 @@
 {\sc Benington, J.}
 \newblock Creating the public in order to create public value?
 \newblock {\em International Journal of Public Administration\/}, vol.\
-  32(3-4), Disponible en \url{https://doi.org/10.1080/01900690902749578}.
+  32(3-4), 2009.
 
-\bibitem[{{bit2brain}()}]{Bit2BrainHistoriaIA}
+\bibitem[{{bit2brain}(2020)}]{Bit2BrainHistoriaIA}
 {\sc {bit2brain}}.
 \newblock {Historia de la IA Inteligencia Artificial}.
-\newblock ????
+\newblock 2020.
 
 \bibitem[{Bobrov(2025)}]{MedallionMedium}
 {\sc Bobrov, K.}
@@ -87,8 +86,25 @@
 
 \bibitem[{Brown et\ al.(2011)Brown, Chui y Manyika}]{brown2011you}
 {\sc Brown, B.}, {\sc Chui, M.} y {\sc Manyika, J.}
-\newblock Are you ready for the era of 'big data'.
+\newblock Are you ready for the era of big data.
 \newblock {\em McKinsey Quarterly\/}, vol.\ 4(1), p\'aginas 24--35, 2011.
+
+\bibitem[{Brownlee(2016)}]{Brownlee_2016_MMLA}
+{\sc Brownlee, J.}
+\newblock {\em Master Machine Learning Algorithms: Discover How They Work and
+  Implement Them From Scratch\/}.
+\newblock Machine Learning Mastery, 2016.
+
+\bibitem[{Brownlee(2024)}]{Jason2024MLTypes}
+{\sc Brownlee, J.}
+\newblock A practical guide to choosing the right algorithm for your problem:
+  From regression to neural networks.
+\newblock 2024.
+
+\bibitem[{Brownlee(s.f)}]{JasonMachinelearningmastery}
+{\sc Brownlee, J.}
+\newblock Machine learning mastery.
+\newblock s.f.
 
 \bibitem[{Campbell et\ al.(2002)Campbell, Hoane~Jr. y
   Hsu}]{Campbell2002DeepBlue}
@@ -111,26 +127,25 @@
   the evolution and applications of generative transformer models.
 \newblock 2023.
 
-\bibitem[{clouding.io()}]{cloudingIO}
+\bibitem[{clouding.io(s.f.)}]{cloudingIO}
 {\sc clouding.io}.
 \newblock clouding.io, infraestructura cloud a tu servicio.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{CNMC(2025)}]{DatosGeneralesCNMC}
 {\sc CNMC}.
 \newblock Telecomunicaciones anual datos generales cnmc.
-\newblock Disponible en
-  \url{https://data.cnmc.es/telecomunicaciones-y-sector-audiovisual/datos-anuales/datos-generales/telecomunicaciones-anual}.
+\newblock 2025.
 
 \bibitem[{Concepción De~Linares(2025{\natexlab{a}})}]{OpenFoodFactsDataAPP}
 {\sc Concepción De~Linares, J.~B.}
 \newblock Open food facts.
-\newblock Disponible en \url{https://fr-en.openfoodfacts.org/}.
+\newblock 2025{\natexlab{a}}.
 
 \bibitem[{Concepción De~Linares(2025{\natexlab{b}})}]{PlanttesDataAPP}
 {\sc Concepción De~Linares, J.~B.}
 \newblock Planttes.
-\newblock Disponible en \url{https://www.planttes.com/?lang=en}.
+\newblock 2025{\natexlab{b}}.
 
 \bibitem[{{Congreso de los Estados Unidos de America}(1996)}]{webHIPAA1996EEUU}
 {\sc {Congreso de los Estados Unidos de America}}.
@@ -148,10 +163,10 @@
 \newblock Conferencia - cómo sobrevivir a la infoxicación.
 \newblock 2000.
 
-\bibitem[{{Danysoft}()}]{12Botnets}
+\bibitem[{{Danysoft}(s.f.)}]{12Botnets}
 {\sc {Danysoft}}.
 \newblock El ataque de los botnets.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{{Esri España}(2025)}]{PortalEsriEspanna}
 {\sc {Esri España}}.
@@ -163,20 +178,20 @@
 \newblock California consumer privacy act (ccpa).
 \newblock 2018.
 
-\bibitem[{{European Commission}({\natexlab{a}})}]{EuroDigitalStrategyEdge}
-{\sc {European Commission}}.
-\newblock Cloud computing.
-\newblock ????{\natexlab{a}}.
-
-\bibitem[{{European Commission}({\natexlab{b}})}]{BDTIEuropeProject}
-{\sc {European Commission}}.
-\newblock From hype to action using the big data test infrastructure (bdti).
-\newblock ????{\natexlab{b}}.
-
-\bibitem[{{European Commission}({\natexlab{c}})}]{SIMPLEuropeProject}
+\bibitem[{{European Commission}(2024)}]{SIMPLEuropeProject}
 {\sc {European Commission}}.
 \newblock Simpl: Cloud-to-edge federations empowering eu data spaces.
-\newblock ????{\natexlab{c}}.
+\newblock 2024.
+
+\bibitem[{{European Commission}(s.f.{\natexlab{a}})}]{EuroDigitalStrategyEdge}
+{\sc {European Commission}}.
+\newblock Cloud computing.
+\newblock s.f.{\natexlab{a}}.
+
+\bibitem[{{European Commission}(s.f.{\natexlab{b}})}]{BDTIEuropeProject}
+{\sc {European Commission}}.
+\newblock From hype to action using the big data test infrastructure (bdti).
+\newblock s.f.{\natexlab{b}}.
 
 \bibitem[{{European Parliament}(2022)}]{EU_DGA_2022}
 {\sc {European Parliament}, C.}
@@ -186,10 +201,10 @@
 \newblock Official Journal of the European Union, L 152, pp. 1-44, 2022.
 \newblock Accessed: 28 August 2025.
 
-\bibitem[{Eurostat()}]{EurostatCloudUsage}
+\bibitem[{Eurostat(s.f.)}]{EurostatCloudUsage}
 {\sc Eurostat}.
 \newblock Cloud computing services by size class of enterprise.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Ferrer-Sapena~A.(2011)}]{OperGovernment2011}
 {\sc Ferrer-Sapena~A., A.-B.~R., Peset~F.}
@@ -231,10 +246,10 @@
 \newblock The ethics of advanced ai assistants.
 \newblock 2024.
 
-\bibitem[{Gigas()}]{gigasCloud}
+\bibitem[{Gigas(s.f.)}]{gigasCloud}
 {\sc Gigas}.
 \newblock Gigas - cloud hosting solutions.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Giulia~Carsaniga(2022)}]{UseCaseObservatory2022V1}
 {\sc Giulia~Carsaniga, D.~R., Jochem~Dogger}.
@@ -243,33 +258,25 @@
   open data volume i.
 \newblock {\em Publications Office of the European Union\/}, 2022.
 
-\bibitem[{GmbH()}]{nextcloudCloud}
+\bibitem[{GmbH(s.f.)}]{nextcloudCloud}
 {\sc GmbH, N.}
 \newblock Nextcloud - your own private cloud.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Gómez-Obregón(2025{\natexlab{a}})}]{JaimeGomezObregon}
 {\sc Gómez-Obregón, J.}
 \newblock Jaime gómez-obregón.
-\newblock Disponible en
-  \url{https://github.com/awesomedata/awesome-public-datasets}.
+\newblock 2025{\natexlab{a}}.
 
 \bibitem[{Gómez-Obregón(2025{\natexlab{b}})}]{JaimeGomezObregonDonacion}
 {\sc Gómez-Obregón, J.}
 \newblock La donación - jaime gómez-obregón.
-\newblock Disponible en
-  \url{https://github.com/JaimeObregon/subvenciones/tree/main/files}.
+\newblock 2025{\natexlab{b}}.
 
 \bibitem[{Gómez-Obregón(2025{\natexlab{c}})}]{JaimeGomezObregonSubvenciones}
 {\sc Gómez-Obregón, J.}
 \newblock Subvenciones - jaime gómez-obregón.
-\newblock Disponible en
-  \url{https://github.com/JaimeObregon/subvenciones/tree/main/files}.
-
-\bibitem[{{Gobierno de España}()}]{InfoNubeSARA}
-{\sc {Gobierno de España}}.
-\newblock Nubesara.
-\newblock ????
+\newblock 2025{\natexlab{c}}.
 
 \bibitem[{{Gobierno de España}(2021{\natexlab{a}})}]{GobEspana2021BDTI}
 {\sc {Gobierno de España}}.
@@ -286,33 +293,37 @@
 \bibitem[{{Gobierno de España}(2025{\natexlab{a}})}]{EventosDatathonGOB}
 {\sc {Gobierno de España}}.
 \newblock Eventos datathon gobierno de españa.
-\newblock Disponible en \url{https://datos.gob.es/es/event-tags/datathon}.
+\newblock 2025{\natexlab{a}}.
 
 \bibitem[{{Gobierno de España}(2025{\natexlab{b}})}]{EventosDatosAbiertosGOB}
 {\sc {Gobierno de España}}.
 \newblock Eventos datos abiertos gobierno de españa.
-\newblock Disponible en
-  \url{https://datos.gob.es/es/eventos/etiquetas/datos-abiertos-1918}.
+\newblock 2025{\natexlab{b}}.
 
 \bibitem[{{Gobierno de España}(2025{\natexlab{c}})}]{PortalDatosGob}
 {\sc {Gobierno de España}}.
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{c}}.
 
-\bibitem[{{Golem Network}()}]{GolemNetwork}
+\bibitem[{{Gobierno de España}(s.f.)}]{InfoNubeSARA}
+{\sc {Gobierno de España}}.
+\newblock Nubesara.
+\newblock s.f.
+
+\bibitem[{{Golem Network}(s.f.)}]{GolemNetwork}
 {\sc {Golem Network}}.
 \newblock Golem network.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Google(2025)}]{googleDataCommon}
 {\sc Google}.
 \newblock Data commons.
-\newblock Disponible en \url{https://docs.datacommons.org/custom_dc/}.
+\newblock 2025.
 
-\bibitem[{{Google Cloud}()}]{distributedGCP}
+\bibitem[{{Google Cloud}(s.f.)}]{distributedGCP}
 {\sc {Google Cloud}}.
 \newblock Amplía la infraestructura y la ia de google cloud on-premise.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{{Google Trends}(2025)}]{TrendsGoogleIA2025}
 {\sc {Google Trends}}.
@@ -351,8 +362,7 @@
 \bibitem[{{Insights + Analytics}(2024)}]{DatosMercadosEspanna}
 {\sc {Insights + Analytics}, E.}
 \newblock Datos para espaÑa y mundiales de investigaciÓn de mercados 2023.
-\newblock Disponible en
-  \url{https://ia-espana.org/wp-content/uploads/2024/10/NdpdatosEncuentro_16102024.pdf}.
+\newblock 2024.
 
 \bibitem[{Jiang et\ al.(2024)Jiang, Sablayrolles, Roux, Mensch, Savary,
   Bamford, Chaplot, de~las Casas, Hanna, Bressand, Lengyel, Bour, Lample,
@@ -390,6 +400,13 @@
 \newblock {\em International Journal of Engineering and Advanced Technology
   (IJEAT) Volume-9 Issue-1\/}, 2019.
 
+\bibitem[{Kreuzberger et\ al.(2023)Kreuzberger, Kühl y
+  Hirschl}]{Kreuzberger2023MLOps}
+{\sc Kreuzberger, D.}, {\sc Kühl, N.} y {\sc Hirschl, S.}
+\newblock Machine learning operations (mlops): Overview, definition, and
+  architecture.
+\newblock {\em IEEE Access\/}, vol.\ 11, p\'aginas 31866--31879, 2023.
+
 \bibitem[{Kumar et\ al.(2014)Kumar, Adwani, Kumawat y
   Jangir}]{OpenNebula2014Kumar}
 {\sc Kumar, R.}, {\sc Adwani, L.}, {\sc Kumawat, S.} y {\sc Jangir, S.~K.}
@@ -409,10 +426,10 @@
 \newblock 2016.
 \newblock Máster en Ingeniería Informática, curso 2015-2016.
 
-\bibitem[{{Market report analytics}()}]{EspannaCloudGroeth2033}
+\bibitem[{{Market report analytics}(2024)}]{EspannaCloudGroeth2033}
 {\sc {Market report analytics}}.
 \newblock Spain cloud computing market market’s growth blueprint.
-\newblock ????
+\newblock 2024.
 
 \bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
 {\sc Matheus, R.} y {\sc Janssen, M.}
@@ -442,15 +459,15 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), p\'aginas 192--219, 2009.
 
-\bibitem[{Microsoft({\natexlab{a}})}]{MicrosoftCloudTerminology}
+\bibitem[{Microsoft(s.f.{\natexlab{a}})}]{MicrosoftCloudTerminology}
 {\sc Microsoft}.
 \newblock Cloud computing terminology.
-\newblock ????{\natexlab{a}}.
+\newblock s.f.{\natexlab{a}}.
 
-\bibitem[{Microsoft({\natexlab{b}})}]{MedallionMicrosoft}
+\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{MedallionMicrosoft}
 {\sc Microsoft}.
 \newblock What is the medallion lakehouse architecture?
-\newblock ????{\natexlab{b}}.
+\newblock s.f.{\natexlab{b}}.
 
 \bibitem[{Moore(1995)}]{moore1995creating}
 {\sc Moore, M.}
@@ -501,30 +518,30 @@
 
 \bibitem[{OECD(2023)}]{OECD2023openData}
 {\sc OECD}.
-\newblock 2023 oecd open, useful and re-usable data 'ourdata' index: Results
+\newblock 2023 oecd open, useful and re-usable data ``ourdata'' index: Results
   and key findings.
 \newblock {\em OECD Public Governance Policy Papers, No. 43, OECD Publishing,
   Paris\/}, 2023.
 
-\bibitem[{{Open Data Charter}()}]{Open_Data_Charter}
+\bibitem[{{Open Data Charter}(s.f.)}]{Open_Data_Charter}
 {\sc {Open Data Charter}}.
 \newblock ¿qué son los datos abiertos?
-\newblock ????
+\newblock s.f.
 
 \bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
 {\sc {Open Knowledge Foundation}}.
 \newblock Open definition.
-\newblock Disponible en \url{https://opendefinition.org/}.
+\newblock 2025.
 
-\bibitem[{OVHCloud()}]{OVHCloudFree}
+\bibitem[{OVHCloud(s.f.)}]{OVHCloudFree}
 {\sc OVHCloud}.
 \newblock Public cloud free trial ovhcloud.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Pangarkar(2025)}]{BigDataStadisticsMarket}
 {\sc Pangarkar, T.}
 \newblock Big data statistics 2025 by patterns in the dimensions.
-\newblock Disponible en \url{https://scoop.market.us/big-data-statistics/}.
+\newblock 2025.
 
 \bibitem[{Sánchez~de Paz(2023)}]{sanchez2023optimizacion}
 {\sc Sánchez~de Paz, M.}
@@ -539,21 +556,20 @@
 \newblock ¿qué son los datos abiertos?
 \newblock 2025.
 
-\bibitem[{PreparaTIC()}]{InfoPreparaTICNubeSARA}
+\bibitem[{PreparaTIC(s.f.)}]{InfoPreparaTICNubeSARA}
 {\sc PreparaTIC}.
 \newblock Servicio nubesara. casos prÁcticos y ejemplos de aplicaciÓn.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Press(2013)}]{HistoryOfBigData}
 {\sc Press, G.}
 \newblock A very short history of big data.
-\newblock Disponible en
-  \url{https://www.forbes.com/sites/gilpress/2013/05/09/a-very-short-history-of-big-data/}.
+\newblock 2013.
 
-\bibitem[{{radwere}()}]{MydoomDDoSMalware}
+\bibitem[{{radwere}(s.f.)}]{MydoomDDoSMalware}
 {\sc {radwere}}.
 \newblock What is mydoom malware?
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Ramos-Simón(2017)}]{LicenciasLibres2017Datos}
 {\sc Ramos-Simón, L.~F.}
@@ -574,15 +590,15 @@
 \newblock Portal de datos abiertos de los registradores de españa.
 \newblock 2025.
 
-\bibitem[{{Render Network}()}]{rendernetwork}
+\bibitem[{{Render Network}(s.f.)}]{rendernetwork}
 {\sc {Render Network}}.
 \newblock The distributed gpu render network.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{R.I.Pienaar(2025)}]{free-for-dev}
 {\sc R.I.Pienaar}.
 \newblock Free for devs.
-\newblock Disponible en \url{https://github.com/ripienaar/free-for-dev}.
+\newblock 2025.
 
 \bibitem[{Rosenblatt(1958)}]{rosenblatt1958perceptron}
 {\sc Rosenblatt, F.}
@@ -604,10 +620,16 @@
 \newblock {\em Information Fusion\/}, vol. 126, 2025.
 \newblock ISSN 1566-2535.
 
-\bibitem[{{SONM}()}]{SONMWhitepaper}
+\bibitem[{Sarker(2021)}]{Sarker2021}
+{\sc Sarker, I.~H.}
+\newblock Machine learning: Algorithms, real-world applications and research
+  directions.
+\newblock {\em SN Computer Science\/}, vol.\ 2(3), p\'agina 160, 2021.
+
+\bibitem[{{SONM}(s.f.)}]{SONMWhitepaper}
 {\sc {SONM}}.
 \newblock Sonm whitepaper.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{{Standing Committee of the National People's
   Congress}(2021{\natexlab{a}})}]{webDSL2021China}
@@ -624,19 +646,18 @@
 
 \bibitem[{Talbot(2011)}]{Talbot01012011}
 {\sc Talbot, C.}
-\newblock Paradoxes and prospects of 'public value'.
+\newblock Paradoxes and prospects of public value.
 \newblock {\em Public Money \& Management\/}, vol.\ 31(1), 2011.
 
 \bibitem[{Taylor(2025)}]{BigDataStatista}
 {\sc Taylor, P.}
 \newblock Big data - statistics and facts.
-\newblock Disponible en
-  \url{https://www.statista.com/topics/1464/big-data/#topicOverview}.
+\newblock 2025.
 
-\bibitem[{Telefónica()}]{TelefonicaTechCloudPlatform}
+\bibitem[{Telefónica(s.f.)}]{TelefonicaTechCloudPlatform}
 {\sc Telefónica}.
 \newblock Telefónica tech cloud platform.
-\newblock ????
+\newblock s.f.
 
 \bibitem[{Theodorakopoulos~Leonidas(2024)}]{DataManagement2024Theodorakopoulos}
 {\sc Theodorakopoulos~Leonidas, S.~Y., Theodoropoulou~Alexandra}.
@@ -660,19 +681,17 @@
 \bibitem[{{Union Europea}(2016)}]{webRGPD2016Europa}
 {\sc {Union Europea}}.
 \newblock Data protection under gdpr.
-\newblock Disponible en
-  \url{https://europa.eu/youreurope/business/dealing-with-customers/data-protection/data-protection-gdpr/index_en.htm}.
+\newblock 2016.
 
 \bibitem[{{Union Europea}(2023)}]{webLGD2023Europa}
 {\sc {Union Europea}}.
 \newblock Explicación de la ley de gobernanza de datos.
-\newblock Disponible en
-  \url{https://digital-strategy.ec.europa.eu/es/policies/data-governance-act-explained}.
+\newblock 2023.
 
 \bibitem[{{Union Europea}(2024)}]{webRIA2024Europa}
 {\sc {Union Europea}}.
 \newblock Reglamento de inteligencia artificial.
-\newblock Disponible en \url{https://eur-lex.europa.eu/eli/reg/2024/1689}.
+\newblock 2024.
 
 \bibitem[{{Union Europea}(2025{\natexlab{a}})}]{EuropeanAlternatives}
 {\sc {Union Europea}}.
@@ -687,18 +706,17 @@
 \bibitem[{UniversiDATA(2020)}]{UniversiDATAAnalisis}
 {\sc UniversiDATA}.
 \newblock Análisis de desplazamientos interurbanos en estudiantes.
-\newblock Disponible en
-  \url{https://www.universidata.es/analisis/%C2%BFqu%C3%A9-distancia-tienen-que-recorrer-los-estudiantes-para-ir-clase}.
+\newblock 2020.
 
 \bibitem[{UniversiDATA(2024)}]{UniversiDATADatathon}
 {\sc UniversiDATA}.
 \newblock Ii datathon universidata.
-\newblock Disponible en \url{https://www.universidata.es/datathon/}.
+\newblock 2024.
 
 \bibitem[{UniversiDATA(2025)}]{UniversiDATA}
 {\sc UniversiDATA}.
 \newblock Universidata.
-\newblock Disponible en \url{https://www.universidata.es/}.
+\newblock 2025.
 
 \bibitem[{{Universitat Autònoma de Barcelona}(2025)}]{PortalInfoparticipa}
 {\sc {Universitat Autònoma de Barcelona}}.
@@ -746,6 +764,6 @@
 \bibitem[{Wikipedia(2025)}]{wikiInformationAge}
 {\sc Wikipedia}.
 \newblock Information age.
-\newblock Disponible en \url{https://en.wikipedia.org/wiki/Information_Age}.
+\newblock 2025.
 
 \end{thebibliography}
