@@ -133,8 +133,9 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 			
 	\begin{figure}[h]
 		\begin{center}
+			\caption{Capas de gobierno del dato}
 			\includegraphics[scale=0.3]{Imagenes/Bitmap/data_gobernance.png} 
-			\caption{Capas de gobierno del dato, fuente: \citep{OECD2019}.}
+			\footnotesize{Fuente: \citep{OECD2019} traducida.}
 		\end{center}
 	\end{figure}
 	
@@ -190,8 +191,9 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 		
 		\begin{figure}[h]
 			\begin{center}
+				\caption{Distintos tipos de cloud}
 				\includegraphics[scale=0.5]{Imagenes/Bitmap/distintos_tipos_clouds.png} 
-				\caption{Distintos tipos de cloud, fuente: \citep{cloudPizza2014}.}
+				\footnotesize{Fuente: \citep{cloudPizza2014}.}
 				\label{figura_A2}
 			\end{center}
 		\end{figure}
@@ -244,8 +246,9 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	Para facilitar la visualización de esta definición, resumiremos los hitos que consideramos importantes en orden cronológico:
 	\begin{table}[h]
 		\centering
+		
+		\caption{\textbf{Linea de tiempo de la IA}}:
 		\begin{tabular}{@{}r@{\hspace{1em}}|@{\hspace{1em}}p{11cm}@{}}
-			\multicolumn{2}{@{}c@{}}{\textbf{Línea de tiempo de IA}} \\ \\
 			1936 & \textbf{Turing machines} - Marco teórico para computación \\
 			1950 & \textbf{Turing test} - Primera medida práctica de inteligencia máquina \\
 			1958 & \textbf{Perceptrón} - Modelo base de las redes neuronales \\
@@ -271,7 +274,7 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 			2025 & \textbf{DeepSeek} - LLM de bajo costo \\
 			\    & \textbf{IA Agéntica y especializada} - agentes autónomos, tareas específicas \\
 		\end{tabular}
-		\caption{Fuente: Adaptación y actualización de \citep{Cheok2023AIHistory}, complementada con información de \citep{Sapkota2025Agentic}, \citep{Bit2BrainHistoriaIA}, \citep{Campbell2002DeepBlue} y las referencias mencionadas en el texto.}
+		\footnotesize{Fuente: Adaptación y actualización de \citep{Cheok2023AIHistory}, complementada con información de \citep{Sapkota2025Agentic}, \citep{Bit2BrainHistoriaIA}, \citep{Campbell2002DeepBlue} y las referencias mencionadas en el texto.}
 	\end{table}
 	
 	\newpage %[TODO] ver si es necesario al final
@@ -280,8 +283,9 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	
 	\begin{figure}[h]
 		\begin{center}
+			\caption{Tendencias de búsqueda de IA} 
 			\includegraphics[scale=0.3]{Imagenes/Bitmap/IA_Trends2011_2025.png} 
-			\caption{Tendencias de búsqueda de IA: \citep{TrendsGoogleIA2025},	\emph{Destacar el pico de 2011 por el lanzamiento de Siri (Apple) y la tendencia desde 2022 por la salida de chatGPT.}} 
+			\footnotesize{Fuente: \citep{TrendsGoogleIA2025},	\emph{Destacar el pico de 2011 por el lanzamiento de Siri (Apple) y la tendencia desde 2022 por la salida de chatGPT.}}
 			\label{figura_A3}
 		\end{center}
 	\end{figure} 
@@ -342,10 +346,10 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 		Es un algoritmo de aprendizaje \textbf{no supervisado para clusterización} basado en ``densidad''. Consigue su objetivo identificando regiones densas de puntos de datos separadas por regiones de menor densidad, clasificando los puntos como centrales, frontera o de ruido, y forma cada clúster a partir de puntos que están densamente conectados. No requiere que se especifique el número de clústeres de antemano y es capaz de descubrir clústeres de formas arbitrarias, además de identificar valores extremos.
 		
 		\item \textbf{Redes Neuronales Profundas (Deep Neural Networks - DNN):}
-		Brevemente, son modelos de aprendizaje \textbf{supervisado} que incluyen arquitecturas como los perceptrones multicapa (MLP). Consiguen su objetivo aprendiendo representaciones jerárquicas de los datos a través de múltiples capas ocultas de procesamiento (capas ocultas). El proceso de entrenamiento implica la propagación hacia adelante de la entrada para calcular una salida, seguida de la retropropagación ("Backpropagation") del error para ajustar iterativamente los pesos de las conexiones, minimizando la diferencia entre la salida predicha y la esperada. Son aptas para \textbf{clasificación y regresión en datos complejos}. \cite{Brownlee2018, Sarker2021}
+		Brevemente, son modelos de aprendizaje \textbf{supervisado} que incluyen arquitecturas como los perceptrones multicapa (MLP). Consiguen su objetivo aprendiendo representaciones jerárquicas de los datos a través de múltiples capas ocultas de procesamiento (capas ocultas). El proceso de entrenamiento implica la propagación hacia adelante de la entrada para calcular una salida, seguida de la retropropagación ("Backpropagation") del error para ajustar iterativamente los pesos de las conexiones, minimizando la diferencia entre la salida predicha y la esperada. Son aptas para \textbf{clasificación y regresión en datos complejos}.
 		
 		\item \textbf{Grandes Modelos de Lenguaje (Large Language Models - LLM):}
-		Son un tipo avanzado de Redes Neuronales Profundas, frecuentemente basadas en la arquitectura de ``transformers''. Consiguen su objetivo mediante un pre-entrenamiento masivo en vastos corpus de texto y código, permitiendo aprender patrones complejos de lenguaje, gramática, semántica y contextualización. Su mecanismo de atención les permite ponderar la importancia de diferentes partes de la entrada, facilitando una comprensión profunda y la generación de texto coherente y relevante. Se utilizan para una amplia gama de tareas de procesamiento de lenguaje natural (PNL). \cite{Sarker2021}    \\ \\ 
+		Son un tipo avanzado de Redes Neuronales Profundas, frecuentemente basadas en la arquitectura de ``transformers''. Consiguen su objetivo mediante un pre-entrenamiento masivo en vastos corpus de texto y código, permitiendo aprender patrones complejos de lenguaje, gramática, semántica y contextualización. Su mecanismo de atención les permite ponderar la importancia de diferentes partes de la entrada, facilitando una comprensión profunda y la generación de texto coherente y relevante. Se utilizan para una amplia gama de tareas de procesamiento de lenguaje natural (PNL).  \\ \\ 
 	\end{enumerate}
 
 	\item 
@@ -388,15 +392,17 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[DSL] Ley de Seguridad de Datos (Data Security Law) - China
 	\item[EC2] Elastic Compute Cloud (Amazon EC2)
 	\item[EEUU] Estados Unidos
+	\item[ETL] Extract, Transform, Load (Extraer, Transformar, Cargar)
 	\item[EU] European Union (Unión Europea)
 	\item[GAN] Red Generativa Antagónica (Generative Adversarial Network)
 	\item[GCP] Google Cloud Platform
 	\item[GPT] Transformador Pre-entrenado Generativo (Generative Pre-trained Transformer)
 	\item[GPU] Unidad de Procesamiento Gráfico (Graphics Processing Unit)
 	\item[HIPAA] Ley de Portabilidad y Responsabilidad de Seguros de Salud (Health Insurance Portability and Accountability Act)
-	\item[HITL] Human in the loop (mantener al humano en los procesos (blucles) de Inteligencia artificial)
+	\item[HITL] Human in the loop (humano en los procesos (de IA))
 	\item[HMM] Modelo Oculto de Markov (Hidden Markov Model)
 	\item[HTTP] Hypertext Transfer Protocol
+	\item[HTML] Lenguaje de Marcado de Hipertexto (HyperText Markup Language)
 	\item[IA] Inteligencia Artificial (Artificial Intelligence)
 	\item[IaaS] Infraestructura como Servicio (Infrastructure as a Service)
 	\item[IBM] International Business Machines (empresa)
@@ -415,30 +421,42 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[ML] Aprendizaje Automático (Machine Learning)
 	\item[MLOps] Operaciones de Aprendizaje Automático (Machine Learning Operations)
 	\item[MLP] Perceptrón Multicapa (Multi-layer Perceptron)
+	\item[MoE] Mezcla de Expertos (Mixture of Experts)
+	\item[NAS] Búsqueda de Arquitecturas Neuronales (Neural Architecture Search)
 	\item[NLP] Procesamiento del Lenguaje Natural (Natural Language Processing)
 	\item[NoSQL] Not only SQL
 	\item[NPLM] Modelo de Lenguaje Neuronal Probabilístico (Neural Probabilistic Language Model)
 	\item[OECD] Organización para la Cooperación y el Desarrollo Económicos (Organisation for Economic Co-operation and Development)
 	\item[OGDA] Ley de Datos Abiertos del Gobierno (OPEN Government Data Act)
 	\item[OKF] Open Knowledge Foundation
+	\item[ONG] Organización No Gubernamental
+	\item[ONTSI] Observatorio Nacional de Tecnología y Sociedad
 	\item[PaaS] Plataforma como Servicio (Platform as a Service)
 	\item[PIPL] Ley de Protección de Información Personal (Personal Information Protection Law) - China
 	\item[PLN] Procesamiento del Lenguaje Natural (Natural Language Processing)
+	\item[PYMEs] Pequeñas y Medianas Empresas
 	\item[R2] R2 Storage (Almacenamiento de Cloudflare)
 	\item[RAM] Memoria de Acceso Aleatorio (Random Access Memory)
+	\item[RDS] Servicio de Bases de Datos Relacionales (Relational Database Service)
+	\item[RGPD] Reglamento General de Protección de Datos
+	\item[RIA] Reglamento de Inteligencia Artificial
 	\item[RL] Aprendizaje por Refuerzo (Reinforcement Learning)
 	\item[RNN] Redes Neuronales Recurrentes (Recurrent Neural Network)
-	\item[RGPD] Reglamento General de Protección de Datos
 	\item[S3] Simple Storage Service (Amazon S3)
 	\item[SaaS] Software como Servicio (Software as a Service)
 	\item[SASE] Acceso Seguro al Borde del Servicio (Secure Access Service Edge)
+	\item[SES] Simple Email Service (Amazon SES)
 	\item[SIMPL] Smart Middleware Platform for Cloud-to-Edge (EU)
+	\item[SNS] Simple Notification Service (Amazon SNS)
+	\item[SQS] Simple Queue Service (Amazon SQS)
 	\item[SQL] Lenguaje de Consulta Estructurado (Structured Query Language)
 	\item[SSL] Capa de Conexión Segura (Secure Sockets Layer)
 	\item[SSD] Disco de Estado Sólido (Solid State Drive)
 	\item[TPU] Unidad de Procesamiento Tensorial (Tensor Processing Unit)
 	\item[TURN] Traversal Using Relays around NAT (Network Address Translation)
 	\item[UE] Unión Europea
+	\item[VM] Máquina Virtual (Virtual Machine)
+	\item[XML] Lenguaje de Marcado Extensible (eXtensible Markup Language)
 	\item[XLSX] Excel Open XML Spreadsheet
 	
 \end{description}

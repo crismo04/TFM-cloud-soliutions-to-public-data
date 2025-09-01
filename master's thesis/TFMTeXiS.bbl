@@ -1,4 +1,4 @@
-\begin{thebibliography}{126}
+\begin{thebibliography}{140}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -20,6 +20,11 @@
 {\sc Amazon}.
 \newblock Datos abiertos en aws.
 \newblock 2025.
+
+\bibitem[{{Amazon Web Services}(s-f.)}]{AmazonSageMaker_CloudIA}
+{\sc {Amazon Web Services}}.
+\newblock Amazon sagemaker.
+\newblock s-f.
 
 \bibitem[{Anderson(2004)}]{Anderson2004BOINC}
 {\sc Anderson, D.}
@@ -61,6 +66,11 @@
 \newblock Creating the public in order to create public value?
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), 2009.
+
+\bibitem[{Böer(2023)}]{comparisonAutoMLServices}
+{\sc Böer, J.}
+\newblock Self-service ai for everyone? a comparison of automl services.
+\newblock 2023.
 
 \bibitem[{{bit2brain}(2020)}]{Bit2BrainHistoriaIA}
 {\sc {bit2brain}}.
@@ -211,6 +221,16 @@
 \newblock Cloud computing services by size class of enterprise.
 \newblock s.f.
 
+\bibitem[{Fang et\ al.(2024)Fang, Xu, Tan, Zhang, Hu, Qi, Nickleach,
+  Socolinsky, Sengamedu y Faloutsos}]{fang2024llms}
+{\sc Fang, X.}, {\sc Xu, W.}, {\sc Tan, F.~A.}, {\sc Zhang, J.}, {\sc Hu, Z.},
+  {\sc Qi, Y.}, {\sc Nickleach, S.}, {\sc Socolinsky, D.}, {\sc Sengamedu, S.}
+  y {\sc Faloutsos, C.}
+\newblock Large language models (llms) on tabular data: Prediction, generation,
+  and understanding -- a survey.
+\newblock {\em arXiv preprint arXiv:2402.17944\/}, 2024.
+\newblock Version 4, last revised 21 June 2024.
+
 \bibitem[{Ferrer-Sapena~A.(2011)}]{OperGovernment2011}
 {\sc Ferrer-Sapena~A., A.-B.~R., Peset~F.}
 \newblock Acceso a los datos públicos y su reutilización: Open data y open
@@ -325,6 +345,16 @@
 \newblock Data commons.
 \newblock 2025.
 
+\bibitem[{Google(s-f.{\natexlab{a}})}]{GoogleVertexAI_CloudIA}
+{\sc Google}.
+\newblock Google vertex ai platform.
+\newblock s-f.{\natexlab{a}}.
+
+\bibitem[{Google(s-f.{\natexlab{b}})}]{GoogleColab_CloudIA}
+{\sc Google}.
+\newblock Welcome to colab!
+\newblock s-f.{\natexlab{b}}.
+
 \bibitem[{{Google Cloud}(s.f.)}]{distributedGCP}
 {\sc {Google Cloud}}.
 \newblock Amplía la infraestructura y la ia de google cloud on-premise.
@@ -364,6 +394,11 @@
 \newblock ISBN 978-981-19-3026-3.
 \newblock Open access book.
 
+\bibitem[{huggingface(s-f.)}]{huggingfaceSpaces_CloudIA}
+{\sc huggingface}.
+\newblock huggingface spaces.
+\newblock s-f.
+
 \bibitem[{{Insights + Analytics}(2024)}]{DatosMercadosEspanna}
 {\sc {Insights + Analytics}, E.}
 \newblock Datos para espaÑa y mundiales de investigaciÓn de mercados 2023.
@@ -399,6 +434,16 @@
 \newblock CRC Press, 2022.
 \newblock ISBN 978-84-1369-269-2.
 
+\bibitem[{Kaggle(s-f.{\natexlab{a}})}]{Kaggle_CloudIA}
+{\sc Kaggle}.
+\newblock Kaggle code notebook.
+\newblock s-f.{\natexlab{a}}.
+
+\bibitem[{Kaggle(s-f.{\natexlab{b}})}]{KaggleDatasetsSpain}
+{\sc Kaggle}.
+\newblock Kaggle datasets.
+\newblock s-f.{\natexlab{b}}.
+
 \bibitem[{Khan y Alam(2019)}]{khan2019fileFormats}
 {\sc Khan, S.} y {\sc Alam, M.}
 \newblock File formats for big data storage systems.
@@ -430,6 +475,11 @@
 \newblock Integración y visualización de datos abiertos medioambientales.
 \newblock 2016.
 \newblock Máster en Ingeniería Informática, curso 2015-2016.
+
+\bibitem[{{LLM Stats}(s.f.)}]{LLMLeaderboardParameters}
+{\sc {LLM Stats}}.
+\newblock Llm leaderboard.
+\newblock s.f.
 
 \bibitem[{{Market report analytics}(2024)}]{EspannaCloudGroeth2033}
 {\sc {Market report analytics}}.
@@ -464,15 +514,25 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), p\'aginas 192--219, 2009.
 
+\bibitem[{microsoft(s-f.)}]{AzureMachineLearning_CloudIA}
+{\sc microsoft}.
+\newblock microsoft azure machine learning.
+\newblock s-f.
+
 \bibitem[{Microsoft(s.f.{\natexlab{a}})}]{MicrosoftCloudTerminology}
 {\sc Microsoft}.
 \newblock Cloud computing terminology.
 \newblock s.f.{\natexlab{a}}.
 
-\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{MedallionMicrosoft}
+\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{TokenizacionMicrosoft}
+{\sc Microsoft}.
+\newblock ¿qué es la tokenización?
+\newblock s.f.{\natexlab{b}}.
+
+\bibitem[{Microsoft(s.f.{\natexlab{c}})}]{MedallionMicrosoft}
 {\sc Microsoft}.
 \newblock What is the medallion lakehouse architecture?
-\newblock s.f.{\natexlab{b}}.
+\newblock s.f.{\natexlab{c}}.
 
 \bibitem[{Moore(1995)}]{moore1995creating}
 {\sc Moore, M.}
@@ -537,6 +597,11 @@
 {\sc {Open Knowledge Foundation}}.
 \newblock Open definition.
 \newblock 2025.
+
+\bibitem[{ovhcloud(s-f.)}]{OVHcloud_CloudIA}
+{\sc ovhcloud}.
+\newblock Ovhcloud ai training.
+\newblock s-f.
 
 \bibitem[{OVHCloud(s.f.)}]{OVHCloudFree}
 {\sc OVHCloud}.
@@ -649,6 +714,12 @@
   china.
 \newblock 2021{\natexlab{b}}.
 
+\bibitem[{Sze et\ al.(2017)Sze, Chen, Emer, Suleiman y Zhang}]{Sze_2017}
+{\sc Sze, V.}, {\sc Chen, Y.-H.}, {\sc Emer, J.}, {\sc Suleiman, A.} y {\sc
+  Zhang, Z.}
+\newblock Hardware for machine learning: Challenges and opportunities.
+\newblock 2017.
+
 \bibitem[{Talbot(2011)}]{Talbot01012011}
 {\sc Talbot, C.}
 \newblock Paradoxes and prospects of public value.
@@ -727,6 +798,11 @@
 {\sc {Universitat Autònoma de Barcelona}}.
 \newblock infoparticipa.
 \newblock 2025.
+
+\bibitem[{university(2024)}]{RapidMinerCourse}
+{\sc university, T.}
+\newblock Data mining without coding.
+\newblock 2024.
 
 \bibitem[{Uriarte y De~Nicola(2018)}]{BlockchainBasedDecentralisedCloud2018}
 {\sc Uriarte, R.~B.} y {\sc De~Nicola, R.}

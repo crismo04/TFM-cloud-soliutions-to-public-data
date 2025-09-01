@@ -41,7 +41,6 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: biblio.bib
-Warning--I didn't find a database entry for "Brownlee2018"
 Warning--empty journal in Anderson2004BOINC
 Warning--empty journal in Datathon2016Anslow
 Warning--empty journal in ArellanoBruno2019UsoDeGeolocalizacion
@@ -57,49 +56,50 @@ Warning--empty journal in moore1995creating
 Warning--empty journal in ontsi2025indicadores
 Warning--empty journal in sanchez2023optimizacion
 Warning--empty journal in SaizSantos2023
+Warning--empty journal in Sze_2017
 Warning--there's a number but no volume in TransparenciaEcuador
 Warning--empty journal in vaswani2017attention
 Warning--empty journal in PrivateIaaSComparative2016
 Warning--empty journal in Werbos1974Backpropagation
-You've used 126 entries,
+You've used 140 entries,
             2962 wiz_defined-function locations,
-            1726 strings with 33287 characters,
-and the built_in function-call counts, 61281 in all, are:
-= -- 4846
-> -- 2300
-< -- 151
-+ -- 935
-- -- 768
-* -- 3806
-:= -- 9809
-add.period$ -- 404
-call.type$ -- 126
-change.case$ -- 894
-chr.to.int$ -- 115
-cite$ -- 145
-duplicate$ -- 4933
-empty$ -- 4436
-format.name$ -- 951
-if$ -- 11930
-int.to.chr$ -- 12
+            1781 strings with 34743 characters,
+and the built_in function-call counts, 67223 in all, are:
+= -- 5319
+> -- 2544
+< -- 163
++ -- 1033
+- -- 849
+* -- 4167
+:= -- 10830
+add.period$ -- 447
+call.type$ -- 140
+change.case$ -- 992
+chr.to.int$ -- 126
+cite$ -- 160
+duplicate$ -- 5392
+empty$ -- 4844
+format.name$ -- 1050
+if$ -- 13048
+int.to.chr$ -- 15
 int.to.str$ -- 1
-missing$ -- 978
-newline$ -- 658
-num.names$ -- 504
-pop$ -- 2268
+missing$ -- 1068
+newline$ -- 729
+num.names$ -- 560
+pop$ -- 2495
 preamble$ -- 1
-purify$ -- 759
+purify$ -- 842
 quote$ -- 0
-skip$ -- 2033
+skip$ -- 2212
 stack$ -- 0
-substring$ -- 2041
-swap$ -- 2254
+substring$ -- 2197
+swap$ -- 2436
 text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1236
-warning$ -- 19
-while$ -- 428
+type$ -- 1376
+warning$ -- 20
+while$ -- 470
 width$ -- 0
-write$ -- 1500
+write$ -- 1657
 (There were 20 warnings)

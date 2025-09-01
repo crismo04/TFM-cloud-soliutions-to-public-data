@@ -15,10 +15,7 @@ También dividiremos esta sección en los tres elementos que componen el trabajo
 Llevamos mucho tiempo escuchando que vivimos en la era de la información o de los dato, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando la primera vez que se acuñó en 2005 el termino ``web 2.0''y ``Big data'' \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente Inteligencia Artificial, llegarán a generan, según proyecciones, la asombrosa cifra de 149 Zettabytes de datos en 2024, ¡un 1 seguido de 23 ceros en bytes! \citep{BigDataStatista} \& \citep{BigDataStadisticsMarket} (numero impresionante a pesar de la naturaleza especulativa de estas proyecciones). 
 Esta evolución no ha sido lineal ni uniforme, sino que ha estado marcada por distintos enfoques, motivaciones y metodologías en todo el mundo en lo que se denominan las tres olas de datos abiertos \hyperref[def5]{[Definición \ref*{def5}]} , diferentes etapas evolutivas por las que ha transitado el movimiento de apertura de datos
 
-En España, los datos también muestran un aumento significativo, según los datos de telecomunicaciones del CNMC, los cuales se han analizado con este mismo proyecto \citep{DatosGeneralesCNMC} 
-% [TODO], %se ha hecho?
-
-el uso de datos generales en las principales empresas es de 0.092 Zettabytes de datos en 2024.
+En España, los datos también muestran un aumento significativo, según los datos de telecomunicaciones del CNMC, los cuales se han analizado con este mismo proyecto \citep{DatosGeneralesCNMC} el uso de datos generales en las principales empresas es de 0.092 Zettabytes de datos en 2024. % [TODO], %se ha hecho?
 Esto es solo un 0.06\% del volumen global, lo cual no cuadra del todo con otras estimaciones \citep{DatosMercadosEspanna} que, por volumen de mercado, sitúan a España en un 0.9\% del volumen global, lo cual se puede explicar debido a que el CNMC solo toma en cuenta datos de las principales empresas de telecomunicaciones, o a que los datos tienen mas valor de mercado que en otras regiones. 
 Aún con estas discrepancias en cuanto a números, lo que está claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta más difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
 
@@ -103,6 +100,7 @@ Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos c
 		\begin{itemize}
 			\item El Instituto Nacional de Estadística (INE) y la Agencia Tributaria han sido actores clave en la liberación de datos abiertos y el fomento de su reutilización para investigación e innovación.  
 			\item Proyectos como el Portal de Transparencia del Gobierno de España y las iniciativas de datos abiertos de comunidades autónomas y ayuntamientos \citep{PortalDatosGob}; \citep{PortalDatosMadrid} \& \citep{PortalRegistradores}, los cuales se esfuerzan por hacer públicos datos de ``alto valor'' \hyperref[def1]{[Definición \ref*{def1}]}.  
+			\item Famosas iniciativas como ``Kaggle'' cuentan con datos de todo tipo sobre España, muchos recopilados de otras fuentes publicas ya nombradas, pero otros interesantes \citep{KaggleDatasetsSpain}.
 			\item Iniciativas que fomentan la transparencia, como InfoParticipa \citep{PortalInfoparticipa}.  
 			\item Iniciativas privadas para la recolección de datos públicos \citep{PortalEsriEspanna}.  
 			\item Iniciativas ya mencionadas como UniversiDATA \citep{UniversiDATA}.  
@@ -270,6 +268,7 @@ con 2 servidores B2-7, 1 base de datos MySQL, 1 IP adicional, 1 Balanceador de C
 
 
 \subsection{Otras herramientas interesantes}
+\label{sec:EstudiosNubesOtrasHerramientas}
 
 También, aunque no son nubes propiamente dichas, hemos querido añadir en esta sección otras herramientas que tienen interés para el proyecto:
 
@@ -369,7 +368,7 @@ También aclarar que, por acotar el alcance del proyecto, este trabajo no destac
 Vamos a estudiar los modelos de aprendizaje automático pertinentes para el análisis predictivo y la extracción de patrones en datos. Aunque se pueden clasificar de varias maneras, clasificaremos los modelos por:
 \begin{itemize}
 	\item Tipos de aprendizaje según la disponibilidad y calidad de etiquetas (supervisado, no supervisado ,por refuerzo, etc.) \hyperref[def13]{[Definición \ref*{def13}]}
-	\item La naturaleza de los datos (tabulares, no estructurados, etc.) \ref{tipos_de_datos}
+	\item La naturaleza de los datos (tabulares, no estructurados, etc.) [\ref{tipos_de_datos}]
 \end{itemize}
 Debido a la utilización principal de datos estructurados y semiestructurados, se priorizaran los modelos adaptados mejor a este tipo de datos \citep{Fowdur2021}.
 
@@ -411,13 +410,85 @@ Para la elección del modelo, seguiremos el siguiente esquema \citep{Jason2024ML
 
 Para tomar mejor las decisiones, se han estudiado estos modelos para comprobar su valor dependiendo del tipo de datos \hyperref[def15]{[Definición \ref*{def15}]}. Pero debido a que los modelos elegidos para cada conjunto de datos depende del tipo de los mismos (e incluso aun sabiendo el tipo de datos es dificil saber si ciento modelo funcionara mejor que otro), estos se detallaran para cada conjunto de datos en el apartado \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}: Materiales y datos}.
 
-\subsection{AutoML y modelos de ML en la nube}
+\subsection{ML en la nube}
 
-[TODO]
+Todos los modelos que se han comentado, particularmente los más complejos, tienen algo en común, son bastante exigentes en el consumo de procesamiento, tanto de CPU, como sobretodo de GPU o TPU \citep{Sze_2017} Esta barrera de entrada hardware ha sido tradicionalmente un impedimento para investigadores, estudiantes y pequeñas organizaciones para ejecutar estos modelos, y en este punto es donde puede ser muy útil el paradigma de la computación en la nube y, sobre todo, los grandes proveedores con sus capas gratuitas, las cuales no solo proporcionan la infraestructura base para poder crear estos modelos, sino que además tienen herramientas especializadas para ello, facilitando la implementación de un ciclo de vida completo de Machine Learning (MLOps).
+
+En este proyecto utilizaremos varias herramientas. En cuanto a los datos, los almacenaremos dependiendo de la nube utilizada para su procesamiento, pues cada una de las nubes puede comunicarse con un numero limitado y especifico de herramientas de almacenamiento. Los modelos entrenados se almacenaran también en la solución de almacenamiento de la propia nube (AWS S3, Azure Storage, etc.) cuando se requiera su uso, pero para entrenamiento o inferencia, a parte de las plataformas de MLOps comentadas, también merece la pena destacar opciones como ``Kaggle notebooks'' o ``HuggingFace Spaces'' que detallaremos en los siguientes apartados.
+
+\subsubsection{Plataformas MLOps en la Nube}
+
+Los principales proveedores de nube ofrecen plataformas completas diseñadas para gestionar el ciclo de vida de los modelos de ML \citep{comparisonAutoMLServices}:
+\begin{itemize}
+	\item \textbf{Google Vertex AI:} Integra herramientas para todo el ciclo de vida del ML: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicacion con las principales herramientas de GCP como Bigquery. Además, ofrece una gran selección de modelos preentrenados de ML para diversos problemas, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA} .
+	\item \textbf{AWS SageMaker:} Proporciona un conjunto completo de herramientas y servicios para construir, entrenar y desplegar modelos de ML a escala, incluyendo notebooks gestionados, algoritmos y entrenamiento distribuido. Soporta una amplia gama de fuentes de datos como S3, Athena, Redshift, Snowflake y Databricks\citep{AmazonSageMaker_CloudIA}.
+	\item \textbf{Azure Machine Learning:} Ofrece un entorno para el desarrollo y despliegue con herramientas para la preparación de datos, entrenamiento de modelos, gestión de experimentos y automatización de flujos de trabajo de ML, ademas de ofrecer modelos de Hugging Face y OpenAI. Sus fuentes de datos principales incluyen Azure Blob Storage, Azure File Share y Azure Data Lake, \citep{AzureMachineLearning_CloudIA}.
+	\item \textbf{OVHcloud (AI Notebook y AI Training):} Ofrece sus servicios "AI Notebook" y "AI Training", con infraestructura gestionada, incluyendo acceso a GPUs, para el desarrollo y entrenamiento de modelos. No tiene un entorno tan potente como el resto de clouds, pero ofrece una capa gratuita generosa y localizada en Europa, \citep{OVHcloud_CloudIA}.
+
+\end{itemize}
+
+\subsubsection{Otras herramientas}
+
+Además de las plataformas comentadas, existen herramientas especializadas de gran utilidad y con capas gratuitas que ya hemos comentado en  \hyperref[sec:EstudiosNubesOtrasHerramientas]{[la sección de cloud \ref*{sec:EstudiosNubesOtrasHerramientas}]}, pero merece la pena concretar:
+ 
+\begin{itemize}
+	\item \textbf{Kaggle Kernels/Notebooks:} Es ideal para análisis exploratorio de datos, competiciones de ML y entrenamiento de modelos intensivos \citep{Kaggle_CloudIA} por el acceso a sus GPUs.
+	\item \textbf{Google Colab:} Alternativa excelente para el entrenamiento de modelos complejos, funcionando como un entorno de desarrollo gratuito con Jupyter Notebooks que ofrece GPUs y TPUs, especialmente popular por su facilidad de uso y su integración con el ecosistema de Google y GCP \citep{GoogleColab_CloudIA}.
+	\item \textbf{Hugging Face Spaces:} Plataforma dedicada al despliegue, compartición y descubrimiento de modelos de ML ya creados, muy útil para pruebas de concepto, permitir la prueba de modelos o utilizar los que la comunidad ha creado \citep{huggingfaceSpaces_CloudIA}.
+\end{itemize}
+
+También vale la pena destacar los grandes modelos generativos, los cuales presentan una capacidad de adaptación enorme, y aunque no están diseñados para la ingesta de grandes volúmenes de datos, el aumento de las ventanas de contexto (numero de tokens a los que el modelo ``presta atención'' \citep{vaswani2017attention}) ha echo que tratar de utilizarlos para el tratamiento de datos tabulares no sensibles sea un caso que vale la pena considerar, siempre teniendo en cuenta estas consideraciones éticas y de privacidad.
+
+Teniendo en cuenta la ventana de contexto de los modelos \citep{LLMLeaderboardParameters} y que un token son aproximadamente cuatro caracteres \citep{TokenizacionMicrosoft} se ha elaborado una tabla con la cantidad de datos tabulares que los principales modelos de LLM podrían asumir, considerando dos tipos de datos tabulares,:
+\begin{itemize}
+ 	\item Uno pequeño, con un par de columnas en forma de ID y etiqueta (15 tokens por fila)
+ 	\item Uno mediano, con varias columnas o una columna de texto con aproximadamente 65 palabras (90 tokens por fila)
+\end{itemize}
+
+\begin{table}[h]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{tabla con ventanas de contexto de diferentes LLM}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Modelo} & \textbf{Tokens ventana} & \textbf{Filas, 15 tok/fila} & \textbf{Filas, 90 tok/fila} \\ \hline
+		Llama 4 Scout & 10.000.000 & 666.666 & 111.111 \\ \hline
+		Gemini 1.5 Pro & 2.097.152 & 139.810 & 23.301 \\ \hline
+		GPT-4.1 & 1.047.576 & 69.838 & 11.639 \\ \hline
+		Nova Pro & 300.000 & 20.000 & 3.333 \\ \hline
+		Grok-4 & 256.000 & 17.066 & 2.844 \\ \hline
+		Claude 3.5 Sonnet & 200.000 & 13.333 & 2.222 \\ \hline
+		DeepSeek-V3 / R1 & 128.000 & 8.533 & 1.422 \\ \hline
+	\end{tabular}
+	\footnotesize Fuente: Elaboración propia con datos de \cite{LLMLeaderboardParameters}.
+\end{table}
+
+Con estos datos se puede observar que para ciertos tipos de datos tabulares, hay modelos que están empezando a poder tratar un numero considerado de filas, y ya hay estudios que lo están revisando \citep{fang2024llms}.
+
+\subsubsection{AutoML}
+
+Como colofón a las estrategias de construcción de modelos, el Aprendizaje Automático Automatizado (AutoML) representa un conjunto de técnicas y herramientas que simplifican y aceleran el proceso de desarrollo del ML, reduciendo la complejidad de la implementación. Lo consiguen automatizando una, varias o todas las siguientes tareas:
+\begin{itemize}
+	\item \textbf{Preprocesamiento de datos:} Limpieza y preparación de datos antes de entrenar el modelo.
+	\item \textbf{Ingeniería de características:} Creación y selección automática de ``features'' relevantes.
+	\item \textbf{Selección de modelo:} Evaluación automática de varios modelos para escoger el más adecuado.
+	\item \textbf{Ajuste de hiperparámetros:} Optimización automática de los parámetros del modelo.
+	\item \textbf{Evaluación del modelo:} Cálculo de métricas y generación de informes de desempeño.
+	\item \textbf{Ensamblado y ``stacking'':} Combinación de múltiples modelos para mejorar la precisión.
+	\item \textbf{Reportes y documentación:} Seguimiento automático de todo el proceso de ML.
+	\item \textbf{Despliegue y producción:} Implementación del modelo entrenado en un entorno productivo.
+\end{itemize}
+Aunque esta tecnología es muy útil para tratar grandes volúmenes de datos de forma rápida, también es muy costosa en cuanto a computación.  por lo que no todas las nubes ofrecen sus herramientas propias, de todas formas las listaremos brevemente \citep{comparisonAutoMLServices}:
+\begin{itemize}
+	\item \textbf{Google Vertex AI AutoML} 
+	\item \textbf{AWS SageMaker Autopilot} 
+	\item \textbf{Microsoft Azure AutoML}
+\end{itemize}
+
+Otra opción seria utilizar herramientas especializadas como ``AutoKeras'' \citep{AutoKerasAutoML} o ``AutoSklearn'' \citep{AutoSklearnAutoML} en la infraestructura que la nube proporciona. Estas librerías implementan soluciones interesantes de AutoML para clasificación.
 
 \subsection{IA, normativa y ética}
 
-También hay que tener en cuenta la nueva normativa que la Unión Europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa}, así como el marco en el que este proyecto se engloba. Este reglamento se ha usado de base para el uso de IA en este proyecto, y aunque la mayor parte de las consideraciones éticas desarrolladas en los últimos años, se centran en modelos de procesamiento del lenguaje natural, (como los estudios conducidos por DeepMind) \citep{gabriel2024ethicsadvancedaiassistants}. En Este aspecto, el presente trabajo se compromete con la ``Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial (IA) de la Universidad Complutense de Madrid'' adjunta en el repositorio de este mismo proyecto. Pero ademas se compromete a seguir los siete estándares definidos por el reglamento de la Unión Europea en \hyperref[sec:Metodos_Principios_EU]{principios éticos de de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
+También hay que tener en cuenta la nueva normativa que la Unión Europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa}, así como el marco en el que este proyecto se engloba. Este reglamento se ha usado de base para el uso de IA en este proyecto, y aunque la mayor parte de las consideraciones éticas desarrolladas en los últimos años, se centran en modelos de procesamiento del lenguaje natural, (como los estudios conducidos por DeepMind) \citep{gabriel2024ethicsadvancedaiassistants}. En Este aspecto, el presente trabajo se compromete con la ``Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial (IA) de la Universidad Complutense de Madrid'' adjunta en el repositorio de este mismo proyecto. Pero además se compromete a seguir los siete estándares definidos por el reglamento de la Unión Europea en \hyperref[sec:Metodos_Principios_EU]{principios éticos de de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
 
 Para terminar, anteriormente se ha hablado sobre la obtención de ``insights'' automáticos: Es sabido que la IA acelera la identificación de patrones, pero para poder efectuar una interpretación estratégica se necesita el contexto de política pública y la validación humana experta. El principio HITL ``humano en el bucle'' \citep{MosqueiraRey2023} es un requisito metodológico y ético para convertir patrones en decisiones, por lo que sera un requisito que seguiremos en este proyecto.
 
@@ -426,6 +497,8 @@ Para terminar, anteriormente se ha hablado sobre la obtención de ``insights'' a
 	
 	Aunque ya se han nombrado varios anteriormente y en las \hyperref[def12]{[Definiciones \ref*{def12}]}, querría añadir algunas referencias mas, para empezar, el libro \citep{Fowdur2021}, cuyo capitulo 3 hace un profundo análisis sobre diferentes modelos de inteligencia artificial. También el libro \citep{Brownlee_2016_MMLA} y todo el trabajo del autor en general, el cual ha sido de gran ayuda para afianzar los conceptos de esta sección.
 
+	También nombrar un par de trabajos muy interesantes sobre AutoML, que al abordar este tema, tratan todas las fases del ciclo completo de los algoritmos de aprendizaje automático. \citep{SALEHIN202452} desglosa cada etapa del flujo de trabajo y explica cómo AutoML automatiza cada una. Destaca la búsqueda de arquitecturas neuronales (NAS), que automatiza el proceso de diseño de la arquitectura de una red neuronal, como motor del crecimiento del AutoML. Por otro lado, \citep{Barbudo2023} se centra mas en el campo de investigación de AutoML, con una taxonomía que clasifica todo el campo en fases, tareas y técnicas.
+	
 	Por último, mencionar trabajos académicos de compañeros con ideas similares a la tratada en este estudio y que han ayudado a guiar el mismo:
 	\begin{itemize}
 		\item \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}: Donde se realiza un análisis del impacto de la pandemia en la movilidad peatonal de Madrid con datos públicos del ayuntamiento (2019-2021). El autor utiliza el modelo ARIMA (Autoregresivo) para las series temporales, o K-means para clusterización de datos. %[TODO] comprobar predicciones y avanzar su analisis en el tiempo, comparar AutoML con sus conclusiones
