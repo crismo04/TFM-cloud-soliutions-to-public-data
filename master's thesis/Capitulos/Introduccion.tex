@@ -3,28 +3,61 @@
 
 \chapterquote{We can only see a short distance ahead, but we can see plenty there that needs to be done.}{Alan Turing}
 
+\vspace{1cm}
+
+Este proyecto se basa en tres tecnologías: La computación en la nube, la cual se entiende como el suministro de servicios informáticos (servidores, almacenamiento, bases de datos, redes, software, análisis y más) a través de internet, permitiendo un acceso flexible y escalable a recursos sin la necesidad de poseer ni gestionar la infraestructura física; la inteligencia artificial, que abarca el desarrollo de sistemas que demuestran la capacidad de aprender, adaptarse, razonar y resolver problemas complejos, así como de percibir y comprender su entorno (virtual o físico), a menudo a través del análisis y la inferencia a partir de grandes volúmenes de datos (más específicamente, en este proyecto se emplearán las metodologías del aprendizaje automático, una rama de la IA centrada en la mejora del rendimiento en tareas específicas a través de algoritmos); Finalmente, los grandes volúmenes de datos se refieren a colecciones masivas y heterogéneas de información generada o recopilada por entidades gubernamentales u organizaciones, accesible al público. 
+
 \section{Motivación}
 
-Empezaremos por el principio, definiendo que son los tres principales elementos de este proyecto [TODO]
+La motivación de este proyecto surge debido al enorme auge que han tenido las tres tecnologías estudiadas, así como de su capacidad para crear sinergias y aportar valor público. En el marco de la Unión Europea, se están tomando medidas para la liberalización de grandes volúmenes de datos públicos y promoviendo su uso por entidades públicas, así como poniendo el foco en la inteligencia artificial y su potencial transformador. La sociedad es cada vez más consciente del potencial de modelos del lenguaje, pero aun falta camino para que estos sean capaces de generar beneficios sociales de la manera más automatizada posible. Este trabajo pretende centrarse en eso, en estudiar cual es la mejor manera de que los distintos actores (individuales, públicos y privados) pueda generar valor a través de estas tecnologías.
 
 
-El alcance de este proyecto es, por un lado [TODO]
+\section{Objetivos y alcance}
+
+El objetivo y alcance de este proyecto es triple:
+\begin{itemize}
+	\item Realizar un análisis exhaustivo del panorama actual de la computación en la nube, la inteligencia artificial y el estado de los datos públicos, identificando las metodologías, técnicas y servicios más relevantes.
+	
+	\item Desarrollar una metodología replicable que permita el uso de estos datos, desde su origen, hasta la generación de valor. Afinando esta metodología a través de la puesta en práctica de la misma.
+	
+	\item Aplicar la metodología propuesta a diversos conjuntos de datos disponibles a nivel europeo y nacional, evaluando diferentes modelos y configuraciones para identificar las soluciones más eficientes y efectivas para generar valor público a partir de la información analizada.
+	
+\end{itemize}
+
 
 \section{Plan de trabajo}
 
-
-Una vez definido el alcance, me gustaría destacar las cinco fases en las que se ha dividido el proyecto, que se han ido iterando para la creación de varios prototipos funcionales:
-
+Una vez definido el alcance, destacaremos las seis fases en las que se ha dividido el proyecto, que se han ido iterando en un esquema ágil para la creación de varias versiones funcionales:
 
 \begin{enumerate}
-	\item \textbf{Fase de investigación:} Búsqueda de información a cerca de diferentes fuentes publicas de datos,  tecnologías en la nube y modelos o herramientas de IA que nos ayuden a tratar, filtrar y entender todos los datos públicos recopilados.
 	
-	\item \textbf{Fase de análisis de requisitos:} [TODO]
+	\item \textbf{Fase de investigación académica:} Búsqueda de estudios o trabajos acerca del estado actual de las tres tecnologías y las últimas innovaciones para establecer el marco teórico y contextualizar las bases del proyecto.
 	
-	\item \textbf{Fase de implementación:} [TODO]
+	\item \textbf{Fase de investigación técnica:} Búsqueda de información acerca de diferentes fuentes públicas de datos,  tecnologías en la nube y modelos o herramientas de IA que nos ayuden a tratar, filtrar y entender todos los datos públicos recopilados.
 	
-	\item \textbf{Fase de pruebas:} [TODO]
+	\item \textbf{Fase de análisis de requisitos:} A partir del conocimiento adquirido, se diseñó la arquitectura de la solución, se seleccionaron los conjuntos de datos públicos objetivo y se planificó la metodología concreta a seguir, estableciendo las métricas para evaluar el éxito del proyecto.
 	
-	\item \textbf{Memoria:} Elaboración de este documento, plasmando las fases anteriores en texto y especificando el desarrollo del proyecto y los resultados del mismo.
+	\item \textbf{Fase de implementación:} Fase central para materializar la solución. Esta aplica la metodología definida para llevar a la práctica e integrar todos los elementos: la configuración del entorno en la nube, la adquisición y limpieza de los datasets seleccionados, el entrenamiento de los modelos de aprendizaje automático y su despliegue y el uso del resto de tecnologías.
+	
+	\item \textbf{Fase de pruebas y evaluación:} Valoración de los prototipos desarrollados y resultados obtenidos, así como del rendimiento de los modelos y la calidad del valor público generado, teniendo en cuenta el aspecto ético de los mismos.
+	
+	\item \textbf{Fase de documentación:} Etapa transversal al resto, documentando los pasos seguidos y hallazgos en la elaboración de este documento, plasmando también los resultados obtenidos, las conclusiones y las posibles líneas de trabajo futuras.
 \end{enumerate}
 
+\section{Estructura de esta memoria}
+
+Toda esta memoria se ha construido con \LaTeX\space [\ref{latexDef}] y ayuda de la plantilla \texis,\space El resto de la memoria se estructurará por capítulos de esta manera:
+
+\hyperref[cap:estadoDeLaCuestion]{\textbf{Capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión}}, donde se plasmaran las conclusiones de las primeras dos fases de investigación: estudios, trabajos, marcos, tecnologías, conjuntos de datos y demás herramientas encontradas. También estudiará el panorama actual en la sociedad con respecto a estas.
+
+\hyperref[cap:Materiales y metodos]{\textbf{Capítulo \ref*{cap:Materiales y metodos}: Materiales y métodos}}, donde se plasmaran las siguientes dos fases de análisis e implementación, concretando las tecnologías y conjuntos de datos utilizados finalmente en el proyecto, al igual que la metodología y pasos que se han seguido durante el proyecto para obtener resultados. 
+
+% [TODO] este capitulo igual queda muy largo, quizas separar
+
+\hyperref[cap:Resultados]{\textbf{Capítulo \ref*{cap:Resultados}: Resultados y trabajo futuro}} En este último capitulo  (que también estará disponible en ingles), se concluirá con los resultados obtenidos en el proyecto, así como las líneas de investigación que inevitablemente quedan abiertas debido a la extensión de los temas tratados.
+
+\hyperref[Appendix:1]{\textbf{Anexo \ref*{Appendix:1} ``Definiciones y acrónimos''}}: Para evitar la excesiva longitud de ciertos apartados, \textbf{algunas definiciones se han movido a este apartado, apareciendo en el texto de la siguiente manera:  \hyperref[def1]{[Definición \ref*{def1}]}}. Aquí también se podrán encontrar los Acrónimos que aparecen durante todo el trabajo [\ref{sec:acronimos}]. 
+
+% [TODO] Añadir un apendice mas con el manual de usuario de las tecnologias estudiadas?
+
+\emph{Aclarar que esta memoria utilizará las palabras en español o sus anglicismos correspondientes indistintamente, debido a su popularización y uso en la rama de la computación. Esto es palabras tales como ``machine learning'' o ``aprendizaje automático'', ``dataset'' o ``conjunto de datos'', ``cloud'' o ``nube'', etc.}

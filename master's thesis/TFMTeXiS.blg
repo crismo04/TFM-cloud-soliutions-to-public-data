@@ -3,6 +3,8 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: TFMTeXiS.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: Cascaras/cover.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: Cascaras/autorizacion.aux
 Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: Cascaras/dedicatoria.aux
 Reallocating 'name_of_file' (item size: 1) to 29 items.
@@ -23,126 +25,81 @@ Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: Capitulos/Capitulo3.aux
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: Capitulos/Capitulo4.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: Capitulos/Capitulo5.aux
 Reallocating 'name_of_file' (item size: 1) to 40 items.
 A level-1 auxiliary file: Capitulos/ConclusionesTrabajoFuturo.aux
 Reallocating 'name_of_file' (item size: 1) to 36 items.
 A level-1 auxiliary file: Capitulos/ConclusionsFutureWork.aux
 Reallocating 'name_of_file' (item size: 1) to 24 items.
-A level-1 auxiliary file: Capitulos/Capitulo6.aux
-Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: Apendices/appendixA.aux
-Reallocating 'name_of_file' (item size: 1) to 24 items.
-A level-1 auxiliary file: Apendices/appendixB.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: Cascaras/bibliografia.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 The style file: TeXiS/TeXiS.bst
-Illegal, another \bibdata command---line 45 of file Cascaras/bibliografia.aux
- : \bibdata
- :         {otros}
-I'm skipping whatever remains of this command
+Reallocating 'name_of_file' (item size: 1) to 7 items.
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: Cascaras/fin.aux
-Database file #1: otros.bib
-Warning--entry type for "selenium" isn't style-file defined
---line 93 of file otros.bib
-Warning--entry type for "tutorialWebDriver" isn't style-file defined
---line 101 of file otros.bib
-Warning--entry type for "FacebookLibroVida" isn't style-file defined
---line 109 of file otros.bib
-Warning--entry type for "etsinfTFMdatos" isn't style-file defined
---line 117 of file otros.bib
-Warning--entry type for "fbjson" isn't style-file defined
---line 127 of file otros.bib
-Warning--entry type for "MySQLConnector" isn't style-file defined
---line 135 of file otros.bib
-Warning--entry type for "JsonPython" isn't style-file defined
---line 143 of file otros.bib
-Warning--entry type for "Sys" isn't style-file defined
---line 151 of file otros.bib
-Warning--entry type for "trans" isn't style-file defined
---line 159 of file otros.bib
-Warning--entry type for "String" isn't style-file defined
---line 167 of file otros.bib
-Warning--entry type for "CSV" isn't style-file defined
---line 175 of file otros.bib
-Warning--entry type for "Jicson" isn't style-file defined
---line 183 of file otros.bib
-Warning--entry type for "ReactComp" isn't style-file defined
---line 191 of file otros.bib
-Warning--entry type for "webbrowser" isn't style-file defined
---line 199 of file otros.bib
-Warning--entry type for "re" isn't style-file defined
---line 207 of file otros.bib
-Warning--entry type for "inspect" isn't style-file defined
---line 215 of file otros.bib
-Warning--entry type for "os" isn't style-file defined
---line 223 of file otros.bib
-Warning--entry type for "time" isn't style-file defined
---line 231 of file otros.bib
-Warning--entry type for "tkinter" isn't style-file defined
---line 239 of file otros.bib
-Warning--entry type for "sqlite3" isn't style-file defined
---line 247 of file otros.bib
-Warning--entry type for "shutil" isn't style-file defined
---line 255 of file otros.bib
-Warning--entry type for "stat" isn't style-file defined
---line 263 of file otros.bib
-Warning--entry type for "Text2" isn't style-file defined
---line 271 of file otros.bib
-Warning--entry type for "Edad-redes-sociales" isn't style-file defined
---line 279 of file otros.bib
-Warning--entry type for "importancia-de-los-datos" isn't style-file defined
---line 431 of file otros.bib
-Warning--entry type for "nuevo-petroleo" isn't style-file defined
---line 439 of file otros.bib
-Warning--entry type for "nltk" isn't style-file defined
---line 472 of file otros.bib
-Warning--entry type for "Text2emo" isn't style-file defined
---line 480 of file otros.bib
-Warning--entry type for "reminiscencia" isn't style-file defined
---line 488 of file otros.bib
-Warning--empty year in reminiscencia-eficaz-en-demencia; set to ????
-You've used 40 entries,
+Database file #1: biblio.bib
+Warning--empty journal in Anderson2004BOINC
+Warning--empty journal in Datathon2016Anslow
+Warning--empty journal in ArellanoBruno2019UsoDeGeolocalizacion
+Warning--empty journal in bommala2024
+Warning--empty journal in challapally2025state
+Warning--empty journal in Cheok2023AIHistory
+Warning--empty journal in HerreraCapriz2024
+Warning--empty journal in OpenNebula2014Kumar
+Warning--empty journal in LLamoccaPortela2016Integracion
+Warning--empty journal in MelendrezMoreto2016Auditoria
+Warning--empty journal in Meneses2023Madrid
+Warning--empty journal in moore1995creating
+Warning--empty journal in ontsi2025indicadores
+Warning--empty journal in sanchez2023optimizacion
+Warning--empty journal in SaizSantos2023
+Warning--empty journal in Sze_2017
+Warning--there's a number but no volume in TransparenciaEcuador
+Warning--empty journal in vaswani2017attention
+Warning--empty journal in PrivateIaaSComparative2016
+Warning--empty journal in Werbos1974Backpropagation
+You've used 140 entries,
             2962 wiz_defined-function locations,
-            1252 strings with 18302 characters,
-and the built_in function-call counts, 19046 in all, are:
-= -- 1529
-> -- 776
-< -- 45
-+ -- 316
-- -- 261
-* -- 1252
-:= -- 3123
-add.period$ -- 124
-call.type$ -- 40
-change.case$ -- 292
-chr.to.int$ -- 29
-cite$ -- 41
-duplicate$ -- 1459
-empty$ -- 1299
-format.name$ -- 325
-if$ -- 3663
-int.to.chr$ -- 12
+            1781 strings with 34743 characters,
+and the built_in function-call counts, 67223 in all, are:
+= -- 5319
+> -- 2544
+< -- 163
++ -- 1033
+- -- 849
+* -- 4167
+:= -- 10830
+add.period$ -- 447
+call.type$ -- 140
+change.case$ -- 992
+chr.to.int$ -- 126
+cite$ -- 160
+duplicate$ -- 5392
+empty$ -- 4844
+format.name$ -- 1050
+if$ -- 13048
+int.to.chr$ -- 15
 int.to.str$ -- 1
-missing$ -- 278
-newline$ -- 208
-num.names$ -- 160
-pop$ -- 643
+missing$ -- 1068
+newline$ -- 729
+num.names$ -- 560
+pop$ -- 2495
 preamble$ -- 1
-purify$ -- 247
+purify$ -- 842
 quote$ -- 0
-skip$ -- 586
+skip$ -- 2212
 stack$ -- 0
-substring$ -- 621
-swap$ -- 699
-text.length$ -- 13
+substring$ -- 2197
+swap$ -- 2436
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 400
-warning$ -- 1
-while$ -- 133
+type$ -- 1376
+warning$ -- 20
+while$ -- 470
 width$ -- 0
-write$ -- 469
-(There was 1 error message)
+write$ -- 1657
+(There were 20 warnings)

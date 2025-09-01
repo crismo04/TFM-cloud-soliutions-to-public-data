@@ -168,10 +168,8 @@ constantes,guionado,Cascaras/bibliografia,config%
 \appendix
 
 \include{Apendices/appendixA}
-\include{Apendices/appendixB}
-%\include{...}
-%\include{...}
-%\include{...}
+% \include{Apendices/appendixB}
+
 \backmatter
 
 %
@@ -180,36 +178,6 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Si el TFM se escribe en inglés, editar TeXiS/TeXiS_bib para cambiar el
 % estilo de las referencias
 \include{Cascaras/bibliografia}
-
-%
-% Índice de palabras
-%
-
-% Sólo  la   generamos  si  está   declarada  \generaindice.  Consulta
-% TeXiS.sty para más información.
-
-% En realidad, el soporte para la generación de índices de palabras
-% en TeXiS no está documentada en el manual, porque no ha sido usada
-% "en producción". Por tanto, el fichero que genera el índice
-% *no* se incluye aquí (está comentado). Consulta la documentación
-% en TeXiS_pream.tex para más información.
-\ifx\generaindice\undefined
-\else
-%\include{TeXiS/TeXiS_indice}
-\fi
-
-%
-% Lista de acrónimos
-%
-
-% Sólo  lo  generamos  si  está declarada  \generaacronimos.  Consulta
-% TeXiS.sty para más información.
-
-
-\ifx\generaacronimos\undefined
-\else
-\include{TeXiS/TeXiS_acron}
-\fi
 
 %
 % Final

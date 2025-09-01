@@ -1,33 +1,56 @@
 \babel@toc {spanish}{}\relax 
 \babel@toc {english}{}\relax 
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.8}%
-\contentsline {section}{\numberline {1.1}Motivación}{1}{section.9}%
-\contentsline {section}{\numberline {1.2}Plan de trabajo}{1}{section.10}%
-\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.16}%
-\contentsline {section}{\numberline {1.1}Motivation}{3}{section.17}%
-\contentsline {section}{\numberline {1.2}Work plan}{3}{section.18}%
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.9}%
+\contentsline {section}{\numberline {1.1}Motivación}{1}{section.10}%
+\contentsline {section}{\numberline {1.2}Objetivos y alcance}{2}{section.11}%
+\contentsline {section}{\numberline {1.3}Plan de trabajo}{2}{section.12}%
+\contentsline {section}{\numberline {1.4}Estructura de esta memoria}{3}{section.19}%
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.20}%
+\contentsline {section}{\numberline {1.1}Motivation}{5}{section.21}%
+\contentsline {section}{\numberline {1.2}Objectives and Scope}{6}{section.22}%
+\contentsline {section}{\numberline {1.3}Work Plan}{6}{section.23}%
+\contentsline {section}{\numberline {1.4}Structure of this Thesis}{7}{section.30}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {2}Estado de la Cuestión}{5}{chapter.24}%
-\contentsline {section}{\numberline {2.1}Datos}{5}{section.25}%
-\contentsline {section}{\numberline {2.2}Nubes}{5}{section.26}%
-\contentsline {section}{\numberline {2.3}Inteligencia Artificial}{5}{section.27}%
-\contentsline {section}{\numberline {2.4}Trabajos anteriores}{6}{section.28}%
-\contentsline {subsection}{\numberline {2.4.1}Trabajos dirigidos a ... }{6}{subsection.29}%
+\contentsline {chapter}{\numberline {2}Estado de la Cuestión}{9}{chapter.31}%
+\contentsline {section}{\numberline {2.1}Datos}{10}{section.32}%
+\contentsline {subsection}{\numberline {2.1.1}Obtención de datos públicos}{11}{subsection.33}%
+\contentsline {subsection}{\numberline {2.1.2}Trabajos anteriores y relacionados}{12}{subsection.34}%
+\contentsline {subsection}{\numberline {2.1.3}Conjuntos de datos}{14}{subsection.35}%
+\contentsline {subsection}{\numberline {2.1.4}Gobierno de los datos}{16}{subsection.36}%
+\contentsline {section}{\numberline {2.2}Nubes}{17}{section.37}%
+\contentsline {subsection}{\numberline {2.2.1}Principales Proveedores de Nube y sus Capas Gratuitas}{18}{subsection.38}%
+\contentsline {subsection}{\numberline {2.2.2}Otras herramientas interesantes}{23}{subsection.39}%
+\contentsline {subsection}{\numberline {2.2.3}Trabajos anteriores y relacionados}{26}{subsection.40}%
+\contentsline {section}{\numberline {2.3}Inteligencia Artificial}{28}{section.41}%
+\contentsline {subsection}{\numberline {2.3.1}Modelos de ML}{28}{subsection.42}%
+\contentsline {subsection}{\numberline {2.3.2}ML en la nube}{30}{subsection.43}%
+\contentsline {subsubsection}{\numberline {2.3.2.1}Plataformas MLOps en la Nube}{30}{subsubsection.44}%
+\contentsline {subsubsection}{\numberline {2.3.2.2}Otras herramientas}{31}{subsubsection.45}%
+\contentsline {subsubsection}{\numberline {2.3.2.3}AutoML}{32}{subsubsection.47}%
+\contentsline {subsection}{\numberline {2.3.3}IA, normativa y ética}{33}{subsection.48}%
+\contentsline {subsection}{\numberline {2.3.4}Trabajos anteriores y relacionados}{34}{subsection.49}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {3}Materiales y métodos}{7}{chapter.30}%
-\contentsline {section}{\numberline {3.1}Materiales}{7}{section.31}%
-\contentsline {subsection}{\numberline {3.1.1}Lenguajes}{7}{subsection.32}%
-\contentsline {subsubsection}{\numberline {3.1.1.1}Lenguajes descartados}{8}{subsubsection.33}%
-\contentsline {subsection}{\numberline {3.1.2}Herramientas}{8}{subsection.34}%
-\contentsline {subsection}{\numberline {3.1.3}Herramientas descartadas}{9}{subsection.35}%
-\contentsline {section}{\numberline {3.2}Metodos}{9}{section.36}%
-\contentsline {subsection}{\numberline {3.2.1}Utilización de la solución}{10}{subsection.37}%
-\contentsline {chapter}{\numberline {4}Resultados}{11}{chapter.38}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{13}{chapter.39}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{15}{chapter.40}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{17}{chapter.41}%
+\contentsline {chapter}{\numberline {3}Materiales y métodos}{35}{chapter.50}%
+\contentsline {section}{\numberline {3.1}Métodos}{35}{section.51}%
+\contentsline {subsection}{\numberline {3.1.1}Utilización de la solución}{35}{subsection.52}%
+\contentsline {subsection}{\numberline {3.1.2}Aplicación de la gobernanza de datos como método}{36}{subsection.53}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Principios éticos}{38}{subsubsection.54}%
+\contentsline {section}{\numberline {3.2}Datos}{39}{section.55}%
+\contentsline {section}{\numberline {3.3}Materiales}{39}{section.56}%
+\contentsline {subsection}{\numberline {3.3.1}Lenguajes}{39}{subsection.57}%
+\contentsline {subsection}{\numberline {3.3.2}Herramientas}{40}{subsection.58}%
+\contentsline {subsection}{\numberline {3.3.3}Herramientas descartadas}{41}{subsection.59}%
+\contentsline {chapter}{\numberline {4}Resultados}{43}{chapter.60}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{45}{chapter.61}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{47}{chapter.62}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{49}{chapter.63}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Manual de usuario y casos de uso}{19}{appendix.42}%
+\contentsline {chapter}{\numberline {A}Definiciones y acrónimos}{51}{appendix.64}%
+\contentsline {section}{\numberline {A.1}Definiciones}{51}{section.65}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{51}{subsection.66}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{56}{subsection.77}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{61}{subsection.83}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{68}{section.108}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{21}{appendix*.43}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{73}{appendix*.109}%

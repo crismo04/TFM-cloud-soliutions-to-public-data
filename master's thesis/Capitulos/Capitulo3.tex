@@ -1,68 +1,148 @@
 \chapter{Materiales y métodos}
 \label{cap:Materiales y metodos}
 
-[TODO, importante a tener en cuenta:
- -  detallarse cada paso que se ha dado para llegar a los resultados describiendo, en orden lógico y expresado con claridad, los materiales y recursos empleados. 
- - No avanzar resultados y redactarse en pasado
-
-]
-
-En este capítulo vamos a describir el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación y herramientas, así como las que se ha valorado pero descartado. También se definirán los métodos de desarrollo, aplicaciones e incluso modelo de trabajo.
+%[TODO], importante a tener en cuenta: detallarse cada paso que se ha dado para llegar a los resultados describiendo, en orden lógico y expresado con claridad, los materiales y recursos empleados.   No avanzar resultados y redactarse en pasado !!
 
 
+En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión}, pero descartados, así como los motivos para ello. También se han definido los métodos de desarrollo y modelo de trabajo. \\
 
-\section{Materiales}
 
-[TODO, herramientas, programas y material utilizado, incluyendo por ejemplo los tipos de IA]
-
-\subsection{Lenguajes} 
-
-\subsubsection*{PYTHON}
-Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional.
-
-\subsubsection*{SQL}
-SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad.
-Utilizamos SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos. 
-
-\subsubsection*{\LaTeX}
-\LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios.       
-Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
-
-\subsubsection{Lenguajes descartados} 
-
-[TODO]
-
-\subsection{Herramientas} 
-
-\subsubsection*{Visual Studio Code}
-Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código. 
-
-Utilizamos Visual Studio Code como entorno de desarrollo software, ya que comparándolo con otras alternativas que nos brindan en la carrera, lo creemos bastante más útil, sobre todo para la programación en Python o React.
-
-Lo que nos ha hecho decantarnos por él por encima del resto, es la gran comunidad que tiene detrás, la cual cuenta con un gran número de tutoriales y extensiones que nos facilitan mucho la programación y la integración con otras aplicaciones como Github. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
-
-\subsubsection*{Github}
-GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de código fuente de programas de ordenador.  
-
-Utilizamos GitHub como sistema de control de versiones y repositorio de código por su tremenda utilidad para comunicarnos y trabajar en paralelo, lo cual ha sido una necesidad en los tiempos de pandemia en los que este proyecto se ha realizado. Esto nos ha asegurado no perder nada de progreso y llevar un control del avance del proyecto en todo momento. Además nuestros tutores nos facilitaron un repositorio privado en el que nos asegurábamos la seguridad del código, por lo que su uso era casi una obligación frente a otras alternativas.
-
-\subsubsection*{TeXstudio y MiKTeX}
-TeXstudio es un editor de \LaTeX\space de código abierto y Multiplataforma con una interfaz similar a Texmaker. TeXstudio es un IDE de \LaTeX\space que proporciona un soporte moderno de escritura, como la corrección ortográfica interactiva, plegado de código y resaltado de sintaxis, por lo que lo hemos considerado ideal para la elaboración de este documento.
-Mientras que MiKTeX es el gestor de paquetes integrado, que instala los paquetes que hacen falta para el correcto funcionamiento de TeXstudio y para la creación de este documento.
-
-\subsection{Herramientas descartadas} 
-
-[TODO]
-
-\section{Metodos}
+\section{Métodos}
 
 Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en diferentes módulos:
 
 \begin{itemize}
-	\item \textbf{ búsqueda y almacenamiento de datos.}
+	\item \textbf{ Búsqueda y almacenamiento de datos.}
 	\item \textbf{ Tratamiento básico de los datos.}
 	\item \textbf{ Estudio con modelos de IA en diferentes nubes}
 	\item \textbf{ Comparación y estudio de resultados.}
 \end{itemize}
 
 \subsection{Utilización de la solución}
+
+[TODO]
+
+\subsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
+
+Como ya hemos definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
+
+\subsubsection*{1. Capa Estratégica: Liderazgo y Visión}
+
+En esta capa se definieron los objetivos generales y principios de la gobernanza de datos en el proyecto.
+
+\begin{itemize}
+	\item \textbf{Visión:} Convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
+	
+	\item \textbf{Seguridad y soberanía:} Aunque se utilizan servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configuraron para operar dentro de la UE.
+	
+	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentó en esta mismo memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
+\end{itemize}
+
+
+\subsubsection*{2. Capa Táctica: Capacidades de Implementación y Marco Normativo}
+
+Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
+
+\begin{itemize}
+	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado, descartado o anonimizado. 
+	
+	\item \textbf{Gestión de accesos y credenciales:} Como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
+	
+	\item \textbf{Competencias y coordinación:} Todas las funciones fueron asumidas por un único investigador, esto centralizó la toma de decisiones y facilitó el cumplimiento normativo y la trazabilidad de todo el proceso. De todas formas se utilizan herramientas como ``Git'' o ``Trello'' para auto-organizarse.
+	
+	\item \textbf{Selección de proveedores y servicios:} Para la selección de plataformas cloud se evaluó la capacidad para proporcionar entornos de procesamiento seguro, y la localización de sus centros de datos para asegurar el cumplimiento normativo. En cuanto a la IA, también se revisaron sesgos en los datos de entrenamiento.
+\end{itemize}
+
+\subsubsection*{3. Capa Operativa: Infraestructura, Integración del Ciclo de Valor y Arquitectura}
+Esta última capa corresponde a la implementación práctica de la estrategia, la gestión diaria del ciclo de valor de los datos para integrarlo con la infraestructura técnica.
+
+\begin{itemize}
+	\item \textbf{Infraestructura:} Se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con mecanismos de seguridad estándar. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos on-premise (computador personal) para la ingesta de datos y posterior almacenamiento en cloud cuando esto facilitó el proceso, aunque se priorizaron tecnologías en la nube.
+	
+	\item \textbf{Arquitectura de datos y ciclo de valor:} Se diseñó un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubrió todo el ciclo de vida del dato: 
+	\begin{itemize}
+		\item \textbf{Adquisición:} Se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso. 
+		
+		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery.
+		
+		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza, anonimización y feature engineering en entornos gestionados como Dataflow o Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
+		
+		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
+		
+	\end{itemize}
+	
+	\item \textbf{Optimización y sostenibilidad:} Se monitorizó el uso de recursos en las diferentes nubes para mantener el proyecto dentro del coste cero, también se optimizaron las configuraciones de los servicios para asegurar la eficiencia tanto económica como ecológica del proyecto.
+\end{itemize}
+
+\subsubsection{Principios éticos}  \label{sec:Metodos_Principios_EU}
+
+Destacar también que en el proyecto, se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa}:
+
+\begin{itemize} 
+	\item \textbf{Acción y supervisión humanas:} En este trabajo se supervisó tanto cada etapa del desarrollo, como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
+	
+	\item \textbf{Solidez técnica y seguridad:} Se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
+	
+	\item \textbf{Gestión de la privacidad y de los datos:} Se ha abordado cumpliendo estrictamente con los principios del RGPD como se indica en la sección de datos.
+	
+	\item \textbf{Transparencia:} Se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para esto.
+	
+	\item \textbf{Diversidad, no discriminación y equidad:} Se comprobaron los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
+	
+	\item \textbf{Bienestar social y ambiental:} El motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
+	
+	\item \textbf{Rendición de cuentas:} Se mantuvo un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos,para permitir una auditoría clara y una rendición de cuentas transparente.
+\end{itemize}
+
+
+
+% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que hemos definido?
+
+
+\section{Datos} \label{sec:Materiales_datos}
+
+[TODO]
+https://docta.ucm.es/rest/api/core/bitstreams/814f787a-82d4-45cf-9030-bb9d2b3600de/content?authentication-token=eyJhbGciOiJIUzI1NiJ9.eyJlaWQiOiI3YTI4M2Y4MC0zNmZmLTQyZDgtYjQ5ZS1hOWNjZDNhYjVmZjMiLCJzZyI6WyJjZjI0MzJkZi0xZTM2LTRmMDQtYmI3ZC03OTNiMzMyYTE4ZTkiXSwiYXV0aGVudGljYXRpb25NZXRob2QiOiJzaGliYm9sZXRoIiwiZXhwIjoxNzU2MjA2MTE0fQ.NxagiHu0pTOxGg5YzqrPkpHJe2xNpEg4UaRqdOoF0zM
+
+seccion2.3 to 2.5
+
+\section{Materiales}
+
+[TODO], herramientas, programas y material utilizado, incluyendo por ejemplo los tipos de IA]
+
+\subsection{Lenguajes} 
+
+\subsubsection*{PYTHON}
+Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. [TODO] uso en ia]
+
+\subsubsection*{SQL}
+SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad.
+Utilizamos SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos. 
+
+\subsubsection*{\LaTeX} \label{latexDef}
+\LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios.       
+Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
+
+\subsubsection*{bash Script}
+La comunicación con las nubes de AWS y GCP, se ha realizado principalmente con la ejecución de scripts bash en su GUI con los comandos que estas mismas facilitan, tambien se han realizado scripts especificos apra ciertas tareas.
+
+\subsection{Herramientas} 
+
+\subsubsection*{Visual Studio Code}
+Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones. 
+
+Utilizamos Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
+
+\subsubsection*{GitHub}
+GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente.  
+
+[TODO]
+
+\subsubsection*{TeXstudio y MiKTeX}
+TeXstudio es un editor de \LaTeX\space de código abierto y multiplataforma con una interfaz amigable, es un IDE que proporciona un soporte moderno de escritura, como la corrección ortográfica interactiva, plegado de código y resaltado de sintaxis, por lo que se ha considerado ideal para la elaboración de este documento.
+Mientras que MiKTeX es el gestor de paquetes integrado, que instala los paquetes que hacen falta para el correcto funcionamiento de TeXstudio y para la compilación y estructuración de este documento.
+
+\subsection{Herramientas descartadas} 
+
+[TODO]
+
