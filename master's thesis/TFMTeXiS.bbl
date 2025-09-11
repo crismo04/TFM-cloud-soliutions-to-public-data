@@ -1,4 +1,4 @@
-\begin{thebibliography}{140}
+\begin{thebibliography}{145}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -53,6 +53,12 @@
 {\sc {Ayuntamiento de Madrid}}.
 \newblock Portal de datos abiertos del ayuntamiento de madrid.
 \newblock 2025.
+
+\bibitem[{Barbudo et\ al.(2023)Barbudo, Ventura y Romero}]{Barbudo2023}
+{\sc Barbudo, R.}, {\sc Ventura, S.} y {\sc Romero, J.~R.}
+\newblock Eight years of automl: categorisation, review and trends.
+\newblock {\em Knowledge and Information Systems\/}, vol.\ 65(12), p\'aginas
+  5097--5149, 2023.
 
 \bibitem[{Bengio et\ al.(2003)Bengio, Ducharme, Vincent y
   Jauvin}]{bengio2003neural}
@@ -183,6 +189,13 @@
 \newblock El ataque de los botnets.
 \newblock s.f.
 
+\bibitem[{de~Datos Abiertos del Gobierno~de
+  España(2021)}]{Gob_metodologia_Dama}
+{\sc de~Datos Abiertos del Gobierno~de España, P.}
+\newblock El potencial uso de la metodología de dama en la gestión de los
+  datos abiertos.
+\newblock 2021.
+
 \bibitem[{{Esri España}(2025)}]{PortalEsriEspanna}
 {\sc {Esri España}}.
 \newblock Portal de datos abiertos de esri españa.
@@ -236,6 +249,13 @@
 \newblock Acceso a los datos públicos y su reutilización: Open data y open
   government.
 \newblock {\em El Profesional de la Información\/}, p\'aginas 260--269, 2011.
+
+\bibitem[{Feurer et\ al.(2020)Feurer, Eggensperger, Falkner, Lindauer y
+  Hutter}]{AutoSklearnAutoML}
+{\sc Feurer, M.}, {\sc Eggensperger, K.}, {\sc Falkner, S.}, {\sc Lindauer, M.}
+  y {\sc Hutter, F.}
+\newblock Auto-sklearn 2.0: Hands-free automl via meta-learning.
+\newblock {\em arXiv:2007.04074 [cs.LG]\/}, 2020.
 
 \bibitem[{Fowdur(2021)}]{Fowdur2021}
 {\sc Fowdur, T.~P.}
@@ -417,6 +437,12 @@
   Wang, T.}, {\sc Lacroix, T.} y {\sc El~Sayed, W.}
 \newblock {Mixtral of Experts}.
 \newblock {\em arXiv preprint arXiv:2401.04088\/}, 2024.
+
+\bibitem[{Jin et\ al.(2023)Jin, Chollet, Song y Hu}]{AutoKerasAutoML}
+{\sc Jin, H.}, {\sc Chollet, F.}, {\sc Song, Q.} y {\sc Hu, X.}
+\newblock Autokeras: An automl library for deep learning.
+\newblock {\em Journal of Machine Learning Research\/}, vol.\ 24(6), p\'aginas
+  1--6, 2023.
 
 \bibitem[{Jorge y Herrera(2023)}]{TransparenciaMexico}
 {\sc Jorge, R.} y {\sc Herrera, R.}
@@ -675,6 +701,16 @@
 \newblock The perceptron: A probabilistic model for information storage and
   organization in the brain.
 \newblock {\em Psychological Review\/}, vol.\ 65(6), p\'aginas 386--408, 1958.
+
+\bibitem[{Salehin et\ al.(2024)Salehin, Islam, Saha, Noman, Tuni, Hasan y
+  Baten}]{SALEHIN202452}
+{\sc Salehin, I.}, {\sc Islam, M.~S.}, {\sc Saha, P.}, {\sc Noman, S.}, {\sc
+  Tuni, A.}, {\sc Hasan, M.~M.} y {\sc Baten, M.~A.}
+\newblock Automl: A systematic review on automated machine learning with neural
+  architecture search.
+\newblock {\em Journal of Information and Intelligence\/}, vol.\ 2(1),
+  p\'aginas 52--81, 2024.
+\newblock ISSN 2949-7159.
 
 \bibitem[{Santos(2023)}]{SaizSantos2023}
 {\sc Santos, J.~S.}

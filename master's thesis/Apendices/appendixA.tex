@@ -8,12 +8,16 @@ Dedicaremos este apéndice a la explicación de conceptos en más extensión, ya
 
 \section{Definiciones}
 
-Separaremos este apartado, de la misma manera que se ha hecho en otras partes de la memoria, en los tres grandes elementos que conforman esta memoria, definiciones referentes a datos, a nubes y a Inteligencia artificial.
+Separaremos este apartado, de la misma manera que se ha hecho en otras partes de la memoria, en los tres grandes elementos que conforman esta memoria, definiciones referentes a datos, a nubes y a Inteligencia artificial. En cada uno de ellos enumeraremos las definiciones que se han ido incrustando en la memoria de la manera:  \hyperref[def1]{[Definición \ref*{def1}]}.
+
+La enumeración de las definiciones es independiente del apartado en el que se encuentra
+
+\newpage
 
 \subsection{Referente a datos}
 
 \begin{enumerate}
-	\item El gobierno de España define los \textbf{datos de alto valor} \label{def1}  como “documentos cuya reutilización está asociada a considerables beneficios para la sociedad, el medio ambiente y la economía, en particular debido a su idoneidad para la creación de servicios de valor añadido, aplicaciones y puestos de trabajo nuevos, dignos y de calidad, y al número de beneficiarios potenciales de los servicios de valor añadido y aplicaciones basados en tales conjuntos de datos” Esta definición nos ofrece varias pistas sobre la manera en la que se prevé que se identifiquen esos conjuntos de datos de alto valor a través de una serie de indicadores que incluirían:
+	\item El gobierno de España define los \textbf{Datos de alto valor} \label{def1}  como “documentos cuya reutilización está asociada a considerables beneficios para la sociedad, el medio ambiente y la economía, en particular debido a su idoneidad para la creación de servicios de valor añadido, aplicaciones y puestos de trabajo nuevos, dignos y de calidad, y al número de beneficiarios potenciales de los servicios de valor añadido y aplicaciones basados en tales conjuntos de datos” Esta definición nos ofrece varias pistas sobre la manera en la que se prevé que se identifiquen esos conjuntos de datos de alto valor a través de una serie de indicadores que incluirían:
 		\begin{itemize}
 			\item Su potencial para generar beneficios sociales o medioambientales significativos.
 			
@@ -49,13 +53,14 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	La \textbf{Primera Ola} (1990s-2000s) se fundamentó principalmente en Estados Unidos, dirigido a periodistas, abogados y activistas que solicitaban datos específicos bajo el modelo de ``derecho a saber'', enfrentando riesgos de secretismo gubernamental y requiriendo auditores de información. 
 	La \textbf{Segunda Ola} (2000s-2010s) evolucionó hacia la apertura por defecto con alcance internacional, expandiendo su audiencia a agencias gubernamentales, empresas tecnológicas y organizaciones comunitarias,pero generando desafíos de privacidad que impulsaron la creación de portales de datos abiertos y responsables.
 	La \textbf{Tercera Ola} (2010s-presente) representa la madurez del movimiento  con colaboración intersectorial y flujos transfronterizos, dirigiéndose a ONGs, instituciones académicas, pequeñas empresas y gobiernos, estableciendo marcos de responsabilidad en materia de datos. 
-	Esta evolución se visualiza en la siguiente tabla comparativa:
+	Esta evolución se visualiza en la tabla comparativa \hyperref[tab:olas_datos_abiertos]{[Tabla \ref*{tab:olas_datos_abiertos}]}. \\
 	
-	\begin{table}[ht]
+	\begin{table}
 		\centering
 		\caption{Resumen de las principales características de las denominadas olas de datos abiertos.}
 		\label{tab:olas_datos_abiertos}
-		\resizebox{\textwidth}{!}{
+		\renewcommand{\arraystretch}{1.2}
+		\resizebox{1.3\textwidth}{!}{
 			\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{5cm}|}
 				\hline
 				\textbf{} & \textbf{Primera ola} & \textbf{Segunda ola} & \textbf{Tercera ola emergente} \\
@@ -125,11 +130,13 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 		\item Características de la organización.
 		\item Características del uso individual.
 	\end{itemize}
-	Esto genera consecuencias (intencionadas o no) como la rendición de cuentas, la participación cívica, la eficiencia o la afectación a la privacidad. \\
+	Esto genera consecuencias (intencionadas o no) como la rendición de cuentas, la participación cívica, el aumento de la eficiencia o la afectación a la privacidad. \\
 	
 	\item Un \textbf{``Datathon''} \label{def7} \citep{Datathon2016Anslow} es un evento colaborativo o competitivo intensivo centrado en datos, y derivado de los términos ``data'' y ``maratón'', donde equipos de expertos y otros individuos se reúnen para analizar grandes volúmenes de estos datos con el fin de encontrar soluciones innovadoras a problemas específicos. Esto va desde desarrollar aplicaciones para sacar partido a estos datos, hasta la optimización de procesos o la creación de modelos predictivos, las posibilidades son amplias. \\
 	
-	\item \textbf{``Data Governance ''} \label{def10} (Gobierno del Dato) se define como un marco integral de políticas, estrategias, estándares, roles y procesos que rigen toda la gestión del ciclo de vida completo de los datos (desde su creación y recopilación hasta su almacenamiento, procesamiento, uso, compartición, archivado y ,finalmente, eliminación) con el objetivo de garantizar su calidad, integridad, seguridad, accesibilidad, interoperabilidad y confiabilidad (\cite{HerreraCapriz2024}, pg 241). La OECD propone que un modelo de ``Data Governance '' exitoso integra tres capas: una capa estratégica (liderazgo y visión); una capa táctica (capacidades de implementación y normativa: comités, formación, directrices, etc.); y una capa de entrega o operativa (de infraestructura y arquitectura: estándares, catálogos de datos, ciclo de valor, etc.) \citep{OECD2019}.
+	\item \textbf{``Data Governance ''} \label{def10} (Gobierno del Dato) se define como un marco integral de políticas, estrategias, estándares, roles y procesos que rigen toda la gestión del ciclo de vida completo de los datos (desde su creación y recopilación hasta su almacenamiento, procesamiento, uso, compartición, archivado y ,finalmente, eliminación) con el objetivo de garantizar su calidad, integridad, seguridad, accesibilidad, interoperabilidad y confiabilidad (\cite{HerreraCapriz2024}, pg 241). La OECD propone que un modelo de ``Data Governance'' exitoso integra tres capas: una capa estratégica (liderazgo y visión); una capa táctica (capacidades de implementación y normativa: comités, formación, directrices, etc.); y una capa de entrega o operativa (de infraestructura y arquitectura: estándares, catálogos de datos, ciclo de valor, etc.) \citep{OECD2019}.
+	
+	También vale la pena mencionar que hay mas metodologías que hablan de las buenas practicas del Gobierno del dato, como es el caso de DAMA \citep{Gob_metodologia_Dama}, que propone un marco de referencia (DAMA-DMBOK) donde el gobierno de datos coordina e integra otras diez áreas de conocimiento: la arquitectura de datos, modelado y diseño de datos, seguridad de datos, calidad de datos, gestión de metadatos y almacenamiento de datos y operaciones.
 			
 	\begin{figure}[h]
 		\begin{center}
@@ -384,6 +391,7 @@ Separaremos este apartado, de la misma manera que se ha hecho en otras partes de
 	\item[CSV] Valores Separados por Comas (Comma-Separated Values)
 	\item[D1] D1 Database (Base de datos de Cloudflare)
 	\item[DAGs] Grafos Acíclicos Dirigidos (Directed Acyclic Graphs)
+	\item[DAMA] Asociación de Gestión de Datos (Data Management Association)
 	\item[DBSCAN] Clustering Espacial Basado en Densidad de Aplicaciones con Ruido (Density-Based Spatial Clustering of Applications with Noise)
 	\item[DDoS] Ataque de Denegación de Servicio Distribuido (Distributed Denial of Service)
 	\item[DevOps] Development and Operations

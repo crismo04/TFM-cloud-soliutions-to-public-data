@@ -61,45 +61,45 @@ Warning--there's a number but no volume in TransparenciaEcuador
 Warning--empty journal in vaswani2017attention
 Warning--empty journal in PrivateIaaSComparative2016
 Warning--empty journal in Werbos1974Backpropagation
-You've used 140 entries,
+You've used 145 entries,
             2962 wiz_defined-function locations,
-            1781 strings with 34743 characters,
-and the built_in function-call counts, 67223 in all, are:
-= -- 5319
-> -- 2544
-< -- 163
-+ -- 1033
-- -- 849
-* -- 4167
-:= -- 10830
-add.period$ -- 447
-call.type$ -- 140
-change.case$ -- 992
-chr.to.int$ -- 126
-cite$ -- 160
-duplicate$ -- 5392
-empty$ -- 4844
-format.name$ -- 1050
-if$ -- 13048
+            1810 strings with 35742 characters,
+and the built_in function-call counts, 70800 in all, are:
+= -- 5586
+> -- 2714
+< -- 170
++ -- 1098
+- -- 909
+* -- 4458
+:= -- 11345
+add.period$ -- 463
+call.type$ -- 145
+change.case$ -- 1037
+chr.to.int$ -- 131
+cite$ -- 165
+duplicate$ -- 5677
+empty$ -- 5089
+format.name$ -- 1123
+if$ -- 13751
 int.to.chr$ -- 15
 int.to.str$ -- 1
-missing$ -- 1068
-newline$ -- 729
-num.names$ -- 560
-pop$ -- 2495
+missing$ -- 1126
+newline$ -- 755
+num.names$ -- 580
+pop$ -- 2614
 preamble$ -- 1
-purify$ -- 842
+purify$ -- 882
 quote$ -- 0
-skip$ -- 2212
+skip$ -- 2317
 stack$ -- 0
-substring$ -- 2197
-swap$ -- 2436
-text.length$ -- 40
+substring$ -- 2328
+swap$ -- 2614
+text.length$ -- 46
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1376
+type$ -- 1426
 warning$ -- 20
-while$ -- 470
+while$ -- 493
 width$ -- 0
-write$ -- 1657
+write$ -- 1721
 (There were 20 warnings)
