@@ -4,7 +4,7 @@
 %[TODO], importante a tener en cuenta: detallarse cada paso que se ha dado para llegar a los resultados describiendo, en orden lógico y expresado con claridad, los materiales y recursos empleados.   No avanzar resultados y redactarse en pasado !!
 
 
-En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión}, pero descartados, así como los motivos para ello. También se han definido los métodos de desarrollo y modelo de trabajo. \\
+En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{``capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión''}, pero descartados, así como los motivos para ello. También se han definido los métodos de desarrollo y modelo de trabajo. \\
 
 
 \section{Métodos}
@@ -12,18 +12,25 @@ En este capítulo describimos el proceso que se ha seguido en la realización de
 Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en diferentes módulos:
 
 \begin{itemize}
-	\item \textbf{ Búsqueda y almacenamiento de datos:} Donde se analizaran los datos públicos disponibles, se recopilaran metadatos sobre estos y se seleccionara un método de descarga y almacenamiento en la nube, ya sea un ``script'' que mueva los datos a la nube, o el almacenamiento local en el caso de volúmenes de datos suficientemente pequeños. \\
-	\item \textbf{ Tratamiento básico de los datos:} Una vez almacenados, se procederá a su estudio y análisis para comprobar la consistencia y validez de los mismos, intentando comprobar duplicados, datos nulos, vacíos o valores atópicos que puedan no tener sentido y interferir con el rendimiento de los modelos. Las modificaciones realizadas a los datos también se documentaran para poder ser replicadas y los datos se almacenaran en este estado en el mismo sistema de almacenamiento. \\
-	\item \textbf{ Estudio con modelos de IA en diferentes nubes:} Una vez los datos estén tratados, se pasara a la fase de extracción de conclusiones. Se establecerán unas hipótesis a confirmar o se dejara a los modelos extraer sus propios clústeres de datos. En esta fase también se seleccionara el modelo mas adecuado dependiendo del tipo de datos y de las conclusiones a las que se quieran llegar.
-	\item \textbf{ Comparación y estudio de resultados:} Tras procesar los datos y estudiarlos, se pasara a la revisión de las hipótesis y conclusiones a las que los modelos hayan llegado, para comprobar cuales son los resultados de valor que se han podido sacar de estos datos o si las hipótesis establecidas se han cumplido.
-	\item \textbf{ Revisión, Automatización y generalización del proceso:} Una vez finalizado el proceso, se realizara un estudio de las partes del mismo que se pueden automatizar para siguientes iteraciones. En este paso se analizaran todos los anteriores en búsqueda de mejoras, también se documentará el numero de recursos utilizados en la nube, para tener controlados los costes del proceso.
+	\item \textbf{Búsqueda y almacenamiento de datos:} Se analizaron los datos públicos disponibles, se recopilaron metadatos sobre estos y se seleccionó un método de descarga y almacenamiento en la nube, ya fuera con un ``script'' que moviera los datos a la nube o con almacenamiento local en el caso de volúmenes de datos suficientemente pequeños. \\
+	\item \textbf{Tratamiento básico de los datos:} Una vez almacenados, se procedió a su estudio y análisis para comprobar la consistencia y validez de los mismos, intentando comprobar duplicados, datos nulos, vacíos o valores atípicos que pudieran no tener sentido e interferir con el rendimiento de los modelos. Las modificaciones realizadas a los datos también se documentaron para poder ser replicadas, y los datos se almacenaron una vez procesados en el mismo sistema de almacenamiento que los originales. \\
+	\item \textbf{Estudio con modelos de IA en diferentes nubes:} Una vez los datos estuvieron tratados, se pasó a la fase de extracción de conclusiones. Se establecieron unas hipótesis a confirmar o se dejó a los modelos extraer sus propios clústeres de datos. En esta fase también se seleccionó el modelo más adecuado dependiendo del tipo de datos y de las conclusiones a las que se quiso llegar. \\
+	\item \textbf{Comparación y estudio de resultados:} Tras procesar los datos y analizarlos, se pasó a la revisión de las hipótesis y conclusiones a las que los modelos llegaron, para comprobar cuáles fueron los resultados de valor que se pudieron obtener de estos datos o si las hipótesis establecidas se cumplieron. \\
+	\item \textbf{Revisión, automatización y generalización del proceso:} Una vez finalizado el proceso, se realizó un estudio de las partes del mismo que se podían automatizar para siguientes iteraciones. En este paso se analizaron todos los anteriores en búsqueda de mejoras, y también se documentó el número de recursos utilizados en la nube, para tener controlados los costes del proceso y buscar puntos de optimización. \\
 \end{itemize}
 
 \subsection{Utilización de la solución}
 
+En este capitulo vamos a ver los detalles de la solución para distintos conjuntos de datos. 
+
+Para la utilización de la solución, hemos seguido las buenas practicas del tratamiento de los datos, así como las buenas practicas de MLOps y las buenas practicas recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo.
+
+
 [TODO]
 
-\subsection{Métodos sobre Datos} \label{sec:Materiales_datos}
+\subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
+
+Para tratar los datos a través del método principal de desarrollo, hemos seguido principios de gobernanza de datos:
 
 \subsubsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
 
@@ -99,20 +106,40 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 
 
 
-% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que hemos definido?
+\subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
+% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que hemos definido
 
 
 
-[TODO]
-https://docta.ucm.es/rest/api/core/bitstreams/814f787a-82d4-45cf-9030-bb9d2b3600de/content?authentication-token=eyJhbGciOiJIUzI1NiJ9.eyJlaWQiOiI3YTI4M2Y4MC0zNmZmLTQyZDgtYjQ5ZS1hOWNjZDNhYjVmZjMiLCJzZyI6WyJjZjI0MzJkZi0xZTM2LTRmMDQtYmI3ZC03OTNiMzMyYTE4ZTkiXSwiYXV0aGVudGljYXRpb25NZXRob2QiOiJzaGliYm9sZXRoIiwiZXhwIjoxNzU2MjA2MTE0fQ.NxagiHu0pTOxGg5YzqrPkpHJe2xNpEg4UaRqdOoF0zM
+\subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_cloud}
+% [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
 
-seccion2.3 to 2.5
+
+\newpage
+
+
 
 \section{Materiales}
 
+
+
 [TODO], herramientas, programas y material utilizado, incluyendo por ejemplo los tipos de IA]
 
-\subsection{Lenguajes} 
+\subsection{Conjuntos de Datos} \label{sec:Materiales_datos}
+
+Los conjuntos de datos utilizados tienen sus propios metadatos asociados en el Github de este proyecto, pero en esta seccion se listaran brevemente los datos utilizados.
+
+
+% [TODO] seccion2.3 to 2.5 -> Manual de datos abiertos españa
+%  https://docta.ucm.es/rest/api/core/bitstreams/814f787a-82d4-45cf-9030-bb9d2b3600de/content?authentication-token=eyJhbGciOiJIUzI1NiJ9.eyJlaWQiOiI3YTI4M2Y4MC0zNmZmLTQyZDgtYjQ5ZS1hOWNjZDNhYjVmZjMiLCJzZyI6WyJjZjI0MzJkZi0xZTM2LTRmMDQtYmI3ZC03OTNiMzMyYTE4ZTkiXSwiYXV0aGVudGljYXRpb25NZXRob2QiOiJzaGliYm9sZXRoIiwiZXhwIjoxNzU2MjA2MTE0fQ.NxagiHu0pTOxGg5YzqrPkpHJe2xNpEg4UaRqdOoF0zM
+
+
+
+\newpage
+
+
+
+\subsection{Materiales para el desarollo} 
 
 \subsubsection*{PYTHON}
 Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. [TODO] uso en ia]

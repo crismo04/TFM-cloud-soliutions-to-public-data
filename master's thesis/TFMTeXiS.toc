@@ -33,24 +33,27 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {3}Materiales y métodos}{35}{chapter.50}%
 \contentsline {section}{\numberline {3.1}Métodos}{35}{section.51}%
-\contentsline {subsection}{\numberline {3.1.1}Utilización de la solución}{35}{subsection.52}%
-\contentsline {subsection}{\numberline {3.1.2}Aplicación de la gobernanza de datos como método}{36}{subsection.53}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Principios éticos}{38}{subsubsection.54}%
-\contentsline {section}{\numberline {3.2}Datos}{39}{section.55}%
-\contentsline {section}{\numberline {3.3}Materiales}{39}{section.56}%
-\contentsline {subsection}{\numberline {3.3.1}Lenguajes}{39}{subsection.57}%
-\contentsline {subsection}{\numberline {3.3.2}Herramientas}{40}{subsection.58}%
-\contentsline {subsection}{\numberline {3.3.3}Herramientas descartadas}{41}{subsection.59}%
-\contentsline {chapter}{\numberline {4}Resultados}{43}{chapter.60}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{45}{chapter.61}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{47}{chapter.62}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{49}{chapter.63}%
+\contentsline {subsection}{\numberline {3.1.1}Utilización de la solución}{36}{subsection.52}%
+\contentsline {subsection}{\numberline {3.1.2}Métodos utilizados: Datos}{36}{subsection.53}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Aplicación de la gobernanza de datos como método}{37}{subsubsection.54}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}Principios éticos}{39}{subsubsection.55}%
+\contentsline {subsection}{\numberline {3.1.3}Métodos utilizados: Aprendizaje automático}{40}{subsection.56}%
+\contentsline {subsection}{\numberline {3.1.4}Métodos utilizados: Aprendizaje automático}{40}{subsection.57}%
+\contentsline {section}{\numberline {3.2}Materiales}{41}{section.58}%
+\contentsline {subsection}{\numberline {3.2.1}Conjuntos de Datos}{41}{subsection.59}%
+\contentsline {subsection}{\numberline {3.2.2}Materiales para el desarollo}{42}{subsection.60}%
+\contentsline {subsection}{\numberline {3.2.3}Herramientas}{43}{subsection.61}%
+\contentsline {subsection}{\numberline {3.2.4}Herramientas descartadas}{43}{subsection.62}%
+\contentsline {chapter}{\numberline {4}Resultados}{45}{chapter.63}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{47}{chapter.64}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{49}{chapter.65}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{51}{chapter.66}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Definiciones y acrónimos}{51}{appendix.64}%
-\contentsline {section}{\numberline {A.1}Definiciones}{51}{section.65}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{52}{subsection.66}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{57}{subsection.77}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{62}{subsection.83}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{69}{section.108}%
+\contentsline {chapter}{\numberline {A}Definiciones y acrónimos}{53}{appendix.67}%
+\contentsline {section}{\numberline {A.1}Definiciones}{53}{section.68}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{54}{subsection.69}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{59}{subsection.80}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{64}{subsection.86}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{71}{section.111}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{73}{appendix*.109}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{75}{appendix*.112}%
