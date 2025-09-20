@@ -12,17 +12,20 @@ En este capítulo describimos el proceso que se ha seguido en la realización de
 Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en diferentes módulos:
 
 \begin{itemize}
-	\item \textbf{ Búsqueda y almacenamiento de datos.}
-	\item \textbf{ Tratamiento básico de los datos.}
-	\item \textbf{ Estudio con modelos de IA en diferentes nubes}
-	\item \textbf{ Comparación y estudio de resultados.}
+	\item \textbf{ Búsqueda y almacenamiento de datos:} Donde se analizaran los datos públicos disponibles, se recopilaran metadatos sobre estos y se seleccionara un método de descarga y almacenamiento en la nube, ya sea un ``script'' que mueva los datos a la nube, o el almacenamiento local en el caso de volúmenes de datos suficientemente pequeños. \\
+	\item \textbf{ Tratamiento básico de los datos:} Una vez almacenados, se procederá a su estudio y análisis para comprobar la consistencia y validez de los mismos, intentando comprobar duplicados, datos nulos, vacíos o valores atópicos que puedan no tener sentido y interferir con el rendimiento de los modelos. Las modificaciones realizadas a los datos también se documentaran para poder ser replicadas y los datos se almacenaran en este estado en el mismo sistema de almacenamiento. \\
+	\item \textbf{ Estudio con modelos de IA en diferentes nubes:} Una vez los datos estén tratados, se pasara a la fase de extracción de conclusiones. Se establecerán unas hipótesis a confirmar o se dejara a los modelos extraer sus propios clústeres de datos. En esta fase también se seleccionara el modelo mas adecuado dependiendo del tipo de datos y de las conclusiones a las que se quieran llegar.
+	\item \textbf{ Comparación y estudio de resultados:} Tras procesar los datos y estudiarlos, se pasara a la revisión de las hipótesis y conclusiones a las que los modelos hayan llegado, para comprobar cuales son los resultados de valor que se han podido sacar de estos datos o si las hipótesis establecidas se han cumplido.
+	\item \textbf{ Revisión, Automatización y generalización del proceso:} Una vez finalizado el proceso, se realizara un estudio de las partes del mismo que se pueden automatizar para siguientes iteraciones. En este paso se analizaran todos los anteriores en búsqueda de mejoras, también se documentará el numero de recursos utilizados en la nube, para tener controlados los costes del proceso.
 \end{itemize}
 
 \subsection{Utilización de la solución}
 
 [TODO]
 
-\subsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
+\subsection{Métodos sobre Datos} \label{sec:Materiales_datos}
+
+\subsubsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
 
 Como ya hemos definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
 
@@ -99,7 +102,6 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 % [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que hemos definido?
 
 
-\section{Datos} \label{sec:Materiales_datos}
 
 [TODO]
 https://docta.ucm.es/rest/api/core/bitstreams/814f787a-82d4-45cf-9030-bb9d2b3600de/content?authentication-token=eyJhbGciOiJIUzI1NiJ9.eyJlaWQiOiI3YTI4M2Y4MC0zNmZmLTQyZDgtYjQ5ZS1hOWNjZDNhYjVmZjMiLCJzZyI6WyJjZjI0MzJkZi0xZTM2LTRmMDQtYmI3ZC03OTNiMzMyYTE4ZTkiXSwiYXV0aGVudGljYXRpb25NZXRob2QiOiJzaGliYm9sZXRoIiwiZXhwIjoxNzU2MjA2MTE0fQ.NxagiHu0pTOxGg5YzqrPkpHJe2xNpEg4UaRqdOoF0zM
