@@ -21,9 +21,11 @@ Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en 
 
 \subsection{Utilización de la solución}
 
-En este capitulo vamos a ver los detalles de la solución para distintos conjuntos de datos. 
+Para la utilización de la solución, hemos seguido las buenas practicas del tratamiento de los datos, así como las buenas practicas de MLOps y las buenas practicas recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo. Por el momento, se detallaran los conjuntos de datos tratados.
 
-Para la utilización de la solución, hemos seguido las buenas practicas del tratamiento de los datos, así como las buenas practicas de MLOps y las buenas practicas recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo.
+Para empezar las primeras iteraciones, se opto por conjuntos de datos que ya hayan sido estudiados previamente y a los que se tenia acceso a conclusiones, estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del ayuntamiento de Madrid y extrajeron conclusiones, como primera toma de contacto, intentaremos replicar las conclusiones en la nube y extender el análisis a años posteriores a los que ellos estudiaron para complementar sus estudios, y poder avanzar en la automatización del estudio de datos públicos. % [TODO], pequeño resumen de que despues de esto se han tratado estos y otros datos?
+
+
 
 
 [TODO]
@@ -121,9 +123,7 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 
 \section{Materiales}
 
-
-
-[TODO], herramientas, programas y material utilizado, incluyendo por ejemplo los tipos de IA]
+% [TODO], herramientas, programas y material utilizado, incluyendo por ejemplo los tipos de IA]
 
 \subsection{Conjuntos de Datos} \label{sec:Materiales_datos}
 
@@ -137,41 +137,43 @@ Los conjuntos de datos utilizados tienen sus propios metadatos asociados en el G
 
 \newpage
 
+\subsection{Nubes} 
+
+\subsubsection{Amazon Web Services}
+
+\textbf{Amazon Web Services (AWS)} es la plataforma líder mundial en computación en la nube, que proporciona recursos escalables y flexibles de todo tipo, lo que ha permitido construir, desplegar y gestionar aplicaciones sin la necesidad de poseer infraestructura física. Hemos utilizado AWS como primera nube, debido a la capa gratuita de 6 meses y su popularidad. Los primeros pasos han sido realizar los tutoriales de la web, lo cual te permite contar con 100\$ extra para la capa gratuita.
+
+\subsection{Materiales para el desarollo}
+
+\subsubsection{Lenguajes}
+Los principales lenguajes utilizados para el desarrollo del proyecto han sido los siguientes:
+
+\begin{itemize}
+	\item \textbf{PYTHON:} Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Lo hemos elegido por su gran comunidad y cantidad de librerías dirigidas a el aprendizaje automático. % [TODO] uso en ia]
+	
+	\item \textbf{SQL:} SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad. Utilizamos SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos.
+	
+	\item \textbf{\LaTeX:} \label{latexDef} \LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios. Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
+	
+	\item \textbf{bash Script:} La comunicación con las nubes de AWS y GCP, se ha realizado principalmente con la ejecución de scripts bash en su GUI con los comandos que estas mismas facilitan, tambien se han realizado scripts especificos apra ciertas tareas.
+\end{itemize}
 
 
-\subsection{Materiales para el desarollo} 
+\subsubsection{Herramientas} 
 
-\subsubsection*{PYTHON}
-Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. [TODO] uso en ia]
+Las siguientes herramientas y programas han sido esenciales para la elaboración del proyecto:
 
-\subsubsection*{SQL}
-SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad.
-Utilizamos SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos. 
-
-\subsubsection*{\LaTeX} \label{latexDef}
-\LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios.       
-Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
-
-\subsubsection*{bash Script}
-La comunicación con las nubes de AWS y GCP, se ha realizado principalmente con la ejecución de scripts bash en su GUI con los comandos que estas mismas facilitan, tambien se han realizado scripts especificos apra ciertas tareas.
-
-\subsection{Herramientas} 
-
-\subsubsection*{Visual Studio Code}
-Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones. 
-
-Utilizamos Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
-
-\subsubsection*{GitHub}
-GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente.  
-
-[TODO]
-
-\subsubsection*{TeXstudio y MiKTeX}
-TeXstudio es un editor de \LaTeX\space de código abierto y multiplataforma con una interfaz amigable, es un IDE que proporciona un soporte moderno de escritura, como la corrección ortográfica interactiva, plegado de código y resaltado de sintaxis, por lo que se ha considerado ideal para la elaboración de este documento.
-Mientras que MiKTeX es el gestor de paquetes integrado, que instala los paquetes que hacen falta para el correcto funcionamiento de TeXstudio y para la compilación y estructuración de este documento.
-
-\subsection{Herramientas descartadas} 
-
-[TODO]
+\begin{itemize}
+	\item \textbf{Visual Studio Code:} Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones.
+	
+	Utilizamos Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
+	
+	\item \textbf{GitHub:} GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente.
+	
+	% [TODO]
+	
+	\item \textbf{TeXstudio y MiKTeX:} TeXstudio es un editor de \LaTeX\space de código abierto y multiplataforma con una interfaz amigable, es un IDE que proporciona un soporte moderno de escritura, como la corrección ortográfica interactiva, plegado de código y resaltado de sintaxis, por lo que se ha considerado ideal para la elaboración de este documento.
+	
+	Mientras que MiKTeX es el gestor de paquetes integrado, que instala los paquetes que hacen falta para el correcto funcionamiento de TeXstudio y para la compilación y estructuración de este documento.
+\end{itemize}
 
