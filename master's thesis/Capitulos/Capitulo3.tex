@@ -21,7 +21,7 @@ Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en 
 
 \subsection{Utilización de la solución}
 
-Para la utilización de la solución, hemos seguido las buenas practicas del tratamiento de los datos, así como las buenas practicas de MLOps y las buenas practicas recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo. Por el momento, se detallaran los conjuntos de datos tratados.
+Para la utilización de la solución, hemos seguido las buenas practicas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo. Por el momento, se detallaran los conjuntos de datos tratados.
 
 Para empezar las primeras iteraciones, se opto por conjuntos de datos que ya hayan sido estudiados previamente y a los que se tenia acceso a conclusiones, estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del ayuntamiento de Madrid y extrajeron conclusiones, como primera toma de contacto, intentaremos replicar las conclusiones en la nube y extender el análisis a años posteriores a los que ellos estudiaron para complementar sus estudios, y poder avanzar en la automatización del estudio de datos públicos. % [TODO], pequeño resumen de que despues de esto se han tratado estos y otros datos?
 
@@ -47,7 +47,7 @@ En esta capa se definieron los objetivos generales y principios de la gobernanza
 	
 	\item \textbf{Seguridad y soberanía:} Aunque se utilizan servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configuraron para operar dentro de la UE.
 	
-	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentó en esta mismo memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
+	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentó en esta misma memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
 \end{itemize}
 
 
@@ -113,7 +113,7 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 
 
 
-\subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_cloud}
+\subsection{Métodos utilizados: Cloud} \label{sec:Metodos_cloud}
 % [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
 
 
@@ -155,7 +155,7 @@ Los principales lenguajes utilizados para el desarrollo del proyecto han sido lo
 	
 	\item \textbf{\LaTeX:} \label{latexDef} \LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios. Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
 	
-	\item \textbf{bash Script:} La comunicación con las nubes de AWS y GCP, se ha realizado principalmente con la ejecución de scripts bash en su GUI con los comandos que estas mismas facilitan, tambien se han realizado scripts especificos apra ciertas tareas.
+	\item \textbf{bash Script:} La comunicación con las nubes de AWS y GCP, se ha realizado principalmente con la ejecución de scripts bash en su GUI / CLI con los comandos que estas mismas facilitan, tambien se han realizado scripts especificos para ciertas tareas.
 \end{itemize}
 
 

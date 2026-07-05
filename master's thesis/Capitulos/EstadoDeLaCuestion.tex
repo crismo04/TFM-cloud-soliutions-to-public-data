@@ -12,7 +12,7 @@ También dividiremos esta sección en los tres elementos que componen el trabajo
 \section{Datos}
 \label{sec:EstudiosDatos}
 
-Llevamos mucho tiempo escuchando que vivimos en la era de la información o de los dato, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando la primera vez que se acuñó en 2005 el termino ``web 2.0''y ``Big data'' \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente Inteligencia Artificial, llegarán a generan, según proyecciones, la asombrosa cifra de 149 Zettabytes de datos en 2024, ¡un 1 seguido de 23 ceros en bytes! \citep{BigDataStatista} \& \citep{BigDataStadisticsMarket} (numero impresionante a pesar de la naturaleza especulativa de estas proyecciones). 
+Llevamos mucho tiempo escuchando que vivimos en la era de la información, o de los datos, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando la primera vez que se acuñó en 2005 el termino ``web 2.0''y ``Big data'' \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente Inteligencia Artificial, llegarán a generan, según proyecciones, la asombrosa cifra de 149 Zettabytes de datos en 2024, ¡un 1 seguido de 23 ceros en bytes! \citep{BigDataStatista} \& \citep{BigDataStadisticsMarket} (numero impresionante a pesar de la naturaleza especulativa de estas proyecciones). 
 Esta evolución no ha sido lineal ni uniforme, sino que ha estado marcada por distintos enfoques, motivaciones y metodologías en todo el mundo en lo que se denominan las tres olas de datos abiertos \hyperref[def5]{[Definición \ref*{def5}]} , diferentes etapas evolutivas por las que ha transitado el movimiento de apertura de datos
 
 En España, los datos también muestran un aumento significativo, según los datos de telecomunicaciones del CNMC, los cuales se han analizado con este mismo proyecto \citep{DatosGeneralesCNMC} el uso de datos generales en las principales empresas es de 0.092 Zettabytes de datos en 2024. % [TODO], %se ha hecho?
@@ -125,7 +125,7 @@ Estas nubes gestionadas nos proporcionan unidades de procesamiento gráfico (GPU
 Otra opción posible sería la nube híbrida, que combina el control de una infraestructura privada (``On premise'') con la escalabilidad y economía de la nube pública. Esto es ideal para cargas con datos sensibles, pero complicaría en enfoque de este proyecto. 
 Para ayudarnos mejor a valorar todas las opciones, vamos a listar la oferta gratuita de algunas de las nubes estudiadas \citep{MicrosoftCloudTerminology}, \citep{lisdorf2021cloud}.
 
-En el panorama nacional, Eurostat muestra que el 35.8\% de las empresas españolas usaban tecnologías cloud en 2024, tendencia que va en aumento (pronosticando un 17\% más para los próximos años: \cite{EspannaCloudGroeth2033}), pero que se encuentra por debajo en comparación con Europa, donde se usa en más del 45\% de las empresas \citep{EurostatCloudUsage}. de cara al futuro, mientras la estrategia europea el ``edge computing'' frente a la cloud privada para ganar autonomía tecnológica y soberanía de datos \citep{EuroDigitalStrategyEdge}, el enfoque del Plan de Digitalización español \citep{GobEspana2021PlanDigitalizacion} no se aleja de la nube pública, sino que aboga por un modelo híbrido soberano usando NubeSARA (plataforma híbrida que, por sus precios \citep{EurostatCloudUsage}, e información encontrada \citep{InfoNubeSARA}, \citep{InfoPreparaTICNubeSARA} no vamos a utilizar en este estudio).
+En el panorama nacional, Eurostat muestra que el 35.8\% de las empresas españolas usaban tecnologías cloud en 2024, tendencia que va en aumento (pronosticando un 17\% más para los próximos años: \cite{EspannaCloudGroeth2033}), pero que se encuentra por debajo en comparación con Europa, donde se usa en más del 45\% de las empresas \citep{EurostatCloudUsage}. De cara al futuro, mientras la estrategia europea prioriza el ``edge computing'' frente a la cloud privada para ganar autonomía tecnológica y soberanía de datos \citep{EuroDigitalStrategyEdge}, el enfoque del Plan de Digitalización español \citep{GobEspana2021PlanDigitalizacion} no se aleja de la nube pública, sino que aboga por un modelo híbrido soberano usando NubeSARA (plataforma híbrida que, por sus precios \citep{EurostatCloudUsage}, e información encontrada \citep{InfoNubeSARA}, \citep{InfoPreparaTICNubeSARA} no vamos a utilizar en este estudio).
 
 \emph{Matiz sobre ``edge computing'': Aunque es especialmente importante en el uso de aplicaciones de IA  \hyperref[tab:nube_distribuida]{[Tabla \ref*{tab:nube_distribuida}]}, debido a la importancia de la privacidad en escenarios con datos tratados automáticamente, pero al ser esto una investigación y no una tecnología dirigida a un usuario final (el cual requeriría velocidad y privacidad), se optara por ejecutar los modelos en la nube en vez en edge, aunque se reconoce su potencial para aplicaciones practicas.}
 
@@ -159,7 +159,7 @@ Servicios específicos:
 
 \subsubsection*{Amazon Web Services}
 
-Plataforma de cloud computing más usada a nivel empresarial, con una enorme cantidad de servicios, desde cómputo básico hasta servicios de IA, machine learning, IoT, etc. Tiene una capa gratuita de 12 meses, aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://aws.amazon.com/free/}
+Plataforma de cloud computing más usada a nivel empresarial, con una enorme cantidad de servicios, desde cómputo básico hasta servicios de IA, aprendizaje automático, IoT, etc. Tiene una capa gratuita de 6 meses y 100 dolares de gastos +  100 adicionales al completar tareas. Aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://aws.amazon.com/free/}
 
 Servicios específicos:
 \begin{itemize}
@@ -256,7 +256,7 @@ Plataforma especializada en rendimiento web, seguridad y confiabilidad. Aunque n
 
 \subsubsection*{OVHcloud}
 
-Proveedor de cloud francés con un fuerte compromiso con la soberanía de los datos y el RGPD. Ofrece una gama completa de servicios de infraestructura (IaaS) y plataforma (PaaS) desde sus centros de datos.Ofreces 200€ en creditos para probar el servicio durante un mes, aunque tiene una \textbf{Lista completa} de servicios: \url{https://www.ovhcloud.com/en/public-cloud/prices/}, los disponibles en el plan gratuito son los siguientes \citep{OVHCloudFree}:
+Proveedor de cloud francés con un fuerte compromiso con la soberanía de los datos y el RGPD. Ofrece una gama completa de servicios de infraestructura (IaaS) y plataforma (PaaS) desde sus centros de datos.Ofrece 200 euros en créditos para probar el servicio durante un mes, aunque tiene una \textbf{Lista completa} de servicios: \url{https://www.ovhcloud.com/en/public-cloud/prices/}, los disponibles en el plan gratuito son los siguientes \citep{OVHCloudFree}:
 \begin{itemize}
 \item \textbf{Despliegue de un e-commerce}:
 con 2 servidores B2-7, 1 base de datos MySQL, 1 IP adicional, 1 Balanceador de Carga y 10 GB de Almacenamiento de Objetos.
@@ -359,7 +359,7 @@ Por último, querría destacar trabajos de compañeros como \textbf{``Optimizaci
 
 La Inteligencia Artificial (IA), y mas específicamente el aprendizaje automático (ML), esta emergiendo como el paradigma tecnológico más transformador de la década y uno de los mas importante de la historia \hyperref[def12]{[Definición \ref*{def12}]}. Aunque desde sus inicios ha pasado por algunos ``inviernos'' \citep{Cheok2023AIHistory}, el lanzamiento de ``ChatGPT'' en 2022 catapulto la fama de esta tecnología \hyperref[figura_A3]{[Figura \ref*{figura_A3}]}. Estudios del ONTSI \citep{ontsi2025indicadores} revelan que en 2024, el 11,4\% de las empresas españolas de 10 o más empleados usa IA, un dato ligeramente inferior a la media de la UE (13,5\%), aunque por encima de potencias como EE.UU. (5,7\% según OECD, o 7,3\% del total de empresas según BTOS). En cuanto a la población general, en 2024 un 73,8\% de los españoles tenían conocimiento de la existencia de la IA generativa, y un 56,8\% de la utilizó durante el año.
 
-Aunque esta fama viene dada por los modelos generativos basados en ``transformers'' y modelos generativos  \citep{vaswani2017attention}, la aplicación de esta tecnología aplicación va mas allá de esto, el núcleo de esta revolución reside en  el conjunto de herramientas algorítmicas para el análisis predictivo y la extracción de patrones en datos masivos, lo cual incluye los modelos generativos, pero no exclusivamente. En este proyecto se pretende utilizar ese potencial a través de plataformas cloud como Google Vertex AI, el uso de diferentes modelos de clasificación y clusterización o de detección de anomalías, con el propósito de intentar transformar el vasto volumen de datos públicos, a menudo infrautilizados, en ``insights'' o conclusiones de valor publico.
+Aunque esta fama viene dada por los modelos generativos basados en ``transformers'' y modelos generativos  \citep{vaswani2017attention}, la aplicación de esta tecnología aplicación va mas allá de esto, el núcleo de esta revolución reside en  el conjunto de herramientas algorítmicas para el análisis predictivo y la extracción de patrones en datos masivos, lo cual incluye los modelos generativos, pero no exclusivamente. En este proyecto se pretende utilizar ese potencial a través de plataformas cloud como Google Vertex AI, el uso de diferentes modelos de clasificación y clusterización o de detección de anomalías, con el propósito de intentar transformar el vasto volumen de datos públicos, a menudo infrautilizados, en ``insights'' o conclusiones de valor público.
 
 También aclarar que, por acotar el alcance del proyecto, este trabajo no destacará avances en IA que traten datos multimedia, como vídeos, audios y imágenes, aunque reconocemos el increíble avance que han tenido tecnologías de visión por computador o creación de multimedia y si utilidad en LLMs multimodales, los cuales si entran en el ``scope'' del proyecto. Con esto en mente, en las siguientes secciones vamos a ver como aplicar el aprendizaje automático al proyecto, revisando los modelos tradicionales, tecnologías que proporcionan las nubes para usarlos, como el AutoML. Igual que para los datos se han tenido en cuenta ideas de gobernanza de datos, para la aplicación de los modelos se tendrán en cuenta los principios de las Operaciones de aprendizaje automático (MLOps) \hyperref[def14]{[Definición \ref*{def14}]}.
 
@@ -420,7 +420,7 @@ En este proyecto utilizaremos varias herramientas. En cuanto a los datos, los al
 
 Los principales proveedores de nube ofrecen plataformas completas diseñadas para gestionar el ciclo de vida de los modelos de ML \citep{comparisonAutoMLServices}:
 \begin{itemize}
-	\item \textbf{Google Vertex AI:} Integra herramientas para todo el ciclo de vida del ML: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicacion con las principales herramientas de GCP como Bigquery. Además, ofrece una gran selección de modelos preentrenados de ML para diversos problemas, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA} .
+	\item \textbf{Google Vertex AI:} Integra herramientas para todo el ciclo de vida del ML: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI / CLI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicacion con las principales herramientas de GCP como Bigquery. Además, ofrece una gran selección de modelos preentrenados de ML para diversos problemas, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA} .
 	\item \textbf{AWS SageMaker:} Proporciona un conjunto completo de herramientas y servicios para construir, entrenar y desplegar modelos de ML a escala, incluyendo notebooks gestionados, algoritmos y entrenamiento distribuido. Soporta una amplia gama de fuentes de datos como S3, Athena, Redshift, Snowflake y Databricks\citep{AmazonSageMaker_CloudIA}.
 	\item \textbf{Azure Machine Learning:} Ofrece un entorno para el desarrollo y despliegue con herramientas para la preparación de datos, entrenamiento de modelos, gestión de experimentos y automatización de flujos de trabajo de ML, ademas de ofrecer modelos de Hugging Face y OpenAI. Sus fuentes de datos principales incluyen Azure Blob Storage, Azure File Share y Azure Data Lake, \citep{AzureMachineLearning_CloudIA}.
 	\item \textbf{OVHcloud (AI Notebook y AI Training):} Ofrece sus servicios "AI Notebook" y "AI Training", con infraestructura gestionada, incluyendo acceso a GPUs, para el desarrollo y entrenamiento de modelos. No tiene un entorno tan potente como el resto de clouds, pero ofrece una capa gratuita generosa y localizada en Europa, \citep{OVHcloud_CloudIA}.
@@ -437,32 +437,42 @@ Además de las plataformas comentadas, existen herramientas especializadas de gr
 	\item \textbf{Hugging Face Spaces:} Plataforma dedicada al despliegue, compartición y descubrimiento de modelos de ML ya creados, muy útil para pruebas de concepto, permitir la prueba de modelos o utilizar los que la comunidad ha creado \citep{huggingfaceSpaces_CloudIA}.
 \end{itemize}
 
-También vale la pena destacar los grandes modelos generativos, los cuales presentan una capacidad de adaptación enorme, y aunque no están diseñados para la ingesta de grandes volúmenes de datos, el aumento de las ventanas de contexto (numero de tokens a los que el modelo ``presta atención'' \citep{vaswani2017attention}) ha echo que tratar de utilizarlos para el tratamiento de datos tabulares no sensibles sea un caso que vale la pena considerar, siempre teniendo en cuenta estas consideraciones éticas y de privacidad.
+También vale la pena destacar los grandes modelos generativos, los cuales presentan una capacidad de adaptación enorme, y aunque no están diseñados para la ingesta de grandes volúmenes de datos, el aumento de las ventanas de contexto (numero de tokens a los que el modelo ``presta atención'' \citep{vaswani2017attention}) ha hecho que tratar de utilizarlos para el tratamiento de datos tabulares \textbf{ no sensibles} sea un caso que vale la pena considerar, siempre teniendo en cuenta estas consideraciones éticas y de privacidad.
 
-Teniendo en cuenta la ventana de contexto de los modelos \citep{LLMLeaderboardParameters} y que un token son aproximadamente cuatro caracteres \citep{TokenizacionMicrosoft} se ha elaborado una tabla con la cantidad de datos tabulares que los principales modelos de LLM podrían asumir, considerando dos tipos de datos tabulares,:
+Teniendo en cuenta la ventana de contexto de los modelos disponibles en junio de 2026 según el leaderboard de LLM Stats \citep{LLMLeaderboardParameters} y que un token son aproximadamente cuatro caracteres \citep{TokenizacionMicrosoft}, se ha elaborado una tabla con la cantidad de datos tabulares que los principales modelos de LLM podrían asumir. Se consideran dos escenarios realistas:
+
 \begin{itemize}
- 	\item Uno pequeño, con un par de columnas en forma de ID y etiqueta (15 tokens por fila)
- 	\item Uno mediano, con varias columnas o una columna de texto con aproximadamente 65 palabras (90 tokens por fila)
+	\item Una fila simple, con un identificador y una etiqueta corta (aproximadamente 50 tokens por fila).
+	\item Una fila compleja, con varias columnas o una descripción de unas 100 palabras (aproximadamente 150 tokens por fila).
 \end{itemize}
 
 \begin{table}[h]
-	\renewcommand{\arraystretch}{1.3}
-	\caption{tabla con ventanas de contexto de diferentes LLM}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\caption{Ventanas de contexto en tokens de principales LLM (Junio 2026), con su calculo de filas de datos posibles que entrarían dentro de esa ventana.}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		\textbf{Modelo} & \textbf{Tokens ventana} & \textbf{Filas, 15 tok/fila} & \textbf{Filas, 90 tok/fila} \\ \hline
-		Llama 4 Scout & 10.000.000 & 666.666 & 111.111 \\ \hline
-		Gemini 1.5 Pro & 2.097.152 & 139.810 & 23.301 \\ \hline
-		GPT-4.1 & 1.047.576 & 69.838 & 11.639 \\ \hline
-		Nova Pro & 300.000 & 20.000 & 3.333 \\ \hline
-		Grok-4 & 256.000 & 17.066 & 2.844 \\ \hline
-		Claude 3.5 Sonnet & 200.000 & 13.333 & 2.222 \\ \hline
-		DeepSeek-V3 / R1 & 128.000 & 8.533 & 1.422 \\ \hline
+		\textbf{Modelo} & \textbf{Proveedor} & \textbf{Tokens} & \textbf{nº filas a 50t} & \textbf{nº filas a 150t} \\
+		\hline
+		Grok 4 Fast & xAI & 2.000.000 & 40.000 & 13.333 \\
+		\hline
+		GPT-5.5 & OpenAI & 1.100.000 & 22.000 & 7.333 \\
+		\hline
+		Gemini 3.1 Pro & Google & 1.000.000 & 20.000 & 6.666 \\
+		\hline
+		Claude Opus 4.7 & Anthropic & 1.000.000 & 20.000 & 6.666 \\
+		\hline
+		DeepSeek-V4-Pro-Max & DeepSeek & 1.000.000 & 20.000 & 6.666 \\
+		\hline
+		GPT-5.4 & OpenAI & 1.000.000 & 20.000 & 6.666 \\
+		\hline
+		Qwen3.7 Max & Alibaba & 1.000.000 & 20.000 & 6.666 \\
+		\hline
 	\end{tabular}
-	\footnotesize Fuente: Elaboración propia con datos de \cite{LLMLeaderboardParameters}.
+	\footnotesize Fuente: Elaboración propia con datos de \cite{LLMLeaderboardParameters} (actualizado a junio de 2026).
 \end{table}
 
-Con estos datos se puede observar que para ciertos tipos de datos tabulares, hay modelos que están empezando a poder tratar un numero considerado de filas, y ya hay estudios que lo están revisando \citep{fang2024llms}.
+Con estos datos se puede observar que los modelos más avanzados ya pueden procesar miles de filas tabulares simples en su ventana de contexto, lo que puede ser suficiente para muchos conjuntos de datos. Ya existen estudios que exploran estas capacidades \citep{fang2024llms}.
 
 \subsubsection{AutoML}
 

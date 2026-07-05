@@ -2,6 +2,7 @@
 tmp/
 data/
 Docs/notes.txt
+code/test/
 
 # Git provided python gitignore ------->
 # Byte-compiled / optimized / DLL files
