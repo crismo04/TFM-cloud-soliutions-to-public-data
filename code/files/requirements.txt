@@ -1,0 +1,12 @@
+pandas>=2.0
+numpy>=1.26
+requests>=2.31
+fsspec>=2024.1
+s3fs>=2024.1        # solo para --destino s3:// (AWS)
+openpyxl>=3.1
+pyarrow>=14.0
+scikit-learn>=1.4
+scipy>=1.11
+matplotlib>=3.8
+statsmodels>=0.14
+pmdarima>=2.0; python_version < "3.13"
