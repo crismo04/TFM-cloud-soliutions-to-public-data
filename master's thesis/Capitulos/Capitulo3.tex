@@ -75,9 +75,9 @@ Esta última capa corresponde a la implementación práctica de la estrategia, l
 	\begin{itemize}
 		\item \textbf{Adquisición:} Se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso. 
 		
-		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery.
+		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery. El almacenaje depende de la herramienta propietaria de cada nube (S3 para amazon, cloud storage para GCP, etc.).
 		
-		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza, anonimización y feature engineering en entornos gestionados como Dataflow o Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
+		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza, anonimización y feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
 		
 		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
 		
