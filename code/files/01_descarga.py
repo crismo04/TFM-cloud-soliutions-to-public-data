@@ -1,9 +1,10 @@
-"""Descarga de datos crudos de diferentes portales publicos
+"""
+Descarga de datos crudos de diferentes portales publicos
 
 El portal de datos abiertos de Madrid migro a CKAN (2.9.x), que expone la API REST estandar de CKAN. La estrategia de ingesta es por tanto:
 
   1. Resolver el package_id del conjunto: se acepta directamente el id o una URL antigua/nueva del catalogo (HTML -> window.packageId)
-  2. Llamar a GET /api/3/action/package_show?id=<pkg> -> JSON con todos los recursos (url, nombre, formato) y la licencia del conjunto
+  2. Llamar a GET /api/3/action/package_show?id=<pkg> -> JSON con los recursos (url, nombre, formato) y la licencia del conjunto
   3. Filtrar recursos de datos (csv/xlsx/zip/json/shp...) por anio, que se detecta en el nombre/descripcion del recurso
   4. Descargar al destino elegido via fsspec y registrar metadatos
 
@@ -92,7 +93,7 @@ def recursos_del_paquete(pkg: str) -> tuple[list[dict], str]:
             formato = ext
         nombre = rec.get("name") or url.rsplit("/", 1)[-1]
         texto = (PREFIJO_ID.sub("", nombre) + " "
-                 + (rec.get("description") or "")) # el slug empieza por el ID del recurso que contiene falsos anios # TODO revisar todos los datos
+                 + (rec.get("description") or "")) # el slug empieza por el ID del recurso que contiene falsos anios # TODO revisar los datos
         anios = re.findall(r"(20\d{2})", texto)
         recursos.append({
             "url": url,

@@ -1,4 +1,4 @@
-\begin{thebibliography}{145}
+\begin{thebibliography}{149}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -21,10 +21,10 @@
 \newblock Datos abiertos en aws.
 \newblock 2025.
 
-\bibitem[{{Amazon Web Services}(s-f.)}]{AmazonSageMaker_CloudIA}
+\bibitem[{{Amazon Web Services}(2025)}]{AmazonSageMaker_CloudIA}
 {\sc {Amazon Web Services}}.
 \newblock Amazon sagemaker.
-\newblock s-f.
+\newblock 2025.
 
 \bibitem[{Anderson(2004)}]{Anderson2004BOINC}
 {\sc Anderson, D.}
@@ -53,6 +53,21 @@
 {\sc {Ayuntamiento de Madrid}}.
 \newblock Portal de datos abiertos del ayuntamiento de madrid.
 \newblock 2025.
+
+\bibitem[{{Ayuntamiento de
+  Madrid}(2026{\natexlab{a}})}]{AytoMadrid2025PortalDatos}
+{\sc {Ayuntamiento de Madrid}}.
+\newblock Portal de datos abiertos del ayuntamiento de madrid.
+\newblock 2026{\natexlab{a}}.
+
+\bibitem[{{Ayuntamiento de
+  Madrid}(2026{\natexlab{b}})}]{AytoMadrid2025Interprete}
+{\sc {Ayuntamiento de Madrid}}.
+\newblock Sistema integral de la calidad del aire: interpretación de los datos
+  de calidad del aire y meteorología.
+\newblock 2026{\natexlab{b}}.
+\newblock Portal de Datos Abiertos del Ayuntamiento de Madrid, documentación
+  asociada a los conjuntos de datos diarios.
 
 \bibitem[{Barbudo et\ al.(2023)Barbudo, Ventura y Romero}]{Barbudo2023}
 {\sc Barbudo, R.}, {\sc Ventura, S.} y {\sc Romero, J.~R.}
@@ -93,8 +108,8 @@
 \newblock Cloud verse: mapping the new frontiers of cloud computing.
 \newblock vol. 392, p\'agina 01081, 2024.
 
-\bibitem[{BOZEMAN(2007)}]{bozeman2007public}
-{\sc BOZEMAN, B.}
+\bibitem[{Bozeman(2007)}]{bozeman2007public}
+{\sc Bozeman, B.}
 \newblock {\em Public Values and Public Interest: Counterbalancing Economic
   Individualism\/}.
 \newblock Georgetown University Press, 2007.
@@ -133,6 +148,14 @@
 \newblock {Deep Blue}.
 \newblock {\em {Artificial Intelligence}\/}, vol. 134(1-2), p\'aginas 57--83,
   2002.
+
+\bibitem[{Carsaniga et\ al.(2022)Carsaniga, Dogger y
+  Regeczi}]{UseCaseObservatory2022V1}
+{\sc Carsaniga, G.}, {\sc Dogger, J.} y {\sc Regeczi, D.}
+\newblock The use case observatory a 3-year monitoring of 30 reuse cases to
+  understand the economic, governmental, social and environmental impact of
+  open data volume i.
+\newblock {\em Publications Office of the European Union\/}, 2022.
 
 \bibitem[{Challapally et\ al.(2025)Challapally, Pease, Raskar y
   Chari}]{challapally2025state}
@@ -244,8 +267,9 @@
 \newblock {\em arXiv preprint arXiv:2402.17944\/}, 2024.
 \newblock Version 4, last revised 21 June 2024.
 
-\bibitem[{Ferrer-Sapena~A.(2011)}]{OperGovernment2011}
-{\sc Ferrer-Sapena~A., A.-B.~R., Peset~F.}
+\bibitem[{Ferrer-Sapena et\ al.(2011)Ferrer-Sapena, Peset y
+  Aleixandre-Benavent}]{OperGovernment2011}
+{\sc Ferrer-Sapena, A.}, {\sc Peset, F.} y {\sc Aleixandre-Benavent, R.}
 \newblock Acceso a los datos públicos y su reutilización: Open data y open
   government.
 \newblock {\em El Profesional de la Información\/}, p\'aginas 260--269, 2011.
@@ -295,13 +319,6 @@
 {\sc Gigas}.
 \newblock Gigas - cloud hosting solutions.
 \newblock s.f.
-
-\bibitem[{Giulia~Carsaniga(2022)}]{UseCaseObservatory2022V1}
-{\sc Giulia~Carsaniga, D.~R., Jochem~Dogger}.
-\newblock The use case observatory a 3-year monitoring of 30 reuse cases to
-  understand the economic, governmental, social and environmental impact of
-  open data volume i.
-\newblock {\em Publications Office of the European Union\/}, 2022.
 
 \bibitem[{GmbH(s.f.)}]{nextcloudCloud}
 {\sc GmbH, N.}
@@ -360,20 +377,20 @@
 \newblock Golem network.
 \newblock s.f.
 
-\bibitem[{Google(2025)}]{googleDataCommon}
+\bibitem[{Google(2025{\natexlab{a}})}]{googleDataCommon}
 {\sc Google}.
 \newblock Data commons.
-\newblock 2025.
+\newblock 2025{\natexlab{a}}.
 
-\bibitem[{Google(s-f.{\natexlab{a}})}]{GoogleVertexAI_CloudIA}
+\bibitem[{Google(2025{\natexlab{b}})}]{GoogleVertexAI_CloudIA}
 {\sc Google}.
 \newblock Google vertex ai platform.
-\newblock s-f.{\natexlab{a}}.
+\newblock 2025{\natexlab{b}}.
 
-\bibitem[{Google(s-f.{\natexlab{b}})}]{GoogleColab_CloudIA}
+\bibitem[{Google(2025{\natexlab{c}})}]{GoogleColab_CloudIA}
 {\sc Google}.
 \newblock Welcome to colab!
-\newblock s-f.{\natexlab{b}}.
+\newblock 2025{\natexlab{c}}.
 
 \bibitem[{{Google Cloud}(s.f.)}]{distributedGCP}
 {\sc {Google Cloud}}.
@@ -414,10 +431,10 @@
 \newblock ISBN 978-981-19-3026-3.
 \newblock Open access book.
 
-\bibitem[{huggingface(s-f.)}]{huggingfaceSpaces_CloudIA}
+\bibitem[{huggingface(2025)}]{huggingfaceSpaces_CloudIA}
 {\sc huggingface}.
 \newblock huggingface spaces.
-\newblock s-f.
+\newblock 2025.
 
 \bibitem[{{Insights + Analytics}(2024)}]{DatosMercadosEspanna}
 {\sc {Insights + Analytics}, E.}
@@ -453,22 +470,15 @@
 \newblock Copyright - Copyright Editora El Sol, S.A. de C.V. Mar 24, 2023;
   Última actualización - 2023-03-24.
 
-\bibitem[{Julián Valero~Torrijos(2022)}]{DatosAbiertos2022Cloud}
-{\sc Julián Valero~Torrijos, R. M.~G.}
-\newblock {\em DATOS ABIERTOS Y REUTILIZACIÓN DE LA INFORMACIÓN DEL SECTOR
-  PÚBLICO\/}.
-\newblock CRC Press, 2022.
-\newblock ISBN 978-84-1369-269-2.
-
-\bibitem[{Kaggle(s-f.{\natexlab{a}})}]{Kaggle_CloudIA}
+\bibitem[{Kaggle(2025{\natexlab{a}})}]{Kaggle_CloudIA}
 {\sc Kaggle}.
 \newblock Kaggle code notebook.
-\newblock s-f.{\natexlab{a}}.
+\newblock 2025{\natexlab{a}}.
 
-\bibitem[{Kaggle(s-f.{\natexlab{b}})}]{KaggleDatasetsSpain}
+\bibitem[{Kaggle(2025{\natexlab{b}})}]{KaggleDatasetsSpain}
 {\sc Kaggle}.
 \newblock Kaggle datasets.
-\newblock s-f.{\natexlab{b}}.
+\newblock 2025{\natexlab{b}}.
 
 \bibitem[{Khan y Alam(2019)}]{khan2019fileFormats}
 {\sc Khan, S.} y {\sc Alam, M.}
@@ -488,6 +498,19 @@
 {\sc Kumar, R.}, {\sc Adwani, L.}, {\sc Kumawat, S.} y {\sc Jangir, S.~K.}
 \newblock Opennebula: Open source {IaaS} cloud computing software platforms.
 \newblock 2014.
+
+\bibitem[{Leonidas et\ al.(2024)Leonidas, Alexandra y
+  Yannis}]{DataManagement2024Theodorakopoulos}
+{\sc Leonidas, T.}, {\sc Alexandra, T.} y {\sc Yannis, S.}
+\newblock A state-of-the-art review in big data management engineering:
+  Real-life case studies, challenges, and future research directions.
+\newblock {\em Eng\/}, vol.\ 5(3), p\'agina 1266, 2024.
+\newblock Copyright - © 2024 by the authors. Licensee MDPI, Basel,
+  Switzerland. This article is an open access article distributed under the
+  terms and conditions of the Creative Commons Attribution (CC BY) license
+  (https://creativecommons.org/licenses/by/4.0/). Notwithstanding the ProQuest
+  Terms and Conditions, you may use this content in accordance with the terms
+  of the License; Última actualización - 2024-09-27.
 
 \bibitem[{Lisdorf(2021)}]{lisdorf2021cloud}
 {\sc Lisdorf, A.}
@@ -521,9 +544,10 @@
 
 \bibitem[{Melendrez~Moreto(2016)}]{MelendrezMoreto2016Auditoria}
 {\sc Melendrez~Moreto, I.}
-\newblock Auditoría y metodología de implantación de open data para smart
-  cities.
-\newblock 2016.
+\newblock {\em Auditoría y metodología de implantación de open data para
+  smart cities\/}.
+\newblock Tesis Doctoral, Facultad de Informática, Departamento de
+  Arquitectura de Computadores y Automática, 2016.
 \newblock Máster en Ingeniería Informática, curso 2015-2016, a destacar:
   gran compilacion de datasets, conceptos interesantes como cinco estrellas del
   Open Data, manual de CKAN.
@@ -540,10 +564,10 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), p\'aginas 192--219, 2009.
 
-\bibitem[{microsoft(s-f.)}]{AzureMachineLearning_CloudIA}
+\bibitem[{microsoft(2025)}]{AzureMachineLearning_CloudIA}
 {\sc microsoft}.
 \newblock microsoft azure machine learning.
-\newblock s-f.
+\newblock 2025.
 
 \bibitem[{Microsoft(s.f.{\natexlab{a}})}]{MicrosoftCloudTerminology}
 {\sc Microsoft}.
@@ -619,15 +643,27 @@
 \newblock ¿qué son los datos abiertos?
 \newblock s.f.
 
+\bibitem[{{Open Knowledge Foundation}(2024{\natexlab{a}})}]{CKAN2024ApiGuide}
+{\sc {Open Knowledge Foundation}}.
+\newblock Ckan 2.9 api guide: Action api and \texttt{package\_show}.
+\newblock 2024{\natexlab{a}}.
+\newblock Documentación oficial de CKAN, versión 2.9.11.
+
+\bibitem[{{Open Knowledge Foundation}(2024{\natexlab{b}})}]{CKAN2024Software}
+{\sc {Open Knowledge Foundation}}.
+\newblock Ckan: open-source data management system.
+\newblock 2024{\natexlab{b}}.
+\newblock Plataforma sobre la que opera el Portal de Datos Abiertos de Madrid.
+
 \bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
 {\sc {Open Knowledge Foundation}}.
 \newblock Open definition.
 \newblock 2025.
 
-\bibitem[{ovhcloud(s-f.)}]{OVHcloud_CloudIA}
+\bibitem[{ovhcloud(2025)}]{OVHcloud_CloudIA}
 {\sc ovhcloud}.
 \newblock Ovhcloud ai training.
-\newblock s-f.
+\newblock 2025.
 
 \bibitem[{OVHCloud(s.f.)}]{OVHCloudFree}
 {\sc OVHCloud}.
@@ -771,20 +807,8 @@
 \newblock Telefónica tech cloud platform.
 \newblock s.f.
 
-\bibitem[{Theodorakopoulos~Leonidas(2024)}]{DataManagement2024Theodorakopoulos}
-{\sc Theodorakopoulos~Leonidas, S.~Y., Theodoropoulou~Alexandra}.
-\newblock A state-of-the-art review in big data management engineering:
-  Real-life case studies, challenges, and future research directions.
-\newblock {\em Eng\/}, vol.\ 5(3), p\'agina 1266, 2024.
-\newblock Copyright - © 2024 by the authors. Licensee MDPI, Basel,
-  Switzerland. This article is an open access article distributed under the
-  terms and conditions of the Creative Commons Attribution (CC BY) license
-  (https://creativecommons.org/licenses/by/4.0/). Notwithstanding the ProQuest
-  Terms and Conditions, you may use this content in accordance with the terms
-  of the License; Última actualización - 2024-09-27.
-
-\bibitem[{Soledad De~la Torre(2023)}]{TransparenciaEcuador}
-{\sc Soledad De~la Torre, S.~N.}
+\bibitem[{De~la Torre y Núñez(2023)}]{TransparenciaEcuador}
+{\sc De~la Torre, S.} y {\sc Núñez, S.}
 \newblock Transparencia en la administración pública municipal del ecuador.
 \newblock {\em Estudios de la Gestión\/}, (14), p\'aginas 53--73, 2023.
 \newblock Copyright - Copyright null 2023; Última actualización - 2024-12-12;
@@ -845,6 +869,13 @@
 \newblock Blockchain-based decentralised cloud/fog solutions: Challenges,
   opportunities and standards.
 \newblock {\em IEEE Communications Standards Magazine\/}, 2018.
+
+\bibitem[{Valero~Torrijos y Martínez~Gutierrez(2022)}]{DatosAbiertos2022Cloud}
+{\sc Valero~Torrijos, J.} y {\sc Martínez~Gutierrez, R.}
+\newblock {\em DATOS ABIERTOS Y REUTILIZACIÓN DE LA INFORMACIÓN DEL SECTOR
+  PÚBLICO\/}.
+\newblock CRC Press, 2022.
+\newblock ISBN 978-84-1369-269-2.
 
 \bibitem[{Vaswani et\ al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
   Gomez, Kaiser y Polosukhin}]{vaswani2017attention}

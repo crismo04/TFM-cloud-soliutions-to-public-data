@@ -9,7 +9,7 @@ En este capítulo describimos el proceso que se ha seguido en la realización de
 
 \section{Métodos}
 
-Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en diferentes módulos:
+Para llegar a nuestro objetivo de diseño, se ha dividido la implementación en diferentes módulos:
 
 \begin{itemize}
 	\item \textbf{Búsqueda y almacenamiento de datos:} Se analizaron los datos públicos disponibles, se recopilaron metadatos sobre estos y se seleccionó un método de descarga y almacenamiento en la nube, ya fuera con un ``script'' que moviera los datos a la nube o con almacenamiento local en el caso de volúmenes de datos suficientemente pequeños. \\
@@ -21,22 +21,24 @@ Para llegar a nuestro objetivo de diseño, hemos dividido la implementación en 
 
 \subsection{Utilización de la solución}
 
-Para la utilización de la solución, hemos seguido las buenas practicas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo. Por el momento, se detallaran los conjuntos de datos tratados.
+Para la utilización de la solución, se ha seguido las buenas practicas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo. Por el momento, se detallaran los conjuntos de datos tratados.
 
-Para empezar las primeras iteraciones, se opto por conjuntos de datos que ya hayan sido estudiados previamente y a los que se tenia acceso a conclusiones, estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del ayuntamiento de Madrid y extrajeron conclusiones, como primera toma de contacto, intentaremos replicar las conclusiones en la nube y extender el análisis a años posteriores a los que ellos estudiaron para complementar sus estudios, y poder avanzar en la automatización del estudio de datos públicos. % [TODO], pequeño resumen de que despues de esto se han tratado estos y otros datos?
+Para empezar las primeras iteraciones, se opto por conjuntos de datos que ya hayan sido estudiados previamente y a los que se tenia acceso a conclusiones, estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del ayuntamiento de Madrid y extrajeron conclusiones, como primera toma de contacto, intentaremos replicar las conclusiones en la nube y extender el análisis a años posteriores a los que ellos estudiaron para complementar sus estudios, y poder avanzar en la automatización del estudio de datos públicos. 
 
+Tras esta primera fase de datos, se incorporaron también otros conjuntos del mismo portal, aumentando la cobertura temporal de ambos trabajos hasta 2025, y ampliándolo con un conjunto no tratado por estos: los aforos de bicicletas, para comprobar que la metodología generaliza a datos nuevos sin problemas. 
 
+El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}}.
 
+% [TODO] añadir tambien datos publicos de gran volumen en la nube
 
-[TODO]
 
 \subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
 
-Para tratar los datos a través del método principal de desarrollo, hemos seguido principios de gobernanza de datos:
+Para tratar los datos a través del método principal de desarrollo, se ha seguido principios de gobernanza de datos:
 
 \subsubsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
 
-Como ya hemos definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
+Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
 
 \subsubsection*{1. Capa Estratégica: Liderazgo y Visión}
 
@@ -56,7 +58,7 @@ En esta capa se definieron los objetivos generales y principios de la gobernanza
 Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
 
 \begin{itemize}
-	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado, descartado o anonimizado. 
+	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado %[TODO] o anonimizado si al final hay bigdata. 
 	
 	\item \textbf{Gestión de accesos y credenciales:} Como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
 	
@@ -77,7 +79,7 @@ Esta última capa corresponde a la implementación práctica de la estrategia, l
 		
 		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery. El almacenaje depende de la herramienta propietaria de cada nube (S3 para amazon, cloud storage para GCP, etc.).
 		
-		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza, anonimización y feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
+		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza y estandarizacion de los datos descargados, descartando fuentes sensibles. [TODO] Se realizo feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
 		
 		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
 		
@@ -95,7 +97,7 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 	
 	\item \textbf{Solidez técnica y seguridad:} Se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
 	
-	\item \textbf{Gestión de la privacidad y de los datos:} Se ha abordado cumpliendo estrictamente con los principios del RGPD como se indica en la sección de datos.
+	\item \textbf{Gestión de la privacidad y de los datos:} Se ha abordado todo el proyecto cumpliendo estrictamente con los principios del RGPD, como se indica en la sección de datos.
 	
 	\item \textbf{Transparencia:} Se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para esto.
 	
@@ -109,7 +111,7 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 
 
 \subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
-% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que hemos definido
+% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que se ha definido
 
 
 
@@ -127,8 +129,42 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 
 \subsection{Conjuntos de Datos} \label{sec:Materiales_datos}
 
-Los conjuntos de datos utilizados tienen sus propios metadatos asociados en el Github de este proyecto, pero en esta seccion se listaran brevemente los datos utilizados.
+Los conjuntos empleados proceden del Portal de Datos Abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos}, bajo licencia Creative Commons Attribution 4.0 (CC BY 4.0). 
 
+La ingesta se realizó de forma automatizada, registrando los metadatos de procedencia de cada fichero. La siguiente tabla \ref{tab:conjuntos} los resume.
+\begin{table}[h]
+	\centering
+	\small
+	\begin{tabular}{lccl}
+		\hline
+		\textbf{Conjunto} & \textbf{Cobertura} & \textbf{Uso} \\
+		\hline
+		Calidad del aire (diario) & 2019-2025 & Isla de calor \\
+		Meteorología (diario) & 2019-2025 & Isla de calor \\
+		Masas arbóreas/distrito & 2019-2025 & Isla de calor  \\
+		Estaciones de control & único & Georreferencia \\
+		Aforos de peatones & 2019-2024 & Movilidad \\
+		Aforos de bicicletas & 2019-2024 & Caso propio \\
+		Distritos (shapefile) & único & Cartografía \\
+		% [TODO] cambiar las referencias a las del origen de datos, no los TFMs y añadir mas si en el futuro se estudian
+		\hline
+	\end{tabular}
+	\caption{Conjuntos de datos utilizados, su procedencia es \citep{AytoMadrid2025PortalDatos}.}
+	\label{tab:conjuntos}
+\end{table}
+
+El límite temporal inferior situado en 2019 responde a la disponibilidad real del dato, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores \citep{AytoMadrid2025Interprete}, limitando análisis que involucre meteorología a estas fechas. Como limitaciones conocidas, no existen datos de arbolado de 2018 y su estructura de ficheros cambió en enero de 2024.
+
+Para poder ingestar estos datos de forma automática, se ha creado un proceso en Python para su descarga
+
+\subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
+
+La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software}, que expone una API REST. Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos
+mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie). 
+El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
+
+Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. 
+El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
 
 % [TODO] seccion2.3 to 2.5 -> Manual de datos abiertos españa
 %  https://docta.ucm.es/rest/api/core/bitstreams/814f787a-82d4-45cf-9030-bb9d2b3600de/content?authentication-token=eyJhbGciOiJIUzI1NiJ9.eyJlaWQiOiI3YTI4M2Y4MC0zNmZmLTQyZDgtYjQ5ZS1hOWNjZDNhYjVmZjMiLCJzZyI6WyJjZjI0MzJkZi0xZTM2LTRmMDQtYmI3ZC03OTNiMzMyYTE4ZTkiXSwiYXV0aGVudGljYXRpb25NZXRob2QiOiJzaGliYm9sZXRoIiwiZXhwIjoxNzU2MjA2MTE0fQ.NxagiHu0pTOxGg5YzqrPkpHJe2xNpEg4UaRqdOoF0zM
@@ -149,7 +185,7 @@ Los conjuntos de datos utilizados tienen sus propios metadatos asociados en el G
 Los principales lenguajes utilizados para el desarrollo del proyecto han sido los siguientes:
 
 \begin{itemize}
-	\item \textbf{PYTHON:} Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Lo hemos elegido por su gran comunidad y cantidad de librerías dirigidas a el aprendizaje automático. % [TODO] uso en ia]
+	\item \textbf{PYTHON:} Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Lo se ha elegido por su gran comunidad y cantidad de librerías dirigidas a el aprendizaje automático. % [TODO] uso en ia]
 	
 	\item \textbf{SQL:} SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad. Utilizamos SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos.
 	
@@ -168,7 +204,8 @@ Las siguientes herramientas y programas han sido esenciales para la elaboración
 	
 	Utilizamos Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
 	
-	\item \textbf{GitHub:} GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente.
+	\item \textbf{GitHub:} GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El de este proyecto en concreto es el siguiente: \url{https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/}.
+	Este sigue todas las recomendaciones de buenas practicas de github e incluye archivos como el changelog para poder ver los cambios y el Readme.md para resumir el proyecto.
 	
 	% [TODO]
 	
