@@ -123,7 +123,24 @@ FORMATOS_POR_CONJUNTO = {
 # Arbolado publica 3 subseries x 2 ambitos: solo queremos las masas arboreas por distrito, que es lo que usa el TFG de isla de calor.
 FILTROS_RECURSO = {
     "arbolado_masas": r"masas.*distrito",
-    "peatones": r"peatones",                # excluye "Aforos bicicletas"
+    "peatones": r"aforos peatones",         # excluye "Aforos bicicletas"
     "bicicletas": r"aforos bicicletas",     # excluye "Aforos peatones"
     "distritos": r"distritos municipales",  # excluye divisiones historicas
+}
+
+# --- Reglas 02_limpieza.py ---
+#   mensual_dv : formato D01/V01..D31/V31 del portal -> diario por estacion
+#   aforos     : consolidar ficheros anuales de aforos (fecha + hora + conteo)
+#   tabla_anual: tablas pequenas por anio (se anade columna 'anio' del nombre)
+#   directo    : normalizar y copiar a silver tal cual (ficheros unicos)
+
+LIMPIEZA = {
+    "meteo_diario": ("mensual_dv", MAGNITUDES_METEO),
+    "calidad_aire_diario": ("mensual_dv", MAGNITUDES_CONTAMINACION),
+    "peatones": ("aforos", ["PEATONES"]),
+    "bicicletas": ("aforos", ["BICICLETAS", "CICLISTAS", "BICIS"]),
+    "arbolado_masas": ("tabla_anual", None),
+    "estaciones_aire": ("directo", None),
+    "estaciones_meteo": ("directo", None),
+    # Los shapefile (distritos) no se limpian
 }
