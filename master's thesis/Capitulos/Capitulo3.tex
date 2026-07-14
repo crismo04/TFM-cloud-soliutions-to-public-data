@@ -32,6 +32,25 @@ El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Secc
 % [TODO] añadir tambien datos publicos de gran volumen en la nube
 
 
+Para poder ingestar estos datos de forma automática, se ha creado un proceso en Python para su descarga
+
+\subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
+
+La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software}, que expone una API REST. Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie).
+
+El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
+
+Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. 
+
+El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
+
+\subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
+
+La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir mas tipos de datos a futuro.
+% [TODO] cambiar si hay nuevos datos
+Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal, y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver, además, varias inconsistencias de los ficheros publicados, como formatos de fecha distintos entre años en el mismo conjunto que obligaron a detectar el formato de estos, decimales con coma (varios, ya que es la convención española), cambios de esquema a mitad de serie (con columnas renombradas, en inglés e incluso corrompidas por errores de codificación en origen), y ficheros CSV que incorporan filas de totales y notas al pie destinadas a lectura humana. 
+Todas estas transformaciones quedaron registradas en el código publicado para garantizar su reproducibilidad.
+
 \subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
 
 Para tratar los datos a través del método principal de desarrollo, se ha seguido principios de gobernanza de datos:
@@ -135,7 +154,7 @@ La ingesta se realizó de forma automatizada, registrando los metadatos de proce
 \begin{table}[h]
 	\centering
 	\small
-	\begin{tabular}{lccl}
+	\begin{tabular}{lcc}
 		\hline
 		\textbf{Conjunto} & \textbf{Cobertura} & \textbf{Uso} \\
 		\hline
@@ -153,22 +172,16 @@ La ingesta se realizó de forma automatizada, registrando los metadatos de proce
 	\label{tab:conjuntos}
 \end{table}
 
-El límite temporal inferior situado en 2019 responde a la disponibilidad real del dato, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores \citep{AytoMadrid2025Interprete}, limitando análisis que involucre meteorología a estas fechas. Como limitaciones conocidas, no existen datos de arbolado de 2018 y su estructura de ficheros cambió en enero de 2024.
+El límite temporal inferior situado en 2019 responde a la disponibilidad real del dato, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores \citep{AytoMadrid2025Interprete}, limitando análisis que involucre meteorología a estas fechas. 
 
-Para poder ingestar estos datos de forma automática, se ha creado un proceso en Python para su descarga
-
-\subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
-
-La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software}, que expone una API REST. Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos
-mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie). 
-El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
-
-Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. 
-El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
-
-% [TODO] seccion2.3 to 2.5 -> Manual de datos abiertos españa
-%  https://docta.ucm.es/rest/api/core/bitstreams/814f787a-82d4-45cf-9030-bb9d2b3600de/content?authentication-token=eyJhbGciOiJIUzI1NiJ9.eyJlaWQiOiI3YTI4M2Y4MC0zNmZmLTQyZDgtYjQ5ZS1hOWNjZDNhYjVmZjMiLCJzZyI6WyJjZjI0MzJkZi0xZTM2LTRmMDQtYmI3ZC03OTNiMzMyYTE4ZTkiXSwiYXV0aGVudGljYXRpb25NZXRob2QiOiJzaGliYm9sZXRoIiwiZXhwIjoxNzU2MjA2MTE0fQ.NxagiHu0pTOxGg5YzqrPkpHJe2xNpEg4UaRqdOoF0zM
-
+Como limitaciones conocidas de estos conjuntos:
+\begin{itemize}
+	\item No existen datos de arbolado de 2018 ni meteorológicos anteriores a 2019.
+	\item Los aforos de peatones y bicicletas presentan un hueco de publicación de catorce meses (julio de 2021 a agosto de 2022) y alcanzan hasta junio de 2024.
+	\item  La serie de bicicletas de 2019 se reduce a un único mes publicado (septiembre)
+	\item En la cobertura sensorial de las redes de medición, no todas las estaciones miden todas las magnitudes, lo que introduce valores ausentes.
+	\item Los conjuntos de aforos cambiaron de esquema a mitad de serie (columnas renombradas, traducidas al inglés y con errores de codificación en origen), y el arbolado emplea tres denominaciones distintas para la misma magnitud de superficie según el año de publicación.
+\end{itemize}
 
 
 \newpage
@@ -185,9 +198,9 @@ El proceso incorpora pausas entre descargas y re-intentos con espera creciente p
 Los principales lenguajes utilizados para el desarrollo del proyecto han sido los siguientes:
 
 \begin{itemize}
-	\item \textbf{PYTHON:} Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Lo se ha elegido por su gran comunidad y cantidad de librerías dirigidas a el aprendizaje automático. % [TODO] uso en ia]
+	\item \textbf{PYTHON:} Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Se ha elegido por su gran comunidad y cantidad de librerías dirigidas a el aprendizaje automático. % [TODO] uso en ia]
 	
-	\item \textbf{SQL:} SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad. Utilizamos SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos.
+	\item \textbf{SQL:} SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad. Se utilizo SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos.
 	
 	\item \textbf{\LaTeX:} \label{latexDef} \LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios. Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
 	
@@ -202,7 +215,7 @@ Las siguientes herramientas y programas han sido esenciales para la elaboración
 \begin{itemize}
 	\item \textbf{Visual Studio Code:} Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones.
 	
-	Utilizamos Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
+	Se ha utilizado Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
 	
 	\item \textbf{GitHub:} GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El de este proyecto en concreto es el siguiente: \url{https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/}.
 	Este sigue todas las recomendaciones de buenas practicas de github e incluye archivos como el changelog para poder ver los cambios y el Readme.md para resumir el proyecto.
