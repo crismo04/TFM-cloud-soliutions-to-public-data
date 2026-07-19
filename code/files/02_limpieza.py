@@ -74,7 +74,10 @@ def _convertir_decimales(df: pd.DataFrame) -> pd.DataFrame:
     for col in df.columns:
         if not pd.api.types.is_string_dtype(df[col]):
             continue
-        num = pd.to_numeric(df[col].str.replace(",", ".", regex=False), errors="coerce")
+        s = df[col]
+        con_coma = s.str.contains(",", na=False)
+        s = s.where(~con_coma, s.str.replace(".", "", regex=False))
+        num = pd.to_numeric(s.str.replace(",", ".", regex=False), errors="coerce")
 
         # Comprobamos que al menos el 90% se ha podido convertir
         if num.notna().any() and num.notna().sum() >= df[col].notna().sum() * 0.9:

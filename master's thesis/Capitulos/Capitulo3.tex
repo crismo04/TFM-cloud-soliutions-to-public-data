@@ -4,142 +4,9 @@
 %[TODO], importante a tener en cuenta: detallarse cada paso que se ha dado para llegar a los resultados describiendo, en orden lógico y expresado con claridad, los materiales y recursos empleados.   No avanzar resultados y redactarse en pasado !!
 
 
-En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{``capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión''}, pero descartados, así como los motivos para ello. También se han definido los métodos de desarrollo y modelo de trabajo. \\
+En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, empezando por los materiales: las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{``capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión''}, pero descartados, así como los motivos para ello.
 
-
-\section{Métodos}
-
-Para llegar a nuestro objetivo de diseño, se ha dividido la implementación en diferentes módulos:
-
-\begin{itemize}
-	\item \textbf{Búsqueda y almacenamiento de datos:} Se analizaron los datos públicos disponibles, se recopilaron metadatos sobre estos y se seleccionó un método de descarga y almacenamiento en la nube, ya fuera con un ``script'' que moviera los datos a la nube o con almacenamiento local en el caso de volúmenes de datos suficientemente pequeños. \\
-	\item \textbf{Tratamiento básico de los datos:} Una vez almacenados, se procedió a su estudio y análisis para comprobar la consistencia y validez de los mismos, intentando comprobar duplicados, datos nulos, vacíos o valores atípicos que pudieran no tener sentido e interferir con el rendimiento de los modelos. Las modificaciones realizadas a los datos también se documentaron para poder ser replicadas, y los datos se almacenaron una vez procesados en el mismo sistema de almacenamiento que los originales. \\
-	\item \textbf{Estudio con modelos de IA en diferentes nubes:} Una vez los datos estuvieron tratados, se pasó a la fase de extracción de conclusiones. Se establecieron unas hipótesis a confirmar o se dejó a los modelos extraer sus propios clústeres de datos. En esta fase también se seleccionó el modelo más adecuado dependiendo del tipo de datos y de las conclusiones a las que se quiso llegar. \\
-	\item \textbf{Comparación y estudio de resultados:} Tras procesar los datos y analizarlos, se pasó a la revisión de las hipótesis y conclusiones a las que los modelos llegaron, para comprobar cuáles fueron los resultados de valor que se pudieron obtener de estos datos o si las hipótesis establecidas se cumplieron. \\
-	\item \textbf{Revisión, automatización y generalización del proceso:} Una vez finalizado el proceso, se realizó un estudio de las partes del mismo que se podían automatizar para siguientes iteraciones. En este paso se analizaron todos los anteriores en búsqueda de mejoras, y también se documentó el número de recursos utilizados en la nube, para tener controlados los costes del proceso y buscar puntos de optimización. \\
-\end{itemize}
-
-\subsection{Utilización de la solución}
-
-Para la utilización de la solución, se ha seguido las buenas practicas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas practicas se detallaran mas adelante en este mismo capitulo. Por el momento, se detallaran los conjuntos de datos tratados.
-
-Para empezar las primeras iteraciones, se opto por conjuntos de datos que ya hayan sido estudiados previamente y a los que se tenia acceso a conclusiones, estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del ayuntamiento de Madrid y extrajeron conclusiones, como primera toma de contacto, intentaremos replicar las conclusiones en la nube y extender el análisis a años posteriores a los que ellos estudiaron para complementar sus estudios, y poder avanzar en la automatización del estudio de datos públicos. 
-
-Tras esta primera fase de datos, se incorporaron también otros conjuntos del mismo portal, aumentando la cobertura temporal de ambos trabajos hasta 2025, y ampliándolo con un conjunto no tratado por estos: los aforos de bicicletas, para comprobar que la metodología generaliza a datos nuevos sin problemas. 
-
-El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}}.
-
-% [TODO] añadir tambien datos publicos de gran volumen en la nube
-
-
-Para poder ingestar estos datos de forma automática, se ha creado un proceso en Python para su descarga
-
-\subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
-
-La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software}, que expone una API REST. Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie).
-
-El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
-
-Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. 
-
-El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
-
-\subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
-
-La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir mas tipos de datos a futuro.
-% [TODO] cambiar si hay nuevos datos
-Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal, y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver, además, varias inconsistencias de los ficheros publicados, como formatos de fecha distintos entre años en el mismo conjunto que obligaron a detectar el formato de estos, decimales con coma (varios, ya que es la convención española), cambios de esquema a mitad de serie (con columnas renombradas, en inglés e incluso corrompidas por errores de codificación en origen), y ficheros CSV que incorporan filas de totales y notas al pie destinadas a lectura humana. 
-Todas estas transformaciones quedaron registradas en el código publicado para garantizar su reproducibilidad.
-
-\subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
-
-Para tratar los datos a través del método principal de desarrollo, se ha seguido principios de gobernanza de datos:
-
-\subsubsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
-
-Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
-
-\subsubsection*{1. Capa Estratégica: Liderazgo y Visión}
-
-En esta capa se definieron los objetivos generales y principios de la gobernanza de datos en el proyecto.
-
-\begin{itemize}
-	\item \textbf{Visión:} Convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
-	
-	\item \textbf{Seguridad y soberanía:} Aunque se utilizan servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configuraron para operar dentro de la UE.
-	
-	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentó en esta misma memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
-\end{itemize}
-
-
-\subsubsection*{2. Capa Táctica: Capacidades de Implementación y Marco Normativo}
-
-Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
-
-\begin{itemize}
-	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado %[TODO] o anonimizado si al final hay bigdata. 
-	
-	\item \textbf{Gestión de accesos y credenciales:} Como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
-	
-	\item \textbf{Competencias y coordinación:} Todas las funciones fueron asumidas por un único investigador, esto centralizó la toma de decisiones y facilitó el cumplimiento normativo y la trazabilidad de todo el proceso. De todas formas se utilizan herramientas como ``Git'' o ``Trello'' para auto-organizarse.
-	
-	\item \textbf{Selección de proveedores y servicios:} Para la selección de plataformas cloud se evaluó la capacidad para proporcionar entornos de procesamiento seguro, y la localización de sus centros de datos para asegurar el cumplimiento normativo. En cuanto a la IA, también se revisaron sesgos en los datos de entrenamiento.
-\end{itemize}
-
-\subsubsection*{3. Capa Operativa: Infraestructura, Integración del Ciclo de Valor y Arquitectura}
-Esta última capa corresponde a la implementación práctica de la estrategia, la gestión diaria del ciclo de valor de los datos para integrarlo con la infraestructura técnica.
-
-\begin{itemize}
-	\item \textbf{Infraestructura:} Se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con mecanismos de seguridad estándar. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos on-premise (computador personal) para la ingesta de datos y posterior almacenamiento en cloud cuando esto facilitó el proceso, aunque se priorizaron tecnologías en la nube.
-	
-	\item \textbf{Arquitectura de datos y ciclo de valor:} Se diseñó un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubrió todo el ciclo de vida del dato: 
-	\begin{itemize}
-		\item \textbf{Adquisición:} Se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso. 
-		
-		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery. El almacenaje depende de la herramienta propietaria de cada nube (S3 para amazon, cloud storage para GCP, etc.).
-		
-		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza y estandarizacion de los datos descargados, descartando fuentes sensibles. [TODO] Se realizo feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
-		
-		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
-		
-	\end{itemize}
-	
-	\item \textbf{Optimización y sostenibilidad:} Se monitorizó el uso de recursos en las diferentes nubes para mantener el proyecto dentro del coste cero, también se optimizaron las configuraciones de los servicios para asegurar la eficiencia tanto económica como ecológica del proyecto.
-\end{itemize}
-
-\subsubsection{Principios éticos}  \label{sec:Metodos_Principios_EU}
-
-Destacar también que en el proyecto, se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa}:
-
-\begin{itemize} 
-	\item \textbf{Acción y supervisión humanas:} En este trabajo se supervisó tanto cada etapa del desarrollo, como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
-	
-	\item \textbf{Solidez técnica y seguridad:} Se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
-	
-	\item \textbf{Gestión de la privacidad y de los datos:} Se ha abordado todo el proyecto cumpliendo estrictamente con los principios del RGPD, como se indica en la sección de datos.
-	
-	\item \textbf{Transparencia:} Se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para esto.
-	
-	\item \textbf{Diversidad, no discriminación y equidad:} Se comprobaron los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
-	
-	\item \textbf{Bienestar social y ambiental:} El motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
-	
-	\item \textbf{Rendición de cuentas:} Se mantuvo un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos,para permitir una auditoría clara y una rendición de cuentas transparente.
-\end{itemize}
-
-
-
-\subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
-% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que se ha definido
-
-
-
-\subsection{Métodos utilizados: Cloud} \label{sec:Metodos_cloud}
-% [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
-
-
-\newpage
-
+También se han definido los métodos de desarrollo y modelo de trabajo utilizados durante el proyecto, y por ultimo se explica como se puede utilizar la misma solución para replicar las conclusiones con estos u otros datos. \\
 
 
 \section{Materiales}
@@ -148,7 +15,7 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 
 \subsection{Conjuntos de Datos} \label{sec:Materiales_datos}
 
-Los conjuntos empleados proceden del Portal de Datos Abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos}, bajo licencia Creative Commons Attribution 4.0 (CC BY 4.0). 
+Los conjuntos empleados proceden del Portal de Datos Abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos}, bajo licencia Creative Commons Attribution 4.0 (CC BY 4.0).
 
 La ingesta se realizó de forma automatizada, registrando los metadatos de procedencia de cada fichero. La siguiente tabla \ref{tab:conjuntos} los resume.
 \begin{table}[h]
@@ -172,7 +39,7 @@ La ingesta se realizó de forma automatizada, registrando los metadatos de proce
 	\label{tab:conjuntos}
 \end{table}
 
-El límite temporal inferior situado en 2019 responde a la disponibilidad real del dato, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores \citep{AytoMadrid2025Interprete}, limitando análisis que involucre meteorología a estas fechas. 
+El límite temporal inferior situado en 2019 responde a la disponibilidad real del dato, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores \citep{AytoMadrid2025Interprete}, limitando análisis que involucre meteorología a estas fechas.
 
 Como limitaciones conocidas de estos conjuntos:
 \begin{itemize}
@@ -183,47 +50,236 @@ Como limitaciones conocidas de estos conjuntos:
 	\item Los conjuntos de aforos cambiaron de esquema a mitad de serie (columnas renombradas, traducidas al inglés y con errores de codificación en origen), y el arbolado emplea tres denominaciones distintas para la misma magnitud de superficie según el año de publicación.
 \end{itemize}
 
+% [TODO - discrepancia semantica arbolado 2019, estudiar a fondo]
+% Problema: 2019 publica "Superficie Masa Forestal" + "Unidades" (arboles);
+% 2020+ publica "Superficie Masa arborea" + "Nº masas". Saltos de +-30 hhectareas en algunos distritos (San Blas 45->15, Villa Vallecas 63->94) indican cambio de la magnitud (reinventariado), no crecimiento vegetal.
+
+% Consecuencia: r_2019=-0.68 no es comparable con la banda -0.22/-0.30.
+%  1. Contrastar con el dataset hermano "Superficie de parques y zonas verdes de Madrid" (el portal los referencia cruzados) para ver si permite armonizar definiciones entre 2019 y 2020+.
+%  2. Analisis de sensibilidad: reportar la media de r con y sin 2019.
+%  3. Restringir la serie comparable del indicador arbolado a 2020-2025
+%     y tratar 2019 aparte.
+
+% la serie del indicador deja de ser continua, porque el publicador redefinio la variable. la reutilizacion longitudinal de datos re armonizacion semantica, no solo tecnica (conectar con interoperabilidad y con verhulst2020/OECD2023openData en Cap4).
 
 \newpage
 
-\subsection{Nubes} 
+\subsection{Nubes}
 
 \subsubsection{Amazon Web Services}
 
-\textbf{Amazon Web Services (AWS)} es la plataforma líder mundial en computación en la nube, que proporciona recursos escalables y flexibles de todo tipo, lo que ha permitido construir, desplegar y gestionar aplicaciones sin la necesidad de poseer infraestructura física. Hemos utilizado AWS como primera nube, debido a la capa gratuita de 6 meses y su popularidad. Los primeros pasos han sido realizar los tutoriales de la web, lo cual te permite contar con 100\$ extra para la capa gratuita.
+\textbf{Amazon Web Services (AWS)} es la plataforma líder mundial en computación en la nube, que proporciona recursos escalables y flexibles de todo tipo, lo que ha permitido construir, desplegar y gestionar aplicaciones sin la necesidad de poseer infraestructura física. Hemos utilizado AWS como primera nube, debido a la capa gratuita de 6 meses y su popularidad. Los primeros pasos han sido realizar los tutoriales de la web, lo cual permite contar con 100\$ extra para la capa gratuita.
 
-\subsection{Materiales para el desarollo}
+% [TODO] Añador GCP, Azure y OVHClod como usadas o como descartadas.
+
+\subsection{Materiales para el desarrollo}
 
 \subsubsection{Lenguajes}
 Los principales lenguajes utilizados para el desarrollo del proyecto han sido los siguientes:
 
 \begin{itemize}
-	\item \textbf{PYTHON:} Python es un lenguaje de programación interpretado y centrado en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Se ha elegido por su gran comunidad y cantidad de librerías dirigidas a el aprendizaje automático. % [TODO] uso en ia]
-	
-	\item \textbf{SQL:} SQL es un lenguaje de dominio específico utilizado en programación, diseñado para administrar, y recuperar información de sistemas de gestión de bases de datos relacionales. Es un sistema que facilita el tratamiento de datos, así como la separación de estos datos del programa principal, permitiendo tener más modularidad. Se utilizo SQL para almacenar información, así como para extraer esta misma información, tratarla y almacenarla ya tratada en la base de datos.
-	
-	\item \textbf{\LaTeX:} \label{latexDef} \LaTeX\space es un sistema de composición tipográfica de alta calidad que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual nos ha permitido desarrollar una memoria profesional y facilitar el diseño sin tener que preocuparnos por la forma cada vez que añadíamos cambios. Hemos usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio y el compilador MikteX.
-	
-	\item \textbf{bash Script:} La comunicación con las nubes de AWS y GCP, se ha realizado principalmente con la ejecución de scripts bash en su GUI / CLI con los comandos que estas mismas facilitan, tambien se han realizado scripts especificos para ciertas tareas.
+	\item \textbf{Python:} Lenguaje de programación interpretado, multiparadigma y centrado en la legibilidad del código. Se ha elegido como lenguaje principal del proyecto por ser el estándar en ciencia de datos, dada su extensa comunidad y el amplio ecosistema de librerías orientadas al aprendizaje automático (detalladas en el apartado \hyperref[sec:Librerias_especializadas]{\textit{Librerías especializadas}}). Además, su alta adopción garantiza un soporte nativo en todas las nubes, facilitando la portabilidad del código, el despliegue de los modelos y la comparación de procesos entre plataformas.
+
+	\item \textbf{SQL:} Lenguaje de dominio específico diseñado para la administración y consulta de sistemas de bases de datos relacionales y \textit{Data Warehouses}. Su uso facilita el tratamiento estructurado de la información y permite separar la capa de almacenamiento de datos de la lógica del programa principal. En este proyecto se utilizó SQL para consultar, extraer y transformar volúmenes de datos directamente en las bases de datos analíticas de la nube antes de su consumo por los modelos. % [TODO] revisar
+
+	\item \textbf{Bash Script:} La interacción con las nubes se ha gestionado, en gran medida, mediante la ejecución de \textit{scripts} de Bash en sus CLI con los comandos que estas mismas facilitan. También, se han desarrollado scripts específicos para tareas como la creación y preparación de los entornos.
+\end{itemize}
+
+\subsubsection*{Librerías especializadas} \label{sec:Librerias_especializadas}
+Para el tratamiento y modelado de la información en Python, se ha hecho uso intensivo de:
+\begin{itemize}
+	\item \textbf{Pandas:} Para la limpieza, transformación y manipulación eficiente de datos tabulares y estructuras \textit{DataFrame} en memoria \citep{Pandas2026}.
+
+	\item \textbf{SciPy y Scikit-learn:} Para la implementación de algoritmos de aprendizaje automático (\textit{Machine Learning}), estandarización de variables, cálculo de \textit{clusters} y métricas de validación \citep{SciPy2026, scikit2026}.
+
+	\item \textbf{GeoPandas:} Extensión analítica empleada para las operaciones espaciales (\textit{Spatial Joins}) y el cruce geométrico entre los puntos geográficos de las estaciones y los polígonos de los distritos de Madrid \citep{geopandas2026}.
 \end{itemize}
 
 
-\subsubsection{Herramientas} 
+\subsubsection{Herramientas de desarrollo}
 
 Las siguientes herramientas y programas han sido esenciales para la elaboración del proyecto:
 
 \begin{itemize}
-	\item \textbf{Visual Studio Code:} Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux y MacOS. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones.
-	
-	Se ha utilizado Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día, lo que nos facilita mucho la programación y la integración con otras aplicaciones. También destacar su intérprete, para probar pequeños fragmentos de código, lo cual nos ha ahorrado tiempo en depuración de errores.
-	
+	\item \textbf{Visual Studio Code:} Visual Studio Code es un editor de código abierto desarrollado por Microsoft. Se ha utilizado Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones.
+
 	\item \textbf{GitHub:} GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El de este proyecto en concreto es el siguiente: \url{https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/}.
 	Este sigue todas las recomendaciones de buenas practicas de github e incluye archivos como el changelog para poder ver los cambios y el Readme.md para resumir el proyecto.
-	
+
 	% [TODO]
-	
-	\item \textbf{TeXstudio y MiKTeX:} TeXstudio es un editor de \LaTeX\space de código abierto y multiplataforma con una interfaz amigable, es un IDE que proporciona un soporte moderno de escritura, como la corrección ortográfica interactiva, plegado de código y resaltado de sintaxis, por lo que se ha considerado ideal para la elaboración de este documento.
-	
-	Mientras que MiKTeX es el gestor de paquetes integrado, que instala los paquetes que hacen falta para el correcto funcionamiento de TeXstudio y para la compilación y estructuración de este documento.
+
+	\item \textbf{\LaTeX con TeXstudio y MiKTeX:}  \label{latexDef} Se ha usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio (como editor de \LaTeX\space) y el compilador MikteX (gestor de paquetes integrado). \LaTeX\space es un sistema de composición tipográfica que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual ha permitido desarrollar una memoria profesional y facilitar el diseño mientras se desarrollaba el proyecto.
 \end{itemize}
 
+\newpage
+
+
+\section{Métodos}
+
+Para llegar a nuestro objetivo de diseño, se ha dividido la implementación en diferentes módulos conceptuales:
+
+\begin{itemize}
+	\item \textbf{Búsqueda y almacenamiento de datos:} Localización de fuentes públicas, captura de sus metadatos y elección del mecanismo de descarga y almacenamiento.
+	\item \textbf{Tratamiento básico de los datos:} Una vez almacenados, se procede a la depuración, resolución de inconsistencias, gestión de valores nulos, duplicados o atípicos y estandarización de esquemas. Las modificaciones se documentaron para poder ser replicadas. \\
+	\item \textbf{Estudio con modelos de IA en diferentes nubes:} Con los datos tratados, se pasa a la elección de modelos algorítmicos y extracción de patrones y clústeres a partir de estos datos, para extraer conclusiones. \\
+	\item \textbf{Comparación y estudio de resultados:} Tras el análisis se procede a la revisión de las hipótesis iniciales o extraídas de los modelos, y contraste de los resultados frente a los datos o trabajos de referencia. \\
+	\item \textbf{Revisión, automatización y generalización del proceso:} Una vez finalizado el proceso, se refina con un análisis de mejoras y costos, para automatizar para siguientes iteraciones y mejorar tanto en los apartados, como abaratar en recursos y en tiempo. \\
+\end{itemize}
+
+Estos módulos se materializaron en el \textit{pipeline} que se describe en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. Para llegar a la solución, se han seguido las buenas prácticas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas prácticas se detallarán más adelante en este mismo capítulo.
+
+Para empezar las primeras iteraciones, se optó por conjuntos de datos que ya habían sido estudiados previamente y a los que se tenía acceso a conclusiones. Estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del Ayuntamiento de Madrid y extrajeron conclusiones. Como primera toma de contacto, se replicaron sus conclusiones y se extendió el análisis a años posteriores a los que estos trabajos estudiaron, complementando así sus estudios.
+
+Tras esta primera fase, se incorporaron también otros conjuntos del mismo portal, aumentando la cobertura temporal de ambos trabajos hasta 2025, y ampliándolo con un conjunto no tratado por estos: los aforos de bicicletas, para comprobar que la metodología generaliza a datos nuevos sin problemas.
+
+El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}}.
+
+% [TODO] añadir tambien datos publicos de gran volumen en la nube
+
+
+
+
+\subsection{Desarrollo de la solución} \label{sec:Metodos_desarrollo}
+
+Para poder ingestar y procesar estos datos de forma automática, se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero ``config.py''. El pipeline se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
+
+Las fases y sus ficheros correspondientes en local y el git del proyecto han sido:
+
+\subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
+
+La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software}, que expone una API REST. Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie).
+
+El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
+
+Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial.
+
+El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
+
+\subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
+
+La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir mas tipos de datos a futuro.
+% [TODO] cambiar si hay nuevos datos
+Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal, y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver, además, varias inconsistencias de los ficheros publicados, como formatos de fecha distintos entre años en el mismo conjunto que obligaron a detectar el formato de estos, decimales con coma (varios, ya que es la convención española), cambios de esquema a mitad de serie (con columnas renombradas, en inglés e incluso corrompidas por errores de codificación en origen), y ficheros CSV que incorporan filas de totales y notas al pie destinadas a lectura humana.
+Todas estas transformaciones quedaron registradas en el código publicado para garantizar su reproducibilidad.
+
+\subsubsection{Análisis y modelado} \label{sec:Metodos_analisis}
+
+Sobre los datos limpios se implementó un módulo de análisis por cada caso de estudio, aplicando tanto las mismas técnicas que los trabajos de referencia, como tecnicas propias que se detallan a continuación.
+
+Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del trabajo original \citep{Meneses2023Madrid}: sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}. Para fijar el número de grupos se utilizó el método del codo, y para la calidad de los agrupamientos se validó con el coeficiente de silueta. Además se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
+
+% [TODO] ver si amplair por tamaño de zona , ver si añadir tambien variables de altitud y añadir un grafico geoespacial ya que tenemos las variables.
+
+% [TODO] añadir tambien un metodo de simulacion de datos para los años a lso que les falte uno o dos datos??
+
+Para la movilidad peatonal se replicó la predicción de series temporales del segundo trabajo \citep{SaizSantos2023}, % [TODO] completar cuando se realice
+
+El detalle de cada técnica y su fundamento se recoge en la \hyperref[sec:Metodos_ML]{Sección \ref*{sec:Metodos_ML}}.
+
+\subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
+
+Para tratar los datos a través del método principal de desarrollo, se ha seguido principios de gobernanza de datos:
+
+\subsubsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
+
+Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
+
+\subsubsection*{1. Capa Estratégica: Liderazgo y Visión}
+
+En esta capa se definieron los objetivos generales y principios de la gobernanza de datos en el proyecto.
+
+\begin{itemize}
+	\item \textbf{Visión:} Convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
+
+	\item \textbf{Seguridad y soberanía:} Aunque se utilizan servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configuraron para operar dentro de la UE.
+
+	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentó en esta misma memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
+\end{itemize}
+
+
+\subsubsection*{2. Capa Táctica: Capacidades de Implementación y Marco Normativo}
+
+Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
+
+\begin{itemize}
+	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado %[TODO] o anonimizado si al final hay bigdata.
+
+	\item \textbf{Gestión de accesos y credenciales:} Como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
+
+	\item \textbf{Competencias y coordinación:} Todas las funciones fueron asumidas por un único investigador, esto centralizó la toma de decisiones y facilitó el cumplimiento normativo y la trazabilidad de todo el proceso. De todas formas se utilizan herramientas como ``Git'' o ``Trello'' para auto-organizarse.
+
+	\item \textbf{Selección de proveedores y servicios:} Para la selección de plataformas cloud se evaluó la capacidad para proporcionar entornos de procesamiento seguro, y la localización de sus centros de datos para asegurar el cumplimiento normativo. En cuanto a la IA, también se revisaron sesgos en los datos de entrenamiento.
+\end{itemize}
+
+\subsubsection*{3. Capa Operativa: Infraestructura, Integración del Ciclo de Valor y Arquitectura}
+Esta última capa corresponde a la implementación práctica de la estrategia, la gestión diaria del ciclo de valor de los datos para integrarlo con la infraestructura técnica.
+
+\begin{itemize}
+	\item \textbf{Infraestructura:} Se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con mecanismos de seguridad estándar. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos on-premise (computador personal) para la ingesta de datos y posterior almacenamiento en cloud cuando esto facilitó el proceso, aunque se priorizaron tecnologías en la nube.
+
+	\item \textbf{Arquitectura de datos y ciclo de valor:} Se diseñó un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubrió todo el ciclo de vida del dato:
+	\begin{itemize}
+		\item \textbf{Adquisición:} Se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso.
+
+		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery. El almacenaje depende de la herramienta propietaria de cada nube (S3 para amazon, cloud storage para GCP, etc.).
+
+		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza y estandarizacion de los datos descargados, descartando fuentes sensibles. [TODO] Se realizo feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
+
+		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
+
+	\end{itemize}
+
+	\item \textbf{Optimización y sostenibilidad:} Se monitorizó el uso de recursos en las diferentes nubes para mantener el proyecto dentro del coste cero, también se optimizaron las configuraciones de los servicios para asegurar la eficiencia tanto económica como ecológica del proyecto.
+\end{itemize}
+
+\subsubsection{Principios éticos}  \label{sec:Metodos_Principios_EU}
+
+Destacar también que en el proyecto, se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa}:
+
+\begin{itemize}
+	\item \textbf{Acción y supervisión humanas:} En este trabajo se supervisó tanto cada etapa del desarrollo, como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
+
+	\item \textbf{Solidez técnica y seguridad:} Se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
+
+	\item \textbf{Gestión de la privacidad y de los datos:} Se ha abordado todo el proyecto cumpliendo con los principios del RGPD, como se indica en la sección de datos.
+
+	\item \textbf{Transparencia:} Se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para esto.
+
+	\item \textbf{Diversidad, no discriminación y equidad:} Se comprobaron los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
+
+	\item \textbf{Bienestar social y ambiental:} El motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
+
+	\item \textbf{Rendición de cuentas:} Se mantuvo un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos,para permitir una auditoría clara y una rendición de cuentas transparente.
+\end{itemize}
+
+
+
+\subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
+
+Para la fase de extracción de valor se emplearon las siguientes técnicas de aprendizaje no supervisado y estadística, adecuando cada una a la naturaleza de los datos:
+
+\begin{itemize} % [TODO] revisar lo que esta en el apendice para no repetir
+	\item \textbf{K-Means:} Algoritmo de agrupamiento no supervisado (\textit{clustering}) que particiona el espacio de datos en un número $k$ de grupos basándose en la distancia geométrica a sus centroides. Se seleccionó por su eficiencia para descubrir zonas térmicas diferenciadas sin necesidad de etiquetas previas.
+
+	\item \textbf{Agrupamiento Jerárquico (Método de Ward):} Algoritmo aglomerativo que minimiza la varianza intra-clúster en cada iteración de agrupación. Método idóneo para generar dendrogramas, permitiendo visualizar la jerarquía y las asociaciones climatológicas de las estaciones de control.
+
+	\item \textbf{Coeficiente de correlación de Pearson:} Métrica estadística utilizada para evaluar la fuerza y dirección de la relación lineal entre dos variables continuas. Se aplicó para validar numéricamente hipótesis espaciales, como la relación inversa entre la temperatura media y la superficie arbórea.
+
+	\item \textbf{Modelado de Series Temporales:} Para los datos de aforos de movilidad (peatones y bicicletas), se aplicaron técnicas de predicción secuencial comparando el error sobre tramos de validación. % [TODO] Completar con los del proximo apartado de peatones y tal
+\end{itemize}
+
+Previo a la aplicación de los algoritmos basados en distancias (como K-Means o el método de Ward), se aplicó una \textbf{estandarización} a las variables métricas, asegurando una media nula y varianza unitaria. Esto previene que las magnitudes con escalas absolutas mayores (como presión atmosférica) dominen matemáticamente sobre las menores (como velocidad del viento) en el cálculo iterativo de las distancias.
+
+% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que se ha definido
+
+
+
+\subsection{Métodos utilizados: Cloud} \label{sec:Metodos_cloud}
+% [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
+
+
+\newpage
+
+
+% [TODO] una vez todo implementado decir como se utiliza la solucion, no tiene sentido ponerlo arriba como estana
+% REVISAR SI AÑADIR AQUI O MOVER TODO A LA PARTE 5 DE MANUAL DE USUARIO \section{Utilización de la solución}

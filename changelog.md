@@ -2,6 +2,18 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo.
 
+## [Data] - 2026-07-18
+### Add
+
+* **Primer tratamiento de datos :** `03_analisis_isla_calor.py`, tercer paso del pipeline, modelado, centrandonos en el TFM de "madrid isla de calor". 
+* **Memoria:** Actualización de los ficheros de LaTeX del capítulo 3: Documentacion del pipeline analítico (arquitectura, limpieza de datos y modelos espaciales de IA) diseñado para replicar y extender el estudio de la isla de calor.
+* Actualización de la **biografía** con las referencias a estos avances.
+
+### Change
+* Reestructuracion de los ficheros de LaTeX del capítulo 3: Ahora el orden es Materiales, metodos y utilizacion.
+* Revision de los materiales utiulizados y simplificacion de algunas definiciones antiguas.
+
+
 ## [Data] - 2026-07-12
 ### Add
 * **Memoria:** Actualización de los ficheros de LaTeX del capítulo 3, en la parte de datos realizada en el commit anterior. Actualización de la biografía con las referencias a estos avances

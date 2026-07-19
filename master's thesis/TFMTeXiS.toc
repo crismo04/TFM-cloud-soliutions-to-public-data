@@ -32,32 +32,33 @@
 \contentsline {subsection}{\numberline {2.3.4}Trabajos anteriores y relacionados}{34}{subsection.49}%
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {3}Materiales y métodos}{37}{chapter.50}%
-\contentsline {section}{\numberline {3.1}Métodos}{37}{section.51}%
-\contentsline {subsection}{\numberline {3.1.1}Utilización de la solución}{38}{subsection.52}%
-\contentsline {subsubsection}{\numberline {3.1.1.1}Ingesta automatizada de datos}{39}{subsubsection.53}%
-\contentsline {subsubsection}{\numberline {3.1.1.2}Normalización y limpieza}{39}{subsubsection.54}%
-\contentsline {subsection}{\numberline {3.1.2}Métodos utilizados: Datos}{40}{subsection.55}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Aplicación de la gobernanza de datos como método}{40}{subsubsection.56}%
-\contentsline {subsubsection}{\numberline {3.1.2.2}Principios éticos}{42}{subsubsection.57}%
-\contentsline {subsection}{\numberline {3.1.3}Métodos utilizados: Aprendizaje automático}{43}{subsection.58}%
-\contentsline {subsection}{\numberline {3.1.4}Métodos utilizados: Cloud}{43}{subsection.59}%
-\contentsline {section}{\numberline {3.2}Materiales}{44}{section.60}%
-\contentsline {subsection}{\numberline {3.2.1}Conjuntos de Datos}{44}{subsection.61}%
-\contentsline {subsection}{\numberline {3.2.2}Nubes}{45}{subsection.63}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Amazon Web Services}{45}{subsubsection.64}%
-\contentsline {subsection}{\numberline {3.2.3}Materiales para el desarollo}{45}{subsection.65}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Lenguajes}{45}{subsubsection.66}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Herramientas}{46}{subsubsection.67}%
-\contentsline {chapter}{\numberline {4}Resultados}{47}{chapter.68}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{49}{chapter.69}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{51}{chapter.70}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{53}{chapter.71}%
+\contentsline {section}{\numberline {3.1}Materiales}{37}{section.51}%
+\contentsline {subsection}{\numberline {3.1.1}Conjuntos de Datos}{37}{subsection.52}%
+\contentsline {subsection}{\numberline {3.1.2}Nubes}{39}{subsection.54}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Amazon Web Services}{39}{subsubsection.55}%
+\contentsline {subsection}{\numberline {3.1.3}Materiales para el desarrollo}{39}{subsection.56}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Lenguajes}{39}{subsubsection.57}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}Herramientas de desarrollo}{40}{subsubsection.58}%
+\contentsline {section}{\numberline {3.2}Métodos}{41}{section.59}%
+\contentsline {subsection}{\numberline {3.2.1}Desarrollo de la solución}{42}{subsection.60}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Ingesta automatizada de datos}{42}{subsubsection.61}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Normalización y limpieza}{43}{subsubsection.62}%
+\contentsline {subsubsection}{\numberline {3.2.1.3}Análisis y modelado}{43}{subsubsection.63}%
+\contentsline {subsection}{\numberline {3.2.2}Métodos utilizados: Datos}{44}{subsection.64}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Aplicación de la gobernanza de datos como método}{44}{subsubsection.65}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Principios éticos}{46}{subsubsection.66}%
+\contentsline {subsection}{\numberline {3.2.3}Métodos utilizados: Aprendizaje automático}{47}{subsection.67}%
+\contentsline {subsection}{\numberline {3.2.4}Métodos utilizados: Cloud}{48}{subsection.68}%
+\contentsline {chapter}{\numberline {4}Resultados}{49}{chapter.69}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{51}{chapter.70}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{53}{chapter.71}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{55}{chapter.72}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{55}{appendix.72}%
-\contentsline {section}{\numberline {A.1}Definiciones}{55}{section.73}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{56}{subsection.74}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{61}{subsection.85}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{66}{subsection.91}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{73}{section.116}%
+\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{57}{appendix.73}%
+\contentsline {section}{\numberline {A.1}Definiciones}{57}{section.74}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{58}{subsection.75}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{63}{subsection.86}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{68}{subsection.92}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{75}{section.117}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{77}{appendix*.117}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{79}{appendix*.118}%

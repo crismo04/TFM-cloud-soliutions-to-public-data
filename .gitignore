@@ -1,6 +1,7 @@
 # Project specific gitignore
 tmp/
 data/
+resultados/
 Docs/notes.txt
 code/test/
 
