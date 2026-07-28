@@ -9,6 +9,8 @@ Equivalencias R -> Python usadas como linea base de validacion:
 
 El analisis guarda cada año en una subcarpeta de resultados. Ademas del clustering, se cruza el arbolado con el clima por distrito
 
+# TODO hay cosas que quizas habria que mover al proceso de silver, ya que he tenido que limpiar muchos datos
+
 Uso:
   python 03_analisis_isla_calor.py         # replica 2021 + extension
   python 03_analisis_isla_calor.py 2021    # solo un año
@@ -26,21 +28,30 @@ from sklearn.metrics import silhouette_score
 from sklearn.preprocessing import StandardScaler
 import config
 
-ANIO_REPLICA = 2021  # año del TFG original
-MIN_DIAS_ANIO = 300  # TODO comentar en memoria, para que no descuadre si hay algun año que faltan datos
+class _Tee:
+    """Duplica la salida por pantalla y en un fichero de log, para dejar constancia de cada ejecucion sin perder el seguimiento en vivo"""
+    def __init__(self, ruta):
+        self.fichero = open(ruta, "w", encoding="utf-8")
+    def write(self, texto):
+        sys.__stdout__.write(texto)
+        self.fichero.write(texto)
+    def flush(self):
+        sys.__stdout__.flush()
+        self.fichero.flush()
 
-# TODO esto no lo tiene el TFG original, revisar y comentar para las diferencias como una mejora metodologica
+ANIO_REPLICA = 2021  # año del TFG original
+# MIN_DIAS_ANIO = 300  # TODO comentar en memoria, para que no descuadre si hay algun año que faltan datos
+# TODO esto no lo tiene el TFG original, comentar para las diferencias como una mejora metodologica   -- movido a config
 
 # Aproximaciones originales (cap. 6):
-#   nombre, conjunto de datos, magnitudes empleadas y k elegido
+#   nombre, conjunto de datos, magnitudes empleadas, variables externas y k elegido
 APROXIMACIONES = [
-    ("meteo_todas_magnitudes", "meteo_diario", ["vel_viento", "dir_viento", "temperatura", "humedad_rel", "presion", "rad_solar", "precipitacion"], 4),
-    ("meteo_temp_humedad", "meteo_diario", ["temperatura", "humedad_rel"], 5),
-    ("meteo_temperatura", "meteo_diario", ["temperatura"], 4),
-    ("contaminacion_no2", "calidad_aire_diario", ["no2"], 5),
-    ("contaminacion_no2_pm", "calidad_aire_diario", ["no2", "pm25", "pm10"], 4),
+    ("meteo_todas_magnitudes", "meteo_diario", ["vel_viento", "dir_viento", "temperatura", "humedad_rel", "presion", "rad_solar", "precipitacion"], [], 4),
+    ("meteo_temp_humedad", "meteo_diario", ["temperatura", "humedad_rel"], [], 5),
+    ("meteo_temp_arbolado", "meteo_diario", ["temperatura"], ["superficie_ha"], 4), #TODO añadir a la memoria que su temperatura tiene temp y arbolado (ponia solo temperatura)
+    ("contaminacion_no2", "calidad_aire_diario", ["no2"], [], 5),
+    ("contaminacion_no2_pm", "calidad_aire_diario", ["no2", "pm25", "pm10"], [], 4),
 ]
-
 
 # --- utilidades --
 
@@ -72,9 +83,9 @@ def matriz_estaciones(df: pd.DataFrame, columnas: list[str]) -> pd.DataFrame:
     m = g.mean()
      # dias de la magnitud peor cubierta, para no tener en cuenta datos sesgados
     cobertura = g.count().min(axis=1)
-    parciales = cobertura < MIN_DIAS_ANIO
+    parciales = cobertura < config.MIN_DIAS_ANIO
     if parciales.any():
-        print(f"    [info] {parciales.sum()} estaciones con <{MIN_DIAS_ANIO} dias de datos, se excluyen")
+        print(f"    [info] {parciales.sum()} estaciones con <{config.MIN_DIAS_ANIO} dias de datos, se excluyen")
     m = m[~parciales]
     completas = m.dropna(how="any") # KMeans no soporta bien nulos # TODO revisar si cambair por media o algo
     if len(completas) < len(m):
@@ -92,11 +103,18 @@ def codo(X: np.ndarray, nombre: str, carpeta) -> None:
     plt.savefig(carpeta / f"codo_{nombre}.png", dpi=150)
     plt.close()
 
-def ejecutar_aproximacion(nombre, clave, columnas, k, anio, carpeta):
+def ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta) -> dict | None:
     """principal para el analisis. Estandariza los valores, Agrupa por K-means y por dendogramas"""
     df = cargar(clave, anio)
     m = matriz_estaciones(df, columnas)
-    if len(m) <= k:
+    if externas:
+        m.index = m.index.astype(int)
+    for var in externas:
+        try:
+            m = m.join(EXTERNAS[var](anio), how="inner").dropna()
+        except (ImportError, FileNotFoundError, StopIteration) as e:
+            print(f"    [AVISO] {nombre}: sin '{var}' ({e}); se sigue sin esa variable")
+    if len(m) < k + 1:  # sin holgura el clustering degenera, omito grupos pequeños
         print(f"  [AVISO] {nombre}: solo {len(m)} estaciones con datos, se omite")
         return
     X = StandardScaler().fit_transform(m.values)
@@ -159,6 +177,31 @@ def _coalesce(df: pd.DataFrame, columnas: list[str]) -> pd.Series:
         s = s.fillna(df[c])
     return s
 
+def _norm_distrito(s: pd.Series) -> pd.Series:
+    """Normaliza nombres de distrito quitando espacios en los guiones""" # TODO añadir a memoria mas problemas
+    return (s.map(_sin_tildes).str.upper().str.replace(r"\s*-\s*", "-", regex=True).str.replace(r"\s+", " ", regex=True).str.strip())
+
+def _superficie_por_distrito(anio: int) -> pd.Series:
+    """Superficie arborea (ha) por distrito para un año, con el coalesce de las tres denominaciones y la derivacion desde m2"""
+    arb = _leer_silver("arbolado_masas_anual")
+    arb = arb[arb["ANIO"] == anio].copy()
+    arb["distrito"] = _norm_distrito(arb["DISTRITO"])
+    ha = pd.to_numeric(_coalesce(arb, ["SUPERFICIE_MASA_FORESTAL_HA", "SUPERFICIE_MASA_ARBOREA_HA", "SUPERFICIE_(HA)_MASA_ARBOREA"]), errors="coerce")
+    m2 = pd.to_numeric(_coalesce(arb, ["SUPERFICIE_MASA_FORESTAL_M2", "SUPERFICIE_MASA_ARBOREA_M2", "SUPERFICIE_(M2)_MASA_ARBOREA"]), errors="coerce")
+    arb["superficie_ha"] = ha.fillna(m2 / 10_000)
+    return arb.set_index("distrito")["superficie_ha"]
+
+def _superficie_por_estacion(anio: int) -> pd.Series:
+    """Superficie arborea del distrito de cada estacion (sjoin + tabla anual)"""
+    est = _estaciones_con_distrito().copy()
+    # el codigo de estacion puede venir como texto o float -> paso a int
+    est["CODIGO_CORTO"] = pd.to_numeric(est["CODIGO_CORTO"], errors="coerce")
+    est = est.dropna(subset=["CODIGO_CORTO"])
+    est["CODIGO_CORTO"] = est["CODIGO_CORTO"].astype(int)
+    s = est.set_index("CODIGO_CORTO")["distrito"].map(_superficie_por_distrito(anio)).rename("superficie_ha")
+    return s[s > 0]
+    return s # TODO ellos han considerado que 0 es sin dato en masa arborea, es posible que sea asi, revisar y comentar en memoria
+
 def _estaciones_con_distrito():
     """Asigna cada estacion meteo a su distrito con el shapefile municipal de geopandas"""
     import geopandas as gpd
@@ -169,11 +212,11 @@ def _estaciones_con_distrito():
 
     puntos = gpd.GeoDataFrame( est, geometry=gpd.points_from_xy(est["LONGITUD"], est["LATITUD"]), crs=4326)
     cruce = gpd.sjoin(puntos, distritos[[col_nombre, "geometry"]], predicate="within")
-    cruce["distrito"] = cruce[col_nombre].map(_sin_tildes).str.upper().str.strip()
+    cruce["distrito"] = _norm_distrito(cruce[col_nombre])
     return cruce[["CODIGO_CORTO", "distrito"]] if "CODIGO_CORTO" in cruce else cruce[[est.columns[0], "distrito"]] \
             .rename(columns={est.columns[0]: "CODIGO_CORTO"})
 
-def analisis_arbolado(anio: int, carpeta) -> None:
+def analisis_arbolado(anio: int, carpeta) ->  dict | None:
     """Correlacion entre superficie de masas arboreas y temperatura media del distrito (conclusion):
         - Calcula la temperatura media de cada estación y asigna esa temperatura a un distrito.
         - Cruza esos datos con las hectáreas de masa arbórea de ese distrito y calcula si a más árboles, menos temperatura.
@@ -186,29 +229,22 @@ def analisis_arbolado(anio: int, carpeta) -> None:
     except (StopIteration, FileNotFoundError):
         print("  [AVISO] falta el shapefile de distritos en bronze; se omite")
         return
-    arbolado = _leer_silver("arbolado_masas_anual")
-    arbolado = arbolado[arbolado["ANIO"] == anio].copy()
-    if arbolado.empty:
-        print(f"  [AVISO] sin arbolado de {anio}; se omite")
-        return
-    arbolado["distrito"] = (arbolado["DISTRITO"].map(_sin_tildes).str.upper().str.strip())
 
     # la superficie en hectareas no siempre se publica. 2019 solo traen m2. Se toma la columna en ha si existe y, si no, se calcula de los m2 (1 ha = 10.000 m2).
     #  Otra variante del schema drift del portal # TODO comentar memoria
-    ha = _coalesce(arbolado, ["SUPERFICIE_MASA_FORESTAL_HA", "SUPERFICIE_MASA_ARBOREA_HA", "SUPERFICIE_(HA)_MASA_ARBOREA"])
-    m2 = _coalesce(arbolado, ["SUPERFICIE_MASA_FORESTAL_M2", "SUPERFICIE_MASA_ARBOREA_M2", "SUPERFICIE_(M2)_MASA_ARBOREA"])
-    ha = pd.to_numeric(ha, errors="coerce")
-    m2 = pd.to_numeric(m2, errors="coerce")
-    arbolado["superficie_ha"] = ha.fillna(m2 / 10_000)
+    superficie = _superficie_por_distrito(anio)
+    if superficie.empty:
+        print(f"  [AVISO] sin arbolado de {anio}; se omite")
+        return
 
     # temperatura media anual por estacion -> media por distrito
     meteo = cargar("meteo_diario", anio)
     g = meteo.groupby("estacion")["temperatura"]
-    validas = g.count() >= MIN_DIAS_ANIO  # misma regla de cobertura que el clustering, evitar años con pocos datos
+    validas = g.count() >= config.MIN_DIAS_ANIO  # misma regla de cobertura que el clustering, evitar años con pocos datos
     temp = g.mean()[validas].rename("temperatura").reset_index()
     temp = temp.merge(estaciones, left_on="estacion", right_on="CODIGO_CORTO")
     por_distrito = temp.groupby("distrito")["temperatura"].mean().reset_index()
-    cruce = por_distrito.merge( arbolado[["distrito", "superficie_ha"]], on="distrito")
+    cruce = por_distrito.merge(superficie.reset_index(), on="distrito")
     if len(cruce) < 3:      # Solo si hay mas de 3 puntos, si no  no tiene sentido
         print(f"  [AVISO] solo {len(cruce)} distritos con estacion y arbolado")
         return
@@ -234,19 +270,38 @@ def analisis_arbolado(anio: int, carpeta) -> None:
 
 # --- principal --
 
-def resumen(filas_clusters: list[dict], filas_arbolado: list[dict]) -> None:
+def grafico_evolucion(filas_arbolado: list[dict], base) -> None:
+    """Grafico resumen: evolucion de la correlacion arbolado-temperatura.
+    Si ya existe el resumen del otro modo, se superpone para ver el analisis de sensibilidad de un vistazo"""
+    if not filas_arbolado:
+        return
+    arb = pd.DataFrame(filas_arbolado).set_index("anio").sort_index()
+    plt.figure(figsize=(7, 4))
+    plt.plot(arb.index, arb["r_arbolado"], "o-", label=f"modo {config.ETIQUETA_MODO}")
+    otro = "replica" if config.ETIQUETA_MODO == "propio" else "propio"
+    ruta_otro = config.RESULTADOS / "isla_calor" / otro / "resumen_arbolado.csv"
+    if ruta_otro.exists():
+        prev = pd.read_csv(ruta_otro).set_index("anio").sort_index()
+        plt.plot(prev.index, prev["r_arbolado"], "s--", label=f"modo {otro}")
+    plt.axhline(0, color="grey", linewidth=.8)
+    plt.xlabel("Año"); plt.ylabel("r de Pearson")
+    plt.title("Superficie arborea vs temperatura media por distrito")
+    plt.legend(); plt.tight_layout()
+    plt.savefig(base / "evolucion_correlacion.png", dpi=150)
+    plt.close()
+
+def resumen(filas_clusters: list[dict], filas_arbolado: list[dict], base)-> None:
     """Tabla comparativa entre años + deteccion simple de anomalias, para no tener que abrir los CSV de cada año uno por uno"""
     if filas_clusters:
         piv = (pd.DataFrame(filas_clusters).pivot(index="anio", columns="aproximacion", values="silhouette"))
         print("\n== Resumen: silhouette por año y aproximacion ==")
         print(piv.round(3).to_string())
-        config.RESULTADOS.mkdir(parents=True, exist_ok=True)
-        piv.to_csv(config.RESULTADOS / "isla_calor" / "resumen_silhouette.csv")
+        piv.to_csv(base / "resumen_silhouette.csv")
     if filas_arbolado:
         arb = pd.DataFrame(filas_arbolado).set_index("anio")
         print("\n== Resumen: correlacion arbolado vs temperatura por año ==")
         print(arb.to_string())
-        arb.to_csv(config.RESULTADOS / "isla_calor" / "resumen_arbolado.csv")
+        arb.to_csv(base / "resumen_arbolado.csv")
         r = arb["r_arbolado"].dropna() # marca outliers
         fuera = r[(r - r.mean()).abs() > 1.5 * r.std()]
         media = f"{r.mean():.3f}" if len(r) else "n/d"
@@ -261,19 +316,41 @@ def cobertura_temperatura() -> None:
     tabla = (meteo.dropna(subset=["temperatura"]).groupby(["estacion", "anio"]).size().unstack(fill_value=0))
     tabla.to_csv(config.RESULTADOS / "isla_calor" / "cobertura_temperatura.csv")
     print("\n== Cobertura: dias validos de temperatura por estacion y año ==")
+    plt.figure(figsize=(7, 8))
+    plt.imshow(tabla.values, aspect="auto", cmap="YlOrRd_r", vmin=0, vmax=366)
+    plt.colorbar(label="dias validos")
+    plt.xticks(range(len(tabla.columns)), tabla.columns, rotation=45)
+    plt.yticks(range(len(tabla.index)), tabla.index, fontsize=7)
+    plt.xlabel("Año"); plt.ylabel("Estacion")
+    plt.title("Cobertura de temperatura por estacion y año")
+    plt.tight_layout()
+    plt.savefig(config.RESULTADOS / "isla_calor" / "cobertura_temperatura.png", dpi=150)
+    plt.close()
     print(tabla.to_string())
+
+
+# --- principal --
+
+EXTERNAS = {
+    "superficie_ha": _superficie_por_estacion,
+    # TODO mejoras: "altitud" (maestro de estaciones), "superficie_relativa"
+}
 
 def main() -> None:
     anios = [int(a) for a in sys.argv[1:]] or config.ANIOS
     todos_clusters, todos_arbolado = [], []
+    base = config.RESULTADOS / "isla_calor" / config.ETIQUETA_MODO
+    base.mkdir(parents=True, exist_ok=True)
+    sys.stdout = _Tee(base / "ejecucion.log")
+    print(f"# ejecucion {pd.Timestamp.now():%Y-%m-%d %H:%M} | MODO_REPLICA={config.MODO_REPLICA} | MIN_DIAS_ANIO={config.MIN_DIAS_ANIO}")
     for anio in anios:
-        etiqueta = "replica del TFG" if anio == ANIO_REPLICA else "extension"
+        etiqueta = "replica" if anio == ANIO_REPLICA else "extension"
         print(f"== Isla de calor {anio} ({etiqueta}) ==")
-        carpeta = config.RESULTADOS / "isla_calor" / str(anio)
+        carpeta = base / str(anio)
         carpeta.mkdir(parents=True, exist_ok=True)
-        for nombre, clave, columnas, k in APROXIMACIONES:
+        for nombre, clave, columnas, externas, k in APROXIMACIONES:
             try:
-                fila = ejecutar_aproximacion(nombre, clave, columnas, k, anio, carpeta)
+                fila = ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta)
                 if fila:
                     todos_clusters.append(fila)
             except FileNotFoundError:
@@ -283,7 +360,9 @@ def main() -> None:
         fila_arb = analisis_arbolado(anio, carpeta)
         if fila_arb:
             todos_arbolado.append(fila_arb)
-    resumen(todos_clusters, todos_arbolado)
+
+    resumen(todos_clusters, todos_arbolado, base)
+    grafico_evolucion(todos_arbolado, base)
     cobertura_temperatura()
 
 if __name__ == "__main__":

@@ -105,6 +105,12 @@ PEATONES_CALLE = "GENOVA"   # se busca como subcadena, sin tildes  # TODO añadi
 PEATONES_HORA = 12
 PEATONES_HORIZONTE_TEST = 15  # días reservados para validar el forecast
 
+# --- Parámetros del análisis (03_analisis_isla_calor.py) ---
+# MODO_REPLICA: True reproduce el TFG original tal cual - False activa las mejoras metodologicas propias
+# MODO_REPLICA = True
+MODO_REPLICA = False
+ETIQUETA_MODO = "replica" if MODO_REPLICA else "propio"
+MIN_DIAS_ANIO = 0 if MODO_REPLICA else 300  # dias validos minimos por estacion-año
 
 # --- Reglas de Filtrado (Limpieza en origen) ---
 # Evita descargar duplicados del mismo dataset en CSV y Excel o formatos innecesarios, si vacio, descarga todo

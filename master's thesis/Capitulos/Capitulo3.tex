@@ -48,6 +48,7 @@ Como limitaciones conocidas de estos conjuntos:
 	\item  La serie de bicicletas de 2019 se reduce a un único mes publicado (septiembre)
 	\item En la cobertura sensorial de las redes de medición, no todas las estaciones miden todas las magnitudes, lo que introduce valores ausentes.
 	\item Los conjuntos de aforos cambiaron de esquema a mitad de serie (columnas renombradas, traducidas al inglés y con errores de codificación en origen), y el arbolado emplea tres denominaciones distintas para la misma magnitud de superficie según el año de publicación.
+	\item El fichero de meteorología de 2024 no incluye diciembre, y la	cobertura de la red municipal se degradó notablemente entre 2021 y 2022,	coincidiendo con cambios en los sistemas de información municipales.
 \end{itemize}
 
 % [TODO - discrepancia semantica arbolado 2019, estudiar a fondo]
@@ -158,15 +159,33 @@ El proceso incorpora pausas entre descargas y re-intentos con espera creciente p
 \subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
 
 La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir mas tipos de datos a futuro.
-% [TODO] cambiar si hay nuevos datos
+% [TODO] cambiar si hay nuevos datos como nombres de entidad escritos de forma inconsistente dentro de un mismo fichero, que impedían el cruce entre conjuntos sin llegar a producir error alguno (hacer una lista?? revisar los todos del codigo)
 Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal, y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver, además, varias inconsistencias de los ficheros publicados, como formatos de fecha distintos entre años en el mismo conjunto que obligaron a detectar el formato de estos, decimales con coma (varios, ya que es la convención española), cambios de esquema a mitad de serie (con columnas renombradas, en inglés e incluso corrompidas por errores de codificación en origen), y ficheros CSV que incorporan filas de totales y notas al pie destinadas a lectura humana.
+
 Todas estas transformaciones quedaron registradas en el código publicado para garantizar su reproducibilidad.
 
 \subsubsection{Análisis y modelado} \label{sec:Metodos_analisis}
 
 Sobre los datos limpios se implementó un módulo de análisis por cada caso de estudio, aplicando tanto las mismas técnicas que los trabajos de referencia, como tecnicas propias que se detallan a continuación.
 
-Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del trabajo original \citep{Meneses2023Madrid}: sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}. Para fijar el número de grupos se utilizó el método del codo, y para la calidad de los agrupamientos se validó con el coeficiente de silueta. Además se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
+Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del trabajo original \citep{Meneses2023Madrid}: sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}, conservando el número de grupos y la semilla que se escogió en el trabajo original, de modo que las diferencias observadas se pudieran atribuir a los datos. 
+
+Para fijar el número de grupos se utilizó el método del codo, al igual que en estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado. Se localizó el punto a partir del cual deja de descender de forma apreciable. Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comentara mas adelante. También se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
+
+Para facilitar la prueba, se creo un resumen automático entre años que tabula las métricas de las ejecuciones y señala valores que se desvían.
+
+Durante la replica, se ha tenido que resolver ciertas discrepancias entre la ejecución y la descripción del trabajo original:
+La primera, es que su tercera aproximación agrupa las estaciones por temperatura y superficie arbórea del distrito, y no solo por temperatura como definen. Ambas variables residen en conjuntos distintos y con granularidad diferente (estación-día frente a distrito-año), hemos resuelto la discrepancia mediante el cruce geoespacial. 
+La segunda, es que el criterio declarado para seleccionar las estaciones (es decir, disponer de
+datos de masas arbóreas) excluye a los distritos que publican una superficie nula, interpretación que se adoptó al reproducir esa aproximación. Esto se conserva en la replica, pero en el análisis de correlación, los distritos sin superficie arbórea se conservan, ya que un distrito sin masas arbóreas y con temperatura elevada es precisamente una observación que sostiene la hipótesis.
+
+
+Sobre esta base se introdujeron tres mejoras metodológicas propias:
+La primera es un criterio de cobertura mínima: la media anual de una estación solo se considera válida si supera un número mínimo de días con dato, ya que una estación que operó únicamente durante una pequeña parte del año produce una media sesgada hacia la estación climática en que estuvo activa. 
+La segunda, armonización de la superficie arbórea, que el portal publica con denominaciones y unidades distintas según el año, derivando las hectáreas de los metros cuadrados cuando la primera magnitud no se publica. 
+La tercera, se validó la calidad con el coeficiente de silueta, que mide en qué grado cada observación está más próxima a su propio grupo que al vecino más cercano, sin depender de escala o variables, lo que hace comparables los resultados entre años, aproximaciones y plataformas cloud.
+
+El criterio de cobertura se controla mediante un parámetro de configuración que permite ejecutar el análisis con las condiciones del trabajo original o aplicando los criterios propios, lo que hizo posible el análisis de sensibilidad recogido en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
 
 % [TODO] ver si amplair por tamaño de zona , ver si añadir tambien variables de altitud y añadir un grafico geoespacial ya que tenemos las variables.
 

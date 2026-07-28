@@ -1,7 +1,51 @@
 \chapter{Resultados}
 \label{cap:Resultados}
 
-[TODO, importante a tener en cuenta:
-Aquí se recogen los nuevos conocimientos que el proyecto aporta al conocimiento científico, redactarse en pasado.
-utilizando recursos gráficos.
-]
+% [TODO], importante a tener en cuenta: Aquí se recogen los nuevos conocimientos que el proyecto aporta al conocimiento científico, redactarse en pasado. utilizando recursos gráficos.
+
+
+\section{Hallazgos en los datos estudiados}
+%TODO Cosas que se pueden destacar con los datos obtenidos
+
+\subsection{Madrid - Isla de calor - datos de temperatura y arbolado}
+
+La relación inversa entre superficie arbórea y temperatura media por distrito se mantuvo en los siete años analizados, con valores comprendidos entre $-0,26$ y $-0,47$ y una media de $-0,37$.
+El trabajo original observaba esta relación en un único año y de forma cualitativa, pero esta extensión
+temporal permite afirmar que no se trata de una particularidad de ese periodo, sino de un patrón sostenido, si bien de intensidad moderada, lo que sugiere la presencia de factores no controlados (como altitud de las estaciones o tamaño de los distritos), que se discuten más adelante en \hyperref[sec:Discusion]{Sección \ref*{sec:Discusion}}. %TODO encontrat un nombre mejor
+
+
+\section{Comparación entre procesos local y diferentes cloud}
+%TODO local - nube de AWS - nube de GCP
+
+
+\section{Hallazgos en los procesos ML estudiados}
+%TODO  Aplicacion de los diferentes modelos en comparacion con los que hemos usado de base:
+
+
+\subsection{Madrid - Isla de calor}
+
+\begin{table}[h]
+	\centering
+	\small
+	\begin{tabular}{lccccccc|c}
+		\hline
+		& \textbf{2019} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} & \textbf{2025} & \textbf{Media} \\
+		\hline
+		Réplica: $r$ & -0,686 & -0,293 & -0,215 & -0,258 & -0,049 & -0,334 & -0,315 & -0,307 \\
+		Réplica: distritos & 14 & 14 & 14 & 15 & 15 & 15 & 15 & \\
+		\hline
+		Criterio propio: $r$ & -0,462 & -0,392 & -0,416 & -0,471 & -0,264 & -0,285 & -0,315 & -0,372 \\
+		Criterio propio: distritos & 14 & 12 & 13 & 9 & 15 & 14 & 15 & \\
+		\hline
+	\end{tabular}
+	\caption{Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019--2025), reproduciendo las condiciones del trabajo original y aplicando el criterio de cobertura mínima propio.}
+	\label{tab:arbolado_anios}
+\end{table}
+
+En los agrupamientos de los modelos utilizados, la aproximación basada en la temperatura resultó ser la más estable y la que produjo grupos mejor definidos de forma consistente, mientras que la que emplea las siete magnitudes meteorológicas obtuvo sistemáticamente los peores valores. 
+La explicación es de cobertura: solo una pequeña fracción de la red mide las siete magnitudes, de modo que esa aproximación opera con muy pocas observaciones en un espacio de alta dimensión.
+
+Como comprobación de robustez se ejecutaron sobre los mismos datos dos algoritmos de agrupamiento independientes, \textit{k-means} y el método jerárquico de Ward. En cuatro de las cinco aproximaciones ambos produjeron particiones idénticas, y en la restante difirieron en dos de veintiuna estaciones. 
+Que dos procedimientos con fundamentos distintos converjan en la misma agrupación indica que la estructura detectada responde a los datos y no a las particularidades de un algoritmo concreto, %TODO ver... comprobación que el trabajo original no realizaba de forma explícita.
+
+

@@ -1,14 +1,19 @@
 # Changelog
 
-Todos los cambios notables de este proyecto se documentarán en este archivo.
+Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
+
+## [Data] - 2026-07-23
+### Change
+* Viendo el TFM isla de calor he visto que habia un analsis que estaba haciendo con los parametros incorrectos (para la replica), cambiado
+* Añadido un modo para poder meter la configuracion de replica vs mejora para facilitar el analisis
+* Estudio de los datos obtenidos y escritura del capitulo 3 y 4 sobre los mismos
+* Mas mejoras que he ido viendo en el proceso 3 (isla de calor)
 
 ## [Data] - 2026-07-18
 ### Add
-
 * **Primer tratamiento de datos :** `03_analisis_isla_calor.py`, tercer paso del pipeline, modelado, centrandonos en el TFM de "madrid isla de calor". 
 * **Memoria:** Actualización de los ficheros de LaTeX del capítulo 3: Documentacion del pipeline analítico (arquitectura, limpieza de datos y modelos espaciales de IA) diseñado para replicar y extender el estudio de la isla de calor.
 * Actualización de la **biografía** con las referencias a estos avances.
-
 ### Change
 * Reestructuracion de los ficheros de LaTeX del capítulo 3: Ahora el orden es Materiales, metodos y utilizacion.
 * Revision de los materiales utiulizados y simplificacion de algunas definiciones antiguas.
@@ -18,7 +23,6 @@ Todos los cambios notables de este proyecto se documentarán en este archivo.
 ### Add
 * **Memoria:** Actualización de los ficheros de LaTeX del capítulo 3, en la parte de datos realizada en el commit anterior. Actualización de la biografía con las referencias a estos avances
 * **Limpieza de datos:** `02_limpieza.py`, segundo paso del pipeline. Limpia los datos descargados dependiendo del tipo de archivo
-
 ### Change
 * Correcciones menores de redaccion en los ficheros latex
 * Nuevas reglas de limpieza en config
