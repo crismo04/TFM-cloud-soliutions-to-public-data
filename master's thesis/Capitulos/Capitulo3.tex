@@ -168,9 +168,19 @@ Todas estas transformaciones quedaron registradas en el código publicado para g
 
 Sobre los datos limpios se implementó un módulo de análisis por cada caso de estudio, aplicando tanto las mismas técnicas que los trabajos de referencia, como tecnicas propias que se detallan a continuación.
 
-Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del trabajo original \citep{Meneses2023Madrid}: sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}, conservando el número de grupos y la semilla que se escogió en el trabajo original, de modo que las diferencias observadas se pudieran atribuir a los datos. 
+Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del trabajo original \citep{Meneses2023Madrid}: 
+\begin{enumerate}
+	\item \textbf{Siete magnitudes meteorológicas:} velocidad y dirección del viento, temperatura, humedad relativa, presión barométrica, radiación solar y precipitación, sobre las estaciones que miden todas ellas.
+	\item \textbf{Temperatura y humedad relativa:} sobre las estaciones que disponen de ambas magnitudes.
+	\item \textbf{Temperatura y superficie arbórea:} sobre las estaciones con temperatura cuyo distrito publica datos de masas arbóreas.
+	\item \textbf{Dióxido de nitrógeno (NO$_2$):} sobre todas las estaciones de la red de calidad del aire.
+	\item \textbf{Dióxido de nitrógeno y partículas:} NO$_2$, PM$_{2,5}$ y PM$_{10}$, sobre las estaciones que miden las tres.
+\end{enumerate}
 
-Para fijar el número de grupos se utilizó el método del codo, al igual que en estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado. Se localizó el punto a partir del cual deja de descender de forma apreciable. Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comentara mas adelante. También se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
+Sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}, conservando el número de grupos y la semilla que se escogió en el trabajo original, de modo que las diferencias observadas se pudieran atribuir a los datos. 
+Para fijar el número de grupos se utilizó el método del codo, al igual que en estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado. Se localizó el punto a partir del cual deja de descender de forma apreciable. 
+Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comentara más adelante. 
+También se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
 
 Para facilitar la prueba, se creo un resumen automático entre años que tabula las métricas de las ejecuciones y señala valores que se desvían.
 

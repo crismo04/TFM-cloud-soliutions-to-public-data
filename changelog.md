@@ -2,14 +2,19 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
-## [Data] - 2026-07-23
+## [Data] - 2026-07-29
+### Change
+* Actualizacion del PDF y añadida la carpeta de resultados por trazabilidad y seguir el compromiso de codigo abierto y datos (datos no publicados por exceder los 100MB)
+
+
+## [ML] - 2026-07-27
 ### Change
 * Viendo el TFM isla de calor he visto que habia un analsis que estaba haciendo con los parametros incorrectos (para la replica), cambiado
 * Añadido un modo para poder meter la configuracion de replica vs mejora para facilitar el analisis
 * Estudio de los datos obtenidos y escritura del capitulo 3 y 4 sobre los mismos
 * Mas mejoras que he ido viendo en el proceso 3 (isla de calor)
 
-## [Data] - 2026-07-18
+## [ML] - 2026-07-18
 ### Add
 * **Primer tratamiento de datos :** `03_analisis_isla_calor.py`, tercer paso del pipeline, modelado, centrandonos en el TFM de "madrid isla de calor". 
 * **Memoria:** Actualización de los ficheros de LaTeX del capítulo 3: Documentacion del pipeline analítico (arquitectura, limpieza de datos y modelos espaciales de IA) diseñado para replicar y extender el estudio de la isla de calor.

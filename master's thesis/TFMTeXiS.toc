@@ -44,21 +44,26 @@
 \contentsline {subsubsection}{\numberline {3.2.1.1}Ingesta automatizada de datos}{42}{subsubsection.61}%
 \contentsline {subsubsection}{\numberline {3.2.1.2}Normalización y limpieza}{43}{subsubsection.62}%
 \contentsline {subsubsection}{\numberline {3.2.1.3}Análisis y modelado}{43}{subsubsection.63}%
-\contentsline {subsection}{\numberline {3.2.2}Métodos utilizados: Datos}{44}{subsection.64}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Aplicación de la gobernanza de datos como método}{44}{subsubsection.65}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Principios éticos}{46}{subsubsection.66}%
-\contentsline {subsection}{\numberline {3.2.3}Métodos utilizados: Aprendizaje automático}{47}{subsection.67}%
-\contentsline {subsection}{\numberline {3.2.4}Métodos utilizados: Cloud}{48}{subsection.68}%
-\contentsline {chapter}{\numberline {4}Resultados}{49}{chapter.69}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{51}{chapter.70}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{53}{chapter.71}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{55}{chapter.72}%
+\contentsline {subsection}{\numberline {3.2.2}Métodos utilizados: Datos}{45}{subsection.69}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Aplicación de la gobernanza de datos como método}{45}{subsubsection.70}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Principios éticos}{47}{subsubsection.71}%
+\contentsline {subsection}{\numberline {3.2.3}Métodos utilizados: Aprendizaje automático}{48}{subsection.72}%
+\contentsline {subsection}{\numberline {3.2.4}Métodos utilizados: Cloud}{49}{subsection.73}%
+\contentsline {chapter}{\numberline {4}Resultados}{51}{chapter.74}%
+\contentsline {section}{\numberline {4.1}Hallazgos en los datos estudiados}{51}{section.75}%
+\contentsline {subsection}{\numberline {4.1.1}Madrid - Isla de calor - datos de temperatura y arbolado}{51}{subsection.76}%
+\contentsline {section}{\numberline {4.2}Comparación entre procesos local y diferentes cloud}{51}{section.77}%
+\contentsline {section}{\numberline {4.3}Hallazgos en los procesos ML estudiados}{51}{section.78}%
+\contentsline {subsection}{\numberline {4.3.1}Madrid - Isla de calor}{51}{subsection.79}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{53}{chapter.81}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{55}{chapter.82}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{57}{chapter.83}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{57}{appendix.73}%
-\contentsline {section}{\numberline {A.1}Definiciones}{57}{section.74}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{58}{subsection.75}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{63}{subsection.86}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{68}{subsection.92}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{75}{section.117}%
+\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{59}{appendix.84}%
+\contentsline {section}{\numberline {A.1}Definiciones}{59}{section.85}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{60}{subsection.86}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{65}{subsection.97}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{70}{subsection.103}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{77}{section.128}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{79}{appendix*.118}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{81}{appendix*.129}%
