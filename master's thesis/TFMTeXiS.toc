@@ -57,20 +57,18 @@
 \contentsline {subsection}{\numberline {4.2.1}Replicación del trabajo de referencia}{51}{subsection.81}%
 \contentsline {subsection}{\numberline {4.2.2}Relación entre superficie arbórea y temperatura}{53}{subsection.83}%
 \contentsline {subsection}{\numberline {4.2.3}Análisis de sensibilidad}{54}{subsection.86}%
-\contentsline {subsection}{\numberline {4.2.4}Calidad de los agrupamientos}{55}{subsection.88}%
-\contentsline {subsection}{\numberline {4.2.5}Validación del número de grupos}{56}{subsection.90}%
-\contentsline {subsection}{\numberline {4.2.6}Robustez de los agrupamientos}{56}{subsection.92}%
-\contentsline {subsection}{\numberline {4.2.7}Limitaciones e interpretación}{57}{subsection.94}%
-\contentsline {section}{\numberline {4.3}Comparación entre la ejecución local y las plataformas cloud}{57}{section.95}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{59}{chapter.96}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{61}{chapter.97}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{63}{chapter.98}%
+\contentsline {subsection}{\numberline {4.2.4}Evaluación de los agrupamientos}{55}{subsection.88}%
+\contentsline {subsection}{\numberline {4.2.5}Limitaciones e interpretación}{57}{subsection.92}%
+\contentsline {section}{\numberline {4.3}Comparación entre la ejecución local y las plataformas cloud}{57}{section.93}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{59}{chapter.95}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{61}{chapter.96}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{63}{chapter.97}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{65}{appendix.99}%
-\contentsline {section}{\numberline {A.1}Definiciones}{65}{section.100}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{66}{subsection.101}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{71}{subsection.112}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{76}{subsection.118}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{83}{section.143}%
+\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{65}{appendix.98}%
+\contentsline {section}{\numberline {A.1}Definiciones}{65}{section.99}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{66}{subsection.100}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{71}{subsection.111}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{76}{subsection.117}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{83}{section.142}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{87}{appendix*.144}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{87}{appendix*.143}%
