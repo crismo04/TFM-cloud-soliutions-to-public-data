@@ -19,7 +19,7 @@ En España, los datos también muestran un aumento significativo, según los dat
 Esto es solo un 0.06\% del volumen global, lo cual no cuadra del todo con otras estimaciones \citep{DatosMercadosEspanna} que, por volumen de mercado, sitúan a España en un 0.9\% del volumen global, lo cual se puede explicar debido a que el CNMC solo toma en cuenta datos de las principales empresas de telecomunicaciones, o a que los datos tienen mas valor de mercado que en otras regiones. 
 Aún con estas discrepancias en cuanto a números, lo que está claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta más difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
 
-Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos porque su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicará más en detalle en el \hyperref[cap:Materiales-y-metodos]{Capítulo \ref*{cap:Materiales-y-metodos}: Materiales y métodos} \\ % [TODO]. %enlace mas concreto a cuando lo explique 
+Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos porque su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicará más en detalle en el \hyperref[cap:Materiales-y-metodos]{Capítulo \ref*{cap:MaterialesYmetodos}: Materiales y métodos} \\ % [TODO]. %enlace mas concreto a cuando lo explique 
 
 
 \subsection{Obtención de datos públicos}
@@ -267,8 +267,11 @@ con 2 servidores B2-7, 1 base de datos MySQL, 1 IP adicional, 1 Balanceador de C
 \end{itemize}
 
 
-\subsection{Otras herramientas interesantes}
+\subsection{Otras herramientas de interes}
 \label{sec:EstudiosNubesOtrasHerramientas}
+
+%TODO añadir aqui algo de Canonical MicroCloud -  un anuncio que me salio de una nube privada que se puede levantar con 3 nodos a partir de ubuntu. -> https://canonical.com/microcloud
+% Empresa britanica que ademas se basa en SW abierto, soberania digital y RGPD. lanzada en 2023, pero con adopcion creciente y ultima version 3.1 en 2026
 
 También, aunque no son nubes propiamente dichas, se ha querido añadir en esta sección otras herramientas que tienen interés para el proyecto:
 
@@ -362,6 +365,9 @@ La Inteligencia Artificial (IA), y mas específicamente el aprendizaje automáti
 Aunque esta fama viene dada por los modelos generativos basados en ``transformers'' y modelos generativos  \citep{vaswani2017attention}, la aplicación de esta tecnología aplicación va mas allá de esto, el núcleo de esta revolución reside en  el conjunto de herramientas algorítmicas para el análisis predictivo y la extracción de patrones en datos masivos, lo cual incluye los modelos generativos, pero no exclusivamente. En este proyecto se pretende utilizar ese potencial a través de plataformas cloud como Google Vertex AI, el uso de diferentes modelos de clasificación y clusterización o de detección de anomalías, con el propósito de intentar transformar el vasto volumen de datos públicos, a menudo infrautilizados, en ``insights'' o conclusiones de valor público.
 
 También aclarar que, por acotar el alcance del proyecto, este trabajo no destacará avances en IA que traten datos multimedia, como vídeos, audios y imágenes, aunque reconocemos el increíble avance que han tenido tecnologías de visión por computador o creación de multimedia y su utilidad en LLMs multimodales, los cuales si entran en el ``scope'' del proyecto. Con esto en mente, en las siguientes secciones vamos a ver como aplicar el aprendizaje automático al proyecto, revisando los modelos tradicionales, tecnologías que proporcionan las nubes para usarlos, como el AutoML. Igual que para los datos se han tenido en cuenta ideas de gobernanza de datos, para la aplicación de los modelos se tendrán en cuenta los principios de las Operaciones de aprendizaje automático (MLOps) \hyperref[def14]{[Definición \ref*{def14}]}.
+
+% TODO añadir aqui las herramientas utilizadas para el estudio -> ward, k-menas, codo, silueta, Pearson, dendograma... ETC ETC
+
 
 \subsection{Modelos de ML}
 

@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.1.4}Gobierno de los datos}{16}{subsection.36}%
 \contentsline {section}{\numberline {2.2}Nubes}{17}{section.37}%
 \contentsline {subsection}{\numberline {2.2.1}Principales Proveedores de Nube y sus Capas Gratuitas}{18}{subsection.38}%
-\contentsline {subsection}{\numberline {2.2.2}Otras herramientas interesantes}{23}{subsection.39}%
+\contentsline {subsection}{\numberline {2.2.2}Otras herramientas de interes}{23}{subsection.39}%
 \contentsline {subsection}{\numberline {2.2.3}Trabajos anteriores y relacionados}{26}{subsection.40}%
 \contentsline {section}{\numberline {2.3}Inteligencia Artificial}{28}{section.41}%
 \contentsline {subsection}{\numberline {2.3.1}Modelos de ML}{28}{subsection.42}%
@@ -50,20 +50,27 @@
 \contentsline {subsection}{\numberline {3.2.3}Métodos utilizados: Aprendizaje automático}{48}{subsection.72}%
 \contentsline {subsection}{\numberline {3.2.4}Métodos utilizados: Cloud}{49}{subsection.73}%
 \contentsline {chapter}{\numberline {4}Resultados}{51}{chapter.74}%
-\contentsline {section}{\numberline {4.1}Hallazgos en los datos estudiados}{51}{section.75}%
-\contentsline {subsection}{\numberline {4.1.1}Madrid - Isla de calor - datos de temperatura y arbolado}{51}{subsection.76}%
-\contentsline {section}{\numberline {4.2}Comparación entre procesos local y diferentes cloud}{51}{section.77}%
-\contentsline {section}{\numberline {4.3}Hallazgos en los procesos ML estudiados}{51}{section.78}%
-\contentsline {subsection}{\numberline {4.3.1}Madrid - Isla de calor}{51}{subsection.79}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{53}{chapter.81}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{55}{chapter.82}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{57}{chapter.83}%
+\contentsline {section}{\numberline {4.1}Hallazgos sobre la calidad de los datos publicados}{51}{section.75}%
+\contentsline {subsection}{\numberline {4.1.1}Evolución no documentada de los esquemas}{51}{subsection.76}%
+\contentsline {subsection}{\numberline {4.1.2}Continuidad de la publicación y cobertura de la red}{51}{subsection.78}%
+\contentsline {section}{\numberline {4.2}Resultados del análisis de aprendizaje automático: isla de calor}{51}{section.80}%
+\contentsline {subsection}{\numberline {4.2.1}Replicación del trabajo de referencia}{51}{subsection.81}%
+\contentsline {subsection}{\numberline {4.2.2}Relación entre superficie arbórea y temperatura}{53}{subsection.83}%
+\contentsline {subsection}{\numberline {4.2.3}Análisis de sensibilidad}{54}{subsection.86}%
+\contentsline {subsection}{\numberline {4.2.4}Calidad de los agrupamientos}{55}{subsection.88}%
+\contentsline {subsection}{\numberline {4.2.5}Validación del número de grupos}{56}{subsection.90}%
+\contentsline {subsection}{\numberline {4.2.6}Robustez de los agrupamientos}{56}{subsection.92}%
+\contentsline {subsection}{\numberline {4.2.7}Limitaciones e interpretación}{57}{subsection.94}%
+\contentsline {section}{\numberline {4.3}Comparación entre la ejecución local y las plataformas cloud}{57}{section.95}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{59}{chapter.96}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{61}{chapter.97}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{63}{chapter.98}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{59}{appendix.84}%
-\contentsline {section}{\numberline {A.1}Definiciones}{59}{section.85}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{60}{subsection.86}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{65}{subsection.97}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{70}{subsection.103}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{77}{section.128}%
+\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{65}{appendix.99}%
+\contentsline {section}{\numberline {A.1}Definiciones}{65}{section.100}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{66}{subsection.101}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{71}{subsection.112}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{76}{subsection.118}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{83}{section.143}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{81}{appendix*.129}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{87}{appendix*.144}%
