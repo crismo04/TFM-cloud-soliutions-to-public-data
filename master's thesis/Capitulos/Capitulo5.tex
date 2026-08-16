@@ -1,3 +1,60 @@
 \chapter{Manual de usuario y casos de uso}
-\label{Appendix:Key1}
+\label{cap:Capitulo_5_manual_usuario}
+
+En este capítulo, describiremos en detalle la guía operativa del proyecto, detallando los pasos necesarios para que cualquier usuario o investigador pueda replicar el entorno de trabajo, ejecutar el \textit{pipeline} de datos y reproducir los análisis descritos en capítulos anteriores. 
+
+Para mantener la coherencia con el resto de capítulos, dividiremos el manual en sus tres componentes: 
+\begin{itemize}
+	\item \textbf{Ingesta y descarga de datos:} Como descargar y analizar los datos, lo cual se puede aplicar tanto en local como en la nube.
+	\item \textbf{Despliegue y automatización:} Configuración de la infraestructura en local y en nubes públicas.
+	\item \textbf{Uso de modelos y evaluación de resultados:} Guía para la ejecución de los algoritmos y la extracción de conocimiento a partir de los resultados.
+\end{itemize}
+
+De este modo, intentaremos garantizar la transparencia del código y la total trazabilidad del ciclo de vida del dato, desde su ingesta hasta el modelado de Inteligencia Artificial. Al final, también estableceremos una comparativa de que nubes o entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. \newpage
+
+
+\section{Ingesta y descarga de datos} 
+\label{sec:Manual_Ingesta}
+
+% [TODO]: Explicar requisitos previos, config.py y la ejecución del script 01
+
+\newpage
+
+\section{Despliegue y automatización de la arquitectura}
+\label{sec:Manual_Despliegue}
+
+\subsection{Despliegue en Local} 
+\label{subsec:Manual_Despliegue_Local}
+
+
+
+\subsection{Despliegue en Amazon Web Services (AWS)} \label{subsec:Manual_Despliegue_AWS}
+
+Para desplegar la infraestructura en la nube de Amazon,lo primero que tenemos que hacer es registrarnos en la plataforma \citep{AWS2026Signup}. El proceso de creación consta de cinco pasos y da acceso al plan gratuito, aunque requiere introducir una tarjeta de crédito de manera obligatoria. Además, por motivos de seguridad, el sistema exige configurar un segundo factor de autenticación (MFA). Para no alargar este capitulo, simplemente redirigimos al usuario a el propio tutorial de AWS, donde se explica en detalle como crear la cuenta: \citep{AWS2026Tutorial}.
+Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar pruebas: 100\$ iniciales y otros 100\$ adicionales al completar una serie de actividades. Aunque han ido cambiando en las diferentes veces que hemos creado la cuenta, y lo mas seguro es que cambiaran de nuevo en el futuro, a fecha de creación de esta memoria, las pruebas consistían en:
+\begin{itemize}
+	\item Crear una máquina virtual.
+	\item Establecer un límite de gasto (\textit{Billing}).
+	\item Crear una base de datos SQL.
+	\item Crear una aplicación web.
+	\item Probar un modelo de lenguaje (LLM) en el servicio Amazon Bedrock.
+\end{itemize}
+
+Con los 200\$ disponibles, % [TODO] continuar con la arquitectura.
+ 
+
+\subsection{Despliegue en Google Cloud Platform (GCP)} \label{subsec:Manual_Despliegue_GCP}
+
+\newpage
+\section{Uso de modelos y resultados} 
+\label{sec:Manual_Modelos}
+
+
+% [TODO]: Explicar cómo lanzar 03_analisis_isla_calor.py y obtener gráficos/CSVs
+
+\newpage
+\section{Comparativa de entornos y nubes públicas}
+\label{sec:Manual_Comparativa}
+
+% [TODO]: Tabla/resumen comparando Local vs AWS vs otros proveedores evaluados
 
