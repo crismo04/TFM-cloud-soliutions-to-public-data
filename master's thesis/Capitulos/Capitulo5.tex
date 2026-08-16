@@ -41,7 +41,22 @@ Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar prueb
 \end{itemize}
 
 Con los 200\$ disponibles, % [TODO] continuar con la arquitectura.
- 
+
+Lo primero es configurar un bucket, ya que necesitaremos un lugar para almacenar todos los datos que vayamos a descargar. Siguiendo las buenas practicas, y para mayor reproducibilidad, lo haremos mediante el CLI de AWS con los siguientes comandos:
+
+\begin{lstlisting}[language=bash, caption={Configuracion de credenciales y creacion del bucket S3 en AWS}]
+	aws configure --profile tfm  # region eu-west-1, json output
+	
+	aws s3 mb s3://tfm-cmolina-datos-publicos \
+	--region eu-west-1 \
+	--profile tfm
+	
+	aws s3api put-public-access-block \
+	--bucket tfm-cmolina-datos-publicos \
+	--public-access-block-configuration \
+	"BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true" \
+	--profile tfm
+\end{lstlisting}
 
 \subsection{Despliegue en Google Cloud Platform (GCP)} \label{subsec:Manual_Despliegue_GCP}
 
