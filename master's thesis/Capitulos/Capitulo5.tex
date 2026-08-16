@@ -40,25 +40,114 @@ Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar prueb
 	\item Probar un modelo de lenguaje (LLM) en el servicio Amazon Bedrock.
 \end{itemize}
 
-Con los 200\$ disponibles, % [TODO] continuar con la arquitectura.
+Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar el proyecto, como hemos visto en \ref*{subsec:Costes_cloud}. Todos los comandos y procedimientos nombrados a partir de aquí, han sido realizados consultando la documentación técnica oficial de AWS \citep{AWS2026Docuementacion}. Debido a la extensión de esta documentación y para facilitar la lectura de la memoria, no se referencia las paginas de documentación individuales para cada comando, pero la misma cuenta con un buscador donde se puede consultar el comando o comandos específicos de esta memoria para poder ver su funcionamiento y las decisiones de diseño que se han tomado aquí. También para facilitar la reproducibilidad, se ha priorizado la utilización de los comandos del CLI, aun que todas ellos tienen su equivalente en la web que también se pueden consultar en la documentación y pueden ser mas fáciles de ejecutar , y sobre todo, mas claros, en ciertos escenarios. Los comandos que vamos a lanzar se pueden escribir directamente en la \textbf{AWS CloudShell} como se muestra en la figura \ref*{figura_AWS_Consola}.
 
-Lo primero es configurar un bucket, ya que necesitaremos un lugar para almacenar todos los datos que vayamos a descargar. Siguiendo las buenas practicas, y para mayor reproducibilidad, lo haremos mediante el CLI de AWS con los siguientes comandos:
+	
+\begin{figure}[h]
+	\begin{center}
+		\caption{Abrir terminal AWS en consola} 
+		\includegraphics[scale=0.3]{Imagenes/Bitmap/AWS-abrir-consola.png} 
+		\footnotesize{Fuente: Propia}
+		\label{figura_AWS_Consola}
+	\end{center}
+\end{figure} 
 
-\begin{lstlisting}[language=bash, caption={Configuracion de credenciales y creacion del bucket S3 en AWS}]
-	aws configure --profile tfm  # region eu-west-1, json output
+\subsubsection{Configuración del entorno y autenticación}
+
+Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario con el que nos hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, o para ejecutar los comandos desde local. \textbf{Los tres bloques de código siguientes no son necesarios si se va a ejecutar desde AWS}, pero en el proyecto se realizo siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), creando un grupo de IAM en el que se centralizaron los permisos necesarios para el proyecto. Se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios, pero de todas formas se realizo para futuras extensiones del proyecto o por si era necesario integrar usuarios, siguiendo las mejores practicas. Finalmente, se creó el usuario \texttt{tfm-user} y se integró como miembro del grupo antes de emitir las credenciales. Los comandos han sido los siguientes:
+
+\begin{lstlisting}[language=bash, caption={Despliegue de identidades basado en grupos de IAM (RBAC)}]
+	# Creacion del grupo e integracion de politicas de servicio
+	aws iam create-group --group-name tfm-despliegue-group
+	aws iam attach-group-policy --group-name tfm-despliegue-group --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+	aws iam attach-group-policy --group-name tfm-despliegue-group --policy-arn arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess
+	aws iam attach-group-policy --group-name tfm-despliegue-group --policy-arn arn:aws:iam::aws:policy/AmazonAthenaFullAccess
 	
-	aws s3 mb s3://tfm-cmolina-datos-publicos \
-	--region eu-west-1 \
-	--profile tfm
-	
-	aws s3api put-public-access-block \
-	--bucket tfm-cmolina-datos-publicos \
-	--public-access-block-configuration \
-	"BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true" \
-	--profile tfm
+	# Creacion de usuario, asignacion al grupo y emision de credenciales
+	aws iam create-user --user-name tfm-user
+	aws iam add-user-to-group --user-name tfm-user --group-name tfm-despliegue-group
+	aws iam create-access-key --user-name tfm-user
 \end{lstlisting}
 
-\subsection{Despliegue en Google Cloud Platform (GCP)} \label{subsec:Manual_Despliegue_GCP}
+Una vez creado el grupo y el usuario, procedemos a la creación de un perfil aislado con las credenciales que nos ha devuelto el comando anterior: ``AccessKeyId'' y ``SecretAccessKey'', y la región ``eu-west-1'' (ya que es la que mas funcionalidades tiene dentro de Europa):
+
+\begin{lstlisting}[language=bash, caption={Configuración de las variables de entorno y perfil en AWS CLI}]
+	aws configure --profile tfm
+	# AWS Access Key ID: AKIXXXXXXXXXXXXXXXXX
+	# AWS Secret Access Key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	# Default region name: eu-west-1
+	# Default output format: json
+\end{lstlisting}
+
+Podemos verificar que la CLI está correctamente configurada con estos comandos, que deberían devolver el ID de la cuenta de AWS (que vamos a guardar), el ARN del usuario, etc:
+
+\begin{lstlisting}[language=bash, caption={Verificación de identidad, y guardado de cuenta}]
+	aws configure list --profile tfm
+	aws sts get-caller-identity --profile tfm
+	CUENTA=$(aws sts get-caller-identity --query Account --output text --profile tfm)
+	
+	# Si no se ha creado la cuenta, crear la cuenta sin perfil
+	CUENTA=$(aws sts get-caller-identity --query Account --output text)
+\end{lstlisting}
+
+Se haya creado la cuenta de servicio del paso anterior o no, al trabajar con \textbf{AWS CloudShell}, en la propia consola WEB, se selecciona la región \texttt{eu-west-1} (Irlanda) y a continuación, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
+
+\begin{lstlisting}[language=bash, caption={Obtención del código fuente del proyecto}]
+	git clone --depth 1 https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	cd TFM-cloud-soliutions-to-public-data/code/files
+	pip install -r requirements.txt --quiet
+\end{lstlisting}
+
+\subsubsection{Infraestructura de Almacenamiento en Amazon S3}
+
+El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local, y de otras nubes: (\texttt{data/bronze/}, \texttt{data/silver/}, \texttt{data/gold/}, \texttt{scripts/} y \texttt{resultados/}). Permitiendo así que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también el los siguientes comandos bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
+
+\begin{lstlisting}[language=bash, caption={Creación y configuración de seguridad del contenedor en S3}]
+	export BUCKET="tfm-ucm-datos-publicos"
+	export REGION="eu-west-1"
+	
+	# Creacion del bucket
+	aws s3api create-bucket --bucket "$BUCKET" --region "$REGION" \
+	--create-bucket-configuration LocationConstraint="$REGION"
+	
+	# Bloqueo de acceso publico
+	aws s3api put-public-access-block --bucket "$BUCKET" \
+	--public-access-block-configuration \
+	"BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
+	
+	# Versionado y etiquetado
+	aws s3api put-bucket-versioning --bucket "$BUCKET" \
+	--versioning-configuration Status=Enabled
+	
+	aws s3api put-bucket-tagging --bucket "$BUCKET" \
+	--tagging 'TagSet=[{Key=proyecto,Value=tfm}]'
+\end{lstlisting}
+
+Una vez creado el contenedor, se puede ver en el apartado de S3 instantáneamente y ya podemos proceder a cargar los procesos de ingesta directamente sobre el almacenamiento creado. Con esto, validamos la portabilidad, ya que el mismo proceso que se ejecutó en local escribe ahora en S3 sin ninguna modificación de su lógica, gracias a la abstracción del sistema de ficheros con \texttt{fsspec} descrita en la Sección \ref{sec:Metodos_ingesta}.
+
+\begin{lstlisting}[language=bash, caption={Carga de los procesos e ingesta directa sobre S3}]
+	# Carga de los scripts del pipeline
+	aws s3 cp . "s3://$BUCKET/scripts/" --recursive --exclude "*" --include "*.py"
+	
+	# Ingesta escribiendo directamente en la capa bronze del bucket
+	export TFM_BASE="s3://$BUCKET"
+	python 01_descarga.py --destino "s3://$BUCKET/data/bronze/"
+	
+	# Verificacion del contenido cargado
+	aws s3 ls "s3://$BUCKET/data/bronze/" --recursive --summarize
+	
+\end{lstlisting}
+
+
+\subsubsection{Orquestación y Procesamiento ETL con AWS Glue}
+
+Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuídos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto tienen un tamaño inferior a 2 GB en la capa ``Silver'', el uso de Spark implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de a 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. %[TODO] poner en trabajo futuro probar datos mas grandes con Spark
+
+%[TODO] seguir por aqui.... Datos descargados
+
+\newpage
+\subsection{Despliegue en Google Cloud Platform (GCP)} 
+\label{subsec:Manual_Despliegue_GCP}
 
 \newpage
 \section{Uso de modelos y resultados} 

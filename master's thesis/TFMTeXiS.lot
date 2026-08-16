@@ -10,18 +10,18 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Conjuntos de datos utilizados, su procedencia es \citep {AytoMadrid2025PortalDatos}.\relax }}{38}{table.caption.53}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Patologías de calidad detectadas en los conjuntos publicados y su efecto sobre la reutilización automatizada.\relax }}{52}{table.caption.77}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Replicación del agrupamiento de \citep {Meneses2023Madrid} para 2021. Las tres primeras columnas indican el número de estaciones empleadas en cada trabajo y las comunes a ambos, y la última el porcentaje de pares de estaciones agrupados de igual forma.\relax }}{53}{table.caption.82}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019-2025), reproduciendo las condiciones del trabajo original, y aplicando el criterio de cobertura mínima propio.\relax }}{54}{table.caption.84}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Coeficiente de silueta por año y aproximación, aplicando el criterio de cobertura mínima. Las columnas corresponden a las cinco aproximaciones descritas en la Sección \ref {sec:Metodos_analisis}, es decir siete magnitudes meteorológicas, temperatura y humedad relativa, temperatura y superficie arbórea, dióxido de nitrógeno, y dióxido de nitrógeno con partículas. El guion indica que la aproximación no reunió estaciones suficientes ese año.\relax }}{56}{table.caption.89}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Esfuerzo de desarrollo y coste por etapa del pipeline en la línea base local y en cada plataforma cloud.\relax }}{57}{table.caption.94}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Patologías de calidad detectadas en los conjuntos publicados y su efecto sobre la reutilización automatizada.\relax }}{54}{table.caption.83}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Replicación del agrupamiento de \citep {Meneses2023Madrid} para 2021. Las tres primeras columnas indican el número de estaciones empleadas en cada trabajo y las comunes a ambos, y la última el porcentaje de pares de estaciones agrupados de igual forma.\relax }}{55}{table.caption.88}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019-2025), reproduciendo las condiciones del trabajo original, y aplicando el criterio de cobertura mínima propio.\relax }}{56}{table.caption.90}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Coeficiente de silueta por año y aproximación, aplicando el criterio de cobertura mínima. Las columnas corresponden a las cinco aproximaciones descritas en la Sección \ref {sec:Metodos_analisis}, es decir siete magnitudes meteorológicas, temperatura y humedad relativa, temperatura y superficie arbórea, dióxido de nitrógeno, y dióxido de nitrógeno con partículas. El guion indica que la aproximación no reunió estaciones suficientes ese año.\relax }}{58}{table.caption.95}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Esfuerzo de desarrollo y coste por etapa del pipeline en la línea base local y en cada plataforma cloud.\relax }}{59}{table.caption.100}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Resumen de las principales características de las denominadas olas de datos abiertos.\relax }}{73}{table.caption.125}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Comparación de modelos relacionados con la computación distribuida.\relax }}{76}{table.caption.132}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces \textbf {Linea de tiempo de la IA}\relax }}{81}{table.caption.138}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Resumen de las principales características de las denominadas olas de datos abiertos.\relax }}{79}{table.caption.182}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Comparación de modelos relacionados con la computación distribuida.\relax }}{82}{table.caption.189}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces \textbf {Linea de tiempo de la IA}\relax }}{87}{table.caption.195}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }

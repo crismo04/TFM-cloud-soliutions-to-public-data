@@ -6,9 +6,12 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 ## [Thesis] - 2026-07-29
 ### Add
 * Añadido la parte del capítulo 5, que habla sobre cómo utilizar la solución, para explicar cómo se ha creado la cuenta de Amazon web Services. 
+* Toda la parte del capitulo 5 que indica como utilizar la solucion en AWS hasta la descarga
 * Añadido apéndice B para comentar cuál han sido los usos de inteligencia artificial.
 ### Change
 * Pequeñas mejoras en la memoria
+* Mejoras para poder ver el codigo en la memoria
+* Otros cambios relacionados con AWS en el capitulo 3 y 4 
 
 ## [Data] - 2026-07-29
 ### Change

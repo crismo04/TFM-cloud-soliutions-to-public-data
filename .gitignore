@@ -4,6 +4,7 @@ data/
 # resultados/
 Docs/notes.txt
 code/test/
+Docs/
 
 # Git provided python gitignore ------->
 # Byte-compiled / optimized / DLL files

@@ -71,6 +71,21 @@ Como limitaciones conocidas de estos conjuntos:
 
 \textbf{Amazon Web Services (AWS)} es la plataforma líder mundial en computación en la nube, que proporciona recursos escalables y flexibles de todo tipo, lo que ha permitido construir, desplegar y gestionar aplicaciones sin la necesidad de poseer infraestructura física. Hemos utilizado AWS como primera nube, debido a la capa gratuita de 6 meses y su popularidad. Los primeros pasos han sido realizar los tutoriales de la web, lo cual permite contar con 100\$ extra para la capa gratuita.
 
+Dentro de su catálogo, se emplearon los siguientes servicios gestionados como herramientas e infraestructura técnica:
+
+\begin{itemize}
+	\item \textbf{Amazon S3 (Simple Storage Service):} Servicio de almacenamiento de objetos distribuido, altamente disponible y escalable.
+	\item \textbf{AWS Glue (Python Shell):} Servicio de integración de datos (ETL) gestionado y \textit{Serverless}. Se utilizó la modalidad \textit{Python Shell}, un entorno de ejecución ligero que incluye de forma nativa librerías para ciencia de datos (\texttt{pandas}, \texttt{numpy}, \texttt{scikit-learn}).
+ % \item \textbf{AWS Glue Data Catalog y Crawlers:} Catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados. ??
+%	\item \textbf{Amazon Athena:} Motor de consultas analíticas interactivo y \textit{Serverless} basado en Trino/Presto, que permite ejecutar consultas SQL estándar directamente sobre datos alojados en Amazon S3.
+	\item \textbf{AWS IAM (Identity and Access Management):} Servicio de gestión de identidades y accesos para la administración de usuarios, grupos y roles de servicio.
+	\item \textbf{AWS CloudShell:} Entorno de terminal Linux basado en navegador con acceso autenticado y la interfaz de línea de comandos (\textit{AWS CLI}) preconfigurada sobre la región activa.
+	\item \textbf{AWS Budgets y Cost Explorer:} Herramientas de monitorización y control financiero para el seguimiento de costes mediante etiquetas de asignación.
+\end{itemize}
+
+
+\subsubsection{Google Cloud Platform}
+
 % [TODO] Añador GCP, Azure y OVHClod como usadas o como descartadas.
 
 \subsection{Materiales para el desarrollo}
@@ -303,9 +318,34 @@ Previo a la aplicación de los algoritmos basados en distancias (como K-Means o 
 
 
 
-\subsection{Métodos utilizados: Cloud} \label{sec:Metodos_cloud}
-% [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
+\subsection{Métodos utilizados: Cloud} 
+\label{sec:Metodos_cloud}
 
+% [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
+El despliegue de las capas de almacenamiento, procesamiento y analítica sobre plataformas en la nube se ha abordado bajo una metodología común para evaluar la dificultad de implementación, viabilidad, rendimiento y coste de ejecutar un mismo \textit{pipeline} de datos abiertos sobre diferentes proveedores. Esta estrategia reutiliza el enfoque de arquitectura por capas (\textit{Medallion Architecture}) definido en la \hyperref[def11]{[Definición \ref*{def11}]}, combinándolo con las buenas prácticas específicas de diseño y gobernanza de cada proveedor.
+
+\subsubsection{Métodos utilizados en Amazon Web Services (AWS)}
+
+La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura mas a alto nivel de las decisiones tomadas, así como los métodos utilizados.
+
+\begin{enumerate}
+	\item \textbf{Arquitectura de medalla} Organización del almacenamiento en Amazon S3 dividida en las capas. Se aplicó un bloqueo estricto de acceso público, se activó el versionado para asegurar la inmutabilidad y trazabilidad histórica, y se asignaron etiquetas para poder medir el coste (\texttt{proyecto=tfm}).
+
+	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos ($<2$~GB en Silver) no requería computación distribuida. Se optó por una ejecución mediante \textit{AWS Glue Python Shell}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución.
+	
+%	\item \textbf{Catalogación automatizada y desacoplamiento analítico SQL:} Aplicación de rastreadores (\textit{Glue Crawlers}) para la extracción automática de metadatos sobre los archivos Parquet, registrando los esquemas en el \textit{Glue Data Catalog}. Esto permitió habilitar métodos de análisis mediante consultas SQL directas en \textit{Amazon Athena} bajo un modelo \textit{Serverless} de pago por volumen escaneado (5,00~USD/TB), sin necesidad de mantener bases de datos relacionales activas de forma continua.
+	
+	\item \textbf{Gobernanza de identidades (RBAC) y control financiero (\textit{FinOps}):} Implementación del principio de menor privilegio y control de costes mediante:
+	\begin{itemize}
+		\item \textbf{Uso de credenciales temporales:} Adopción de \textit{AWS CloudShell} para operar con credenciales efímeras herederas de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en disco local.
+		\item \textbf{Segregación de permisos (RBAC):} Definición de un grupo IAM (\texttt{tfm-despliegue-group}) y usuario para la estructuración de accesos, junto con un rol de servicio específico (\texttt{AWSGlueServiceRole-tfm}) con permisos acotados para la ejecución desatendida de Glue.
+		\item \textbf{Control presupuestario:} Configuración de un presupuesto automatizado en \textit{AWS Budgets}.
+	\end{itemize}
+\end{enumerate}
+
+\newpage
+\subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}
+% [TODO] Añadir en el futuro la metologia equivalente para GCP: Cloud Storage, Cloud Functions / Vertex AI, BigQuery, IAM/Service Accounts
 
 \newpage
 
