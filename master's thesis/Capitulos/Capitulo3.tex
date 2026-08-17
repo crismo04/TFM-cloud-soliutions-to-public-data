@@ -163,7 +163,8 @@ Las fases y sus ficheros correspondientes en local y el git del proyecto han sid
 
 \subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
 
-La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software}, que expone una API REST. Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie).
+La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software} (API REST), versión 2.9.11, dos ramas por detrás de la versión estable disponible en el momento de redactar este trabajo, lo que ya es un dato sobre el mantenimiento de la infraestructura de publicación de estos datos. 
+Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie).
 
 El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
 
@@ -171,7 +172,8 @@ Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus dat
 
 El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
 
-\subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
+\subsubsection{Normalización y limpieza} 
+\label{sec:Metodos_limpieza}
 
 La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir mas tipos de datos a futuro.
 % [TODO] cambiar si hay nuevos datos como nombres de entidad escritos de forma inconsistente dentro de un mismo fichero, que impedían el cruce entre conjuntos sin llegar a producir error alguno (hacer una lista?? revisar los todos del codigo)
