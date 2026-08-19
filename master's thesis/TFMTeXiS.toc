@@ -23,12 +23,12 @@
 \contentsline {subsection}{\numberline {2.2.2}Otras herramientas de interes}{23}{subsection.39}%
 \contentsline {subsection}{\numberline {2.2.3}Trabajos anteriores y relacionados}{26}{subsection.40}%
 \contentsline {section}{\numberline {2.3}Inteligencia Artificial}{28}{section.41}%
-\contentsline {subsection}{\numberline {2.3.1}Modelos de ML}{28}{subsection.42}%
+\contentsline {subsection}{\numberline {2.3.1}Modelos de ML}{29}{subsection.42}%
 \contentsline {subsection}{\numberline {2.3.2}ML en la nube}{30}{subsection.43}%
 \contentsline {subsubsection}{\numberline {2.3.2.1}Plataformas MLOps en la Nube}{30}{subsubsection.44}%
 \contentsline {subsubsection}{\numberline {2.3.2.2}Otras herramientas}{31}{subsubsection.45}%
-\contentsline {subsubsection}{\numberline {2.3.2.3}AutoML}{32}{subsubsection.47}%
-\contentsline {subsection}{\numberline {2.3.3}IA, normativa y ética}{33}{subsection.48}%
+\contentsline {subsubsection}{\numberline {2.3.2.3}AutoML}{33}{subsubsection.47}%
+\contentsline {subsection}{\numberline {2.3.3}IA, normativa y ética}{34}{subsection.48}%
 \contentsline {subsection}{\numberline {2.3.4}Trabajos anteriores y relacionados}{34}{subsection.49}%
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {3}Materiales y métodos}{37}{chapter.50}%
