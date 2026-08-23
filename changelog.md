@@ -6,8 +6,8 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 ### Add
 * Modificacion de la memoria con AI-Act y correcciones.
 * Nueva parte del manual de usuario para la creacion y uso de Glue en AWS
-### Change
-
+### Fix
+* Correccion de mas problemas que surgieron en AWS.
 
 ## [Cloud] - 2026-08-19
 ### Add

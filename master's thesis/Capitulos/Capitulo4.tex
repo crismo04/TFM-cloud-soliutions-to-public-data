@@ -219,17 +219,17 @@ El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra además que la primer
 
 La Tabla \ref{tab:esfuerzo_plataforma} recoge el esfuerzo medido en horas dedicado a cada etapa y en cada entorno. En este caso, el orden en que se abordaron los entornos, condiciona el resultado, ya que con el conocimiento acumulado de etapas anteriores, las siguientes son mucho mas ágiles. La implementación local fue la primera y llevo la mayor parte del trabajo de comprensión de las fuentes, diseño del proceso en código, y resolución de las incidencias de calidad del dato. De igual manera, AWS fue la primera nube evaluada, y la que menos conocía el autor, por lo que el tiempo acumulado incluye el aprendizaje de la plataforma y el coste en tiempo del primer acercamiento a la nube.
 
-\begin{table}[htbp]
+\begin{table}[htbp] % [TODO] añadir los tiempos de ejecucion del resto de cosas
 	\centering
 	\footnotesize
 	\begin{tabular}{lcccccc}
 		\hline
-		& \multicolumn{2}{c}{\textbf{Esfuerzo (h)}} & \multicolumn{2}{c}{\textbf{Ejecución}} & \multicolumn{2}{c}{\textbf{Coste (\$)}} \\
+		& \multicolumn{2}{c}{\textbf{Esfuerzo (h)}} & \multicolumn{2}{c}{\textbf{Ejecución (s)}} & \multicolumn{2}{c}{\textbf{Coste (\$)}} \\
 		\textbf{Etapa} & Local & AWS & Local & AWS & Local & AWS \\
 		\hline
-		Configuración & 5 & 10 & 1 & 1 & 0 & \\
-		Ingesta & 10 & & & & 0 & \\
-		Limpieza & 20 & & & & 0 & \\
+		Configuración & 5 & 10 & --- & --- & 0 & 0 \\
+		Ingesta & 10 & & & & 0 & 0 \\
+		Limpieza & 20 & & & 227 & 0 & $<0,01$ \\
 		Análisis & 35 & & & & 0 & \\
 		\hline
 		\textbf{Total} & \textbf{70 h} & & & & \textbf{0} & \\

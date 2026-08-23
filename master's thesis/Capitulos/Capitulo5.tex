@@ -155,7 +155,6 @@ También, como opción mas elegante, se podría integrar en el proceso y modific
 
 \subsubsection{Orquestación y Procesamiento ETL con AWS Glue}
 
-
 Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuídos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272 MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
 
 A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es mas fácil de automatizar, a parte de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capitulo:
@@ -177,29 +176,54 @@ A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta
 	--policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 \end{lstlisting}
 
-Para utilizar \textit{Python Shell}, necesitamos también empaquetar los ficheros que se importan dentro de los ejecutables, en este caso, necesitamos comprimir el archivo de configuración:
+Para utilizar \textit{Python Shell} es necesario empaquetar los módulos propios que hemos creado, como el fichero de configuración. Durante el desarrollo se ha comprobado que un fichero comprimido en formato \texttt{zip} se descarga correctamente pero no llega a importarse, mientras que un paquete en formato \textit{wheel} sí se instala como cualquier otra dependencia, por lo que lo hemos hecho de la siguiente manera:
 
-\begin{lstlisting}[language=bash, caption={Actualización y empaquetado de los procesos}]
+\begin{lstlisting}[language=bash, caption={Empaquetado del módulo de configuración}]
+	rm -rf /tmp/pkg && mkdir -p /tmp/pkg
+	cp ~/TFM-cloud-soliutions-to-public-data/code/files/config.py /tmp/pkg/
+	
+	cat > /tmp/pkg/setup.py << 'EOF'
+	from setuptools import setup
+	setup(name="tfmconfig", version="1.0.0", py_modules=["config"])
+	EOF
+	
+	cd /tmp/pkg && pip wheel . -w dist --no-deps --quiet
+	aws s3 cp dist/tfmconfig-1.0.0-py3-none-any.whl "s3://$BUCKET/scripts/"
+	
 	cd ~/TFM-cloud-soliutions-to-public-data/code/files
-	zip -q config.zip config.py
-	aws s3 cp config.zip "s3://$BUCKET/scripts/"
 	aws s3 cp . "s3://$BUCKET/scripts/" --recursive --exclude "*" --include "*.py"
+	
 \end{lstlisting}
 
-Con el rol y los procesos disponibles solo falta crear la función, para esto, fijaremos un tiempo máximo de ejecución, una capacidad máxima y desactivaremos los reintentos automáticos como medida de control de costes. También añadiremos etiquetas para poder desglosar el gasto:
+Si posteriormente se modifica el fichero de configuración, es necesario regenerar el paquete e \textbf{incrementar su número de versión}, ya que en caso contrario el gestor de dependencias reutilizaría la copia previamente instalada.
 
-\begin{lstlisting}[language=bash, caption={Creación del trabajo de limpieza (02) en AWS Glue}]
-	aws glue create-job --name tfm-02-limpieza \
-	--role AWSGlueServiceRole-tfm \
-	--max-capacity 0.0625 \
-	--timeout 15 \
-	--max-retries 0 \
-	--command "{\"Name\":\"pythonshell\",\"PythonVersion\":\"3.9\",\
-		\"ScriptLocation\":\"s3://$BUCKET/scripts/02_limpieza.py\"}" \
-	--default-arguments "{\"--extra-py-files\":\"s3://$BUCKET/scripts/config.zip\",\
-		\"--additional-python-modules\":\"s3fs\",\
-		\"--TFM_BASE\":\"s3://$BUCKET\"}" \
-	--tags proyecto=tfm,fase=limpieza
+Con el rol y los procesos disponibles solo falta crear la función, para esto, fijaremos un tiempo máximo de ejecución, una capacidad máxima y desactivaremos los reintentos automáticos como medida de control de costes. También añadiremos etiquetas para poder desglosar el gasto. 
+La definición se declara en JSON en lugar de como argumentos en línea, para mayor visibilidad de rutas y evitar el escapado de comillas, ya que ambas han dado problemas en la ejecución:
+
+\begin{lstlisting}[language=bash, caption={Definición y despliegue del trabajo de limpieza (02) en AWS Glue}]
+	source ~/tfm-env.sh
+	# Aborta si la variable esta vacia, evitando rutas del tipo s3:///
+	: "${BUCKET:?Variable BUCKET vacia, ejecutar source ~/tfm-env.sh}"
+	
+	cat > job-limpieza.json << EOF
+	{
+		"Name": "tfm-02-limpieza",
+		"Role": "AWSGlueServiceRole-tfm",
+		"Command": {"Name": "pythonshell", "PythonVersion": "3.9",
+			"ScriptLocation": "s3://$BUCKET/scripts/02_limpieza.py"},
+		"DefaultArguments": {
+			"--extra-py-files": "s3://$BUCKET/scripts/tfmconfig-1.0.0-py3-none-any.whl",
+			"--additional-python-modules": "s3fs",
+			"--TFM_BASE": "s3://$BUCKET"},
+		"MaxCapacity": 0.0625,
+		"Timeout": 15,
+		"MaxRetries": 0,
+		"Tags": {"proyecto": "tfm", "fase": "limpieza"}
+	}
+	EOF
+	
+	cat job-limpieza.json    # comprobacion de las rutas resueltas
+	aws glue create-job --cli-input-json file://job-limpieza.json
 \end{lstlisting}
 
 Esto de nuevo, es sencillo por tener los .py configurados, pero para añadir mas datos solo seria necesario incluir su entrada en \texttt{config.py}, actualizar el repositorio con las especificidades de estos, y volver a sincronizar los procesos con el almacenamiento mediante el ciclo descrito en este trabajo. 
@@ -210,16 +234,17 @@ Con esto ya podemos lanzar la ejecución y ver el resultado:
 	--query JobRunId --output text)
 	
 	aws glue get-job-run --job-name tfm-02-limpieza --run-id "$RUN" \
-	--query "JobRun.[JobRunState,ExecutionTime]" --output text
+	--query "JobRun.[JobRunState,ExecutionTime,ErrorMessage]" --output text
 	
-	# Registro detallado en caso de error
+	# Registro de la ejecucion
 	aws logs tail /aws-glue/python-jobs/output --since 10m
 	
 	# La capa silver debe aparecer en el bucket al finalizar
 	aws s3 ls "s3://$BUCKET/data/silver/" --recursive --summarize
+	
 \end{lstlisting}
 
-Aunque aquí lo ponemos en consola, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución.º
+Aunque aquí lo ponemos en linea de comandos, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece poblada en el S3, con los mismos conjuntos y la misma estructura que la generada en el entorno local.
 
 
 \newpage
