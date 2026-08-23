@@ -63,11 +63,11 @@ En este capítulo se recogen los resultados obtenidos con el proyecto, organizad
 \subsection{Replicación del trabajo de referencia}
 \label{sec:Resultados_replica}
 
-%TODO resumir un poco mas todos los hallazgos y hacer algo mas de incapie en los modelos utilizados y las variables.
+% [TODO] resumir un poco mas todos los hallazgos y hacer algo mas de incapie en los modelos utilizados y las variables.
 
 La replica se evaluó comparando, para cada par de estaciones, si ambos trabajos las asignan al mismo grupo o a grupos distintos. Este criterio evita el problema de que las etiquetas de grupo son arbitrarias y no tienen por qué coincidir entre dos ejecuciones. 
 El acuerdo global alcanzó el 86\% de los pares evaluados, con el detalle por aproximación que recoge la Tabla \ref{tab:replica_clusters}.
-Para el caso de esta memoria, el año utilizado, sobretodo en los diagramas, es el 2021, ya que es el año que tiene de base el trabajo original. Pero el resto de analisis se pueden encontrar publicados en github %TODO añadir analisis.
+Para el caso de esta memoria, el año utilizado, sobretodo en los diagramas, es el 2021, ya que es el año que tiene de base el trabajo original. Pero el resto de analisis se pueden encontrar publicados en github % [TODO] añadir analisis.
 
 \begin{table}[htbp]
 	\centering
@@ -101,7 +101,7 @@ La réplica siguió el criterio declarado y añadió la estación de Peñagrande
 \subsection{Relación entre superficie arbórea y temperatura}
 \label{sec:Resultados_arbolado}
 
-La relación inversa entre superficie arbórea y temperatura media por distrito se mantuvo en los siete años analizados, con valores comprendidos entre $-0,26$ y $-0,47$ y una media de $-0,37$ (Tabla \ref{tab:arbolado_anios}). El trabajo original observaba esta relación en un único año y de forma cualitativa, la extensión temporal permite afirmar que no se trata de una particularidad de ese periodo, sino de un patrón sostenido, aun que de intensidad moderada, lo que sugiere factores no controlados, que discutiremos en la Sección \ref{sec:Resultados_limitaciones}.
+La relación inversa entre superficie arbórea y temperatura media por distrito se mantuvo en los siete años analizados, con valores comprendidos entre $-0,26$ y $-0,47$ y una media de $-0,37$ (Tabla \ref{tab:arbolado_anios}). El trabajo original observaba esta relación en un único año y de forma cualitativa, la extensión temporal permite afirmar que no se trata de una particularidad de ese periodo, sino de un patrón sostenido, aunque de intensidad moderada, lo que sugiere factores no controlados, que discutiremos en la Sección \ref{sec:Resultados_limitaciones}.
 
 \begin{table}[htbp]
 	\centering
@@ -217,23 +217,29 @@ El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra además que la primer
 
 % [TODO] Comparar la silueta obtenida en cada plataforma para verificar que los resultados coinciden. comparar los costes de cloud y su tiempo, asi como su facilidad de uso
 
-%  [TODO] Tener en cuenta el esfuerzo relativo de que la primera vez (local) logicamente es mas extensa por ser la primera....
+La Tabla \ref{tab:esfuerzo_plataforma} recoge el esfuerzo medido en horas dedicado a cada etapa y en cada entorno. En este caso, el orden en que se abordaron los entornos, condiciona el resultado, ya que con el conocimiento acumulado de etapas anteriores, las siguientes son mucho mas ágiles. La implementación local fue la primera y llevo la mayor parte del trabajo de comprensión de las fuentes, diseño del proceso en código, y resolución de las incidencias de calidad del dato. De igual manera, AWS fue la primera nube evaluada, y la que menos conocía el autor, por lo que el tiempo acumulado incluye el aprendizaje de la plataforma y el coste en tiempo del primer acercamiento a la nube.
 
 \begin{table}[htbp]
 	\centering
-	\small
-	\begin{tabular}{lcccc}
+	\footnotesize
+	\begin{tabular}{lcccccc}
 		\hline
-		\textbf{Etapa} & \textbf{Local} & \textbf{AWS} & \textbf{GCP} & \textbf{Coste} \\
+		& \multicolumn{2}{c}{\textbf{Esfuerzo (h)}} & \multicolumn{2}{c}{\textbf{Ejecución}} & \multicolumn{2}{c}{\textbf{Coste (\$)}} \\
+		\textbf{Etapa} & Local & AWS & Local & AWS & Local & AWS \\
 		\hline
-		Ingesta y estudio de las fuentes & 15 h & & & 0 \\
-		Normalización y limpieza & 20 h & & & 0 \\
-		Análisis de isla de calor & 35 h & & & 0 \\
+		Configuración & 5 & 10 & 1 & 1 & 0 & \\
+		Ingesta & 10 & & & & 0 & \\
+		Limpieza & 20 & & & & 0 & \\
+		Análisis & 35 & & & & 0 & \\
 		\hline
-		\textbf{Total} & \textbf{70 h} & & & \\
+		\textbf{Total} & \textbf{70 h} & & & & \textbf{0} & \\
 		\hline
 	\end{tabular}
-	\caption{Esfuerzo de desarrollo y coste por etapa del pipeline en la línea base local y en cada plataforma cloud.}
+	\caption{Comparativa de esfuerzo de desarrollo, tiempo de ejecución y coste por etapa y entorno.}
 	\label{tab:esfuerzo_plataforma}
 \end{table}
 
+\subsection{Comparación de costes en las diferentes nubes}
+\label{subsec:Costes_cloud}
+
+% [TODO] Comparar los costes de las diferentes clouds obtenidas, asi como lo local

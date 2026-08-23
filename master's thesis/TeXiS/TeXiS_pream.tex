@@ -590,9 +590,31 @@
 % Para poder  incluir código  fuente resaltado fácilmente.   El tamaño
 % básico de la letra, pequeño.
 \usepackage{listings}
-\lstset{basicstyle=\small}
-\lstset{showstringspaces=false}
-\lstset{tabsize=3}
+\usepackage{xcolor}
+
+\lstset{
+	backgroundcolor=\color{gray!5},
+	basicstyle=\ttfamily\footnotesize,
+	commentstyle=\color{green!50!black}\itshape,
+	keywordstyle=\color{blue}\bfseries,
+	stringstyle=\color{red},
+	identifierstyle=\color{black},
+	breaklines=true,
+	captionpos=b,
+	frame=single,
+	rulecolor=\color{black!30},
+	showspaces=false,                 
+	showstringspaces=false,
+	tabsize=4,
+	xleftmargin=3pt,
+	xrightmargin=3pt
+}
+\renewcommand{\lstlistingname}{Bloque de código}
+\renewcommand{\lstlistlistingname}{Índice de bloques de código}
+\addto\captionsspanish{
+	\renewcommand{\lstlistingname}{Bloque de código}
+	\renewcommand{\lstlistlistingname}{Índice de bloques de código}
+}
 
 % Para poder utilizar el entorno tabularx, que sirve para hacer tablas
 % con  párrafos, sin tener  que indicar  el ancho  de cada  columna de

@@ -22,13 +22,17 @@ Uso:
   python 02_limpieza.py                         # config.LIMPIEZA completa
   python 02_limpieza.py peatones meteo_diario   # un unico registro
 """
+from __future__ import annotations
 
+import os, sys
 import re
-import sys
 import unicodedata
 from pathlib import Path
 import numpy as np
 import pandas as pd
+
+if "--TFM_BASE" in sys.argv:
+    os.environ["TFM_BASE"] = sys.argv[sys.argv.index("--TFM_BASE") + 1]
 import config
 
 
@@ -42,7 +46,7 @@ def _normalizar_columnas(df: pd.DataFrame) -> pd.DataFrame:
                   for c in df.columns]
     return df
 
-def _leer_csv_flexible(ruta: Path) -> pd.DataFrame:
+def _leer_csv_flexible(ruta: str) -> pd.DataFrame:
     """Los ficheros del Ayuntamiento usan ';' y codificaciones variadas""" # TODO cambiar para mas codificaciones en diferentes fuentes
     for enc in ("utf-8", "latin-1"):
         try:
@@ -53,12 +57,16 @@ def _leer_csv_flexible(ruta: Path) -> pd.DataFrame:
             continue
     raise ValueError(f"No se pudo leer {ruta}")
 
-def _sort_csv_list(clave: str) -> list[Path]:
+def _sort_csv_list(clave: str) -> list[str]:
     """Busca los archivos en las carpetas y subcarpetas y devuelve una lista ordenada"""
-    carpeta = config.BRONZE / clave
-    if not carpeta.exists():
+    import fsspec
+    carpeta = f"{config.BRONZE}/{clave}"
+    fs, ruta = fsspec.core.url_to_fs(carpeta)
+    if not fs.exists(ruta):
         return []
-    return sorted(p for p in carpeta.rglob("*.csv") if not p.name.startswith("_"))
+    proto = "s3://" if str(config.BRONZE).startswith("s3://") else ""
+    return sorted(proto + f for f in fs.find(ruta)
+                  if f.endswith(".csv") and not f.split("/")[-1].startswith("_"))
 
 def _parse_fechas(serie: pd.Series) -> pd.Series:
     """El formato de fecha cambia entre ficheros. Se detecta por patron:
@@ -86,13 +94,14 @@ def _convertir_decimales(df: pd.DataFrame) -> pd.DataFrame:
 
 def _guardar(df: pd.DataFrame, nombre: str) -> None:
     """Escribe silver en parquet si hay motor disponible; siempre en csv"""
-    config.SILVER.mkdir(parents=True, exist_ok=True)
-    salida = config.SILVER / nombre
-    df.to_csv(salida.with_suffix(".csv"), index=False)
+    salida = f"{config.SILVER}/{nombre}"
+    if not str(config.SILVER).startswith("s3://"):
+        Path(config.SILVER).mkdir(parents=True, exist_ok=True)
+    df.to_csv(f"{salida}.csv", index=False)
     try:
-        df.to_parquet(salida.with_suffix(".parquet"), index=False)
+        df.to_parquet(f"{salida}.parquet", index=False)
     except ImportError:
-        print("  [aviso] sin parquet, solo csv")  #TODO revisar si se puede en parquet
+        print("  [aviso] sin parquet, solo csv")
 
 
 
@@ -134,13 +143,14 @@ def limpiar_mensual_dv(clave: str, magnitudes: dict[int, str]) -> None:
     y pivota el resultado a series temporales (Estación, Fecha, Magnitud 1, Magnitud 2...)."""
     partes = []
     for ruta in _sort_csv_list(clave):
+        nombre = ruta.split("/")[-1]
         try:
             df = _leer_csv_flexible(ruta)
             if "MES" in [_sin_tildes(c).strip().upper() for c in df.columns]:
                 partes.append(_mensual_a_diario(df))
-                print(f"  [ok  ] {ruta.name}")
+                print(f"  [ok  ] {nombre}")
         except Exception as e:  # noqa: BLE001 - log y seguir
-            print(f"  [fail] {ruta.name}: {e}")
+            print(f"  [fail] {nombre}: {e}")
     if not partes:
         print(f"  [AVISO] '{clave}' sin ficheros mensuales procesables")
         return
@@ -172,17 +182,14 @@ def limpiar_aforos(clave: str, columnas_valor: list[str]) -> None:
     """Unifica archivos de aforos (peatones/bicis), estandariza la columna de conteo,
     tipa las fechas/horas y filtra por el rango de años configurado."""
     partes, col_valor = [], None
-    carpeta = config.BRONZE / clave
-
-    # Ingesta para excels antiguos y csvs
-    ficheros = sorted(list(carpeta.rglob("*.xlsx")) + _sort_csv_list(clave)) \
-        if carpeta.exists() else []
+    # Ingesta para csvs
+    ficheros = _sort_csv_list(clave)
     for ruta in ficheros:
+        nombre = ruta.split("/")[-1]
         try:
-            df = (pd.read_excel(ruta) if ruta.suffix == ".xlsx"
-                  else _leer_csv_flexible(ruta))
+            df = _leer_csv_flexible(ruta)
             df = _normalizar_columnas(df)
-            # el esquema cambio a mitad de serie:  ?? TODO documentar en memoria
+            # el esquema cambio a mitad de serie:
             # columnas renombradas, en ingles, erroes (NAOMERO)... unificadas
             df = df.rename(columns={
                 "DIRECCION": "NOMBRE_VIAL",
@@ -192,7 +199,7 @@ def limpiar_aforos(clave: str, columnas_valor: list[str]) -> None:
             })
             col = next((c for c in columnas_valor if c in df.columns), None)
             if col is None:
-                print(f"  [skip] {ruta.name}: sin columna de conteo esperada")
+                print(f"  [skip] {nombre}: sin columna de conteo esperada")
                 continue
             col_valor = col_valor or col
             df = df.rename(columns={col: col_valor})
@@ -201,9 +208,9 @@ def limpiar_aforos(clave: str, columnas_valor: list[str]) -> None:
             rango = (f"{df['FECHA'].min():%Y-%m-%d} a {df['FECHA'].max():%Y-%m-%d}"
                      if df["FECHA"].notna().any() else "sin fechas validas")
             partes.append(df)
-            print(f"  [ok  ] {ruta.name}: {len(df)} filas ({rango})")
+            print(f"  [ok  ] {nombre}: {len(df)} filas ({rango})")
         except Exception as e:  # noqa: BLE001
-            print(f"  [fail] {ruta.name}: {e}")
+            print(f"  [fail] {nombre}: {e}")
     if not partes:
         print(f"  [AVISO] '{clave}' sin ficheros de aforos que se puedan leer")
         return
@@ -232,19 +239,21 @@ def _quitar_filas_basura(df: pd.DataFrame) -> pd.DataFrame:
     texto = datos.fillna("").astype(str).apply(" ".join, axis=1).str.upper()
     basura = casi_vacias | texto.str.contains("NOTA") | texto.str.contains("TOTALES")
     return df[~basura]
+
 def limpiar_tabla_anual(clave: str, _param) -> None:
     """Extrae el año del nombre del fichero con Regexp y lo añade como columna"""
     partes = []
     for ruta in _sort_csv_list(clave):
+        nombre = ruta.split("/")[-1]
         try:
             df = _normalizar_columnas(_leer_csv_flexible(ruta))
-            m = re.match(r"^(20\d{2})_", ruta.name)
+            m = re.match(r"^(20\d{2})_", nombre)
             df["ANIO"] = int(m.group(1)) if m else pd.NA
             df = _quitar_filas_basura(df)
             partes.append(df)
-            print(f"  [ok  ] {ruta.name}: {len(df)} filas")
+            print(f"  [ok  ] {nombre}: {len(df)} filas")
         except Exception as e:  # noqa: BLE001
-            print(f"  [fail] {ruta.name}: {e}")
+            print(f"  [fail] {nombre}: {e}")
     if not partes:
         print(f"  [AVISO] '{clave}' sin tablas anuales procesables")
         return
@@ -265,15 +274,16 @@ def limpiar_tabla_anual(clave: str, _param) -> None:
 def limpiar_directo(clave: str, _param) -> None:
     """Lee y guarda sin transformaciones extra"""
     for ruta in _sort_csv_list(clave):
+        nombre = ruta.split("/")[-1]
         try:
             df = _normalizar_columnas(_leer_csv_flexible(ruta))
             # las coordenadas de las estaciones vienen con coma decimal
             df = _convertir_decimales(df)
             _guardar(df, clave)
-            print(f"  [ok  ] {ruta.name} -> {clave}: "
+            print(f"  [ok  ] {nombre} -> {clave}: "
                   f"{len(df)} filas, {len(df.columns)} columnas")
         except Exception as e:  # noqa: BLE001
-            print(f"  [fail] {ruta.name}: {e}")
+            print(f"  [fail] {nombre}: {e}")
 
 
 # --- principal --
@@ -285,12 +295,13 @@ TIPOS = {
     "directo": limpiar_directo,
 }
 
+def _claves_desde_argv() -> list[str]:
+    """Argumentos declarados en la configuracion, 
+    porque la nube inyecta sus propios parametros al invocar el proceso"""
+    return [a for a in sys.argv[1:] if a in config.LIMPIEZA]
+
 def main() -> None:
-    claves = sys.argv[1:] or list(config.LIMPIEZA)
-    desconocidas = [c for c in claves if c not in config.LIMPIEZA]
-    if desconocidas:
-        sys.exit(f"Conjuntos sin regla de limpieza: {desconocidas}. "
-                 f"Validos: {list(config.LIMPIEZA)}")
+    claves = _claves_desde_argv() or list(config.LIMPIEZA)
     for clave in claves:
         tipo, param = config.LIMPIEZA[clave]
         print(f"== {clave} ({tipo}) ==")

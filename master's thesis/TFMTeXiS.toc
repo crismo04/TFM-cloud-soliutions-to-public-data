@@ -23,54 +23,69 @@
 \contentsline {subsection}{\numberline {2.2.2}Otras herramientas de interes}{23}{subsection.39}%
 \contentsline {subsection}{\numberline {2.2.3}Trabajos anteriores y relacionados}{26}{subsection.40}%
 \contentsline {section}{\numberline {2.3}Inteligencia Artificial}{28}{section.41}%
-\contentsline {subsection}{\numberline {2.3.1}Modelos de ML}{28}{subsection.42}%
+\contentsline {subsection}{\numberline {2.3.1}Modelos de ML}{29}{subsection.42}%
 \contentsline {subsection}{\numberline {2.3.2}ML en la nube}{30}{subsection.43}%
 \contentsline {subsubsection}{\numberline {2.3.2.1}Plataformas MLOps en la Nube}{30}{subsubsection.44}%
 \contentsline {subsubsection}{\numberline {2.3.2.2}Otras herramientas}{31}{subsubsection.45}%
-\contentsline {subsubsection}{\numberline {2.3.2.3}AutoML}{32}{subsubsection.47}%
-\contentsline {subsection}{\numberline {2.3.3}IA, normativa y ética}{33}{subsection.48}%
-\contentsline {subsection}{\numberline {2.3.4}Trabajos anteriores y relacionados}{34}{subsection.49}%
+\contentsline {subsubsection}{\numberline {2.3.2.3}AutoML}{33}{subsubsection.47}%
+\contentsline {subsection}{\numberline {2.3.3}IA, normativa y ética}{34}{subsection.48}%
+\contentsline {subsection}{\numberline {2.3.4}IA, normativa y ética}{34}{subsection.49}%
+\contentsline {subsection}{\numberline {2.3.5}Trabajos anteriores y relacionados}{34}{subsection.50}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {3}Materiales y métodos}{37}{chapter.50}%
-\contentsline {section}{\numberline {3.1}Materiales}{37}{section.51}%
-\contentsline {subsection}{\numberline {3.1.1}Conjuntos de Datos}{37}{subsection.52}%
-\contentsline {subsection}{\numberline {3.1.2}Nubes}{39}{subsection.54}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Amazon Web Services}{39}{subsubsection.55}%
-\contentsline {subsection}{\numberline {3.1.3}Materiales para el desarrollo}{39}{subsection.56}%
-\contentsline {subsubsection}{\numberline {3.1.3.1}Lenguajes}{39}{subsubsection.57}%
-\contentsline {subsubsection}{\numberline {3.1.3.2}Herramientas de desarrollo}{40}{subsubsection.58}%
-\contentsline {section}{\numberline {3.2}Métodos}{41}{section.59}%
-\contentsline {subsection}{\numberline {3.2.1}Desarrollo de la solución}{42}{subsection.60}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Ingesta automatizada de datos}{42}{subsubsection.61}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Normalización y limpieza}{43}{subsubsection.62}%
-\contentsline {subsubsection}{\numberline {3.2.1.3}Análisis y modelado}{43}{subsubsection.63}%
-\contentsline {subsection}{\numberline {3.2.2}Métodos utilizados: Datos}{45}{subsection.69}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Aplicación de la gobernanza de datos como método}{45}{subsubsection.70}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Principios éticos}{47}{subsubsection.71}%
-\contentsline {subsection}{\numberline {3.2.3}Métodos utilizados: Aprendizaje automático}{48}{subsection.72}%
-\contentsline {subsection}{\numberline {3.2.4}Métodos utilizados: Cloud}{49}{subsection.73}%
-\contentsline {chapter}{\numberline {4}Resultados}{51}{chapter.74}%
-\contentsline {section}{\numberline {4.1}Hallazgos sobre la calidad de los datos publicados}{51}{section.75}%
-\contentsline {subsection}{\numberline {4.1.1}Evolución no documentada de los esquemas}{51}{subsection.76}%
-\contentsline {subsection}{\numberline {4.1.2}Continuidad de la publicación y cobertura de la red}{51}{subsection.78}%
-\contentsline {section}{\numberline {4.2}Resultados del análisis de aprendizaje automático: isla de calor}{51}{section.80}%
-\contentsline {subsection}{\numberline {4.2.1}Replicación del trabajo de referencia}{51}{subsection.81}%
-\contentsline {subsection}{\numberline {4.2.2}Relación entre superficie arbórea y temperatura}{53}{subsection.83}%
-\contentsline {subsection}{\numberline {4.2.3}Análisis de sensibilidad}{54}{subsection.86}%
-\contentsline {subsection}{\numberline {4.2.4}Calidad de los agrupamientos}{55}{subsection.88}%
-\contentsline {subsection}{\numberline {4.2.5}Validación del número de grupos}{56}{subsection.90}%
-\contentsline {subsection}{\numberline {4.2.6}Robustez de los agrupamientos}{56}{subsection.92}%
-\contentsline {subsection}{\numberline {4.2.7}Limitaciones e interpretación}{57}{subsection.94}%
-\contentsline {section}{\numberline {4.3}Comparación entre la ejecución local y las plataformas cloud}{57}{section.95}%
-\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{59}{chapter.96}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{61}{chapter.97}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{63}{chapter.98}%
+\contentsline {chapter}{\numberline {3}Materiales y métodos}{37}{chapter.51}%
+\contentsline {section}{\numberline {3.1}Materiales}{37}{section.52}%
+\contentsline {subsection}{\numberline {3.1.1}Conjuntos de Datos}{37}{subsection.53}%
+\contentsline {subsection}{\numberline {3.1.2}Nubes}{39}{subsection.55}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Amazon Web Services}{39}{subsubsection.56}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}Google Cloud Platform}{39}{subsubsection.57}%
+\contentsline {subsection}{\numberline {3.1.3}Materiales para el desarrollo}{39}{subsection.58}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Lenguajes}{39}{subsubsection.59}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}Herramientas de desarrollo}{40}{subsubsection.60}%
+\contentsline {section}{\numberline {3.2}Métodos}{42}{section.61}%
+\contentsline {subsection}{\numberline {3.2.1}Desarrollo de la solución}{43}{subsection.62}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Ingesta automatizada de datos}{43}{subsubsection.64}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Normalización y limpieza}{44}{subsubsection.65}%
+\contentsline {subsubsection}{\numberline {3.2.1.3}Análisis y modelado}{44}{subsubsection.66}%
+\contentsline {subsection}{\numberline {3.2.2}Métodos utilizados: Datos}{46}{subsection.72}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Aplicación de la gobernanza de datos como método}{46}{subsubsection.73}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Principios éticos}{49}{subsubsection.74}%
+\contentsline {subsection}{\numberline {3.2.3}Métodos utilizados: Aprendizaje automático}{49}{subsection.75}%
+\contentsline {subsection}{\numberline {3.2.4}Métodos utilizados: Cloud}{50}{subsection.76}%
+\contentsline {subsubsection}{\numberline {3.2.4.1}Métodos utilizados en Amazon Web Services (AWS)}{50}{subsubsection.77}%
+\contentsline {subsubsection}{\numberline {3.2.4.2}Métodos utilizados en Google Cloud Platform (GCP)}{52}{subsubsection.81}%
+\contentsline {chapter}{\numberline {4}Resultados}{53}{chapter.82}%
+\contentsline {section}{\numberline {4.1}Hallazgos sobre la calidad de los datos publicados}{53}{section.83}%
+\contentsline {subsection}{\numberline {4.1.1}Evolución no documentada de los esquemas}{53}{subsection.84}%
+\contentsline {subsection}{\numberline {4.1.2}Continuidad de la publicación y cobertura de la red}{53}{subsection.86}%
+\contentsline {section}{\numberline {4.2}Resultados del análisis de aprendizaje automático: isla de calor}{53}{section.88}%
+\contentsline {subsection}{\numberline {4.2.1}Replicación del trabajo de referencia}{53}{subsection.89}%
+\contentsline {subsection}{\numberline {4.2.2}Relación entre superficie arbórea y temperatura}{55}{subsection.91}%
+\contentsline {subsection}{\numberline {4.2.3}Análisis de sensibilidad}{56}{subsection.94}%
+\contentsline {subsection}{\numberline {4.2.4}Evaluación de los agrupamientos}{57}{subsection.96}%
+\contentsline {subsection}{\numberline {4.2.5}Limitaciones e interpretación}{59}{subsection.100}%
+\contentsline {section}{\numberline {4.3}Comparación entre la ejecución local y las plataformas cloud}{59}{section.101}%
+\contentsline {subsection}{\numberline {4.3.1}Comparación de costes en las diferentes nubes}{59}{subsection.103}%
+\contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{61}{chapter.104}%
+\contentsline {section}{\numberline {5.1}Ingesta y descarga de datos}{62}{section.105}%
+\contentsline {section}{\numberline {5.2}Despliegue y automatización de la arquitectura}{63}{section.113}%
+\contentsline {subsection}{\numberline {5.2.1}Despliegue en Local}{63}{subsection.114}%
+\contentsline {subsection}{\numberline {5.2.2}Despliegue en Amazon Web Services (AWS)}{63}{subsection.120}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}Configuración del entorno y autenticación}{64}{subsubsection.122}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}Infraestructura de Almacenamiento en Amazon S3}{65}{subsubsection.137}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}Orquestación y Procesamiento ETL con AWS Glue}{67}{subsubsection.169}%
+\contentsline {subsection}{\numberline {5.2.3}Despliegue en Google Cloud Platform (GCP)}{70}{subsection.214}%
+\contentsline {section}{\numberline {5.3}Uso de modelos y resultados}{71}{section.215}%
+\contentsline {section}{\numberline {5.4}Comparativa de entornos y nubes públicas}{72}{section.216}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{73}{chapter.217}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{75}{chapter.218}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Apendice A: Definiciones y acrónimos}{65}{appendix.99}%
-\contentsline {section}{\numberline {A.1}Definiciones}{65}{section.100}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{66}{subsection.101}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{71}{subsection.112}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{76}{subsection.118}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{83}{section.143}%
+\contentsline {chapter}{\numberline {A}Apéndice A: Definiciones y acrónimos}{77}{appendix.219}%
+\contentsline {section}{\numberline {A.1}Definiciones}{77}{section.220}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{78}{subsection.221}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{83}{subsection.232}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{88}{subsection.238}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{95}{section.263}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'{\i }a}{87}{appendix*.144}%
+\contentsline {chapter}{\numberline {B}Apéndice B: Uso ético de herramientas de IA}{99}{appendix.264}%
+\contentsline {section}{\numberline {B.1}Análisis de la gestión de datos mediante LLMs}{101}{section.265}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{103}{appendix*.266}%

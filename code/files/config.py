@@ -9,13 +9,14 @@ Los conjuntos se descargan a partir de las PÁGINAS DE CATÁLOGO del portal de d
 """
 
 from pathlib import Path
+import os
 
 # direcciones de una arquitectura de medallon estandar
-BASE_DIR = Path(__file__).resolve().parent
-BRONZE = BASE_DIR / "data" / "bronze"   # crudo, tal cual se descarga
-SILVER = BASE_DIR / "data" / "silver"   # limpio, formato largo diario
-GOLD = BASE_DIR / "data" / "gold"       # agregados listos para modelos
-RESULTADOS = BASE_DIR / "resultados"
+BASE = os.environ.get("TFM_BASE", str(Path(__file__).resolve().parent))
+BRONZE = f"{BASE}/data/bronze"      # crudo, tal cual se descarga
+SILVER = f"{BASE}/data/silver"      # limpio, formato largo diario
+GOLD = f"{BASE}/data/gold"          # agregados listos para modelos
+RESULTADOS = f"{BASE}/resultados"
 
 # --- Páginas de catálogo (verificadas Julio-2026) ------------------------- #TODO añadir mas si se queda corto
 CATALOGOS = {

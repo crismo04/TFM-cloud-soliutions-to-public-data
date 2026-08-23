@@ -2,6 +2,30 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [Cloud] - 2026-08-23
+### Add
+* Modificacion de la memoria con AI-Act y correcciones.
+* Nueva parte del manual de usuario para la creacion y uso de Glue en AWS
+### Change
+
+
+## [Cloud] - 2026-08-19
+### Add
+* Modificacion de la memoria de tabla de tiempos
+### Change
+* Adaptacion del python de limpieza para poder ejecutar en glue
+* Otros cambios menores
+
+## [Thesis] - 2026-08-16
+### Add
+* Añadido la parte del capítulo 5, que habla sobre cómo utilizar la solución, para explicar cómo se ha creado la cuenta de Amazon web Services. 
+* Toda la parte del capitulo 5 que indica como utilizar la solucion en AWS hasta la descarga
+* Añadido apéndice B para comentar cuál han sido los usos de inteligencia artificial.
+### Change
+* Pequeñas mejoras en la memoria
+* Mejoras para poder ver el codigo en la memoria
+* Otros cambios relacionados con AWS en el capitulo 3 y 4 
+
 ## [Data] - 2026-07-29
 ### Change
 * Actualizacion del PDF y añadida la carpeta de resultados por trazabilidad y seguir el compromiso de codigo abierto y datos (datos no publicados por exceder los 100MB)
