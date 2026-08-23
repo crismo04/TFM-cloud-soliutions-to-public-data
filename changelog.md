@@ -2,6 +2,13 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [Cloud] - 2026-08-23
+### Add
+* Modificacion de la memoria con AI-Act y correcciones.
+* Nueva parte del manual de usuario para la creacion y uso de Glue en AWS
+### Change
+
+
 ## [Cloud] - 2026-08-19
 ### Add
 * Modificacion de la memoria de tabla de tiempos

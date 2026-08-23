@@ -157,9 +157,29 @@ El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Secc
 
 \subsection{Desarrollo de la solución} \label{sec:Metodos_desarrollo}
 
-Para poder ingestar y procesar estos datos de forma automática, se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero ``config.py''. El pipeline se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
+Para poder ingestar y procesar estos datos de forma automática, se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero ``config.py''. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
 
-Las fases y sus ficheros correspondientes en local y el git del proyecto han sido:
+Las fases y sus ficheros correspondientes en local y el GIT del proyecto han sido:
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Fichero} & \textbf{Etapa} & \textbf{Salida} \\
+		\hline
+		\texttt{config.py} & Parametrización & --- \\
+		\texttt{01\_descarga.py} & Ingesta automatizada de datos & Capa bronce \\
+		\texttt{02\_limpieza.py} & Normalización y limpieza & Capa plata \\
+		\texttt{03\_analisis\_isla\_calor.py} & Análisis y modelado & Resultados \\
+		\hline
+	\end{tabular}
+	\caption{Correspondencia entre los procesos del \textit{pipeline} y las etapas de la arquitectura de medalla.}
+	\label{tab:ficheros_pipeline}
+\end{table}
+
+Estas etapas se describen en mas detalle a continuación.
+
 
 \subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
 
@@ -195,11 +215,11 @@ Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del
 \end{enumerate}
 
 Sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}, conservando el número de grupos y la semilla que se escogió en el trabajo original, de modo que las diferencias observadas se pudieran atribuir a los datos. 
-Para fijar el número de grupos se utilizó el método del codo, al igual que en estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado. Se localizó el punto a partir del cual deja de descender de forma apreciable. 
-Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comentara más adelante. 
+Para fijar el número de grupos se utilizó el método del codo, al igual que en el estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado. Se localizó el punto a partir del cual deja de descender de forma apreciable. 
+Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comentará más adelante. 
 También se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
 
-Para facilitar la prueba, se creo un resumen automático entre años que tabula las métricas de las ejecuciones y señala valores que se desvían.
+Para facilitar la prueba, se creó un resumen automático entre años que tabula las métricas de las ejecuciones y señala valores que se desvían.
 
 Durante la replica, se ha tenido que resolver ciertas discrepancias entre la ejecución y la descripción del trabajo original:
 La primera, es que su tercera aproximación agrupa las estaciones por temperatura y superficie arbórea del distrito, y no solo por temperatura como definen. Ambas variables residen en conjuntos distintos y con granularidad diferente (estación-día frente a distrito-año), hemos resuelto la discrepancia mediante el cruce geoespacial. 
@@ -280,7 +300,7 @@ Esta última capa corresponde a la implementación práctica de la estrategia, l
 
 \subsubsection{Principios éticos}  \label{sec:Metodos_Principios_EU}
 
-Destacar también que en el proyecto, se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa}:
+Destacar también que en el proyecto, se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa, omnibus2026Europa}:
 
 \begin{itemize}
 	\item \textbf{Acción y supervisión humanas:} En este trabajo se supervisó tanto cada etapa del desarrollo, como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
@@ -333,14 +353,14 @@ La especificación técnica paso a paso, la sintaxis completa de los comandos ej
 \begin{enumerate}
 	\item \textbf{Arquitectura de medalla} Organización del almacenamiento en Amazon S3 dividida en las capas. Se aplicó un bloqueo estricto de acceso público, se activó el versionado para asegurar la inmutabilidad y trazabilidad histórica, y se asignaron etiquetas para poder medir el coste (\texttt{proyecto=tfm}).
 
-	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos ($<2$~GB en Silver) no requería computación distribuida. Se optó por una ejecución mediante \textit{AWS Glue Python Shell}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución.
+	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería computación distribuida. Se optó por una ejecución mediante \textit{AWS Glue Python Shell}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución.
 	
 %	\item \textbf{Catalogación automatizada y desacoplamiento analítico SQL:} Aplicación de rastreadores (\textit{Glue Crawlers}) para la extracción automática de metadatos sobre los archivos Parquet, registrando los esquemas en el \textit{Glue Data Catalog}. Esto permitió habilitar métodos de análisis mediante consultas SQL directas en \textit{Amazon Athena} bajo un modelo \textit{Serverless} de pago por volumen escaneado (5,00~USD/TB), sin necesidad de mantener bases de datos relacionales activas de forma continua.
 	
 	\item \textbf{Gobernanza de identidades (RBAC) y control financiero (\textit{FinOps}):} Implementación del principio de menor privilegio y control de costes mediante:
 	\begin{itemize}
 		\item \textbf{Uso de credenciales temporales:} Adopción de \textit{AWS CloudShell} para operar con credenciales efímeras herederas de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en disco local.
-		\item \textbf{Segregación de permisos (RBAC):} Definición de un grupo IAM (\texttt{tfm-despliegue-group}) y usuario para la estructuración de accesos, junto con un rol de servicio específico (\texttt{AWSGlueServiceRole-tfm}) con permisos acotados para la ejecución desatendida de Glue.
+		\item \textbf{Segregación de permisos (RBAC):} Se separaron las identidades de persona y de servicio mediante credenciales efímeras, sin crear usuarios ni claves permanentes. Excepto para la ejecución de Glue, que requirió definir un rol de servicio propio (\texttt{AWSGlueServiceRole-tfm}).
 		\item \textbf{Control presupuestario:} Configuración de un presupuesto automatizado en \textit{AWS Budgets}.
 	\end{itemize}
 \end{enumerate}

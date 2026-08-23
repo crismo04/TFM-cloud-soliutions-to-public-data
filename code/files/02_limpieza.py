@@ -296,23 +296,12 @@ TIPOS = {
 }
 
 def _claves_desde_argv() -> list[str]:
-    """Conjuntos indicados por linea de comandos, ignorando los parametros con formato '--clave valor' que Glue anade al invocar el proceso"""
-    claves, saltar = [], False
-    for arg in sys.argv[1:]:
-        if saltar:
-            saltar = False
-        elif arg.startswith("--"):
-            saltar = True
-        else:
-            claves.append(arg)
-    return claves
+    """Argumentos declarados en la configuracion, 
+    porque la nube inyecta sus propios parametros al invocar el proceso"""
+    return [a for a in sys.argv[1:] if a in config.LIMPIEZA]
 
 def main() -> None:
     claves = _claves_desde_argv() or list(config.LIMPIEZA)
-    desconocidas = [c for c in claves if c not in config.LIMPIEZA]
-    if desconocidas:
-        sys.exit(f"Conjuntos sin regla de limpieza: {desconocidas}. "
-                 f"Validos: {list(config.LIMPIEZA)}")
     for clave in claves:
         tipo, param = config.LIMPIEZA[clave]
         print(f"== {clave} ({tipo}) ==")

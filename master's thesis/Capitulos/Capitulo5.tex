@@ -10,22 +10,48 @@ Para mantener la coherencia con el resto de capítulos, dividiremos el manual en
 	\item \textbf{Uso de modelos y evaluación de resultados:} Guía para la ejecución de los algoritmos y la extracción de conocimiento a partir de los resultados.
 \end{itemize}
 
-De este modo, intentaremos garantizar la transparencia del código y la total trazabilidad del ciclo de vida del dato, desde su ingesta hasta el modelado de Inteligencia Artificial. Al final, también estableceremos una comparativa de que nubes o entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. \newpage
+De este modo, intentaremos garantizar la transparencia del código y la total trazabilidad del ciclo de vida del dato, desde su ingesta hasta el modelado de Inteligencia Artificial. Al final, también estableceremos una comparativa de que nubes o entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}} \newpage
 
 
 \section{Ingesta y descarga de datos} 
 \label{sec:Manual_Ingesta}
 
-% [TODO]: Explicar requisitos previos, config.py y la ejecución del script 01
+El proceso de ingesta requiere Python 3.12 o superior y poder instalar las dependencias de \texttt{requirements.txt} (preferiblemente en un entorno virtual). Todo el comportamiento del \textit{pipeline} se controla desde el fichero, \texttt{config.py}, que centraliza las rutas de las capas de almacenamiento, las direcciones web de los conjuntos en los portales de datos, los años a descargar, los filtros de formato, las reglas de limpieza y los parámetros de los análisis. 
+Incorporar un conjunto de datos nuevo consiste, por tanto, en añadir una entrada en los diccionarios correspondientes, y modificar, si es necesario, la lógica de los procesos.
+
+La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}, si esta no existe, se utiliza el directorio local del proyecto
+
+\begin{lstlisting}[language=bash, caption={Preparación del entorno y ejecución de la ingesta}]
+	python -m venv .venv
+	source .venv/bin/activate          # o en Windows: .venv\Scripts\Activate.ps1
+	pip install -r requirements.txt
+	
+	python 01_descarga.py --dry-run    # comprueba que los datos existen, sin descargar
+	python 01_descarga.py              # descarga completa
+\end{lstlisting}
+
+El proceso es idempotente, es decir, puede relanzarse sin volver a descargar lo ya presente, y registra los metadatos de procedencia de cada fichero en \texttt{\_metadatos.csv}. Debido a la protección anti-automatización de los portales también incorpora pausas entre descargas y reintentos, por lo que una ingesta completa puede durar varios minutos.
 
 \newpage
 
 \section{Despliegue y automatización de la arquitectura}
 \label{sec:Manual_Despliegue}
 
+En esta sección vamos a ver como se despliega el proceso completo en las diferentes plataformas donde se ha probado, para asegurar la mayor reproducibilidad de los resultados.
+
 \subsection{Despliegue en Local} 
 \label{subsec:Manual_Despliegue_Local}
 
+La ejecución local no requiere infraestructura adicional más allá del entorno descrito en la Sección \ref{sec:Manual_Ingesta}. Los procesos se ejecutan secuencialmente y cada uno utiliza la salida del anterior como entrada. Aunque para este trabajo se ha utilizado un entorno local, se podrian usar herramientas como notebooks de google o los entornos de hugginface para ejecutar estos comandos sin la necesidad de un hardware personal.
+
+\begin{lstlisting}[language=bash, caption={Ejecución completa del pipeline en local}]
+	cd code/files
+	python 01_descarga.py              # bronze
+	python 02_limpieza.py              # silver
+	python 03_analisis_isla_calor.py   # resultados
+\end{lstlisting}
+
+Esta línea base local cumple con el propósito de validar los datos de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y de servir de referencia frente a la que comparar las implementaciones en cada proveedor.
 
 
 \subsection{Despliegue en Amazon Web Services (AWS)} \label{subsec:Manual_Despliegue_AWS}
@@ -40,7 +66,7 @@ Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar prueb
 	\item Probar un modelo de lenguaje (LLM) en el servicio Amazon Bedrock.
 \end{itemize}
 
-Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar el proyecto, como hemos visto en \ref*{subsec:Costes_cloud}. Todos los comandos y procedimientos nombrados a partir de aquí, han sido realizados consultando la documentación técnica oficial de AWS \citep{AWS2026Docuementacion}. Debido a la extensión de esta documentación y para facilitar la lectura de la memoria, no se referencia las paginas de documentación individuales para cada comando, pero la misma cuenta con un buscador donde se puede consultar el comando o comandos específicos de esta memoria para poder ver su funcionamiento y las decisiones de diseño que se han tomado aquí. También para facilitar la reproducibilidad, se ha priorizado la utilización de los comandos del CLI, aun que todas ellos tienen su equivalente en la web que también se pueden consultar en la documentación y pueden ser mas fáciles de ejecutar , y sobre todo, mas claros, en ciertos escenarios. Los comandos que vamos a lanzar se pueden escribir directamente en la \textbf{AWS CloudShell} como se muestra en la figura \ref*{figura_AWS_Consola}.
+Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar el proyecto, como hemos visto en \ref*{subsec:Costes_cloud}. Todos los comandos y procedimientos nombrados a partir de aquí, han sido realizados consultando la documentación técnica oficial de AWS \citep{AWS2026Docuementacion}. Debido a la extensión de esta documentación y para facilitar la lectura de la memoria, no se referencia las paginas de documentación individuales para cada comando, pero la misma cuenta con un buscador donde se puede consultar el comando o comandos específicos de esta memoria para poder ver su funcionamiento y las decisiones de diseño que se han tomado aquí. También para facilitar la reproducibilidad, se ha priorizado la utilización de los comandos del CLI, aunque todas ellos tienen su equivalente en la web que también se pueden consultar en la documentación y pueden ser mas fáciles de ejecutar , y sobre todo, mas claros, en ciertos escenarios. Los comandos que vamos a lanzar se pueden escribir directamente en la \textbf{AWS CloudShell} como se muestra en la figura \ref*{figura_AWS_Consola}.
 
 	
 \begin{figure}[h]
@@ -54,58 +80,36 @@ Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar
 
 \subsubsection{Configuración del entorno y autenticación}
 
-Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario con el que nos hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, o para ejecutar los comandos desde local. \textbf{Los tres bloques de código siguientes no son necesarios si se va a ejecutar desde AWS}, pero en el proyecto se realizo siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), creando un grupo de IAM en el que se centralizaron los permisos necesarios para el proyecto. Se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios, pero de todas formas se realizo para futuras extensiones del proyecto o por si era necesario integrar usuarios, siguiendo las mejores practicas. Finalmente, se creó el usuario \texttt{tfm-user} y se integró como miembro del grupo antes de emitir las credenciales. Los comandos han sido los siguientes:
+Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario con el que nos hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizo siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios,  se realizo para futuras extensiones del proyecto y para la utilizacion de herramientas y roles de servicio. 
 
-\begin{lstlisting}[language=bash, caption={Despliegue de identidades basado en grupos de IAM (RBAC)}]
-	# Creacion del grupo e integracion de politicas de servicio
-	aws iam create-group --group-name tfm-despliegue-group
-	aws iam attach-group-policy --group-name tfm-despliegue-group --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
-	aws iam attach-group-policy --group-name tfm-despliegue-group --policy-arn arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess
-	aws iam attach-group-policy --group-name tfm-despliegue-group --policy-arn arn:aws:iam::aws:policy/AmazonAthenaFullAccess
-	
-	# Creacion de usuario, asignacion al grupo y emision de credenciales
-	aws iam create-user --user-name tfm-user
-	aws iam add-user-to-group --user-name tfm-user --group-name tfm-despliegue-group
-	aws iam create-access-key --user-name tfm-user
-\end{lstlisting}
-
-Una vez creado el grupo y el usuario, procedemos a la creación de un perfil aislado con las credenciales que nos ha devuelto el comando anterior: ``AccessKeyId'' y ``SecretAccessKey'', y la región ``eu-west-1'' (ya que es la que mas funcionalidades tiene dentro de Europa):
-
-\begin{lstlisting}[language=bash, caption={Configuración de las variables de entorno y perfil en AWS CLI}]
-	aws configure --profile tfm
-	# AWS Access Key ID: AKIXXXXXXXXXXXXXXXXX
-	# AWS Secret Access Key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	# Default region name: eu-west-1
-	# Default output format: json
-\end{lstlisting}
-
-Podemos verificar que la CLI está correctamente configurada con estos comandos, que deberían devolver el ID de la cuenta de AWS (que vamos a guardar), el ARN del usuario, etc:
-
-\begin{lstlisting}[language=bash, caption={Verificación de identidad, y guardado de cuenta}]
-	aws configure list --profile tfm
-	aws sts get-caller-identity --profile tfm
-	CUENTA=$(aws sts get-caller-identity --query Account --output text --profile tfm)
-	
-	# Si no se ha creado la cuenta, crear la cuenta sin perfil
-	CUENTA=$(aws sts get-caller-identity --query Account --output text)
-\end{lstlisting}
-
-Se haya creado la cuenta de servicio del paso anterior o no, al trabajar con \textbf{AWS CloudShell}, en la propia consola WEB, se selecciona la región \texttt{eu-west-1} (Irlanda) y a continuación, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
+Lo primero para trabajar con la nube, es seleccionar la region que mas convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
 
 \begin{lstlisting}[language=bash, caption={Obtención del código fuente del proyecto}]
-	git clone --depth 1 https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	cd ~
+	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
 	cd TFM-cloud-soliutions-to-public-data/code/files
 	pip install -r requirements.txt --quiet
 \end{lstlisting}
 
-\subsubsection{Infraestructura de Almacenamiento en Amazon S3}
+También conviene tener creadas las variables de entorno que vamos a utilizar en el proyecto. Ademas, al trabajar con la terminal, se  conserva el directorio personal entre sesiones, pero no las variables de entorno definida. Para no tener que volver a crearlas cada sesión, se pueden almacenar en un fichero que se carga al comenzar cada sesión:
 
-El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local, y de otras nubes: (\texttt{data/bronze/}, \texttt{data/silver/}, \texttt{data/gold/}, \texttt{scripts/} y \texttt{resultados/}). Permitiendo así que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también el los siguientes comandos bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
-
-\begin{lstlisting}[language=bash, caption={Creación y configuración de seguridad del contenedor en S3}]
+\begin{lstlisting}[language=bash, caption={Persistencia de las variables del proyecto}]
+	cat > ~/tfm-env.sh << 'EOF'
 	export BUCKET="tfm-ucm-datos-publicos"
 	export REGION="eu-west-1"
+	export CUENTA=$(aws sts get-caller-identity --query Account --output text)
+	export TFM_BASE="s3://$BUCKET"
+	EOF
 	
+	source ~/tfm-env.sh
+\end{lstlisting}
+
+
+\subsubsection{Infraestructura de Almacenamiento en Amazon S3}
+
+El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local, y de otras nubes: (\texttt{data/bronze/}, \texttt{data/silver/}, \texttt{data/gold/}, \texttt{scripts/} y \texttt{resultados/}). Permitiendo así que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también mediante los siguientes comandos bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
+
+\begin{lstlisting}[language=bash, caption={Creación y configuración de seguridad del contenedor en S3}]
 	# Creacion del bucket
 	aws s3api create-bucket --bucket "$BUCKET" --region "$REGION" \
 	--create-bucket-configuration LocationConstraint="$REGION"
@@ -130,7 +134,6 @@ Una vez creado el contenedor, se puede ver en el apartado de S3 instantáneament
 	aws s3 cp . "s3://$BUCKET/scripts/" --recursive --exclude "*" --include "*.py"
 	
 	# Ingesta escribiendo directamente en la capa bronze del bucket
-	export TFM_BASE="s3://$BUCKET"
 	python 01_descarga.py --destino "s3://$BUCKET/data/bronze/"
 	
 	# Verificacion del contenido cargado
@@ -138,12 +141,86 @@ Una vez creado el contenedor, se puede ver en el apartado de S3 instantáneament
 	
 \end{lstlisting}
 
+En caso de querer descargar otros datos públicos, hay dos opciones, se podría descargar directamente con un comando de descarga como este:
+\begin{lstlisting}[language=bash, caption={Ingesta manual directa de un nuevo conjunto de datos a S3}]
+	
+	# SOLO PARA DESCARGAR NUEVOS DATOS! CAMBIANDO LA URL!
+	
+	wget -qO- "$URL_DATOS" | aws s3 cp - "s3://$BUCKET/data/bronze/nombre_archivo.csv"
+\end{lstlisting}
+
+También, como opción mas elegante, se podría integrar en el proceso y modificar el repositorio descargable o el archivo, directamente en la consola de AWS o en local, contribuyendo así en el desarrollo de este proyecto.
+
+
 
 \subsubsection{Orquestación y Procesamiento ETL con AWS Glue}
 
-Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuídos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto tienen un tamaño inferior a 2 GB en la capa ``Silver'', el uso de Spark implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de a 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. %[TODO] poner en trabajo futuro probar datos mas grandes con Spark
 
-%[TODO] seguir por aqui.... Datos descargados
+Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuídos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272 MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
+
+A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es mas fácil de automatizar, a parte de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capitulo:
+
+\begin{lstlisting}[language=bash, caption={Creación del rol de servicio de Glue}]
+	# Politica de confianza: solo el servicio Glue puede asumir este rol
+	cat > trust.json << 'EOF'
+	{"Version":"2012-10-17","Statement":[{"Effect":"Allow", "Principal":{"Service":"glue.amazonaws.com"},"Action":"sts:AssumeRole"}]}
+	EOF
+	
+	aws iam create-role --role-name AWSGlueServiceRole-tfm \
+	--assume-role-policy-document file://trust.json \
+	--tags Key=proyecto,Value=tfm
+	
+	aws iam attach-role-policy --role-name AWSGlueServiceRole-tfm \
+	--policy-arn arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole
+	
+	aws iam attach-role-policy --role-name AWSGlueServiceRole-tfm \
+	--policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+\end{lstlisting}
+
+Para utilizar \textit{Python Shell}, necesitamos también empaquetar los ficheros que se importan dentro de los ejecutables, en este caso, necesitamos comprimir el archivo de configuración:
+
+\begin{lstlisting}[language=bash, caption={Actualización y empaquetado de los procesos}]
+	cd ~/TFM-cloud-soliutions-to-public-data/code/files
+	zip -q config.zip config.py
+	aws s3 cp config.zip "s3://$BUCKET/scripts/"
+	aws s3 cp . "s3://$BUCKET/scripts/" --recursive --exclude "*" --include "*.py"
+\end{lstlisting}
+
+Con el rol y los procesos disponibles solo falta crear la función, para esto, fijaremos un tiempo máximo de ejecución, una capacidad máxima y desactivaremos los reintentos automáticos como medida de control de costes. También añadiremos etiquetas para poder desglosar el gasto:
+
+\begin{lstlisting}[language=bash, caption={Creación del trabajo de limpieza (02) en AWS Glue}]
+	aws glue create-job --name tfm-02-limpieza \
+	--role AWSGlueServiceRole-tfm \
+	--max-capacity 0.0625 \
+	--timeout 15 \
+	--max-retries 0 \
+	--command "{\"Name\":\"pythonshell\",\"PythonVersion\":\"3.9\",\
+		\"ScriptLocation\":\"s3://$BUCKET/scripts/02_limpieza.py\"}" \
+	--default-arguments "{\"--extra-py-files\":\"s3://$BUCKET/scripts/config.zip\",\
+		\"--additional-python-modules\":\"s3fs\",\
+		\"--TFM_BASE\":\"s3://$BUCKET\"}" \
+	--tags proyecto=tfm,fase=limpieza
+\end{lstlisting}
+
+Esto de nuevo, es sencillo por tener los .py configurados, pero para añadir mas datos solo seria necesario incluir su entrada en \texttt{config.py}, actualizar el repositorio con las especificidades de estos, y volver a sincronizar los procesos con el almacenamiento mediante el ciclo descrito en este trabajo. 
+Con esto ya podemos lanzar la ejecución y ver el resultado:
+
+\begin{lstlisting}[language=bash, caption={Ejecución, seguimiento y verificación del resultado}]
+	RUN=$(aws glue start-job-run --job-name tfm-02-limpieza \
+	--query JobRunId --output text)
+	
+	aws glue get-job-run --job-name tfm-02-limpieza --run-id "$RUN" \
+	--query "JobRun.[JobRunState,ExecutionTime]" --output text
+	
+	# Registro detallado en caso de error
+	aws logs tail /aws-glue/python-jobs/output --since 10m
+	
+	# La capa silver debe aparecer en el bucket al finalizar
+	aws s3 ls "s3://$BUCKET/data/silver/" --recursive --summarize
+\end{lstlisting}
+
+Aunque aquí lo ponemos en consola, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución.º
+
 
 \newpage
 \subsection{Despliegue en Google Cloud Platform (GCP)} 
