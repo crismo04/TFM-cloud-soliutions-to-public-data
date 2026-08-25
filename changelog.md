@@ -2,6 +2,16 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+
+## [Cloud] - 2026-08-25
+### Add
+* Nueva parte del manual de usuario para la creacion y uso de SageMaker
+* Añadidas las fotos para acompañar las explicaciones del manual de usuario
+### Fix
+* Correccion del proceso 3 para su ejecucion en sagemaker.
+* Correccion de diversas herratas en la memoria y cambios menores
+
+
 ## [Cloud] - 2026-08-23
 ### Add
 * Modificacion de la memoria con AI-Act y correcciones.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  23 AUG 2026 23:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  26 AUG 2026 00:02
 entering extended mode
 **./TFMTeXiS.tex
 (TFMTeXiS.tex
@@ -746,7 +746,7 @@ Couldn't patch \ttl@straight@ii
 \evensidemarginOriginal=\skip85
 \oddsidemarginOriginal=\skip86
 \longTitulo=\skip87
-<Imagenes/Vectorial/escudoUCM.pdf, id=295, 597.23125pt x 844.15375pt>
+<Imagenes/Vectorial/escudoUCM.pdf, id=291, 597.23125pt x 844.15375pt>
 File: Imagenes/Vectorial/escudoUCM.pdf Graphic file (type pdf)
 <use Imagenes/Vectorial/escudoUCM.pdf>
 Package pdftex.def Info: Imagenes/Vectorial/escudoUCM.pdf  used on input line 1
@@ -875,8 +875,8 @@ Overfull \hbox (0.3105pt too wide) in paragraph at lines 15--15
 rd so-bre tem- 
  []
 
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
 )
 \tf@lof=\write7
 \openout7 = `TFMTeXiS.lof'.
@@ -1229,42 +1229,45 @@ LaTeX Info: Redefining \% on input line 207.
 LaTeX Info: Redefining \. on input line 227.
 LaTeX Info: Redefining \% on input line 227.
  [45]
-LaTeX Info: Redefining \. on input line 257.
-LaTeX Info: Redefining \% on input line 257.
+LaTeX Info: Redefining \. on input line 246.
+LaTeX Info: Redefining \% on input line 246.
  [46]
-LaTeX Info: Redefining \. on input line 281.
-LaTeX Info: Redefining \% on input line 281.
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
  [47]
+LaTeX Info: Redefining \. on input line 294.
+LaTeX Info: Redefining \% on input line 294.
+ [48]
 
-Package natbib Warning: Citation `omnibus2026Europa' on page 48 undefined on in
-put line 302.
+Package natbib Warning: Citation `omnibus2026Europa' on page 49 undefined on in
+put line 306.
 
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
-[48]
-LaTeX Info: Redefining \. on input line 328.
-LaTeX Info: Redefining \% on input line 328.
- [49]
-LaTeX Info: Redefining \. on input line 351.
-LaTeX Info: Redefining \% on input line 351.
+LaTeX Info: Redefining \. on input line 316.
+LaTeX Info: Redefining \% on input line 316.
+[49]
+LaTeX Info: Redefining \. on input line 325.
+LaTeX Info: Redefining \% on input line 325.
  [50]
-Overfull \hbox (0.60657pt too wide) in paragraph at lines 353--354
-[]\T1/cmr/bx/n/10.95 Arquitectura de me-da-lla \T1/cmr/m/n/10.95 Or-ga-ni-za-ci
-ón del al-ma-ce-na-mien-to en Ama-
- []
+LaTeX Info: Redefining \. on input line 346.
+LaTeX Info: Redefining \% on input line 346.
+ [51]
 
+Package natbib Warning: Citation `AWSWellArchitected2026' on page 52 undefined 
+on input line 356.
 
-Overfull \hbox (2.06851pt too wide) in paragraph at lines 361--362
-[]\T1/cmr/bx/n/10.95 Uso de cre-den-cia-les tem-po-ra-les: \T1/cmr/m/n/10.95 Ad
-op-ción de \T1/cmr/m/it/10.95 AWS CloudShell
- []
+LaTeX Info: Redefining \. on input line 366.
+LaTeX Info: Redefining \% on input line 366.
+[52]
+LaTeX Info: Redefining \. on input line 375.
+LaTeX Info: Redefining \% on input line 375.
+ [53]
 
-LaTeX Info: Redefining \. on input line 367.
-LaTeX Info: Redefining \% on input line 367.
-[51]
-LaTeX Info: Redefining \. on input line 371.
-LaTeX Info: Redefining \% on input line 371.
- [52])
+Package natbib Warning: Citation `GCPArchitectureFramework2026' on page 54 unde
+fined on input line 379.
+
+LaTeX Info: Redefining \. on input line 380.
+LaTeX Info: Redefining \% on input line 380.
+[54])
 \openout2 = `Capitulos/Capitulo4.aux'.
 
  (Capitulos/Capitulo4.tex
@@ -1274,13 +1277,13 @@ Overfull \hbox (17.43306pt too wide) in paragraph at lines 22--35
  [][] 
  []
 
-<Imagenes/Bitmap/cobertura_temperatura.png, id=1295, 505.89pt x 578.16pt>
+<Imagenes/Bitmap/cobertura_temperatura.png, id=1306, 505.89pt x 578.16pt>
 File: Imagenes/Bitmap/cobertura_temperatura.png Graphic file (type png)
 <use Imagenes/Bitmap/cobertura_temperatura.png>
 Package pdftex.def Info: Imagenes/Bitmap/cobertura_temperatura.png  used on inp
 ut line 54.
 (pdftex.def)             Requested size: 216.0022pt x 246.86601pt.
-[53
+[55
 
 
 
@@ -1288,11 +1291,11 @@ ut line 54.
 ]
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
- [54 <./Imagenes/Bitmap/cobertura_temperatura.png>]
+ [56 <./Imagenes/Bitmap/cobertura_temperatura.png>]
 LaTeX Info: Redefining \. on input line 131.
 LaTeX Info: Redefining \% on input line 131.
- [55]
-<Imagenes/Bitmap/arbolado_vs_temperatura_2021.png, id=1321, 361.35pt x 289.08pt
+ [57]
+<Imagenes/Bitmap/arbolado_vs_temperatura_2021.png, id=1333, 361.35pt x 289.08pt
 >
 File: Imagenes/Bitmap/arbolado_vs_temperatura_2021.png Graphic file (type png)
 <use Imagenes/Bitmap/arbolado_vs_temperatura_2021.png>
@@ -1301,8 +1304,8 @@ Package pdftex.def Info: Imagenes/Bitmap/arbolado_vs_temperatura_2021.png  used
 (pdftex.def)             Requested size: 270.0pt x 216.00224pt.
 LaTeX Info: Redefining \. on input line 143.
 LaTeX Info: Redefining \% on input line 143.
- [56 <./Imagenes/Bitmap/arbolado_vs_temperatura_2021.png>]
-<Imagenes/Bitmap/evolucion_correlacion.png, id=1328, 505.89pt x 289.08pt>
+ [58 <./Imagenes/Bitmap/arbolado_vs_temperatura_2021.png>]
+<Imagenes/Bitmap/evolucion_correlacion.png, id=1340, 505.89pt x 289.08pt>
 File: Imagenes/Bitmap/evolucion_correlacion.png Graphic file (type png)
 <use Imagenes/Bitmap/evolucion_correlacion.png>
 Package pdftex.def Info: Imagenes/Bitmap/evolucion_correlacion.png  used on inp
@@ -1310,8 +1313,8 @@ ut line 148.
 (pdftex.def)             Requested size: 270.0pt x 154.28795pt.
 LaTeX Info: Redefining \. on input line 161.
 LaTeX Info: Redefining \% on input line 161.
- [57 <./Imagenes/Bitmap/evolucion_correlacion.png>]
-<Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png, id=1338, 433.62pt x 289.08pt
+ [59 <./Imagenes/Bitmap/evolucion_correlacion.png>]
+<Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png, id=1349, 433.62pt x 289.08pt
 >
 File: Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png Graphic file (type png)
 <use Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png>
@@ -1320,8 +1323,8 @@ Package pdftex.def Info: Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png  used
 (pdftex.def)             Requested size: 216.0022pt x 144.0015pt.
 LaTeX Info: Redefining \. on input line 198.
 LaTeX Info: Redefining \% on input line 198.
- [58 <./Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png>]
-<Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png, id=1345, 578.16pt x 2
+ [60 <./Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png>]
+<Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png, id=1356, 578.16pt x 2
 89.08pt>
 File: Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png Graphic file (typ
 e png)
@@ -1334,16 +1337,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 )
 LaTeX Info: Redefining \. on input line 155.
 LaTeX Info: Redefining \% on input line 155.
- [59 <./Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png>]
+ [61 <./Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png>]
 LaTeX Info: Redefining \. on input line 155.
 LaTeX Info: Redefining \% on input line 155.
- [60]
+ [62]
 \openout2 = `Capitulos/Capitulo5.aux'.
 
 
 (Capitulos/Capitulo5.tex
 Cap\'itulo 5.
-[61
+[63
 
 
 
@@ -1363,23 +1366,23 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 26.
 LaTeX Info: Redefining \. on input line 35.
 LaTeX Info: Redefining \% on input line 35.
- [62]
+ [64]
 
-Package natbib Warning: Citation `AWS2026Signup' on page 63 undefined on input 
+Package natbib Warning: Citation `AWS2026Signup' on page 65 undefined on input 
 line 59.
 
 
-Package natbib Warning: Citation `AWS2026Tutorial' on page 63 undefined on inpu
+Package natbib Warning: Citation `AWS2026Tutorial' on page 65 undefined on inpu
 t line 59.
 
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
-[63]
+[65]
 
-Package natbib Warning: Citation `AWS2026Docuementacion' on page 64 undefined o
+Package natbib Warning: Citation `AWS2026Docuementacion' on page 66 undefined o
 n input line 69.
 
-<Imagenes/Bitmap/AWS-abrir-consola.png, id=1388, 1138.85475pt x 493.845pt>
+<Imagenes/Bitmap/AWS-abrir-consola.png, id=1399, 1138.85475pt x 493.845pt>
 File: Imagenes/Bitmap/AWS-abrir-consola.png Graphic file (type png)
 <use Imagenes/Bitmap/AWS-abrir-consola.png>
 Package pdftex.def Info: Imagenes/Bitmap/AWS-abrir-consola.png  used on input l
@@ -1387,7 +1390,7 @@ ine 75.
 (pdftex.def)             Requested size: 341.65906pt x 148.15463pt.
 LaTeX Info: Redefining \. on input line 84.
 LaTeX Info: Redefining \% on input line 84.
-[64 <./Imagenes/Bitmap/AWS-abrir-consola.png>]
+[66 <./Imagenes/Bitmap/AWS-abrir-consola.png>]
 Overfull \hbox (6.48622pt too wide) in paragraph at lines 110--111
 \T1/cmr/m/n/10.95 je-rar-quía de di-rec-to-rios lo-cal, y de otras nu-bes: (\T1
 /cmtt/m/n/10.95 data/bronze/\T1/cmr/m/n/10.95 , \T1/cmtt/m/n/10.95 data/silver/
@@ -1396,34 +1399,75 @@ Overfull \hbox (6.48622pt too wide) in paragraph at lines 110--111
 
 LaTeX Info: Redefining \. on input line 115.
 LaTeX Info: Redefining \% on input line 115.
-[65]
-LaTeX Info: Redefining \. on input line 150.
-LaTeX Info: Redefining \% on input line 150.
- [66]
-LaTeX Info: Redefining \. on input line 180.
-LaTeX Info: Redefining \% on input line 180.
- [67]
-LaTeX Info: Redefining \. on input line 213.
-LaTeX Info: Redefining \% on input line 213.
- [68]
-LaTeX Info: Redefining \. on input line 250.
-LaTeX Info: Redefining \% on input line 250.
- [69]
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
+[67]
+<Imagenes/Bitmap/figura_AWS_S3_es.png, id=1426, 1224.07312pt x 685.8122pt>
+File: Imagenes/Bitmap/figura_AWS_S3_es.png Graphic file (type png)
+<use Imagenes/Bitmap/figura_AWS_S3_es.png>
+Package pdftex.def Info: Imagenes/Bitmap/figura_AWS_S3_es.png  used on input li
+ne 149.
+(pdftex.def)             Requested size: 367.22478pt x 205.74524pt.
+
+Overfull \hbox (7.22478pt too wide) in paragraph at lines 149--152
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
+[68]
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+ [69 <./Imagenes/Bitmap/figura_AWS_S3_es.png>]
+LaTeX Info: Redefining \. on input line 211.
+LaTeX Info: Redefining \% on input line 211.
  [70]
-LaTeX Info: Redefining \. on input line 261.
-LaTeX Info: Redefining \% on input line 261.
- [71])
+LaTeX Info: Redefining \. on input line 244.
+LaTeX Info: Redefining \% on input line 244.
+ [71]
+<Imagenes/Bitmap/figura_AWS_Glue_es.png, id=1529, 1002.74625pt x 523.9575pt>
+File: Imagenes/Bitmap/figura_AWS_Glue_es.png Graphic file (type png)
+<use Imagenes/Bitmap/figura_AWS_Glue_es.png>
+Package pdftex.def Info: Imagenes/Bitmap/figura_AWS_Glue_es.png  used on input 
+line 262.
+(pdftex.def)             Requested size: 401.0914pt x 209.57928pt.
+
+Overfull \hbox (41.0914pt too wide) in paragraph at lines 262--265
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 277.
+LaTeX Info: Redefining \% on input line 277.
+ [72 <./Imagenes/Bitmap/figura_AWS_Glue_es.png>]
+<Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png, id=1550, 1153.911pt x 459.5
+1675pt>
+File: Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png Graphic file (type png)
+
+<use Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png>
+Package pdftex.def Info: Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png  use
+d on input line 285.
+(pdftex.def)             Requested size: 346.17596pt x 137.85608pt.
+LaTeX Info: Redefining \. on input line 300.
+LaTeX Info: Redefining \% on input line 300.
+ [73 <./Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png>]
+LaTeX Info: Redefining \. on input line 327.
+LaTeX Info: Redefining \% on input line 327.
+ [74]
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
+ [75])
 LaTeX Info: Redefining \. on input line 156.
 LaTeX Info: Redefining \% on input line 156.
- [72]
+ [76]
 \openout2 = `Capitulos/ConclusionesTrabajoFuturo.aux'.
 
-
-(Capitulos/ConclusionesTrabajoFuturo.tex
+ (Capitulos/ConclusionesTrabajoFuturo.tex
 Cap\'itulo 6.
-) [73
+) [77
 
 
 
@@ -1431,26 +1475,26 @@ Cap\'itulo 6.
 ]
 \openout2 = `Capitulos/ConclusionsFutureWork.aux'.
 
- (Capitulos/ConclusionsFutureWork.tex [74
+ (Capitulos/ConclusionsFutureWork.tex [78
 
 
 
 
 ]
 Chapter 6.
-) [75]
+) [79]
 LaTeX Info: Redefining \. on input line 165.
 LaTeX Info: Redefining \% on input line 165.
 \openout2 = `Apendices/appendixA.aux'.
 
- (Apendices/appendixA.tex [76
+ (Apendices/appendixA.tex [80
 
 
 
 
 ]
 Ap\'{e}ndice A.
-[77]
+[81]
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
@@ -1462,7 +1506,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
 LaTeX Info: Redefining \. on input line 40.
 LaTeX Info: Redefining \% on input line 40.
-[78]
+[82]
 Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
@@ -1474,7 +1518,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
 LaTeX Info: Redefining \. on input line 51.
 LaTeX Info: Redefining \% on input line 51.
-[79]
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 52--57
 
  []
@@ -1541,15 +1585,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
 LaTeX Info: Redefining \. on input line 134.
 LaTeX Info: Redefining \% on input line 134.
-[80]
+[84]
 LaTeX Info: Redefining \. on input line 134.
 LaTeX Info: Redefining \% on input line 134.
- [81]
+ [85]
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-<Imagenes/Bitmap/data_gobernance.png, id=1620, 1388.18625pt x 737.00343pt>
+<Imagenes/Bitmap/data_gobernance.png, id=1665, 1388.18625pt x 737.00343pt>
 File: Imagenes/Bitmap/data_gobernance.png Graphic file (type png)
 <use Imagenes/Bitmap/data_gobernance.png>
 Package pdftex.def Info: Imagenes/Bitmap/data_gobernance.png  used on input lin
@@ -1565,10 +1609,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 149.
 LaTeX Info: Redefining \% on input line 149.
-[82]
+[86]
 LaTeX Info: Redefining \. on input line 157.
 LaTeX Info: Redefining \% on input line 157.
- [83 <./Imagenes/Bitmap/data_gobernance.png>]
+ [87 <./Imagenes/Bitmap/data_gobernance.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 166--166
 []|\T1/cmr/m/n/10.95 Nube dis-
  []
@@ -1640,8 +1684,8 @@ Overfull \hbox (37.59998pt too wide) in paragraph at lines 163--173
 
 LaTeX Info: Redefining \. on input line 177.
 LaTeX Info: Redefining \% on input line 177.
-[84]
-<Imagenes/Bitmap/distintos_tipos_clouds.png, id=1672, 886.81313pt x 541.27219pt
+[88]
+<Imagenes/Bitmap/distintos_tipos_clouds.png, id=1718, 886.81313pt x 541.27219pt
 >
 File: Imagenes/Bitmap/distintos_tipos_clouds.png Graphic file (type png)
 <use Imagenes/Bitmap/distintos_tipos_clouds.png>
@@ -1658,20 +1702,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 208.
 LaTeX Info: Redefining \% on input line 208.
-[85]
+[89]
 LaTeX Info: Redefining \. on input line 222.
 LaTeX Info: Redefining \% on input line 222.
- [86 <./Imagenes/Bitmap/distintos_tipos_clouds.png>]
+ [90 <./Imagenes/Bitmap/distintos_tipos_clouds.png>]
 LaTeX Info: Redefining \. on input line 239.
 LaTeX Info: Redefining \% on input line 239.
- [87]
+ [91]
 LaTeX Info: Redefining \. on input line 251.
 LaTeX Info: Redefining \% on input line 251.
- [88]
+ [92]
 LaTeX Info: Redefining \. on input line 287.
 LaTeX Info: Redefining \% on input line 287.
- [89]
-<Imagenes/Bitmap/IA_Trends2011_2025.png, id=1743, 1186.4325pt x 599.23875pt>
+ [93]
+<Imagenes/Bitmap/IA_Trends2011_2025.png, id=1789, 1186.4325pt x 599.23875pt>
 File: Imagenes/Bitmap/IA_Trends2011_2025.png Graphic file (type png)
 <use Imagenes/Bitmap/IA_Trends2011_2025.png>
 Package pdftex.def Info: Imagenes/Bitmap/IA_Trends2011_2025.png  used on input 
@@ -1685,7 +1729,7 @@ a-tos eti-que-ta-dos pa-ra apren-
 
 LaTeX Info: Redefining \. on input line 307.
 LaTeX Info: Redefining \% on input line 307.
-[90 <./Imagenes/Bitmap/IA_Trends2011_2025.png>]
+[94 <./Imagenes/Bitmap/IA_Trends2011_2025.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
@@ -1697,7 +1741,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
 LaTeX Info: Redefining \. on input line 326.
 LaTeX Info: Redefining \% on input line 326.
-[91]
+[95]
 Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
@@ -1715,10 +1759,10 @@ Overfull \hbox (0.83897pt too wide) in paragraph at lines 340--342
 
 LaTeX Info: Redefining \. on input line 342.
 LaTeX Info: Redefining \% on input line 342.
-[92]
+[96]
 LaTeX Info: Redefining \. on input line 351.
 LaTeX Info: Redefining \% on input line 351.
- [93]
+ [97]
 Overfull \hbox (36.1258pt too wide) in paragraph at lines 358--360
 \T1/cmr/m/n/10.95 ``trans-for-mers''. Con-si-guen su ob-je-ti-vo me-dian-te un 
 pre-entrenamiento
@@ -1736,7 +1780,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 358--360
 
 LaTeX Info: Redefining \. on input line 366.
 LaTeX Info: Redefining \% on input line 366.
-[94]
+[98]
 Overfull \hbox (5.03194pt too wide) in paragraph at lines 382--383
 []\T1/cmr/m/n/10.95 Encuesta so-bre Ten-den-cias y Pa-no-ra-ma Em-pre-sa-rial (
 Bu-si-ness Trends
@@ -1744,7 +1788,7 @@ Bu-si-ness Trends
 
 LaTeX Info: Redefining \. on input line 397.
 LaTeX Info: Redefining \% on input line 397.
-[95]
+[99]
 Overfull \hbox (14.29666pt too wide) in paragraph at lines 407--408
 []\T1/cmr/m/n/10.95 Transformador Pre-entrenado Ge-ne-ra-ti-vo (Ge-ne-ra-ti-ve 
 Pre-trained Trans-
@@ -1752,30 +1796,30 @@ Pre-trained Trans-
 
 LaTeX Info: Redefining \. on input line 423.
 LaTeX Info: Redefining \% on input line 423.
-[96]
+[100]
 LaTeX Info: Redefining \. on input line 448.
 LaTeX Info: Redefining \% on input line 448.
- [97]
+ [101]
 LaTeX Info: Redefining \. on input line 473.
 LaTeX Info: Redefining \% on input line 473.
- [98])
+ [102])
 \openout2 = `Apendices/appendixB.aux'.
 
  (Apendices/appendixB.tex
 Ap\'{e}ndice B.
 
-Package natbib Warning: Citation `CodeOfPracticeAI2026' on page 99 undefined on
- input line 4.
+Package natbib Warning: Citation `CodeOfPracticeAI2026' on page 103 undefined o
+n input line 4.
 
 
-LaTeX Warning: Hyper reference `cap:Materiales y metodos' on page 99 undefined 
-on input line 11.
+LaTeX Warning: Hyper reference `cap:Materiales y metodos' on page 103 undefined
+ on input line 11.
 
 
-LaTeX Warning: Reference `cap:Materiales y metodos' on page 99 undefined on inp
-ut line 11.
+LaTeX Warning: Reference `cap:Materiales y metodos' on page 103 undefined on in
+put line 11.
 
-[99
+[103
 
 
 
@@ -1783,17 +1827,17 @@ ut line 11.
 ]
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- [100])
+ [104])
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
- [101] [102
+ [105] [106
 
 
 
 ]
 \openout2 = `Cascaras/bibliografia.aux'.
 
- (Cascaras/bibliografia.tex (TFMTeXiS.bbl [103
+ (Cascaras/bibliografia.tex (TFMTeXiS.bbl [107
 
 
 ]
@@ -1804,19 +1848,19 @@ i-ver-sity Press, 2007.  ISBN
 
 LaTeX Info: Redefining \. on input line 173.
 LaTeX Info: Redefining \% on input line 173.
-[104]
+[108]
 LaTeX Info: Redefining \. on input line 276.
 LaTeX Info: Redefining \% on input line 276.
- [105]
+ [109]
 LaTeX Info: Redefining \. on input line 380.
 LaTeX Info: Redefining \% on input line 380.
- [106]
+ [110]
 LaTeX Info: Redefining \. on input line 464.
 LaTeX Info: Redefining \% on input line 464.
- [107]
+ [111]
 LaTeX Info: Redefining \. on input line 554.
 LaTeX Info: Redefining \% on input line 554.
- [108]
+ [112]
 Underfull \hbox (badness 1577) in paragraph at lines 594--600
 []\T1/cmr/m/sc/10.95 Mosqueira-Rey, E.\T1/cmr/m/n/10.95 , \T1/cmr/m/sc/10.95 He
 rnández-Pereira, E.\T1/cmr/m/n/10.95 , \T1/cmr/m/sc/10.95 Alonso-Ríos, D.\T1/cm
@@ -1825,13 +1869,13 @@ r/m/n/10.95 ,
 
 LaTeX Info: Redefining \. on input line 640.
 LaTeX Info: Redefining \% on input line 640.
-[109]
+[113]
 LaTeX Info: Redefining \. on input line 742.
 LaTeX Info: Redefining \% on input line 742.
- [110]
+ [114]
 LaTeX Info: Redefining \. on input line 846.
 LaTeX Info: Redefining \% on input line 846.
- [111]
+ [115]
 
 LaTeX Font Warning: Font shape `TS1/cmr/m/sc' undefined
 (Font)              using `TS1/cmr/m/n' instead
@@ -1840,10 +1884,10 @@ LaTeX Font Warning: Font shape `TS1/cmr/m/sc' undefined
 ))
 LaTeX Info: Redefining \. on input line 180.
 LaTeX Info: Redefining \% on input line 180.
- [112]
+ [116]
 \openout2 = `Cascaras/fin.aux'.
 
- (Cascaras/fin.tex) [113
+ (Cascaras/fin.tex) [117
 
 
 
@@ -1877,16 +1921,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `TFMTeXiS.out' has not changed.
-(rerunfilecheck)             Checksum: 5A66D8908435C33E6560D0C67CCEE65E;14043.
+(rerunfilecheck)             Checksum: 6A6FEAB12DF2E6A5458F0AC922E160A1;13768.
  ) 
 Here is how much of TeX's memory you used:
- 18550 strings out of 478868
- 300162 string characters out of 2847387
- 1138629 words of memory out of 3000000
- 35188 multiletter control sequences out of 15000+600000
+ 18605 strings out of 478868
+ 301526 string characters out of 2847387
+ 1180852 words of memory out of 3000000
+ 35216 multiletter control sequences out of 15000+600000
  428920 words of font info for 71 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
- 94i,13n,100p,1287b,2031s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,13n,100p,1288b,2037s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
 cti0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecit0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
@@ -1928,9 +1972,9 @@ AN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
 Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pf
 b><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a
 .pfb>
-Output written on TFMTeXiS.pdf (135 pages, 2503998 bytes).
+Output written on TFMTeXiS.pdf (139 pages, 2871028 bytes).
 PDF statistics:
- 3147 PDF objects out of 3580 (max. 8388607)
- 577 named destinations out of 1000 (max. 500000)
- 635 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3206 PDF objects out of 3580 (max. 8388607)
+ 601 named destinations out of 1000 (max. 500000)
+ 642 words of extra memory for PDF output out of 10000 (max. 10000000)
 

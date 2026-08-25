@@ -8,19 +8,22 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos 1xx) durante 2021 y 2022.\relax }}{54}{figure.caption.87}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{56}{figure.caption.93}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{57}{figure.caption.95}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{58}{figure.caption.98}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{59}{figure.caption.99}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos 1xx) durante 2021 y 2022.\relax }}{56}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{58}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{59}{figure.caption.96}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{60}{figure.caption.99}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{61}{figure.caption.100}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Abrir terminal AWS en consola\relax }}{64}{figure.caption.121}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Abrir terminal AWS en consola\relax }}{66}{figure.caption.122}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Estructura de carpetas generada en S3\relax }}{69}{figure.caption.165}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{72}{figure.caption.239}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Consola de SageMaker\relax }}{73}{figure.caption.242}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{83}{figure.caption.254}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{86}{figure.caption.259}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{90}{figure.caption.264}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{87}{figure.caption.274}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{90}{figure.caption.279}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{94}{figure.caption.284}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }

@@ -241,6 +241,10 @@ Para la movilidad peatonal se replicó la predicción de series temporales del s
 
 El detalle de cada técnica y su fundamento se recoge en la \hyperref[sec:Metodos_ML]{Sección \ref*{sec:Metodos_ML}}.
 
+
+
+\newpage
+
 \subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
 
 Para tratar los datos a través del método principal de desarrollo, se ha seguido principios de gobernanza de datos:
@@ -318,7 +322,7 @@ Destacar también que en el proyecto, se siguieron rigurosamente los siete princ
 \end{itemize}
 
 
-
+\newpage
 \subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
 
 Para la fase de extracción de valor se emplearon las siguientes técnicas de aprendizaje no supervisado y estadística, adecuando cada una a la naturaleza de los datos:
@@ -339,37 +343,39 @@ Previo a la aplicación de los algoritmos basados en distancias (como K-Means o 
 
 
 
+\newpage
+
 \subsection{Métodos utilizados: Cloud} 
 \label{sec:Metodos_cloud}
 
 % [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
-El despliegue de las capas de almacenamiento, procesamiento y analítica sobre plataformas en la nube se ha abordado bajo una metodología común para evaluar la dificultad de implementación, viabilidad, rendimiento y coste de ejecutar un mismo \textit{pipeline} de datos abiertos sobre diferentes proveedores. Esta estrategia reutiliza el enfoque de arquitectura por capas (\textit{Medallion Architecture}) definido en la \hyperref[def11]{[Definición \ref*{def11}]}, combinándolo con las buenas prácticas específicas de diseño y gobernanza de cada proveedor.
+El despliegue de las capas de almacenamiento, procesamiento y analítica sobre plataformas en la nube se ha abordado bajo una metodología común para evaluar la dificultad de implementación, viabilidad, rendimiento y coste de ejecutar un mismo \textit{pipeline} de datos abiertos sobre diferentes proveedores. Esta estrategia reutiliza el enfoque de arquitectura por capas (\textit{Medallion Architecture}) definido en la \hyperref[def11]{[Definición \ref*{def11}]}, que es el mismo que se ha seguido en local. Este se combinara con las buenas prácticas específicas de diseño y gobernanza generales del desarrollo en la nube y las especificas de cada proveedor.
 
 \subsubsection{Métodos utilizados en Amazon Web Services (AWS)}
 
-La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura mas a alto nivel de las decisiones tomadas, así como los métodos utilizados.
+La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura mas a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas practicas en la web de AWS \citep{AWSWellArchitected2026}.
 
 \begin{enumerate}
-	\item \textbf{Arquitectura de medalla} Organización del almacenamiento en Amazon S3 dividida en las capas. Se aplicó un bloqueo estricto de acceso público, se activó el versionado para asegurar la inmutabilidad y trazabilidad histórica, y se asignaron etiquetas para poder medir el coste (\texttt{proyecto=tfm}).
+	\item \textbf{Arquitectura de medalla}: Aunque no es única de la nube, hay aspectos particulares que merece la pena comentar para el almacenamiento especifico en Amazon S3 dividida en las capas: Se aplicó un bloqueo de acceso público para evitar la modificacion externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas para poder medir el coste en todas las capas del proceso.
 
-	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería computación distribuida. Se optó por una ejecución mediante \textit{AWS Glue Python Shell}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución.
+	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería demasiada computación. Se optó por una ejecución mediante \textit{AWS Glue Python Shell} y la propia \textit{AWS CLI}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución, gestionando el almacenamiento desde los contenedores de S3.
 	
-%	\item \textbf{Catalogación automatizada y desacoplamiento analítico SQL:} Aplicación de rastreadores (\textit{Glue Crawlers}) para la extracción automática de metadatos sobre los archivos Parquet, registrando los esquemas en el \textit{Glue Data Catalog}. Esto permitió habilitar métodos de análisis mediante consultas SQL directas en \textit{Amazon Athena} bajo un modelo \textit{Serverless} de pago por volumen escaneado (5,00~USD/TB), sin necesidad de mantener bases de datos relacionales activas de forma continua.
+	\item \textbf{Infraestructura como Código (IaC) y Gestión de Dependencias:} Para garantizar la reproducibilidad, el despliegue del trabajo ETL se definió de forma declarativa mediante comandos y plantillas JSON definidas en el \ref{subsec:Manual_Despliegue_AWS}. Los módulos propios de configuración (\texttt{config.py}) se empaquetaron en formato estándar de distribución de Python (\textit{Wheel}, \texttt{.whl}), para gestionar las dependencias junto al  \textit{requirements.txt}
 	
 	\item \textbf{Gobernanza de identidades (RBAC) y control financiero (\textit{FinOps}):} Implementación del principio de menor privilegio y control de costes mediante:
 	\begin{itemize}
-		\item \textbf{Uso de credenciales temporales:} Adopción de \textit{AWS CloudShell} para operar con credenciales efímeras herederas de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en disco local.
-		\item \textbf{Segregación de permisos (RBAC):} Se separaron las identidades de persona y de servicio mediante credenciales efímeras, sin crear usuarios ni claves permanentes. Excepto para la ejecución de Glue, que requirió definir un rol de servicio propio (\texttt{AWSGlueServiceRole-tfm}).
-		\item \textbf{Control presupuestario:} Configuración de un presupuesto automatizado en \textit{AWS Budgets}.
+		\item \textbf{Uso de credenciales temporales:} Se utilizo \textit{AWS CloudShell} para operar con las credenciales de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en local.
+		\item \textbf{Segregación de permisos:} Se definieron roles IAM de servicio (\texttt{AWSGlueServiceRole-tfm}) con acceso restringido exclusivamente a las rutas necesarias de S3 para el procesamiento en \textit{AWS Glue}.
+		\item \textbf{Mecanismos de contención de gasto:} Se desactivaron los reintentos automáticos (\texttt{max-retries 0}) y establecimiento de tiempos máximos de ejecución (\texttt{timeout}) en los trabajos de \textit{AWS Glue}, además de la monitorización presupuestaria mediante \textit{AWS Budgets}.
 	\end{itemize}
+	
+	
 \end{enumerate}
 
 \newpage
 \subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}
 % [TODO] Añadir en el futuro la metologia equivalente para GCP: Cloud Storage, Cloud Functions / Vertex AI, BigQuery, IAM/Service Accounts
 
+Se puede consultar todo el manual de arquitectura y buenas practicas en la web de GCP \citep{GCPArchitectureFramework2026}.
 \newpage
 
-
-% [TODO] una vez todo implementado decir como se utiliza la solucion, no tiene sentido ponerlo arriba como estana
-% REVISAR SI AÑADIR AQUI O MOVER TODO A LA PARTE 5 DE MANUAL DE USUARIO \section{Utilización de la solución}

@@ -26,6 +26,9 @@ from scipy.cluster.hierarchy import dendrogram, fcluster, linkage
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.preprocessing import StandardScaler
+from pathlib import Path
+
+
 import config
 
 class _Tee:
@@ -61,9 +64,9 @@ def _sin_tildes(s: str) -> str:
 def _leer_silver(nombre: str) -> pd.DataFrame:
     """Lee parquet si puede y si no csv (transformando las fechas)"""
     try:
-        return pd.read_parquet(config.SILVER / f"{nombre}.parquet")
+        return pd.read_parquet(f"{config.SILVER}/{nombre}.parquet")
     except (ImportError, FileNotFoundError):
-        df = pd.read_csv(config.SILVER / f"{nombre}.csv")
+        df = pd.read_csv(f"{config.SILVER}/{nombre}.csv")
         for col in ("fecha", "FECHA"):
             if col in df.columns:
                 df[col] = pd.to_datetime(df[col])
@@ -199,13 +202,13 @@ def _superficie_por_estacion(anio: int) -> pd.Series:
     est = est.dropna(subset=["CODIGO_CORTO"])
     est["CODIGO_CORTO"] = est["CODIGO_CORTO"].astype(int)
     s = est.set_index("CODIGO_CORTO")["distrito"].map(_superficie_por_distrito(anio)).rename("superficie_ha")
+    # los distritos con 0 ha se descartan: el trabajo original exige "tener datos de masas arboreas" y parece interpretar el 0 como ausencia # TODO memoria
     return s[s > 0]
-    return s # TODO ellos han considerado que 0 es sin dato en masa arborea, es posible que sea asi, revisar y comentar en memoria
 
 def _estaciones_con_distrito():
     """Asigna cada estacion meteo a su distrito con el shapefile municipal de geopandas"""
     import geopandas as gpd
-    shp = next((config.BRONZE / "distritos").glob("*.shp"))
+    shp = next(Path(f"{config.BRONZE}/distritos").glob("*.shp"))
     distritos = gpd.read_file(shp).to_crs(4326)
     col_nombre = next(c for c in distritos.columns if "NOMBRE" in c.upper() or "DISTRI" in c.upper())
     est = _leer_silver("estaciones_meteo")
@@ -279,15 +282,15 @@ def grafico_evolucion(filas_arbolado: list[dict], base) -> None:
     plt.figure(figsize=(7, 4))
     plt.plot(arb.index, arb["r_arbolado"], "o-", label=f"modo {config.ETIQUETA_MODO}")
     otro = "replica" if config.ETIQUETA_MODO == "propio" else "propio"
-    ruta_otro = config.RESULTADOS / "isla_calor" / otro / "resumen_arbolado.csv"
-    if ruta_otro.exists():
+    ruta_otro = f"{config.RESULTADOS}/isla_calor/{otro}/resumen_arbolado.csv"
+    if Path(ruta_otro).exists():
         prev = pd.read_csv(ruta_otro).set_index("anio").sort_index()
         plt.plot(prev.index, prev["r_arbolado"], "s--", label=f"modo {otro}")
     plt.axhline(0, color="grey", linewidth=.8)
     plt.xlabel("Año"); plt.ylabel("r de Pearson")
     plt.title("Superficie arborea vs temperatura media por distrito")
     plt.legend(); plt.tight_layout()
-    plt.savefig(base / "evolucion_correlacion.png", dpi=150)
+    plt.savefig(f"{base}/evolucion_correlacion.png", dpi=150)
     plt.close()
 
 def resumen(filas_clusters: list[dict], filas_arbolado: list[dict], base)-> None:
@@ -296,12 +299,12 @@ def resumen(filas_clusters: list[dict], filas_arbolado: list[dict], base)-> None
         piv = (pd.DataFrame(filas_clusters).pivot(index="anio", columns="aproximacion", values="silhouette"))
         print("\n== Resumen: silhouette por año y aproximacion ==")
         print(piv.round(3).to_string())
-        piv.to_csv(base / "resumen_silhouette.csv")
+        piv.to_csv(f"{base}/resumen_silhouette.csv")
     if filas_arbolado:
         arb = pd.DataFrame(filas_arbolado).set_index("anio")
         print("\n== Resumen: correlacion arbolado vs temperatura por año ==")
         print(arb.to_string())
-        arb.to_csv(base / "resumen_arbolado.csv")
+        arb.to_csv(f"{base}/resumen_arbolado.csv")
         r = arb["r_arbolado"].dropna() # marca outliers
         fuera = r[(r - r.mean()).abs() > 1.5 * r.std()]
         media = f"{r.mean():.3f}" if len(r) else "n/d"
@@ -314,7 +317,7 @@ def cobertura_temperatura() -> None:
     meteo = _leer_silver("meteo_diario_diario")
     meteo["anio"] = meteo["fecha"].dt.year
     tabla = (meteo.dropna(subset=["temperatura"]).groupby(["estacion", "anio"]).size().unstack(fill_value=0))
-    tabla.to_csv(config.RESULTADOS / "isla_calor" / "cobertura_temperatura.csv")
+    tabla.to_csv(f"{config.RESULTADOS}/isla_calor/cobertura_temperatura.csv")
     print("\n== Cobertura: dias validos de temperatura por estacion y año ==")
     plt.figure(figsize=(7, 8))
     plt.imshow(tabla.values, aspect="auto", cmap="YlOrRd_r", vmin=0, vmax=366)
@@ -324,7 +327,7 @@ def cobertura_temperatura() -> None:
     plt.xlabel("Año"); plt.ylabel("Estacion")
     plt.title("Cobertura de temperatura por estacion y año")
     plt.tight_layout()
-    plt.savefig(config.RESULTADOS / "isla_calor" / "cobertura_temperatura.png", dpi=150)
+    plt.savefig(f"{config.RESULTADOS}/isla_calor/cobertura_temperatura.png", dpi=150)
     plt.close()
     print(tabla.to_string())
 
@@ -339,15 +342,15 @@ EXTERNAS = {
 def main() -> None:
     anios = [int(a) for a in sys.argv[1:]] or config.ANIOS
     todos_clusters, todos_arbolado = [], []
-    base = config.RESULTADOS / "isla_calor" / config.ETIQUETA_MODO
-    base.mkdir(parents=True, exist_ok=True)
-    sys.stdout = _Tee(base / "ejecucion.log")
+    base = f"{config.RESULTADOS}/isla_calor/{config.ETIQUETA_MODO}"
+    Path(base).mkdir(parents=True, exist_ok=True)
+    sys.stdout = _Tee(f"{base}/ejecucion.log")
     print(f"# ejecucion {pd.Timestamp.now():%Y-%m-%d %H:%M} | MODO_REPLICA={config.MODO_REPLICA} | MIN_DIAS_ANIO={config.MIN_DIAS_ANIO}")
     for anio in anios:
         etiqueta = "replica" if anio == ANIO_REPLICA else "extension"
         print(f"== Isla de calor {anio} ({etiqueta}) ==")
-        carpeta = base / str(anio)
-        carpeta.mkdir(parents=True, exist_ok=True)
+        carpeta = f"{base}/{anio}"
+        Path(carpeta).mkdir(parents=True, exist_ok=True)
         for nombre, clave, columnas, externas, k in APROXIMACIONES:
             try:
                 fila = ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta)

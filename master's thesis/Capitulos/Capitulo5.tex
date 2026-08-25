@@ -56,7 +56,7 @@ Esta línea base local cumple con el propósito de validar los datos de los trab
 
 \subsection{Despliegue en Amazon Web Services (AWS)} \label{subsec:Manual_Despliegue_AWS}
 
-Para desplegar la infraestructura en la nube de Amazon,lo primero que tenemos que hacer es registrarnos en la plataforma \citep{AWS2026Signup}. El proceso de creación consta de cinco pasos y da acceso al plan gratuito, aunque requiere introducir una tarjeta de crédito de manera obligatoria. Además, por motivos de seguridad, el sistema exige configurar un segundo factor de autenticación (MFA). Para no alargar este capitulo, simplemente redirigimos al usuario a el propio tutorial de AWS, donde se explica en detalle como crear la cuenta: \citep{AWS2026Tutorial}.
+Para desplegar la infraestructura en la nube de Amazon, lo primero que tenemos que hacer es registrarnos en la plataforma \citep{AWS2026Signup}. El proceso de creación consta de cinco pasos y da acceso al plan gratuito, aunque requiere introducir una tarjeta de crédito de manera obligatoria. Además, por motivos de seguridad, el sistema exige configurar un segundo factor de autenticación (MFA). Para no alargar este capítulo, simplemente redirigimos al usuario al propio tutorial de AWS, donde se explica en detalle cómo crear la cuenta: \citep{AWS2026Tutorial}.
 Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar pruebas: 100\$ iniciales y otros 100\$ adicionales al completar una serie de actividades. Aunque han ido cambiando en las diferentes veces que hemos creado la cuenta, y lo mas seguro es que cambiaran de nuevo en el futuro, a fecha de creación de esta memoria, las pruebas consistían en:
 \begin{itemize}
 	\item Crear una máquina virtual.
@@ -80,7 +80,7 @@ Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar
 
 \subsubsection{Configuración del entorno y autenticación}
 
-Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario con el que nos hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizo siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios,  se realizo para futuras extensiones del proyecto y para la utilizacion de herramientas y roles de servicio. 
+Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios,  se realizó para futuras extensiones del proyecto y para la utilizacion de herramientas y roles de servicio. 
 
 Lo primero para trabajar con la nube, es seleccionar la region que mas convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
 
@@ -107,7 +107,7 @@ También conviene tener creadas las variables de entorno que vamos a utilizar en
 
 \subsubsection{Infraestructura de Almacenamiento en Amazon S3}
 
-El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local, y de otras nubes: (\texttt{data/bronze/}, \texttt{data/silver/}, \texttt{data/gold/}, \texttt{scripts/} y \texttt{resultados/}). Permitiendo así que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también mediante los siguientes comandos bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
+El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local, y de otras nubes: (\texttt{data/bronze/}, \texttt{data/silver/}, \texttt{resultados/} (como capa Gold) y \texttt{scripts/}). Permitiendo así que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también, mediante los siguientes comandos, bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
 
 \begin{lstlisting}[language=bash, caption={Creación y configuración de seguridad del contenedor en S3}]
 	# Creacion del bucket
@@ -141,6 +141,18 @@ Una vez creado el contenedor, se puede ver en el apartado de S3 instantáneament
 	
 \end{lstlisting}
 
+Con esto ya tendremos la estructura de carpetas y la ingesta completa en S3 con los datos definidos en el Python del repositorio como se muestra en \ref*{figura_AWS_S3}.
+
+\begin{figure}[h]
+	\begin{center}
+		\caption{Estructura de carpetas generada en S3} 
+		\includegraphics[scale=0.3]{Imagenes/Bitmap/figura_AWS_S3_es.png} 
+		\footnotesize{Fuente: Propia}
+		\label{figura_AWS_S3}
+	\end{center}
+\end{figure}
+
+
 En caso de querer descargar otros datos públicos, hay dos opciones, se podría descargar directamente con un comando de descarga como este:
 \begin{lstlisting}[language=bash, caption={Ingesta manual directa de un nuevo conjunto de datos a S3}]
 	
@@ -155,9 +167,9 @@ También, como opción mas elegante, se podría integrar en el proceso y modific
 
 \subsubsection{Orquestación y Procesamiento ETL con AWS Glue}
 
-Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuídos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272 MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
+Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuidos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272 MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
 
-A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es mas fácil de automatizar, a parte de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capitulo:
+A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es mas fácil de automatizar, a parte de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capítulo:
 
 \begin{lstlisting}[language=bash, caption={Creación del rol de servicio de Glue}]
 	# Politica de confianza: solo el servicio Glue puede asumir este rol
@@ -244,23 +256,86 @@ Con esto ya podemos lanzar la ejecución y ver el resultado:
 	
 \end{lstlisting}
 
-Aunque aquí lo ponemos en linea de comandos, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece poblada en el S3, con los mismos conjuntos y la misma estructura que la generada en el entorno local.
+\begin{figure}[h]
+	\begin{center}
+		\caption{Ejecuciones del trabajo ETL en AWS Glue} 
+		\includegraphics[scale=0.4]{Imagenes/Bitmap/figura_AWS_Glue_es.png} 
+		\footnotesize{Fuente: Propia, traducido por Google}
+		\label{figura_AWS_Glue_es}
+	\end{center}
+\end{figure}
+
+
+Aunque aquí lo ponemos en linea de comandos, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece en el S3, con los mismos datos y estructura que la generada en el entorno local.
+
+
+\subsubsection{Modelos de ML y resultados con Amazon SageMaker} 
+\label{sec:Manual_Modelos_sagemaker}
+
+Para generar esta última capa de análisis en AWS, vamos a volver a cambiar de tecnología.
+Mientras que la etapa \textit{Silver} se completó mediante \textit{AWS Glue}, la etapa de análisis tiene otros requerimientos: ejecución de algoritmos, cálculo de siluetas, volumen elevado de figuras, librerías de tratamiento geoespacial, etc. Todo esto se beneficia de una ejecución interactiva durante la interpretación de los resultados. 
+
+Por ello, para generar esta capa final, vamos a emplear \textbf{Amazon SageMaker}. Específicamente, el servicio de \textit{Spaces} dentro de un dominio, que proporciona entornos de \textit{Jupyter Notebooks}. Lo primero es la creación de este dominio, que se realiza desde la consola web \footnote{SageMaker disponible en: \url{https://eu-west-1.console.aws.amazon.com/datazone/home?region=eu-west-1\#/}}, con la configuración de inicio rápido en la región \texttt{eu-west-1}. 
+
+AWS aprovisionará automáticamente las redes virtuales (VPC) y el almacenamiento (EFS) con el dominio. Una vez creado, el espacio aprovisiona automáticamente el entorno de desarrollo \textbf{JupyterLab} mediante IDE, ademas de muchas otras funciones, que se pueden ver en la figura \ref*{figura_AWS_Consola_sagemaker}.
+
+\begin{figure}[h]
+	\begin{center}
+		\caption{Consola de SageMaker} 
+		\includegraphics[scale=0.3]{Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png} 
+		\footnotesize{Fuente: Propia}
+		\label{figura_AWS_Consola_sagemaker}
+	\end{center}
+\end{figure}
+
+Desde la terminal integrada en el cuaderno, se descarga el repositorio, se instalan librerías y se sincronizan \textit{Silver} y datos descargados en el paso de ingesta. Finalmente, se publican los resultados en el almacenamiento masivo S3:
+
+\begin{lstlisting}[language=bash, caption={Ejecución del análisis en el entorno de SageMaker}]
+	# Dentro del terminal de JupyterLab en SageMaker
+	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	cd TFM-cloud-soliutions-to-public-data/code/files
+	pip install -r requirements.txt --quiet
+	
+	# Descarga de las capas necesarias desde S3
+	aws s3 sync s3://tfm-ucm-datos-publicos/data/silver/ data/silver/
+	aws s3 sync s3://tfm-ucm-datos-publicos/data/bronze/distritos/ data/bronze/distritos/
+	
+	# Ejecucion del analisis y generacion de figuras
+	python 03_analisis_isla_calor.py
+	
+	# Publicacion de los resultados en el bucket
+	aws s3 sync resultados/ s3://tfm-ucm-datos-publicos/resultados/
+\end{lstlisting}
+
+De nuevo, la ejecución no requiere modificación del código fuente para ejecutar en este entorno. Emplear \texttt{JupyterLab} para el trabajo analítico, facilita visualizar gráficos y tablas directamente en el entorno, y publicar después en el almacenamiento de objetos una vez estudiada la salida.
+
+De nuevo, la ejecución no requiere modificación del código fuente. El entorno de cuadernos dispone de sistema de ficheros local, por lo que los gráficos y las tablas se generan directamente en disco y se publican después en el almacenamiento de objetos, evitando las adaptaciones que habrían sido necesarias en el servicio de procesamiento desatendido, como reescribir la salida de cada gráfico hacia flujos de bytes o resolver las dependencias nativas de las librerías geoespaciales.
+
+
+Conviene advertir que, desde una perspectiva de control de costes, los espacios de trabajo facturan por tiempo de aprovisionamiento mientras permanecen encendidos, con independencia de que se esté utilizando el cuaderno o no. Conviene detenerlos manualmente desde la administración del dominio al finalizar cada sesión para interrumpir la facturación.
+
+
+% [TODO] añadir alguna imagen de lo que ha salido en jupyter y algo mas para finalizar.
+
+Este manual ha empleado tres modalidades de ejecución dentro de AWS, cada una adecuada a una etapa distinta: un terminal interactivo para la ingesta, un servicio de procesamiento desatendido para la transformación, y un entorno de cuadernos para el análisis. Aunque la ingesta y la limpieza podrían ejecutarse indistintamente en cualquiera de las tres, la etapa de análisis requiere el entorno de cuadernos por sus dependencias gráficas y geoespaciales. Esta división refleja la lógica del propio catálogo de servicios, en el que cada uno está optimizado para un perfil de carga concreto.
+
+
+
+% [TODO] comparar el coste de las 3 tecnologias dentro de AWS que se han utilizado? 
 
 
 \newpage
 \subsection{Despliegue en Google Cloud Platform (GCP)} 
 \label{subsec:Manual_Despliegue_GCP}
 
+
 \newpage
 \section{Uso de modelos y resultados} 
 \label{sec:Manual_Modelos}
 
+Cada ejecución del análisis genera un directorio por cada año con los diagramas del codo, dendrogramas, gráficos de dispersión de correlaciones y tablas de grupos.
+Al finalizar también produce tres resúmenes: el coeficiente de silueta por año y aproximación, la correlación entre superficie arbórea y temperatura por año, y un diagnóstico de cobertura de días válidos por estación.
 
-% [TODO]: Explicar cómo lanzar 03_analisis_isla_calor.py y obtener gráficos/CSVs
+El parámetro \texttt{MODO\_REPLICA} determina si se reproducen las condiciones del trabajo original o se aplican los criterios metodológicos propios definidos en la sección \ref*{sec:Metodos_analisis}, y los resultados de cada modo se almacenan en directorios separados. La salida completa queda registrada en \texttt{ejecucion.log} para facilitar la trazabilidad de las ejecuciones y los parámetros elegidos.
 
-\newpage
-\section{Comparativa de entornos y nubes públicas}
-\label{sec:Manual_Comparativa}
-
-% [TODO]: Tabla/resumen comparando Local vs AWS vs otros proveedores evaluados
 
