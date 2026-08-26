@@ -1,4 +1,4 @@
-# ejecucion 2026-08-26 17:58 | MODO_REPLICA=False | MIN_DIAS_ANIO=300
+# ejecucion 2026-08-26 23:33 | MODO_REPLICA=False | MIN_DIAS_ANIO=300
 == Isla de calor 2019 (extension) ==
     [info] 19 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 7 estaciones, k=4, inercia=16.4, silhouette=0.097

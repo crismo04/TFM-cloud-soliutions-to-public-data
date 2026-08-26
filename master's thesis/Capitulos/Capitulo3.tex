@@ -32,7 +32,7 @@ La ingesta se realizó de forma automatizada, registrando los metadatos de proce
 		Aforos de peatones & 2019-2024 & Movilidad \\
 		Aforos de bicicletas & 2019-2024 & Caso propio \\
 		Distritos (shapefile) & único & Cartografía \\
-		% [TODO] cambiar las referencias a las del origen de datos, no los TFMs y añadir mas si en el futuro se estudian
+		% [TODO] cambiar las referencias a las del origen de datos, no los TFMs y añadir más si en el futuro se estudian
 		\hline
 	\end{tabular}
 	\caption{Conjuntos de datos utilizados, su procedencia es \citep{AytoMadrid2025PortalDatos}.}
@@ -177,7 +177,7 @@ Las fases y sus ficheros correspondientes en local y el GIT del proyecto han sid
 	\label{tab:ficheros_pipeline}
 \end{table}
 
-Estas etapas se describen en mas detalle a continuación.
+Estas etapas se describen en más detalle a continuación.
 
 
 \subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
@@ -194,7 +194,7 @@ El proceso incorpora pausas entre descargas y re-intentos con espera creciente p
 \subsubsection{Normalización y limpieza} 
 \label{sec:Metodos_limpieza}
 
-La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir mas tipos de datos a futuro.
+La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir más tipos de datos a futuro.
 % [TODO] cambiar si hay nuevos datos como nombres de entidad escritos de forma inconsistente dentro de un mismo fichero, que impedían el cruce entre conjuntos sin llegar a producir error alguno (hacer una lista?? revisar los todos del codigo)
 Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal, y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver, además, varias inconsistencias de los ficheros publicados, como formatos de fecha distintos entre años en el mismo conjunto que obligaron a detectar el formato de estos, decimales con coma (varios, ya que es la convención española), cambios de esquema a mitad de serie (con columnas renombradas, en inglés e incluso corrompidas por errores de codificación en origen), y ficheros CSV que incorporan filas de totales y notas al pie destinadas a lectura humana.
 
@@ -353,7 +353,7 @@ El despliegue de las capas de almacenamiento, procesamiento y analítica sobre p
 
 \subsubsection{Métodos utilizados en Amazon Web Services (AWS)}
 
-La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura mas a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas practicas en la web de AWS \citep{AWSWellArchitected2026}.
+La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas practicas en la web de AWS \citep{AWSWellArchitected2026}.
 
 \begin{enumerate}
 	\item \textbf{Arquitectura de medalla}: Aunque no es única de la nube, hay aspectos particulares que merece la pena comentar para el almacenamiento especifico en Amazon S3 dividida en las capas: Se aplicó un bloqueo de acceso público para evitar la modificacion externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas para poder medir el coste en todas las capas del proceso.

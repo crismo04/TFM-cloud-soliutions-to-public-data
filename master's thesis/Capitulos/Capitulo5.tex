@@ -43,7 +43,7 @@ En esta sección vamos a ver como se despliega el proceso completo en las difere
 \subsection{Despliegue en Local} 
 \label{subsec:Manual_Despliegue_Local}
 
-La ejecución local no requiere infraestructura adicional más allá del entorno descrito en la Sección \ref{sec:Manual_Ingesta}. Los procesos se ejecutan secuencialmente y cada uno utiliza la salida del anterior como entrada. Aunque para este trabajo se ha utilizado un entorno local, se podrian usar herramientas como notebooks de google o los entornos de hugginface para ejecutar estos comandos sin la necesidad de un hardware personal.
+La ejecución local no requiere infraestructura adicional más allá del entorno descrito en la Sección \ref{sec:Manual_Ingesta}. Los procesos se ejecutan secuencialmente y cada uno utiliza la salida del anterior como entrada. Aunque para este trabajo se ha utilizado un entorno local, se podrían usar herramientas como notebooks de google o los entornos de \textit{Hugging Face} para ejecutar estos comandos sin la necesidad de un hardware personal.
 
 \begin{lstlisting}[language=bash, caption={Ejecución completa del pipeline en local}]
 	cd code/files
@@ -58,7 +58,7 @@ Esta línea base local cumple con el propósito de validar los datos de los trab
 \subsection{Despliegue en Amazon Web Services (AWS)} \label{subsec:Manual_Despliegue_AWS}
 
 Para desplegar la infraestructura en la nube de Amazon, lo primero que tenemos que hacer es registrarnos en la plataforma \citep{AWS2026Signup}. El proceso de creación consta de cinco pasos y da acceso al plan gratuito, aunque requiere introducir una tarjeta de crédito de manera obligatoria. Además, por motivos de seguridad, el sistema exige configurar un segundo factor de autenticación (MFA). Para no alargar este capítulo, simplemente redirigimos al usuario al propio tutorial de AWS, donde se explica en detalle cómo crear la cuenta: \citep{AWS2026Tutorial}.
-Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar pruebas: 100\$ iniciales y otros 100\$ adicionales al completar una serie de actividades. Aunque han ido cambiando en las diferentes veces que hemos creado la cuenta, y lo mas seguro es que cambiaran de nuevo en el futuro, a fecha de creación de esta memoria, las pruebas consistían en:
+Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar pruebas: 100\$ iniciales y otros 100\$ adicionales al completar una serie de actividades. Aunque han ido cambiando en las diferentes veces que hemos creado la cuenta, y lo más seguro es que cambiaran de nuevo en el futuro, a fecha de creación de esta memoria, las pruebas consistían en:
 \begin{itemize}
 	\item Crear una máquina virtual.
 	\item Establecer un límite de gasto (\textit{Billing}).
@@ -67,7 +67,7 @@ Con esto, AWS proporciona hasta 200\$ en créditos gratuitos para realizar prueb
 	\item Probar un modelo de lenguaje (LLM) en el servicio Amazon Bedrock.
 \end{itemize}
 
-Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar el proyecto, como hemos visto en \ref*{subsec:Costes_cloud}. Todos los comandos y procedimientos nombrados a partir de aquí, han sido realizados consultando la documentación técnica oficial de AWS \citep{AWS2026Docuementacion}. Debido a la extensión de esta documentación y para facilitar la lectura de la memoria, no se referencia las paginas de documentación individuales para cada comando, pero la misma cuenta con un buscador donde se puede consultar el comando o comandos específicos de esta memoria para poder ver su funcionamiento y las decisiones de diseño que se han tomado aquí. También para facilitar la reproducibilidad, se ha priorizado la utilización de los comandos del CLI, aunque todas ellos tienen su equivalente en la web que también se pueden consultar en la documentación y pueden ser mas fáciles de ejecutar , y sobre todo, mas claros, en ciertos escenarios. Los comandos que vamos a lanzar se pueden escribir directamente en la \textbf{AWS CloudShell} como se muestra en la figura \ref*{figura_AWS_Consola}.
+Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar el proyecto, como hemos visto en \ref*{subsec:Costes_cloud}. Todos los comandos y procedimientos nombrados a partir de aquí, han sido realizados consultando la documentación técnica oficial de AWS \citep{AWS2026Docuementacion}. Debido a la extensión de esta documentación y para facilitar la lectura de la memoria, no se referencia las paginas de documentación individuales para cada comando, pero la misma cuenta con un buscador donde se puede consultar el comando o comandos específicos de esta memoria para poder ver su funcionamiento y las decisiones de diseño que se han tomado aquí. También para facilitar la reproducibilidad, se ha priorizado la utilización de los comandos del CLI, aunque todas ellos tienen su equivalente en la web que también se pueden consultar en la documentación y pueden ser más fáciles de ejecutar , y sobre todo, mas claros, en ciertos escenarios. Los comandos que vamos a lanzar se pueden escribir directamente en la \textbf{AWS CloudShell} como se muestra en la figura \ref*{figura_AWS_Consola}.
 
 	
 \begin{figure}[h]
@@ -81,9 +81,9 @@ Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar
 
 \subsubsection{Configuración del entorno y autenticación}
 
-Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios,  se realizó para futuras extensiones del proyecto y para la utilización de herramientas y roles de servicio. 
+Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos más estrictos, y este modelo tiene más sentido para manejar un numero mayor de usuarios,  se realizó para futuras extensiones del proyecto y para la utilización de herramientas y roles de servicio. 
 
-Lo primero para trabajar con la nube, es seleccionar la región que mas convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
+Lo primero para trabajar con la nube, es seleccionar la región que más convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
 
 \begin{lstlisting}[language=bash, caption={Obtención del código fuente del proyecto}]
 	cd ~
@@ -161,7 +161,7 @@ En caso de querer descargar otros datos públicos, hay dos opciones, se podría 
 	wget -qO- "$URL_DATOS" | aws s3 cp - "s3://$BUCKET/data/bronze/nombre_archivo.csv"
 \end{lstlisting}
 
-También, como opción mas elegante, se podría integrar en el proceso y modificar el repositorio descargable o el archivo, directamente en la consola de AWS o en local, contribuyendo así en el desarrollo de este proyecto.
+También, como opción más elegante, se podría integrar en el proceso y modificar el repositorio descargable o el archivo, directamente en la consola de AWS o en local, contribuyendo así en el desarrollo de este proyecto.
 
 
 
@@ -169,7 +169,7 @@ También, como opción mas elegante, se podría integrar en el proceso y modific
 
 Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuidos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272 MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
 
-A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es mas fácil de automatizar, a parte de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capítulo:
+A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es más fácil de automatizar, a parte de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capítulo:
 
 \begin{lstlisting}[language=bash, caption={Creación del rol de servicio de Glue}]
 	# Politica de confianza: solo el servicio Glue puede asumir este rol
@@ -238,7 +238,7 @@ La definición se declara en JSON en lugar de como argumentos en línea, para ma
 	aws glue create-job --cli-input-json file://job-limpieza.json
 \end{lstlisting}
 
-Esto de nuevo, es sencillo por tener los .py configurados, pero para añadir mas datos solo seria necesario incluir su entrada en \texttt{config.py}, actualizar el repositorio con las especificidades de estos, y volver a sincronizar los procesos con el almacenamiento mediante el ciclo descrito en este trabajo. 
+Esto de nuevo, es sencillo por tener los .py configurados, pero para añadir más datos solo seria necesario incluir su entrada en \texttt{config.py}, actualizar el repositorio con las especificidades de estos, y volver a sincronizar los procesos con el almacenamiento mediante el ciclo descrito en este trabajo. 
 Con esto ya podemos lanzar la ejecución y ver el resultado:
 
 \begin{lstlisting}[language=bash, caption={Ejecución, seguimiento y verificación del resultado}]
@@ -266,7 +266,7 @@ Con esto ya podemos lanzar la ejecución y ver el resultado:
 \end{figure}
 
 
-Aunque aquí lo ponemos en línea de comandos, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece en el S3, con los mismos datos y estructura que la generada en el entorno local.
+Aunque aquí lo ponemos en línea de comandos, AWS Glue es más fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece en el S3, con los mismos datos y estructura que la generada en el entorno local.
 
 
 \subsubsection{Modelos de ML y resultados con Amazon SageMaker} 
@@ -318,18 +318,57 @@ El proyecto también tiene un archivo .ipynb ejecutable para poder ver los resul
 También advertir que, desde una perspectiva de control de costes, los espacios de trabajo facturan por tiempo de aprovisionamiento mientras permanecen encendidos, con independencia de que se esté utilizando el cuaderno o no. Conviene detenerlos manualmente desde la administración del dominio al finalizar cada sesión para interrumpir la facturación.
 
 
-% [TODO] añadir alguna imagen de lo que ha salido en jupyter y algo mas para finalizar.
+% [TODO] añadir alguna imagen de lo que ha salido en jupyter y algo más para finalizar.
 
 Este manual ha empleado tres modalidades de ejecución dentro de AWS, cada una adecuada a una etapa distinta: un terminal interactivo para la ingesta, un servicio de procesamiento desatendido para la transformación, y un entorno de cuadernos para el análisis. Aunque la ingesta y la limpieza podrían ejecutarse indistintamente en cualquiera de las tres, la etapa de análisis requiere el entorno de cuadernos por sus dependencias gráficas y geoespaciales. Esta división refleja la lógica del propio catálogo de servicios, en el que cada uno está optimizado para un perfil de carga concreto.
 
 
 
-% [TODO] comparar el coste de las 3 tecnologias dentro de AWS que se han utilizado? 
-
-
 \newpage
 \subsection{Despliegue en Google Cloud Platform (GCP)} 
 \label{subsec:Manual_Despliegue_GCP}
+
+Para desplegar la infraestructura en la nube de Google, lo primero que tenemos que hacer, al igual que en AWS, es registrarnos en la plataforma \citep{GCP2026Signup}. El proceso de creación es sencillo, en un solo paso esta configurado y es gratuito, aunque también requiere introducir una tarjeta bancaria, y al momento de escribir la memoria, si la tarjeta es virtual, se puede requerir un pre-pago de 25€ que se devuelve al cerrar la cuenta, por lo que se recomienda el uso de una tarjeta física real. 
+
+Para no alargar este capítulo, simplemente redirigimos al usuario al propio tutorial de GCP, donde se explica en detalle las condiciones: \citep{GCP2026Tutorial}. GCP no tiene tutoriales obligatorios y disponemos de los 300\$ (aproximadamente 263€) disponibles desde el principio. Todos los comandos y procedimientos nombrados en este apartado también han sido realizados con la documentación técnica oficial de GCP \citep{GCP2026Docuementacion}, y debido a la extensión de esta documentación y la facilidad para recorrer sus apartados y buscar comandos concretos, no se referencia las paginas de documentación individuales para cada comando. Se ha priorizado la utilización de los comandos del CLI al igual que en AWS, y los comandos del manual se pueden escribir directamente en la \textbf{Google Cloud Shell}, o ejecutar su correspondiente acción en la consola web de GCP.
+
+	
+\begin{figure}[h]
+	\begin{center}
+		\caption{Abrir terminal GCP en consola} 
+		\includegraphics[scale=0.3]{Imagenes/Bitmap/GCP-abrir-consola.png} 
+		\footnotesize{Fuente: Propia}
+		\label{figura_GCP_Consola}
+	\end{center}
+\end{figure} 
+
+
+El primer paso es crear un proyecto, aunque en este caso Google ya crea varios proyectos por defecto, crearemos uno propio para incluir todo lo necesario:
+
+\begin{lstlisting}[language=bash, caption={Creación del proyecto en GCP}]
+	# Crear un proyecto nuevo
+	gcloud projects create tfm-ucm-datos-publicos --name="TFM UCM Datos Publicos"
+	
+	# Establecer el proyecto activo
+	gcloud config set project tfm-ucm-datos-publicos
+	
+	# Comprobar el proyecto activo
+	gcloud config list project
+	
+	# Si se ha creado, le asignamos la cuenta de facturacion
+	gcloud billing projects link tfm-ucm-datos-publicos \
+	--billing-account="$(gcloud billing accounts list --format='value(ACCOUNT_ID)' | head -n1)"
+
+	# Definimos regiones
+	gcloud config set compute/region europe-west1
+	gcloud config set compute/zone europe-west1-b
+\end{lstlisting}
+
+
+
+
+% [TODO] TOOODO el analisis de GCP
+
 
 
 \newpage
@@ -341,4 +380,4 @@ Al finalizar también produce tres resúmenes: el coeficiente de silueta por añ
 
 El parámetro \texttt{MODO\_REPLICA} determina si se reproducen las condiciones del trabajo original o se aplican los criterios metodológicos propios definidos en la sección \ref*{sec:Metodos_analisis}, y los resultados de cada modo se almacenan en directorios separados. La salida completa queda registrada en \texttt{ejecucion.log} para facilitar la trazabilidad de las ejecuciones y los parámetros elegidos.
 
-
+% [TODO] poner alguna explicacion mas? redirigir a otra parte de resultados?

@@ -6,6 +6,7 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 ## [Cloud] - 2026-08-25
 ### Add
 * Nuevo archivo de Jupyter notebooks para ejecutar el analisis 3
+* Inicio de la parte de GCP
 ### Change
 * Reestructuracion de la ultima parte del manual de usuaio
 * Mejora en los graficos poniendo el nombre de las estaciones
