@@ -103,7 +103,7 @@ def codo(X: np.ndarray, nombre: str, carpeta) -> None:
     plt.plot(list(ks), inercias, "o-")
     plt.xlabel("k"); plt.ylabel("Inercia"); plt.title(f"Diagrama del codo: {nombre}")
     plt.tight_layout()
-    plt.savefig(carpeta / f"codo_{nombre}.png", dpi=150)
+    plt.savefig(f"{carpeta}/codo_{nombre}.png", dpi=150)
     plt.close()
 
 def ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta) -> dict | None:
@@ -138,9 +138,9 @@ def ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta) -
     dendrogram(Z, labels=[str(int(e)) for e in m.index])
     plt.title(f"Dendrograma (ward): {nombre} {anio}")
     plt.tight_layout()
-    plt.savefig(carpeta / f"dendrograma_{nombre}.png", dpi=150)
+    plt.savefig(f"{carpeta}/dendrograma_{nombre}.png", dpi=150)
     plt.close()
-    m.to_csv(carpeta / f"clusters_{nombre}.csv")
+    m.to_csv(f"{carpeta}/clusters_{nombre}.csv")
     print(f"  [OK] {nombre}: {len(m)} estaciones, k={k}, " f"inercia={km.inertia_:.1f}, silhouette={sil:.3f}")
 
     # TODO comentar despues que esto es solo para ver por pantalla ahora
@@ -162,9 +162,9 @@ def correlaciones(anio: int, carpeta) -> None:
             ax = medias.plot.scatter(x=a, y=b, figsize=(5, 4))
             ax.set_title(f"{a} vs {b} (r={r:.2f})")
             plt.tight_layout()
-            plt.savefig(carpeta / f"corr_{a}_{b}.png", dpi=150)
+            plt.savefig(f"{carpeta}/corr_{a}_{b}.png", dpi=150)
             plt.close()
-    pd.DataFrame(filas).to_csv(carpeta / "correlaciones.csv", index=False)
+    pd.DataFrame(filas).to_csv(f"{carpeta}/correlaciones.csv", index=False)
     print(f"  [OK] correlaciones: {len(filas)} pares")
 
 
@@ -262,9 +262,9 @@ def analisis_arbolado(anio: int, carpeta) ->  dict | None:
         ax.annotate(fila["distrito"][:10], (fila["superficie_ha"], fila["temperatura"]), fontsize=6)
     ax.set_title(f"Arbolado vs temperatura por distrito {anio} (r={r:.2f})")
     plt.tight_layout()
-    plt.savefig(carpeta / "arbolado_vs_temperatura.png", dpi=150)
+    plt.savefig(f"{carpeta}/arbolado_vs_temperatura.png", dpi=150)
     plt.close()
-    cruce.to_csv(carpeta / "arbolado_temperatura_distrito.csv", index=False)
+    cruce.to_csv(f"{carpeta}/arbolado_temperatura_distrito.csv", index=False)
     print(f"  [OK] arbolado vs temperatura: {n_distritos} distritos, r={r:.3f}")
 
     # TODO comentar despues que esto es solo para ver por pantalla ahora

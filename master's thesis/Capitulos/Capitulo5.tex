@@ -154,10 +154,9 @@ Con esto ya tendremos la estructura de carpetas y la ingesta completa en S3 con 
 
 
 En caso de querer descargar otros datos públicos, hay dos opciones, se podría descargar directamente con un comando de descarga como este:
-\begin{lstlisting}[language=bash, caption={Ingesta manual directa de un nuevo conjunto de datos a S3}]
-	
+
+\begin{lstlisting}[language=bash, float=htbp, caption={Ingesta manual directa de un nuevo conjunto de datos a S3}]
 	# SOLO PARA DESCARGAR NUEVOS DATOS! CAMBIANDO LA URL!
-	
 	wget -qO- "$URL_DATOS" | aws s3 cp - "s3://$BUCKET/data/bronze/nombre_archivo.csv"
 \end{lstlisting}
 
