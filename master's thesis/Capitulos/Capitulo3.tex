@@ -369,8 +369,11 @@ La especificación técnica paso a paso, la sintaxis completa de los comandos ej
 		\item \textbf{Mecanismos de contención de gasto:} Se desactivaron los reintentos automáticos (\texttt{max-retries 0}) y establecimiento de tiempos máximos de ejecución (\texttt{timeout}) en los trabajos de \textit{AWS Glue}, además de la monitorización presupuestaria mediante \textit{AWS Budgets}.
 	\end{itemize}
 	
-	
 \end{enumerate}
+
+
+Se valoró el empleo de los modelos pre-entrenados de \textit{AWS SageMaker}, pero se descartaron por ser una solución sobre-dimensionada a este problema. El conjunto de análisis está formado por unas pocas decenas de observaciones con menos de diez variables, un tamaño para el que los algoritmos de agrupamiento clásicos resultan más apropiados.
+
 
 \newpage
 \subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}

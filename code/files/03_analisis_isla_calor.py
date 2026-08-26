@@ -76,6 +76,12 @@ def cargar(clave: str, anio: int) -> pd.DataFrame:
     df = _leer_silver(f"{clave}_diario")
     return df[df["fecha"].dt.year == anio] # Nos quedamos solo con el año que nos interesa
 
+def _nombres_estacion() -> pd.Series:
+    """Nombre de cada estacion para etiquetar figuras y tablas"""
+    est = _leer_silver("estaciones_meteo")
+    est["CODIGO_CORTO"] = pd.to_numeric(est["CODIGO_CORTO"], errors="coerce")
+    return est.dropna(subset=["CODIGO_CORTO"]).set_index(
+        est["CODIGO_CORTO"].dropna().astype(int))["ESTACION"]
 
 # --- clustering por estacion (aproximaciones originales) --
 
@@ -133,10 +139,14 @@ def ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta) -
     Z = linkage(X, method="ward")
     m[f"jerarquico_k{k}"] = fcluster(Z, t=k, criterion="maxclust")
 
-    # pintamos todo
-    plt.figure(figsize=(8, 4))
-    dendrogram(Z, labels=[str(int(e)) for e in m.index])
+    # pintamos todo con los nombres originales
+    nombres = _nombres_estacion()
+    etiquetas = [str(nombres.get(int(e), f"Estación {int(e)}"))[:14] for e in m.index]
+    
+    plt.figure(figsize=(10, 4))
+    dendrogram(Z, labels=etiquetas)
     plt.title(f"Dendrograma (ward): {nombre} {anio}")
+    plt.xticks(rotation=45, ha="right", fontsize=7)
     plt.tight_layout()
     plt.savefig(f"{carpeta}/dendrograma_{nombre}.png", dpi=150)
     plt.close()

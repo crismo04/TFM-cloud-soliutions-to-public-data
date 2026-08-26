@@ -12,6 +12,7 @@ Para mantener la coherencia con el resto de capítulos, dividiremos el manual en
 
 De este modo, intentaremos garantizar la transparencia del código y la total trazabilidad del ciclo de vida del dato, desde su ingesta hasta el modelado de Inteligencia Artificial. Al final, también estableceremos una comparativa de que nubes o entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}} \newpage
 
+La comparación cuantitativa entre entornos, en términos de esfuerzo, tiempo de ejecución y coste, se recopila en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
 
 \section{Ingesta y descarga de datos} 
 \label{sec:Manual_Ingesta}
@@ -80,9 +81,9 @@ Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar
 
 \subsubsection{Configuración del entorno y autenticación}
 
-Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios,  se realizó para futuras extensiones del proyecto y para la utilizacion de herramientas y roles de servicio. 
+Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos mas estrictos, y este modelo tiene mas sentido para manejar un numero mayor de usuarios,  se realizó para futuras extensiones del proyecto y para la utilización de herramientas y roles de servicio. 
 
-Lo primero para trabajar con la nube, es seleccionar la region que mas convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
+Lo primero para trabajar con la nube, es seleccionar la región que mas convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
 
 \begin{lstlisting}[language=bash, caption={Obtención del código fuente del proyecto}]
 	cd ~
@@ -91,7 +92,7 @@ Lo primero para trabajar con la nube, es seleccionar la region que mas convenga 
 	pip install -r requirements.txt --quiet
 \end{lstlisting}
 
-También conviene tener creadas las variables de entorno que vamos a utilizar en el proyecto. Ademas, al trabajar con la terminal, se  conserva el directorio personal entre sesiones, pero no las variables de entorno definida. Para no tener que volver a crearlas cada sesión, se pueden almacenar en un fichero que se carga al comenzar cada sesión:
+También conviene tener creadas las variables de entorno que vamos a utilizar en el proyecto. Además, al trabajar con la terminal, se  conserva el directorio personal entre sesiones, pero no las variables de entorno definida. Para no tener que volver a crearlas cada sesión, se pueden almacenar en un fichero que se carga al comenzar cada sesión:
 
 \begin{lstlisting}[language=bash, caption={Persistencia de las variables del proyecto}]
 	cat > ~/tfm-env.sh << 'EOF'
@@ -265,7 +266,7 @@ Con esto ya podemos lanzar la ejecución y ver el resultado:
 \end{figure}
 
 
-Aunque aquí lo ponemos en linea de comandos, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece en el S3, con los mismos datos y estructura que la generada en el entorno local.
+Aunque aquí lo ponemos en línea de comandos, AWS Glue es mas fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece en el S3, con los mismos datos y estructura que la generada en el entorno local.
 
 
 \subsubsection{Modelos de ML y resultados con Amazon SageMaker} 
@@ -274,9 +275,9 @@ Aunque aquí lo ponemos en linea de comandos, AWS Glue es mas fácil de ejecutar
 Para generar esta última capa de análisis en AWS, vamos a volver a cambiar de tecnología.
 Mientras que la etapa \textit{Silver} se completó mediante \textit{AWS Glue}, la etapa de análisis tiene otros requerimientos: ejecución de algoritmos, cálculo de siluetas, volumen elevado de figuras, librerías de tratamiento geoespacial, etc. Todo esto se beneficia de una ejecución interactiva durante la interpretación de los resultados. 
 
-Por ello, para generar esta capa final, vamos a emplear \textbf{Amazon SageMaker}. Específicamente, el servicio de \textit{Spaces} dentro de un dominio, que proporciona entornos de \textit{Jupyter Notebooks}. Lo primero es la creación de este dominio, que se realiza desde la consola web \footnote{SageMaker disponible en: \url{https://eu-west-1.console.aws.amazon.com/datazone/home?region=eu-west-1\#/}}, con la configuración de inicio rápido en la región \texttt{eu-west-1}. 
+Por ello vamos a emplear \textbf{Amazon SageMaker}. Específicamente, el servicio de \textit{Spaces} dentro de un dominio, que proporciona entornos de \textit{Jupyter Notebooks}. Lo primero es la creación de este dominio, que se realiza desde la consola web \footnote{SageMaker disponible en: \url{https://eu-west-1.console.aws.amazon.com/datazone/home?region=eu-west-1\#/}}, con la configuración de inicio rápido en la región \texttt{eu-west-1}. 
 
-AWS aprovisionará automáticamente las redes virtuales (VPC) y el almacenamiento (EFS) con el dominio. Una vez creado, el espacio aprovisiona automáticamente el entorno de desarrollo \textbf{JupyterLab} mediante IDE, ademas de muchas otras funciones, que se pueden ver en la figura \ref*{figura_AWS_Consola_sagemaker}.
+AWS aprovisionará automáticamente las redes virtuales (VPC) y el almacenamiento (EFS) con el dominio. Una vez creado, el espacio aprovisiona automáticamente el entorno de desarrollo \textbf{JupyterLab} mediante IDE, además de muchas otras funciones, que se pueden ver en la figura \ref*{figura_AWS_Consola_sagemaker}.
 
 \begin{figure}[h]
 	\begin{center}
@@ -287,31 +288,34 @@ AWS aprovisionará automáticamente las redes virtuales (VPC) y el almacenamient
 	\end{center}
 \end{figure}
 
-Desde la terminal integrada en el cuaderno, se descarga el repositorio, se instalan librerías y se sincronizan \textit{Silver} y datos descargados en el paso de ingesta. Finalmente, se publican los resultados en el almacenamiento masivo S3:
+Desde la terminal integrada en el entorno, se descarga el repositorio, se instalan librerías y se sincronizan \textit{Silver} y datos descargados en el paso de ingesta. Todo esto debe instalarse en el mismo intérprete que ejecuta el proceso y hay que tener en cuenta que el explorador de ficheros del entorno se abre por defecto en un directorio distinto a donde clonamos el repositorio, por lo que es necesario ir hasta él para visualizar las figuras generadas. Los comandos para todo esto, y para sincronizar los resultados en S3 son los siguientes:
 
 \begin{lstlisting}[language=bash, caption={Ejecución del análisis en el entorno de SageMaker}]
-	# Dentro del terminal de JupyterLab en SageMaker
-	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	# Dentro del terminal de JupyterLab en SageMaker, creamos o actualizamos el repositorio
+	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git \
+	|| (cd TFM-cloud-soliutions-to-public-data && git pull)
 	cd TFM-cloud-soliutions-to-public-data/code/files
 	pip install -r requirements.txt --quiet
+	python -m pip install geopandas --quiet
+	python -c "import geopandas
 	
-	# Descarga de las capas necesarias desde S3
+	# Descarga de las capas necesarias desde S3 que ya se han creado antes 
 	aws s3 sync s3://tfm-ucm-datos-publicos/data/silver/ data/silver/
 	aws s3 sync s3://tfm-ucm-datos-publicos/data/bronze/distritos/ data/bronze/distritos/
 	
-	# Ejecucion del analisis y generacion de figuras
-	python 03_analisis_isla_calor.py
+	# Tambien se pueden crear volviendo a ejecutar los archivos 01 y 02 en el mismo proceso
 	
-	# Publicacion de los resultados en el bucket
+	# Ejecutamos el analisis y publicamos los resultados
+	python 03_analisis_isla_calor.py
 	aws s3 sync resultados/ s3://tfm-ucm-datos-publicos/resultados/
+	
 \end{lstlisting}
 
-De nuevo, la ejecución no requiere modificación del código fuente para ejecutar en este entorno. Emplear \texttt{JupyterLab} para el trabajo analítico, facilita visualizar gráficos y tablas directamente en el entorno, y publicar después en el almacenamiento de objetos una vez estudiada la salida.
+Emplear \texttt{JupyterLab} para el trabajo analítico también facilita visualizar gráficos y tablas directamente en el entorno, y publicar después en el almacenamiento de objetos una vez estudiada la salida. El entorno de cuadernos incorpora además un conjunto amplio de librerías de aprendizaje automático con versiones fijadas por el proveedor, de modo que instalar las dependencias del proyecto podría generar conflictos de versión (pero que en este caso no afectan a la ejecución).
 
-De nuevo, la ejecución no requiere modificación del código fuente. El entorno de cuadernos dispone de sistema de ficheros local, por lo que los gráficos y las tablas se generan directamente en disco y se publican después en el almacenamiento de objetos, evitando las adaptaciones que habrían sido necesarias en el servicio de procesamiento desatendido, como reescribir la salida de cada gráfico hacia flujos de bytes o resolver las dependencias nativas de las librerías geoespaciales.
+El proyecto también tiene un archivo .ipynb ejecutable para poder ver los resultados directamente en la carpeta \textit{code/files/analisis\_isla\_calor.ipynb}
 
-
-Conviene advertir que, desde una perspectiva de control de costes, los espacios de trabajo facturan por tiempo de aprovisionamiento mientras permanecen encendidos, con independencia de que se esté utilizando el cuaderno o no. Conviene detenerlos manualmente desde la administración del dominio al finalizar cada sesión para interrumpir la facturación.
+También advertir que, desde una perspectiva de control de costes, los espacios de trabajo facturan por tiempo de aprovisionamiento mientras permanecen encendidos, con independencia de que se esté utilizando el cuaderno o no. Conviene detenerlos manualmente desde la administración del dominio al finalizar cada sesión para interrumpir la facturación.
 
 
 % [TODO] añadir alguna imagen de lo que ha salido en jupyter y algo mas para finalizar.

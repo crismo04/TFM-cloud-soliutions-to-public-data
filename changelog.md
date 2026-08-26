@@ -5,6 +5,15 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 
 ## [Cloud] - 2026-08-25
 ### Add
+* Nuevo archivo de Jupyter notebooks para ejecutar el analisis 3
+### Change
+* Reestructuracion de la ultima parte del manual de usuaio
+* Mejora en los graficos poniendo el nombre de las estaciones
+* Otras correcciones menores de la memoria
+
+
+## [Cloud] - 2026-08-25
+### Add
 * Nueva parte del manual de usuario para la creacion y uso de SageMaker
 * Añadidas las fotos para acompañar las explicaciones del manual de usuario
 ### Fix
