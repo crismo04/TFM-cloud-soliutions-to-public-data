@@ -2,6 +2,11 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [Cloud] - 2026-08-27
+### Change
+* WIP de parte de GCP en la memoria
+* Organizar TODOs del capitulo 4
+
 
 ## [Cloud] - 2026-08-25
 ### Add

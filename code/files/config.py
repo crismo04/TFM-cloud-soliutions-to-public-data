@@ -1,5 +1,5 @@
 """
-Configuración central de la Fase 1 (baseline local en Python).
+Configuración central de la fase local en Python.
 
 Los conjuntos se descargan a partir de las PÁGINAS DE CATÁLOGO del portal de datos abiertos, no de URLs directas a ficheros: 
     Los identificadores numéricos de cada fichero cambian cuando el Ayuntamiento republica...

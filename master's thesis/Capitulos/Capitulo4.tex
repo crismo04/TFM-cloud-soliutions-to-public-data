@@ -1,7 +1,14 @@
 \chapter{Resultados}
 \label{cap:Resultados}
 
-% [TODO] redactar en pasado, apoyarse en recursos graficos
+% [TODO] redactar en pasado, apoyarse en recursos graficos y seguir estructura:
+% ESTRUCTURA: cinco preguntas, una o dos figuras por pregunta.
+%   1. Se replican los resultados del trabajo original?    -> OK
+%   2. Que impacto tiene el criterio de cobertura minima?  -> OK
+%   3. Que dice la correlacion arbolado-temperatura?       -> OK
+%   4. Que anomalias de datos aparecieron?                 -> PENDIENTE
+%   5. Como se comparan los entornos?                      -> FALTA GCP
+% las figuras deben acompañar al texto, si no, estan en el repo
 
 
 En este capítulo se recogen los resultados obtenidos con el proyecto, organizados en tres bloques, al igual que el resto de la memoria: los hallazgos relativos a la calidad y continuidad de los datos publicados, los resultados de los análisis realizados sobre ellos y los métodos de aprendizaje automático utilizados, y la comparación entre la ejecución local y las diferentes plataformas cloud evaluadas.
@@ -9,12 +16,38 @@ En este capítulo se recogen los resultados obtenidos con el proyecto, organizad
 \section{Hallazgos sobre la calidad de los datos publicados}
 \label{sec:Resultados_datos}
 
-% [TODO] parrafo introductorio -> estas patologias no son visibles en un estudio de un solo año, emergen al reutilizar la serie completa de forma automatizada -> la automatizacion como instrumento de auditoria (conectar verhulst2020, OECD2023openData, MelendrezMoreto2016Auditoria)
+% PENDIENTE. Parrafo introductorio con la idea de fondo:
+%   - estas anomalias NO son visibles en un estudio de un solo año
+%   - los dos TFG de referencia usaron una foto fija (un año / tres ficheros)
+%   - con un solo fichero no hay termino de comparacion: un formato de fecha,
+%     una denominacion de columna, una version del esquema
+%   - Meneses/Garcia si detectaron una (los meses con mas dias de los que
+%     corresponden) y la corrigieron en su limpieza.R -> citarlos, mi limpieza
+%     hereda esa regla, no la inventa
+%   - conclusion: la automatizacion no solo da eficiencia, actua como
+%     instrumento de auditoria de la calidad del dato publicado
+%   - citar verhulst2020, OECD2023openData, MelendrezMoreto2016Auditoria
 
 \subsection{Evolución no documentada de los esquemas}
 \label{sec:Resultados_drift}
 
-% [TODO] desarrollar a partir de la tabla el drift de nomenclatura, de unidades, de formato numerico, semantico, nombres de entidad inconsistentes... REVISAR LAS COSAS QUE EL AYUNTAMIENTO PUBLICA EN EL PERFIL, QUE HABIA AVISOS Y LAS QUE NO...
+% PENDIENTE. Desarrollar la tabla. El hallazgo fino no es la lista de
+% problemas, es DONDE los documenta (o no) el Ayuntamiento:
+%   - En la descripcion del conjunto: hueco de aforos (con causa: cambio de
+%     detectores), advertencia de no comparar series, ausencia de arbolado
+%     2018 (cambio de plataforma), PDF de estructura hasta-2023 / desde-2024,
+%     sin meteo antes de 2019
+%   - Solo en los hilos de comentarios: la cobertura sensorial heterogenea,
+%     y un usuario avisando de que el documento oficial pone NOx en g/m3
+%     cuando son ug/m3 -> confirman el dato pero NO corrigen el documento
+%   - Sin documentar en ningun sitio: cambio de unidades m2->ha entre 2019 y
+%     2020, separador de millares desde 2022, nombres de distrito
+%     inconsistentes, diciembre-2024 ausente, redefinicion forestal->arborea
+%   - Patron: lo que la administracion DECIDE esta documentado; lo que ocurre
+%     por deriva del proceso de generacion, no. Y lo que se explica en
+%     comentarios existe pero no es consumible por un proceso automatico.
+
+% PENDIENTE: añadir columna "Documentacion" a la tabla con esos tres niveles
 
 \begin{table}[htbp]
 	\centering
@@ -36,17 +69,23 @@ En este capítulo se recogen los resultados obtenidos con el proyecto, organizad
 	\label{tab:hallazgos_calidad}
 \end{table}
 
-% [TODO] explicar bien como lo hemos tratado en analisis
+% [TODO] explicar bien como lo hemos tratado en analisis ( con referencias al cap 3 que tambien lo ciuenta)
 
 
 \subsection{Continuidad de la publicación y cobertura de la red}
 \label{sec:Resultados_cobertura}
 
-% [TODO] Degradacion 2021-22 en la subred municipal 1xx frente a la red clasica y hueco de aforos.
-% diciembre-2024 ausente en toda la red
-% estaciones 16 y 39 incorporan temperatura en 2022
-% estacion 104 contradice sus propios flags
-% cadena de evidencia de migraciones de plataforma municipal
+% PENDIENTE. Material para desarrollar, leyendo la figura de cobertura:
+%   - la caida 2021-22 se concentra en la subred municipal (codigos 1xx),
+%     la red clasica (numeros bajos) aguanta -> no es un fallo general
+%   - coincide en fechas con el hueco de 14 meses de los aforos: apunta a
+%     una migracion de plataforma municipal, no a averias independientes
+%   - diciembre-2024 ausente en TODA la red (todas topan en ~335 dias)
+%   - estaciones 16 y 39: cero hasta 2022, entran en la red ese año
+%   - estacion 104: mide temperatura en 2019 aunque el inventario oficial
+%     diga que no tiene ese sensor -> el maestro contradice al dato
+%   - conectar con la advertencia oficial del portal sobre el cambio de
+%     detectores (AytoMadrid2026Aforos)
 
 
 \begin{figure}[htbp]
@@ -59,6 +98,7 @@ En este capítulo se recogen los resultados obtenidos con el proyecto, organizad
 \section{Resultados del análisis de aprendizaje automático: isla de calor}
 \label{sec:Resultados_isla_calor}
 
+% [Secciones 1, 2 y 3 ya redactadas: replica, arbolado, sensibilidad] AÑADR UN PARRAFITO DE INTRODUCCION
 
 \subsection{Replicación del trabajo de referencia}
 \label{sec:Resultados_replica}
@@ -96,7 +136,7 @@ En la cuarta aproximación, que agrupa las estaciones por una única variable, a
 En la primera aproximación se detectó una inconsistencia interna del trabajo replicado, ya que su texto declara seis estaciones seleccionadas por disponer de las siete magnitudes, mientras que su figura muestra ocho, dos de las cuales no miden presión ni radiación solar según el propio inventario de estaciones del portal. 
 La réplica siguió el criterio declarado y añadió la estación de Peñagrande, que comenzó a registrar datos en el año analizado y no estaba disponible cuando se realizó el trabajo original.
 
-% [TODO] aqui va tambien las tecnicas de AutoML cloud si las hay y si aplica algo nuevo en vertex o asi
+% [TODO] aqui va tambien las tecnicas de AutoML cloud - cOMO PODRIAN HABER AYUDADO PERO SOBREDIMENSIONADAS
 
 \subsection{Relación entre superficie arbórea y temperatura}
 \label{sec:Resultados_arbolado}
@@ -127,7 +167,11 @@ La relación inversa entre superficie arbórea y temperatura media por distrito 
 \end{table}
 
 En la Figura \ref{fig:arbolado_2021} se aprecia el patrón esperado, ya que los distritos sin masas arbóreas registran las temperaturas más altas, mientras que los de mayor superficie arbórea presentan las medias más bajas. 
-Destaca sin embargo Puente de Vallecas, que pese a disponer de una superficie comparable a la de los distritos más frescos resulta ser el más cálido del conjunto, lo que apunta a la influencia de factores no considerados en el análisis. %TODO revisar, villa de vallecas tambien se podria considerar outlayer
+Destaca sin embargo Puente de Vallecas, que pese a disponer de una superficie comparable a la de los distritos más frescos resulta ser el más cálido del conjunto, lo que apunta a la influencia de factores no considerados en el análisis.
+
+% PENDIENTE los dos Vallecas caen en el bloque urbano denso del
+% dendrograma pese a tener masa arborea. Sugiere que la ubicacion pesa mas
+% que la superficie -> puede explicar por que son outliers en el scatter.
 
 \begin{figure}[htbp]
 	\centering
@@ -153,6 +197,19 @@ Resulta significativo que ambas configuraciones converjan en 2024 y 2025, precis
 
 \subsection{Evaluación de los agrupamientos}
 \label{sec:Resultados_agrupamiento}
+
+% kmeans-Ward, silueta  y dendrogram completados 
+
+% PENDIENTE: el parrafo del codo esta cortado a media frase:
+%   - la inercia cae 21,2 / 5,8 / 4,5 / 2,6 y a partir de k=5 baja de 1
+%     -> valida la eleccion de cinco grupos del trabajo original
+%   - coincide con el maximo de silueta de esa aproximacion (0,660 en 2021)
+%     -> dos criterios independientes señalan el mismo k
+%   - matiz honesto: la caida mas brusca en absoluto esta en k=2, coherente
+%     con la primera division del dendrograma. Dos lecturas compatibles:
+%     2 es la estructura dominante, 5 la subdivision estable
+
+% PENDIENTE lo de Vallecas al final tambien
 
 Los agrupamientos revelaron una relación inversa y sistemática entre el número de variables empleadas y la calidad de los grupos obtenidos (Tabla \ref{tab:silhouette_anios}). La aproximación basada en una única magnitud, el dióxido de nitrógeno, alcanzó la mejor silueta media, seguida de las dos aproximaciones con dos variables, mientras que la que emplea las siete magnitudes meteorológicas obtuvo sistemáticamente los peores valores, hasta el punto de resultar inviable en 2022 por varias causas:
 Por un lado, al aumentar la dimensionalidad las distancias entre observaciones tienden a igualarse y los grupos pierden definición. 
@@ -184,7 +241,9 @@ La heterogeneidad de la cobertura sensorial de la red no solo introduce valores 
 
 En cuanto al numero de grupos validados por el diagrama del codo....
 
-% [TODO] desarrollar -> la inercia deja de descender de forma apreciable a partir de k=5, lo que valida la eleccion del trabajo original y coincide con el maximo de silueta de esa aproximacion (0,660)...... la caida más pronunciada se produce en k=2, coherente con la particion de primer nivel del dendrograma
+
+
+
 
 \begin{figure}[htbp]
 	\centering
@@ -196,7 +255,8 @@ En cuanto al numero de grupos validados por el diagrama del codo....
 
 Como comprobación de robustez se ejecutaron sobre los mismos datos dos algoritmos de agrupamiento independientes, \textit{k-means} y el método jerárquico de Ward. En cuatro de las cinco aproximaciones ambos produjeron particiones idénticas, y en la restante difirieron en dos de veintiuna estaciones. Que dos procedimientos con fundamentos distintos converjan en la misma agrupación indica que la estructura detectada responde a los datos y no a las particularidades de un algoritmo concreto, comprobación que el trabajo original no realizaba de forma explícita.
 
-El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra además que la primera división del conjunto separa las estaciones situadas en la periferia y en grandes zonas verdes de las ubicadas en el núcleo urbano denso, una partición que reproduce la estructura espacial del fenómeno estudiado sin haber sido impuesta al algoritmo %TODO y que quizas podria explicar los descuadres de vallecas??
+El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra además que la primera división del conjunto separa las estaciones situadas en la periferia y en grandes zonas verdes de las ubicadas en el núcleo urbano denso, una partición que reproduce la estructura espacial del fenómeno estudiado sin haber sido impuesta al algoritmo 
+
 
 \begin{figure}[htbp]
 	\centering
@@ -206,16 +266,28 @@ El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra además que la primer
 \end{figure}
 
 
+
 \subsection{Limitaciones e interpretación}
 \label{sec:Resultados_limitaciones}
 
-% [TODO] desarrollar: altitud de las estaciones y tamaño de los distritos como factores no controlados, superficie absoluta frente a relativa, 2019 no comparable por redefinicion de la magnitud, tamaño muestral reducido en 2022
+% PENDIENTE. Cuatro limitaciones a desarrollar:
+%   - factores no controlados: altitud de las estaciones y tamaño del
+%     distrito. Superficie ABSOLUTA vs relativa al area del distrito
+%   - 2019 no es comparable con el resto: el publicador redefinio la
+%     magnitud (forestal -> arborea), saltos de +-30 ha por distrito que
+%     son reinventariado, no crecimiento vegetal
+%   - muestra reducida: solo 9 distritos en 2022 con el criterio propio
+%   - error propio detectado al comparar entornos: el proceso descartaba
+%     registros de aforos al inferir el formato de fecha, y el resultado
+%     variaba segun la version de la libreria. Corregido fijando el formato
+%     de forma explicita. Es un error de diseño del codigo, no del dato, y
+%     se detecto precisamente al ejecutar en dos entornos distintos
 
 
 \section{Comparación entre la ejecución local y las plataformas cloud}
 \label{sec:Resultados_cloud}
 
-% [TODO] Comparar la silueta obtenida en cada plataforma para verificar que los resultados coinciden. comparar los costes de cloud y su tiempo, asi como su facilidad de uso
+% [TODO] en cada plataforma e los resultados coinciden. comparar los costes de cloud y su tiempo, asi como su facilidad de uso
 
 La Tabla \ref{tab:esfuerzo_plataforma} recoge el esfuerzo medido en horas dedicado a cada etapa y en cada entorno. En este caso, el orden en que se abordaron los entornos, condiciona el resultado, ya que con el conocimiento acumulado de etapas anteriores, las siguientes son mucho mas ágiles. La implementación local fue la primera y llevo la mayor parte del trabajo de comprensión de las fuentes, diseño del proceso en código, y resolución de las incidencias de calidad del dato. De igual manera, AWS fue la primera nube evaluada, y la que menos conocía el autor, por lo que el tiempo acumulado incluye el aprendizaje de la plataforma y el coste en tiempo del primer acercamiento a la nube.
 
@@ -239,7 +311,28 @@ La Tabla \ref{tab:esfuerzo_plataforma} recoge el esfuerzo medido en horas dedica
 	\label{tab:esfuerzo_plataforma}
 \end{table}
 
+% PENDIENTE. Tres cosas que decir sobre estos numeros:
+%   - los resultados coinciden entre entornos: mismas siluetas hasta el
+%     tercer decimal y mismas correlaciones -> el analisis es reproducible
+%   - el coste total del proyecto en la nube fue de 0,247 dolares. El
+%     analisis interactivo costo quince veces mas que el procesamiento
+%     desatendido: el coste no esta en el computo sino en mantener un
+%     entorno encendido. Y 0,067 corresponden a la infraestructura del
+%     dominio (DataZone), que factura de fondo sin uso directo
+%   - el arranque del servicio desatendido son ~45 s antes de ejecutar
+%     nada, frente al arranque inmediato en local: es el peaje del
+%     modelo serverless
+
 \subsection{Comparación de costes en las diferentes nubes}
 \label{subsec:Costes_cloud}
 
-% [TODO] Comparar los costes de las diferentes clouds obtenidas, asi como lo local
+
+% [TODO] HACER TAMBIEN UNA TABLA. Comparar los costes de las diferentes clouds obtenidas, asi como lo local
+%AWS:
+%aws ce get-cost-and-usage \
+%--time-period Start=2026-08-01,End=2026-08-27 \
+%--granularity MONTHLY \
+%--metrics UnblendedCost \
+%--filter '{"Not":{"Dimensions":{"Key":"RECORD_TYPE","Values":["Credit","Refund"]}}}' \
+%--group-by Type=DIMENSION,Key=SERVICE
+

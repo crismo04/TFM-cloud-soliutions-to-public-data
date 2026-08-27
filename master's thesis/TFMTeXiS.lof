@@ -8,23 +8,23 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos 1xx) durante 2021 y 2022.\relax }}{56}{figure.caption.88}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{58}{figure.caption.94}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{59}{figure.caption.96}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{60}{figure.caption.99}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{61}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos 1xx) durante 2021 y 2022.\relax }}{58}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{60}{figure.caption.98}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{61}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{62}{figure.caption.103}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{63}{figure.caption.104}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Abrir terminal AWS en consola\relax }}{66}{figure.caption.122}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Estructura de carpetas generada en S3\relax }}{69}{figure.caption.165}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{72}{figure.caption.238}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Consola de SageMaker\relax }}{73}{figure.caption.241}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Abrir terminal GCP en consola\relax }}{75}{figure.caption.262}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Abrir terminal AWS en consola\relax }}{68}{figure.caption.126}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Estructura de carpetas generada en S3\relax }}{71}{figure.caption.169}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{74}{figure.caption.242}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Consola de SageMaker\relax }}{75}{figure.caption.245}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Abrir terminal GCP en consola\relax }}{77}{figure.caption.266}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{89}{figure.caption.295}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{92}{figure.caption.300}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{96}{figure.caption.305}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{93}{figure.caption.351}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{96}{figure.caption.356}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{100}{figure.caption.361}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }

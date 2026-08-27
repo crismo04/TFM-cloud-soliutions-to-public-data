@@ -377,8 +377,32 @@ Se valoró el empleo de los modelos pre-entrenados de \textit{AWS SageMaker}, pe
 
 \newpage
 \subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}
-% [TODO] Añadir en el futuro la metologia equivalente para GCP: Cloud Storage, Cloud Functions / Vertex AI, BigQuery, IAM/Service Accounts
 
-Se puede consultar todo el manual de arquitectura y buenas practicas en la web de GCP \citep{GCPArchitectureFramework2026}.
+Al igual que en la sección anterior, toda la especificación técnica paso a paso y el procedimiento de despliegue por comandos de cada uno de estos métodos aquí descritos, se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_GCP}. La arquitectura general se rige también por las directrices y buenas practicas de GCP \citep{GCPArchitectureFramework2026}, aplicando en concreto las siguientes decisiones de diseño:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WIP
+\begin{enumerate}
+	\item \textbf{Arquitectura de medalla en Cloud Storage}: La jerarquía de almacenamiento (\textit{Bronze, Silver, Gold}) se replicó utilizando un contenedor (\textit{bucket}) de Google Cloud Storage. Como mecanismo de seguridad moderno, se aplicó la política de Prevención de Acceso Público (\textit{Public Access Prevention}) de forma nativa, bloqueando cualquier exposición a internet. También se habilitó el versionado y el etiquetado de recursos.
+	
+	\item \textbf{Evaluación de servicios serverless para el procesamiento ETL}: Para la fase de transformación se analizaron dos opciones de cómputo desatendido, ambas descartadas tras las pruebas iniciales.
+	
+	\begin{itemize}
+		\item \textbf{Cloud Run Jobs}: Este servicio permite ejecutar procesos por lotes en contenedores sin necesidad de escribir un \texttt{Dockerfile} explícito, gracias a la integración con \textit{Cloud Build} y los \textit{Buildpacks} de Google. Se preparó un fichero \texttt{Procfile} con la instrucción de arranque (\texttt{python3 02\_limpieza.py}) y un \texttt{.gcloudignore} para excluir archivos locales. Sin embargo, el despliegue resultó fallido: el contenedor se construía correctamente pero la ejecución terminaba con el error ``\texttt{Application exec likely failed}'', sin registros de aplicación. Se comprobó que el problema estaba relacionado con la detección del punto de entrada en procesos que no son servicios web, y que los \textit{Buildpacks} no resolvían adecuadamente el comando de arranque para este tipo de tareas. Aunque se intentó forzar el comando con \texttt{--command python3} y ajustar la memoria, no se logró un arranque exitoso.
+		
+		\item \textbf{Cloud Functions}: Como alternativa, se desplegó una función HTTP (2ª generación) que ejecutaba el script de limpieza mediante \texttt{subprocess}. El despliegue fue correcto y la función respondía a las invocaciones, pero al intentar acceder a los datos en \textit{Cloud Storage} mediante la librería \texttt{gcsfs}, el sistema no autenticaba las credenciales de forma automática desde el entorno serverless. Como resultado, la función no encontraba los ficheros de entrada a pesar de que las rutas y los permisos del \textit{bucket} eran correctos. Se añadieron permisos adicionales a la cuenta de servicio y se ajustó la variable de entorno \texttt{TFM\_BASE}, sin éxito.
+	\end{itemize}
+	
+	Ambas soluciones son técnicamente viables con configuración adicional (como la definición explícita de un \texttt{Dockerfile} o la gestión manual de claves de servicio), pero se descartaron para priorizar la simplicidad y la reproducibilidad del flujo de trabajo, dado el reducido volumen de datos del proyecto.
+	
+	\item \textbf{Procesamiento y análisis integrados en Vertex AI Workbench}: Finalmente, se optó por unificar las fases de limpieza y análisis en \textit{Vertex AI Workbench}, un entorno gestionado de \textit{JupyterLab}. Esta decisión simplificó la gestión de credenciales (al heredar las del usuario), evitó la configuración de identidades adicionales y permitió ejecutar los scripts originales sin modificaciones. El mismo entorno interactivo se utilizó tanto para la transformación como para el modelado, lo que redujo el coste y el esfuerzo de despliegue.
+	
+	\item \textbf{Gobernanza de recursos y aislamiento (\textit{Sandbox})}:
+	\begin{itemize}
+		\item \textbf{Aislamiento de proyecto:} El entorno se desplegó de forma deliberada fuera de la jerarquía de la organización principal (\textit{No organization}) para evitar heredar políticas restrictivas (como bloqueos de red) y mantener la facturación separada del entorno corporativo.
+		\item \textbf{Gestión de identidades:} Se aprovechó la pre-autenticación de \textit{Google Cloud Shell} y la librería \texttt{gcsfs} para acceder al almacenamiento sin necesidad de exportar ni gestionar claves de cuentas de servicio (\textit{Service Account Keys}) localmente, minimizando los riesgos de seguridad.
+	\end{itemize}
+\end{enumerate}
+
+
 \newpage
 

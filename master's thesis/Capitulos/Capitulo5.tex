@@ -342,33 +342,117 @@ Para no alargar este capítulo, simplemente redirigimos al usuario al propio tut
 	\end{center}
 \end{figure} 
 
+\subsubsection{Configuración del entorno y autenticación}
 
-El primer paso es crear un proyecto, aunque en este caso Google ya crea varios proyectos por defecto, crearemos uno propio para incluir todo lo necesario:
+A diferencia de AWS, GCP ya crea automáticamente una jerarquía de organización con varios proyectos al registrar la cuenta, pero crearemos un proyecto específico y aislado de la organización por defecto para este trabajo, para tener todo bajo un mismo entorno. 
+
+Todos los comandos se ejecutan en la \textit{Google Cloud Shell}, que ya incluye la CLI de GCP configurada y con los permisos necesarios:
 
 \begin{lstlisting}[language=bash, caption={Creación del proyecto en GCP}]
-	# Crear un proyecto nuevo
+	# Crear un proyecto nuevo (sin organization) y activarlo
 	gcloud projects create tfm-ucm-datos-publicos --name="TFM UCM Datos Publicos"
-	
-	# Establecer el proyecto activo
 	gcloud config set project tfm-ucm-datos-publicos
 	
-	# Comprobar el proyecto activo
-	gcloud config list project
-	
-	# Si se ha creado, le asignamos la cuenta de facturacion
+	# Le asignamos la cuenta de facturacion
 	gcloud billing projects link tfm-ucm-datos-publicos \
 	--billing-account="$(gcloud billing accounts list --format='value(ACCOUNT_ID)' | head -n1)"
 
 	# Definimos regiones
 	gcloud config set compute/region europe-west1
 	gcloud config set compute/zone europe-west1-b
+	
+	# Comprobar la configuracion
+	gcloud config list
+\end{lstlisting}
+
+\textbf{Nota sobre la visibilidad del proyecto:} Debido a este aislamiento en el proyecto, la consola web solo lo muestra en el selector de proyectos, en la opción \textbf{``Sin organización''} (\textit{No organization}), o buscando el nombre directamente en la barra de búsqueda global.
+
+\textbf{Nota sobre la cuota de facturación:} Si al vincular el proyecto aparece el error \texttt{Cloud billing quota exceeded}, puede deberse a que la cuenta ya tiene demasiados proyectos asociados. En ese caso, se puede liberar cuota eliminando proyectos no utilizados con \texttt{gcloud projects delete <ID\_PROYECTO>}, como el que Google crea por defecto.
+
+Una vez creado y vinculado el proyecto, definimos las variables de entorno que usaremos en el resto del manual de GCP, al igual que en AWS. Aquí hay que tener en cuenta que los contenedores tienen nombres globales, por lo que si el nombre propuesto ya está en uso, habrá que cambiarlo, por lo que no sirve copiar y pegar del manual en este caso::
+
+\begin{lstlisting}[language=bash, caption={Creación del archivo de variables de entorno}]
+	cat > ~/tfm-env-gcp.sh << 'EOF'
+	export BUCKET="tfm-ucm-datos-publicos"   # Debe ser cambiado
+	export REGION="europe-west1" 
+	export PROJECT=$(gcloud config get-value project)
+	export TFM_BASE="gs://$BUCKET"
+	EOF
+	
+	source ~/tfm-env-gcp.sh
+	echo $TFM_BASE   # Para comprobar
+	
 \end{lstlisting}
 
 
+\subsubsection{Infraestructura de almacenamiento en Cloud Storage}
 
+Como tecnología de almacenamiento para el proyecto, creamos un \textit{bucket en Cloud Storage}, que alojara las capas del mismo, con la misma estructura de directorios que local y AWS:
 
-% [TODO] TOOODO el analisis de GCP
+\begin{lstlisting}[language=bash, caption={Creación y configuración del contenedor de \textit{Cloud Storage}}]
+	# Crear el bucket en la region de europe-west1
+	gcloud storage buckets create gs://$BUCKET --location=$REGION
+	
+	# Bloquear acceso publico, activar versionado y etiquetar
+	gcloud storage buckets update gs://$BUCKET --public-access-prevention
+	gcloud storage buckets update gs://$BUCKET --versioning
+	gcloud storage buckets update gs://$BUCKET --update-labels=proyecto=tfm
+\end{lstlisting}
 
+Con el contenedor listo, el siguiente paso es obtener el código fuente del repositorio. En GCP, la propia terminal de \textit{Cloud Shell} viene pre-configurada con las credenciales del usuario, por lo que la librería \texttt{gcsfs} (implementación de \texttt{fsspec} para Google) se autentica de forma automática:
+
+\begin{lstlisting}[language=bash, float=htbp, caption={Descarga del código e ingesta en Cloud Storage}]
+	# Clonar el repositorio y situarse en la ruta de trabajo
+	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	cd TFM-cloud-soliutions-to-public-data/code/files
+	pip install -r requirements.txt gcsfs --quiet
+	
+	# Ejecutar la ingesta escribiendo directamente en la capa bronze del bucket
+	python 01_descarga.py --destino "gs://$BUCKET/data/bronze/"
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WIP
+
+\subsubsection{Procesamiento y análisis en Vertex AI Workbench}
+
+Para la fase de transformación (\textit{Silver}) y análisis, se optó por \textbf{Vertex AI Workbench}, un entorno gestionado de \textit{JupyterLab}. Se descartaron los servicios serverless \textit{Cloud Run Jobs} y \textit{Cloud Functions} por presentar dificultades con la ejecución de procesos por lotes y la autenticación de acceso a \textit{Cloud Storage} en el entorno de pruebas. Vertex AI simplifica la gestión de credenciales y permite ejecutar los scripts originales sin modificaciones.
+
+El primer paso es crear la instancia de trabajo:
+
+\begin{lstlisting}[language=bash, caption={Creación de la instancia de Vertex AI Workbench}]
+	gcloud services enable notebooks.googleapis.com
+	
+	gcloud notebooks instances create tfm-notebook \
+	--location=$REGION \
+	--machine-type=n1-standard-4 \
+	--vm-image-project=deeplearning-platform-release \
+	--vm-image-family=common-cpu-notebooks
+\end{lstlisting}
+
+Una vez aprovisionada, se abre JupyterLab desde la consola de GCP y se ejecutan los siguientes comandos en la terminal integrada:
+
+\begin{lstlisting}[language=bash, caption={Ejecución de limpieza y análisis en Vertex AI Workbench}]
+	# Clonar el repositorio y situarse en el directorio de trabajo
+	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	cd TFM-cloud-soliutions-to-public-data/code/files
+	pip install -r requirements.txt gcsfs --quiet
+	
+	# Definir la ruta base del bucket
+	export TFM_BASE="gs://tfm-ucm-datos-publicos"
+	
+	# Ejecutar limpieza (capa Silver) y análisis (Resultados)
+	python 02_limpieza.py
+	python 03_analisis_isla_calor.py
+	
+	# Subir los resultados al bucket
+	gsutil cp -r resultados gs://tfm-ucm-datos-publicos/
+\end{lstlisting}
+
+\textbf{Control de costes:} Al igual que con SageMaker, las instancias de Vertex AI Workbench facturan mientras están encendidas. Conviene detenerla al finalizar:
+
+\begin{lstlisting}[language=bash, caption={Detención de la instancia de Vertex AI}]
+	gcloud notebooks instances stop tfm-notebook --location=$REGION
+\end{lstlisting}
 
 
 \newpage
