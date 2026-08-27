@@ -12,3 +12,4 @@ matplotlib>=3.9
 statsmodels>=0.14.2
 pmdarima>=2.0; python_version < "3.13"  # sin soporte 3.13+: busqueda de orden ARIMA con statsmodels
 geopandas>=1.0      # para distritos
+
