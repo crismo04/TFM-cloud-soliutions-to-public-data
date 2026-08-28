@@ -37,9 +37,9 @@
 \contentsline {subsection}{\numberline {3.1.1}Conjuntos de Datos}{37}{subsection.53}%
 \contentsline {subsection}{\numberline {3.1.2}Nubes}{39}{subsection.55}%
 \contentsline {subsubsection}{\numberline {3.1.2.1}Amazon Web Services}{39}{subsubsection.56}%
-\contentsline {subsubsection}{\numberline {3.1.2.2}Google Cloud Platform}{39}{subsubsection.57}%
-\contentsline {subsection}{\numberline {3.1.3}Materiales para el desarrollo}{39}{subsection.58}%
-\contentsline {subsubsection}{\numberline {3.1.3.1}Lenguajes}{39}{subsubsection.59}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}Google Cloud Platform}{40}{subsubsection.57}%
+\contentsline {subsection}{\numberline {3.1.3}Materiales para el desarrollo}{40}{subsection.58}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Lenguajes}{40}{subsubsection.59}%
 \contentsline {subsubsection}{\numberline {3.1.3.2}Herramientas de desarrollo}{40}{subsubsection.60}%
 \contentsline {section}{\numberline {3.2}Métodos}{42}{section.61}%
 \contentsline {subsection}{\numberline {3.2.1}Desarrollo de la solución}{43}{subsection.62}%
@@ -66,30 +66,31 @@
 \contentsline {section}{\numberline {4.3}Comparación entre la ejecución local y las plataformas cloud}{63}{section.106}%
 \contentsline {subsection}{\numberline {4.3.1}Comparación de costes en las diferentes nubes}{63}{subsection.108}%
 \contentsline {chapter}{\numberline {5}Manual de usuario y casos de uso}{65}{chapter.109}%
-\contentsline {section}{\numberline {5.1}Ingesta y descarga de datos}{66}{section.110}%
-\contentsline {section}{\numberline {5.2}Despliegue y automatización de la arquitectura}{67}{section.118}%
-\contentsline {subsection}{\numberline {5.2.1}Despliegue en Local}{67}{subsection.119}%
-\contentsline {subsection}{\numberline {5.2.2}Despliegue en Amazon Web Services (AWS)}{67}{subsection.125}%
-\contentsline {subsubsection}{\numberline {5.2.2.1}Configuración del entorno y autenticación}{68}{subsubsection.127}%
-\contentsline {subsubsection}{\numberline {5.2.2.2}Infraestructura de Almacenamiento en Amazon S3}{69}{subsubsection.142}%
-\contentsline {subsubsection}{\numberline {5.2.2.3}Orquestación y Procesamiento ETL con AWS Glue}{71}{subsubsection.174}%
-\contentsline {subsubsection}{\numberline {5.2.2.4}Modelos de ML y resultados con Amazon SageMaker}{74}{subsubsection.243}%
-\contentsline {subsection}{\numberline {5.2.3}Despliegue en Google Cloud Platform (GCP)}{77}{subsection.265}%
-\contentsline {subsubsection}{\numberline {5.2.3.1}Configuración del entorno y autenticación}{78}{subsubsection.267}%
-\contentsline {subsubsection}{\numberline {5.2.3.2}Infraestructura de almacenamiento en Cloud Storage}{79}{subsubsection.294}%
-\contentsline {subsubsection}{\numberline {5.2.3.3}Orquestación y Procesamiento ETL con Cloud Run Jobs}{80}{subsubsection.312}%
-\contentsline {subsubsection}{\numberline {5.2.3.4}Modelos de ML y resultados con Vertex AI Workbench}{80}{subsubsection.326}%
-\contentsline {section}{\numberline {5.3}Uso de modelos y resultados}{82}{section.336}%
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{83}{chapter.337}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{85}{chapter.338}%
+\contentsline {section}{\numberline {5.1}Manual de usuario en Local}{65}{section.110}%
+\contentsline {subsection}{\numberline {5.1.1}Despliegue y utilizacion del codigo en Local}{66}{subsection.111}%
+\contentsline {subsection}{\numberline {5.1.2}Ingesta y descarga de datos}{66}{subsection.112}%
+\contentsline {subsection}{\numberline {5.1.3}Modelos y resultados}{67}{subsection.126}%
+\contentsline {section}{\numberline {5.2}Manual de usuario en AWS}{68}{section.128}%
+\contentsline {subsection}{\numberline {5.2.1}Despliegue en Amazon Web Services (AWS)}{68}{subsection.129}%
+\contentsline {subsection}{\numberline {5.2.2}Configuración del entorno y autenticación}{69}{subsection.131}%
+\contentsline {subsection}{\numberline {5.2.3}Infraestructura de Almacenamiento en Amazon S3}{70}{subsection.146}%
+\contentsline {subsection}{\numberline {5.2.4}Orquestación y Procesamiento ETL con AWS Glue}{72}{subsection.178}%
+\contentsline {subsection}{\numberline {5.2.5}Modelos de ML y resultados con Amazon SageMaker}{75}{subsection.247}%
+\contentsline {section}{\numberline {5.3}Manual de usuario en GCP}{78}{section.269}%
+\contentsline {subsection}{\numberline {5.3.1}Despliegue en Google Cloud Platform (GCP)}{78}{subsection.270}%
+\contentsline {subsection}{\numberline {5.3.2}Configuración del entorno y autenticación}{79}{subsection.272}%
+\contentsline {subsection}{\numberline {5.3.3}Infraestructura de almacenamiento en Cloud Storage}{80}{subsection.299}%
+\contentsline {subsection}{\numberline {5.3.4}Procesamiento y análisis en Vertex AI Workbench}{81}{subsection.317}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{83}{chapter.343}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{85}{chapter.344}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {A}Apéndice A: Definiciones y acrónimos}{87}{appendix.339}%
-\contentsline {section}{\numberline {A.1}Definiciones}{87}{section.340}%
-\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{88}{subsection.341}%
-\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{93}{subsection.352}%
-\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{98}{subsection.358}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{105}{section.383}%
+\contentsline {chapter}{\numberline {A}Apéndice A: Definiciones y acrónimos}{87}{appendix.345}%
+\contentsline {section}{\numberline {A.1}Definiciones}{87}{section.346}%
+\contentsline {subsection}{\numberline {A.1.1}Referente a datos}{88}{subsection.347}%
+\contentsline {subsection}{\numberline {A.1.2}Referente a Cloud}{93}{subsection.358}%
+\contentsline {subsection}{\numberline {A.1.3}Referente a Inteligencia Artificial}{98}{subsection.364}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{105}{section.389}%
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {B}Apéndice B: Uso ético de herramientas de IA}{109}{appendix.384}%
-\contentsline {section}{\numberline {B.1}Análisis de la gestión de datos mediante LLMs}{111}{section.385}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{113}{appendix*.386}%
+\contentsline {chapter}{\numberline {B}Apéndice B: Uso ético de herramientas de IA}{109}{appendix.390}%
+\contentsline {section}{\numberline {B.1}Análisis de la gestión de datos mediante LLMs}{111}{section.391}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{113}{appendix*.392}%

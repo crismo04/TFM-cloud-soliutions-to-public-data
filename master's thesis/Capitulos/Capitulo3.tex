@@ -75,8 +75,7 @@ Dentro de su catálogo, se emplearon los siguientes servicios gestionados como h
 \begin{itemize}
 	\item \textbf{Amazon S3 (Simple Storage Service):} Servicio de almacenamiento de objetos distribuido, altamente disponible y escalable.
 	\item \textbf{AWS Glue (Python Shell):} Servicio de integración de datos (ETL) gestionado y \textit{Serverless}. Se utilizó la modalidad \textit{Python Shell}, un entorno de ejecución ligero que incluye de forma nativa librerías para ciencia de datos (\texttt{pandas}, \texttt{numpy}, \texttt{scikit-learn}).
- % \item \textbf{AWS Glue Data Catalog y Crawlers:} Catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados. ??
-%	\item \textbf{Amazon Athena:} Motor de consultas analíticas interactivo y \textit{Serverless} basado en Trino/Presto, que permite ejecutar consultas SQL estándar directamente sobre datos alojados en Amazon S3.
+	\item \textbf{AWS Glue Data Catalog y Crawlers:} Catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados. 
 	\item \textbf{AWS IAM (Identity and Access Management):} Servicio de gestión de identidades y accesos para la administración de usuarios, grupos y roles de servicio.
 	\item \textbf{AWS CloudShell:} Entorno de terminal Linux basado en navegador con acceso autenticado y la interfaz de línea de comandos (\textit{AWS CLI}) preconfigurada sobre la región activa.
 	\item \textbf{AWS Budgets y Cost Explorer:} Herramientas de monitorización y control financiero para el seguimiento de costes mediante etiquetas de asignación.
@@ -85,7 +84,8 @@ Dentro de su catálogo, se emplearon los siguientes servicios gestionados como h
 
 \subsubsection{Google Cloud Platform}
 
-% [TODO] Añador GCP, Azure y OVHClod como usadas o como descartadas.
+% [TODO] Añador GCP y azure, y todo lo utilizado
+%añadir , Azure y OVHClod como descartadas y porque, al igual que las otras tecnologias decartadas.
 
 \subsection{Materiales para el desarrollo}
 
@@ -94,8 +94,6 @@ Los principales lenguajes utilizados para el desarrollo del proyecto han sido lo
 
 \begin{itemize}
 	\item \textbf{Python:} Lenguaje de programación interpretado, multiparadigma y centrado en la legibilidad del código. Se ha elegido como lenguaje principal del proyecto por ser el estándar en ciencia de datos, dada su extensa comunidad y el amplio ecosistema de librerías orientadas al aprendizaje automático (detalladas en el apartado \hyperref[sec:Librerias_especializadas]{\textit{Librerías especializadas}}). Además, su alta adopción garantiza un soporte nativo en todas las nubes, facilitando la portabilidad del código, el despliegue de los modelos y la comparación de procesos entre plataformas.
-
-	\item \textbf{SQL:} Lenguaje de dominio específico diseñado para la administración y consulta de sistemas de bases de datos relacionales y \textit{Data Warehouses}. Su uso facilita el tratamiento estructurado de la información y permite separar la capa de almacenamiento de datos de la lógica del programa principal. En este proyecto se utilizó SQL para consultar, extraer y transformar volúmenes de datos directamente en las bases de datos analíticas de la nube antes de su consumo por los modelos. % [TODO] revisar
 
 	\item \textbf{Bash Script:} La interacción con las nubes se ha gestionado, en gran medida, mediante la ejecución de \textit{scripts} de Bash en sus CLI con los comandos que estas mismas facilitan. También, se han desarrollado scripts específicos para tareas como la creación y preparación de los entornos.
 \end{itemize}
@@ -148,10 +146,6 @@ Para empezar las primeras iteraciones, se optó por conjuntos de datos que ya ha
 Tras esta primera fase, se incorporaron también otros conjuntos del mismo portal, aumentando la cobertura temporal de ambos trabajos hasta 2025, y ampliándolo con un conjunto no tratado por estos: los aforos de bicicletas, para comprobar que la metodología generaliza a datos nuevos sin problemas.
 
 El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}}.
-
-% [TODO] añadir tambien datos publicos de gran volumen en la nube
-
-
 
 
 \subsection{Desarrollo de la solución} \label{sec:Metodos_desarrollo}
@@ -271,7 +265,7 @@ En esta capa se definieron los objetivos generales y principios de la gobernanza
 Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
 
 \begin{itemize}
-	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado %[TODO] o anonimizado si al final hay bigdata.
+	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado.
 
 	\item \textbf{Gestión de accesos y credenciales:} Como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
 

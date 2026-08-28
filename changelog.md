@@ -6,6 +6,8 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 ### Change
 * WIP de parte de GCP en la memoria
 * Organizar TODOs del capitulo 4
+* Revision general de TODOs en la memmoria
+* Reestructuracion del manual de usuario
 
 
 ## [Cloud] - 2026-08-25

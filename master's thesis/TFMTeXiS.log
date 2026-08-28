@@ -1,84 +1,117 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  27 AUG 2026 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.20)  28 AUG 2026 01:03
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **./TFMTeXiS.tex
 (TFMTeXiS.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-07-12>
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
-Document Class: book 2021/02/12 v1.4n Standard LaTeX document class
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\bk11.clo
-File: bk11.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\bk11.clo
+File: bk11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count182
-\c@chapter=\count183
-\c@section=\count184
-\c@subsection=\count185
-\c@subsubsection=\count186
-\c@paragraph=\count187
-\c@subparagraph=\count188
-\c@figure=\count189
-\c@table=\count190
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
 )
-\@input{config.aux}
-\openout2 = `config.aux'.
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 75.
 
 (config.tex) (TeXiS/TeXiS.sty
 Package: TeXiS/TeXiS 
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
-Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks16
-\verbatim@line=\toks17
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim
+.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks17
+\verbatim@line=\toks18
 \verbatim@in@stream=\read2
 )
 \example@out=\write3
 
-\@input{TeXiS/TeXiS_pream.aux}
-\openout2 = `TeXiS/TeXiS_pream.aux'.
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 460.
 
 (TeXiS/TeXiS_pream.tex
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\shortvrb.sty
-Package: shortvrb 2021/05/28 v2.1n Standard LaTeX documentation package (FMi)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\shortvrb.
+sty
+Package: shortvrb 2024/12/25 v3.0q Standard LaTeX documentation package V3 (FMi
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks18
-\inpenc@posthook=\toks19
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.
+sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.
+sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip49
-\bibsep=\skip50
+\bibhang=\skip51
+\bibsep=\skip52
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count191
+\c@NAT@ctr=\count284
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2021/07/22 3.63 The Babel package
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
-File: babel.def 2021/07/22 3.63 Babel common definitions
-\babel@savecnt=\count192
-\U@D=\dimen139
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.
+sty
+Package: babel 2026/03/08 v26.4 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
+\babel@savecnt=\count285
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
+\U@D=\dimen149
 \l@unhyphenated=\language79
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
-)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbab
+el.def)
 \bbl@readstream=\read3
-)
-\bbl@dirlevel=\count193
+\bbl@dirlevel=\count286
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4206.
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.
+cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\englis
-h.ldf
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale
+/en\babel-english.tex)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale
+/es\babel-spanish.tex)
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 4330.
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\
+english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -87,228 +120,240 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 108.
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanis
-h.ldf
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 4330.
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\
+spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
-\es@quottoks=\toks20
-\es@quotdepth=\count194
+\es@quottoks=\toks21
+\es@quotdepth=\count287
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 Package babel Info: Making ' an active character on input line 740.
-)) (C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip16
+))
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
+on input line 212.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
+ on input line 212.
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.
+sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.
+sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncychap.st
-y
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncyc
+hap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip51
-\mylen=\skip52
-\myhi=\skip53
-\px=\skip54
-\py=\skip55
-\pyy=\skip56
-\pxx=\skip57
+\RW=\skip53
+\mylen=\skip54
+\myhi=\skip55
+\px=\skip56
+\py=\skip57
+\pyy=\skip58
+\pxx=\skip59
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
-y
-Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyper
+ref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
-y
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyva
+l.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvse
+tkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys
+\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pd
+fescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxc
 mds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\p
+dftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
-r.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\in
+fwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkey
-s.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
-inekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
-e.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+))
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolo
+r.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxma
-cro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
-sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
-)
-\@linkdim=\dimen140
-\Hy@linkcounter=\count195
-\Hy@pagecounter=\count196
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\namer
+ef.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refco
+unt.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestri
+ng\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvop
+tions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count288
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etool
+box.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count289
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\st
+ringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen150
+\Hy@linkcounter=\count290
+\Hy@pagecounter=\count291
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1en
+c.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-la
-ngpatches.def
-File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
-nguages
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
-y
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intc
+alc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.
-sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count197
+\Hy@SavedSpaceFactor=\count292
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc
+.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
 
 Package hyperref Warning: Invalid value `0'
 (hyperref)                for option `pdfborder'.
-(hyperref)                Option setting is ignored on input line 4073.
+(hyperref)                Option setting is ignored on input line 4072.
 
-Package hyperref Info: Option `hyperindex' set `true' on input line 4073.
-Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4073.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 4073.
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Option `hyperindex' set `true' on input line 4072.
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4072.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 4072.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count198
-LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen141
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count293
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen151
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitse
+t.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
-alc.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\b
+igintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count199
-\Field@Width=\dimen142
-\Fld@charsize=\dimen143
-Package hyperref Info: Hyper figures OFF on input line 6076.
-Package hyperref Info: Link nesting OFF on input line 6081.
-Package hyperref Info: Hyper index ON on input line 6084.
-Package hyperref Info: backreferencing OFF on input line 6091.
-Package hyperref Info: Link coloring OFF on input line 6096.
-Package hyperref Info: Link coloring with OCG OFF on input line 6101.
-Package hyperref Info: PDF/A mode OFF on input line 6106.
-LaTeX Info: Redefining \ref on input line 6146.
-LaTeX Info: Redefining \pageref on input line 6150.
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
-y
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)
-\Hy@abspage=\count266
-\c@Item=\count267
-\c@Hfootnote=\count268
+\Fld@menulength=\count294
+\Field@Width=\dimen152
+\Fld@charsize=\dimen153
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count295
+\c@Item=\count296
+\c@Hfootnote=\count297
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdft
+ex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.s
-ty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
-with kernel methods
-)
-\Fld@listcount=\count269
-\c@bookmark@seq@number=\count270
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck
+\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
-filecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
-uecounter.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounte
+r\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
+84.
 )
-\Hy@SectionHShift=\skip58
+\Hy@SectionHShift=\skip60
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 291.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\makeidx.sty
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\makeidx.s
+ty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
 )
 \@indexfile=\write4
 \openout4 = `TFMTeXiS.idx'.
 
 
 Writing index file TFMTeXiS.idx
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
-Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count271
-\mult@box=\box50
-\multicol@leftmargin=\dimen144
-\c@unbalance=\count272
-\c@collectmore=\count273
-\doublecol@number=\count274
-\multicoltolerance=\count275
-\multicolpretolerance=\count276
-\full@width=\dimen145
-\page@free=\dimen146
-\premulticols=\dimen147
-\postmulticols=\dimen148
-\multicolsep=\skip59
-\multicolbaselineskip=\skip60
-\partial@page=\box51
-\last@line=\box52
-\maxbalancingoverflow=\dimen149
-\mult@rightbox=\box53
-\mult@grightbox=\box54
-\mult@gfirstbox=\box55
-\mult@firstbox=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol
+.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count300
+\mult@box=\box53
+\multicol@leftmargin=\dimen154
+\c@unbalance=\count301
+\c@collectmore=\count302
+\doublecol@number=\count303
+\multicoltolerance=\count304
+\multicolpretolerance=\count305
+\full@width=\dimen155
+\page@free=\dimen156
+\premulticols=\dimen157
+\postmulticols=\dimen158
+\multicolsep=\skip61
+\multicolbaselineskip=\skip62
+\partial@page=\box54
+\last@line=\box55
+\mc@boxedresult=\box56
+\maxbalancingoverflow=\dimen159
+\mult@rightbox=\box57
+\mult@grightbox=\box58
+\mult@firstbox=\box59
+\mult@gfirstbox=\box60
 \@tempa=\box61
 \@tempa=\box62
 \@tempa=\box63
@@ -342,313 +387,355 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box91
 \@tempa=\box92
 \@tempa=\box93
-\c@minrows=\count277
-\c@columnbadness=\count278
-\c@finalcolumnbadness=\count279
-\last@try=\dimen150
-\multicolovershoot=\dimen151
-\multicolundershoot=\dimen152
-\mult@nat@firstbox=\box94
-\colbreak@box=\box95
-\mc@col@check@num=\count280
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\c@minrows=\count306
+\c@columnbadness=\count307
+\c@finalcolumnbadness=\count308
+\last@try=\dimen160
+\multicolovershoot=\dimen161
+\multicolundershoot=\dimen162
+\mult@nat@firstbox=\box97
+\colbreak@box=\box98
+\mc@col@check@num=\count309
+\g__mc_curr_col_int=\count310
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/subfig\subfig.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/subfig\subfig.
+sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/caption\captio
+n.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen153
-\captionmargin@=\dimen154
-\captionwidth=\dimen155
-\caption@tempdima=\dimen156
-\caption@indent=\dimen157
-\caption@parindent=\dimen158
-\caption@hangindent=\dimen159
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/caption\captio
+n3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen163
+\captionmargin=\dimen164
+\caption@leftmargin=\dimen165
+\caption@rightmargin=\dimen166
+\caption@width=\dimen167
+\caption@indent=\dimen168
+\caption@parindent=\dimen169
+\caption@hangindent=\dimen170
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count281
-\c@continuedfloat=\count282
+\c@caption@flags=\count311
+\c@continuedfloat=\count312
 Package caption Info: hyperref package is loaded.
 )
-\c@KVtest=\count283
-\sf@farskip=\skip61
-\sf@captopadj=\dimen160
-\sf@capskip=\skip62
-\sf@nearskip=\skip63
-\c@subfigure=\count284
-\c@subfigure@save=\count285
-\c@lofdepth=\count286
-\c@subtable=\count287
-\c@subtable@save=\count288
-\c@lotdepth=\count289
-\sf@top=\skip64
-\sf@bottom=\skip65
+\c@KVtest=\count313
+\sf@farskip=\skip63
+\sf@captopadj=\dimen171
+\sf@capskip=\skip64
+\sf@nearskip=\skip65
+\c@subfigure=\count314
+\c@subfigure@save=\count315
+\c@lofdepth=\count316
+\c@subtable=\count317
+\c@subtable@save=\count318
+\c@lotdepth=\count319
+\sf@top=\skip66
+\sf@bottom=\skip67
 )
-\sf@box=\box96
+\sf@box=\box99
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
-y
-\lst@mode=\count290
-\lst@gtempboxa=\box97
-\lst@token=\toks22
-\lst@length=\count291
-\lst@currlwidth=\dimen161
-\lst@column=\count292
-\lst@pos=\count293
-\lst@lostspace=\dimen162
-\lst@width=\dimen163
-\lst@newlines=\count294
-\lst@lineno=\count295
-\lst@maxwidth=\dimen164
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/listings\listi
+ngs.sty
+\lst@mode=\count320
+\lst@gtempboxa=\box100
+\lst@token=\toks23
+\lst@length=\count321
+\lst@currlwidth=\dimen172
+\lst@column=\count322
+\lst@pos=\count323
+\lst@lostspace=\dimen173
+\lst@width=\dimen174
+\lst@newlines=\count324
+\lst@lineno=\count325
+\lst@maxwidth=\dimen175
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count296
-\lst@skipnumbers=\count297
-\lst@framebox=\box98
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpa
+tch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
-g
-File: listings.cfg 2020/03/24 1.8d listings configuration
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmi
+sc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count326
+\lst@skipnumbers=\count327
+\lst@framebox=\box101
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/listings\listi
+ngs.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
-fg
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.
+sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\c
+olor.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 274.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
-def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\p
+dftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathc
+olor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
-Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx
+.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
-\col@sep=\dimen165
-\ar@mcellbox=\box99
-\extrarowheight=\dimen166
-\NC@list=\toks23
-\extratabsurround=\skip66
-\backup@length=\skip67
-\ar@cellbox=\box100
-)
-\TX@col@width=\dimen167
-\TX@old@table=\dimen168
-\TX@old@col=\dimen169
-\TX@target=\dimen170
-\TX@delta=\dimen171
-\TX@cols=\count298
-\TX@ftn=\toks24
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics\epsfig.sty
-Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.st
 y
-Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
-y
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen176
+\ar@mcellbox=\box102
+\extrarowheight=\dimen177
+\NC@list=\toks24
+\extratabsurround=\skip68
+\backup@length=\skip69
+\ar@cellbox=\box103
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
-s.cfg
+\TX@col@width=\dimen178
+\TX@old@table=\dimen179
+\TX@old@col=\dimen180
+\TX@target=\dimen181
+\TX@delta=\dimen182
+\TX@cols=\count328
+\TX@ftn=\toks25
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.s
+ty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\epsfi
+g.sty
+Package: epsfig 2024/01/14 v1.7b (e)psfig emulation (SPQR)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graph
+icx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graph
+ics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.
+sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\g
+raphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
+Package graphics Info: Driver file: pdftex.def on input line 106.
 )
-\Gin@req@height=\dimen172
-\Gin@req@width=\dimen173
+\Gin@req@height=\dimen183
+\Gin@req@width=\dimen184
 )
-\epsfxsize=\dimen174
-\epsfysize=\dimen175
+\epsfxsize=\dimen185
+\epsfysize=\dimen186
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count299
-\calc@Bcount=\count300
-\calc@Adimen=\dimen176
-\calc@Bdimen=\dimen177
-\calc@Askip=\skip68
-\calc@Bskip=\skip69
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count301
-\calc@Cskip=\skip70
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count329
+\calc@Bcount=\count330
+\calc@Adimen=\dimen187
+\calc@Bdimen=\dimen188
+\calc@Askip=\skip70
+\calc@Bskip=\skip71
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count331
+\calc@Cskip=\skip72
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.st
-y
-Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box101
-\beforetitleunit=\skip71
-\aftertitleunit=\skip72
-\ttl@plus=\dimen178
-\ttl@minus=\dimen179
-\ttl@toksa=\toks25
-\titlewidth=\dimen180
-\titlewidthlast=\dimen181
-\titlewidthfirst=\dimen182
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\title
+sec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box104
+\beforetitleunit=\skip73
+\aftertitleunit=\skip74
+\ttl@plus=\dimen189
+\ttl@minus=\dimen190
+\ttl@toksa=\toks26
+\titlewidth=\dimen191
+\titlewidthlast=\dimen192
+\titlewidthfirst=\dimen193
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.st
-y
-Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquo
+tes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count332
+\csq@gtype=\count333
+\csq@glevel=\count334
+\csq@qlevel=\count335
+\csq@maxlvl=\count336
+\csq@tshold=\count337
+\csq@ltx@everypar=\toks27
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
-y
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count302
-)
-\csq@reset=\count303
-\csq@gtype=\count304
-\csq@glevel=\count305
-\csq@qlevel=\count306
-\csq@maxlvl=\count307
-\csq@tshold=\count308
-\csq@ltx@everypar=\toks26
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.de
-f
-File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquo
+tes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cf
-g
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquo
+tes.cfg
 File: csquotes.cfg 
 ))
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.st
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpa
+ges.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.st
 y
-Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
- (C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
-Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen183
-\ESO@tempdimb=\dimen184
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pi
+c.sty
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
+\ESO@tempdima=\dimen194
+\ESO@tempdimb=\dimen195
 )
-\AM@pagewidth=\dimen185
-\AM@pageheight=\dimen186
-\AM@fboxrule=\dimen187
+\AM@pagewidth=\dimen196
+\AM@pageheight=\dimen197
+\AM@fboxrule=\dimen198
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.de
-f
-File: pppdftex.def 2021/03/06 v0.5t Pdfpages driver for pdfTeX (AM)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdf
+tex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count309
-\AM@pagebox=\box102
-\AM@global@opts=\toks27
-\AM@pagecnt=\count310
-\AM@toc@title=\toks28
-\c@AM@survey=\count311
-\AM@templatesizebox=\box103
+\pdfpages@includegraphics@status=\count338
+\AM@pagebox=\box105
+\AM@global@opts=\toks28
+\AM@pagecnt=\count339
+\AM@toc@title=\toks29
+\AM@lof@heading=\toks30
+\c@AM@survey=\count340
+\AM@templatesizebox=\box106
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\
-l3keys2e.sty
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2021-07-12 L3 programming layer (loader) 
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.
+sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3k
+eys2e\l3keys2e.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3
+.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
-pdftex.def
-File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count312
-\l__pdf_internal_box=\box104
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3ba
+ckend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count341
 ))
-Package: l3keys2e 2021-08-04 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 )
-Package: lipsum 2021-08-01 v2.5 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count313
-\l__lipsum_a_int=\count314
-\l__lipsum_b_int=\count315
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count342
+\l__lipsum_a_int=\count343
+\l__lipsum_b_int=\count344
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.te
-x)))
-\@input{TeXiS/TeXiS_cab.aux}
-\openout2 = `TeXiS/TeXiS_cab.aux'.
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.
+ltd.tex)))
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 464.
 
 (TeXiS/TeXiS_cab.tex
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
-y
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip73
-\f@nch@O@elh=\skip74
-\f@nch@O@erh=\skip75
-\f@nch@O@olh=\skip76
-\f@nch@O@orh=\skip77
-\f@nch@O@elf=\skip78
-\f@nch@O@erf=\skip79
-\f@nch@O@olf=\skip80
-\f@nch@O@orf=\skip81
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancy
+hdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip75
+\f@nch@offset@elh=\skip76
+\f@nch@offset@erh=\skip77
+\f@nch@offset@olh=\skip78
+\f@nch@offset@orh=\skip79
+\f@nch@offset@elf=\skip80
+\f@nch@offset@erf=\skip81
+\f@nch@offset@olf=\skip82
+\f@nch@offset@orf=\skip83
+\f@nch@height=\skip84
+\f@nch@footalignment=\skip85
+\f@nch@widthL=\skip86
+\f@nch@widthC=\skip87
+\f@nch@widthR=\skip88
+\@temptokenb=\toks31
 ))
-\@input{TeXiS/TeXiS_cover.aux}
-\openout2 = `TeXiS/TeXiS_cover.aux'.
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 467.
 
 (TeXiS/TeXiS_cover.tex)
-\@input{TeXiS/TeXiS_dedic.aux}
-\openout2 = `TeXiS/TeXiS_dedic.aux'.
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 470.
 
 (TeXiS/TeXiS_dedic.tex)
-\@input{TeXiS/TeXiS_bib.aux}
-\openout2 = `TeXiS/TeXiS_bib.aux'.
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 473.
 
 (TeXiS/TeXiS_bib.tex))
-\@input{constantes.aux}
-\openout2 = `constantes.aux'.
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 81.
 
 (constantes.tex)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parski
+p.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-(TFMTeXiS.aux (Cascaras/cover.aux)
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+ (TFMTeXiS.aux (Cascaras/cover.aux)
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 13.
  (Cascaras/autorizacion.aux)
 (Cascaras/dedicatoria.aux) (Cascaras/agradecimientos.aux) (Cascaras/resumen.aux
 ) (Cascaras/abstract.aux) (TeXiS/TeXiS_toc.aux)
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
  (Capitulos/Introduccion.aux)
 (Capitulos/Introduction.aux) (Capitulos/EstadoDeLaCuestion.aux)
-LaTeX Info: Redefining \. on input line 40.
-LaTeX Info: Redefining \% on input line 40.
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
 
 (Capitulos/Capitulo3.aux) (Capitulos/Capitulo4.aux) (Capitulos/Capitulo5.aux)
 (Capitulos/ConclusionesTrabajoFuturo.aux) (Capitulos/ConclusionsFutureWork.aux)
 (Apendices/appendixA.aux)
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
+LaTeX Info: Redefining \. on input line 34.
+LaTeX Info: Redefining \% on input line 34.
  (Apendices/appendixB.aux) (Cascaras/bibliografia.aux) (Cascaras/fin.aux))
 \openout1 = `TFMTeXiS.aux'.
 
@@ -673,23 +760,6 @@ LaTeX Font Info:    ... okay on input line 107.
 LaTeX Info: Redefining \. on input line 107.
 LaTeX Info: Redefining \% on input line 107.
 Package hyperref Info: Link coloring OFF on input line 107.
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
-y
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
-titlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-)
-\c@section@level=\count316
-)
-LaTeX Info: Redefining \ref on input line 107.
-LaTeX Info: Redefining \pageref on input line 107.
-LaTeX Info: Redefining \nameref on input line 107.
  (TFMTeXiS.out) (TFMTeXiS.out)
 \@outlinefile=\write5
 \openout5 = `TFMTeXiS.out'.
@@ -698,92 +768,77 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count317
+\c@lstlisting=\count345
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
-.mkii
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\su
+pp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen188
-\scratchbox=\box105
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen189
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count346
+\scratchdimen=\dimen199
+\scratchbox=\box107
+\nofMPsegments=\count347
+\nofMParguments=\count348
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count349
+\MPscratchDim=\dimen256
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
+\everyMPtoPDFconversion=\toks33
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
-f-base.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\e
+pstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
-s.cfg
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epsto
+pdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.
-sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdfl
+scape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdfl
+scape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscap
+e.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
+))
 Couldn't patch \ttl@straight@ii
 Couldn't patch \ttl@straight@ii
 (guionado.tex)
 \openout2 = `Cascaras/cover.aux'.
 
  (Cascaras/cover.tex
-\cambioIzquierdo=\skip82
-\cambioDerecho=\skip83
-\margenPortada=\skip84
-\evensidemarginOriginal=\skip85
-\oddsidemarginOriginal=\skip86
-\longTitulo=\skip87
-<Imagenes/Vectorial/escudoUCM.pdf, id=291, 597.23125pt x 844.15375pt>
+\cambioIzquierdo=\skip89
+\cambioDerecho=\skip90
+\margenPortada=\skip91
+\evensidemarginOriginal=\skip92
+\oddsidemarginOriginal=\skip93
+\longTitulo=\skip94
+<Imagenes/Vectorial/escudoUCM.pdf, id=327, 597.23125pt x 844.15375pt>
 File: Imagenes/Vectorial/escudoUCM.pdf Graphic file (type pdf)
 <use Imagenes/Vectorial/escudoUCM.pdf>
 Package pdftex.def Info: Imagenes/Vectorial/escudoUCM.pdf  used on input line 1
 62.
 (pdftex.def)             Requested size: 59.72661pt x 84.42032pt.
-\c@lastyear=\count324
+\c@lastyear=\count352
  [1
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{C:/Users/CRISTIAN/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Imagenes/V
-ectorial/escudoUCM.pdf>] [2] [3])
+{C:/Users/CristianMolina/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./I
+magenes/Vectorial/escudoUCM.pdf>] [2]
+[3])
 \openout2 = `Cascaras/autorizacion.aux'.
 
-
-(Cascaras/autorizacion.tex [4
+ (Cascaras/autorizacion.tex [4
 
 
 
@@ -796,11 +851,11 @@ ectorial/escudoUCM.pdf>] [2] [3])
 
 
 
-]) [7]
+])
+[7]
 \openout2 = `Cascaras/agradecimientos.aux'.
 
-
-(Cascaras/agradecimientos.tex [8
+ (Cascaras/agradecimientos.tex [8
 
 
 
@@ -814,23 +869,17 @@ ectorial/escudoUCM.pdf>] [2] [3])
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
-.
-
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 7.
-)
-[11]
+) [11]
 \openout2 = `Cascaras/abstract.aux'.
 
- (Cascaras/abstract.tex [12
+
+(Cascaras/abstract.tex [12
 
 
 
@@ -854,13 +903,17 @@ LaTeX Info: Redefining \. on input line 34.
 LaTeX Info: Redefining \% on input line 34.
 
 [15]
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
- [16])
+Underfull \vbox (badness 1158) has occurred while \output is active []
+
+ [16]
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
+)
 \tf@toc=\write6
 \openout6 = `TFMTeXiS.toc'.
 
- [17] [18
+
+[17] [18
 
 ] (TFMTeXiS.lof
 LaTeX Info: Redefining \. on input line 1.
@@ -875,8 +928,8 @@ Overfull \hbox (0.3105pt too wide) in paragraph at lines 15--15
 rd so-bre tem- 
  []
 
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 )
 \tf@lof=\write7
 \openout7 = `TFMTeXiS.lof'.
@@ -908,33 +961,37 @@ LaTeX Info: Redefining \% on input line 27.
 Cap\'itulo 1.
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
 .
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1phv.fd
+
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1phv.
+fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
 .
 
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.
+fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-[1
+) [1
 
 
 
 
 
-]
+{C:/Users/CristianMolina/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.
+enc}]
 LaTeX Info: Redefining \. on input line 40.
 LaTeX Info: Redefining \% on input line 40.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 40.
  [2]
 
 LaTeX Warning: Hyper reference `cap:Materiales y metodos' on page 3 undefined o
-n input line 53.
+n input line 54.
 
-)
-LaTeX Info: Redefining \. on input line 141.
-LaTeX Info: Redefining \% on input line 141.
- [3]
+LaTeX Info: Redefining \. on input line 61.
+LaTeX Info: Redefining \% on input line 61.
+[3])
 LaTeX Info: Redefining \. on input line 141.
 LaTeX Info: Redefining \% on input line 141.
  [4]
@@ -943,7 +1000,7 @@ LaTeX Info: Redefining \% on input line 141.
  (Capitulos/Introduction.tex
 Chapter 1.
 
-Overfull \hbox (4.06363pt too wide) in paragraph at lines 8--9
+Overfull \hbox (4.06363pt too wide) in paragraph at lines 8--10
 \T1/cmr/m/n/10.95 un-der-stood as the pro-vi-sion of com-put-ing ser-vices (ser
 vers, stor-age, databases,
  []
@@ -956,10 +1013,10 @@ vers, stor-age, databases,
 ] [6]
 
 LaTeX Warning: Hyper reference `cap:Materiales y metodos' on page 7 undefined o
-n input line 54.
+n input line 55.
 
 
-Overfull \hbox (9.4433pt too wide) in paragraph at lines 54--55
+Overfull \hbox (9.4433pt too wide) in paragraph at lines 55--56
 \T1/cmr/m/n/10.95 phases of anal-y-sis and im-ple-men-ta-tion, spec-i-fy-ing th
 e tech-nolo-gies and datasets
  []
@@ -982,7 +1039,7 @@ Package natbib Warning: Citation `CNMC2026Informe' on page 10 undefined on inpu
 t line 19.
 
 
-Underfull \vbox (badness 3312) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
@@ -1013,16 +1070,17 @@ Overfull \hbox (5.3932pt too wide) in paragraph at lines 105--106
 -Par-ti-ci-pa ([]Uni-
  []
 
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
-[15]
+
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
+[15]
 LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
-[16]
+ [16]
 
 Package natbib Warning: Citation `INE2025TIC' on page 17 undefined on input lin
 e 129.
@@ -1085,55 +1143,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-LaTeX Info: Redefining \. on input line 353.
-LaTeX Info: Redefining \% on input line 353.
+LaTeX Info: Redefining \. on input line 354.
+LaTeX Info: Redefining \% on input line 354.
 [26]
-LaTeX Info: Redefining \. on input line 356.
-LaTeX Info: Redefining \% on input line 356.
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
  [27]
 
 Package natbib Warning: Citation `INE2025TIC' on page 28 undefined on input lin
-e 365.
+e 366.
 
 
 Package natbib Warning: Citation `macqueen1967classificationKMeans' on page 28 
-undefined on input line 373.
+undefined on input line 374.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 378.
-LaTeX Info: Redefining \% on input line 378.
+LaTeX Info: Redefining \. on input line 379.
+LaTeX Info: Redefining \% on input line 379.
  [28]
-LaTeX Info: Redefining \. on input line 415.
-LaTeX Info: Redefining \% on input line 415.
+LaTeX Info: Redefining \. on input line 416.
+LaTeX Info: Redefining \% on input line 416.
 
 [29]
-LaTeX Info: Redefining \. on input line 433.
-LaTeX Info: Redefining \% on input line 433.
+LaTeX Info: Redefining \. on input line 434.
+LaTeX Info: Redefining \% on input line 434.
  [30]
-LaTeX Info: Redefining \. on input line 450.
-LaTeX Info: Redefining \% on input line 450.
+LaTeX Info: Redefining \. on input line 451.
+LaTeX Info: Redefining \% on input line 451.
  [31]
-Overfull \hbox (69.63528pt too wide) in paragraph at lines 462--482
+Overfull \hbox (69.63528pt too wide) in paragraph at lines 463--483
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 489.
-LaTeX Info: Redefining \% on input line 489.
+LaTeX Info: Redefining \. on input line 490.
+LaTeX Info: Redefining \% on input line 490.
  [32]
 
 Package natbib Warning: Citation `omnibus2026Europa' on page 33 undefined on in
-put line 510.
+put line 511.
 
-LaTeX Info: Redefining \. on input line 511.
-LaTeX Info: Redefining \% on input line 511.
+LaTeX Info: Redefining \. on input line 512.
+LaTeX Info: Redefining \% on input line 512.
 [33]
-LaTeX Info: Redefining \. on input line 523.
-LaTeX Info: Redefining \% on input line 523.
+LaTeX Info: Redefining \. on input line 524.
+LaTeX Info: Redefining \% on input line 524.
  [34])
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
@@ -1163,37 +1221,49 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
  [38]
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
  [39]
 
 Package natbib Warning: Citation `Pandas2026' on page 40 undefined on input lin
-e 106.
+e 104.
 
 
 Package natbib Warning: Citation `SciPy2026' on page 40 undefined on input line
- 108.
+ 106.
 
 
 Package natbib Warning: Citation `scikit2026' on page 40 undefined on input lin
-e 108.
+e 106.
 
 
-Overfull \hbox (0.63202pt too wide) in paragraph at lines 108--109
+Overfull \hbox (0.63202pt too wide) in paragraph at lines 106--107
 []\T1/cmr/bx/n/10.95 SciPy y Scikit-learn: \T1/cmr/m/n/10.95 Pa-ra la im-ple-me
 n-ta-ción de al-go-rit-mos de apren-
  []
 
 
 Package natbib Warning: Citation `geopandas2026' on page 40 undefined on input 
-line 110.
+line 108.
 
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
+LaTeX Info: Redefining \. on input line 118.
+LaTeX Info: Redefining \% on input line 118.
 [40]
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
+LaTeX Info: Redefining \. on input line 127.
+LaTeX Info: Redefining \% on input line 127.
  [41]
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
@@ -1203,77 +1273,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-LaTeX Info: Redefining \. on input line 149.
-LaTeX Info: Redefining \% on input line 149.
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
 [42]
 
 Package natbib Warning: Citation `fsspec2024' on page 43 undefined on input lin
-e 188.
+e 182.
 
-LaTeX Info: Redefining \. on input line 189.
-LaTeX Info: Redefining \% on input line 189.
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
 [43]
-LaTeX Info: Redefining \. on input line 207.
-LaTeX Info: Redefining \% on input line 207.
+LaTeX Info: Redefining \. on input line 201.
+LaTeX Info: Redefining \% on input line 201.
  [44]
-LaTeX Info: Redefining \. on input line 227.
-LaTeX Info: Redefining \% on input line 227.
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
  [45]
-LaTeX Info: Redefining \. on input line 246.
-LaTeX Info: Redefining \% on input line 246.
+LaTeX Info: Redefining \. on input line 240.
+LaTeX Info: Redefining \% on input line 240.
  [46]
-LaTeX Info: Redefining \. on input line 275.
-LaTeX Info: Redefining \% on input line 275.
+LaTeX Info: Redefining \. on input line 269.
+LaTeX Info: Redefining \% on input line 269.
  [47]
-LaTeX Info: Redefining \. on input line 294.
-LaTeX Info: Redefining \% on input line 294.
+LaTeX Info: Redefining \. on input line 288.
+LaTeX Info: Redefining \% on input line 288.
  [48]
 
 Package natbib Warning: Citation `omnibus2026Europa' on page 49 undefined on in
-put line 306.
+put line 300.
 
-LaTeX Info: Redefining \. on input line 316.
-LaTeX Info: Redefining \% on input line 316.
+LaTeX Info: Redefining \. on input line 310.
+LaTeX Info: Redefining \% on input line 310.
 [49]
-LaTeX Info: Redefining \. on input line 325.
-LaTeX Info: Redefining \% on input line 325.
+LaTeX Info: Redefining \. on input line 319.
+LaTeX Info: Redefining \% on input line 319.
  [50]
-LaTeX Info: Redefining \. on input line 346.
-LaTeX Info: Redefining \% on input line 346.
+LaTeX Info: Redefining \. on input line 340.
+LaTeX Info: Redefining \% on input line 340.
  [51]
 
 Package natbib Warning: Citation `AWSWellArchitected2026' on page 52 undefined 
-on input line 356.
+on input line 350.
 
-LaTeX Info: Redefining \. on input line 366.
-LaTeX Info: Redefining \% on input line 366.
+LaTeX Info: Redefining \. on input line 360.
+LaTeX Info: Redefining \% on input line 360.
 [52]
-LaTeX Info: Redefining \. on input line 378.
-LaTeX Info: Redefining \% on input line 378.
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
  [53]
 
 Package natbib Warning: Citation `GCPArchitectureFramework2026' on page 54 unde
-fined on input line 381.
+fined on input line 375.
 
-
-Package natbib Warning: Citation `GCPArchitectureFramework2026' on page 54 unde
-fined on input line 397.
-
-LaTeX Info: Redefining \. on input line 398.
-LaTeX Info: Redefining \% on input line 398.
+LaTeX Info: Redefining \. on input line 390.
+LaTeX Info: Redefining \% on input line 390.
 [54]
-LaTeX Info: Redefining \. on input line 398.
-LaTeX Info: Redefining \% on input line 398.
+LaTeX Info: Redefining \. on input line 401.
+LaTeX Info: Redefining \% on input line 401.
  [55])
 \openout2 = `Capitulos/Capitulo4.aux'.
 
@@ -1289,7 +1345,7 @@ Overfull \hbox (17.43306pt too wide) in paragraph at lines 55--68
  [][] 
  []
 
-<Imagenes/Bitmap/cobertura_temperatura.png, id=1321, 505.89pt x 578.16pt>
+<Imagenes/Bitmap/cobertura_temperatura.png, id=1372, 505.89pt x 578.16pt>
 File: Imagenes/Bitmap/cobertura_temperatura.png Graphic file (type png)
 <use Imagenes/Bitmap/cobertura_temperatura.png>
 Package pdftex.def Info: Imagenes/Bitmap/cobertura_temperatura.png  used on inp
@@ -1302,7 +1358,7 @@ LaTeX Info: Redefining \% on input line 111.
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
  [59]
-<Imagenes/Bitmap/arbolado_vs_temperatura_2021.png, id=1348, 361.35pt x 289.08pt
+<Imagenes/Bitmap/arbolado_vs_temperatura_2021.png, id=1399, 361.35pt x 289.08pt
 >
 File: Imagenes/Bitmap/arbolado_vs_temperatura_2021.png Graphic file (type png)
 <use Imagenes/Bitmap/arbolado_vs_temperatura_2021.png>
@@ -1312,7 +1368,7 @@ Package pdftex.def Info: Imagenes/Bitmap/arbolado_vs_temperatura_2021.png  used
 LaTeX Info: Redefining \. on input line 187.
 LaTeX Info: Redefining \% on input line 187.
  [60 <./Imagenes/Bitmap/arbolado_vs_temperatura_2021.png>]
-<Imagenes/Bitmap/evolucion_correlacion.png, id=1355, 505.89pt x 289.08pt>
+<Imagenes/Bitmap/evolucion_correlacion.png, id=1406, 505.89pt x 289.08pt>
 File: Imagenes/Bitmap/evolucion_correlacion.png Graphic file (type png)
 <use Imagenes/Bitmap/evolucion_correlacion.png>
 Package pdftex.def Info: Imagenes/Bitmap/evolucion_correlacion.png  used on inp
@@ -1321,7 +1377,7 @@ ut line 192.
 LaTeX Info: Redefining \. on input line 218.
 LaTeX Info: Redefining \% on input line 218.
  [61 <./Imagenes/Bitmap/evolucion_correlacion.png>]
-<Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png, id=1364, 433.62pt x 289.08pt
+<Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png, id=1415, 433.62pt x 289.08pt
 >
 File: Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png Graphic file (type png)
 <use Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png>
@@ -1331,14 +1387,14 @@ Package pdftex.def Info: Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png  used
 LaTeX Info: Redefining \. on input line 257.
 LaTeX Info: Redefining \% on input line 257.
  [62 <./Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png>]
-<Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png, id=1371, 578.16pt x 2
-89.08pt>
+<Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png, id=1422, 722.7pt x 28
+9.08pt>
 File: Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png Graphic file (typ
 e png)
 <use Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png>
 Package pdftex.def Info: Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.pn
 g  used on input line 263.
-(pdftex.def)             Requested size: 288.0011pt x 143.99709pt.
+(pdftex.def)             Requested size: 288.0011pt x 115.20207pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 297.
 )
@@ -1359,163 +1415,168 @@ Cap\'itulo 5.
 
 
 ]
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.st
-y
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstla
+ng1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-(C:\Users\CRISTIAN\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.st
-y
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+(C:\Users\CristianMolina\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstla
+ng1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 25.
+nput line 39.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 27.
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 42.
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
  [66]
+<Imagenes/Bitmap/Arbol_directorios_resultados.png, id=1462, 227.34938pt x 741.5
+2031pt>
+File: Imagenes/Bitmap/Arbol_directorios_resultados.png Graphic file (type png)
+<use Imagenes/Bitmap/Arbol_directorios_resultados.png>
+Package pdftex.def Info: Imagenes/Bitmap/Arbol_directorios_resultados.png  used
+ on input line 64.
+(pdftex.def)             Requested size: 68.20534pt x 222.45781pt.
 
-Package natbib Warning: Citation `AWS2026Signup' on page 67 undefined on input 
-line 60.
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package natbib Warning: Citation `AWS2026Tutorial' on page 67 undefined on inpu
-t line 60.
-
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
 [67]
 
-Package natbib Warning: Citation `AWS2026Docuementacion' on page 68 undefined o
-n input line 70.
+Package natbib Warning: Citation `AWS2026Signup' on page 68 undefined on input 
+line 78.
 
-<Imagenes/Bitmap/AWS-abrir-consola.png, id=1415, 1138.85475pt x 493.845pt>
+
+Package natbib Warning: Citation `AWS2026Tutorial' on page 68 undefined on inpu
+t line 78.
+
+
+Package natbib Warning: Citation `AWS2026Docuementacion' on page 68 undefined o
+n input line 88.
+
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+[68 <./Imagenes/Bitmap/Arbol_directorios_resultados.png>]
+<Imagenes/Bitmap/AWS-abrir-consola.png, id=1473, 1138.85475pt x 493.845pt>
 File: Imagenes/Bitmap/AWS-abrir-consola.png Graphic file (type png)
 <use Imagenes/Bitmap/AWS-abrir-consola.png>
 Package pdftex.def Info: Imagenes/Bitmap/AWS-abrir-consola.png  used on input l
-ine 76.
+ine 94.
 (pdftex.def)             Requested size: 341.65906pt x 148.15463pt.
-LaTeX Info: Redefining \. on input line 85.
-LaTeX Info: Redefining \% on input line 85.
-[68 <./Imagenes/Bitmap/AWS-abrir-consola.png>]
-Overfull \hbox (6.48622pt too wide) in paragraph at lines 111--112
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+ [69 <./Imagenes/Bitmap/AWS-abrir-consola.png>]
+Overfull \hbox (6.48622pt too wide) in paragraph at lines 129--130
 \T1/cmr/m/n/10.95 je-rar-quía de di-rec-to-rios lo-cal, y de otras nu-bes: (\T1
 /cmtt/m/n/10.95 data/bronze/\T1/cmr/m/n/10.95 , \T1/cmtt/m/n/10.95 data/silver/
 \T1/cmr/m/n/10.95 ,
  []
 
-LaTeX Info: Redefining \. on input line 116.
-LaTeX Info: Redefining \% on input line 116.
-[69]
-<Imagenes/Bitmap/figura_AWS_S3_es.png, id=1443, 1224.07312pt x 685.8122pt>
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+[70]
+<Imagenes/Bitmap/figura_AWS_S3_es.png, id=1507, 1224.07312pt x 685.8122pt>
 File: Imagenes/Bitmap/figura_AWS_S3_es.png Graphic file (type png)
 <use Imagenes/Bitmap/figura_AWS_S3_es.png>
 Package pdftex.def Info: Imagenes/Bitmap/figura_AWS_S3_es.png  used on input li
-ne 150.
+ne 168.
 (pdftex.def)             Requested size: 367.22478pt x 205.74524pt.
 
-Overfull \hbox (7.22478pt too wide) in paragraph at lines 150--153
+Overfull \hbox (7.22478pt too wide) in paragraph at lines 168--171
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 168.
-LaTeX Info: Redefining \% on input line 168.
-[70]
-LaTeX Info: Redefining \. on input line 176.
-LaTeX Info: Redefining \% on input line 176.
- [71 <./Imagenes/Bitmap/figura_AWS_S3_es.png>]
-LaTeX Info: Redefining \. on input line 211.
-LaTeX Info: Redefining \% on input line 211.
- [72]
-LaTeX Info: Redefining \. on input line 248.
-LaTeX Info: Redefining \% on input line 248.
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+[71]
+LaTeX Info: Redefining \. on input line 199.
+LaTeX Info: Redefining \% on input line 199.
+ [72 <./Imagenes/Bitmap/figura_AWS_S3_es.png>]
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
  [73]
-<Imagenes/Bitmap/figura_AWS_Glue_es.png, id=1545, 1002.74625pt x 523.9575pt>
+LaTeX Info: Redefining \. on input line 272.
+LaTeX Info: Redefining \% on input line 272.
+ [74]
+<Imagenes/Bitmap/figura_AWS_Glue_es.png, id=1607, 1002.74625pt x 523.9575pt>
 File: Imagenes/Bitmap/figura_AWS_Glue_es.png Graphic file (type png)
 <use Imagenes/Bitmap/figura_AWS_Glue_es.png>
 Package pdftex.def Info: Imagenes/Bitmap/figura_AWS_Glue_es.png  used on input 
-line 262.
+line 280.
 (pdftex.def)             Requested size: 401.0914pt x 209.57928pt.
 
-Overfull \hbox (41.0914pt too wide) in paragraph at lines 262--265
+Overfull \hbox (41.0914pt too wide) in paragraph at lines 280--283
  [] 
  []
 
-LaTeX Info: Redefining \. on input line 277.
-LaTeX Info: Redefining \% on input line 277.
-[74 <./Imagenes/Bitmap/figura_AWS_Glue_es.png>]
-<Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png, id=1565, 1153.911pt x 459.5
+LaTeX Info: Redefining \. on input line 298.
+LaTeX Info: Redefining \% on input line 298.
+[75 <./Imagenes/Bitmap/figura_AWS_Glue_es.png>]
+<Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png, id=1620, 1153.911pt x 459.5
 1675pt>
 File: Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png Graphic file (type png)
 
 <use Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png>
 Package pdftex.def Info: Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png  use
-d on input line 285.
+d on input line 303.
 (pdftex.def)             Requested size: 346.17596pt x 137.85608pt.
-LaTeX Info: Redefining \. on input line 302.
-LaTeX Info: Redefining \% on input line 302.
- [75 <./Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png>]
-LaTeX Info: Redefining \. on input line 327.
-LaTeX Info: Redefining \% on input line 327.
- [76]
+LaTeX Info: Redefining \. on input line 324.
+LaTeX Info: Redefining \% on input line 324.
+ [76 <./Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png>]
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
+ [77]
 
-Package natbib Warning: Citation `GCP2026Signup' on page 77 undefined on input 
-line 331.
-
-
-Package natbib Warning: Citation `GCP2026Tutorial' on page 77 undefined on inpu
-t line 333.
+Package natbib Warning: Citation `GCP2026Signup' on page 78 undefined on input 
+line 355.
 
 
-Package natbib Warning: Citation `GCP2026Docuementacion' on page 77 undefined o
-n input line 333.
+Package natbib Warning: Citation `GCP2026Tutorial' on page 78 undefined on inpu
+t line 357.
 
-<Imagenes/Bitmap/GCP-abrir-consola.png, id=1596, 1433.355pt x 653.44125pt>
+
+Package natbib Warning: Citation `GCP2026Docuementacion' on page 78 undefined o
+n input line 357.
+
+<Imagenes/Bitmap/GCP-abrir-consola.png, id=1650, 1433.355pt x 653.44125pt>
 File: Imagenes/Bitmap/GCP-abrir-consola.png Graphic file (type png)
 <use Imagenes/Bitmap/GCP-abrir-consola.png>
 Package pdftex.def Info: Imagenes/Bitmap/GCP-abrir-consola.png  used on input l
-ine 339.
+ine 363.
 (pdftex.def)             Requested size: 430.00983pt x 196.03387pt.
 
-Overfull \hbox (70.00983pt too wide) in paragraph at lines 339--342
+Overfull \hbox (70.00983pt too wide) in paragraph at lines 363--366
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 348.
-LaTeX Info: Redefining \% on input line 348.
- [77 <./Imagenes/Bitmap/GCP-abrir-consola.png>]
-LaTeX Info: Redefining \. on input line 380.
-LaTeX Info: Redefining \% on input line 380.
- [78]
-LaTeX Info: Redefining \. on input line 419.
-LaTeX Info: Redefining \% on input line 419.
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
+[78 <./Imagenes/Bitmap/GCP-abrir-consola.png>]
+LaTeX Info: Redefining \. on input line 404.
+LaTeX Info: Redefining \% on input line 404.
  [79]
-LaTeX Info: Redefining \. on input line 459.
-LaTeX Info: Redefining \% on input line 459.
+LaTeX Info: Redefining \. on input line 443.
+LaTeX Info: Redefining \% on input line 443.
  [80]
-LaTeX Info: Redefining \. on input line 466.
-LaTeX Info: Redefining \% on input line 466.
+LaTeX Info: Redefining \. on input line 482.
+LaTeX Info: Redefining \% on input line 482.
  [81])
-LaTeX Info: Redefining \. on input line 156.
-LaTeX Info: Redefining \% on input line 156.
- [82]
 \openout2 = `Capitulos/ConclusionesTrabajoFuturo.aux'.
 
 
-(Capitulos/ConclusionesTrabajoFuturo.tex
-Cap\'itulo 6.
-) [83
+(Capitulos/ConclusionesTrabajoFuturo.tex [82
 
 
 
 
 ]
+Cap\'itulo 6.
+) [83]
 \openout2 = `Capitulos/ConclusionsFutureWork.aux'.
 
  (Capitulos/ConclusionsFutureWork.tex [84
@@ -1636,7 +1697,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-<Imagenes/Bitmap/data_gobernance.png, id=1771, 1388.18625pt x 737.00343pt>
+<Imagenes/Bitmap/data_gobernance.png, id=1819, 1388.18625pt x 737.00343pt>
 File: Imagenes/Bitmap/data_gobernance.png Graphic file (type png)
 <use Imagenes/Bitmap/data_gobernance.png>
 Package pdftex.def Info: Imagenes/Bitmap/data_gobernance.png  used on input lin
@@ -1672,7 +1733,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--166
 
 
 Underfull \hbox (badness 2744) in paragraph at lines 166--166
-\T1/cmr/m/n/10.95 ge/-lo-ca-li-za-ción (AWS
+\T1/cmr/m/n/10.95 ge/localización (AWS
  []
 
 
@@ -1728,7 +1789,7 @@ Overfull \hbox (37.59998pt too wide) in paragraph at lines 163--173
 LaTeX Info: Redefining \. on input line 177.
 LaTeX Info: Redefining \% on input line 177.
 [94]
-<Imagenes/Bitmap/distintos_tipos_clouds.png, id=1824, 886.81313pt x 541.27219pt
+<Imagenes/Bitmap/distintos_tipos_clouds.png, id=1872, 886.81313pt x 541.27219pt
 >
 File: Imagenes/Bitmap/distintos_tipos_clouds.png Graphic file (type png)
 <use Imagenes/Bitmap/distintos_tipos_clouds.png>
@@ -1758,7 +1819,7 @@ LaTeX Info: Redefining \% on input line 251.
 LaTeX Info: Redefining \. on input line 287.
 LaTeX Info: Redefining \% on input line 287.
  [99]
-<Imagenes/Bitmap/IA_Trends2011_2025.png, id=1895, 1186.4325pt x 599.23875pt>
+<Imagenes/Bitmap/IA_Trends2011_2025.png, id=1943, 1186.4325pt x 599.23875pt>
 File: Imagenes/Bitmap/IA_Trends2011_2025.png Graphic file (type png)
 <use Imagenes/Bitmap/IA_Trends2011_2025.png>
 Package pdftex.def Info: Imagenes/Bitmap/IA_Trends2011_2025.png  used on input 
@@ -1829,6 +1890,12 @@ Overfull \hbox (5.03194pt too wide) in paragraph at lines 382--383
 Bu-si-ness Trends
  []
 
+
+Overfull \hbox (46.96812pt too wide) in paragraph at lines 385--386
+[]\T1/cmr/m/n/10.95 Integración Con-ti-nua/Entrega Con-ti-nua (Con-ti-nuous In-
+te-gra-tion/Continuous
+ []
+
 LaTeX Info: Redefining \. on input line 397.
 LaTeX Info: Redefining \% on input line 397.
 [105]
@@ -1868,8 +1935,8 @@ put line 11.
 
 
 ]
-LaTeX Info: Redefining \. on input line 16.
-LaTeX Info: Redefining \% on input line 16.
+LaTeX Info: Redefining \. on input line 18.
+LaTeX Info: Redefining \% on input line 18.
  [110])
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
@@ -1939,24 +2006,29 @@ LaTeX Info: Redefining \% on input line 180.
 Package natbib Warning: There were undefined citations.
 
 (TFMTeXiS.aux (Cascaras/cover.aux)
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
  (Cascaras/autorizacion.aux)
 (Cascaras/dedicatoria.aux) (Cascaras/agradecimientos.aux) (Cascaras/resumen.aux
 ) (Cascaras/abstract.aux) (TeXiS/TeXiS_toc.aux)
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
  (Capitulos/Introduccion.aux)
 (Capitulos/Introduction.aux) (Capitulos/EstadoDeLaCuestion.aux)
-LaTeX Info: Redefining \. on input line 40.
-LaTeX Info: Redefining \% on input line 40.
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
 
 (Capitulos/Capitulo3.aux) (Capitulos/Capitulo4.aux) (Capitulos/Capitulo5.aux)
 (Capitulos/ConclusionesTrabajoFuturo.aux) (Capitulos/ConclusionsFutureWork.aux)
 (Apendices/appendixA.aux)
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
+LaTeX Info: Redefining \. on input line 34.
+LaTeX Info: Redefining \% on input line 34.
  (Apendices/appendixB.aux) (Cascaras/bibliografia.aux) (Cascaras/fin.aux))
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1964,60 +2036,61 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `TFMTeXiS.out' has not changed.
-(rerunfilecheck)             Checksum: 968A0AC0E0FA533D75CA7434C282D89E;13769.
+(rerunfilecheck)             Checksum: 49273688348DC0E282FECE4611D3EEF4;16277.
  ) 
 Here is how much of TeX's memory you used:
- 18748 strings out of 478868
- 303539 string characters out of 2847387
- 1181151 words of memory out of 3000000
- 35277 multiletter control sequences out of 15000+600000
- 428920 words of font info for 71 fonts, out of 8000000 for 9000
+ 20037 strings out of 467867
+ 346541 string characters out of 5413978
+ 1287538 words of memory out of 5000000
+ 47555 multiletter control sequences out of 15000+600000
+ 653211 words of font info for 84 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
- 94i,13n,100p,1288b,2031s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
-cti0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecit0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
-nappen/ec/dpi600\ectt0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\
-fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\CRISTIAN\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\CRISTIAN\App
-Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0800.pk> <C:\Users\CRI
-STIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\
-Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000
-.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecrm0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi600\tcbx1095.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/p
-k/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk>{C:/Users/CRISTIAN/AppData/Loc
-al/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <C:\Users\CRISTIAN\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\CRISTIAN\App
-Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\CRI
-STIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\
-Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095
-.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ecrm1200.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi600\ecrm1095.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecti1200.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/p
-k/ljfour/jknappen/ec/dpi600\ecrm2488.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\CRISTIAN\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\CRISTIAN\A
-ppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/CR
-ISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-<C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi9.pfb><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><C:/Users/CRISTIAN/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/CRISTIAN/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/CRISTIAN/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/CRISTI
-AN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pf
-b><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a
-.pfb>
-Output written on TFMTeXiS.pdf (145 pages, 3005067 bytes).
+ 97i,13n,98p,1288b,2183s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
+i600\ecti0900.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\
+fonts/pk/ljfour/jknappen/ec/dpi600\ecit0900.pk> <C:\Users\CristianMolina\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\Cristi
+anMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <
+C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ectt1000.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
+appen/ec/dpi600\ecbx0800.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\font
+s/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\CristianMolina\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\CristianMo
+lina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\U
+sers\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcb
+x1095.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
+n/ec/dpi600\ecrm0600.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk
+/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\CristianMolina\AppData\Local\
+MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\CristianMolina
+\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users
+\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx109
+5.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ectt1095.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljf
+our/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\CristianMolina\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\CristianMolina\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Cri
+stianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk
+> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ecrm2488.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\CristianMolina\AppData\Local\MiKTeX\f
+onts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\CristianMolina\AppData
+\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/Cristian
+Molina/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<C:/Users/CristianMolina/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><C:/Users/CristianMolina/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi9.pfb><C:/Users/CristianMolina/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/CristianMolina/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Cr
+istianMolina/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Users/CristianMolina/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr9.pfb><C:/Users/CristianMolina/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/CristianMolina/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/CristianMolina/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on TFMTeXiS.pdf (145 pages, 3052878 bytes).
 PDF statistics:
- 3347 PDF objects out of 3580 (max. 8388607)
- 682 named destinations out of 1000 (max. 500000)
- 647 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3401 PDF objects out of 3580 (max. 8388607)
+ 688 named destinations out of 1000 (max. 500000)
+ 724 words of extra memory for PDF output out of 10000 (max. 10000000)
 

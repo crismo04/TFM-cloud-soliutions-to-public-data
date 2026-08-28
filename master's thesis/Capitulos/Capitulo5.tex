@@ -3,57 +3,75 @@
 
 En este capítulo, describiremos en detalle la guía operativa del proyecto, detallando los pasos necesarios para que cualquier usuario o investigador pueda replicar el entorno de trabajo, ejecutar el \textit{pipeline} de datos y reproducir los análisis descritos en capítulos anteriores. 
 
-Para mantener la coherencia con el resto de capítulos, dividiremos el manual en sus tres componentes: 
+Para mantener la coherencia con el resto de capítulos, dividiremos el manual en sus tres componentes:
 \begin{itemize}
-	\item \textbf{Ingesta y descarga de datos:} Como descargar y analizar los datos, lo cual se puede aplicar tanto en local como en la nube.
-	\item \textbf{Despliegue y automatización:} Configuración de la infraestructura en local y en nubes públicas.
-	\item \textbf{Uso de modelos y evaluación de resultados:} Guía para la ejecución de los algoritmos y la extracción de conocimiento a partir de los resultados.
+	\item \textbf{Configuracion, ingesta y almacenamiento de datos}.
+	\item \textbf{Despliegue y automatización de la solucion}.
+	\item \textbf{Uso de modelos y evaluación de resultados}.
 \end{itemize}
 
-De este modo, intentaremos garantizar la transparencia del código y la total trazabilidad del ciclo de vida del dato, desde su ingesta hasta el modelado de Inteligencia Artificial. Al final, también estableceremos una comparativa de que nubes o entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}} \newpage
+De este modo, intentaremos garantizar la trazabilidad del ciclo de vida del dato. Esto lo haremos para las tres plataformas donde hemos trabajado: Local, AWS y GCP; y al final, también estableceremos una comparativa lo mas objetiva posible de que entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de los metodos utilizados en las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. La comparación cuantitativa entre entornos, en térmos de esfuerzo, tiempo de ejecución y coste, se recopila en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
 
-La comparación cuantitativa entre entornos, en términos de esfuerzo, tiempo de ejecución y coste, se recopila en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
 
-\section{Ingesta y descarga de datos} 
+
+
+\section{Manual de usuario en Local}
+
+Aunque esta seccion vayaa tratar de como lanzar el proceso en local, muchos de los comentarios aplican a las nubes estudiadas, ya que parten de los mismos ficheros base que tenemos en el repositorio publico de github.
+
+
+\subsection{Despliegue y utilizacion del codigo en Local} 
+\label{subsec:Manual_Despliegue_Local}
+
+La ejecución local no requiere infraestructura adicional más allá de un entorno de desarrollo como puede ser VScode, que es el que se ha utilizado para este proyecto, y configurarlo como se describe en la siguiente sección \ref{sec:Manual_Ingesta}. Los procesos se ejecutan secuencialmente y cada uno utiliza la salida del anterior como entrada. Aunque para este trabajo se ha utilizado un entorno local de VSCode, se podrían usar herramientas como notebooks de Jupyter o los entornos de \textit{Hugging Face} para ejecutar estos comandos sin la necesidad de un hardware personal.
+
+
+% [TODO esto es mas metodologico]
+Esta línea base local cumple con el propósito de validar los datos de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y de servir de referencia frente a la que comparar las implementaciones en cada proveedor.
+
+\subsection{Ingesta y descarga de datos} 
 \label{sec:Manual_Ingesta}
 
-El proceso de ingesta requiere Python 3.12 o superior y poder instalar las dependencias de \texttt{requirements.txt} (preferiblemente en un entorno virtual). Todo el comportamiento del \textit{pipeline} se controla desde el fichero, \texttt{config.py}, que centraliza las rutas de las capas de almacenamiento, las direcciones web de los conjuntos en los portales de datos, los años a descargar, los filtros de formato, las reglas de limpieza y los parámetros de los análisis. 
-Incorporar un conjunto de datos nuevo consiste, por tanto, en añadir una entrada en los diccionarios correspondientes, y modificar, si es necesario, la lógica de los procesos.
+El proceso de ingesta requiere Python 3.12 o superior e instalar las dependencias de \texttt{requirements.txt} (preferiblemente en un entorno virtual). El comportamiento del \textit{pipeline} se controla desde el fichero, \texttt{config.py}, que centraliza las rutas de las capas de almacenamiento, las direcciones web de los conjuntos en los portales de datos, los años a descargar, los filtros de formato, las reglas de limpieza y demas parámetros de entorno. Para incorporar un conjunto de datos nuevo solo habria que añadir una entrada en los diccionarios correspondientes, y modificar, si es necesario, la lógica de los procesos.
 
-La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}, si esta no existe, se utiliza el directorio local del proyecto
+La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}, si esta no existe, se utiliza el directorio local del proyecto, aunque no se añada en este apartado, se recomienda configurarla tanto auqi como en otros entornos. Con esto, lo primero seria descargar el codigo y crear el entorno virtual.
 
 \begin{lstlisting}[language=bash, caption={Preparación del entorno y ejecución de la ingesta}]
+	# Entorno virutal de python
 	python -m venv .venv
 	source .venv/bin/activate          # o en Windows: .venv\Scripts\Activate.ps1
-	pip install -r requirements.txt
 	
+	# Descarga de codigo
+	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
+	cd TFM-cloud-soliutions-to-public-data/code/files
+	pip install -r requirements.txt --quiet
+	
+	# Descarga de datos
 	python 01_descarga.py --dry-run    # comprueba que los datos existen, sin descargar
 	python 01_descarga.py              # descarga completa
 \end{lstlisting}
 
-El proceso es idempotente, es decir, puede relanzarse sin volver a descargar lo ya presente, y registra los metadatos de procedencia de cada fichero en \texttt{\_metadatos.csv}. Debido a la protección anti-automatización de los portales también incorpora pausas entre descargas y reintentos, por lo que una ingesta completa puede durar varios minutos.
+El proceso es idempotente, es decir, puede relanzarse sin volver a descargar lo ya presente, y registra los metadatos de procedencia de cada fichero en \texttt{\_metadatos.csv}. Debido a la protección anti-automatización de los portales también incorpora pausas entre descargas y reintentos, por lo que una ingesta completa puede durar varios minutos, pero con esto ya deberiamos tener los datos en las carpetas correspondientes.
+
+\subsection{Modelos y resultados} 
+\label{sec:Manual_Modelos}
+
+Cada ejecución del análisis genera un directorio por cada año con los diagramas del codo, dendrogramas, gráficos de dispersión de correlaciones y tablas de grupos. El parámetro \texttt{MODO\_REPLICA} determina si se reproducen las condiciones del trabajo original o se aplican los criterios metodológicos propios definidos en la sección \ref*{sec:Metodos_analisis}, y los resultados de cada modo se almacenan en directorios separados. La salida completa queda registrada en \texttt{ejecucion.log} para facilitar la trazabilidad de las ejecuciones y los parámetros elegidos. Tambien se producen tres resúmenes: el coeficiente de silueta por año y aproximación, la correlación entre superficie arbórea y temperatura por año, y un diagnóstico de cobertura de días válidos por estación. El arbol de directorio se puede ver en la figura \ref*{figura_AWS_Consola} o en el propio github, ya que se han subido tambien para dar transparencia y permitir que se auditen.
+
+\begin{figure}[h]
+	\begin{center}
+		\caption{Abrir terminal AWS en consola} 
+		\includegraphics[scale=0.3]{Imagenes/Bitmap/Arbol_directorios_resultados.png} 
+		\footnotesize{Fuente: Propia}
+		\label{figura_directorio_resultados}
+	\end{center}
+\end{figure} 
+
+Los resultados y hayazgos interesantes que se extraen de estos archivos se pueden consultar en detalle en el capítulo \ref*{sec:Resultados_isla_calor}
 
 \newpage
-
-\section{Despliegue y automatización de la arquitectura}
-\label{sec:Manual_Despliegue}
-
-En esta sección vamos a ver como se despliega el proceso completo en las diferentes plataformas donde se ha probado, para asegurar la mayor reproducibilidad de los resultados.
-
-\subsection{Despliegue en Local} 
-\label{subsec:Manual_Despliegue_Local}
-
-La ejecución local no requiere infraestructura adicional más allá del entorno descrito en la Sección \ref{sec:Manual_Ingesta}. Los procesos se ejecutan secuencialmente y cada uno utiliza la salida del anterior como entrada. Aunque para este trabajo se ha utilizado un entorno local, se podrían usar herramientas como notebooks de google o los entornos de \textit{Hugging Face} para ejecutar estos comandos sin la necesidad de un hardware personal.
-
-\begin{lstlisting}[language=bash, caption={Ejecución completa del pipeline en local}]
-	cd code/files
-	python 01_descarga.py              # bronze
-	python 02_limpieza.py              # silver
-	python 03_analisis_isla_calor.py   # resultados
-\end{lstlisting}
-
-Esta línea base local cumple con el propósito de validar los datos de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y de servir de referencia frente a la que comparar las implementaciones en cada proveedor.
-
+\section{Manual de usuario en AWS}
+\label{sec:Manual_Despliegue_AWS}
 
 \subsection{Despliegue en Amazon Web Services (AWS)} \label{subsec:Manual_Despliegue_AWS}
 
@@ -79,7 +97,7 @@ Con los 200\$ disponibles, se disponen de créditos de sobra para poder realizar
 	\end{center}
 \end{figure} 
 
-\subsubsection{Configuración del entorno y autenticación}
+\subsection{Configuración del entorno y autenticación}
 
 Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC), y aunque se podrían establecer permisos más estrictos, y este modelo tiene más sentido para manejar un numero mayor de usuarios,  se realizó para futuras extensiones del proyecto y para la utilización de herramientas y roles de servicio. 
 
@@ -106,7 +124,7 @@ También conviene tener creadas las variables de entorno que vamos a utilizar en
 \end{lstlisting}
 
 
-\subsubsection{Infraestructura de Almacenamiento en Amazon S3}
+\subsection{Infraestructura de Almacenamiento en Amazon S3}
 
 El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local, y de otras nubes: (\texttt{data/bronze/}, \texttt{data/silver/}, \texttt{resultados/} (como capa Gold) y \texttt{scripts/}). Permitiendo así que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también, mediante los siguientes comandos, bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
 
@@ -165,7 +183,7 @@ También, como opción más elegante, se podría integrar en el proceso y modifi
 
 
 
-\subsubsection{Orquestación y Procesamiento ETL con AWS Glue}
+\subsection{Orquestación y Procesamiento ETL con AWS Glue}
 
 Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuidos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272 MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2 DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625 DPU ($\approx 0,03$\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
 
@@ -269,7 +287,7 @@ Con esto ya podemos lanzar la ejecución y ver el resultado:
 Aunque aquí lo ponemos en línea de comandos, AWS Glue es más fácil de ejecutar en la propia plataforma y de hecho ha sido la forma de trabajo utilizada para los pequeños errores que han aparecido durante la ejecución. Tras esta ejecución, la capa \textit{silver} aparece en el S3, con los mismos datos y estructura que la generada en el entorno local.
 
 
-\subsubsection{Modelos de ML y resultados con Amazon SageMaker} 
+\subsection{Modelos de ML y resultados con Amazon SageMaker} 
 \label{sec:Manual_Modelos_sagemaker}
 
 Para generar esta última capa de análisis en AWS, vamos a volver a cambiar de tecnología.
@@ -318,13 +336,19 @@ El proyecto también tiene un archivo .ipynb ejecutable para poder ver los resul
 También advertir que, desde una perspectiva de control de costes, los espacios de trabajo facturan por tiempo de aprovisionamiento mientras permanecen encendidos, con independencia de que se esté utilizando el cuaderno o no. Conviene detenerlos manualmente desde la administración del dominio al finalizar cada sesión para interrumpir la facturación.
 
 
-% [TODO] añadir alguna imagen de lo que ha salido en jupyter y algo más para finalizar.
+% [TODO] añadir alguna imagen de lo que ha salido en el jupyter de AWS y algo más para finalizar.
 
 Este manual ha empleado tres modalidades de ejecución dentro de AWS, cada una adecuada a una etapa distinta: un terminal interactivo para la ingesta, un servicio de procesamiento desatendido para la transformación, y un entorno de cuadernos para el análisis. Aunque la ingesta y la limpieza podrían ejecutarse indistintamente en cualquiera de las tres, la etapa de análisis requiere el entorno de cuadernos por sus dependencias gráficas y geoespaciales. Esta división refleja la lógica del propio catálogo de servicios, en el que cada uno está optimizado para un perfil de carga concreto.
 
 
 
+
+
+
 \newpage
+\section{Manual de usuario en GCP}
+\label{sec:Manual_Despliegue_GCP}
+
 \subsection{Despliegue en Google Cloud Platform (GCP)} 
 \label{subsec:Manual_Despliegue_GCP}
 
@@ -342,7 +366,7 @@ Para no alargar este capítulo, simplemente redirigimos al usuario al propio tut
 	\end{center}
 \end{figure} 
 
-\subsubsection{Configuración del entorno y autenticación}
+\subsection{Configuración del entorno y autenticación}
 
 A diferencia de AWS, GCP ya crea automáticamente una jerarquía de organización con varios proyectos al registrar la cuenta, pero crearemos un proyecto específico y aislado de la organización por defecto para este trabajo, para tener todo bajo un mismo entorno. 
 
@@ -385,7 +409,7 @@ Una vez creado y vinculado el proyecto, definimos las variables de entorno que u
 \end{lstlisting}
 
 
-\subsubsection{Infraestructura de almacenamiento en Cloud Storage}
+\subsection{Infraestructura de almacenamiento en Cloud Storage}
 
 Como tecnología de almacenamiento para el proyecto, creamos un \textit{bucket en Cloud Storage}, que alojara las capas del mismo, con la misma estructura de directorios que local y AWS:
 
@@ -413,7 +437,7 @@ Con el contenedor listo, el siguiente paso es obtener el código fuente del repo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WIP
 
-\subsubsection{Procesamiento y análisis en Vertex AI Workbench}
+\subsection{Procesamiento y análisis en Vertex AI Workbench}
 
 Para la fase de transformación (\textit{Silver}) y análisis, se optó por \textbf{Vertex AI Workbench}, un entorno gestionado de \textit{JupyterLab}. Se descartaron los servicios serverless \textit{Cloud Run Jobs} y \textit{Cloud Functions} por presentar dificultades con la ejecución de procesos por lotes y la autenticación de acceso a \textit{Cloud Storage} en el entorno de pruebas. Vertex AI simplifica la gestión de credenciales y permite ejecutar los scripts originales sin modificaciones.
 
@@ -440,7 +464,7 @@ Una vez aprovisionada, se abre JupyterLab desde la consola de GCP y se ejecutan 
 	# Definir la ruta base del bucket
 	export TFM_BASE="gs://tfm-ucm-datos-publicos"
 	
-	# Ejecutar limpieza (capa Silver) y análisis (Resultados)
+	# Ejecutar limpieza  y analisis de resultados
 	python 02_limpieza.py
 	python 03_analisis_isla_calor.py
 	
@@ -456,12 +480,3 @@ Una vez aprovisionada, se abre JupyterLab desde la consola de GCP y se ejecutan 
 
 
 \newpage
-\section{Uso de modelos y resultados} 
-\label{sec:Manual_Modelos}
-
-Cada ejecución del análisis genera un directorio por cada año con los diagramas del codo, dendrogramas, gráficos de dispersión de correlaciones y tablas de grupos.
-Al finalizar también produce tres resúmenes: el coeficiente de silueta por año y aproximación, la correlación entre superficie arbórea y temperatura por año, y un diagnóstico de cobertura de días válidos por estación.
-
-El parámetro \texttt{MODO\_REPLICA} determina si se reproducen las condiciones del trabajo original o se aplican los criterios metodológicos propios definidos en la sección \ref*{sec:Metodos_analisis}, y los resultados de cada modo se almacenan en directorios separados. La salida completa queda registrada en \texttt{ejecucion.log} para facilitar la trazabilidad de las ejecuciones y los parámetros elegidos.
-
-% [TODO] poner alguna explicacion mas? redirigir a otra parte de resultados?
