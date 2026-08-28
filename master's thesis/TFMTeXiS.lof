@@ -14,7 +14,7 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).}}{62}{figure.caption.103}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).}}{63}{figure.caption.104}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Abrir terminal AWS en consola}}{68}{figure.caption.127}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados}}{68}{figure.caption.127}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola}}{69}{figure.caption.130}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3}}{72}{figure.caption.173}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue}}{75}{figure.caption.246}%

@@ -75,7 +75,7 @@ Dentro de su catálogo, se emplearon los siguientes servicios gestionados como h
 \begin{itemize}
 	\item \textbf{Amazon S3 (Simple Storage Service):} Servicio de almacenamiento de objetos distribuido, altamente disponible y escalable.
 	\item \textbf{AWS Glue (Python Shell):} Servicio de integración de datos (ETL) gestionado y \textit{Serverless}. Se utilizó la modalidad \textit{Python Shell}, un entorno de ejecución ligero que incluye de forma nativa librerías para ciencia de datos (\texttt{pandas}, \texttt{numpy}, \texttt{scikit-learn}).
-	\item \textbf{AWS Glue Data Catalog y Crawlers:} Catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados. 
+	\item \textbf{AWS Glue Data Catalog} Catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados. 
 	\item \textbf{AWS IAM (Identity and Access Management):} Servicio de gestión de identidades y accesos para la administración de usuarios, grupos y roles de servicio.
 	\item \textbf{AWS CloudShell:} Entorno de terminal Linux basado en navegador con acceso autenticado y la interfaz de línea de comandos (\textit{AWS CLI}) preconfigurada sobre la región activa.
 	\item \textbf{AWS Budgets y Cost Explorer:} Herramientas de monitorización y control financiero para el seguimiento de costes mediante etiquetas de asignación.
@@ -286,7 +286,7 @@ Esta última capa corresponde a la implementación práctica de la estrategia, l
 
 		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery. El almacenaje depende de la herramienta propietaria de cada nube (S3 para amazon, cloud storage para GCP, etc.).
 
-		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza y estandarizacion de los datos descargados, descartando fuentes sensibles. [TODO] Se realizo feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
+		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza y estandarización de los datos descargados, descartando fuentes sensibles. [TODO] Se realizo feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
 
 		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
 
@@ -350,7 +350,7 @@ El despliegue de las capas de almacenamiento, procesamiento y analítica sobre p
 La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas practicas en la web de AWS \citep{AWSWellArchitected2026}.
 
 \begin{enumerate}
-	\item \textbf{Arquitectura de medalla}: Aunque no es única de la nube, hay aspectos particulares que merece la pena comentar para el almacenamiento especifico en Amazon S3 dividida en las capas: Se aplicó un bloqueo de acceso público para evitar la modificacion externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas para poder medir el coste en todas las capas del proceso.
+	\item \textbf{Arquitectura de medalla}: Aunque no es única de la nube, hay aspectos particulares que merece la pena comentar para el almacenamiento especifico en Amazon S3 dividida en las capas: Se aplicó un bloqueo de acceso público para evitar la modificación externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas para poder medir el coste en todas las capas del proceso.
 
 	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería demasiada computación. Se optó por una ejecución mediante \textit{AWS Glue Python Shell} y la propia \textit{AWS CLI}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución, gestionando el almacenamiento desde los contenedores de S3.
 	
