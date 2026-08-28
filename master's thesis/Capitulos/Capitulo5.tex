@@ -3,15 +3,14 @@
 
 En este capítulo, describiremos en detalle la guía operativa del proyecto, detallando los pasos necesarios para que cualquier usuario o investigador pueda replicar el entorno de trabajo, ejecutar el \textit{pipeline} de datos y reproducir los análisis descritos en capítulos anteriores. 
 
-Para mantener la coherencia con el resto de capítulos, dividiremos el manual en sus tres componentes:
-\begin{itemize}
-	\item \textbf{Configuracion, ingesta y almacenamiento de datos}.
-	\item \textbf{Despliegue y automatización de la solucion}.
-	\item \textbf{Uso de modelos y evaluación de resultados}.
-\end{itemize}
+Para mantener la coherencia con el resto de capítulos, dividiremos este manual por plataforma (Local, AWS y GCP), y dentro de cada una de ellas, seguiremos las tres etapas del ciclo de vida del dato:
+\begin{enumerate}
+	\item \textbf{Configuración, ingesta y almacenamiento de datos}.
+	\item \textbf{Despliegue, automatización y procesamiento ETL}.
+	\item \textbf{Ejecución de modelos y evaluación de resultados}.
+\end{enumerate}
 
 De este modo, intentaremos garantizar la trazabilidad del ciclo de vida del dato. Esto lo haremos para las tres plataformas donde hemos trabajado: Local, AWS y GCP; y al final, también estableceremos una comparativa lo mas objetiva posible de que entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de los metodos utilizados en las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. La comparación cuantitativa entre entornos, en términos de esfuerzo, tiempo de ejecución y coste, se recopila en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
-
 
 
 
@@ -37,24 +36,39 @@ El proceso de ingesta requiere Python 3.12 o superior e instalar las dependencia
 La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}, si esta no existe, se utiliza el directorio local del proyecto, aunque no se añada en este apartado, se recomienda configurarla tanto aqui como en otros entornos. Con esto, lo primero seria descargar el codigo y crear el entorno virtual.
 
 \begin{lstlisting}[language=bash, caption={Preparación del entorno y ejecución de la ingesta}]
-	# Entorno virutal de python
-	python -m venv .venv
-	source .venv/bin/activate          # o en Windows: .venv\Scripts\Activate.ps1
-	
 	# Descarga de codigo
 	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
 	cd TFM-cloud-soliutions-to-public-data/code/files
+
+	# Entorno virutal de python
+	python -m venv .venv
+	source .venv/bin/activate          # o en Windows: .venv\Scripts\Activate.ps1
 	pip install -r requirements.txt --quiet
 	
 	# Descarga de datos
-	python 01_descarga.py --dry-run    # comprueba que los datos existen, sin descargar
-	python 01_descarga.py              # descarga completa
+	python 01_descarga.py --dry-run   # Modo de verificacion: comprueba enlaces activos sin descargar
+	python 01_descarga.py             # Descarga completa y metadatos
 \end{lstlisting}
+
+Despues de esto, ya tendriamos los datos definidos, y ahora podemos pasar a ejecutar el proceso de limpieza
+\begin{lstlisting}[language=bash, caption={Ejecución local de limpizaL}]
+	python 02_limpieza.py
+\end{lstlisting}
+
+Este consolida los datos y genera la capa \textit{Silver} estructurada lista para el análisis.
 
 El proceso es idempotente, es decir, puede relanzarse sin volver a descargar lo ya presente, y registra los metadatos de procedencia de cada fichero en \texttt{\_metadatos.csv}. Debido a la protección anti-automatización de los portales también incorpora pausas entre descargas y reintentos, por lo que una ingesta completa puede durar varios minutos, pero con esto ya deberiamos tener los datos en las carpetas correspondientes.
 
-\subsection{Modelos y resultados} 
-\label{sec:Manual_Modelos}
+\subsection{Ejecución de modelos y resultados}
+\label{subsec:Manual_Local_Modelos}
+
+Una vez superada la fase ETL, el modelado se ejecuta mediante:
+
+\begin{lstlisting}[language=bash, caption={Ejecución local del modelado analítico}]
+	python 03_analisis_isla_calor.py
+\end{lstlisting}
+
+*(El resto del texto de resultados que ya tenías sobre MODO\_REPLICA, logs y la figura del árbol se mantiene igual).*
 
 Cada ejecución del análisis genera un directorio por cada año con los diagramas del codo, dendrogramas, gráficos de dispersión de correlaciones y tablas de grupos. El parámetro \texttt{MODO\_REPLICA} determina si se reproducen las condiciones del trabajo original o se aplican los criterios metodológicos propios definidos en la sección \ref*{sec:Metodos_analisis}, y los resultados de cada modo se almacenan en directorios separados. La salida completa queda registrada en \texttt{ejecucion.log} para facilitar la trazabilidad de las ejecuciones y los parámetros elegidos. Tambien se producen tres resúmenes: el coeficiente de silueta por año y aproximación, la correlación entre superficie arbórea y temperatura por año, y un diagnóstico de cobertura de días válidos por estación. El árbol de directorio se puede ver en la figura \ref*{figura_directorio_resultados} o en el propio github, ya que se han subido tambien para dar transparencia y permitir que se auditen.
 
