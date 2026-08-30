@@ -69,16 +69,28 @@ def _sort_csv_list(clave: str) -> list[str]:
     """Busca los archivos en las carpetas y subcarpetas y devuelve una lista ordenada"""
     import fsspec
     carpeta = f"{config.BRONZE}/{clave}"
-    es_s3 = str(config.BRONZE).startswith("s3://")
-    fs = fsspec.filesystem("s3" if es_s3 else "file")
-    ruta = carpeta[5:] if es_s3 else carpeta
+    
+    if str(config.BRONZE).startswith("s3://"):
+        fs = fsspec.filesystem("s3")
+        ruta = carpeta[5:]
+        prefijo = "s3://"
+    elif str(config.BRONZE).startswith("gs://"):
+        fs = fsspec.filesystem("gcs")
+        ruta = carpeta[5:]
+        prefijo = "gs://"
+    else:
+        fs = fsspec.filesystem("file")
+        ruta = carpeta
+        prefijo = ""
+        
     if not fs.exists(ruta):
         print(f"    [info] no existe {carpeta}")
         return []
+        
     encontrados = [f for f in fs.find(ruta)
                    if f.endswith(".csv") and not f.split("/")[-1].startswith("_")]
     print(f"    [info] {len(encontrados)} ficheros en {clave}")
-    return sorted(("s3://" + f.lstrip("/")) if es_s3 else f for f in encontrados)
+    return sorted((prefijo + f.lstrip("/")) if prefijo else f for f in encontrados)
 
 def _parse_fechas(serie: pd.Series) -> pd.Series:
     """El formato de fecha cambia entre ficheros, lo detectamos por patron entre todos los formatos..."""
