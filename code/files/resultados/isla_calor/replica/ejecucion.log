@@ -1,4 +1,4 @@
-# ejecucion 2026-07-28 22:54 | MODO_REPLICA=True | MIN_DIAS_ANIO=0
+# ejecucion 2026-08-31 22:31 | MODO_REPLICA=True | MIN_DIAS_ANIO=0
 == Isla de calor 2019 (extension) ==
     [info] 18 estaciones sin cobertura completa de magnitudes, quedan 8
   [OK] meteo_todas_magnitudes: 8 estaciones, k=4, inercia=12.9, silhouette=0.170
@@ -9,6 +9,10 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=0.7, silhouette=0.601
     [info] 17 estaciones sin cobertura completa de magnitudes, quedan 7
   [OK] contaminacion_no2_pm: 7 estaciones, k=4, inercia=0.9, silhouette=0.377
+    [info] 2 estaciones sin cobertura completa de magnitudes, quedan 24
+  [OK] meteo_temp_altitud: 24 estaciones, k=4, inercia=10.4, silhouette=0.391
+    [info] 2 estaciones sin cobertura completa de magnitudes, quedan 24
+  [OK] meteo_temp_sup_rel: 17 estaciones, k=4, inercia=4.4, silhouette=0.442
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 14 distritos, r=-0.686
 == Isla de calor 2020 (extension) ==
@@ -21,6 +25,10 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=1.4, silhouette=0.534
     [info] 17 estaciones sin cobertura completa de magnitudes, quedan 7
   [OK] contaminacion_no2_pm: 7 estaciones, k=4, inercia=2.7, silhouette=0.356
+    [info] 3 estaciones sin cobertura completa de magnitudes, quedan 23
+  [OK] meteo_temp_altitud: 23 estaciones, k=4, inercia=10.2, silhouette=0.406
+    [info] 3 estaciones sin cobertura completa de magnitudes, quedan 23
+  [OK] meteo_temp_sup_rel: 16 estaciones, k=4, inercia=5.2, silhouette=0.423
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 14 distritos, r=-0.293
 == Isla de calor 2021 (replica) ==
@@ -33,6 +41,10 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=1.3, silhouette=0.565
     [info] 16 estaciones sin cobertura completa de magnitudes, quedan 8
   [OK] contaminacion_no2_pm: 8 estaciones, k=4, inercia=4.7, silhouette=0.309
+    [info] 3 estaciones sin cobertura completa de magnitudes, quedan 23
+  [OK] meteo_temp_altitud: 23 estaciones, k=4, inercia=9.9, silhouette=0.402
+    [info] 3 estaciones sin cobertura completa de magnitudes, quedan 23
+  [OK] meteo_temp_sup_rel: 18 estaciones, k=4, inercia=4.3, silhouette=0.571
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 14 distritos, r=-0.215
 == Isla de calor 2022 (extension) ==
@@ -45,6 +57,10 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=1.6, silhouette=0.513
     [info] 16 estaciones sin cobertura completa de magnitudes, quedan 8
   [OK] contaminacion_no2_pm: 8 estaciones, k=4, inercia=4.5, silhouette=0.262
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_altitud: 25 estaciones, k=4, inercia=14.2, silhouette=0.349
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_sup_rel: 20 estaciones, k=4, inercia=6.7, silhouette=0.463
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 15 distritos, r=-0.258
 == Isla de calor 2023 (extension) ==
@@ -57,6 +73,10 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=0.9, silhouette=0.524
     [info] 16 estaciones sin cobertura completa de magnitudes, quedan 8
   [OK] contaminacion_no2_pm: 8 estaciones, k=4, inercia=2.4, silhouette=0.254
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_altitud: 25 estaciones, k=4, inercia=11.7, silhouette=0.422
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_sup_rel: 20 estaciones, k=4, inercia=5.1, silhouette=0.491
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 15 distritos, r=-0.049
 == Isla de calor 2024 (extension) ==
@@ -69,6 +89,10 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=0.9, silhouette=0.566
     [info] 16 estaciones sin cobertura completa de magnitudes, quedan 8
   [OK] contaminacion_no2_pm: 8 estaciones, k=4, inercia=2.4, silhouette=0.286
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_altitud: 25 estaciones, k=4, inercia=10.2, silhouette=0.471
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_sup_rel: 20 estaciones, k=4, inercia=4.7, silhouette=0.493
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 15 distritos, r=-0.334
 == Isla de calor 2025 (extension) ==
@@ -81,19 +105,23 @@
   [OK] contaminacion_no2: 24 estaciones, k=5, inercia=1.6, silhouette=0.523
     [info] 13 estaciones sin cobertura completa de magnitudes, quedan 11
   [OK] contaminacion_no2_pm: 11 estaciones, k=4, inercia=4.7, silhouette=0.376
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_altitud: 25 estaciones, k=4, inercia=10.0, silhouette=0.471
+    [info] 1 estaciones sin cobertura completa de magnitudes, quedan 25
+  [OK] meteo_temp_sup_rel: 20 estaciones, k=4, inercia=4.4, silhouette=0.494
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 15 distritos, r=-0.315
 
 == Resumen: silhouette por año y aproximacion ==
-aproximacion  contaminacion_no2  contaminacion_no2_pm  meteo_temp_arbolado  meteo_temp_humedad  meteo_todas_magnitudes
-anio                                                                                                                  
-2019                      0.601                 0.377                0.465               0.384                   0.170
-2020                      0.534                 0.356                0.484               0.447                   0.233
-2021                      0.565                 0.309                0.436               0.560                   0.183
-2022                      0.513                 0.262                0.455               0.501                   0.174
-2023                      0.524                 0.254                0.531               0.453                   0.104
-2024                      0.566                 0.286                0.569               0.453                   0.286
-2025                      0.523                 0.376                0.577               0.513                   0.269
+aproximacion  contaminacion_no2  contaminacion_no2_pm  meteo_temp_altitud  meteo_temp_arbolado  meteo_temp_humedad  meteo_temp_sup_rel  meteo_todas_magnitudes
+anio                                                                                                                                                          
+2019                      0.601                 0.377               0.391                0.465               0.384               0.442                   0.170
+2020                      0.534                 0.356               0.406                0.484               0.447               0.423                   0.233
+2021                      0.565                 0.309               0.402                0.436               0.560               0.571                   0.183
+2022                      0.513                 0.262               0.349                0.455               0.501               0.463                   0.174
+2023                      0.524                 0.254               0.422                0.531               0.453               0.491                   0.104
+2024                      0.566                 0.286               0.471                0.569               0.453               0.493                   0.286
+2025                      0.523                 0.376               0.471                0.577               0.513               0.494                   0.269
 
 == Resumen: correlacion arbolado vs temperatura por año ==
       r_arbolado  n_distritos

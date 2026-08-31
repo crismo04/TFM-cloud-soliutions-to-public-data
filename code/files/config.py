@@ -107,9 +107,8 @@ PEATONES_HORA = 12
 PEATONES_HORIZONTE_TEST = 15  # días reservados para validar el forecast
 
 # --- Parámetros del análisis (03_analisis_isla_calor.py) ---
-# MODO_REPLICA: True reproduce el TFG original tal cual - False activa las mejoras metodologicas propias
-# MODO_REPLICA = True
-MODO_REPLICA = False
+MODO_REPLICA = True   # replica: True reproduce el TFG original tal cual
+# MODO_REPLICA = False    # replica: False activa las mejoras metodologicas propias
 ETIQUETA_MODO = "replica" if MODO_REPLICA else "propio"
 MIN_DIAS_ANIO = 0 if MODO_REPLICA else 300  # dias validos minimos por estacion-año
 

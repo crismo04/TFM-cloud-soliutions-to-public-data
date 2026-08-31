@@ -2,9 +2,9 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
-## [ML] - 2026-08-27
+## [ML] - 2026-08-31
 ### Add
-* Añadir dos nuevas aproximaciones: Temperatura y altitud y Temperatura y superficie relativa
+* Añadir dos nuevas aproximaciones: (Temperatura y altitud) y (Temperatura y superficie relativa)
 * Nuevos resultados debido a las nuevas aproximaciones
 ### Change
 * Modificaciones menores en la memoria
