@@ -9,7 +9,7 @@ Equivalencias R -> Python usadas como linea base de validacion:
 
 El analisis guarda cada año en una subcarpeta de resultados. Ademas del clustering, se cruza el arbolado con el clima por distrito
 
-# TODO hay cosas que quizas habria que mover al proceso de silver, ya que he tenido que limpiar muchos datos
+# hay cosas que se podria mover al proceso de silver, porque son de limpieza, pero que como son especificas de estos datos, dejo aqui
 
 Uso:
   python 03_analisis_isla_calor.py         # replica 2021 + extension
@@ -27,14 +27,28 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.preprocessing import StandardScaler
 from pathlib import Path
+import geopandas as gpd
 
 
 import config
+import fsspec
+
+def _asegurar_carpeta(ruta: str):
+    """Crea carpetas locales si es necesario (en GCS no hace falta)"""
+    if not str(ruta).startswith(("gs://", "s3://")):
+        Path(ruta).mkdir(parents=True, exist_ok=True)
+
+_old_savefig = plt.savefig
+def _cloud_savefig(ruta, *args, **kwargs):
+    """Permite a matplotlib guardar en gs:// y evita el Errno 22 de Windows"""
+    with fsspec.open(ruta, "wb") as f:
+        _old_savefig(f, *args, **kwargs)
+plt.savefig = _cloud_savefig
 
 class _Tee:
-    """Duplica la salida por pantalla y en un fichero de log, para dejar constancia de cada ejecucion sin perder el seguimiento en vivo"""
+    """Duplica la salida por pantalla y en log, compatible con la Nube"""
     def __init__(self, ruta):
-        self.fichero = open(ruta, "w", encoding="utf-8")
+        self.fichero = fsspec.open(ruta, "w", encoding="utf-8").open()
     def write(self, texto):
         sys.__stdout__.write(texto)
         self.fichero.write(texto)
@@ -43,17 +57,17 @@ class _Tee:
         self.fichero.flush()
 
 ANIO_REPLICA = 2021  # año del TFG original
-# MIN_DIAS_ANIO = 300  # TODO comentar en memoria, para que no descuadre si hay algun año que faltan datos
-# TODO esto no lo tiene el TFG original, comentar para las diferencias como una mejora metodologica   -- movido a config
 
 # Aproximaciones originales (cap. 6):
 #   nombre, conjunto de datos, magnitudes empleadas, variables externas y k elegido
 APROXIMACIONES = [
     ("meteo_todas_magnitudes", "meteo_diario", ["vel_viento", "dir_viento", "temperatura", "humedad_rel", "presion", "rad_solar", "precipitacion"], [], 4),
     ("meteo_temp_humedad", "meteo_diario", ["temperatura", "humedad_rel"], [], 5),
-    ("meteo_temp_arbolado", "meteo_diario", ["temperatura"], ["superficie_ha"], 4), #TODO añadir a la memoria que su temperatura tiene temp y arbolado (ponia solo temperatura)
+    ("meteo_temp_arbolado", "meteo_diario", ["temperatura"], ["superficie_ha"], 4),
     ("contaminacion_no2", "calidad_aire_diario", ["no2"], [], 5),
     ("contaminacion_no2_pm", "calidad_aire_diario", ["no2", "pm25", "pm10"], [], 4),
+    ("meteo_temp_altitud", "meteo_diario", ["temperatura"], ["altitud"], 4),
+    ("meteo_temp_sup_rel", "meteo_diario", ["temperatura"], ["superficie_relativa"], 4),
 ]
 
 # --- utilidades --
@@ -96,7 +110,7 @@ def matriz_estaciones(df: pd.DataFrame, columnas: list[str]) -> pd.DataFrame:
     if parciales.any():
         print(f"    [info] {parciales.sum()} estaciones con <{config.MIN_DIAS_ANIO} dias de datos, se excluyen")
     m = m[~parciales]
-    completas = m.dropna(how="any") # KMeans no soporta bien nulos # TODO revisar si cambair por media o algo
+    completas = m.dropna(how="any") # KMeans no soporta bien nulos
     if len(completas) < len(m):
         print(f"    [info] {len(m) - len(completas)} estaciones sin cobertura " f"completa de magnitudes, quedan {len(completas)}")
     return completas
@@ -104,7 +118,7 @@ def matriz_estaciones(df: pd.DataFrame, columnas: list[str]) -> pd.DataFrame:
 def codo(X: np.ndarray, nombre: str, carpeta) -> None:
     """Metodo de codo para visualizar la inercia"""
     ks = range(1, min(10, len(X)) + 1)
-    inercias = [KMeans(n_clusters=k, n_init=10, random_state=100).fit(X).inertia_ for k in ks] # TODO revisar si 4 o 5 es la mejor
+    inercias = [KMeans(n_clusters=k, n_init=10, random_state=100).fit(X).inertia_ for k in ks]
     plt.figure(figsize=(6, 4))
     plt.plot(list(ks), inercias, "o-")
     plt.xlabel("k"); plt.ylabel("Inercia"); plt.title(f"Diagrama del codo: {nombre}")
@@ -139,7 +153,7 @@ def ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta) -
     Z = linkage(X, method="ward")
     m[f"jerarquico_k{k}"] = fcluster(Z, t=k, criterion="maxclust")
 
-    # pintamos todo con los nombres originales
+    # pintamos con los nombres originales
     nombres = _nombres_estacion()
     etiquetas = [str(nombres.get(int(e), f"Estación {int(e)}"))[:14] for e in m.index]
     
@@ -153,7 +167,6 @@ def ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta) -
     m.to_csv(f"{carpeta}/clusters_{nombre}.csv")
     print(f"  [OK] {nombre}: {len(m)} estaciones, k={k}, " f"inercia={km.inertia_:.1f}, silhouette={sil:.3f}")
 
-    # TODO comentar despues que esto es solo para ver por pantalla ahora
     return {"anio": anio, "aproximacion": nombre, "n_estaciones": len(m), "silhouette": round(sil, 3)}
 
 
@@ -181,7 +194,7 @@ def correlaciones(anio: int, carpeta) -> None:
 # --- cruce arbolado x clima por distrito --
 
 def _coalesce(df: pd.DataFrame, columnas: list[str]) -> pd.Series:
-    """Primera columna no nula de la lista (el arbolado renombro la misma magnitud tres veces a lo largo de los años)""" # TODO añadir a MEMORIA Schema Drift?????
+    """Primera columna no nula de la lista (el arbolado renombro la misma magnitud tres veces a lo largo de los años)"""
     presentes = [c for c in columnas if c in df.columns]
     if not presentes:                       # ese año no publica esta magnitud
         return pd.Series(np.nan, index=df.index)
@@ -191,7 +204,7 @@ def _coalesce(df: pd.DataFrame, columnas: list[str]) -> pd.Series:
     return s
 
 def _norm_distrito(s: pd.Series) -> pd.Series:
-    """Normaliza nombres de distrito quitando espacios en los guiones""" # TODO añadir a memoria mas problemas
+    """Normaliza nombres de distrito quitando espacios en los guiones"""
     return (s.map(_sin_tildes).str.upper().str.replace(r"\s*-\s*", "-", regex=True).str.replace(r"\s+", " ", regex=True).str.strip())
 
 def _superficie_por_distrito(anio: int) -> pd.Series:
@@ -212,22 +225,66 @@ def _superficie_por_estacion(anio: int) -> pd.Series:
     est = est.dropna(subset=["CODIGO_CORTO"])
     est["CODIGO_CORTO"] = est["CODIGO_CORTO"].astype(int)
     s = est.set_index("CODIGO_CORTO")["distrito"].map(_superficie_por_distrito(anio)).rename("superficie_ha")
-    # los distritos con 0 ha se descartan: el trabajo original exige "tener datos de masas arboreas" y parece interpretar el 0 como ausencia # TODO memoria
+    # los distritos con 0 ha se descartan: el trabajo original exige "tener datos de masas arboreas" y parece interpretar el 0 como ausencia
+    return s[s > 0]
+
+def _altitud_por_estacion(anio: int = None) -> pd.Series:
+    """Devuelve la altitud (m) de cada estacion meteorologica."""
+    est = _leer_silver("estaciones_meteo")
+    est["CODIGO_CORTO"] = pd.to_numeric(est["CODIGO_CORTO"], errors="coerce").astype(int)
+    est["ALTITUD"] = pd.to_numeric(est["ALTITUD"], errors="coerce") # Faltaba reasignar!
+    return est.set_index("CODIGO_CORTO")["ALTITUD"].rename("altitud")
+
+def _cargar_distritos():
+    """Carga el shapefile de distritos compatible con Local y Nube."""
+    if str(config.BRONZE).startswith("gs://"):
+        fs = fsspec.filesystem("gcs")
+        ruta_busqueda = config.BRONZE.replace("gs://", "") + "/distritos/*.shp"
+        shp = "gs://" + fs.glob(ruta_busqueda)[0]
+    else:
+        shp = next(Path(f"{config.BRONZE}/distritos").glob("*.shp"))
+        
+    distritos = gpd.read_file(shp)
+    col_nombre = next(c for c in distritos.columns if "NOMBRE" in c.upper() or "DISTRI" in c.upper())
+    distritos["distrito"] = _norm_distrito(distritos[col_nombre])
+    return distritos
+
+def _area_por_distrito() -> pd.Series:
+    """Área total (ha) de cada distrito a partir del shapefile municipal."""
+    distritos = _cargar_distritos()
+    distritos["area_ha"] = distritos.geometry.to_crs(epsg=25830).area / 10_000
+    return distritos.set_index("distrito")["area_ha"]
+
+def _superficie_relativa_por_distrito(anio: int) -> pd.Series:
+    """Proporción de superficie arbórea respecto al área total del distrito."""
+    sup_abs = _superficie_por_distrito(anio)
+    area = _area_por_distrito()
+    return (sup_abs / area).dropna()
+
+def _superficie_relativa_por_estacion(anio: int) -> pd.Series:
+    """Cruza la superficie relativa del distrito con la estación correspondiente"""
+    est = _estaciones_con_distrito().copy()
+    est["CODIGO_CORTO"] = pd.to_numeric(est["CODIGO_CORTO"], errors="coerce").astype(int)
+    rel_distrito = _superficie_relativa_por_distrito(anio)
+    s = est.set_index("CODIGO_CORTO")["distrito"].map(rel_distrito).rename("superficie_relativa")
     return s[s > 0]
 
 def _estaciones_con_distrito():
-    """Asigna cada estacion meteo a su distrito con el shapefile municipal de geopandas"""
-    import geopandas as gpd
-    shp = next(Path(f"{config.BRONZE}/distritos").glob("*.shp"))
-    distritos = gpd.read_file(shp).to_crs(4326)
-    col_nombre = next(c for c in distritos.columns if "NOMBRE" in c.upper() or "DISTRI" in c.upper())
+    """Asigna cada estación meteorológica a su distrito con el shapefile municipal."""
+    distritos = _cargar_distritos().to_crs(4326)  # para sjoin con puntos en lat/lon
     est = _leer_silver("estaciones_meteo")
+    puntos = gpd.GeoDataFrame(
+        est,
+        geometry=gpd.points_from_xy(est["LONGITUD"], est["LATITUD"]),
+        crs=4326
+    )
+    cruce = gpd.sjoin(puntos, distritos[["distrito", "geometry"]], predicate="within")
 
-    puntos = gpd.GeoDataFrame( est, geometry=gpd.points_from_xy(est["LONGITUD"], est["LATITUD"]), crs=4326)
-    cruce = gpd.sjoin(puntos, distritos[[col_nombre, "geometry"]], predicate="within")
-    cruce["distrito"] = _norm_distrito(cruce[col_nombre])
-    return cruce[["CODIGO_CORTO", "distrito"]] if "CODIGO_CORTO" in cruce else cruce[[est.columns[0], "distrito"]] \
-            .rename(columns={est.columns[0]: "CODIGO_CORTO"})
+    if "CODIGO_CORTO" in cruce.columns:
+        return cruce[["CODIGO_CORTO", "distrito"]]
+    else:
+        col_cod = est.columns[0]
+        return cruce[[col_cod, "distrito"]].rename(columns={col_cod: "CODIGO_CORTO"})
 
 def analisis_arbolado(anio: int, carpeta) ->  dict | None:
     """Correlacion entre superficie de masas arboreas y temperatura media del distrito (conclusion):
@@ -243,8 +300,8 @@ def analisis_arbolado(anio: int, carpeta) ->  dict | None:
         print("  [AVISO] falta el shapefile de distritos en bronze; se omite")
         return
 
-    # la superficie en hectareas no siempre se publica. 2019 solo traen m2. Se toma la columna en ha si existe y, si no, se calcula de los m2 (1 ha = 10.000 m2).
-    #  Otra variante del schema drift del portal # TODO comentar memoria
+    # mas schema drift, la superficie en hectareas no siempre se publica. 2019 solo traen m2. 
+    # Se toma la columna en ha si existe y, si no, se calcula de los m2 (1 ha = 10.000 m2).
     superficie = _superficie_por_distrito(anio)
     if superficie.empty:
         print(f"  [AVISO] sin arbolado de {anio}; se omite")
@@ -262,7 +319,7 @@ def analisis_arbolado(anio: int, carpeta) ->  dict | None:
         print(f"  [AVISO] solo {len(cruce)} distritos con estacion y arbolado")
         return
 
-    # corr por pares: algun año una estacion tiene temperatura pero nov arbolado (o al reves) y un solo NaN anularia toda la correlacion # TODO revisar este fix que me tengo que ir
+    # corr por pares: algun año una estacion tiene temperatura pero nov arbolado (o al reves) y un solo NaN anular la correlacion 
     valido = cruce[["temperatura", "superficie_ha"]].dropna()
     r = valido["temperatura"].corr(valido["superficie_ha"])
     n_distritos = len(valido)
@@ -277,7 +334,6 @@ def analisis_arbolado(anio: int, carpeta) ->  dict | None:
     cruce.to_csv(f"{carpeta}/arbolado_temperatura_distrito.csv", index=False)
     print(f"  [OK] arbolado vs temperatura: {n_distritos} distritos, r={r:.3f}")
 
-    # TODO comentar despues que esto es solo para ver por pantalla ahora
     return {"anio": anio, "r_arbolado": round(r, 3), "n_distritos": n_distritos}
 
 
@@ -346,14 +402,15 @@ def cobertura_temperatura() -> None:
 
 EXTERNAS = {
     "superficie_ha": _superficie_por_estacion,
-    # TODO mejoras: "altitud" (maestro de estaciones), "superficie_relativa"
+    "altitud": _altitud_por_estacion,
+    "superficie_relativa": _superficie_relativa_por_estacion,
 }
 
 def main() -> None:
     anios = [int(a) for a in sys.argv[1:]] or config.ANIOS
-    todos_clusters, todos_arbolado = [], []
+    all_clusters, all_arbolado = [], []
     base = f"{config.RESULTADOS}/isla_calor/{config.ETIQUETA_MODO}"
-    Path(base).mkdir(parents=True, exist_ok=True)
+    _asegurar_carpeta(base)
     sys.stdout = _Tee(f"{base}/ejecucion.log")
     print(f"# ejecucion {pd.Timestamp.now():%Y-%m-%d %H:%M} | MODO_REPLICA={config.MODO_REPLICA} | MIN_DIAS_ANIO={config.MIN_DIAS_ANIO}")
     for anio in anios:
@@ -365,17 +422,17 @@ def main() -> None:
             try:
                 fila = ejecutar_aproximacion(nombre, clave, columnas, externas, k, anio, carpeta)
                 if fila:
-                    todos_clusters.append(fila)
+                    all_clusters.append(fila)
             except FileNotFoundError:
                 print(f"  [AVISO] falta silver de '{clave}'; ejecutar 01 y 02")
                 return
         correlaciones(anio, carpeta)
         fila_arb = analisis_arbolado(anio, carpeta)
         if fila_arb:
-            todos_arbolado.append(fila_arb)
+            all_arbolado.append(fila_arb)
 
-    resumen(todos_clusters, todos_arbolado, base)
-    grafico_evolucion(todos_arbolado, base)
+    resumen(all_clusters, all_arbolado, base)
+    grafico_evolucion(all_arbolado, base)
     cobertura_temperatura()
 
 if __name__ == "__main__":

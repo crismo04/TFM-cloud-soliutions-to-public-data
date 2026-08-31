@@ -2,6 +2,15 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [ML] - 2026-08-27
+### Add
+* Añadir dos nuevas aproximaciones: Temperatura y altitud y Temperatura y superficie relativa
+* Nuevos resultados debido a las nuevas aproximaciones
+### Change
+* Modificaciones menores en la memoria
+* Dejar los codigos 01, 02 y 03 funcionando y sin TODOs en todas las plataformas
+
+
 ## [Cloud] - 2026-08-27
 ### Change
 * WIP de parte de GCP en la memoria

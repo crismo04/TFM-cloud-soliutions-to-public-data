@@ -430,9 +430,12 @@ En este proyecto utilizaremos varias herramientas. En cuanto a los datos, los al
 
 Los principales proveedores de nube ofrecen plataformas completas diseñadas para gestionar el ciclo de vida de los modelos de ML \citep{comparisonAutoMLServices}:
 \begin{itemize}
-	\item \textbf{Google Vertex AI:} Integra herramientas para todo el ciclo de vida del ML: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI / CLI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicación con las principales herramientas de GCP como Bigquery. Además, ofrece una gran selección de modelos preentrenados de ML para diversos problemas, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA} .
+	\item \textbf{Gemini Enterprise Agent Platform (Anteriormente Google Vertex AI):} Integra herramientas para todo el ciclo de vida del aprendizaje automático y la IA generativa: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI / CLI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicación con las herramientas de GCP y ofrece varios modelos preentrenados, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA}. Durante el desarrollo de este trabajo, la plataforma se reestructuró y evolucionando hacia una plataforma centrada en agentes autónomos, lo que ilustra la alta volatilidad en la interfaz y nomenclatura de los servicios en la nube.
+	
 	\item \textbf{AWS SageMaker:} Proporciona un conjunto completo de herramientas y servicios para construir, entrenar y desplegar modelos de ML a escala, incluyendo notebooks gestionados, algoritmos y entrenamiento distribuido. Soporta una amplia gama de fuentes de datos como S3, Athena, Redshift, Snowflake y Databricks\citep{AmazonSageMaker_CloudIA}.
+	
 	\item \textbf{Azure Machine Learning:} Ofrece un entorno para el desarrollo y despliegue con herramientas para la preparación de datos, entrenamiento de modelos, gestión de experimentos y automatización de flujos de trabajo de ML, además de ofrecer modelos de Hugging Face y OpenAI. Sus fuentes de datos principales incluyen Azure Blob Storage, Azure File Share y Azure Data Lake, \citep{AzureMachineLearning_CloudIA}.
+	
 	\item \textbf{OVHcloud (AI Notebook y AI Training):} Ofrece sus servicios "AI Notebook" y "AI Training", con infraestructura gestionada, incluyendo acceso a GPUs, para el desarrollo y entrenamiento de modelos. No tiene un entorno tan potente como el resto de clouds, pero ofrece una capa gratuita generosa y localizada en Europa, \citep{OVHcloud_CloudIA}.
 
 \end{itemize}
@@ -511,7 +514,6 @@ Otra opción seria utilizar herramientas especializadas como ``AutoKeras'' \cite
 También hay que tener en cuenta la nueva normativa que la Unión Europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa, omnibus2026Europa}, así como el marco en el que este proyecto se engloba. Este reglamento se ha usado de base para el uso de IA en este proyecto, y aunque la mayor parte de las consideraciones éticas desarrolladas en los últimos años, se centran en modelos de procesamiento del lenguaje natural, (como los estudios conducidos por DeepMind) \citep{gabriel2024ethicsadvancedaiassistants}. En Este aspecto, el presente trabajo se compromete con la ``Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial (IA) de la Universidad Complutense de Madrid'' adjunta en el repositorio de este mismo proyecto. Pero además se compromete a seguir los siete estándares definidos por el reglamento de la Unión Europea en \hyperref[sec:Metodos_Principios_EU]{principios éticos de de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
 
 Para terminar, anteriormente se ha hablado sobre la obtención de ``insights'' automáticos: Es sabido que la IA acelera la identificación de patrones, pero para poder efectuar una interpretación estratégica se necesita el contexto de política pública y la validación humana experta. El principio HITL ``humano en el bucle'' \citep{MosqueiraRey2023} es un requisito metodológico y ético para convertir patrones en decisiones, por lo que sera un requisito que seguiremos en este proyecto.
-\subsection{IA, normativa y ética}
 
 
 \subsection{Trabajos anteriores y relacionados}
