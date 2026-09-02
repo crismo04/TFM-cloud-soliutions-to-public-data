@@ -5,24 +5,24 @@
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Ventanas de contexto en tokens de principales LLM (Junio 2026), con su cálculo de filas de datos posibles que entrarían dentro de esa ventana.}}{33}{table.caption.46}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Ventanas de contexto en tokens de principales LLM (Junio 2026), con su cálculo de filas de datos posibles que entrarían dentro de esa ventana.\relax }}{33}{table.caption.46}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Conjuntos de datos utilizados, su procedencia es \citep {AytoMadrid2025PortalDatos}.}}{38}{table.caption.53}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Correspondencia entre los procesos del \textit {pipeline} y las etapas de la arquitectura de medalla.}}{45}{table.caption.63}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Conjuntos de datos utilizados, su procedencia es \citep {AytoMadrid2025PortalDatos}.\relax }}{38}{table.caption.53}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Correspondencia entre los procesos del \textit {pipeline} y las etapas de la arquitectura de medalla.\relax }}{45}{table.caption.63}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Patologías de calidad detectadas en los conjuntos publicados y su efecto sobre la reutilización automatizada.}}{62}{table.caption.101}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Replicación del agrupamiento de \citep {Meneses2023Madrid} para 2021. Las tres primeras columnas indican el número de estaciones empleadas en cada trabajo y las comunes a ambos, y la última el porcentaje de pares de estaciones agrupados de igual forma.}}{63}{table.caption.106}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019-2025), reproduciendo las condiciones del trabajo original, y aplicando el criterio de cobertura mínima propio.}}{64}{table.caption.108}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Coeficiente de silueta por año y aproximación, aplicando el criterio de cobertura mínima. Las columnas corresponden a las cinco aproximaciones descritas en la Sección \ref {sec:Metodos_analisis}, es decir siete magnitudes meteorológicas, temperatura y humedad relativa, temperatura y superficie arbórea, dióxido de nitrógeno, y dióxido de nitrógeno con partículas. El guion indica que la aproximación no reunió estaciones suficientes ese año.}}{66}{table.caption.113}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Comparativa de esfuerzo de desarrollo, tiempo de ejecución y coste por etapa y entorno.}}{68}{table.caption.118}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Patologías de calidad detectadas en los conjuntos publicados y su efecto sobre la reutilización automatizada.\relax }}{62}{table.caption.101}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Replicación del agrupamiento de \citep {Meneses2023Madrid} para 2021. Las tres primeras columnas indican el número de estaciones empleadas en cada trabajo y las comunes a ambos, y la última el porcentaje de pares de estaciones agrupados de igual forma.\relax }}{63}{table.caption.106}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019-2025), reproduciendo las condiciones del trabajo original, y aplicando el criterio de cobertura mínima propio.\relax }}{64}{table.caption.108}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Coeficiente de silueta por año y aproximación, aplicando el criterio de cobertura mínima. Las columnas corresponden a las cinco aproximaciones descritas en la Sección \ref {sec:Metodos_analisis}, es decir siete magnitudes meteorológicas, temperatura y humedad relativa, temperatura y superficie arbórea, dióxido de nitrógeno, y dióxido de nitrógeno con partículas. El guion indica que la aproximación no reunió estaciones suficientes ese año.\relax }}{66}{table.caption.113}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Comparativa de esfuerzo de desarrollo, tiempo de ejecución y coste por etapa y entorno.\relax }}{68}{table.caption.118}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Resumen de las principales características de las denominadas olas de datos abiertos.}}{97}{table.caption.378}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Comparación de modelos relacionados con la computación distribuida.}}{100}{table.caption.385}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces \textbf {Línea de tiempo de la IA}}}{105}{table.caption.391}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Resumen de las principales características de las denominadas olas de datos abiertos.\relax }}{99}{table.caption.376}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Comparación de modelos relacionados con la computación distribuida.\relax }}{102}{table.caption.383}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces \textbf {Línea de tiempo de la IA}\relax }}{107}{table.caption.389}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
