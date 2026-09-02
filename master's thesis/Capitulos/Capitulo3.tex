@@ -1,23 +1,17 @@
 \chapter{Materiales y métodos}
 \label{cap:MaterialesYmetodos}
 
-%[TODO], importante a tener en cuenta: detallarse cada paso que se ha dado para llegar a los resultados describiendo, en orden lógico y expresado con claridad, los materiales y recursos empleados.   No avanzar resultados y redactarse en pasado !!
-
-
 En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, empezando por los materiales: las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{``capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión''}, pero descartados, así como los motivos para ello.
 
-También se han definido los métodos de desarrollo y modelo de trabajo utilizados durante el proyecto, y por ultimo se explica como se puede utilizar la misma solución para replicar las conclusiones con estos u otros datos. \\
-
+También se han definido los métodos de desarrollo y el modelo de trabajo utilizados durante el proyecto, y por último se explica cómo se puede utilizar la misma solución para replicar las conclusiones con estos u otros datos.
 
 \section{Materiales}
 
-% [TODO], herramientas, programas y material utilizado, incluyendo por ejemplo los tipos de IA]
+En esta sección se detallarán los programas, nubes y conjuntos de datos específicos que se han utilizado o estudiado, así como los descartados en el trabajo.
 
 \subsection{Conjuntos de Datos} \label{sec:Materiales_datos}
 
-Los conjuntos empleados proceden del Portal de Datos Abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos}, bajo licencia Creative Commons Attribution 4.0 (CC BY 4.0).
-
-La ingesta se realizó de forma automatizada, registrando los metadatos de procedencia de cada fichero. La siguiente tabla \ref{tab:conjuntos} los resume.
+Los conjuntos empleados proceden del portal de datos abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos}, bajo licencia ``Creative Commons Attribution 4.0 (CC BY 4.0)''. La ingesta se realizó de forma automatizada, registrando los metadatos de procedencia de cada fichero en el archivo \texttt{code/files/data/bronze/\_metadatos.csv}. La siguiente tabla \ref{tab:conjuntos} los resume:
 \begin{table}[h]
 	\centering
 	\small
@@ -27,132 +21,146 @@ La ingesta se realizó de forma automatizada, registrando los metadatos de proce
 		\hline
 		Calidad del aire (diario) & 2019-2025 & Isla de calor \\
 		Meteorología (diario) & 2019-2025 & Isla de calor \\
-		Masas arbóreas/distrito & 2019-2025 & Isla de calor  \\
+		Masas arbóreas / distrito & 2019-2025 & Isla de calor  \\
+		Aforos de peatones & 2019-2024 & Movilidad (datos analizados sin ML) \\
+		Aforos de bicicletas & 2019-2024 & Movilidad (datos analizados sin ML) \\
 		Estaciones de control & único & Georreferencia \\
-		Aforos de peatones & 2019-2024 & Movilidad \\
-		Aforos de bicicletas & 2019-2024 & Caso propio \\
 		Distritos (shapefile) & único & Cartografía \\
-		% [TODO] cambiar las referencias a las del origen de datos, no los TFMs y añadir más si en el futuro se estudian
 		\hline
 	\end{tabular}
 	\caption{Conjuntos de datos utilizados, su procedencia es \citep{AytoMadrid2025PortalDatos}.}
 	\label{tab:conjuntos}
 \end{table}
 
-El límite temporal inferior situado en 2019 responde a la disponibilidad real del dato, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores \citep{AytoMadrid2025Interprete}, limitando análisis que involucre meteorología a estas fechas.
-
-Como limitaciones conocidas de estos conjuntos:
+Los datos comienzan en 2019 debido a la disponibilidad del portal, ya que la red meteorológica municipal se puso en marcha en 2018 y no existen registros anteriores, lo que limita los análisis que involucran meteorología a estas fechas, como se recoge en el propio portal \citep{AytoMadrid2025Interprete}. A parte de esta, hay mas limitaciones conocidas de estos conjuntos:
 \begin{itemize}
-	\item No existen datos de arbolado de 2018 ni meteorológicos anteriores a 2019.
 	\item Los aforos de peatones y bicicletas presentan un hueco de publicación de catorce meses (julio de 2021 a agosto de 2022) y alcanzan hasta junio de 2024.
-	\item En la cobertura sensorial de las redes de medición, no todas las estaciones miden todas las magnitudes, lo que introduce valores ausentes.
-	\item Los conjuntos de aforos cambiaron de esquema a mitad de serie (columnas renombradas, traducidas al inglés y con errores de codificación en origen), y el arbolado emplea tres denominaciones distintas para la misma magnitud de superficie según el año de publicación.
-	\item El fichero de meteorología de 2024 no incluye diciembre, y la	cobertura de la red municipal se degradó notablemente entre 2021 y 2022,	coincidiendo con cambios en los sistemas de información municipales.
+	\item En la cobertura de la red, no todas las estaciones miden todas las magnitudes, lo que introduce valores nulos.
+	\item Los conjuntos de aforos (bicicletas y peatones) cambiaron de esquema a mitad de serie (columnas renombradas, traducidas al inglés y con errores de codificación en origen).
+	\item Los datos del arbolado emplean tres denominaciones distintas para la misma magnitud de superficie según el año de publicación. El portal publica para 2019 la magnitud \emph{Superficie Masa Forestal}, pero a partir de 2020 cambia a \emph{Superficie Masa Arbórea}. La segunda magnitud calcula la masa arbórea, mientras que la primera se extiende a más vegetación. Como consecuencia, la serie temporal de superficie arbórea no es estrictamente continua y se ha restringido la serie comparable a 2020-2025.
+	\item El fichero de meteorología de 2024 no incluye diciembre, y la cobertura de la red municipal se degradó notablemente entre 2021 y 2022, coincidiendo con cambios y actualizaciones en los sistemas de información municipales.
 \end{itemize}
-
-% [TODO - discrepancia semantica arbolado 2019, estudiar a fondo]
-% Problema: 2019 publica "Superficie Masa Forestal" + "Unidades" (arboles);
-% 2020+ publica "Superficie Masa arborea" + "Nº masas". Saltos de +-30 hhectareas en algunos distritos (San Blas 45->15, Villa Vallecas 63->94) indican cambio de la magnitud (reinventariado), no crecimiento vegetal.
-
-% Consecuencia: r_2019=-0.68 no es comparable con la banda -0.22/-0.30.
-%  1. Contrastar con el dataset hermano "Superficie de parques y zonas verdes de Madrid" (el portal los referencia cruzados) para ver si permite armonizar definiciones entre 2019 y 2020+.
-%  2. Analisis de sensibilidad: reportar la media de r con y sin 2019.
-%  3. Restringir la serie comparable del indicador arbolado a 2020-2025
-%     y tratar 2019 aparte.
-
-% la serie del indicador deja de ser continua, porque el publicador redefinio la variable. la reutilizacion longitudinal de datos re armonizacion semantica, no solo tecnica (conectar con interoperabilidad y con verhulst2020/OECD2023openData en Cap4).
 
 \newpage
 
 \subsection{Nubes}
 
+En esta sección se listarán como materiales las nubes y sus aplicaciones y tecnologías que se han utilizado para el desarrollo del proyecto, así como las que se valoraron y descartaron.
+
 \subsubsection{Amazon Web Services}
 
-\textbf{Amazon Web Services (AWS)} es la plataforma líder mundial en computación en la nube, que proporciona recursos escalables y flexibles de todo tipo, lo que ha permitido construir, desplegar y gestionar aplicaciones sin la necesidad de poseer infraestructura física. Hemos utilizado AWS como primera nube, debido a la capa gratuita de 6 meses y su popularidad. Los primeros pasos han sido realizar los tutoriales de la web, lo cual permite contar con 100\$ extra para la capa gratuita.
+\textbf{Amazon Web Services (AWS)} es la plataforma líder mundial en computación en la nube, que proporciona recursos escalables y flexibles de todo tipo, lo que ha permitido construir, desplegar y gestionar aplicaciones. Se utilizó AWS como primera nube, debido a su capa gratuita de 6 meses, su popularidad a nivel global y sus capacidades de IA con SageMaker. Los primeros pasos fueron realizar los tutoriales de la web, lo que permite contar con 100\$ extra para la capa gratuita.
 
 Dentro de su catálogo, se emplearon los siguientes servicios gestionados como herramientas e infraestructura técnica:
 
 \begin{itemize}
-	\item \textbf{Amazon S3 (Simple Storage Service):} Servicio de almacenamiento de objetos distribuido, altamente disponible y escalable.
-	\item \textbf{AWS Glue (Python Shell):} Servicio de integración de datos (ETL) gestionado y \textit{Serverless}. Se utilizó la modalidad \textit{Python Shell}, un entorno de ejecución ligero que incluye de forma nativa librerías para ciencia de datos (\texttt{pandas}, \texttt{numpy}, \texttt{scikit-learn}).
-	\item \textbf{AWS Glue Data Catalog} Catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados. 
-	\item \textbf{AWS IAM (Identity and Access Management):} Servicio de gestión de identidades y accesos para la administración de usuarios, grupos y roles de servicio.
-	\item \textbf{AWS CloudShell:} Entorno de terminal Linux basado en navegador con acceso autenticado y la interfaz de línea de comandos (\textit{AWS CLI}) preconfigurada sobre la región activa.
-	\item \textbf{AWS Budgets y Cost Explorer:} Herramientas de monitorización y control financiero para el seguimiento de costes mediante etiquetas de asignación.
+	\item \textbf{Amazon S3 (Simple Storage Service)}: servicio de almacenamiento de objetos distribuido, altamente disponible y escalable.
+	\item \textbf{AWS Glue (Python Shell)}: servicio de integración de datos (ETL) gestionado y \textit{serverless}. Se utilizó la modalidad \textit{Python Shell}, un entorno de ejecución ligero que incluye de forma nativa librerías para ciencia de datos (\texttt{pandas}, \texttt{numpy}, \texttt{scikit-learn}).
+	\item \textbf{AWS Glue Data Catalog}: catálogo de metadatos unificado y rastreadores automáticos encargados de descubrir e inferir esquemas sobre archivos estructurados.
+	\item \textbf{AWS IAM (Identity and Access Management)}: servicio de gestión de identidades y accesos para la administración de usuarios, grupos y roles de servicio.
+	\item \textbf{AWS CloudShell}: entorno de terminal Linux basado en navegador con acceso autenticado y la interfaz de línea de comandos (\textit{AWS CLI}) preconfigurada sobre la región activa.
+	\item \textbf{AWS Budgets y Cost Explorer}: herramientas de monitorización y control financiero para el seguimiento de costes mediante etiquetas de asignación.
 \end{itemize}
 
-
 \subsubsection{Google Cloud Platform}
+\label{subsec:GCP_materiales}
 
-% [TODO] Añador GCP y azure, y todo lo utilizado
-%añadir , Azure y OVHClod como descartadas y porque, al igual que las otras tecnologias decartadas.
+\textbf{Google Cloud Platform (GCP)} es la plataforma de computación en la nube gestionada por Google, que ofrece servicios de infraestructura, almacenamiento, análisis y machine learning, entre muchos otros. Se seleccionó como segunda nube por su programa de créditos gratuitos (300 dólares durante 90 días) y por su enfoque en aprendizaje automático e IA. Los servicios empleados fueron los siguientes:
+
+\begin{itemize}
+	\item \textbf{Cloud Storage}: almacenamiento de objetos equivalente a Amazon S3. Se utilizó para alojar las capas \textit{bronze}, \textit{silver} y los resultados, replicando la misma estructura de directorios que en local y en AWS.
+	\item \textbf{Cloud Shell}: terminal Linux basada en navegador con la CLI de GCP preconfigurada, utilizada para la ingesta inicial, la gestión de recursos y la creación del manual de usuario.
+	\item \textbf{Vertex AI Workbench}: entorno gestionado de \textit{JupyterLab}, integrado en la plataforma \textit{Gemini Enterprise Agent Platform}, que permite ejecutar cuadernos y scripts de Python en máquinas virtuales. Se empleó para las fases de limpieza y análisis, unificando ambos procesos en un mismo entorno interactivo y evitando la complejidad de configurar servicios ETL desatendidos.
+\end{itemize}
+
+Durante la fase de diseño se evaluaron también dos servicios \textit{serverless} para el procesamiento ETL: \textbf{Cloud Run Jobs} y \textbf{Cloud Functions}. Ambos se descartaron tras varias pruebas debido a problemas en la configuración y los accesos. Cloud Run Jobs presentó problemas con la detección del punto de entrada en procesos que no son servicios web (error \texttt{Application exec likely failed}), y Cloud Functions, aunque se desplegó correctamente, introdujo discrepancias en la resolución de rutas relativas y en la inyección de variables de entorno, lo que obligaba a modificar el código fuente. Se priorizó la simplicidad y la reproducibilidad, optando por ejecutar todo en \textit{Gemini Enterprise Agent Platform}, dentro de un \textit{Vertex AI Workbench}.
+
+\subsubsection{Otras plataformas descartadas}
+
+Además de AWS y GCP, se consideraron otras plataformas en la nube:
+\begin{itemize}
+	\item \textbf{Microsoft Azure}: ofrece servicios análogos a las nubes utilizadas (Azure Blob Storage, Azure Functions y Azure Machine Learning). Se descartó por acotar el alcance del proyecto y por su similitud con las nubes ya tratadas.
+	\item \textbf{OVHcloud}: proveedor europeo con entornos interactivos gestionados para modelado (\textit{AI Notebooks}). Hubiera sido una opción interesante debido a su localización europea y novedad, pero debido a su menor capa gratuita y variedad de servicios, se decidió dejar fuera de alcance como trabajo futuro.
+\end{itemize}
 
 \subsection{Materiales para el desarrollo}
 
 \subsubsection{Lenguajes}
+
 Los principales lenguajes utilizados para el desarrollo del proyecto han sido los siguientes:
 
 \begin{itemize}
-	\item \textbf{Python:} Lenguaje de programación interpretado, multiparadigma y centrado en la legibilidad del código. Se ha elegido como lenguaje principal del proyecto por ser el estándar en ciencia de datos, dada su extensa comunidad y el amplio ecosistema de librerías orientadas al aprendizaje automático (detalladas en el apartado \hyperref[sec:Librerias_especializadas]{\textit{Librerías especializadas}}). Además, su alta adopción garantiza un soporte nativo en todas las nubes, facilitando la portabilidad del código, el despliegue de los modelos y la comparación de procesos entre plataformas.
-
-	\item \textbf{Bash Script:} La interacción con las nubes se ha gestionado, en gran medida, mediante la ejecución de \textit{scripts} de Bash en sus CLI con los comandos que estas mismas facilitan. También, se han desarrollado scripts específicos para tareas como la creación y preparación de los entornos.
+	\item \textbf{Python}: lenguaje de programación interpretado, multiparadigma y centrado en la legibilidad del código. Se ha elegido como lenguaje principal por ser el estándar en ciencia de datos, dada su extensa comunidad y el amplio ecosistema de librerías orientadas al aprendizaje automático (detalladas en el apartado \hyperref[sec:Librerias_especializadas]{\textit{Librerías especializadas}}). Además, su alta adopción garantiza un soporte nativo en todas las nubes, facilitando la portabilidad del código, el despliegue de los modelos y la comparación de procesos entre plataformas.
+	\item \textbf{Bash Script}: la interacción con las nubes se ha gestionado principalmente mediante la ejecución de \textit{scripts} de Bash en AWS CloudShell y Google Cloud Shell, así como en local. De hecho, estos scripts son los que componen el manual de usuario para asegurar la reproducibilidad y automatizan la ejecución de los procesos (AWS Glue y demás scripts) y la creación de recursos (buckets, roles IAM, instancias, archivos, etc.). También se emplearon para la preparación de entornos virtuales y la instalación de dependencias.
 \end{itemize}
+
+También se planteó el uso de lenguajes como Javascript para la extracción de datos o de Dockerfile para la creación de contenedores para subir a los entornos, pero finalmente fueron descartados.
 
 \subsubsection*{Librerías especializadas} \label{sec:Librerias_especializadas}
-Para el tratamiento y modelado de la información en Python, se ha hecho uso intensivo de:
+
+Para el tratamiento y modelado de la información en Python, se ha hecho uso de las siguientes librerías, agrupadas por función:
+
 \begin{itemize}
-	\item \textbf{Pandas:} Para la limpieza, transformación y manipulación eficiente de datos tabulares y estructuras \textit{DataFrame} en memoria \citep{Pandas2026}.
-
-	\item \textbf{SciPy y Scikit-learn:} Para la implementación de algoritmos de aprendizaje automático (\textit{Machine Learning}), estandarización de variables, cálculo de \textit{clusters} y métricas de validación \citep{SciPy2026, scikit2026}.
-
-	\item \textbf{GeoPandas:} Extensión analítica empleada para las operaciones espaciales (\textit{Spatial Joins}) y el cruce geométrico entre los puntos geográficos de las estaciones y los polígonos de los distritos de Madrid \citep{geopandas2026}.
+	\item \textbf{Análisis de datos:}
+	\begin{itemize}
+		\item \textbf{Pandas}: para la limpieza, transformación y manipulación de los datos tabulares y estructuras \textit{DataFrame} en memoria \citep{Pandas2026}.
+		\item \textbf{NumPy}: para operaciones vectoriales y manejo de arrays numéricos, además de ser utilizado como base para muchas de las otras librerías que requieren de estas capacidades \citep{NumPy2026}.
+		\item \textbf{GeoPandas}: para el análisis de datos geoespaciales, empleada para las operaciones espaciales (\textit{spatial joins}) y el cruce geométrico entre los puntos geográficos de las estaciones y los polígonos de los distritos de Madrid \citep{geopandas2026}.
+	\end{itemize}
+	\item \textbf{Acceso a datos y almacenamiento en la nube:}
+	\begin{itemize}
+		\item \textbf{Requests}: para la comunicación web, específicamente la API REST de CKAN que permite la ingesta automatizada de datos desde el portal del Ayuntamiento de Madrid \citep{Requests2026}.
+		\item \textbf{fsspec, s3fs y gcsfs}: interfaces para sistemas de archivos, tanto locales como en la nube, todas basadas en fsspec \citep{fsspec2024}. Unifica escrituras en disco local, en AWS o en GCP sin modificaciones de código, permitiendo mayor portabilidad.
+	\end{itemize}
+	\item \textbf{Gestión de formatos de archivo:}
+	\begin{itemize}
+		\item \textbf{openpyxl}: para la lectura de archivos Excel (\texttt{.xlsx}) para los conjuntos de datos que se publican en ese formato \citep{Openpyxl2026}.
+		\item \textbf{pyarrow}: para la lectura y escritura eficiente en formato \texttt{Parquet}, que se utiliza como formato de salida de la capa \textit{silver} junto con CSV, para intentar mejorar el rendimiento en entornos cloud \citep{PyArrow2026}.
+	\end{itemize}
+	\item \textbf{Otras: gráficos, ML y estadística:}
+	\begin{itemize}
+		\item \textbf{Matplotlib}: utilizada para la creación y visualización de todos los gráficos de resultados: diagramas del codo, dendrogramas de agrupamiento, gráficos de dispersión y mapas de cobertura temporal \citep{Matplotlib2026}.
+		\item \textbf{SciPy y Scikit-learn}: para la implementación de algoritmos de aprendizaje automático (K-Means, agrupamiento jerárquico de Ward), estandarización de variables, cálculo de \textit{clusters} y métricas de validación como el coeficiente de silueta \citep{SciPy2026, scikit2026}.
+	\end{itemize}	
 \end{itemize}
-
 
 \subsubsection{Herramientas de desarrollo}
 
 Las siguientes herramientas y programas han sido esenciales para la elaboración del proyecto:
 
 \begin{itemize}
-	\item \textbf{Visual Studio Code:} Visual Studio Code es un editor de código abierto desarrollado por Microsoft. Se ha utilizado Visual Studio Code como entorno de desarrollo software por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código entre muchas otras funciones.
-
-	\item \textbf{GitHub:} GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El de este proyecto en concreto es el siguiente: \url{https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/}.
-	Este sigue todas las recomendaciones de buenas practicas de github e incluye archivos como el changelog para poder ver los cambios y el Readme.md para resumir el proyecto.
-
-	% [TODO]
-
-	\item \textbf{\LaTeX con TeXstudio y MiKTeX:}  \label{latexDef} Se ha usado \LaTeX\space para desarrollar este documento en la aplicación de TeXstudio (como editor de \LaTeX\space) y el compilador MikteX (gestor de paquetes integrado). \LaTeX\space es un sistema de composición tipográfica que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, el cual ha permitido desarrollar una memoria profesional y facilitar el diseño mientras se desarrollaba el proyecto.
+	\item \textbf{Visual Studio Code}: editor de código abierto desarrollado por Microsoft. Se ha utilizado como entorno de desarrollo por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código, entre muchas otras funciones.
+	\item \textbf{Git y GitHub}: GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El repositorio de este proyecto es: \url{https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/}. Sigue las recomendaciones de buenas prácticas de GitHub e incluye archivos como el \texttt{changelog} para poder ver los cambios y el \texttt{README.md} para resumir el proyecto. Además, se han usado varias herramientas como extensiones de VSCode para la gestión de repositorios y GitHub Desktop.
+	\item \textbf{CLIs de nube (AWS CLI y Google Cloud CLI)}: interfaces de línea de comandos que permiten interactuar con los servicios de AWS y GCP. Se utilizaron desde CloudShell y desde entornos locales para todo tipo de tareas.
+	\item \textbf{\LaTeX\ con TeXstudio y MiKTeX}: se ha usado \LaTeX\ para desarrollar este documento en la aplicación TeXstudio (como editor) y el compilador MiKTeX (gestor de paquetes integrado). \LaTeX\ es un sistema de composición tipográfica que incluye funcionalidades diseñadas para la producción de documentación técnica y científica. Es el estándar de facto para la comunicación y publicación de documentos científicos, lo que ha permitido desarrollar una memoria profesional y facilitar el diseño mientras se desarrollaba el proyecto.
+	\item \textbf{Trello}: herramienta de gestión de proyectos basada en tableros Kanban que se empleó para la planificación y priorización de tareas y el seguimiento del progreso de las mismas a lo largo del desarrollo del trabajo.
 \end{itemize}
 
 \newpage
 
-
 \section{Métodos}
 
-Para llegar a nuestro objetivo de diseño, se ha dividido la implementación en diferentes módulos conceptuales:
+Para llegar al objetivo de diseño, se dividió la implementación en diferentes módulos conceptuales:
 
 \begin{itemize}
-	\item \textbf{Búsqueda y almacenamiento de datos:} Localización de fuentes públicas, captura de sus metadatos y elección del mecanismo de descarga y almacenamiento.
-	\item \textbf{Tratamiento básico de los datos:} Una vez almacenados, se procede a la depuración, resolución de inconsistencias, gestión de valores nulos, duplicados o atípicos y estandarización de esquemas. Las modificaciones se documentaron para poder ser replicadas. \\
-	\item \textbf{Estudio con modelos de IA en diferentes nubes:} Con los datos tratados, se pasa a la elección de modelos algorítmicos y extracción de patrones y clústeres a partir de estos datos, para extraer conclusiones. \\
-	\item \textbf{Comparación y estudio de resultados:} Tras el análisis se procede a la revisión de las hipótesis iniciales o extraídas de los modelos, y contraste de los resultados frente a los datos o trabajos de referencia. \\
-	\item \textbf{Revisión, automatización y generalización del proceso:} Una vez finalizado el proceso, se refina con un análisis de mejoras y costos, para automatizar para siguientes iteraciones y mejorar tanto en los apartados, como abaratar en recursos y en tiempo. \\
+	\item \textbf{Búsqueda y almacenamiento de datos}: localización de fuentes públicas, captura de sus metadatos y elección del mecanismo de descarga y almacenamiento.
+	\item \textbf{Tratamiento básico de los datos}: una vez almacenados, se procede a la depuración, resolución de inconsistencias, gestión de valores nulos, duplicados o atípicos y estandarización de esquemas. Las modificaciones se documentaron para poder ser replicadas.
+	\item \textbf{Estudio con modelos de IA en diferentes nubes}: con los datos tratados, se pasa a la elección de modelos algorítmicos y extracción de patrones y clústeres a partir de estos datos para extraer conclusiones.
+	\item \textbf{Comparación y estudio de resultados}: tras el análisis se procedió a la revisión de las hipótesis iniciales y las extraídas de los modelos para el contraste de los resultados frente a los datos o trabajos de referencia.
+	\item \textbf{Revisión, automatización y generalización}: una vez finalizado el proceso, se refinó con un análisis de mejoras y costos para automatizar siguientes iteraciones y mejorar tanto en los apartados como abaratar en recursos y en tiempo.
 \end{itemize}
 
-Estos módulos se materializaron en el \textit{pipeline} que se describe en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. Para llegar a la solución, se han seguido las buenas prácticas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas prácticas se detallarán más adelante en este mismo capítulo.
+Estos módulos se materializaron en el \textit{pipeline} que se describe en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. Para llegar a la solución, se han seguido las buenas prácticas del tratamiento de los datos, así como las de MLOps y las recomendadas por cada una de las nubes utilizadas. Estos conjuntos de buenas prácticas se detallan más adelante en este mismo capítulo.
 
-Para empezar las primeras iteraciones, se optó por conjuntos de datos que ya habían sido estudiados previamente y a los que se tenía acceso a conclusiones. Estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} y \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del Ayuntamiento de Madrid y extrajeron conclusiones. Como primera toma de contacto, se replicaron sus conclusiones y se extendió el análisis a años posteriores a los que estos trabajos estudiaron, complementando así sus estudios.
-
-Tras esta primera fase, se incorporaron también otros conjuntos del mismo portal, aumentando la cobertura temporal de ambos trabajos hasta 2025, y ampliándolo con un conjunto no tratado por estos: los aforos de bicicletas, para comprobar que la metodología generaliza a datos nuevos sin problemas.
+Para empezar las primeras iteraciones, se optó por conjuntos de datos que ya habían sido estudiados previamente y a los que se tenía acceso a conclusiones. Estos son los trabajos de \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid} principalmente y, en menor medida, \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}, compañeros de la UCM que trataron datos públicos del Ayuntamiento de Madrid y extrajeron conclusiones. Como primera toma de contacto, se replicaron las conclusiones del primer trabajo y se extendió el análisis a años posteriores, complementando así el estudio. En cuanto al segundo trabajo, se estudiaron y procesaron los datos, añadiendo datos de bicicletas para complementar, pero no se llegó a analizar con los modelos de ML que el trabajo detalla.
 
 El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}}.
 
-
 \subsection{Desarrollo de la solución} \label{sec:Metodos_desarrollo}
 
-Para poder ingestar y procesar estos datos de forma automática, se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero ``config.py''. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
+Esta es la sección más extensa, ya que explica el proceso que se ha seguido para ingestar, procesar y analizar estos datos de forma automática, mientras que el resto de las secciones de datos, nube y aprendizaje automático se centran en las partes específicas de estas tecnologías. Para llevar a cabo el trabajo se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero \texttt{config.py}. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
 
-Las fases y sus ficheros correspondientes en local y el GIT del proyecto han sido:
+Las fases y sus ficheros correspondientes en local y en el repositorio Git del proyecto han sido:
 
 \begin{table}[htbp]
 	\centering
@@ -173,230 +181,209 @@ Las fases y sus ficheros correspondientes en local y el GIT del proyecto han sid
 
 Estas etapas se describen en más detalle a continuación.
 
-
 \subsubsection{Ingesta automatizada de datos} \label{sec:Metodos_ingesta}
 
-La descarga, se estudio primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software} (API REST), versión 2.9.11, dos ramas por detrás de la versión estable disponible en el momento de redactar este trabajo, lo que ya es un dato sobre el mantenimiento de la infraestructura de publicación de estos datos. 
-Sobre esta, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show} \citep{CKAN2024ApiGuide}, descargando los datos que cumplen los criterios configurados (año, formato y subserie).
+La descarga se estudió primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible para mayor facilidad a la hora de replicar resultados. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software} (API REST), versión 2.9.11, que está dos ramas por detrás de la versión estable disponible en el momento de redactar este trabajo, lo que ya es un dato sobre el mantenimiento de la infraestructura de publicación de estos datos. Sobre esta plataforma, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show}, como se muestra en la guía \citep{CKAN2024ApiGuide}. Esta automatización tuvo sus complicaciones.
 
-El diseño aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y abstrae el destino de almacenamiento mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en disco local o en el almacenamiento de cualquiera de las nubes evaluadas sin cambios en su lógica.
+El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. Para solucionarlo, el proceso incorpora pausas entre descargas y reintentos con espera creciente. Esta fricción entre la apertura que se supone que hay y la que realmente se aplica ilustra en la práctica las limitaciones en el estado real de los datos abiertos señaladas en el estado de la cuestión \citep{verhulst2020, OECD2023openData}.
 
-Esta automatización tuvo sus complicaciones. El portal, pese a declarar sus datos como abiertos, dificulta la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial.
+De todas formas, el proceso aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y \textbf{abstrae el almacenamiento} mediante fsspec \citep{fsspec2024}, de modo que el mismo código escribe en local o en las nubes evaluadas sin cambios en su lógica. Además, los datos se organizan siguiendo el modelo \textit{medallion} ya definido: la capa \textit{bronze} almacena los datos en crudo, la capa \textit{silver} contiene los datos limpios y normalizados, y la capa \textit{gold} (denominada \textit{resultados} en el código) guarda los productos del análisis.
 
-El proceso incorpora pausas entre descargas y re-intentos con espera creciente para consumir de forma fiable la API. Esta fricción entre apertura declarada y reutilización efectiva ilustra en la práctica las limitaciones que la literatura señala sobre el estado real de los datos abiertos \citep{verhulst2020, OECD2023openData}.
+\subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
 
-\subsubsection{Normalización y limpieza} 
-\label{sec:Metodos_limpieza}
+La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado para facilitar la incorporación de ficheros similares. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en el archivo de configuración y basta modificarlo para añadir más tipos de datos.
 
-La limpieza se organizó por tipos de fichero en lugar de por conjunto aislado. Los ocho conjuntos estudiados se reducen a cuatro patrones: series mensuales con columnas de validación, aforos horarios, tablas anuales y ficheros únicos. Las reglas para tratar estos ficheros se han declarado en configuración para facilitar el añadir más tipos de datos a futuro.
-% [TODO] cambiar si hay nuevos datos como nombres de entidad escritos de forma inconsistente dentro de un mismo fichero, que impedían el cruce entre conjuntos sin llegar a producir error alguno (hacer una lista?? revisar los todos del codigo)
-Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal, y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver, además, varias inconsistencias de los ficheros publicados, como formatos de fecha distintos entre años en el mismo conjunto que obligaron a detectar el formato de estos, decimales con coma (varios, ya que es la convención española), cambios de esquema a mitad de serie (con columnas renombradas, en inglés e incluso corrompidas por errores de codificación en origen), y ficheros CSV que incorporan filas de totales y notas al pie destinadas a lectura humana.
+Para las series de calidad del aire y meteorología se replicó la lógica del trabajo original \citep{Meneses2023Madrid}, donde solo se aceptaron valores marcados como verificados por el portal y se descartaron las fechas imposibles del formato mensual. El proceso tuvo que resolver varios problemas con los datos:
+
+\begin{itemize}
+	\item \textbf{Formatos de fecha variables}: un mismo conjunto (aforos) presenta fechas en formato \texttt{dd/mm/yyyy} en unos años y \texttt{yyyy-mm-dd} en otros. Se implementó una función de detección automática del formato (\texttt{\_parse\_fechas}) que prueba patrones y selecciona el que mejor convierte.
+	\item \textbf{Decimales con coma}: los ficheros originales, al estar generados en entorno español, utilizan la coma como separador decimal y el punto como separador de miles. La función \texttt{\_convertir\_decimales} estandariza estos valores reemplazando comas por puntos y eliminando puntos de miles antes de la conversión a numérico.
+	\item \textbf{Cambios de esquema en una misma serie}: en los aforos, las columnas cambiaron de nombre: \texttt{DIRECCION} $\to$ \texttt{NOMBRE\_VIAL}, \texttt{LATITUDE} $\to$ \texttt{LATITUD}, además de campos que se tradujeron al inglés y aparecieron errores tipográficos: \texttt{NAOMERO\_DISTRITO} $\to$ \texttt{NUMERO\_DISTRITO}. El proceso de limpieza renombra estas columnas de forma unificada mediante un diccionario de mapeo, ya que estos cambios son difíciles de automatizar.
+	\item \textbf{Nombres de entidades inconsistentes}: los distritos aparecen escritos de forma diferente dentro de un mismo fichero (\texttt{San Blas-Canillejas} $\to$ \texttt{San Blas - Canillejas}), o combinando nombres con tildes y sin ellas. En la limpieza se aplica una normalización que elimina tildes, convierte a mayúsculas y unifica los guiones.
+	\item \textbf{Filas de totales y notas al pie}: los archivos CSV de arbolado anuales (2020–2022) incluyen filas con textos como ``NOTA'' o ``TOTALES'' destinadas a la lectura humana. La función \texttt{\_quitar\_filas\_basura} las identifica y elimina antes del procesamiento, ya que romperían cualquier automatismo.
+\end{itemize}
 
 Todas estas transformaciones quedaron registradas en el código publicado para garantizar su reproducibilidad.
 
 \subsubsection{Análisis y modelado} \label{sec:Metodos_analisis}
 
-Sobre los datos limpios se implementó un módulo de análisis por cada caso de estudio, aplicando tanto las mismas técnicas que los trabajos de referencia, como tecnicas propias que se detallan a continuación.
+Sobre los datos limpios se implementó un módulo de análisis por cada caso de estudio, aplicando tanto las mismas técnicas que los trabajos de referencia, como técnicas propias que se detallan a continuación.
 
-Para la isla de calor se replicaron las cinco aproximaciones de agrupamiento del trabajo original \citep{Meneses2023Madrid}: 
+Para el trabajo de movilidad peatonal \citep{SaizSantos2023} se intentó replicar la predicción de series temporales con los datos ya tratados de peatones que tenía el estudio, añadiendo además los datos de bicicletas, los cuales parecían interesantes para ampliar las conclusiones, pero finalmente se sacó del alcance, quedando como línea de trabajo futuro.
+
+En cambio, para el trabajo de la isla de calor \citep{Meneses2023Madrid}, se replicaron las cinco aproximaciones de agrupamiento del trabajo original: 
 \begin{enumerate}
-	\item \textbf{Siete magnitudes meteorológicas:} velocidad y dirección del viento, temperatura, humedad relativa, presión barométrica, radiación solar y precipitación, sobre las estaciones que miden todas ellas.
-	\item \textbf{Temperatura y humedad relativa:} sobre las estaciones que disponen de ambas magnitudes.
-	\item \textbf{Temperatura y superficie arbórea:} sobre las estaciones con temperatura cuyo distrito publica datos de masas arbóreas.
-	\item \textbf{Dióxido de nitrógeno (NO$_2$):} sobre todas las estaciones de la red de calidad del aire.
-	\item \textbf{Dióxido de nitrógeno y partículas:} NO$_2$, PM$_{2,5}$ y PM$_{10}$, sobre las estaciones que miden las tres.
+	\item \textbf{Siete magnitudes meteorológicas}: velocidad y dirección del viento, temperatura, humedad relativa, presión barométrica, radiación solar y precipitación, sobre las estaciones que miden todas ellas.
+	\item \textbf{Temperatura y humedad relativa}: sobre las estaciones que disponen de ambas magnitudes.
+	\item \textbf{Temperatura y superficie arbórea}: sobre las estaciones con temperatura cuyo distrito publica datos de masas arbóreas. El trabajo original denomina a esta aproximación como ``temperatura'', pero en realidad combina ambas variables (temperatura y superficie arbórea).
+	\item \textbf{Dióxido de nitrógeno (NO$_2$)}: sobre todas las estaciones de la red de calidad del aire.
+	\item \textbf{Dióxido de nitrógeno y partículas}: NO$_2$, PM$_{2,5}$ y PM$_{10}$, sobre las estaciones que miden las tres.
+\end{enumerate} 
+
+Sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}, conservando el número de grupos y la semilla que se escogió en el trabajo original, de modo que las diferencias observadas se pudieran atribuir a los datos. Para fijar el número de grupos se utilizó el método del codo, al igual que en el estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado, localizando el punto a partir del cual deja de descender de forma apreciable. Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comenta más adelante, y también se incorporó un cruce geoespacial entre las estaciones y los distritos mediante el \textit{shapefile} municipal para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
+
+Para facilitar la lectura de la prueba, se creó un resumen automático entre años que tabula las métricas de las ejecuciones y señala valores que se desvían, que sale tanto por pantalla como en el archivo \texttt{code/files/data/resultados/ejecucion.log}.
+
+Para que la réplica funcionara correctamente y poder comparar con los resultados obtenidos, se han tenido que resolver algunas discrepancias entre la ejecución y la descripción del trabajo original:
+
+\begin{itemize}
+	\item \textbf{Variable real de temperatura}: como ya se ha dicho, el trabajo original denomina a la tercera aproximación como ``temperatura'', pero combina temperatura y superficie arbórea del distrito. Ambas variables residen en conjuntos distintos (meteorología diaria y masas arbóreas anuales) y con granularidad diferente (estación-día frente a distrito-año). Para resolverlo, se implementó un cruce geoespacial que asigna cada estación a su distrito mediante un \textit{shapefile} municipal, y se incorporó la variable externa \texttt{superficie\_ha} en el agrupamiento.
+	\item \textbf{Criterio de selección de estaciones con superficie arbórea}: el trabajo original declara que selecciona las estaciones que ``disponen de datos de masas arbóreas'', lo que en la práctica excluye a los distritos que publican una superficie de cero hectáreas. Esta interpretación se ha replicado. Sin embargo, en el análisis de correlación \ref{sec:Resultados_arbolado} se optó por conservar los distritos con superficie 0.
+\end{itemize}
+
+Estos resultados de la réplica, lo más parecida posible al trabajo original, se guardan en la carpeta \texttt{code/files/data/resultados/isla\_calor/replica}. Para los cambios realizados como mejora metodológica y para extender las conclusiones, se añadieron dos aproximaciones y varias mejoras que se guardaron en la carpeta \texttt{code/files/data/resultados/isla\_calor/propio}, ambas carpetas están en el repositorio de GitHub del proyecto y se controlan mediante el parámetro \texttt{MODO\_REPLICA} en la configuración.
+
+A continuación se enumeran los cambios realizados para esta extensión:
+\begin{enumerate}
+	\item \textbf{Dos nuevas aproximaciones}: tras estudiar la réplica y sus limitaciones, se decidió añadir dos nuevas aproximaciones:
+	\begin{itemize}	
+		\item \textbf{Temperatura y altitud}: incorpora la altitud de la estación como variable externa para evaluar el efecto de la orografía en los datos, ya que estaciones en la sierra de Madrid pueden diferir de algunas como Vallecas por su altitud.
+		\item \textbf{Temperatura y superficie relativa}: utiliza la superficie arbórea dividida por el área total del distrito, en lugar del valor absoluto que publica el Ayuntamiento de Madrid, para controlar así el tamaño del distrito.
+	\end{itemize}
+	\item \textbf{Criterio de cobertura mínima}: la media anual de una estación solo se considera válida si supera un número mínimo de días con dato (configurable mediante \texttt{MIN\_DIAS\_ANIO} en \texttt{config.py}), ya que una estación que operó únicamente durante una pequeña parte del año produce una media sesgada hacia la estación climática en que estuvo activa. El valor por defecto es de 300 días como mínimo.
+	\item \textbf{Validación con coeficiente de silueta}: se calcula sistemáticamente para cada aproximación y año, midiendo en qué grado cada observación está más próxima a su propio grupo que al vecino más cercano. Esto permite comparar, independientemente de la escala, la calidad de los agrupamientos entre años, aproximaciones y plataformas (detalle en \hyperref[sec:Metodos_ML]{Sección \ref*{sec:Metodos_ML}}).
+	\item \textbf{Variables dependientes del año}: los casos ya comentados de \emph{Superficie Masa Forestal} $\to$ \emph{Superficie Masa Arbórea} o variables que tenían errores en algunos años han requerido una limpieza que, lógicamente, en el trabajo original no era necesaria al contar con un único año.
 \end{enumerate}
-
-Sobre la media anual de cada estación estandarizada, se aplicó \textit{k-means} y agrupamiento jerárquico de \textit{Ward}, conservando el número de grupos y la semilla que se escogió en el trabajo original, de modo que las diferencias observadas se pudieran atribuir a los datos. 
-Para fijar el número de grupos se utilizó el método del codo, al igual que en el estudio original, para representar la inercia (suma de distancias cuadráticas al centroide) del número de grupos considerado. Se localizó el punto a partir del cual deja de descender de forma apreciable. 
-Para la calidad de los agrupamientos se validó con el coeficiente de silueta, que se comentará más adelante. 
-También se incorporó un cruce geoespacial entre las estaciones y los distritos, mediante el \textit{shapefile} municipal, para contrastar la hipótesis de relación entre superficie arbórea y temperatura.
-
-Para facilitar la prueba, se creó un resumen automático entre años que tabula las métricas de las ejecuciones y señala valores que se desvían.
-
-Durante la replica, se ha tenido que resolver ciertas discrepancias entre la ejecución y la descripción del trabajo original:
-La primera, es que su tercera aproximación agrupa las estaciones por temperatura y superficie arbórea del distrito, y no solo por temperatura como definen. Ambas variables residen en conjuntos distintos y con granularidad diferente (estación-día frente a distrito-año), hemos resuelto la discrepancia mediante el cruce geoespacial. 
-La segunda, es que el criterio declarado para seleccionar las estaciones (es decir, disponer de
-datos de masas arbóreas) excluye a los distritos que publican una superficie nula, interpretación que se adoptó al reproducir esa aproximación. Esto se conserva en la replica, pero en el análisis de correlación, los distritos sin superficie arbórea se conservan, ya que un distrito sin masas arbóreas y con temperatura elevada es precisamente una observación que sostiene la hipótesis.
-
-
-Sobre esta base se introdujeron tres mejoras metodológicas propias:
-La primera es un criterio de cobertura mínima: la media anual de una estación solo se considera válida si supera un número mínimo de días con dato, ya que una estación que operó únicamente durante una pequeña parte del año produce una media sesgada hacia la estación climática en que estuvo activa. 
-La segunda, armonización de la superficie arbórea, que el portal publica con denominaciones y unidades distintas según el año, derivando las hectáreas de los metros cuadrados cuando la primera magnitud no se publica. 
-La tercera, se validó la calidad con el coeficiente de silueta, que mide en qué grado cada observación está más próxima a su propio grupo que al vecino más cercano, sin depender de escala o variables, lo que hace comparables los resultados entre años, aproximaciones y plataformas cloud.
-
-El criterio de cobertura se controla mediante un parámetro de configuración que permite ejecutar el análisis con las condiciones del trabajo original o aplicando los criterios propios, lo que hizo posible el análisis de sensibilidad recogido en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
-
-% [TODO] ver si amplair por tamaño de zona , ver si añadir tambien variables de altitud y añadir un grafico geoespacial ya que tenemos las variables.
-
-% [TODO] añadir tambien un metodo de simulacion de datos para los años a lso que les falte uno o dos datos??
-
-Para la movilidad peatonal se replicó la predicción de series temporales del segundo trabajo \citep{SaizSantos2023}, % [TODO] completar cuando se realice
-
-El detalle de cada técnica y su fundamento se recoge en la \hyperref[sec:Metodos_ML]{Sección \ref*{sec:Metodos_ML}}.
-
-
 
 \newpage
 
 \subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
 
-Para tratar los datos a través del método principal de desarrollo, se ha seguido principios de gobernanza de datos:
+Para tratar los datos del proyecto, se han seguido principios éticos y los principios de gobernanza de datos.
 
-\subsubsection{Aplicación de la gobernanza de datos como método}  \label{sec:Metodos_Gobernanza}
+\subsubsection{Aplicación de la gobernanza de datos como método} \label{sec:Metodos_Gobernanza}
 
-Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, La gobernanza de datos en este proyecto se implementó adoptando este modelo de tres capas (Estratégica, Táctica y Operativa o de entrega). El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos y la obtención de valor mediante IA, se ha realizado de forma ética, segura, y en pleno cumplimiento del marco regulatorio actual. En cuanto a las tres capas, aunque cobran mayor importancia en proyectos grandes con múltiples equipos y no en trabajos de una sola persona, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en cuanto a la gestión de datos y procesos:
+Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}, la gobernanza de datos en este proyecto se implementó adoptando el modelo de tres capas (estratégica, táctica y operativa o de entrega), \textit{no confundir con las capas de la arquitectura medallón}. El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos, y la obtención de valor mediante IA, se ha realizado de forma ética, segura y en pleno cumplimiento del marco regulatorio actual. Aunque las tres capas cobran mayor importancia en proyectos grandes con múltiples equipos, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en la gestión de datos y procesos:
 
-\subsubsection*{1. Capa Estratégica: Liderazgo y Visión}
-
-En esta capa se definieron los objetivos generales y principios de la gobernanza de datos en el proyecto.
-
-\begin{itemize}
-	\item \textbf{Visión:} Convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
-
-	\item \textbf{Seguridad y soberanía:} Aunque se utilizan servicios de nubes públicas por su acceso gratuito, capas de seguridad y capacidades en IA, se configuraron para operar dentro de la UE.
-
-	\item \textbf{Transparencia y reproducibilidad:} Todo el proceso (origen de datos, transformaciones, código, y resultados de modelos) se documentó en esta misma memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo a los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
-\end{itemize}
-
-
-\subsubsection*{2. Capa Táctica: Capacidades de Implementación y Marco Normativo}
-
-Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
-
-\begin{itemize}
-	\item \textbf{Uso del dato:} Se priorizaron datos públicos abiertos de administraciones españolas y de la Unión Europea, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado.
-
-	\item \textbf{Gestión de accesos y credenciales:} Como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
-
-	\item \textbf{Competencias y coordinación:} Todas las funciones fueron asumidas por un único investigador, esto centralizó la toma de decisiones y facilitó el cumplimiento normativo y la trazabilidad de todo el proceso. De todas formas se utilizan herramientas como ``Git'' o ``Trello'' para auto-organizarse.
-
-	\item \textbf{Selección de proveedores y servicios:} Para la selección de plataformas cloud se evaluó la capacidad para proporcionar entornos de procesamiento seguro, y la localización de sus centros de datos para asegurar el cumplimiento normativo. En cuanto a la IA, también se revisaron sesgos en los datos de entrenamiento.
-\end{itemize}
-
-\subsubsection*{3. Capa Operativa: Infraestructura, Integración del Ciclo de Valor y Arquitectura}
-Esta última capa corresponde a la implementación práctica de la estrategia, la gestión diaria del ciclo de valor de los datos para integrarlo con la infraestructura técnica.
-
-\begin{itemize}
-	\item \textbf{Infraestructura:} Se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con mecanismos de seguridad estándar. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos on-premise (computador personal) para la ingesta de datos y posterior almacenamiento en cloud cuando esto facilitó el proceso, aunque se priorizaron tecnologías en la nube.
-
-	\item \textbf{Arquitectura de datos y ciclo de valor:} Se diseñó un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubrió todo el ciclo de vida del dato:
+\begin{enumerate}
+	\item \textbf{Capa estratégica: liderazgo y visión}. En esta capa se definen los objetivos generales y principios de la gobernanza de datos en el proyecto.
 	\begin{itemize}
-		\item \textbf{Adquisición:} Se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso.
-
-		\item \textbf{Almacenamiento y gestión:} Se organizaron en buckets con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como BigQuery. El almacenaje depende de la herramienta propietaria de cada nube (S3 para amazon, cloud storage para GCP, etc.).
-
-		\item \textbf{Procesamiento y transformación:} Se realizó la limpieza y estandarización de los datos descargados, descartando fuentes sensibles. [TODO] Se realizo feature engineering en entornos gestionados como nativos en la nube como Vertex AI Workbench. Se mantuvo un registro de los experimentos realizados (hipótesis, parámetros, versiones de modelos) para asegurar reproducibilidad y transparencia.
-
-		\item \textbf{Uso/compartición:} Se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
-
+		\item \textbf{Visión}: convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
+		\item \textbf{Seguridad y soberanía}: aunque se utilizan servicios de nubes públicas por su acceso gratuito y capacidades en IA, se configuraron para operar dentro de la UE.
+		\item \textbf{Transparencia y reproducibilidad}: todo el proceso (origen de datos, transformaciones, código y resultados de modelos) se documentó en esta memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo con los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
 	\end{itemize}
+	
+	\item \textbf{Capa táctica: capacidades de implementación y marco normativo}. Esta capa detalla cómo se implementa la estrategia a través de políticas, procesos, directrices, etc:
+	\begin{itemize}
+		\item \textbf{Uso del dato}: se priorizaron datos públicos abiertos de administraciones españolas, prestando especial atención a las licencias para asegurar la legalidad de su reutilización y evitando el uso de datos sensibles. Respecto a datos sensibles se aplicó un principio de precaución: cualquier conjunto de datos con riesgo de contener información sensible fue filtrado y descartado.
+		\item \textbf{Gestión de accesos y credenciales}: como único usuario, se gestionan las credenciales de acceso a los servicios cloud con el máximo nivel de seguridad, evitando su filtración a repositorios públicos o terceros.
+		\item \textbf{Competencias y coordinación}: todas las funciones fueron asumidas por un único investigador, lo que centralizó la toma de decisiones y facilitó el cumplimiento normativo y la trazabilidad de todo el proceso. De todas formas, se utilizan herramientas como Git o Trello para auto-organizarse.
+		\item \textbf{Selección de proveedores y servicios}: para la selección de plataformas cloud se evaluó la capacidad para proporcionar entornos de procesamiento seguro y la localización de sus centros de datos para asegurar el cumplimiento normativo. En cuanto a la IA, también se revisaron sesgos en los datos de entrenamiento.
+	\end{itemize}
+	
+	\item \textbf{Capa operativa: infraestructura, integración del ciclo de valor y arquitectura}. Esta última capa corresponde a la implementación práctica de la estrategia, la gestión diaria del ciclo de valor de los datos para integrarlo con la infraestructura técnica.
+	\begin{itemize}
+		\item \textbf{Infraestructura}: se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con mecanismos de seguridad correspondientes. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos \textit{on-premise} (equipo personal) para la ingesta de datos y pruebas base, para su posterior almacenamiento en cloud.
+		\item \textbf{Arquitectura de datos y ciclo de valor}: se diseñó un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubrió todo el ciclo de vida del dato:
+		\begin{itemize}
+			\item \textbf{Adquisición}: se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso.
+			\item \textbf{Almacenamiento y gestión}: se organizaron en \textit{buckets} con estructura clara siguiendo la arquitectura de medalla \hyperref[def11]{[Definición \ref*{def11}]}. Este enfoque facilitó la exploración, el modelado y la generación de valor con herramientas nativas como SageMaker. El almacenaje depende de la herramienta propietaria de cada nube (S3 para Amazon, Cloud Storage para GCP, etc.).
+			\item \textbf{Procesamiento y transformación}: se realizó la limpieza y estandarización de los datos descargados, descartando fuentes sensibles. Se realizó \textit{feature engineering} en entornos gestionados nativos en la nube, como Vertex AI Workbench, como se detalla en la parte de prácticas de MLOps.
+			\item \textbf{Uso/compartición}: se utilizaron diversas técnicas de IA para la identificación de patrones en los datos y se han publicado los resultados bajo licencias abiertas, priorizando la transparencia.
+		\end{itemize}
+		\item \textbf{Optimización y sostenibilidad}: se monitorizó el uso de recursos en las diferentes nubes para mantener el proyecto dentro del coste cero, también se optimizaron las configuraciones de los servicios para asegurar la eficiencia tanto económica como ecológica del proyecto.
+	\end{itemize}
+\end{enumerate}
 
-	\item \textbf{Optimización y sostenibilidad:} Se monitorizó el uso de recursos en las diferentes nubes para mantener el proyecto dentro del coste cero, también se optimizaron las configuraciones de los servicios para asegurar la eficiencia tanto económica como ecológica del proyecto.
-\end{itemize}
+\subsubsection{Principios éticos} \label{sec:Metodos_Principios_EU}
 
-\subsubsection{Principios éticos}  \label{sec:Metodos_Principios_EU}
-
-Destacar también que en el proyecto, se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa, omnibus2026Europa}:
+Destacar también que en el proyecto se siguieron rigurosamente los siete principios éticos de la IA definidos por el reglamento de la Unión Europea \citep{webRIA2024Europa, omnibus2026Europa}:
 
 \begin{itemize}
-	\item \textbf{Acción y supervisión humanas:} En este trabajo se supervisó tanto cada etapa del desarrollo, como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
-
-	\item \textbf{Solidez técnica y seguridad:} Se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
-
-	\item \textbf{Gestión de la privacidad y de los datos:} Se ha abordado todo el proyecto cumpliendo con los principios del RGPD, como se indica en la sección de datos.
-
-	\item \textbf{Transparencia:} Se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para esto, y cumpliendo con la declaración responsable sobre autoría y uso ético de herramientas de IA de la UCM. Los usos se detallan en el apéndice \ref{Appendix:2}.
-
-	\item \textbf{Diversidad, no discriminación y equidad:} Se comprobaron los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
-
-	\item \textbf{Bienestar social y ambiental:} El motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
-
-	\item \textbf{Rendición de cuentas:} Se mantuvo un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos,para permitir una auditoría clara y una rendición de cuentas transparente.
+	\item \textbf{Acción y supervisión humanas}: en este trabajo se supervisó tanto cada etapa del desarrollo como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
+	\item \textbf{Solidez técnica y seguridad}: se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
+	\item \textbf{Gestión de la privacidad y de los datos}: se ha abordado todo el proyecto cumpliendo con los principios del RGPD, como se indica en la sección de datos.
+	\item \textbf{Transparencia}: se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para ello, y cumpliendo con la declaración responsable sobre autoría y uso ético de herramientas de IA de la UCM. Los usos se detallan en el apéndice \ref{Appendix:2}.
+	\item \textbf{Diversidad, no discriminación y equidad}: se comprobaron los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
+	\item \textbf{Bienestar social y ambiental}: el motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
+	\item \textbf{Rendición de cuentas}: se mantuvo un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos para permitir una auditoría clara y una rendición de cuentas transparente.
 \end{itemize}
-
 
 \newpage
+
 \subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
 
-Para la fase de extracción de valor se emplearon las siguientes técnicas de aprendizaje no supervisado y estadística, adecuando cada una a la naturaleza de los datos:
+Los fundamentos teóricos de los algoritmos y métricas empleados (K-Means, agrupamiento jerárquico de Ward, coeficiente de silueta y correlación de Pearson) se definieron en el \hyperref[sec:EstudiosIA]{Capítulo \ref*{sec:EstudiosIA}} y sus definiciones. En esta sección se detallan los pasos del procesamiento, las técnicas empleadas y las métricas de validación que se llevaron a cabo tras la normalización de los datos, basadas en técnicas de aprendizaje no supervisado y estadística.
 
-\begin{itemize} % [TODO] revisar lo que esta en el apendice para no repetir
-	\item \textbf{K-Means:} Algoritmo de agrupamiento no supervisado (\textit{clustering}) que particiona el espacio de datos en un número $k$ de grupos basándose en la distancia geométrica a sus centroides. Se seleccionó por su eficiencia para descubrir zonas térmicas diferenciadas sin necesidad de etiquetas previas.
+\subsubsection{Preprocesamiento y construcción de características}
 
-	\item \textbf{Agrupamiento Jerárquico (Método de Ward):} Algoritmo aglomerativo que minimiza la varianza intra-clúster en cada iteración de agrupación. Método idóneo para generar dendrogramas, permitiendo visualizar la jerarquía y las asociaciones climatológicas de las estaciones de control.
+Para cada año y aproximación, los datos diarios se agregaron calculando la media anual por estación para cada magnitud. Antes del agrupamiento, se aplicaron dos filtros ya explicados: el de cobertura mínima (300 días en el modo propio) y el de completitud de variables (eliminación de nulos). Posteriormente, todas las variables métricas se estandarizaron mediante \texttt{StandardScaler} (media nula y varianza unitaria) para evitar que magnitudes con escalas absolutas mayores dominen sobre otras de menor escala.
 
-	\item \textbf{Coeficiente de correlación de Pearson:} Métrica estadística utilizada para evaluar la fuerza y dirección de la relación lineal entre dos variables continuas. Se aplicó para validar numéricamente hipótesis espaciales, como la relación inversa entre la temperatura media y la superficie arbórea.
+Además, en las aproximaciones que incluyen variables externas (altitud, superficie arbórea absoluta y superficie relativa), estas se añadieron al conjunto de características de cada estación. El procedimiento de cruce geoespacial y cálculo de la superficie relativa se detalló en el apartado de preprocesamiento. Para las variables que dependen del distrito, se asignó a cada estación el valor correspondiente mediante un cruce geoespacial (\textit{spatial join}) con el \textit{shapefile} de distritos, utilizando la librería \texttt{GeoPandas}. Este paso es común a los modos réplica y propio, y está implementado en la función \texttt{\_estaciones\_con\_distrito()}.
 
-	\item \textbf{Modelado de Series Temporales:} Para los datos de aforos de movilidad (peatones y bicicletas), se aplicaron técnicas de predicción secuencial comparando el error sobre tramos de validación. % [TODO] Completar con los del proximo apartado de peatones y tal
+\subsubsection{Algoritmos de agrupamiento}
+
+Sobre la matriz de medias anuales estandarizadas se ejecutaron dos algoritmos de agrupamiento:
+
+\begin{itemize}
+	\item \textbf{K-Means}: con un número de grupos fijo $k$ (especificado para cada aproximación) y semilla aleatoria \texttt{random\_state=100}, para garantizar la reproducibilidad y mantener la comparabilidad con el trabajo original. El número de iteraciones se fijó en 25.
+	\item \textbf{Agrupamiento jerárquico de Ward}: se aplicó como método de validación cruzada, utilizando la distancia euclídea y el criterio de Ward, que minimiza la varianza intra-grupo en cada fusión. Los resultados se visualizan mediante dendrogramas, donde las hojas se etiquetan con el nombre de cada estación.
 \end{itemize}
 
-Previo a la aplicación de los algoritmos basados en distancias (como K-Means o el método de Ward), se aplicó una \textbf{estandarización} a las variables métricas, asegurando una media nula y varianza unitaria. Esto previene que las magnitudes con escalas absolutas mayores (como presión atmosférica) dominen matemáticamente sobre las menores (como velocidad del viento) en el cálculo iterativo de las distancias.
+Ambos algoritmos se aplicaron para cada una de las siete aproximaciones (las cinco originales más las dos nuevas) y para cada año del rango temporal, aunque la réplica solo se aplica a 2021.
 
-% [TODO] Añadir tamiben una seccion de MLOPS detayando como se cumplen los principios que se ha definido
+\subsubsection{Métricas de validación y evaluación}
 
+Para evaluar la calidad de los agrupamientos y la robustez de los resultados se emplearon tres métricas:
 
+\begin{itemize}
+	\item \textbf{Coeficiente de silueta}: se calculó para cada aproximación y año a partir de los resultados de K-Means. Su valor (entre $-1$ y $1$) indica el grado de separación entre grupos y la cohesión interna, lo que permite comparar las distintas aproximaciones de forma independiente a la escala de las variables.
+	\item \textbf{Comparación K-Means vs Ward}: para cada año y aproximación, se compararon las etiquetas asignadas por ambos algoritmos, verificando que producen particiones similares. Esta comprobación no estaba presente en el trabajo original y se introduce como medida de robustez.
+	\item \textbf{Coeficiente de correlación de Pearson}: se empleó para evaluar relaciones lineales entre pares de magnitudes meteorológicas (temperatura vs humedad relativa, precipitación vs radiación solar) por estación, y para cuantificar la relación entre la temperatura media por distrito y la superficie arbórea (absoluta y relativa), como parte del análisis de arbolado.
+\end{itemize}
+
+Además, para cada aproximación se generó el diagrama del codo, que representa la inercia de K-Means para $k=1,\dots,10$, como herramienta de diagnóstico para confirmar la elección del número de grupos.
+
+\subsubsection{Prácticas de MLOps y DevOps}
+
+Además de los métodos comentados, todo el proceso de análisis se acompañó de prácticas de MLOps (incluidas las presentes en DevOps general) para garantizar la trazabilidad y reproducibilidad de los resultados:
+
+\begin{itemize}
+	\item \textbf{Versionado de código}: el código fuente se gestiona con Git y se aloja en un repositorio público de GitHub.
+	\item \textbf{Versionado de datos}: la capa \textit{bronze} es inmutable y las capas posteriores se generan de forma reproducible.
+	\item \textbf{Registro de experimentos}: cada ejecución genera un fichero de log (\texttt{ejecucion.log}) que registra los parámetros en ambos modos (réplica o propio): cobertura mínima, años procesados, y las métricas de salida (silueta y correlaciones). Las figuras y tablas de resultados se almacenan en carpetas organizadas por año y aproximación.
+	\item \textbf{Infraestructura como código (IaC)}: los roles y trabajos de AWS Glue, así como la instancia de Vertex AI Workbench, se definen mediante comandos CLI y plantillas, facilitando el despliegue en distintos entornos.
+\end{itemize}
 
 \newpage
 
-\subsection{Métodos utilizados: Cloud} 
-\label{sec:Metodos_cloud}
+\subsection{Métodos utilizados: Cloud} \label{sec:Metodos_cloud}
 
-% [TODO] Añadir tamiben una seccion de cloud resumiendo las buenas practicas del desarollo en nubes
-El despliegue de las capas de almacenamiento, procesamiento y analítica sobre plataformas en la nube se ha abordado bajo una metodología común para evaluar la dificultad de implementación, viabilidad, rendimiento y coste de ejecutar un mismo \textit{pipeline} de datos abiertos sobre diferentes proveedores. Esta estrategia reutiliza el enfoque de arquitectura por capas (\textit{Medallion Architecture}) definido en la \hyperref[def11]{[Definición \ref*{def11}]}, que es el mismo que se ha seguido en local. Este se combinara con las buenas prácticas específicas de diseño y gobernanza generales del desarrollo en la nube y las especificas de cada proveedor.
+El despliegue de las capas de almacenamiento, procesamiento y analítica sobre plataformas en la nube se ha abordado bajo una metodología común para evaluar la dificultad de implementación, viabilidad, rendimiento y coste de ejecutar un mismo \textit{pipeline} de datos abiertos sobre diferentes proveedores. Esta estrategia reutiliza el enfoque de arquitectura por capas (\textit{medallion architecture}) definido en la \hyperref[def11]{[Definición \ref*{def11}]}, el mismo explicado en datos y local. Se combinará con las buenas prácticas específicas de diseño y gobernanza generales del desarrollo en la nube y las específicas de cada proveedor, por lo que las siguientes secciones se centrarán en estas partes específicas únicamente.
 
 \subsubsection{Métodos utilizados en Amazon Web Services (AWS)}
 
-La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí, definiremos una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas practicas en la web de AWS \citep{AWSWellArchitected2026}.
+La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí se define una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas prácticas en la web de AWS \citep{AWSWellArchitected2026}.
 
 \begin{enumerate}
-	\item \textbf{Arquitectura de medalla}: Aunque no es única de la nube, hay aspectos particulares que merece la pena comentar para el almacenamiento especifico en Amazon S3 dividida en las capas: Se aplicó un bloqueo de acceso público para evitar la modificación externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas para poder medir el coste en todas las capas del proceso.
-
-	\item \textbf{Procesamiento ETL Serverless de bajo cómputo:} Como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería demasiada computación. Se optó por una ejecución mediante \textit{AWS Glue Python Shell} y la propia \textit{AWS CLI}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución, gestionando el almacenamiento desde los contenedores de S3.
-	
-	\item \textbf{Infraestructura como Código (IaC) y Gestión de Dependencias:} Para garantizar la reproducibilidad, el despliegue del trabajo ETL se definió de forma declarativa mediante comandos y plantillas JSON definidas en el \ref{subsec:Manual_Despliegue_AWS}. Los módulos propios de configuración (\texttt{config.py}) se empaquetaron en formato estándar de distribución de Python (\textit{Wheel}, \texttt{.whl}), para gestionar las dependencias junto al  \textit{requirements.txt}
-	
-	\item \textbf{Gobernanza de identidades (RBAC) y control financiero (\textit{FinOps}):} Implementación del principio de menor privilegio y control de costes mediante:
+	\item \textbf{Arquitectura de medalla}: para las capas, se aplicó un bloqueo de acceso público para evitar la modificación externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas (\textit{labels}) para poder medir el coste en todas las capas del proceso.
+	\item \textbf{Procesamiento ETL serverless de bajo cómputo}: como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería demasiada computación. Se optó por una ejecución mediante \textit{AWS Glue Python Shell} y la propia \textit{AWS CLI}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución, gestionando el almacenamiento desde los contenedores de S3.
+	\item \textbf{Infraestructura como código (IaC) y gestión de dependencias}: para garantizar la reproducibilidad, el despliegue del trabajo ETL se definió de forma declarativa mediante comandos y plantillas JSON definidas en en manual: \ref{subsec:Manual_Despliegue_AWS}. Los módulos propios de configuración (\texttt{config.py}) se empaquetaron en formato estándar de distribución de Python (\textit{wheel}, \texttt{.whl}) para gestionar las dependencias junto al \textit{requirements.txt}.
+	\item \textbf{Gobernanza de identidades (RBAC) y control financiero (\textit{FinOps})}: implementación del principio de menor privilegio y control de costes mediante:
 	\begin{itemize}
-		\item \textbf{Uso de credenciales temporales:} Se utilizo \textit{AWS CloudShell} para operar con las credenciales de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en local.
-		\item \textbf{Segregación de permisos:} Se definieron roles IAM de servicio (\texttt{AWSGlueServiceRole-tfm}) con acceso restringido exclusivamente a las rutas necesarias de S3 para el procesamiento en \textit{AWS Glue}.
-		\item \textbf{Mecanismos de contención de gasto:} Se desactivaron los reintentos automáticos (\texttt{max-retries 0}) y establecimiento de tiempos máximos de ejecución (\texttt{timeout}) en los trabajos de \textit{AWS Glue}, además de la monitorización presupuestaria mediante \textit{AWS Budgets}.
+		\item \textbf{Uso de credenciales temporales}: se utilizó \textit{AWS CloudShell} para operar con las credenciales de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en local.
+		\item \textbf{Permisos para servicios}: se definieron roles IAM de servicio (\texttt{AWSGlueServiceRole-tfm}) con acceso restringido exclusivamente a las rutas necesarias de S3 para el procesamiento en \textit{AWS Glue}.
+		\item \textbf{Control de gasto}: se desactivaron los reintentos automáticos (\texttt{max-retries 0}) y se establecieron tiempos máximos de ejecución en los trabajos de \textit{AWS Glue}, además de la monitorización de gastos mediante \textit{AWS Budgets}.
 	\end{itemize}
-	
 \end{enumerate}
 
-
-Se valoró el empleo de los modelos pre-entrenados de \textit{AWS SageMaker}, pero se descartaron por ser una solución sobre-dimensionada a este problema. El conjunto de análisis está formado por unas pocas decenas de observaciones con menos de diez variables, un tamaño para el que los algoritmos de agrupamiento clásicos resultan más apropiados.
-
+Se valoró el empleo de los modelos pre-entrenados de \textit{AWS SageMaker}, pero se descartaron por ser una solución sobredimensionada para este problema. El conjunto de análisis está formado por unas pocas decenas de observaciones con menos de diez variables, un tamaño para el que los algoritmos de agrupamiento clásicos resultan más apropiados.
 
 \newpage
 \subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}
 
-Al igual que en la sección anterior, toda la especificación técnica paso a paso y el procedimiento de despliegue por comandos de cada uno de estos métodos aquí descritos, se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_GCP}. La arquitectura general se rige también por las directrices y buenas practicas de GCP \citep{GCPArchitectureFramework2026}, aplicando en concreto las siguientes decisiones de diseño:
+Al igual que en la sección anterior, la especificación técnica paso a paso y el procedimiento de despliegue por comandos de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_GCP}. La arquitectura general se rige también por las directrices y buenas prácticas de GCP \citep{GCPArchitectureFramework2026}, aplicando en concreto las siguientes decisiones de diseño:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% WIP
 \begin{enumerate}
-	\item \textbf{Arquitectura de medalla en Cloud Storage}: La jerarquía de almacenamiento (\textit{Bronze, Silver, Gold}) se replicó utilizando un contenedor (\textit{bucket}) de Google Cloud Storage. Como mecanismo de seguridad moderno, se aplicó la política de Prevención de Acceso Público (\textit{Public Access Prevention}) de forma nativa, bloqueando cualquier exposición a internet. También se habilitó el versionado y el etiquetado de recursos.
-	
-	\item \textbf{Evaluación de servicios serverless para el procesamiento ETL}: Para la fase de transformación se analizaron dos opciones de cómputo desatendido, ambas descartadas tras las pruebas iniciales.
-	
+	\item \textbf{Arquitectura de medalla en Cloud Storage}: las capas se almacenaron en un contenedor (\textit{bucket}) de Google Cloud Storage. Se aplicó la política \textit{Public Access Prevention} de forma nativa para evitar la modificación externa de los ficheros, y se habilitó también el versionado y el etiquetado de recursos.
+	\item \textbf{Servicios para el procesamiento ETL descartados}: para la fase de transformación se analizaron dos opciones, que se descartaron tras las pruebas iniciales.
 	\begin{itemize}
-		\item \textbf{Cloud Run Jobs}: Este servicio permite ejecutar procesos por lotes en contenedores sin necesidad de escribir un \texttt{Dockerfile} explícito, gracias a la integración con \textit{Cloud Build} y los \textit{Buildpacks} de Google. Se preparó un fichero \texttt{Procfile} con la instrucción de arranque (\texttt{python3 02\_limpieza.py}) y un \texttt{.gcloudignore} para excluir archivos locales. Sin embargo, el despliegue resultó fallido: el contenedor se construía correctamente pero la ejecución terminaba con el error ``\texttt{Application exec likely failed}'', sin registros de aplicación. Se comprobó que el problema estaba relacionado con la detección del punto de entrada en procesos que no son servicios web, y que los \textit{Buildpacks} no resolvían adecuadamente el comando de arranque para este tipo de tareas. Aunque se intentó forzar el comando con \texttt{--command python3} y ajustar la memoria, no se logró un arranque exitoso.
-		
-		\item \textbf{Cloud Functions}: Como alternativa, se desplegó una función HTTP (2ª generación) que ejecutaba el script de limpieza mediante \texttt{subprocess}. El despliegue fue correcto y la función respondía a las invocaciones, pero al intentar acceder a los datos en \textit{Cloud Storage} mediante la librería \texttt{gcsfs}, el sistema no autenticaba las credenciales de forma automática desde el entorno serverless. Como resultado, la función no encontraba los ficheros de entrada a pesar de que las rutas y los permisos del \textit{bucket} eran correctos. Se añadieron permisos adicionales a la cuenta de servicio y se ajustó la variable de entorno \texttt{TFM\_BASE}, sin éxito.
+		\item \textbf{Cloud Run Jobs}: servicio para ejecutar procesos bajo demanda. Se preparó un fichero \texttt{Procfile} con la instrucción de arranque (\texttt{python3 02\_limpieza.py}) y un \texttt{.gcloudignore} para excluir archivos locales. Sin embargo, surgió un problema relacionado con la detección del punto de entrada en procesos que no son servicios web, no se resolvía el comando de arranque para este tipo de tareas, y tras varias horas de intento no se logró un arranque exitoso.
+		\item \textbf{Cloud Functions}: como alternativa, se desplegó una función con el script original mediante \texttt{subprocess}. El despliegue y la llamada funcionaron, pero falló la resolución de rutas relativas, lo que impedía que el script descargara o guardara los ficheros de origen en el \textit{bucket}, tras varios intentos, también se descartó.
 	\end{itemize}
-	
-	Ambas soluciones son técnicamente viables con configuración adicional (como la definición explícita de un \texttt{Dockerfile} o la gestión manual de claves de servicio), pero se descartaron para priorizar la simplicidad y la reproducibilidad del flujo de trabajo, dado el reducido volumen de datos del proyecto.
-	
-	\item \textbf{Procesamiento y análisis integrados en Vertex AI Workbench}: Finalmente, se optó por unificar las fases de limpieza y análisis en \textit{Vertex AI Workbench}, un entorno gestionado de \textit{JupyterLab}. Esta decisión simplificó la gestión de credenciales (al heredar las del usuario), evitó la configuración de identidades adicionales y permitió ejecutar los scripts originales sin modificaciones. El mismo entorno interactivo se utilizó tanto para la transformación como para el modelado, lo que redujo el coste y el esfuerzo de despliegue.
-	
-	\item \textbf{Gobernanza de recursos y aislamiento (\textit{Sandbox})}:
-	\begin{itemize}
-		\item \textbf{Aislamiento de proyecto:} El entorno se desplegó de forma deliberada fuera de la jerarquía de la organización principal (\textit{No organization}) para evitar heredar políticas restrictivas (como bloqueos de red) y mantener la facturación separada del entorno corporativo.
-		\item \textbf{Gestión de identidades:} Se aprovechó la pre-autenticación de \textit{Google Cloud Shell} y la librería \texttt{gcsfs} para acceder al almacenamiento sin necesidad de exportar ni gestionar claves de cuentas de servicio (\textit{Service Account Keys}) localmente, minimizando los riesgos de seguridad.
-	\end{itemize}
+	Ambas soluciones son técnicamente viables con configuración adicional (como la definición explícita de un \texttt{Dockerfile} para Cloud Run o la creación de un \texttt{main.py} específico para Cloud Functions), pero se descartaron para priorizar la simplicidad, similitud y reproducibilidad del flujo de trabajo.
+	\item \textbf{Procesamiento y análisis en Vertex AI Workbench}: finalmente, se optó por unificar las fases de limpieza y análisis en \textit{Vertex AI Workbench}, un entorno gestionado de \textit{JupyterLab}, para simplificar la gestión de credenciales (al heredar las del usuario) y poder ejecutar los scripts originales sin modificaciones y sin creación de roles de servicio. El mismo entorno interactivo se utilizó tanto para la transformación como para el modelado, lo que redujo el coste y el esfuerzo de despliegue.
+	\item \textbf{Aislamiento de proyecto}: aunque GCP crea varios proyectos en una organización al crear la cuenta, el entorno se desplegó fuera de la jerarquía de la organización principal para evitar heredar políticas de los proyectos creados y mantener la facturación separada del entorno corporativo.
 \end{enumerate}
 
-
 \newpage
-

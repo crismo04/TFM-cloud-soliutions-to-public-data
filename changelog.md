@@ -2,6 +2,19 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [Memoria] - 2026-09-02
+### Add
+* Toques finales del capitulo 4 de la memoria
+### Change
+* Modificaciones menores en la memoria de estilo y correcciones
+
+## [Memoria] - 2026-09-01
+### Add
+* Toques finales de los capitulos 2 y 3 de la memoria
+### Change
+* Modificaciones menores en la memoria de estilo y correcciones
+
+
 ## [ML] - 2026-08-31
 ### Add
 * Añadir dos nuevas aproximaciones: (Temperatura y altitud) y (Temperatura y superficie relativa)
@@ -101,4 +114,4 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 
 
 ## First commmit notes
-* Este es el primer registro del changelog. El historial previo (~30 commits) corresponde a la redacción de la memoria en LaTeX bajo `master's thesis/` (plantilla TeXiS, capítulos, apéndices, bibliografía... Mayormente estado de la cuestion e investigacion) y no está desglosado aquí por ser anterior a la adopción de este archivo.
+* Este es el primer registro del changelog. El historial previo (~30 commits) corresponde a la redacción de la memoria en LaTeX bajo `master's thesis/` (plantilla TeXiS, capítulos, apéndices, bibliografía... Mayormente estado de la cuestion e investigacion) y no está desglosado aquí por ser anterior a la adopción de este archivo. Fue desarrollado durante el curso academico 2024-2025.

@@ -10,7 +10,7 @@ Para mantener la coherencia con el resto de capítulos, dividiremos este manual 
 	\item \textbf{Ejecución de modelos y evaluación de resultados}.
 \end{enumerate}
 
-De este modo, intentaremos garantizar la trazabilidad del ciclo de vida del dato. Esto lo haremos para las tres plataformas donde hemos trabajado: Local, AWS y GCP; y al final, también estableceremos una comparativa lo mas objetiva posible de que entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de los metodos utilizados en las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. La comparación cuantitativa entre entornos, en términos de esfuerzo, tiempo de ejecución y coste, se recopila en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
+De este modo, intentaremos garantizar la trazabilidad del ciclo de vida del dato. Esto lo haremos para las tres plataformas donde hemos trabajado: Local, AWS y GCP, y al final, también estableceremos una comparativa lo mas objetiva posible de que entornos es mejor utilizar en cada caso, según lo estudiado en este trabajo. Los detalles de los metodos utilizados en las partes correspondientes se han detallado anteriormente en la \hyperref[sec:Metodos_desarrollo]{Sección \ref*{sec:Metodos_desarrollo}}. La comparación cuantitativa entre entornos, en términos de esfuerzo, tiempo de ejecución y coste, se recopila en el \hyperref[cap:Resultados]{Capítulo \ref*{cap:Resultados}}.
 
 
 
@@ -488,7 +488,7 @@ La instancia tarda unos minutos en aprovisionarse, una vez que el estado indica 
 Ahora para ejecutar el proceso de analisis no necesitamos mover ni cargar datos , ya que estan en el mismo entorno qye el resto del proceso, simplemente ejecutar el script de analisis:
 
 \begin{lstlisting}[language=bash, caption={Ejecución análisis en Vertex AI Workbench}]
-	# Ejecutar análisis sin variable TFM_BASE (usa rutas locales)
+	# Ejecutar analisis sin variable TFM_BASE (usa rutas locales)
 	python3 03_analisis_isla_calor.py
 	
 	# Subir los resultados al bucket
