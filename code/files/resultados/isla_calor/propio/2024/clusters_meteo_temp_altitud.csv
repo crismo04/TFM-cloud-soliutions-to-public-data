@@ -1,4 +1,4 @@
-,temperatura,altitud,kmeans_k4,jerarquico_k4
+estacion,temperatura,altitud,kmeans_k4,jerarquico_k4
 4,17.714071856287426,637,2,4
 8,18.057784431137726,672,1,1
 16,17.818507462686565,695,1,1

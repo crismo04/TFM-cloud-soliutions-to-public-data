@@ -1,4 +1,4 @@
-,temperatura,superficie_relativa,kmeans_k4,jerarquico_k4
+estacion,temperatura,superficie_relativa,kmeans_k4,jerarquico_k4
 4,17.714071856287426,0.012853385040845105,1,2
 8,18.057784431137726,0.0004450705021880642,1,2
 16,17.818507462686565,0.01275197852743129,1,2

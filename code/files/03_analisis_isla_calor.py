@@ -259,7 +259,7 @@ def _superficie_relativa_por_distrito(anio: int) -> pd.Series:
     """Proporción de superficie arbórea respecto al área total del distrito."""
     sup_abs = _superficie_por_distrito(anio)
     area = _area_por_distrito()
-    return (sup_abs / area).dropna()
+    return (sup_abs / area).dropna().rename("superficie_relativa")
 
 def _superficie_relativa_por_estacion(anio: int) -> pd.Series:
     """Cruza la superficie relativa del distrito con la estación correspondiente"""
@@ -336,6 +336,110 @@ def analisis_arbolado(anio: int, carpeta) ->  dict | None:
 
     return {"anio": anio, "r_arbolado": round(r, 3), "n_distritos": n_distritos}
 
+def analisis_variables_externas(anio: int, carpeta: str) -> dict | None:
+    """ Calcula correlaciones y genera gráficos para altitud y superficie relativa.
+    Devuelve un dict con las correlaciones y número de observaciones.
+    """
+    meteo = cargar("meteo_diario", anio)
+    resultados = {"anio": anio}
+
+    # Obtener estaciones
+    estaciones = _estaciones_con_distrito()
+
+    # Altitud: temperatura media anual por estacion vs altitud de la estacion
+    temp_est = meteo.groupby("estacion")["temperatura"].mean().rename("temperatura")
+    altitud = _altitud_por_estacion()
+    df_alt = pd.DataFrame(temp_est).join(altitud, how="inner").dropna()
+    if len(df_alt) > 3:
+        r_alt = df_alt["temperatura"].corr(df_alt["altitud"])
+        resultados["r_altitud"] = round(r_alt, 3)
+        resultados["n_altitud"] = len(df_alt)
+        fig, ax = plt.subplots(figsize=(5, 4))
+        ax.scatter(df_alt["altitud"], df_alt["temperatura"])
+        for _, row in df_alt.iterrows():
+            ax.annotate(str(int(row.name))[:5], (row["altitud"], row["temperatura"]), fontsize=6)
+        ax.set_xlabel("Altitud (m)")
+        ax.set_ylabel("Temperatura media anual (°C)")
+        ax.set_title(f"Temp vs altitud {anio} (r={r_alt:.2f})")
+        plt.tight_layout()
+        plt.savefig(f"{carpeta}/temp_vs_altitud.png", dpi=150)
+        plt.close()
+        print(f"  [OK] temp-altitud: r={r_alt:.3f} ({len(df_alt)} estaciones)")
+    else:
+        resultados["r_altitud"] = None
+        resultados["n_altitud"] = len(df_alt)
+        print(f"  [AVISO] pocas estaciones para altitud: {len(df_alt)}")
+
+    # Superficie relativa: temperatura media anual por distrito vs superficie arborea relativa del distrito
+    try:
+        superficie_rel = _superficie_relativa_por_distrito(anio)
+        if not superficie_rel.empty:
+            # Temperatura media por estacion y luego por distrito
+            temp_est = meteo.groupby("estacion")["temperatura"].mean().rename("temperatura")
+            temp_est_df = temp_est.reset_index().merge(estaciones, left_on="estacion", right_on="CODIGO_CORTO")
+            temp_dist = temp_est_df.groupby("distrito")["temperatura"].mean().reset_index()
+            # Unir con superficie relativa
+            cruce = temp_dist.merge(superficie_rel.reset_index(), on="distrito")
+            if len(cruce) > 3:
+                r_rel = cruce["temperatura"].corr(cruce["superficie_relativa"])
+                resultados["r_superficie_rel"] = round(r_rel, 3)
+                resultados["n_superficie_rel"] = len(cruce)
+                fig, ax = plt.subplots(figsize=(5, 4))
+                ax.scatter(cruce["superficie_relativa"], cruce["temperatura"])
+                for _, row in cruce.iterrows():
+                    ax.annotate(row["distrito"][:8], (row["superficie_relativa"], row["temperatura"]), fontsize=6)
+                ax.set_xlabel("Superficie relativa (ha/ha)")
+                ax.set_ylabel("Temperatura media anual (°C)")
+                ax.set_title(f"Temp vs sup. relativa {anio} (r={r_rel:.2f})")
+                plt.tight_layout()
+                plt.savefig(f"{carpeta}/temp_vs_superficie_relativa.png", dpi=150)
+                plt.close()
+                print(f"  [OK] temp-sup.rel.: r={r_rel:.3f} ({len(cruce)} distritos)")
+            else:
+                resultados["r_superficie_rel"] = None
+                resultados["n_superficie_rel"] = len(cruce)
+                print(f"  [AVISO] pocos distritos para sup. relativa: {len(cruce)}")
+        else:
+            resultados["r_superficie_rel"] = None
+            resultados["n_superficie_rel"] = 0
+            print(f"  [AVISO] sin superficie relativa para {anio}")
+    except Exception as e:
+        print(f"  [AVISO] error en sup. relativa: {e}")
+        resultados["r_superficie_rel"] = None
+        resultados["n_superficie_rel"] = 0
+
+    # Comparativa conjunta: temperatura vs altitud y superficie relativa (scatter 3D)
+    try:
+        alt_est = _altitud_por_estacion().reset_index().rename(columns={"CODIGO_CORTO": "estacion"})
+        alt_dist = estaciones.merge(alt_est, left_on="CODIGO_CORTO", right_on="estacion") \
+                             .groupby("distrito")["altitud"].mean().rename("altitud")
+        temp_est = meteo.groupby("estacion")["temperatura"].mean().rename("temperatura")
+        temp_est_df = temp_est.reset_index().merge(estaciones, left_on="estacion", right_on="CODIGO_CORTO")
+        temp_dist = temp_est_df.groupby("distrito")["temperatura"].mean().rename("temperatura")
+        sup_rel = _superficie_relativa_por_distrito(anio)
+        df_combined = pd.DataFrame({
+            "temperatura": temp_dist,
+            "altitud": alt_dist,
+            "superficie_relativa": sup_rel
+        }).dropna()
+        if len(df_combined) > 3:
+            fig = plt.figure(figsize=(7, 5))
+            ax = fig.add_subplot(111, projection='3d')
+            ax.scatter(df_combined["altitud"], df_combined["superficie_relativa"], df_combined["temperatura"])
+            ax.set_xlabel("Altitud (m)")
+            ax.set_ylabel("Superficie relativa")
+            ax.set_zlabel("Temperatura (°C)")
+            ax.set_title(f"Temperatura vs altitud y sup. relativa {anio}")
+            plt.tight_layout()
+            plt.savefig(f"{carpeta}/scatter3d_variables_externas_{anio}.png", dpi=150)
+            plt.close()
+            print(f"  [OK] scatter 3D generado con {len(df_combined)} distritos")
+        else:
+            print(f"  [AVISO] pocos datos para comparativa conjunta: {len(df_combined)}")
+    except Exception as e:
+        print(f"  [AVISO] error en scatter 3D: {e}")
+
+    return resultados if any(v is not None for k, v in resultados.items() if k.startswith("r_")) else None
 
 # --- principal --
 
@@ -359,24 +463,31 @@ def grafico_evolucion(filas_arbolado: list[dict], base) -> None:
     plt.savefig(f"{base}/evolucion_correlacion.png", dpi=150)
     plt.close()
 
-def resumen(filas_clusters: list[dict], filas_arbolado: list[dict], base)-> None:
+def resumen(filas_clusters: list[dict], filas_arbolado: list[dict], base: str, filas_externas: list[dict] = None) -> None:
     """Tabla comparativa entre años + deteccion simple de anomalias, para no tener que abrir los CSV de cada año uno por uno"""
     if filas_clusters:
         piv = (pd.DataFrame(filas_clusters).pivot(index="anio", columns="aproximacion", values="silhouette"))
         print("\n== Resumen: silhouette por año y aproximacion ==")
         print(piv.round(3).to_string())
         piv.to_csv(f"{base}/resumen_silhouette.csv")
+
     if filas_arbolado:
         arb = pd.DataFrame(filas_arbolado).set_index("anio")
         print("\n== Resumen: correlacion arbolado vs temperatura por año ==")
         print(arb.to_string())
         arb.to_csv(f"{base}/resumen_arbolado.csv")
-        r = arb["r_arbolado"].dropna() # marca outliers
+        r = arb["r_arbolado"].dropna()
         fuera = r[(r - r.mean()).abs() > 1.5 * r.std()]
         media = f"{r.mean():.3f}" if len(r) else "n/d"
         print(f"\n  media r = {media} (n={len(r)} años)")
         for anio, val in fuera.items():
             print(f"  [!] {anio}: r={val:.3f} se desvia del patron, revisar dato")
+
+    if filas_externas:
+        ext = pd.DataFrame(filas_externas).set_index("anio")
+        print("\n== Resumen: correlacion variables externas con temperatura ==")
+        print(ext[["r_altitud", "r_superficie_rel"]].round(3).to_string())
+        ext.to_csv(f"{base}/resumen_externas.csv")
 
 def cobertura_temperatura() -> None:
     """Diagnostico: dias validos de temperatura por estacion y año, para estudiar la caida de cobertura 2021-2022 (¿sincronizada con el hueco de aforos?)"""
@@ -408,7 +519,7 @@ EXTERNAS = {
 
 def main() -> None:
     anios = [int(a) for a in sys.argv[1:]] or config.ANIOS
-    all_clusters, all_arbolado = [], []
+    all_clusters, all_arbolado, all_externas = [], [], []
     base = f"{config.RESULTADOS}/isla_calor/{config.ETIQUETA_MODO}"
     _asegurar_carpeta(base)
     sys.stdout = _Tee(f"{base}/ejecucion.log")
@@ -430,8 +541,11 @@ def main() -> None:
         fila_arb = analisis_arbolado(anio, carpeta)
         if fila_arb:
             all_arbolado.append(fila_arb)
+        fila_ext = analisis_variables_externas(anio, carpeta)
+        if fila_ext:
+            all_externas.append(fila_ext)
 
-    resumen(all_clusters, all_arbolado, base)
+    resumen(all_clusters, all_arbolado, base, all_externas)
     grafico_evolucion(all_arbolado, base)
     cobertura_temperatura()
 

@@ -1,4 +1,4 @@
-# ejecucion 2026-08-31 20:23 | MODO_REPLICA=False | MIN_DIAS_ANIO=300
+# ejecucion 2026-09-03 00:15 | MODO_REPLICA=False | MIN_DIAS_ANIO=300
 == Isla de calor 2019 (extension) ==
     [info] 19 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 7 estaciones, k=4, inercia=16.4, silhouette=0.097
@@ -15,6 +15,9 @@
   [OK] meteo_temp_sup_rel: 16 estaciones, k=4, inercia=3.3, silhouette=0.564
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 14 distritos, r=-0.462
+  [OK] temp-altitud: r=0.185 (24 estaciones)
+  [OK] temp-sup.rel.: r=-0.658 (15 distritos)
+  [OK] scatter 3D generado con 14 distritos
 == Isla de calor 2020 (extension) ==
     [info] 20 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 6 estaciones, k=4, inercia=7.6, silhouette=0.122
@@ -32,6 +35,9 @@
   [OK] meteo_temp_sup_rel: 14 estaciones, k=4, inercia=3.2, silhouette=0.469
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 12 distritos, r=-0.392
+  [OK] temp-altitud: r=-0.180 (23 estaciones)
+  [OK] temp-sup.rel.: r=0.023 (15 distritos)
+  [OK] scatter 3D generado con 14 distritos
 == Isla de calor 2021 (replica) ==
     [info] 21 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 5 estaciones, k=4, inercia=3.7, silhouette=0.078
@@ -49,6 +55,9 @@
   [OK] meteo_temp_sup_rel: 15 estaciones, k=4, inercia=3.0, silhouette=0.486
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 13 distritos, r=-0.416
+  [OK] temp-altitud: r=0.038 (23 estaciones)
+  [OK] temp-sup.rel.: r=0.198 (15 distritos)
+  [OK] scatter 3D generado con 14 distritos
 == Isla de calor 2022 (extension) ==
     [info] 24 estaciones con <300 dias de datos, se excluyen
   [AVISO] meteo_todas_magnitudes: solo 2 estaciones con datos, se omite
@@ -66,6 +75,9 @@
   [OK] meteo_temp_sup_rel: 9 estaciones, k=4, inercia=0.8, silhouette=0.607
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 9 distritos, r=-0.471
+  [OK] temp-altitud: r=-0.074 (25 estaciones)
+  [OK] temp-sup.rel.: r=-0.232 (15 distritos)
+  [OK] scatter 3D generado con 15 distritos
 == Isla de calor 2023 (extension) ==
     [info] 21 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 5 estaciones, k=4, inercia=4.5, silhouette=0.014
@@ -83,6 +95,9 @@
   [OK] meteo_temp_sup_rel: 20 estaciones, k=4, inercia=5.1, silhouette=0.491
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 15 distritos, r=-0.264
+  [OK] temp-altitud: r=-0.234 (25 estaciones)
+  [OK] temp-sup.rel.: r=0.128 (15 distritos)
+  [OK] scatter 3D generado con 15 distritos
 == Isla de calor 2024 (extension) ==
     [info] 20 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 6 estaciones, k=4, inercia=4.5, silhouette=0.293
@@ -99,6 +114,9 @@
   [OK] meteo_temp_sup_rel: 19 estaciones, k=4, inercia=4.0, silhouette=0.539
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 14 distritos, r=-0.285
+  [OK] temp-altitud: r=-0.047 (25 estaciones)
+  [OK] temp-sup.rel.: r=-0.159 (15 distritos)
+  [OK] scatter 3D generado con 15 distritos
 == Isla de calor 2025 (extension) ==
     [info] 19 estaciones con <300 dias de datos, se excluyen
   [OK] meteo_todas_magnitudes: 7 estaciones, k=4, inercia=8.5, silhouette=0.269
@@ -116,6 +134,9 @@
   [OK] meteo_temp_sup_rel: 20 estaciones, k=4, inercia=4.4, silhouette=0.494
   [OK] correlaciones: 2 pares
   [OK] arbolado vs temperatura: 15 distritos, r=-0.315
+  [OK] temp-altitud: r=0.006 (25 estaciones)
+  [OK] temp-sup.rel.: r=-0.113 (15 distritos)
+  [OK] scatter 3D generado con 15 distritos
 
 == Resumen: silhouette por año y aproximacion ==
 aproximacion  contaminacion_no2  contaminacion_no2_pm  meteo_temp_altitud  meteo_temp_arbolado  meteo_temp_humedad  meteo_temp_sup_rel  meteo_todas_magnitudes
@@ -140,6 +161,17 @@ anio
 2025      -0.315           15
 
   media r = -0.372 (n=7 años)
+
+== Resumen: correlacion variables externas con temperatura ==
+      r_altitud  r_superficie_rel
+anio                             
+2019      0.185            -0.658
+2020     -0.180             0.023
+2021      0.038             0.198
+2022     -0.074            -0.232
+2023     -0.234             0.128
+2024     -0.047            -0.159
+2025      0.006            -0.113
 
 == Cobertura: dias validos de temperatura por estacion y año ==
 anio      2019  2020  2021  2022  2023  2024  2025
