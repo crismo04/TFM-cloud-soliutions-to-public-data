@@ -231,6 +231,14 @@ Para que la réplica funcionara correctamente y poder comparar con los resultado
 	\item \textbf{Criterio de selección de estaciones con superficie arbórea}: el trabajo original declara que selecciona las estaciones que ``disponen de datos de masas arbóreas'', lo que en la práctica excluye a los distritos que publican una superficie de cero hectáreas. Esta interpretación se ha replicado. Sin embargo, en el análisis de correlación \ref{sec:Resultados_arbolado} se optó por conservar los distritos con superficie 0.
 \end{itemize}
 
+Para evaluar la réplica, se utilizó un índice de Rand por pares. Dado un conjunto de $n$ estaciones comunes entre el trabajo original y la réplica, se consideran todos los $\frac{n(n-1)}{2}$ pares posibles. Para cada par de estaciones $(A, B)$, se verifica si ambos trabajos las clasifican en el mismo grupo o en grupos distintos (independientemente de la etiqueta numérica del grupo). El porcentaje de acuerdo se calcula como:
+
+\[
+\mathrm{Acuerdo} = \frac{\mathrm{Número\ de\ pares\ en\ los\ que\ ambos\ trabajos\ coinciden}}{\mathrm{Número\ total\ de\ pares}} \times 100
+\]
+
+Este criterio evita el problema de que las etiquetas de grupo son arbitrarias y no tienen por qué coincidir entre dos ejecuciones.
+
 Estos resultados de la réplica, lo más parecida posible al trabajo original, se guardan en la carpeta \texttt{code/files/data/resultados/isla\_calor/replica}. Para los cambios realizados como mejora metodológica y para extender las conclusiones, se añadieron dos aproximaciones y varias mejoras que se guardaron en la carpeta \texttt{code/files/data/resultados/isla\_calor/propio}, ambas carpetas están en el repositorio de GitHub del proyecto y se controlan mediante el parámetro \texttt{MODO\_REPLICA} en la configuración.
 
 A continuación se enumeran los cambios realizados para esta extensión:
