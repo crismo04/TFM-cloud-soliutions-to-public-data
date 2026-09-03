@@ -4,6 +4,11 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 
 ## [Memoria] - 2026-09-03
 ### Change
+* Revision de los tutores aplicada a la memoria
+
+
+## [Memoria] - 2026-09-03
+### Change
 * Retoques de estilo y actualizacion de acronimos 
 
 ## [Memoria] - 2026-09-02

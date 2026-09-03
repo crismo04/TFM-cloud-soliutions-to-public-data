@@ -1,4 +1,4 @@
-\begin{thebibliography}{164}
+\begin{thebibliography}{171}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -33,17 +33,18 @@
 
 \bibitem[{{Amazon Web Services}(2026{\natexlab{b}})}]{AWS2026Signup}
 {\sc {Amazon Web Services}}.
-\newblock {Creación de cuenta en AWS Console}.
+\newblock {Creaci{\'{o}}n de cuenta en AWS Console}.
 \newblock 2026{\natexlab{b}}.
 
 \bibitem[{{Amazon Web Services}(2026{\natexlab{c}})}]{AWS2026Docuementacion}
 {\sc {Amazon Web Services}}.
-\newblock {Documentacion general de AWS}.
+\newblock {Documentaci{\'{o}}n general de AWS}.
 \newblock 2026{\natexlab{c}}.
 
 \bibitem[{{Amazon Web Services}(2026{\natexlab{d}})}]{AWS2026Tutorial}
 {\sc {Amazon Web Services}}.
-\newblock {Tutorial de AWS: Creación y activación de una cuenta de AWS}.
+\newblock {Tutorial de AWS: Creaci{\'{o}}n y activaci{\'{o}}n de una cuenta de
+  AWS}.
 \newblock 2026{\natexlab{d}}.
 
 \bibitem[{Anderson(2004)}]{Anderson2004BOINC}
@@ -58,10 +59,15 @@
   education.
 \newblock p\'agina 615–620, 2016.
 
+\bibitem[{{Apache Software Foundation}(2026)}]{PyArrow2026}
+{\sc {Apache Software Foundation}}.
+\newblock Apache arrow pyarrow documentation.
+\newblock 2026.
+
 \bibitem[{Arellano~Bruno(2019)}]{ArellanoBruno2019UsoDeGeolocalizacion}
 {\sc Arellano~Bruno, J.~B.}
-\newblock Uso de geolocalización y de fuentes de datos abiertas para la
-  creación de servicios turísticos por la ciudad de madrid.
+\newblock Uso de geolocalizaci{\'{o}}n y de fuentes de datos abiertas para la
+  creaci{\'{o}}n de servicios tur{\'{i}}sticos por la ciudad de madrid.
 \newblock 2019.
 
 \bibitem[{{Awesome data}(2025)}]{awesomePublicDatasets}
@@ -74,20 +80,27 @@
 \newblock Portal de datos abiertos del ayuntamiento de madrid.
 \newblock 2025.
 
-\bibitem[{{Ayuntamiento de
-  Madrid}(2026{\natexlab{a}})}]{AytoMadrid2025PortalDatos}
+\bibitem[{{Ayuntamiento de Madrid}(2026{\natexlab{a}})}]{AytoMadrid2026Aforos}
 {\sc {Ayuntamiento de Madrid}}.
-\newblock Portal de datos abiertos del ayuntamiento de madrid.
+\newblock Aforos de peatones y bicicletas: nota explicativa sobre la
+  interrupci{\'{o}}n de datos.
 \newblock 2026{\natexlab{a}}.
+\newblock Portal de Datos Abiertos del Ayuntamiento de Madrid.
 
 \bibitem[{{Ayuntamiento de
-  Madrid}(2026{\natexlab{b}})}]{AytoMadrid2025Interprete}
+  Madrid}(2026{\natexlab{b}})}]{AytoMadrid2025PortalDatos}
 {\sc {Ayuntamiento de Madrid}}.
-\newblock Sistema integral de la calidad del aire: interpretación de los datos
-  de calidad del aire y meteorología.
+\newblock Portal de datos abiertos del ayuntamiento de madrid.
 \newblock 2026{\natexlab{b}}.
-\newblock Portal de Datos Abiertos del Ayuntamiento de Madrid, documentación
-  asociada a los conjuntos de datos diarios.
+
+\bibitem[{{Ayuntamiento de
+  Madrid}(2026{\natexlab{c}})}]{AytoMadrid2025Interprete}
+{\sc {Ayuntamiento de Madrid}}.
+\newblock Sistema integral de la calidad del aire: interpretaci{\'{o}}n de los
+  datos de calidad del aire y meteorolog{\'{i}}a.
+\newblock 2026{\natexlab{c}}.
+\newblock Portal de Datos Abiertos del Ayuntamiento de Madrid,
+  documentaci{\'{o}}n asociada a los conjuntos de datos diarios.
 
 \bibitem[{Barbudo et\ al.(2023)Barbudo, Ventura y Romero}]{Barbudo2023}
 {\sc Barbudo, R.}, {\sc Ventura, S.} y {\sc Romero, J.~R.}
@@ -115,8 +128,13 @@
 
 \bibitem[{Bobrov(2025)}]{MedallionMedium}
 {\sc Bobrov, K.}
-\newblock Data engineering: Now with 30% more bull****.
+\newblock Data engineering: Now with 30{\%} more bull****.
 \newblock 2025.
+
+\bibitem[{B{\"{o}}er(2023)}]{comparisonAutoMLServices}
+{\sc B{\"{o}}er, J.}
+\newblock Self-service ai for everyone? a comparison of automl services.
+\newblock 2023.
 
 \bibitem[{Bommala et\ al.(2024)}]{bommala2024}
 {\sc Bommala, H.} {\sc et\ al.}
@@ -157,17 +175,18 @@
 \newblock Machine learning mastery.
 \newblock s.f.
 
-\bibitem[{Böer(2023)}]{comparisonAutoMLServices}
-{\sc Böer, J.}
-\newblock Self-service ai for everyone? a comparison of automl services.
-\newblock 2023.
-
 \bibitem[{Campbell et\ al.(2002)Campbell, Hoane~Jr. y
   Hsu}]{Campbell2002DeepBlue}
 {\sc Campbell, M.}, {\sc Hoane~Jr., A.~J.} y {\sc Hsu, F.-h.}
 \newblock {Deep Blue}.
 \newblock {\em {Artificial Intelligence}\/}, vol. 134(1-2), p\'aginas 57--83,
   2002.
+
+\bibitem[{{Canonical Ltd.}(2026)}]{canonical2026microcloud}
+{\sc {Canonical Ltd.}}
+\newblock Microcloud: Your open source cloud platform.
+\newblock 2026.
+\newblock 2026-09-01.
 
 \bibitem[{Carsaniga et\ al.(2022)Carsaniga, Dogger y
   Regeczi}]{UseCaseObservatory2022V1}
@@ -196,20 +215,21 @@
 \newblock clouding.io, infraestructura cloud a tu servicio.
 \newblock s.f.
 
-\bibitem[{{Comisión Nacional de los Mercados y la
+\bibitem[{{Comisi{\'{o}}n Nacional de los Mercados y la
   Competencia}(2026)}]{CNMC2026Informe}
-{\sc {Comisión Nacional de los Mercados y la Competencia}}.
-\newblock Informe económico sectorial de telecomunicaciones y audiovisual
+{\sc {Comisi{\'{o}}n Nacional de los Mercados y la Competencia}}.
+\newblock Informe econ{\'{o}}mico sectorial de telecomunicaciones y audiovisual
   2025.
 \newblock 2026.
 
-\bibitem[{Concepción De~Linares(2025{\natexlab{a}})}]{OpenFoodFactsDataAPP}
-{\sc Concepción De~Linares, J.~B.}
+\bibitem[{Concepci{\'{o}}n
+  De~Linares(2025{\natexlab{a}})}]{OpenFoodFactsDataAPP}
+{\sc Concepci{\'{o}}n De~Linares, J.~B.}
 \newblock Open food facts.
 \newblock 2025{\natexlab{a}}.
 
-\bibitem[{Concepción De~Linares(2025{\natexlab{b}})}]{PlanttesDataAPP}
-{\sc Concepción De~Linares, J.~B.}
+\bibitem[{Concepci{\'{o}}n De~Linares(2025{\natexlab{b}})}]{PlanttesDataAPP}
+{\sc Concepci{\'{o}}n De~Linares, J.~B.}
 \newblock Planttes.
 \newblock 2025{\natexlab{b}}.
 
@@ -226,7 +246,7 @@
 
 \bibitem[{Cornella(2000)}]{Infoxicacion}
 {\sc Cornella, A.}
-\newblock Conferencia - cómo sobrevivir a la infoxicación.
+\newblock Conferencia - c{\'{o}}mo sobrevivir a la infoxicaci{\'{o}}n.
 \newblock 2000.
 
 \bibitem[{{Danysoft}(s.f.)}]{12Botnets}
@@ -235,15 +255,15 @@
 \newblock s.f.
 
 \bibitem[{de~Datos Abiertos del Gobierno~de
-  España(2021)}]{Gob_metodologia_Dama}
-{\sc de~Datos Abiertos del Gobierno~de España, P.}
-\newblock El potencial uso de la metodología de dama en la gestión de los
-  datos abiertos.
+  Espa{\~{n}}a(2021)}]{Gob_metodologia_Dama}
+{\sc de~Datos Abiertos del Gobierno~de Espa{\~{n}}a, P.}
+\newblock El potencial uso de la metodolog{\'{i}}a de dama en la gesti{\'{o}}n
+  de los datos abiertos.
 \newblock 2021.
 
-\bibitem[{{Esri España}(2025)}]{PortalEsriEspanna}
-{\sc {Esri España}}.
-\newblock Portal de datos abiertos de esri españa.
+\bibitem[{{Esri Espa{\~{n}}a}(2025)}]{PortalEsriEspanna}
+{\sc {Esri Espa{\~{n}}a}}.
+\newblock Portal de datos abiertos de esri espa{\~{n}}a.
 \newblock 2025.
 
 \bibitem[{{Estado de California}(2018)}]{webCCPA2018California}
@@ -292,9 +312,10 @@
 \bibitem[{Ferrer-Sapena et\ al.(2011)Ferrer-Sapena, Peset y
   Aleixandre-Benavent}]{OperGovernment2011}
 {\sc Ferrer-Sapena, A.}, {\sc Peset, F.} y {\sc Aleixandre-Benavent, R.}
-\newblock Acceso a los datos públicos y su reutilización: Open data y open
-  government.
-\newblock {\em El Profesional de la Información\/}, p\'aginas 260--269, 2011.
+\newblock Acceso a los datos p{\'{u}}blicos y su reutilizaci{\'{o}}n: Open data
+  y open government.
+\newblock {\em El Profesional de la Informaci{\'{o}}n\/}, p\'aginas 260--269,
+  2011.
 
 \bibitem[{Feurer et\ al.(2020)Feurer, Eggensperger, Falkner, Lindauer y
   Hutter}]{AutoSklearnAutoML}
@@ -317,18 +338,18 @@
 \newblock 2026.
 
 \bibitem[{Gabriel et\ al.(2024)Gabriel, Manzini, Keeling, Hendricks, Rieser,
-  Iqbal, Tomašev, Ktena, Kenton, Rodriguez, El-Sayed, Brown, Akbulut, Trask,
-  Hughes, Bergman, Shelby, Marchal, Griffin, Mateos-Garcia, Weidinger, Street,
-  Lange, Ingerman, Lentz, Enger, Barakat, Krakovna, Siy, Kurth-Nelson,
+  Iqbal, Toma{\v{s}}ev, Ktena, Kenton, Rodriguez, El-Sayed, Brown, Akbulut,
+  Trask, Hughes, Bergman, Shelby, Marchal, Griffin, Mateos-Garcia, Weidinger,
+  Street, Lange, Ingerman, Lentz, Enger, Barakat, Krakovna, Siy, Kurth-Nelson,
   McCroskery, Bolina, Law, Shanahan, Alberts, Balle, de~Haas, Ibitoye, Dafoe,
   Goldberg, Krier, Reese, Witherspoon, Hawkins, Rauh, Wallace, Franklin,
   Goldstein, Lehman, Klenk, Vallor, Biles, Morris, King, y~Arcas, Isaac y
   Manyika}]{gabriel2024ethicsadvancedaiassistants}
 {\sc Gabriel, I.}, {\sc Manzini, A.}, {\sc Keeling, G.}, {\sc Hendricks,
-  L.~A.}, {\sc Rieser, V.}, {\sc Iqbal, H.}, {\sc Tomašev, N.}, {\sc Ktena,
-  I.}, {\sc Kenton, Z.}, {\sc Rodriguez, M.}, {\sc El-Sayed, S.}, {\sc Brown,
-  S.}, {\sc Akbulut, C.}, {\sc Trask, A.}, {\sc Hughes, E.}, {\sc Bergman,
-  A.~S.}, {\sc Shelby, R.}, {\sc Marchal, N.}, {\sc Griffin, C.}, {\sc
+  L.~A.}, {\sc Rieser, V.}, {\sc Iqbal, H.}, {\sc Toma{\v{s}}ev, N.}, {\sc
+  Ktena, I.}, {\sc Kenton, Z.}, {\sc Rodriguez, M.}, {\sc El-Sayed, S.}, {\sc
+  Brown, S.}, {\sc Akbulut, C.}, {\sc Trask, A.}, {\sc Hughes, E.}, {\sc
+  Bergman, A.~S.}, {\sc Shelby, R.}, {\sc Marchal, N.}, {\sc Griffin, C.}, {\sc
   Mateos-Garcia, J.}, {\sc Weidinger, L.}, {\sc Street, W.}, {\sc Lange, B.},
   {\sc Ingerman, A.}, {\sc Lentz, A.}, {\sc Enger, R.}, {\sc Barakat, A.}, {\sc
   Krakovna, V.}, {\sc Siy, J.~O.}, {\sc Kurth-Nelson, Z.}, {\sc McCroskery,
@@ -357,40 +378,42 @@
 \newblock Nextcloud - your own private cloud.
 \newblock s.f.
 
-\bibitem[{{Gobierno de España}(2021{\natexlab{a}})}]{GobEspana2021BDTI}
-{\sc {Gobierno de España}}.
+\bibitem[{{Gobierno de Espa{\~{n}}a}(2021{\natexlab{a}})}]{GobEspana2021BDTI}
+{\sc {Gobierno de Espa{\~{n}}a}}.
 \newblock Big data test infrastructure: Un entorno gratuito para que las aa.pp
   experimenten con sus datos abiertos.
 \newblock 2021{\natexlab{a}}.
 
 \bibitem[{{Gobierno de
-  España}(2021{\natexlab{b}})}]{GobEspana2021PlanDigitalizacion}
-{\sc {Gobierno de España}}.
-\newblock Plan de digitalización de las administraciones públicas 2021-2025.
+  Espa{\~{n}}a}(2021{\natexlab{b}})}]{GobEspana2021PlanDigitalizacion}
+{\sc {Gobierno de Espa{\~{n}}a}}.
+\newblock Plan de digitalizaci{\'{o}}n de las administraciones p{\'{u}}blicas
+  2021-2025.
 \newblock 2021{\natexlab{b}}.
 
-\bibitem[{{Gobierno de España}(2025{\natexlab{a}})}]{EventosDatathonGOB}
-{\sc {Gobierno de España}}.
-\newblock Eventos datathon gobierno de españa.
+\bibitem[{{Gobierno de Espa{\~{n}}a}(2025{\natexlab{a}})}]{EventosDatathonGOB}
+{\sc {Gobierno de Espa{\~{n}}a}}.
+\newblock Eventos datathon gobierno de espa{\~{n}}a.
 \newblock 2025{\natexlab{a}}.
 
-\bibitem[{{Gobierno de España}(2025{\natexlab{b}})}]{EventosDatosAbiertosGOB}
-{\sc {Gobierno de España}}.
-\newblock Eventos datos abiertos gobierno de españa.
+\bibitem[{{Gobierno de
+  Espa{\~{n}}a}(2025{\natexlab{b}})}]{EventosDatosAbiertosGOB}
+{\sc {Gobierno de Espa{\~{n}}a}}.
+\newblock Eventos datos abiertos gobierno de espa{\~{n}}a.
 \newblock 2025{\natexlab{b}}.
 
-\bibitem[{{Gobierno de España}(2025{\natexlab{c}})}]{PortalDatosGob}
-{\sc {Gobierno de España}}.
+\bibitem[{{Gobierno de Espa{\~{n}}a}(2025{\natexlab{c}})}]{PortalDatosGob}
+{\sc {Gobierno de Espa{\~{n}}a}}.
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{c}}.
 
-\bibitem[{{Gobierno de España}(s.f.{\natexlab{a}})}]{InfoNubeSARA}
-{\sc {Gobierno de España}}.
+\bibitem[{{Gobierno de Espa{\~{n}}a}(s.f.{\natexlab{a}})}]{InfoNubeSARA}
+{\sc {Gobierno de Espa{\~{n}}a}}.
 \newblock Nubesara.
 \newblock s.f.{\natexlab{a}}.
 
-\bibitem[{{Gobierno de España}(s.f.{\natexlab{b}})}]{PreciosNubeSARA}
-{\sc {Gobierno de España}}.
+\bibitem[{{Gobierno de Espa{\~{n}}a}(s.f.{\natexlab{b}})}]{PreciosNubeSARA}
+{\sc {Gobierno de Espa{\~{n}}a}}.
 \newblock Plan de precios de nubesara.
 \newblock s.f.{\natexlab{b}}.
 
@@ -398,6 +421,21 @@
 {\sc {Golem Network}}.
 \newblock Golem network.
 \newblock s.f.
+
+\bibitem[{G{\'{o}}mez-Obreg{\'{o}}n(2025{\natexlab{a}})}]{JaimeGomezObregon}
+{\sc G{\'{o}}mez-Obreg{\'{o}}n, J.}
+\newblock Jaime g{\'{o}}mez-obreg{\'{o}}n.
+\newblock 2025{\natexlab{a}}.
+
+\bibitem[{G{\'{o}}mez-Obreg{\'{o}}n(2025{\natexlab{b}})}]{JaimeGomezObregonDonacion}
+{\sc G{\'{o}}mez-Obreg{\'{o}}n, J.}
+\newblock La donaci{\'{o}}n - jaime g{\'{o}}mez-obreg{\'{o}}n.
+\newblock 2025{\natexlab{b}}.
+
+\bibitem[{G{\'{o}}mez-Obreg{\'{o}}n(2025{\natexlab{c}})}]{JaimeGomezObregonSubvenciones}
+{\sc G{\'{o}}mez-Obreg{\'{o}}n, J.}
+\newblock Subvenciones - jaime g{\'{o}}mez-obreg{\'{o}}n.
+\newblock 2025{\natexlab{c}}.
 
 \bibitem[{Google(2025{\natexlab{a}})}]{googleDataCommon}
 {\sc Google}.
@@ -421,22 +459,23 @@
 
 \bibitem[{{Google Cloud}(s.f.)}]{distributedGCP}
 {\sc {Google Cloud}}.
-\newblock Amplía la infraestructura y la ia de google cloud on-premise.
+\newblock Ampl{\'{i}}a la infraestructura y la ia de google cloud on-premise.
 \newblock s.f.
 
 \bibitem[{{Google Cloud Platform}(2026{\natexlab{a}})}]{GCP2026Signup}
 {\sc {Google Cloud Platform}}.
-\newblock {Creación de cuenta en Google Cloud Console}.
+\newblock {Creaci{\'{o}}n de cuenta en Google Cloud Console}.
 \newblock 2026{\natexlab{a}}.
 
 \bibitem[{{Google Cloud Platform}(2026{\natexlab{b}})}]{GCP2026Docuementacion}
 {\sc {Google Cloud Platform}}.
-\newblock {Documentacion general de GCP}.
+\newblock {Documentaci{\'{o}}n general de GCP}.
 \newblock 2026{\natexlab{b}}.
 
 \bibitem[{{Google Cloud Platform}(2026{\natexlab{c}})}]{GCP2026Tutorial}
 {\sc {Google Cloud Platform}}.
-\newblock {Tutorial de GCP: Creación y activación de una cuenta de GCP}.
+\newblock {Tutorial de GCP: Creaci{\'{o}}n y activaci{\'{o}}n de una cuenta de
+  GCP}.
 \newblock 2026{\natexlab{c}}.
 
 \bibitem[{{Google Trends}(2025)}]{TrendsGoogleIA2025}
@@ -445,34 +484,21 @@
 \newblock 2025.
 \newblock Se puede observar un pico en 2011, posiblemente por la salida de
   Siri, y la tendencia creciente desde 2022 debido a chatGPT. Las cifras
-  representan el interés de búsqueda en relación con el punto más alto del
-  gráfico para la región y el momento determinados. Un valor de 100 es el
-  pico de popularidad del término. Un valor de 50 significa que el término es
-  la mitad de popular. Una puntuación de 0 significa que no había datos
-  suficientes para este término.
-
-\bibitem[{Gómez-Obregón(2025{\natexlab{a}})}]{JaimeGomezObregon}
-{\sc Gómez-Obregón, J.}
-\newblock Jaime gómez-obregón.
-\newblock 2025{\natexlab{a}}.
-
-\bibitem[{Gómez-Obregón(2025{\natexlab{b}})}]{JaimeGomezObregonDonacion}
-{\sc Gómez-Obregón, J.}
-\newblock La donación - jaime gómez-obregón.
-\newblock 2025{\natexlab{b}}.
-
-\bibitem[{Gómez-Obregón(2025{\natexlab{c}})}]{JaimeGomezObregonSubvenciones}
-{\sc Gómez-Obregón, J.}
-\newblock Subvenciones - jaime gómez-obregón.
-\newblock 2025{\natexlab{c}}.
+  representan el inter{\'{e}}s de b{\'{u}}squeda en relaci{\'{o}}n con el punto
+  m{\'{a}}s alto del gr{\'{a}}fico para la regi{\'{o}}n y el momento
+  determinados. Un valor de 100 es el pico de popularidad del t{\'{e}}rmino. Un
+  valor de 50 significa que el t{\'{e}}rmino es la mitad de popular. Una
+  puntuaci{\'{o}}n de 0 significa que no hab{\'{i}}a datos suficientes para
+  este t{\'{e}}rmino.
 
 \bibitem[{Herrera~Capriz(2024)}]{HerreraCapriz2024}
 {\sc Herrera~Capriz, M.~E.}
-\newblock El valor intangible de la transparencia: un análisis de los datos
-  abiertos de españa en el marco de la corriente "valor público".
+\newblock El valor intangible de la transparencia: un an{\'{a}}lisis de los
+  datos abiertos de espa{\~{n}}a en el marco de la corriente ``valor
+  p{\'{u}}blico''.
 \newblock 2024.
-\newblock Tesis inédita de la Universidad Complutense de Madrid, Facultad de
-  Ciencias de la Información, leída el 08/05/2024.
+\newblock Tesis in{\'{e}}dita de la Universidad Complutense de Madrid, Facultad
+  de Ciencias de la Informaci{\'{o}}n, le{\'{i}}da el 08/05/2024.
 
 \bibitem[{Hopfield(1984)}]{Hopfield1984RNN}
 {\sc Hopfield, J.~J.}
@@ -493,10 +519,10 @@
 \newblock huggingface spaces.
 \newblock 2025.
 
-\bibitem[{{Instituto Nacional de Estadística}(2025)}]{INE2025TIC}
-{\sc {Instituto Nacional de Estadística}}.
-\newblock Encuesta sobre el uso de tic y del comercio electrónico en las
-  empresas. año 2024 - primer trimestre 2025.
+\bibitem[{{Instituto Nacional de Estad{\'{i}}stica}(2025)}]{INE2025TIC}
+{\sc {Instituto Nacional de Estad{\'{i}}stica}}.
+\newblock Encuesta sobre el uso de tic y del comercio electr{\'{o}}nico en las
+  empresas. a{\~{n}}o 2024 - primer trimestre 2025.
 \newblock 2025.
 
 \bibitem[{Jiang et\ al.(2024)Jiang, Sablayrolles, Roux, Mensch, Savary,
@@ -521,12 +547,12 @@
 
 \bibitem[{Jorge y Herrera(2023)}]{TransparenciaMexico}
 {\sc Jorge, R.} y {\sc Herrera, R.}
-\newblock Aumenta la negativa a abrir datos públicos: Informa inai tendencia
-  de 4t a opacidad. llama presidenta a ciudadanos a iniciar defensa de ente
-  autónomo.
+\newblock Aumenta la negativa a abrir datos p{\'{u}}blicos: Informa inai
+  tendencia de 4t a opacidad. llama presidenta a ciudadanos a iniciar defensa
+  de ente aut{\'{o}}nomo.
 \newblock 2023.
 \newblock Copyright - Copyright Editora El Sol, S.A. de C.V. Mar 24, 2023;
-  Última actualización - 2023-03-24.
+  {\'{U}}ltima actualizaci{\'{o}}n - 2023-03-24.
 
 \bibitem[{Kaggle(2025{\natexlab{a}})}]{Kaggle_CloudIA}
 {\sc Kaggle}.
@@ -544,9 +570,9 @@
 \newblock {\em International Journal of Engineering and Advanced Technology
   (IJEAT) Volume-9 Issue-1\/}, 2019.
 
-\bibitem[{Kreuzberger et\ al.(2023)Kreuzberger, Kühl y
+\bibitem[{Kreuzberger et\ al.(2023)Kreuzberger, K{\"{u}}hl y
   Hirschl}]{Kreuzberger2023MLOps}
-{\sc Kreuzberger, D.}, {\sc Kühl, N.} y {\sc Hirschl, S.}
+{\sc Kreuzberger, D.}, {\sc K{\"{u}}hl, N.} y {\sc Hirschl, S.}
 \newblock Machine learning operations (mlops): Overview, definition, and
   architecture.
 \newblock {\em IEEE Access\/}, vol.\ 11, p\'aginas 31866--31879, 2023.
@@ -563,12 +589,12 @@
 \newblock A state-of-the-art review in big data management engineering:
   Real-life case studies, challenges, and future research directions.
 \newblock {\em Eng\/}, vol.\ 5(3), p\'agina 1266, 2024.
-\newblock Copyright - © 2024 by the authors. Licensee MDPI, Basel,
+\newblock Copyright - {\copyright} 2024 by the authors. Licensee MDPI, Basel,
   Switzerland. This article is an open access article distributed under the
   terms and conditions of the Creative Commons Attribution (CC BY) license
   (https://creativecommons.org/licenses/by/4.0/). Notwithstanding the ProQuest
   Terms and Conditions, you may use this content in accordance with the terms
-  of the License; Última actualización - 2024-09-27.
+  of the License; {\'{U}}ltima actualizaci{\'{o}}n - 2024-09-27.
 
 \bibitem[{Lisdorf(2021)}]{lisdorf2021cloud}
 {\sc Lisdorf, A.}
@@ -577,24 +603,23 @@
 \newblock ISBN 978-1-4842-6921-3.
 \newblock Accessed: 2025-08-27.
 
-\bibitem[{LLamocca~Portela(2016)}]{LLamoccaPortela2016Integracion}
-{\sc LLamocca~Portela, P.}
-\newblock Integración y visualización de datos abiertos medioambientales.
+\bibitem[{Liu et\ al.(2025)Liu, Li, Zhan, Ma y He}]{urbanthermal2025}
+{\sc Liu, H.}, {\sc Li, M.}, {\sc Zhan, Q.}, {\sc Ma, Z.} y {\sc He, B.-J.}
+\newblock Homogeneity and heterogeneity of diurnal and nocturnal hotspots and
+  the implications for synergetic mitigation in heat-resilient urban planning.
+\newblock {\em Computers Environment and Urban Systems\/}, 2025.
+
+\bibitem[{Llamocca~Portela(2016)}]{LLamoccaPortela2016Integracion}
+{\sc Llamocca~Portela, P.}
+\newblock Integraci{\'{o}}n y visualizaci{\'{o}}n de datos abiertos
+  medioambientales.
 \newblock 2016.
-\newblock Máster en Ingeniería Informática, curso 2015-2016.
+\newblock M{\'{a}}ster en Ingenier{\'{i}}a Inform{\'{a}}tica, curso 2015-2016.
 
 \bibitem[{{LLM Stats}(s.f.)}]{LLMLeaderboardParameters}
 {\sc {LLM Stats}}.
 \newblock Llm leaderboard.
 \newblock s.f.
-
-\bibitem[{MacQueen(1967)}]{macqueen1967classificationKMeans}
-{\sc MacQueen, J.~B.}
-\newblock Some methods for classification and analysis of multivariate
-  observations.
-\newblock En {\em Proceedings of the Fifth Berkeley Symposium on Mathematical
-  Statistics and Probability\/}, vol.\ 1, p\'aginas 281--297. University of
-  California Press, 1967.
 
 \bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
 {\sc Matheus, R.} y {\sc Janssen, M.}
@@ -605,18 +630,18 @@
 
 \bibitem[{Melendrez~Moreto(2016)}]{MelendrezMoreto2016Auditoria}
 {\sc Melendrez~Moreto, I.}
-\newblock Auditoría y metodología de implantación de open data para smart
-  cities.
+\newblock Auditor{\'{i}}a y metodolog{\'{i}}a de implantaci{\'{o}}n de open
+  data para smart cities.
 \newblock 2016.
-\newblock Máster en Ingeniería Informática, curso 2015-2016, a destacar:
-  gran compilacion de datasets, conceptos interesantes como cinco estrellas del
-  Open Data, manual de CKAN.
+\newblock M{\'{a}}ster en Ingenier{\'{i}}a Inform{\'{a}}tica, curso 2015-2016,
+  a destacar: gran compilaci{\'{o}}n de datasets, conceptos interesantes como
+  cinco estrellas del Open Data, manual de CKAN.
 
-\bibitem[{Meneses~Vicente y García~Ruíz(2023)}]{Meneses2023Madrid}
-{\sc Meneses~Vicente, G.} y {\sc García~Ruíz, J.~F.}
+\bibitem[{Meneses~Vicente y Garc{\'{i}}a~Ru{\'{i}}z(2023)}]{Meneses2023Madrid}
+{\sc Meneses~Vicente, G.} y {\sc Garc{\'{i}}a~Ru{\'{i}}z, J.~F.}
 \newblock Madrid, isla de calor.
 \newblock 2023.
-\newblock Trabajo de Fin de Master en Ingeniería Informática.
+\newblock Trabajo de Fin de M{\'{a}}ster en Ingenier{\'{i}}a Inform{\'{a}}tica.
 
 \bibitem[{Meynhardt(2009)}]{Meynhardt19032009}
 {\sc Meynhardt, T.}
@@ -634,14 +659,14 @@
 \newblock Cloud computing terminology.
 \newblock s.f.{\natexlab{a}}.
 
-\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{MedallionMicrosoft}
+\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{TokenizacionMicrosoft}
 {\sc Microsoft}.
-\newblock What is the medallion lakehouse architecture?
+\newblock ¿qu{\'{e}} es la tokenizaci{\'{o}}n?
 \newblock s.f.{\natexlab{b}}.
 
-\bibitem[{Microsoft(s.f.{\natexlab{c}})}]{TokenizacionMicrosoft}
+\bibitem[{Microsoft(s.f.{\natexlab{c}})}]{MedallionMicrosoft}
 {\sc Microsoft}.
-\newblock ¿qué es la tokenización?
+\newblock What is the medallion lakehouse architecture?
 \newblock s.f.{\natexlab{c}}.
 
 \bibitem[{Moore(1995)}]{moore1995creating}
@@ -649,10 +674,12 @@
 \newblock Creating public value: Strategic management in government.
 \newblock 1995.
 
-\bibitem[{Mosqueira-Rey et\ al.(2023)Mosqueira-Rey, Hernández-Pereira,
-  Alonso-Ríos, Bobes-Bascarán y Ángel Fernández-Leal}]{MosqueiraRey2023}
-{\sc Mosqueira-Rey, E.}, {\sc Hernández-Pereira, E.}, {\sc Alonso-Ríos, D.},
-  {\sc Bobes-Bascarán, J.} y {\sc Ángel Fernández-Leal}.
+\bibitem[{Mosqueira-Rey et\ al.(2023)Mosqueira-Rey, Hern{\'{a}}ndez-Pereira,
+  Alonso-R{\'{i}}os, Bobes-Bascar{\'{a}}n y
+  Fern{\'{a}}ndez-Leal}]{MosqueiraRey2023}
+{\sc Mosqueira-Rey, E.}, {\sc Hern{\'{a}}ndez-Pereira, E.}, {\sc
+  Alonso-R{\'{i}}os, D.}, {\sc Bobes-Bascar{\'{a}}n, J.} y {\sc
+  Fern{\'{a}}ndez-Leal, {\'{A}}.}
 \newblock Human-in-the-loop machine learning: a state of the art.
 \newblock {\em Artificial Intelligence Review\/}, vol.\ 56(4), p\'aginas
   3005--3054, 2023.
@@ -661,8 +688,8 @@
 \bibitem[{Nigro(2022)}]{nigro2022}
 {\sc Nigro, H.}
 \newblock Cloud computing: Retos y oportunidades.
-\newblock {\em Rev. Ingeniería, Matemáticas y Ciencias de la Información\/},
-  vol.\ 9(18), p\'aginas 11--16, 2022.
+\newblock {\em Rev. Ingenier{\'{i}}a, Matem{\'{a}}ticas y Ciencias de la
+  Informaci{\'{o}}n\/}, vol.\ 9(18), p\'aginas 11--16, 2022.
 
 \bibitem[{Nijssen(2022)}]{UseCaseObservatory2024V2}
 {\sc Nijssen, D.}
@@ -678,11 +705,16 @@
 \newblock {\em Proceedings of the 19th International Conference on World Wide
   Web, WWW '10\/}, p\'aginas 741--750, 2010.
 
-\bibitem[{{Observatorio Nacional de Tecnología y
+\bibitem[{{NumPy developers}(2026)}]{NumPy2026}
+{\sc {NumPy developers}}.
+\newblock Numpy documentation.
+\newblock 2026.
+
+\bibitem[{{Observatorio Nacional de Tecnolog{\'{i}}a y
   Sociedad}(2025)}]{ontsi2025indicadores}
-{\sc {Observatorio Nacional de Tecnología y Sociedad}}.
+{\sc {Observatorio Nacional de Tecnolog{\'{i}}a y Sociedad}}.
 \newblock Indicadores de uso de inteligencia artificial en las empresas
-  españolas. edición 2025 - datos 2024.
+  espa{\~{n}}olas. edici{\'{o}}n 2025 - datos 2024.
 \newblock 2025.
 \newblock NIPO: 230250053, DOI: 10.30923/230250053.
 
@@ -700,7 +732,7 @@
 
 \bibitem[{{Open Data Charter}(s.f.)}]{Open_Data_Charter}
 {\sc {Open Data Charter}}.
-\newblock ¿qué son los datos abiertos?
+\newblock ¿qu{\'{e}} son los datos abiertos?
 \newblock s.f.
 
 \bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
@@ -712,13 +744,18 @@
 {\sc {Open Knowledge Foundation}}.
 \newblock Ckan 2.9 api guide: Action api and \texttt{package\_show}.
 \newblock 2026{\natexlab{a}}.
-\newblock Documentación oficial de CKAN, versión 2.9.11.
+\newblock Documentaci{\'{o}}n oficial de CKAN, versi{\'{o}}n 2.9.11.
 
 \bibitem[{{Open Knowledge Foundation}(2026{\natexlab{b}})}]{CKAN2024Software}
 {\sc {Open Knowledge Foundation}}.
 \newblock Ckan: open-source data management system.
 \newblock 2026{\natexlab{b}}.
 \newblock Plataforma sobre la que opera el Portal de Datos Abiertos de Madrid.
+
+\bibitem[{{openpyxl developers}(2026)}]{Openpyxl2026}
+{\sc {openpyxl developers}}.
+\newblock openpyxl - a python library to read/write excel 2010 xlsx/xlsm files.
+\newblock 2026.
 
 \bibitem[{ovhcloud(2025)}]{OVHcloud_CloudIA}
 {\sc ovhcloud}.
@@ -735,22 +772,23 @@
 \newblock Big data statistics 2025 by patterns in the dimensions.
 \newblock 2025.
 
-\bibitem[{Sánchez~de Paz(2023)}]{sanchez2023optimizacion}
-{\sc Sánchez~de Paz, M.}
-\newblock Optimización de infraestructuras de cloud computing basadas en
-  máquinas virtuales.
+\bibitem[{S{\'{a}}nchez~de Paz(2023)}]{sanchez2023optimizacion}
+{\sc S{\'{a}}nchez~de Paz, M.}
+\newblock Optimizaci{\'{o}}n de infraestructuras de cloud computing basadas en
+  m{\'{a}}quinas virtuales.
 \newblock 2023.
-\newblock Trabajo de Fin de Máster en Ingeniería Informática, Curso
-  2022/2023.
+\newblock Trabajo de Fin de M{\'{a}}ster en Ingenier{\'{i}}a Inform{\'{a}}tica,
+  Curso 2022/2023.
 
 \bibitem[{{Portal Europeo de Datos}(2025)}]{dataEuropaOpenData}
 {\sc {Portal Europeo de Datos}}.
-\newblock ¿qué son los datos abiertos?
+\newblock ¿qu{\'{e}} son los datos abiertos?
 \newblock 2025.
 
 \bibitem[{PreparaTIC(s.f.)}]{InfoPreparaTICNubeSARA}
 {\sc PreparaTIC}.
-\newblock Servicio nubesara. casos prÁcticos y ejemplos de aplicaciÓn.
+\newblock Servicio nubesara. casos pr{\'{a}}cticos y ejemplos de
+  aplicaci{\'{o}}n.
 \newblock s.f.
 
 \bibitem[{Press(2013)}]{HistoryOfBigData}
@@ -763,13 +801,14 @@
 \newblock What is mydoom malware?
 \newblock s.f.
 
-\bibitem[{Ramos-Simón(2017)}]{LicenciasLibres2017Datos}
-{\sc Ramos-Simón, L.~F.}
-\newblock El uso de las licencias libres en los datos públicos abiertos.
-\newblock {\em Revista Espanola de Documentacion Cientifica\/}, vol.\ 40(3),
-  p\'aginas 1--16, 2017.
+\bibitem[{Ramos-Sim{\'{o}}n(2017)}]{LicenciasLibres2017Datos}
+{\sc Ramos-Sim{\'{o}}n, L.~F.}
+\newblock El uso de las licencias libres en los datos p{\'{u}}blicos abiertos.
+\newblock {\em Revista Espa{\~{n}}ola de Documentaci{\'{o}}n
+  Cient{\'{i}}fica\/}, vol.\ 40(3), p\'aginas 1--16, 2017.
 \newblock Copyright - Copyright Consejo Superior de Investigaciones
-  Científicas Jul/Sep 2017; Última actualización - 2017-10-04.
+  Cient{\'{i}}ficas Jul/Sep 2017; {\'{U}}ltima actualizaci{\'{o}}n -
+  2017-10-04.
 
 \bibitem[{Ray(2018)}]{DewComputing2018}
 {\sc Ray, P.~P.}
@@ -777,15 +816,20 @@
   implications.
 \newblock {\em IEEE Access\/}, vol.\ 6, p\'aginas 723--737, 2018.
 
-\bibitem[{{Registradores de España}(2025)}]{PortalRegistradores}
-{\sc {Registradores de España}}.
-\newblock Portal de datos abiertos de los registradores de españa.
+\bibitem[{{Registradores de Espa{\~{n}}a}(2025)}]{PortalRegistradores}
+{\sc {Registradores de Espa{\~{n}}a}}.
+\newblock Portal de datos abiertos de los registradores de espa{\~{n}}a.
 \newblock 2025.
 
 \bibitem[{{Render Network}(s.f.)}]{rendernetwork}
 {\sc {Render Network}}.
 \newblock The distributed gpu render network.
 \newblock s.f.
+
+\bibitem[{{Requests project}(2026)}]{Requests2026}
+{\sc {Requests project}}.
+\newblock Requests: Http for humans.
+\newblock 2026.
 
 \bibitem[{R.I.Pienaar(2025)}]{free-for-dev}
 {\sc R.I.Pienaar}.
@@ -810,9 +854,9 @@
 
 \bibitem[{Santos(2023)}]{SaizSantos2023}
 {\sc Santos, J.~S.}
-\newblock Análisis de datos de la ciudad de madrid.
+\newblock An{\'{a}}lisis de datos de la ciudad de madrid.
 \newblock 2023.
-\newblock Trabajo de Fin de Grado en Ingeniería Informática.
+\newblock Trabajo de Fin de Grado en Ingenier{\'{i}}a Inform{\'{a}}tica.
 
 \bibitem[{Sapkota et\ al.(2025)Sapkota, Roumeliotis y
   Karkee}]{Sapkota2025Agentic}
@@ -867,10 +911,15 @@
 \newblock Big data - statistics and facts.
 \newblock 2025.
 
-\bibitem[{Telefónica(s.f.)}]{TelefonicaTechCloudPlatform}
-{\sc Telefónica}.
-\newblock Telefónica tech cloud platform.
+\bibitem[{Telef{\'{o}}nica(s.f.)}]{TelefonicaTechCloudPlatform}
+{\sc Telef{\'{o}}nica}.
+\newblock Telef{\'{o}}nica tech cloud platform.
 \newblock s.f.
+
+\bibitem[{{The Matplotlib development team}(2026)}]{Matplotlib2026}
+{\sc {The Matplotlib development team}}.
+\newblock Matplotlib documentation.
+\newblock 2026.
 
 \bibitem[{{The pandas development team}(2026)}]{Pandas2026}
 {\sc {The pandas development team}}.
@@ -882,12 +931,13 @@
 \newblock Scipy: Hierarchical clustering.
 \newblock 2026.
 
-\bibitem[{De~la Torre y Núñez(2023)}]{TransparenciaEcuador}
-{\sc De~la Torre, S.} y {\sc Núñez, S.}
-\newblock Transparencia en la administración pública municipal del ecuador.
-\newblock {\em Estudios de la Gestión\/}, (14), p\'aginas 53--73, 2023.
-\newblock Copyright - Copyright null 2023; Última actualización - 2024-12-12;
-  SubjectsTermNotLitGenreText - Ecuador.
+\bibitem[{De~la Torre y N{\'{u}}{\~{n}}ez(2023)}]{TransparenciaEcuador}
+{\sc De~la Torre, S.} y {\sc N{\'{u}}{\~{n}}ez, S.}
+\newblock Transparencia en la administraci{\'{o}}n p{\'{u}}blica municipal del
+  ecuador.
+\newblock {\em Estudios de la Gesti{\'{o}}n\/}, (14), p\'aginas 53--73, 2023.
+\newblock Copyright - Copyright null 2023; {\'{U}}ltima actualizaci{\'{o}}n -
+  2024-12-12; SubjectsTermNotLitGenreText - Ecuador.
 
 \bibitem[{{Union Europea}(2016)}]{webRGPD2016Europa}
 {\sc {Union Europea}}.
@@ -896,7 +946,7 @@
 
 \bibitem[{{Union Europea}(2023)}]{webLGD2023Europa}
 {\sc {Union Europea}}.
-\newblock Explicación de la ley de gobernanza de datos.
+\newblock Explicaci{\'{o}}n de la ley de gobernanza de datos.
 \newblock 2023.
 
 \bibitem[{{Union Europea}(2024)}]{webRIA2024Europa}
@@ -916,12 +966,12 @@
 
 \bibitem[{{Union Europea}(2026)}]{omnibus2026Europa}
 {\sc {Union Europea}}.
-\newblock Reglamento Ómnibus digital sobre ia.
+\newblock Reglamento {\'{o}}mnibus digital sobre ia.
 \newblock 2026.
 
 \bibitem[{UniversiDATA(2020)}]{UniversiDATAAnalisis}
 {\sc UniversiDATA}.
-\newblock Análisis de desplazamientos interurbanos en estudiantes.
+\newblock An{\'{a}}lisis de desplazamientos interurbanos en estudiantes.
 \newblock 2020.
 
 \bibitem[{UniversiDATA(2024)}]{UniversiDATADatathon}
@@ -934,8 +984,9 @@
 \newblock Universidata.
 \newblock 2025.
 
-\bibitem[{{Universitat Autònoma de Barcelona}(2025)}]{PortalInfoparticipa}
-{\sc {Universitat Autònoma de Barcelona}}.
+\bibitem[{{Universitat Aut{\`{o}}noma de
+  Barcelona}(2025)}]{PortalInfoparticipa}
+{\sc {Universitat Aut{\`{o}}noma de Barcelona}}.
 \newblock infoparticipa.
 \newblock 2025.
 
@@ -950,10 +1001,11 @@
   opportunities and standards.
 \newblock {\em IEEE Communications Standards Magazine\/}, 2018.
 
-\bibitem[{Valero~Torrijos y Martínez~Gutierrez(2022)}]{DatosAbiertos2022Cloud}
-{\sc Valero~Torrijos, J.} y {\sc Martínez~Gutierrez, R.}
-\newblock {\em DATOS ABIERTOS Y REUTILIZACIÓN DE LA INFORMACIÓN DEL SECTOR
-  PÚBLICO\/}.
+\bibitem[{Valero~Torrijos y
+  Mart{\'{i}}nez~Guti{\'{e}}rrez(2022)}]{DatosAbiertos2022Cloud}
+{\sc Valero~Torrijos, J.} y {\sc Mart{\'{i}}nez~Guti{\'{e}}rrez, R.}
+\newblock {\em {DATOS ABIERTOS Y REUTILIZACI{\'{O}}N DE LA INFORMACI{\'{O}}N
+  DEL SECTOR P{\'{U}}BLICO}\/}.
 \newblock CRC Press, 2022.
 \newblock ISBN 978-84-1369-269-2.
 
@@ -975,10 +1027,10 @@
 \newblock {\em International Journal of Public Administration\/}, p\'agina\ 8,
   2020.
 
-\bibitem[{Vogel et\ al.(2016)Vogel, Griebler, Maron¹, Schepke y
-  Fernandes}]{PrivateIaaSComparative2016}
-{\sc Vogel, A.}, {\sc Griebler, D.}, {\sc Maron¹, C.}, {\sc Schepke, C.} y
-  {\sc Fernandes, L.}
+\bibitem[{Vogel et\ al.(2016)Vogel, Griebler, Maron{\textsuperscript{1}},
+  Schepke y Fernandes}]{PrivateIaaSComparative2016}
+{\sc Vogel, A.}, {\sc Griebler, D.}, {\sc Maron{\textsuperscript{1}}, C.}, {\sc
+  Schepke, C.} y {\sc Fernandes, L.}
 \newblock Private iaas clouds: A comparative analysis of opennebula, cloudstack
   and openstack.
 \newblock p\'aginas 672--679, 2016.
@@ -996,7 +1048,7 @@
 
 \bibitem[{Wikipedia(s.f)}]{MachineLearningMethodsList}
 {\sc Wikipedia}.
-\newblock listo of machine learning methods.
+\newblock List of machine learning methods.
 \newblock s.f.
 
 \end{thebibliography}

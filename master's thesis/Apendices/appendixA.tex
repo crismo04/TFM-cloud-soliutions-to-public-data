@@ -124,7 +124,7 @@ La enumeración de las definiciones es independiente del apartado en el que se e
 		\item Características de la organización.
 		\item Características del uso individual.
 	\end{itemize}
-	Esto genera consecuencias (intencionadas o no) como la rendición de cuentas, la participación cívica, el aumento de la eficiencia o la afectación a la privacidad.
+	Esto genera consecuencias (intencionadas o no) como la rendición de cuentas, la participación cívica, el aumento de la eficiencia o la afectación a la privacidad. \\
 	
 	\item Un \textbf{``Datathon''} \label{def7} \citep{Datathon2016Anslow} es un evento colaborativo o competitivo intensivo centrado en datos, derivado de los términos ``data'' y ``maratón'', donde equipos de expertos y otros individuos se reúnen para analizar grandes volúmenes de estos datos con el fin de encontrar soluciones innovadoras a problemas específicos. Esto va desde desarrollar aplicaciones para sacar partido a estos datos, hasta la optimización de procesos o la creación de modelos predictivos, las posibilidades son amplias.
 	
@@ -233,7 +233,7 @@ La enumeración de las definiciones es independiente del apartado en el que se e
 	
 	\subsection{Referente a Inteligencia Artificial}
 	
-	\item La \textbf{``Historia de la Inteligencia Artificial''} \label{def12} se remonta a hace casi un siglo, con las ideas de matemáticos como Alan Turing, que sentó las bases de la computación y propuso el primer test para evaluar inteligencia artificial \citep{Cheok2023AIHistory}. A partir de ese punto, no han parado de surgir avances en métodos matemáticos y algoritmos impulsando la búsqueda e implementación de modelos prácticos. Hitos como el desarrollo del perceptrón \citep{rosenblatt1958perceptron}, un modelo esencial para las redes neuronales; las cadenas de Markov, usadas como modelos estadísticos (Hidden Markov Model, HMM); o el desarrollo del \textit{backpropagation} que sentó las bases para que el entrenamiento de redes neuronales profundas fuera efectivo \citep{Werbos1974Backpropagation}. 
+	\item La \textbf{``Historia de la Inteligencia Artificial''} \label{def12} se remonta a hace casi un siglo, con las ideas de matemáticos como Alan Turing, que sentó las bases de la computación y propuso el primer test para evaluar Inteligencia Artificial \citep{Cheok2023AIHistory}. A partir de ese punto, no han parado de surgir avances en métodos matemáticos y algoritmos impulsando la búsqueda e implementación de modelos prácticos. Hitos como el desarrollo del perceptrón \citep{rosenblatt1958perceptron}, un modelo esencial para las redes neuronales; las cadenas de Markov, usadas como modelos estadísticos (Hidden Markov Model, HMM); o el desarrollo del \textit{backpropagation} que sentó las bases para que el entrenamiento de redes neuronales profundas fuera efectivo \citep{Werbos1974Backpropagation}. 
 	
 	Los avances, junto con el aumento de la computación siguiendo la ley de Moore, permitieron el surgimiento y aumento de las redes neuronales recurrentes \citep{Hopfield1984RNN}, así como su uso para aplicaciones de procesamiento del lenguaje natural \citep{bengio2003neural}. Otro punto de inflexión lo puso Google con su artículo ``Attention Is All You Need'' \citep{vaswani2017attention}, donde definía que lo único que se necesitaba para procesar secuencias de forma eficaz era un mecanismo de atención, eliminando la necesidad de recurrencia y convoluciones, lo que permitió entrenar modelos más potentes sobre conjuntos de datos masivos, sentando las bases técnicas para los Grandes Modelos de Lenguaje (LLMs) como BERT o la serie GPT (Transformadores Pre-entrenados Generativos). 
 	
@@ -244,7 +244,7 @@ La enumeración de las definiciones es independiente del apartado en el que se e
 	Para facilitar la visualización de esta definición, resumiremos los hitos que consideramos importantes en orden cronológico:
 	\begin{table}[h]
 		\centering
-		\caption{\textbf{Línea de tiempo de la IA}}
+		\caption{Línea de tiempo de la IA}
 		\begin{tabular}{@{}r@{\hspace{1em}}|@{\hspace{1em}}p{11cm}@{}}
 			1936 & \textbf{Turing machines} - Marco teórico para computación \\
 			1950 & \textbf{Turing test} - Primera medida práctica de inteligencia máquina \\
@@ -270,6 +270,7 @@ La enumeración de las definiciones es independiente del apartado en el que se e
 			& \textbf{EU AI Act} - Regulación integral sobre IA \\
 			2025 & \textbf{DeepSeek} - LLM de bajo coste \\
 			& \textbf{IA Agéntica y especializada} - agentes autónomos, tareas específicas \\
+			2026 & \textbf{Fable y Astra} - LLMs capaces de utilizar vulnerabilidades de día 0 y penetrar sistemas como \textit{HuggingFace}.
 		\end{tabular}
 		\footnotesize{Fuente: Adaptación y actualización de \citep{Cheok2023AIHistory}, complementada con información de \citep{Sapkota2025Agentic}, \citep{Bit2BrainHistoriaIA}, \citep{Campbell2002DeepBlue} y las referencias mencionadas en el texto.}
 	\end{table}
@@ -300,7 +301,7 @@ La enumeración de las definiciones es independiente del apartado en el que se e
 		\item \textbf{Aprendizaje por Refuerzo:} se basa en la interacción de un agente con un entorno, aprendiendo mediante recompensas o penalizaciones para optimizar su comportamiento. Se aplica en tareas de automatización compleja y optimización, como robótica o conducción autónoma.
 	\end{itemize}
 	
-	\item \textbf{MLOps} \label{def14} u operaciones de aprendizaje automático, son un conjunto de prácticas y herramientas que busca automatizar y gestionar el ciclo de vida completo de un proyecto de \textit{machine learning}, desde el desarrollo del modelo hasta su despliegue, monitorización y mantenimiento en producción, basándose en principios de DevOps pero adaptados a las particularidades de los sistemas de ML \citep{Kreuzberger2023MLOps}. Los nueve principios son los siguientes:
+	\item \textbf{MLOps} \label{def14} u operaciones de ML, son un conjunto de prácticas y herramientas que busca automatizar y gestionar el ciclo de vida completo de un proyecto de \textit{machine learning}, desde el desarrollo del modelo hasta su despliegue, monitorización y mantenimiento en producción, basándose en principios de DevOps pero adaptados a las particularidades de los sistemas de ML \citep{Kreuzberger2023MLOps}. Los nueve principios son los siguientes:
 	\begin{enumerate}
 		\item \textbf{Automatización CI/CD:} Integración, entrega y despliegue continuos que automatizan el desarrollo, prueba y puesta en producción de los modelos, proporcionando información rápida sobre el éxito o fracaso de cada paso.
 		

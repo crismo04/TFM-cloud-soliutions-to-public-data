@@ -1,6 +1,9 @@
 \chapter{Materiales y métodos}
 \label{cap:MaterialesYmetodos}
 
+\chapterquote{El primer 90\,\% del código consume el primer 90\% del tiempo de desarrollo. El 10\% restante consume el otro 90\% del tiempo.}{Tom Cargill, Laboratorios Bell}
+-
+
 En este capítulo describimos el proceso que se ha seguido en la realización del trabajo, empezando por los materiales: las distintas tecnologías, lenguajes de programación, conjuntos de datos y herramientas utilizados e incluso algunos de los valorados en el \hyperref[cap:estadoDeLaCuestion]{``capítulo \ref*{cap:estadoDeLaCuestion}: Estado de la cuestión''}, pero descartados, así como los motivos para ello.
 
 También se han definido los métodos de desarrollo y el modelo de trabajo utilizados durante el proyecto, y por último se explica cómo se puede utilizar la misma solución para replicar las conclusiones con estos u otros datos.
@@ -65,7 +68,7 @@ Dentro de su catálogo, se emplearon los siguientes servicios gestionados como h
 \subsubsection{Google Cloud Platform}
 \label{subsec:GCP_materiales}
 
-\textbf{Google Cloud Platform (GCP)} es la plataforma de computación en la nube gestionada por Google, que ofrece servicios de infraestructura, almacenamiento, análisis y machine learning, entre muchos otros. Se seleccionó como segunda nube por su programa de créditos gratuitos (300 dólares durante 90 días) y por su enfoque en aprendizaje automático e IA. Los servicios empleados fueron los siguientes:
+\textbf{Google Cloud Platform (GCP)} es la plataforma de computación en la nube gestionada por Google, que ofrece servicios de infraestructura, almacenamiento, análisis y machine learning, entre muchos otros. Se seleccionó como segunda nube por su programa de créditos gratuitos (300 dólares durante 90 días) y por su enfoque en ML e IA. Los servicios empleados fueron los siguientes:
 
 \begin{itemize}
 	\item \textbf{Cloud Storage}: almacenamiento de objetos equivalente a Amazon S3. Se utilizó para alojar las capas \textit{bronze}, \textit{silver} y los resultados, replicando la misma estructura de directorios que en local y en AWS.
@@ -90,7 +93,7 @@ Además de AWS y GCP, se consideraron otras plataformas en la nube:
 Los principales lenguajes utilizados para el desarrollo del proyecto han sido los siguientes:
 
 \begin{itemize}
-	\item \textbf{Python}: lenguaje de programación interpretado, multiparadigma y centrado en la legibilidad del código. Se ha elegido como lenguaje principal por ser el estándar en ciencia de datos, dada su extensa comunidad y el amplio ecosistema de librerías orientadas al aprendizaje automático (detalladas en el apartado \hyperref[sec:Librerias_especializadas]{\textit{Librerías especializadas}}). Además, su alta adopción garantiza un soporte nativo en todas las nubes, facilitando la portabilidad del código, el despliegue de los modelos y la comparación de procesos entre plataformas.
+	\item \textbf{Python}: lenguaje de programación interpretado, multiparadigma y centrado en la legibilidad del código. Se ha elegido como lenguaje principal por ser el estándar en ciencia de datos, dada su extensa comunidad y el amplio ecosistema de librerías orientadas al ML (detalladas en el apartado \hyperref[sec:Librerias_especializadas]{\textit{Librerías especializadas}}). Además, su alta adopción garantiza un soporte nativo en todas las nubes, facilitando la portabilidad del código, el despliegue de los modelos y la comparación de procesos entre plataformas.
 	\item \textbf{Bash Script}: la interacción con las nubes se ha gestionado principalmente mediante la ejecución de \textit{scripts} de Bash en AWS CloudShell y Google Cloud Shell, así como en local. De hecho, estos scripts son los que componen el manual de usuario para asegurar la reproducibilidad y automatizan la ejecución de los procesos (AWS Glue y demás scripts) y la creación de recursos (buckets, roles IAM, instancias, archivos, etc.). También se emplearon para la preparación de entornos virtuales y la instalación de dependencias.
 \end{itemize}
 
@@ -120,7 +123,7 @@ Para el tratamiento y modelado de la información en Python, se ha hecho uso de 
 	\item \textbf{Otras: gráficos, ML y estadística:}
 	\begin{itemize}
 		\item \textbf{Matplotlib}: utilizada para la creación y visualización de todos los gráficos de resultados: diagramas del codo, dendrogramas de agrupamiento, gráficos de dispersión y mapas de cobertura temporal \citep{Matplotlib2026}.
-		\item \textbf{SciPy y Scikit-learn}: para la implementación de algoritmos de aprendizaje automático (K-Means, agrupamiento jerárquico de Ward), estandarización de variables, cálculo de \textit{clusters} y métricas de validación como el coeficiente de silueta \citep{SciPy2026, scikit2026}.
+		\item \textbf{SciPy y Scikit-learn}: para la implementación de algoritmos de ML (K-Means, agrupamiento jerárquico de Ward), estandarización de variables, cálculo de \textit{clusters} y métricas de validación como el coeficiente de silueta \citep{SciPy2026, scikit2026}.
 	\end{itemize}	
 \end{itemize}
 
@@ -158,7 +161,7 @@ El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Secc
 
 \subsection{Desarrollo de la solución} \label{sec:Metodos_desarrollo}
 
-Esta es la sección más extensa, ya que explica el proceso que se ha seguido para ingestar, procesar y analizar estos datos de forma automática, mientras que el resto de las secciones de datos, nube y aprendizaje automático se centran en las partes específicas de estas tecnologías. Para llevar a cabo el trabajo se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero \texttt{config.py}. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
+Esta es la sección más extensa, ya que explica el proceso que se ha seguido para ingestar, procesar y analizar estos datos de forma automática, mientras que el resto de las secciones de datos, nube y ML se centran en las partes específicas de estas tecnologías. Para llevar a cabo el trabajo se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero \texttt{config.py}. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
 
 Las fases y sus ficheros correspondientes en local y en el repositorio Git del proyecto han sido los mostrados en la tabla \ref{tab:ficheros_pipeline}:
 
@@ -255,7 +258,7 @@ A continuación se enumeran los cambios realizados para esta extensión:
 
 \newpage
 
-\subsection{Métodos utilizados: Datos} \label{sec:Metodos_datos}
+\subsection{Aplicados a Datos} \label{sec:Metodos_datos}
 
 Para tratar los datos del proyecto, se han seguido principios éticos y los principios de gobernanza de datos.
 
@@ -266,7 +269,7 @@ Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{Sección \re
 \begin{enumerate}
 	\item \textbf{Capa estratégica: liderazgo y visión}. En esta capa se definen los objetivos generales y principios de la gobernanza de datos en el proyecto.
 	\begin{itemize}
-		\item \textbf{Visión}: convertir los datos abiertos en generadores de conocimiento mediante técnicas de inteligencia artificial y tecnologías cloud.
+		\item \textbf{Visión}: convertir los datos abiertos en generadores de conocimiento mediante técnicas de IA y tecnologías cloud.
 		\item \textbf{Seguridad y soberanía}: aunque se utilizan servicios de nubes públicas por su acceso gratuito y capacidades en IA, se configuraron para operar dentro de la UE.
 		\item \textbf{Transparencia y reproducibilidad}: todo el proceso (origen de datos, transformaciones, código y resultados de modelos) se documentó en esta memoria para garantizar la transparencia y la posibilidad de auditar o reproducir el análisis, de acuerdo con los \hyperref[sec:Metodos_Principios_EU]{principios de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
 	\end{itemize}
@@ -301,7 +304,7 @@ Destacar también que en el proyecto se siguieron rigurosamente los siete princi
 	\item \textbf{Acción y supervisión humanas}: en este trabajo se supervisó tanto cada etapa del desarrollo como los resultados. Se descartaron aquellos que no cumplieran con los criterios éticos establecidos.
 	\item \textbf{Solidez técnica y seguridad}: se veló por la mayor excelencia técnica y se definieron principios de seguridad tanto para los datos como para los modelos.
 	\item \textbf{Gestión de la privacidad y de los datos}: se ha abordado todo el proyecto cumpliendo con los principios del RGPD, como se indica en la sección de datos.
-	\item \textbf{Transparencia}: se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la Inteligencia Artificial, indicando claramente las razones para ello, y cumpliendo con la declaración responsable sobre autoría y uso ético de herramientas de IA de la UCM. Los usos se detallan en el apéndice \ref{Appendix:2}.
+	\item \textbf{Transparencia}: se documentaron los procesos, algoritmos utilizados y decisiones tomadas durante el desarrollo para asegurar que el proceso fuera comprensible y reproducible. También se documentaron los casos en los que se recurrió a la IA, indicando claramente las razones para ello, y cumpliendo con la declaración responsable sobre autoría y uso ético de herramientas de IA de la UCM. Los usos se detallan en el apéndice \ref{Appendix:2}.
 	\item \textbf{Diversidad, no discriminación y equidad}: se comprobaron los sesgos de los datos y algoritmos utilizados, decisiones tomadas y resultados obtenidos, con el objetivo de identificar y mitigar potenciales discriminaciones o sesgos.
 	\item \textbf{Bienestar social y ambiental}: el motivo último de este trabajo es el procesamiento de datos públicos para mejorar el valor de los mismos y, mediante su aplicación, el bienestar social en general.
 	\item \textbf{Rendición de cuentas}: se mantuvo un registro detallado de las decisiones de diseño, preprocesamiento de datos y selección de modelos para permitir una auditoría clara y una rendición de cuentas transparente.
@@ -309,7 +312,7 @@ Destacar también que en el proyecto se siguieron rigurosamente los siete princi
 
 \newpage
 
-\subsection{Métodos utilizados: Aprendizaje automático} \label{sec:Metodos_ML}
+\subsection{Aplicados a Aprendizaje Automático} \label{sec:Metodos_ML}
 
 Los fundamentos teóricos de los algoritmos y métricas empleados (K-Means, agrupamiento jerárquico de Ward, coeficiente de silueta y correlación de Pearson) se definieron en el \hyperref[sec:EstudiosIA]{Capítulo \ref*{sec:EstudiosIA}} y sus definiciones. En esta sección se detallan los pasos del procesamiento, las técnicas empleadas y las métricas de validación que se llevaron a cabo tras la normalización de los datos, basadas en técnicas de aprendizaje no supervisado y estadística.
 
@@ -355,11 +358,11 @@ Además de los métodos comentados, todo el proceso de análisis se acompañó d
 
 \newpage
 
-\subsection{Métodos utilizados: Cloud} \label{sec:Metodos_cloud}
+\subsection{Aplicados a la Nube} \label{sec:Metodos_cloud}
 
 El despliegue de las capas de almacenamiento, procesamiento y analítica sobre plataformas en la nube se ha abordado bajo una metodología común para evaluar la dificultad de implementación, viabilidad, rendimiento y coste de ejecutar un mismo \textit{pipeline} de datos abiertos sobre diferentes proveedores. Esta estrategia reutiliza el enfoque de arquitectura por capas (\textit{medallion architecture}) definido en la \hyperref[def11]{[Definición \ref*{def11}]}, el mismo explicado en datos y local. Se combinará con las buenas prácticas específicas de diseño y gobernanza generales del desarrollo en la nube y las específicas de cada proveedor, por lo que las siguientes secciones se centrarán en estas partes específicas únicamente.
 
-\subsubsection{Métodos utilizados en Amazon Web Services (AWS)}
+\subsubsection{Específicos de Amazon Web Services (AWS)}
 
 La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{sec:Manual_Despliegue_AWS}. Aquí se define una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas prácticas en la web de AWS \citep{AWSWellArchitected2026}.
 
@@ -378,7 +381,7 @@ La especificación técnica paso a paso, la sintaxis completa de los comandos ej
 Se valoró el empleo de los modelos pre-entrenados de \textit{AWS SageMaker}, pero se descartaron por ser una solución sobredimensionada para este problema. El conjunto de análisis está formado por unas pocas decenas de observaciones con menos de diez variables, un tamaño para el que los algoritmos de agrupamiento clásicos resultan más apropiados.
 
 \newpage
-\subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}
+\subsubsection{Específicos de Google Cloud Platform (GCP)}
 
 Al igual que en la sección anterior, la especificación técnica paso a paso y el procedimiento de despliegue por comandos de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{sec:Manual_Despliegue_GCP}. La arquitectura general se rige también por las directrices y buenas prácticas de GCP \citep{GCPArchitectureFramework2026}, aplicando en concreto las siguientes decisiones de diseño:
 

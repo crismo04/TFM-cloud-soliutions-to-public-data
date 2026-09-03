@@ -1,7 +1,7 @@
 \chapter{Resultados}
 \label{cap:Resultados}
 
-En este capítulo se recogen los resultados obtenidos durante el proyecto, organizados en tres bloques, al igual que el resto de la memoria: los hallazgos relativos a la calidad y continuidad de los datos publicados, los resultados de los análisis realizados sobre ellos y los métodos de aprendizaje automático utilizados, y la comparación entre la ejecución local y las diferentes plataformas cloud evaluadas.
+En este capítulo se recogen los resultados obtenidos durante el proyecto, organizados en tres bloques, al igual que el resto de la memoria: los hallazgos relativos a la calidad y continuidad de los datos publicados, los resultados de los análisis realizados sobre ellos y los métodos de ML utilizados, y la comparación entre la ejecución local y las diferentes plataformas cloud evaluadas.
 
 \section{Hallazgos sobre la calidad de los datos publicados}
 \label{sec:Resultados_datos}
@@ -51,7 +51,7 @@ La Figura \ref{fig:cobertura} muestra los días válidos de temperatura por esta
 
 Se observa que la caída de cobertura entre 2021 y 2022 se concentra en la subred municipal con códigos 1xx, mientras que la red clásica, con números bajos, se mantiene. Este patrón coincide en el tiempo con el hueco de 14 meses en los aforos de peatones y bicicletas, lo que apunta a que no es un fallo general ni averías independientes \citep{AytoMadrid2026Aforos}. Además, se detecta que diciembre de 2024 está ausente en toda la red (todas las estaciones topan en ~335 días). Las estaciones 16 y 39 presentan cero datos hasta 2022, año en el que entran en la red. Por último, la estación 104 mide temperatura en 2019 aunque el inventario oficial indique que no tiene ese sensor, lo que evidencia una contradicción entre el maestro de datos y el dato real.
 
-\section{Resultados del análisis de aprendizaje automático: isla de calor}
+\section{Resultados del análisis de ML: isla de calor}
 \label{sec:Resultados_isla_calor}
 
 En esta sección se presentan los resultados del análisis de la isla de calor, que extiende el trabajo de \citep{Meneses2023Madrid} desde 2019 hasta 2025 (incluyendo 2019, aunque este año no es directamente comparable con el resto de la serie; véase la Sección \ref{sec:Resultados_limitaciones}). Se han evaluado cinco aproximaciones originales (basadas en magnitudes meteorológicas y de contaminación) y dos nuevas aproximaciones propias (temperatura y altitud; temperatura y superficie arbórea relativa). Además, se han aplicado criterios propios para aumentar el alcance del estudio, como la cobertura mínima de 300 días por estación y año.
