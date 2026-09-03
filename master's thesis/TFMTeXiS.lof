@@ -16,22 +16,22 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{72}{figure.caption.123}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{73}{figure.caption.124}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados\relax }}{80}{figure.caption.155}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola\relax }}{81}{figure.caption.158}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3\relax }}{84}{figure.caption.200}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{87}{figure.caption.273}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Consola de SageMaker\relax }}{88}{figure.caption.276}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Ejecucion de Jupyter en SageMaker\relax }}{90}{figure.caption.294}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Abrir terminal GCP en consola\relax }}{91}{figure.caption.304}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Conjuntos de datos cargados en Cloud Storage\relax }}{94}{figure.caption.349}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Instancia de Vertex AI Workbench\relax }}{95}{figure.caption.360}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Consola para crear un estudio de regresión y clasificación en Vertex AI AutoML\relax }}{97}{figure.caption.382}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados\relax }}{80}{figure.caption.158}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola\relax }}{81}{figure.caption.161}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3\relax }}{84}{figure.caption.207}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{88}{figure.caption.284}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Consola de SageMaker\relax }}{89}{figure.caption.287}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Ejecucion de Jupyter en SageMaker\relax }}{89}{figure.caption.304}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Abrir terminal GCP en consola\relax }}{91}{figure.caption.315}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Conjuntos de datos cargados en Cloud Storage\relax }}{94}{figure.caption.363}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Instancia de Vertex AI Workbench\relax }}{95}{figure.caption.375}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Consola para crear un estudio de regresión y clasificación en Vertex AI AutoML\relax }}{97}{figure.caption.400}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{111}{figure.caption.405}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{114}{figure.caption.410}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{118}{figure.caption.415}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{111}{figure.caption.424}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{114}{figure.caption.429}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{118}{figure.caption.434}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }

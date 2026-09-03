@@ -2,6 +2,10 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [Memoria] - 2026-09-03
+### Change
+* Retoques de estilo y actualizacion de acronimos 
+
 ## [Memoria] - 2026-09-02
 ### Add
 * Toques finales del capitulo 4 de la memoria

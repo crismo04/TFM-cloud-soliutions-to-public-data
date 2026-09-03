@@ -160,7 +160,7 @@ El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{Secc
 
 Esta es la sección más extensa, ya que explica el proceso que se ha seguido para ingestar, procesar y analizar estos datos de forma automática, mientras que el resto de las secciones de datos, nube y aprendizaje automático se centran en las partes específicas de estas tecnologías. Para llevar a cabo el trabajo se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero \texttt{config.py}. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
 
-Las fases y sus ficheros correspondientes en local y en el repositorio Git del proyecto han sido:
+Las fases y sus ficheros correspondientes en local y en el repositorio Git del proyecto han sido los mostrados en la tabla \ref{tab:ficheros_pipeline}:
 
 \begin{table}[htbp]
 	\centering
@@ -361,12 +361,12 @@ El despliegue de las capas de almacenamiento, procesamiento y analítica sobre p
 
 \subsubsection{Métodos utilizados en Amazon Web Services (AWS)}
 
-La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_AWS}. Aquí se define una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas prácticas en la web de AWS \citep{AWSWellArchitected2026}.
+La especificación técnica paso a paso, la sintaxis completa de los comandos ejecutados en la CLI y el procedimiento de despliegue reproducible de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{sec:Manual_Despliegue_AWS}. Aquí se define una arquitectura más a alto nivel de las decisiones tomadas, así como los métodos utilizados, pero se puede consultar todo el manual de arquitectura y buenas prácticas en la web de AWS \citep{AWSWellArchitected2026}.
 
 \begin{enumerate}
 	\item \textbf{Arquitectura de medalla}: para las capas, se aplicó un bloqueo de acceso público para evitar la modificación externa, se activó el versionado para asegurar la inmutabilidad y trazabilidad, y se asignaron etiquetas (\textit{labels}) para poder medir el coste en todas las capas del proceso.
 	\item \textbf{Procesamiento ETL serverless de bajo cómputo}: como método de transformación, se descartó el uso de clústeres distribuidos (\textit{Apache Spark}) debido a que el volumen de datos (272~MB en la capa bronce) no requería demasiada computación. Se optó por una ejecución mediante \textit{AWS Glue Python Shell} y la propia \textit{AWS CLI}, garantizando tiempos de arranque inmediatos y un consumo mucho menor por ejecución, gestionando el almacenamiento desde los contenedores de S3.
-	\item \textbf{Infraestructura como código (IaC) y gestión de dependencias}: para garantizar la reproducibilidad, el despliegue del trabajo ETL se definió de forma declarativa mediante comandos y plantillas JSON definidas en en manual: \ref{subsec:Manual_Despliegue_AWS}. Los módulos propios de configuración (\texttt{config.py}) se empaquetaron en formato estándar de distribución de Python (\textit{wheel}, \texttt{.whl}) para gestionar las dependencias junto al \textit{requirements.txt}.
+	\item \textbf{Infraestructura como código (IaC) y gestión de dependencias}: para garantizar la reproducibilidad, el despliegue del trabajo ETL se definió de forma declarativa mediante comandos y plantillas JSON definidas en en manual: \ref{sec:Manual_Despliegue_AWS}. Los módulos propios de configuración (\texttt{config.py}) se empaquetaron en formato estándar de distribución de Python (\textit{wheel}, \texttt{.whl}) para gestionar las dependencias junto al \textit{requirements.txt}.
 	\item \textbf{Gobernanza de identidades (RBAC) y control financiero (\textit{FinOps})}: implementación del principio de menor privilegio y control de costes mediante:
 	\begin{itemize}
 		\item \textbf{Uso de credenciales temporales}: se utilizó \textit{AWS CloudShell} para operar con las credenciales de la sesión web, evitando el almacenamiento de claves fijas (\textit{Access Keys}) en local.
@@ -380,7 +380,7 @@ Se valoró el empleo de los modelos pre-entrenados de \textit{AWS SageMaker}, pe
 \newpage
 \subsubsection{Métodos utilizados en Google Cloud Platform (GCP)}
 
-Al igual que en la sección anterior, la especificación técnica paso a paso y el procedimiento de despliegue por comandos de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{subsec:Manual_Despliegue_GCP}. La arquitectura general se rige también por las directrices y buenas prácticas de GCP \citep{GCPArchitectureFramework2026}, aplicando en concreto las siguientes decisiones de diseño:
+Al igual que en la sección anterior, la especificación técnica paso a paso y el procedimiento de despliegue por comandos de cada uno de estos métodos se detallan en el manual de usuario disponible en la Sección \ref{sec:Manual_Despliegue_GCP}. La arquitectura general se rige también por las directrices y buenas prácticas de GCP \citep{GCPArchitectureFramework2026}, aplicando en concreto las siguientes decisiones de diseño:
 
 \begin{enumerate}
 	\item \textbf{Arquitectura de medalla en Cloud Storage}: las capas se almacenaron en un contenedor (\textit{bucket}) de Google Cloud Storage. Se aplicó la política \textit{Public Access Prevention} de forma nativa para evitar la modificación externa de los ficheros, y se habilitó también el versionado y el etiquetado de recursos.
