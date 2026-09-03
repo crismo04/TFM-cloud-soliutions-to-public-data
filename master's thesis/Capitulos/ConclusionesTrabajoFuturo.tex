@@ -1,22 +1,53 @@
 \chapter{Conclusiones y Trabajo Futuro}
 \label{cap:conclusiones}
 
+\section{Conclusiones}
+\label{sec:conclusiones}
 
-[TODO, importante a tener en cuenta:
-Señalar los principios y relaciones que indican los resultados (qué es lo que se ha sacado en claro con la investigación, futuras implicaciones que se pueden extraer, etc.).
-· Relacionar los resultados con otros trabajos publicados.
-· Hay que mencionar también las excepciones, faltas de correlación o aspectos no resueltos.
-· Indicar futuras líneas de trabajo
-]
+[TODO]
+
+\section{Limitaciones conocidas del proyecto}
+
+Los resultados obtenidos deben interpretarse a la luz de varias limitaciones. 
+En primer lugar, la discontinuidad de datos impide una serie temporal completamente homogénea, lo que limita la generalización de las correlaciones. 
+En segundo lugar, el análisis de movilidad peatonal y bicicletas, aunque se descargó y limpió, no se completó por restricciones de alcance.
+Por último, debido a la extension de los datos, este trabajo se limita solo a comparar unos cuantos modelos de datos y un par de servicios cloud y modelos, seria mucho mas interesante poder comparar todas las tecnologias y herramientas nombradas en el estado de la cuestion, para tener un espectro de elceccion mucho mas amplio al decidir de que forma se quiere trabajar con estas tres tecnologias.
 
 \section*{Trabajo futuro}
 
-Añadir al estudio un coste ecológico de las tecnologías.
+Aunque el trabajo ha cumplido sus objetivos, quedan abiertas numerosas líneas que habría sido interesante explorar y que podrían enriquecerlo en el futuro. A continuación se recogen las más relevantes que se han quedado fuera del proyecto, ya sea por alcance, ya que son temas muy extensos, o por imposibilidad. Estan de nuevo, organizadas en los tres bloques que han guiado este proyecto.
 
-Contactar con responsables de algunos de los estudios citados y conducir una encuesta a los usuarios para comprender la utilidad de los datos.
-
-Contactar con las nubes privadas europeas y españolas, ya que aunque es normal que en su mayoría no ofrezcan planes gratuitos para evitar su abuso, es posible que contactando como entidad investigadora dieran acceso a las cloud para poder comprobar su utilidad en este estudio. 
-
-Construir interfaz de usuario para visualizar los datos de una manera mas optima, ya sea con Firebase, o una instancia de Superset.
-
-%[TODO] poner en trabajo futuro probar datos mas grandes con Spark
+\begin{itemize}
+	\item \textbf{En el ámbito de los datos:}
+	\begin{itemize}
+		\item \emph{Incluir más datos.} El análisis finalmente se ha centrado en un número limitado de conjuntos de datos de una única fuente. Sería de gran valor extenderlo a otras fuentes, incluyendo datos de gran volumen (petabytes), para exprimir las capacidades en la nube y hacer viable la comparación con tecnologías como Spark.
+		
+		\item \emph{Simular o imputar datos para años con baja cobertura.} En el proyecto de isla de calor, habría sido interesante probar técnicas de generación sintética para años con pocos datos y evaluar su impacto en la calidad de los agrupamientos. O, en su defecto, incluir datos de temperatura superficial y vegetación procedentes de satélites (como los utilizados en \citep{urbanthermal2025}) para complementar la red de estaciones terrestres y analizar las diferencias diurnas y nocturnas en el comportamiento térmico de la ciudad.
+		
+		\item \emph{Contactar con los responsables de los portales de datos.} Una vez analizados los datos, sería muy útil establecer un puente con los equipos que mantienen los portales de datos abiertos para ayudarles a mejorar los datos ofrecidos y la documentación, facilitando así la reutilización automatizada a otros investigadores.
+		
+		\item \emph{Llevar a cabo estudios con población.} También sería interesante, con los datos rescatados y tratados, realizar un estudio con diferentes poblaciones sobre el nivel de conocimiento de los datos, tanto de los públicos como de las conclusiones extraídas del estudio.
+	\end{itemize}
+	
+	\item \textbf{En el ámbito de la nube:}
+	\begin{itemize}
+		\item \emph{Evaluar más proveedores, especialmente europeos.} Habría sido muy interesante probar \textbf{OVHcloud} (con sus AI Notebooks) o plataformas abiertas como \textbf{OpenNebula}, así como extender el análisis a otras nubes, algo que se acotó por tiempo.
+		
+		\item \emph{Añadir el coste ecológico al análisis comparativo.} Hubiera sido un complemento excelente medir la huella de carbono de las diferentes plataformas y compararla con el coste económico, para tener una visión más sostenible de la nube.
+		
+		\item \emph{Probar procesamiento distribuido y en tiempo real.} Utilizar servicios como AWS Glue (Spark) o Dataproc en GCP, así como herramientas de análisis en tiempo real, para comprobar la utilidad de los datos en tiempo real sería un gran punto a ampliar en el proyecto.
+		
+		\item \emph{Completar el despliegue serverless.} En este trabajo se descartaron tanto Cloud Run como Cloud Functions; con configuración adicional es técnicamente viable, y merecería la pena intentarlo en una siguiente iteración.
+		
+		\item \emph{Construir un dashboard interactivo para los resultados.} Para que otros investigadores o el público general pudieran explorar los datos y conclusiones de forma visual e intuitiva, sería muy útil desarrollar una interfaz con herramientas nativas en la nube como un \textit{Apache Superset} gestionado o \textit{Looker Studio}.
+	\end{itemize}
+	
+	\item \textbf{En el ámbito del análisis y aprendizaje automático:}
+	\begin{itemize}
+		\item \emph{Completar el análisis de movilidad peatonal y bicicletas.} Con los datos ya tratados del trabajo de \citep{SaizSantos2023}, añadiendo además nuevos datos y horizonte temporal, nos habría gustado poder aplicar modelos de series temporales (ARIMA, Prophet, LSTM) a estos datos de aforos y estudiar el proyecto.
+		
+		\item \emph{Usar Grandes Modelos de Lenguaje (LLMs) de forma exploratoria.} Sería fascinante emplear LLMs para analizar automáticamente la documentación de los conjuntos y para generar descripciones interpretativas de los grupos obtenidos en el clustering, mejorando así la explicabilidad de los resultados.
+		
+		\item \emph{Probar AutoML en las plataformas cloud.} Durante el desarrollo se evaluó la posibilidad de emplear \textit{Vertex AI AutoML} (definido en el manual de usuario) y \textit{SageMaker Autopilot} para la fase de modelado. No obstante, sería interesante reformular el problema como una tarea de regresión (predecir la temperatura a partir de las demás variables) y comparar los resultados de AutoML con los modelos clásicos o clasificar los datos ya tratados. Esto permitiría evaluar si la automatización aporta mejoras en la selección de hiperparámetros, en la importancia de variables o en la calidad final de las predicciones.
+	\end{itemize}
+\end{itemize}

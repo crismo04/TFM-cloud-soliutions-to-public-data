@@ -24,7 +24,7 @@ import re
 import sys
 import zipfile
 from datetime import datetime, timezone
-
+import unicodedata
 import fsspec
 import requests
 
@@ -46,14 +46,11 @@ SESION.headers.update(HEADERS)
 # Patrones de formato para lso paquetes en regexp
 PATRON_PACKAGE = re.compile(r"window\.packageId\s*=\s*'([^']+)'")
 PATRON_PACKAGE_ALT = re.compile(r'data-path="dataset/([^"]+)"')
-FORMATOS_DATOS = {"csv", "xlsx", "xls", "zip", "json",
-                  "shp", "geo", "geojson", "kml"}
+FORMATOS_DATOS = {"csv", "xlsx", "xls", "zip", "json", "shp", "geo", "geojson", "kml"}
 PREFIJO_ID = re.compile(r"^\d{5,6}-\d{1,4}-")
 
 def _normalizar(s: str) -> str:
-    import unicodedata
-    return (unicodedata.normalize("NFKD", s)
-            .encode("ascii", "ignore").decode().lower())
+    return (unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower())
 
 
 # --- funciones para resolver recursos y paquetes --
@@ -92,8 +89,7 @@ def recursos_del_paquete(pkg: str) -> tuple[list[dict], str]:
                 continue  # para saltar documentacion (pdf) y otros
             formato = ext
         nombre = rec.get("name") or url.rsplit("/", 1)[-1]
-        texto = (PREFIJO_ID.sub("", nombre) + " "
-                 + (rec.get("description") or "")) # el slug empieza por el ID del recurso que contiene falsos anios # TODO revisar los datos
+        texto = (PREFIJO_ID.sub("", nombre) + " " + (rec.get("description") or ""))
         anios = re.findall(r"(20\d{2})", texto)
         recursos.append({
             "url": url,
@@ -224,7 +220,7 @@ def procesar_conjunto(clave: str, fs, base: str, dry_run: bool) -> None:
             print(f"  [list] ({rec['anio'] or 'unico'}, {rec['formato']}) "
                   f"{rec['nombre']}  |  {desc}")
             continue
-        if ya_existe(fs, base, relativo):
+        if fs.exists(f"{base.rstrip('/')}/{relativo}"):
             print(f"  [skip] {nombre}")
             continue
         print(f"  [get ] {nombre}")

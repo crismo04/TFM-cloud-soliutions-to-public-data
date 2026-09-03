@@ -1,4 +1,4 @@
-\begin{thebibliography}{149}
+\begin{thebibliography}{164}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -25,6 +25,26 @@
 {\sc {Amazon Web Services}}.
 \newblock Amazon sagemaker.
 \newblock 2025.
+
+\bibitem[{{Amazon Web Services}(2026{\natexlab{a}})}]{AWSWellArchitected2026}
+{\sc {Amazon Web Services}}.
+\newblock Aws well-architected framework.
+\newblock 2026{\natexlab{a}}.
+
+\bibitem[{{Amazon Web Services}(2026{\natexlab{b}})}]{AWS2026Signup}
+{\sc {Amazon Web Services}}.
+\newblock {Creación de cuenta en AWS Console}.
+\newblock 2026{\natexlab{b}}.
+
+\bibitem[{{Amazon Web Services}(2026{\natexlab{c}})}]{AWS2026Docuementacion}
+{\sc {Amazon Web Services}}.
+\newblock {Documentacion general de AWS}.
+\newblock 2026{\natexlab{c}}.
+
+\bibitem[{{Amazon Web Services}(2026{\natexlab{d}})}]{AWS2026Tutorial}
+{\sc {Amazon Web Services}}.
+\newblock {Tutorial de AWS: Creación y activación de una cuenta de AWS}.
+\newblock 2026{\natexlab{d}}.
 
 \bibitem[{Anderson(2004)}]{Anderson2004BOINC}
 {\sc Anderson, D.}
@@ -88,11 +108,6 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), 2009.
 
-\bibitem[{Böer(2023)}]{comparisonAutoMLServices}
-{\sc Böer, J.}
-\newblock Self-service ai for everyone? a comparison of automl services.
-\newblock 2023.
-
 \bibitem[{{bit2brain}(2020)}]{Bit2BrainHistoriaIA}
 {\sc {bit2brain}}.
 \newblock {Historia de la IA Inteligencia Artificial}.
@@ -142,6 +157,11 @@
 \newblock Machine learning mastery.
 \newblock s.f.
 
+\bibitem[{Böer(2023)}]{comparisonAutoMLServices}
+{\sc Böer, J.}
+\newblock Self-service ai for everyone? a comparison of automl services.
+\newblock 2023.
+
 \bibitem[{Campbell et\ al.(2002)Campbell, Hoane~Jr. y
   Hsu}]{Campbell2002DeepBlue}
 {\sc Campbell, M.}, {\sc Hoane~Jr., A.~J.} y {\sc Hsu, F.-h.}
@@ -176,10 +196,12 @@
 \newblock clouding.io, infraestructura cloud a tu servicio.
 \newblock s.f.
 
-\bibitem[{CNMC(2025)}]{DatosGeneralesCNMC}
-{\sc CNMC}.
-\newblock Telecomunicaciones anual datos generales cnmc.
-\newblock 2025.
+\bibitem[{{Comisión Nacional de los Mercados y la
+  Competencia}(2026)}]{CNMC2026Informe}
+{\sc {Comisión Nacional de los Mercados y la Competencia}}.
+\newblock Informe económico sectorial de telecomunicaciones y audiovisual
+  2025.
+\newblock 2026.
 
 \bibitem[{Concepción De~Linares(2025{\natexlab{a}})}]{OpenFoodFactsDataAPP}
 {\sc Concepción De~Linares, J.~B.}
@@ -252,10 +274,10 @@
 \newblock Official Journal of the European Union, L 152, pp. 1-44, 2022.
 \newblock Accessed: 28 August 2025.
 
-\bibitem[{Eurostat(s.f.)}]{EurostatCloudUsage}
-{\sc Eurostat}.
-\newblock Cloud computing services by size class of enterprise.
-\newblock s.f.
+\bibitem[{{Eurostat}(2026)}]{Eurostat2026Cloud}
+{\sc {Eurostat}}.
+\newblock 53\% of eu enterprises used paid cloud services in 2025.
+\newblock 2026.
 
 \bibitem[{Fang et\ al.(2024)Fang, Xu, Tan, Zhang, Hu, Qi, Nickleach,
   Socolinsky, Sengamedu y Faloutsos}]{fang2024llms}
@@ -289,6 +311,11 @@
 \newblock ISBN 978-1536198133.
 \newblock Description based upon print version of record.
 
+\bibitem[{{fsspec developers}(2026)}]{fsspec2024}
+{\sc {fsspec developers}}.
+\newblock fsspec: Filesystem interfaces for python.
+\newblock 2026.
+
 \bibitem[{Gabriel et\ al.(2024)Gabriel, Manzini, Keeling, Hendricks, Rieser,
   Iqbal, Tomašev, Ktena, Kenton, Rodriguez, El-Sayed, Brown, Akbulut, Trask,
   Hughes, Bergman, Shelby, Marchal, Griffin, Mateos-Garcia, Weidinger, Street,
@@ -315,6 +342,11 @@
 \newblock The ethics of advanced ai assistants.
 \newblock 2024.
 
+\bibitem[{{GeoPandas developers}(2026)}]{geopandas2026}
+{\sc {GeoPandas developers}}.
+\newblock Geopandas: Python tools for geographic data.
+\newblock 2026.
+
 \bibitem[{Gigas(s.f.)}]{gigasCloud}
 {\sc Gigas}.
 \newblock Gigas - cloud hosting solutions.
@@ -324,21 +356,6 @@
 {\sc GmbH, N.}
 \newblock Nextcloud - your own private cloud.
 \newblock s.f.
-
-\bibitem[{Gómez-Obregón(2025{\natexlab{a}})}]{JaimeGomezObregon}
-{\sc Gómez-Obregón, J.}
-\newblock Jaime gómez-obregón.
-\newblock 2025{\natexlab{a}}.
-
-\bibitem[{Gómez-Obregón(2025{\natexlab{b}})}]{JaimeGomezObregonDonacion}
-{\sc Gómez-Obregón, J.}
-\newblock La donación - jaime gómez-obregón.
-\newblock 2025{\natexlab{b}}.
-
-\bibitem[{Gómez-Obregón(2025{\natexlab{c}})}]{JaimeGomezObregonSubvenciones}
-{\sc Gómez-Obregón, J.}
-\newblock Subvenciones - jaime gómez-obregón.
-\newblock 2025{\natexlab{c}}.
 
 \bibitem[{{Gobierno de España}(2021{\natexlab{a}})}]{GobEspana2021BDTI}
 {\sc {Gobierno de España}}.
@@ -367,10 +384,15 @@
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{c}}.
 
-\bibitem[{{Gobierno de España}(s.f.)}]{InfoNubeSARA}
+\bibitem[{{Gobierno de España}(s.f.{\natexlab{a}})}]{InfoNubeSARA}
 {\sc {Gobierno de España}}.
 \newblock Nubesara.
-\newblock s.f.
+\newblock s.f.{\natexlab{a}}.
+
+\bibitem[{{Gobierno de España}(s.f.{\natexlab{b}})}]{PreciosNubeSARA}
+{\sc {Gobierno de España}}.
+\newblock Plan de precios de nubesara.
+\newblock s.f.{\natexlab{b}}.
 
 \bibitem[{{Golem Network}(s.f.)}]{GolemNetwork}
 {\sc {Golem Network}}.
@@ -392,10 +414,30 @@
 \newblock Welcome to colab!
 \newblock 2025{\natexlab{c}}.
 
+\bibitem[{{Google Cloud}(2026)}]{GCPArchitectureFramework2026}
+{\sc {Google Cloud}}.
+\newblock Google cloud architecture framework.
+\newblock 2026.
+
 \bibitem[{{Google Cloud}(s.f.)}]{distributedGCP}
 {\sc {Google Cloud}}.
 \newblock Amplía la infraestructura y la ia de google cloud on-premise.
 \newblock s.f.
+
+\bibitem[{{Google Cloud Platform}(2026{\natexlab{a}})}]{GCP2026Signup}
+{\sc {Google Cloud Platform}}.
+\newblock {Creación de cuenta en Google Cloud Console}.
+\newblock 2026{\natexlab{a}}.
+
+\bibitem[{{Google Cloud Platform}(2026{\natexlab{b}})}]{GCP2026Docuementacion}
+{\sc {Google Cloud Platform}}.
+\newblock {Documentacion general de GCP}.
+\newblock 2026{\natexlab{b}}.
+
+\bibitem[{{Google Cloud Platform}(2026{\natexlab{c}})}]{GCP2026Tutorial}
+{\sc {Google Cloud Platform}}.
+\newblock {Tutorial de GCP: Creación y activación de una cuenta de GCP}.
+\newblock 2026{\natexlab{c}}.
 
 \bibitem[{{Google Trends}(2025)}]{TrendsGoogleIA2025}
 {\sc {Google Trends}}.
@@ -408,6 +450,21 @@
   pico de popularidad del término. Un valor de 50 significa que el término es
   la mitad de popular. Una puntuación de 0 significa que no había datos
   suficientes para este término.
+
+\bibitem[{Gómez-Obregón(2025{\natexlab{a}})}]{JaimeGomezObregon}
+{\sc Gómez-Obregón, J.}
+\newblock Jaime gómez-obregón.
+\newblock 2025{\natexlab{a}}.
+
+\bibitem[{Gómez-Obregón(2025{\natexlab{b}})}]{JaimeGomezObregonDonacion}
+{\sc Gómez-Obregón, J.}
+\newblock La donación - jaime gómez-obregón.
+\newblock 2025{\natexlab{b}}.
+
+\bibitem[{Gómez-Obregón(2025{\natexlab{c}})}]{JaimeGomezObregonSubvenciones}
+{\sc Gómez-Obregón, J.}
+\newblock Subvenciones - jaime gómez-obregón.
+\newblock 2025{\natexlab{c}}.
 
 \bibitem[{Herrera~Capriz(2024)}]{HerreraCapriz2024}
 {\sc Herrera~Capriz, M.~E.}
@@ -436,10 +493,11 @@
 \newblock huggingface spaces.
 \newblock 2025.
 
-\bibitem[{{Insights + Analytics}(2024)}]{DatosMercadosEspanna}
-{\sc {Insights + Analytics}, E.}
-\newblock Datos para espaÑa y mundiales de investigaciÓn de mercados 2023.
-\newblock 2024.
+\bibitem[{{Instituto Nacional de Estadística}(2025)}]{INE2025TIC}
+{\sc {Instituto Nacional de Estadística}}.
+\newblock Encuesta sobre el uso de tic y del comercio electrónico en las
+  empresas. año 2024 - primer trimestre 2025.
+\newblock 2025.
 
 \bibitem[{Jiang et\ al.(2024)Jiang, Sablayrolles, Roux, Mensch, Savary,
   Bamford, Chaplot, de~las Casas, Hanna, Bressand, Lengyel, Bour, Lample,
@@ -530,10 +588,13 @@
 \newblock Llm leaderboard.
 \newblock s.f.
 
-\bibitem[{{Market report analytics}(2024)}]{EspannaCloudGroeth2033}
-{\sc {Market report analytics}}.
-\newblock Spain cloud computing market market’s growth blueprint.
-\newblock 2024.
+\bibitem[{MacQueen(1967)}]{macqueen1967classificationKMeans}
+{\sc MacQueen, J.~B.}
+\newblock Some methods for classification and analysis of multivariate
+  observations.
+\newblock En {\em Proceedings of the Fifth Berkeley Symposium on Mathematical
+  Statistics and Probability\/}, vol.\ 1, p\'aginas 281--297. University of
+  California Press, 1967.
 
 \bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
 {\sc Matheus, R.} y {\sc Janssen, M.}
@@ -544,10 +605,9 @@
 
 \bibitem[{Melendrez~Moreto(2016)}]{MelendrezMoreto2016Auditoria}
 {\sc Melendrez~Moreto, I.}
-\newblock {\em Auditoría y metodología de implantación de open data para
-  smart cities\/}.
-\newblock Tesis Doctoral, Facultad de Informática, Departamento de
-  Arquitectura de Computadores y Automática, 2016.
+\newblock Auditoría y metodología de implantación de open data para smart
+  cities.
+\newblock 2016.
 \newblock Máster en Ingeniería Informática, curso 2015-2016, a destacar:
   gran compilacion de datasets, conceptos interesantes como cinco estrellas del
   Open Data, manual de CKAN.
@@ -574,14 +634,14 @@
 \newblock Cloud computing terminology.
 \newblock s.f.{\natexlab{a}}.
 
-\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{TokenizacionMicrosoft}
-{\sc Microsoft}.
-\newblock ¿qué es la tokenización?
-\newblock s.f.{\natexlab{b}}.
-
-\bibitem[{Microsoft(s.f.{\natexlab{c}})}]{MedallionMicrosoft}
+\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{MedallionMicrosoft}
 {\sc Microsoft}.
 \newblock What is the medallion lakehouse architecture?
+\newblock s.f.{\natexlab{b}}.
+
+\bibitem[{Microsoft(s.f.{\natexlab{c}})}]{TokenizacionMicrosoft}
+{\sc Microsoft}.
+\newblock ¿qué es la tokenización?
 \newblock s.f.{\natexlab{c}}.
 
 \bibitem[{Moore(1995)}]{moore1995creating}
@@ -643,22 +703,22 @@
 \newblock ¿qué son los datos abiertos?
 \newblock s.f.
 
-\bibitem[{{Open Knowledge Foundation}(2024{\natexlab{a}})}]{CKAN2024ApiGuide}
-{\sc {Open Knowledge Foundation}}.
-\newblock Ckan 2.9 api guide: Action api and \texttt{package\_show}.
-\newblock 2024{\natexlab{a}}.
-\newblock Documentación oficial de CKAN, versión 2.9.11.
-
-\bibitem[{{Open Knowledge Foundation}(2024{\natexlab{b}})}]{CKAN2024Software}
-{\sc {Open Knowledge Foundation}}.
-\newblock Ckan: open-source data management system.
-\newblock 2024{\natexlab{b}}.
-\newblock Plataforma sobre la que opera el Portal de Datos Abiertos de Madrid.
-
 \bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
 {\sc {Open Knowledge Foundation}}.
 \newblock Open definition.
 \newblock 2025.
+
+\bibitem[{{Open Knowledge Foundation}(2026{\natexlab{a}})}]{CKAN2024ApiGuide}
+{\sc {Open Knowledge Foundation}}.
+\newblock Ckan 2.9 api guide: Action api and \texttt{package\_show}.
+\newblock 2026{\natexlab{a}}.
+\newblock Documentación oficial de CKAN, versión 2.9.11.
+
+\bibitem[{{Open Knowledge Foundation}(2026{\natexlab{b}})}]{CKAN2024Software}
+{\sc {Open Knowledge Foundation}}.
+\newblock Ckan: open-source data management system.
+\newblock 2026{\natexlab{b}}.
+\newblock Plataforma sobre la que opera el Portal de Datos Abiertos de Madrid.
 
 \bibitem[{ovhcloud(2025)}]{OVHcloud_CloudIA}
 {\sc ovhcloud}.
@@ -768,6 +828,11 @@
   directions.
 \newblock {\em SN Computer Science\/}, vol.\ 2(3), p\'agina 160, 2021.
 
+\bibitem[{{scikit-learn developers}(2026)}]{scikit2026}
+{\sc {scikit-learn developers}}.
+\newblock scikit-learn: Machine learning in python.
+\newblock 2026.
+
 \bibitem[{{SONM}(s.f.)}]{SONMWhitepaper}
 {\sc {SONM}}.
 \newblock Sonm whitepaper.
@@ -807,6 +872,16 @@
 \newblock Telefónica tech cloud platform.
 \newblock s.f.
 
+\bibitem[{{The pandas development team}(2026)}]{Pandas2026}
+{\sc {The pandas development team}}.
+\newblock pandas documentation.
+\newblock 2026.
+
+\bibitem[{{The SciPy community}(2026)}]{SciPy2026}
+{\sc {The SciPy community}}.
+\newblock Scipy: Hierarchical clustering.
+\newblock 2026.
+
 \bibitem[{De~la Torre y Núñez(2023)}]{TransparenciaEcuador}
 {\sc De~la Torre, S.} y {\sc Núñez, S.}
 \newblock Transparencia en la administración pública municipal del ecuador.
@@ -838,6 +913,11 @@
 {\sc {Union Europea}}.
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{b}}.
+
+\bibitem[{{Union Europea}(2026)}]{omnibus2026Europa}
+{\sc {Union Europea}}.
+\newblock Reglamento Ómnibus digital sobre ia.
+\newblock 2026.
 
 \bibitem[{UniversiDATA(2020)}]{UniversiDATAAnalisis}
 {\sc UniversiDATA}.

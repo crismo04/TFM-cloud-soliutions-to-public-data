@@ -2,12 +2,61 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+## [Memoria] - 2026-09-02
+### Add
+* Toques finales del capitulo 4 de la memoria
+### Change
+* Modificaciones menores en la memoria de estilo y correcciones
+
+## [Memoria] - 2026-09-01
+### Add
+* Toques finales de los capitulos 2 y 3 de la memoria
+### Change
+* Modificaciones menores en la memoria de estilo y correcciones
+
+
+## [ML] - 2026-08-31
+### Add
+* Añadir dos nuevas aproximaciones: (Temperatura y altitud) y (Temperatura y superficie relativa)
+* Nuevos resultados debido a las nuevas aproximaciones
+### Change
+* Modificaciones menores en la memoria
+* Dejar los codigos 01, 02 y 03 funcionando y sin TODOs en todas las plataformas
+
+
+## [Cloud] - 2026-08-27
+### Change
+* WIP de parte de GCP en la memoria
+* Organizar TODOs del capitulo 4
+* Revision general de TODOs en la memmoria
+* Reestructuracion del manual de usuario
+
+
+## [Cloud] - 2026-08-25
+### Add
+* Nuevo archivo de Jupyter notebooks para ejecutar el analisis 3
+* Inicio de la parte de GCP
+### Change
+* Reestructuracion de la ultima parte del manual de usuaio
+* Mejora en los graficos poniendo el nombre de las estaciones
+* Otras correcciones menores de la memoria
+
+
+## [Cloud] - 2026-08-25
+### Add
+* Nueva parte del manual de usuario para la creacion y uso de SageMaker
+* Añadidas las fotos para acompañar las explicaciones del manual de usuario
+### Fix
+* Correccion del proceso 3 para su ejecucion en sagemaker.
+* Correccion de diversas herratas en la memoria y cambios menores
+
+
 ## [Cloud] - 2026-08-23
 ### Add
 * Modificacion de la memoria con AI-Act y correcciones.
 * Nueva parte del manual de usuario para la creacion y uso de Glue en AWS
-### Change
-
+### Fix
+* Correccion de mas problemas que surgieron en AWS.
 
 ## [Cloud] - 2026-08-19
 ### Add
@@ -65,4 +114,4 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 
 
 ## First commmit notes
-* Este es el primer registro del changelog. El historial previo (~30 commits) corresponde a la redacción de la memoria en LaTeX bajo `master's thesis/` (plantilla TeXiS, capítulos, apéndices, bibliografía... Mayormente estado de la cuestion e investigacion) y no está desglosado aquí por ser anterior a la adopción de este archivo.
+* Este es el primer registro del changelog. El historial previo (~30 commits) corresponde a la redacción de la memoria en LaTeX bajo `master's thesis/` (plantilla TeXiS, capítulos, apéndices, bibliografía... Mayormente estado de la cuestion e investigacion) y no está desglosado aquí por ser anterior a la adopción de este archivo. Fue desarrollado durante el curso academico 2024-2025.

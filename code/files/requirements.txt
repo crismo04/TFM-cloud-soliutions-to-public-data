@@ -2,6 +2,7 @@ pandas>=2.2
 numpy>=2.1
 requests>=2.32
 fsspec>=2024.10
+gcsfs>=2024.10      # gcp
 s3fs>=2024.10       # solo para S3
 openpyxl>=3.1
 pyarrow>=19.0       # sin wheels para Python 3.13+ en anteriores

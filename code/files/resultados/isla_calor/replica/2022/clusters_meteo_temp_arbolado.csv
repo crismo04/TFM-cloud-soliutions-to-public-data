@@ -1,4 +1,4 @@
-estacion,temperatura,superficie_ha,kmeans_k4,jerarquico_k4
+,temperatura,superficie_ha,kmeans_k4,jerarquico_k4
 4,19.989208633093526,59.83,0,1
 8,17.709695290858726,0.24,1,2
 16,13.660456273764257,14.82,3,4

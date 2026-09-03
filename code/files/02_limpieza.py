@@ -31,10 +31,18 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-if "--TFM_BASE" in sys.argv:
-    os.environ["TFM_BASE"] = sys.argv[sys.argv.index("--TFM_BASE") + 1]
-import config
-
+if "TFM_BASE" not in os.environ:
+    for i, arg in enumerate(sys.argv):
+        if arg == "--TFM_BASE" and i + 1 < len(sys.argv):
+            os.environ["TFM_BASE"] = sys.argv[i + 1]
+            break
+    else:
+        base = next((a for a in sys.argv[1:] if a.startswith("s3://")
+                     and not a.endswith((".py", ".whl", ".zip"))), None)
+        if base:
+            os.environ["TFM_BASE"] = base
+print(f"[info] TFM_BASE = {os.environ.get('TFM_BASE', '(local)')}")
+import config # este config.py debe de mantenerse depues de la configuracion del path base
 
 # --- utilidades comunes --
 
@@ -47,7 +55,7 @@ def _normalizar_columnas(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def _leer_csv_flexible(ruta: str) -> pd.DataFrame:
-    """Los ficheros del Ayuntamiento usan ';' y codificaciones variadas""" # TODO cambiar para mas codificaciones en diferentes fuentes
+    """Los ficheros del Ayuntamiento usan ';' y codificaciones variadas (habria que cambiar si se quieren añadir datos con mas codificaciones)""" 
     for enc in ("utf-8", "latin-1"):
         try:
             df = pd.read_csv(ruta, sep=";", encoding=enc, dtype=str)
@@ -61,21 +69,41 @@ def _sort_csv_list(clave: str) -> list[str]:
     """Busca los archivos en las carpetas y subcarpetas y devuelve una lista ordenada"""
     import fsspec
     carpeta = f"{config.BRONZE}/{clave}"
-    fs, ruta = fsspec.core.url_to_fs(carpeta)
+    
+    if str(config.BRONZE).startswith("s3://"):
+        fs = fsspec.filesystem("s3")
+        ruta = carpeta[5:]
+        prefijo = "s3://"
+    elif str(config.BRONZE).startswith("gs://"):
+        fs = fsspec.filesystem("gcs")
+        ruta = carpeta[5:]
+        prefijo = "gs://"
+    else:
+        fs = fsspec.filesystem("file")
+        ruta = carpeta
+        prefijo = ""
+        
     if not fs.exists(ruta):
+        print(f"    [info] no existe {carpeta}")
         return []
-    proto = "s3://" if str(config.BRONZE).startswith("s3://") else ""
-    return sorted(proto + f for f in fs.find(ruta)
-                  if f.endswith(".csv") and not f.split("/")[-1].startswith("_"))
+        
+    encontrados = [f for f in fs.find(ruta)
+                   if f.endswith(".csv") and not f.split("/")[-1].startswith("_")]
+    print(f"    [info] {len(encontrados)} ficheros en {clave}")
+    return sorted((prefijo + f.lstrip("/")) if prefijo else f for f in encontrados)
 
 def _parse_fechas(serie: pd.Series) -> pd.Series:
-    """El formato de fecha cambia entre ficheros. Se detecta por patron:
-    - si empieza por el año (yyyy-...) es ISO; si no, formato español con dia primero.
-     WARNING -> dayfirst=True sobre fechas ISO intercambia mes y dia"""
-    s = serie.astype(str).str.strip()
+    """El formato de fecha cambia entre ficheros, lo detectamos por patron entre los formatos..."""
+    s = serie.astype(str).str.strip().str[:10]   # descarta la hora si la hubiera
     muestra = next((v for v in s if v and v.lower() not in ("nan", "nat")), "")
-    es_iso = bool(re.match(r"^\d{4}[-/]", muestra))
-    return pd.to_datetime(s, errors="coerce", dayfirst=not es_iso)
+    formatos = (["%Y-%m-%d", "%Y/%m/%d"] if re.match(r"^\d{4}[-/]", muestra)
+                else ["%d/%m/%Y", "%d-%m-%Y"])
+    mejor = pd.Series(pd.NaT, index=s.index)
+    for f in formatos:
+        cand = pd.to_datetime(s, format=f, errors="coerce")
+        if cand.notna().sum() > mejor.notna().sum():
+            mejor = cand
+    return mejor
 
 def _convertir_decimales(df: pd.DataFrame) -> pd.DataFrame:
     """Numeros del portal con coma decimal ('123456,00')"""
@@ -203,7 +231,7 @@ def limpiar_aforos(clave: str, columnas_valor: list[str]) -> None:
                 continue
             col_valor = col_valor or col
             df = df.rename(columns={col: col_valor})
-            # la fecha se parsea por fichero: el formato cambia entre años # TODO ????
+            # la fecha se parsea por fichero: el formato cambia entre años
             df["FECHA"] = _parse_fechas(df["FECHA"])
             rango = (f"{df['FECHA'].min():%Y-%m-%d} a {df['FECHA'].max():%Y-%m-%d}"
                      if df["FECHA"].notna().any() else "sin fechas validas")
@@ -233,7 +261,7 @@ def limpiar_aforos(clave: str, columnas_valor: list[str]) -> None:
 # --- tipo tabla_anual (con el año en el nombre del fichero) --
 
 def _quitar_filas_basura(df: pd.DataFrame) -> pd.DataFrame:
-    """El portal incrusta en el propio csv filas vacias, de totales y notas al pie ?? TODO documentar en memoria"""
+    """El portal incrusta en el propio csv filas vacias, de totales y notas al pie"""
     datos = df.drop(columns=["ANIO"], errors="ignore")
     casi_vacias = datos.notna().mean(axis=1) < 0.35
     texto = datos.fillna("").astype(str).apply(" ".join, axis=1).str.upper()
@@ -259,8 +287,16 @@ def limpiar_tabla_anual(clave: str, _param) -> None:
         return
 
     # Schema Evolution: si el esquema cambia en un año concreto (como paso 2024),
-    # pd.concat alinea las cabeceras y rellena los huecos con NaN  # TODO revisar la salida
+    # pd.concat alinea las cabeceras y rellena los huecos con NaN
     total = _convertir_decimales(pd.concat(partes, ignore_index=True))
+    cols_superficie = [c for c in total.columns if c.startswith("SUPERFICIE")]
+    for c in cols_superficie:
+        total[c] = pd.to_numeric(
+            total[c].astype(str).str.strip()
+            .str.replace(".", "", regex=False)   # quita punto de miles
+            .str.replace(",", ".", regex=False), # coma decimal a punto
+            errors="coerce"
+        )
     _guardar(total, f"{clave}_anual")
     cols = [c for c in total.columns if c != "ANIO"]
     print(f"  -> {clave}_anual: {len(total)} filas, "
