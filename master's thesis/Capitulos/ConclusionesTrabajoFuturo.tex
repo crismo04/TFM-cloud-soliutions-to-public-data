@@ -1,21 +1,39 @@
 \chapter{Conclusiones y Trabajo Futuro}
 \label{cap:conclusiones}
 
+Este capítulo cierra el trabajo recogiendo las reflexiones finales, las limitaciones encontradas y las líneas abiertas que podrían enriquecerlo en el futuro. Las conclusiones sintetizan los logros alcanzados en relación con los tres objetivos planteados al inicio del proyecto. El apartado de trabajo futuro, por su parte, invita a continuar explorando caminos que apenas han quedado esbozados, debido a la extensión de las tecnologías involucradas.
+
 \section{Conclusiones}
 \label{sec:conclusiones}
 
-[TODO]
+Revisando los objetivos iniciales del proyecto, se pueden dar por cumplidos los tres objetivos planteados, demostrando que la combinación de datos abiertos, computación en la nube e IA puede generar valor cuando se superan las barreras de calidad y continuidad de los datos publicados.
+
+\paragraph{Primer objetivo: análisis del panorama tecnológico.}
+Se ha realizado un análisis exhaustivo del panorama actual de la computación en la nube, la IA y el estado de los datos públicos, identificando las metodologías, técnicas y servicios más relevantes. El \hyperref[cap:estadoDeLaCuestion]{\textit{Capítulo \ref*{cap:estadoDeLaCuestion}}} ha permitido contextualizar el proyecto y justificar las decisiones tecnológicas adoptadas, desde la selección de los conjuntos de datos hasta la elección de las plataformas cloud y los algoritmos de aprendizaje automático. También se han dejado constancia de trabajos y tendencias actuales sobre estas tecnologías, que pueden servir de guía para otros investigadores que quieran abordar problemas similares.
+
+\paragraph{Segundo objetivo: desarrollo de una metodología replicable.}
+Se ha desarrollado una metodología que permite el uso de los datos desde su origen hasta la generación de valor, complementada con un manual de usuario que facilita la reproducibilidad y la inclusión de nuevos conjuntos de datos de manera relativamente sencilla. El \textit{pipeline} implementado (ingesta, limpieza y análisis) se ha demostrado portable entre entornos local, AWS y GCP gracias a la metodología aplicada. La automatización no solo ha aportado eficiencia, sino que ha actuado como un instrumento de auditoría sobre la calidad de la información pública, evidenciando carencias no documentadas en los portales de datos abiertos.
+
+\paragraph{Tercer objetivo: aplicación a casos de estudio reales.}
+Se ha aplicado la metodología propuesta a los conjuntos de datos del Ayuntamiento de Madrid, evaluando diferentes configuraciones para identificar las soluciones más eficientes a la hora de generar valor público. El análisis de la isla de calor ha extendido el trabajo de \citep{Meneses2023Madrid} desde 2019 hasta 2025, incorporando mejoras metodológicas como el criterio de cobertura mínima y la validación con coeficiente de silueta. Los resultados confirman una relación inversa sostenida entre superficie arbórea y temperatura media por distrito, con una correlación media de $-0,37$ mantenida a lo largo de los siete años analizados.
+
+La evaluación de los agrupamientos ha revelado que la aproximación basada en una única magnitud (NO$_2$) alcanzó la mejor silueta media ($0,565$), lo que indica que los grupos formados están bien separados y son coherentes internamente. En cambio, la que emplea las siete magnitudes meteorológicas obtuvo los peores valores ($0,146$), señalando una estructura prácticamente aleatoria. Las dos aproximaciones propias (temperatura + altitud y temperatura + superficie relativa) han mostrado que la altitud no es un factor determinante (silueta $0,443$) y que la superficie relativa mejora ligeramente la separación ($0,507$ frente a $0,500$ de la versión absoluta).
+
+Pero lo más importante es que el análisis ha demostrado la posibilidad y relativa facilidad con la que estos modelos se pueden utilizar para tratar los datos públicos en diferentes plataformas y extraer conclusiones de los mismos. En cuanto a la comparativa entre entornos, ha demostrado la reproducibilidad del análisis, con resultados idénticos en local, AWS y GCP. El coste neto ha sido de 0~USD y 0~€ gracias a los créditos gratuitos, manteniendo un holgado margen de más de 150~€ en cada plataforma. Esto permitiría repetir el estudio varias veces y valida el enfoque de las capas gratuitas de las nubes públicas para proyectos de investigación de tamaño moderado.
 
 \section{Limitaciones conocidas del proyecto}
 
-Los resultados obtenidos deben interpretarse a la luz de varias limitaciones. 
-En primer lugar, la discontinuidad de datos impide una serie temporal completamente homogénea, lo que limita la generalización de las correlaciones. 
-En segundo lugar, el análisis de movilidad peatonal y bicicletas, aunque se descargó y limpió, no se completó por restricciones de alcance.
-Por último, debido a la extension de los datos, este trabajo se limita solo a comparar unos cuantos modelos de datos y un par de servicios cloud y modelos, seria mucho mas interesante poder comparar todas las tecnologias y herramientas nombradas en el estado de la cuestion, para tener un espectro de elceccion mucho mas amplio al decidir de que forma se quiere trabajar con estas tres tecnologias.
+Los resultados obtenidos deben interpretarse a la luz de varias limitaciones conocidas.
+
+En primer lugar, la discontinuidad de datos impide una serie temporal completamente homogénea, lo que limita la generalización de las correlaciones. Los cambios de definición de variables, los huecos en las publicaciones y la degradación de la cobertura sensorial afectan especialmente a los años 2019 y 2022, que han debido tratarse con cautela.
+
+En segundo lugar, el análisis de movilidad peatonal y bicicletas, aunque se descargó y limpió, no se completó por restricciones de alcance. Queda como una línea abierta que habría aportado una perspectiva complementaria sobre el comportamiento urbano.
+
+En tercer lugar, el trabajo se ha limitado a comparar un número reducido de modelos de datos, dos proveedores cloud y un conjunto acotado de algoritmos de ML. Sería mucho más enriquecedor poder comparar todas las tecnologías y herramientas nombradas en el \hyperref[cap:estadoDeLaCuestion]{\textit{Capítulo \ref*{cap:estadoDeLaCuestion}}}, para tener un espectro de elección más amplio al decidir cómo trabajar con estas tres tecnologías.
 
 \section*{Trabajo futuro}
 
-Aunque el trabajo ha cumplido sus objetivos, quedan abiertas numerosas líneas que habría sido interesante explorar y que podrían enriquecerlo en el futuro. A continuación se recogen las más relevantes que se han quedado fuera del proyecto, ya sea por alcance, ya que son temas muy extensos, o por imposibilidad. Estan de nuevo, organizadas en los tres bloques que han guiado este proyecto.
+Aunque el trabajo ha cumplido sus objetivos, inevitablemente, debido a la extensión de los temas tratados, quedan abiertas numerosas líneas que habría sido interesante explorar y que podrían enriquecerlo en el futuro. A continuación se recogen las más relevantes que se han quedado fuera del proyecto, ya sea por alcance o por imposibilidad. Están organizadas, de nuevo, en los tres bloques que han guiado este proyecto.
 
 \begin{itemize}
 	\item \textbf{En el ámbito de los datos:}
@@ -31,7 +49,7 @@ Aunque el trabajo ha cumplido sus objetivos, quedan abiertas numerosas líneas q
 	
 	\item \textbf{En el ámbito de la nube:}
 	\begin{itemize}
-		\item \emph{Evaluar más proveedores, especialmente europeos.} Habría sido muy interesante probar \textbf{OVHcloud} (con sus AI Notebooks) o plataformas abiertas como \textbf{OpenNebula}, así como extender el análisis a otras nubes, algo que se acotó por tiempo.
+		\item \emph{Evaluar más proveedores, especialmente europeos.} Habría sido muy interesante probar OVHcloud (con sus \textit{AI Notebooks}) o plataformas abiertas como OpenNebula, así como extender el análisis a otras nubes, algo que se acotó por tiempo.
 		
 		\item \emph{Añadir el coste ecológico al análisis comparativo.} Hubiera sido un complemento excelente medir la huella de carbono de las diferentes plataformas y compararla con el coste económico, para tener una visión más sostenible de la nube.
 		
@@ -42,7 +60,7 @@ Aunque el trabajo ha cumplido sus objetivos, quedan abiertas numerosas líneas q
 		\item \emph{Construir un dashboard interactivo para los resultados.} Para que otros investigadores o el público general pudieran explorar los datos y conclusiones de forma visual e intuitiva, sería muy útil desarrollar una interfaz con herramientas nativas en la nube como un \textit{Apache Superset} gestionado o \textit{Looker Studio}.
 	\end{itemize}
 	
-	\item \textbf{En el ámbito del análisis y aprendizaje automático:}
+	\item \textbf{En el ámbito del análisis y ML:}
 	\begin{itemize}
 		\item \emph{Completar el análisis de movilidad peatonal y bicicletas.} Con los datos ya tratados del trabajo de \citep{SaizSantos2023}, añadiendo además nuevos datos y horizonte temporal, nos habría gustado poder aplicar modelos de series temporales (ARIMA, Prophet, LSTM) a estos datos de aforos y estudiar el proyecto.
 		
@@ -51,3 +69,11 @@ Aunque el trabajo ha cumplido sus objetivos, quedan abiertas numerosas líneas q
 		\item \emph{Probar AutoML en las plataformas cloud.} Durante el desarrollo se evaluó la posibilidad de emplear \textit{Vertex AI AutoML} (definido en el manual de usuario) y \textit{SageMaker Autopilot} para la fase de modelado. No obstante, sería interesante reformular el problema como una tarea de regresión (predecir la temperatura a partir de las demás variables) y comparar los resultados de AutoML con los modelos clásicos o clasificar los datos ya tratados. Esto permitiría evaluar si la automatización aporta mejoras en la selección de hiperparámetros, en la importancia de variables o en la calidad final de las predicciones.
 	\end{itemize}
 \end{itemize}
+
+\section{Valoración final}
+
+El proyecto ha contribuido a demostrar que la combinación de computación en la nube, aprendizaje automático y datos públicos puede generar valor público tangible, siempre que se superen las barreras de calidad y continuidad de los datos publicados. La metodología desarrollada es extensible a otros conjuntos de datos y plataformas de manera relativamente sencilla, y sienta las bases para futuras líneas de trabajo.
+
+El trabajo con datos reales, aún con sus imperfecciones, ha puesto de manifiesto la importancia de la calidad del dato como requisito previo para cualquier proceso automatizado de análisis. La automatización no es un lujo técnico, sino una necesidad para auditar la calidad de lo que se publica y para devolver a la ciudadanía un valor que muchas veces queda oculto (o en manos de unos pocos), por la falta de herramientas y conocimientos para procesar los datos abiertos.
+
+A toque personal, el proyecto ha sido un reto apasionante que me ha permitido profundizar en el estado del arte de tres tecnologías apasionantes, y aplicar estos conocimientos a problemas reales de interés público. La experiencia adquirida y las lecciones aprendidas serán de gran valor para futuros proyectos.

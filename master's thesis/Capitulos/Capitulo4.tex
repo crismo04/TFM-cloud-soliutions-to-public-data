@@ -1,12 +1,14 @@
 \chapter{Resultados}
 \label{cap:Resultados}
 
-En este capítulo se recogen los resultados obtenidos durante el proyecto, organizados en tres bloques, al igual que el resto de la memoria: los hallazgos relativos a la calidad y continuidad de los datos publicados, los resultados de los análisis realizados sobre ellos y los métodos de aprendizaje automático utilizados, y la comparación entre la ejecución local y las diferentes plataformas cloud evaluadas.
+\chapterquote{La respuesta a la gran pregunta sobre la vida, el universo y todo lo demás es... 42.}{Pensamiento Profundo, \textit{Guía del autoestopista galáctico} (Douglas Adams)}
+
+En este capítulo se recogen los resultados obtenidos durante el proyecto, organizados en tres bloques, al igual que el resto de la memoria: los hallazgos relativos a la calidad y continuidad de los datos publicados, los resultados de los análisis realizados sobre ellos y los métodos de ML utilizados, y la comparación entre la ejecución local y las diferentes plataformas cloud evaluadas.
 
 \section{Hallazgos sobre la calidad de los datos publicados}
 \label{sec:Resultados_datos}
 
-El trabajo ha conseguido detectar problemas de calidad que no son visibles en un estudio de un solo año, como los trabajos de referencia \citep{Meneses2023Madrid, SaizSantos2023}, que usaron un único año de datos. Con esto, se pueden perder cambios como los que hay nombrados en el apartado \ref{sec:Metodos_limpieza}. Por ejemplo, Meneses y García (2023) sí detectaron el problema de los meses con más días de los que corresponden y lo corrigieron en su limpieza en R; esta misma regla se ha heredado en este trabajo.
+El trabajo ha conseguido detectar problemas de calidad que no son visibles en un estudio de un solo año, como los trabajos de referencia \citep{Meneses2023Madrid, SaizSantos2023}, que usaron un único año de datos. Con esto, se pueden perder cambios como los que hay nombrados en el \hyperref[sec:Metodos_limpieza]{\textit{apartado \ref*{sec:Metodos_limpieza}}}. Por ejemplo, Meneses y García (2023) sí detectaron el problema de los meses con más días de los que corresponden y lo corrigieron en su limpieza en R; esta misma regla se ha heredado en este trabajo.
 
 La principal conclusión es que la automatización no solo aporta eficiencia, sino que actúa como un instrumento de auditoría sobre la calidad de la información pública, evidenciando en la práctica las carencias que la literatura actual señala sobre la madurez de los portales de datos abiertos \citep{verhulst2020, OECD2023openData, MelendrezMoreto2016Auditoria}. En los siguientes apartados se detallan los hallazgos más relevantes sobre los datos analizados, como la evolución no documentada y los problemas de continuidad y cobertura.
 
@@ -44,17 +46,17 @@ La Figura \ref{fig:cobertura} muestra los días válidos de temperatura por esta
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Imagenes/Bitmap/cobertura_temperatura.png}
-	\caption{Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos 1xx) durante 2021 y 2022.}
+	\includegraphics[width=1.0\textwidth]{Imagenes/Bitmap/cobertura_temperatura.png}
+	\caption{Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos mayores a 100) durante 2021 y 2022.}
 	\label{fig:cobertura}
 \end{figure}
 
-Se observa que la caída de cobertura entre 2021 y 2022 se concentra en la subred municipal con códigos 1xx, mientras que la red clásica, con números bajos, se mantiene. Este patrón coincide en el tiempo con el hueco de 14 meses en los aforos de peatones y bicicletas, lo que apunta a que no es un fallo general ni averías independientes \citep{AytoMadrid2026Aforos}. Además, se detecta que diciembre de 2024 está ausente en toda la red (todas las estaciones topan en ~335 días). Las estaciones 16 y 39 presentan cero datos hasta 2022, año en el que entran en la red. Por último, la estación 104 mide temperatura en 2019 aunque el inventario oficial indique que no tiene ese sensor, lo que evidencia una contradicción entre el maestro de datos y el dato real.
+Se observa que la caída de cobertura entre 2021 y 2022 se concentra en la subred municipal con códigos 1xx, mientras que la red clásica, con números bajos, se mantiene. Este patrón coincide en el tiempo con el hueco de 14 meses en los aforos de peatones y bicicletas, lo que apunta a que no es un fallo general ni averías independientes \citep{AytoMadrid2026Aforos}. Además, se detecta que diciembre de 2024 está ausente en toda la red (todas las estaciones se detienen en unos 335 días). Las estaciones 16 y 39 presentan cero datos hasta 2022, año en el que entran en la red. Por último, la estación 104 mide temperatura en 2019 aunque el inventario oficial indique que no tiene ese sensor, lo que evidencia una contradicción entre el maestro de datos y el dato real.
 
-\section{Resultados del análisis de aprendizaje automático: isla de calor}
+\section{Resultados del análisis de ML: isla de calor}
 \label{sec:Resultados_isla_calor}
 
-En esta sección se presentan los resultados del análisis de la isla de calor, que extiende el trabajo de \citep{Meneses2023Madrid} desde 2019 hasta 2025 (incluyendo 2019, aunque este año no es directamente comparable con el resto de la serie; véase la Sección \ref{sec:Resultados_limitaciones}). Se han evaluado cinco aproximaciones originales (basadas en magnitudes meteorológicas y de contaminación) y dos nuevas aproximaciones propias (temperatura y altitud; temperatura y superficie arbórea relativa). Además, se han aplicado criterios propios para aumentar el alcance del estudio, como la cobertura mínima de 300 días por estación y año.
+En esta sección se presentan los resultados del análisis de la isla de calor, que extiende el trabajo de \citep{Meneses2023Madrid} desde 2019 hasta 2025 (incluyendo 2019, aunque este año no es directamente comparable con el resto de la serie; véase la \hyperref[sec:Resultados_limitaciones]{\textit{Sección \ref*{sec:Resultados_limitaciones}}}). Se han evaluado cinco aproximaciones originales (basadas en magnitudes meteorológicas y de contaminación) y dos nuevas aproximaciones propias (temperatura y altitud; temperatura y superficie arbórea relativa). Además, se han aplicado criterios propios para aumentar el alcance del estudio, como la cobertura mínima de 300 días por estación y año.
 Cabe aclarar que, para las figuras de esta memoria, especialmente cuando se han analizado varios años, se ha utilizado 2021 como año de referencia, ya que es el año base del trabajo original. El resto de análisis (2019-2025) se pueden consultar en el repositorio de GitHub.
 
 \subsection{Replicación del trabajo de referencia}
@@ -98,7 +100,7 @@ En la tabla se puede ver el acuerdo en las aproximaciones. Las diferencias se ex
 \subsection{Relación entre superficie arbórea y temperatura}
 \label{sec:Resultados_arbolado}
 
-La relación inversa entre superficie arbórea y temperatura media por distrito se mantuvo en los siete años analizados, con valores comprendidos entre $-0,26$ y $-0,47$ y una media de $-0,37$ (Tabla \ref{tab:arbolado_anios}). El trabajo original observaba esta relación en un único año y de forma cualitativa; la extensión temporal permite afirmar que no se trata de una particularidad de ese periodo, sino de un patrón sostenido, aunque de intensidad moderada, lo que sugiere factores no controlados, que se discuten en la Sección \ref{sec:Resultados_limitaciones}.
+La relación inversa entre superficie arbórea y temperatura media por distrito se mantuvo en los siete años analizados, con valores comprendidos entre $-0,26$ y $-0,47$ y una media de $-0,37$ (Tabla \ref{tab:arbolado_anios}). El trabajo original observaba esta relación en un único año y de forma cualitativa; la extensión temporal permite afirmar que no se trata de una particularidad de ese periodo, sino de un patrón sostenido, aunque de intensidad moderada, lo que sugiere factores no controlados, que se discuten en la \hyperref[sec:Resultados_limitaciones]{\textit{Sección \ref*{sec:Resultados_limitaciones}}}.
 
 \begin{table}[htbp]
 	\centering
@@ -139,7 +141,7 @@ La comparación entre ambas configuraciones mostradas en la figura \ref{fig:evol
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/evolucion_correlacion.png}
+	\includegraphics[width=0.8\textwidth]{Imagenes/Bitmap/evolucion_correlacion.png}
 	\caption{Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.}
 	\label{fig:evolucion_correlacion}
 \end{figure}
@@ -171,18 +173,18 @@ Además de la superficie arbórea absoluta, se ha explorado la relación entre t
 	\label{tab:externas}
 \end{table}
 
-La altitud muestra correlaciones muy débiles y cambiantes de signo, lo que sugiere que, dentro del término municipal de Madrid, el gradiente altitudinal no es un factor determinante en el régimen térmico. La superficie relativa presenta una relación más variable: en 2019 la correlación es fuertemente negativa (-0,658), probablemente debida al cambio en el término de superficie, pero en el resto de años los valores son moderados y cambian de signo. Este comportamiento, junto con el hecho de que en la aproximación de agrupamiento la superficie relativa obtiene una silueta media (0,507) ligeramente superior a la absoluta (0,500), sugiere que la normalización por el tamaño del distrito puede tener efectos no lineales. La Figura \ref{fig:temp_sup_rel_2021} muestra el scatter para el año 2021, donde se aprecia la dispersión de los datos. El scatter 3D de temperatura, altitud y superficie relativa (Figura \ref{fig:scatter3d_2022}) no muestra una tendencia clara, lo que refuerza que la vegetación absoluta es el factor más relevante entre los analizados.
+La altitud muestra correlaciones muy débiles y cambiantes de signo, lo que sugiere que, dentro del término municipal de Madrid, el gradiente altitudinal no es un factor determinante en el régimen térmico. La superficie relativa presenta una relación más variable: en 2019 la correlación es fuertemente negativa ($-0,658$), probablemente debida al cambio en el término de superficie, pero en el resto de años los valores son moderados y cambian de signo. Este comportamiento, junto con el hecho de que en la aproximación de agrupamiento la superficie relativa obtiene una silueta media ($0,507$) ligeramente superior a la absoluta ($0,500$), sugiere que la normalización por el tamaño del distrito puede tener efectos no lineales. La Figura \ref{fig:temp_sup_rel_2021} muestra el \textit{scatter} para el año 2021, donde se aprecia la dispersión de los datos. El \textit{scatter} 3D de temperatura, altitud y superficie relativa (Figura \ref{fig:scatter3d_2022}) no muestra una tendencia clara, lo que refuerza que la vegetación absoluta es el factor más relevante entre los analizados.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png}
+	\includegraphics[width=0.9\textwidth]{Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png}
 	\caption{Relación entre superficie arbórea relativa y temperatura media por distrito, año 2021.}
 	\label{fig:temp_sup_rel_2021}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/scatter3d_variables_externas_2022.png}
+	\includegraphics[width=0.9\textwidth]{Imagenes/Bitmap/scatter3d_variables_externas_2022.png}
 	\caption{Scatter 3D de temperatura, altitud y superficie relativa para el año 2022.}
 	\label{fig:scatter3d_2022}
 \end{figure}
@@ -190,7 +192,7 @@ La altitud muestra correlaciones muy débiles y cambiantes de signo, lo que sugi
 \subsection{Evaluación de los agrupamientos}
 \label{sec:Resultados_agrupamiento}
 
-Los agrupamientos revelaron una relación inversa y sistemática entre el número de variables empleadas y la calidad de los grupos obtenidos (Tabla \ref{tab:silhouette_anios_propio}). La aproximación basada en una única magnitud, el dióxido de nitrógeno, alcanzó la mejor silueta media (0,565), seguida de las aproximaciones con dos variables (temperatura y humedad: 0,498; temperatura y arbolado: 0,500). La que emplea las siete magnitudes meteorológicas obtuvo sistemáticamente los peores valores (0,146), hasta el punto de resultar inviable en 2022. Esto se debe a dos causas: al aumentar la dimensionalidad, las distancias entre observaciones tienden a igualarse y los grupos pierden definición, además, exigir que una estación disponga de todas las magnitudes reduce drásticamente la muestra, de las veinticuatro estaciones disponibles para el NO$_2$ a apenas cinco o siete para el conjunto meteorológico completo. La heterogeneidad de la cobertura sensorial de la red no solo introduce valores ausentes, sino que también condiciona qué análisis resultan viables. En cuanto a las aproximaciones propias, la que incorpora la altitud obtuvo una silueta media de 0,443, inferior a la de temperatura y humedad (0,498). La que utiliza la superficie arbórea relativa al área del distrito alcanzó una silueta media de 0,507, ligeramente superior a la versión absoluta (0,500), lo que sugiere que normalizar por el tamaño del distrito puede mejorar ligeramente la separación entre grupos.
+Los agrupamientos revelaron una relación inversa y sistemática entre el número de variables empleadas y la calidad de los grupos obtenidos (Tabla \ref{tab:silhouette_anios_propio}). La aproximación basada en una única magnitud, el dióxido de nitrógeno, alcanzó la mejor silueta media ($0,565$), seguida de las aproximaciones con dos variables (temperatura y humedad: $0,498$; temperatura y arbolado: $0,500$). La que emplea las siete magnitudes meteorológicas obtuvo sistemáticamente los peores valores ($0,146$), hasta el punto de resultar inviable en 2022. Esto se debe a dos causas: al aumentar la dimensionalidad, las distancias entre observaciones tienden a igualarse y los grupos pierden definición; además, exigir que una estación disponga de todas las magnitudes reduce drásticamente la muestra, de las veinticuatro estaciones disponibles para el NO$_2$ a apenas cinco o siete para el conjunto meteorológico completo. La heterogeneidad de la cobertura sensorial de la red no solo introduce valores ausentes, sino que también condiciona qué análisis resultan viables. En cuanto a las aproximaciones propias, la que incorpora la altitud obtuvo una silueta media de $0,443$, inferior a la de temperatura y humedad ($0,498$). La que utiliza la superficie arbórea relativa al área del distrito alcanzó una silueta media de $0,507$, ligeramente superior a la versión absoluta ($0,500$), lo que sugiere que normalizar por el tamaño del distrito puede mejorar ligeramente la separación entre grupos.
 
 \begin{table}[htbp]
 	\centering
@@ -214,11 +216,11 @@ Los agrupamientos revelaron una relación inversa y sistemática entre el númer
 	\label{tab:silhouette_anios_propio}
 \end{table}
 
-El diagrama del codo para la aproximación de temperatura y humedad (Figura \ref{fig:codo_2021}) muestra que la inercia cae de forma pronunciada hasta $k=2$ (21,2 $\to$ 5,8), luego se modera (5,8 $\to$ 4,5 $\to$ 2,6) y a partir de $k=5$ las reducciones son inferiores a 1. Este comportamiento valida la elección de cinco grupos del trabajo original. Además, el máximo de silueta para esta aproximación en 2021 es de 0,660, lo que confirma que dos criterios independientes señalan el mismo número de grupos. Un matiz honesto es que la caída más brusca se produce en $k=2$, coherente con la primera división del dendrograma (Figura \ref{fig:dendrograma_2021}), lo que indica que $k=2$ captura la estructura dominante (periferia vs. núcleo urbano) y $k=5$ es la subdivisión estable de esa estructura.
+El diagrama del codo para la aproximación de temperatura y humedad (Figura \ref{fig:codo_2021}) muestra que la inercia cae de forma pronunciada hasta $k=2$ ($21,2 \to 5,8$), luego se modera ($5,8 \to 4,5 \to 2,6$) y a partir de $k=5$ las reducciones son inferiores a 1. Este comportamiento valida la elección de cinco grupos del trabajo original. Además, el máximo de silueta para esta aproximación en 2021 es de $0,660$, lo que confirma que dos criterios independientes señalan el mismo número de grupos. Un matiz honesto es que la caída más brusca se produce en $k=2$, coherente con la primera división del dendrograma (Figura \ref{fig:dendrograma_2021}), lo que indica que $k=2$ captura la estructura dominante (periferia vs. núcleo urbano) y $k=5$ es la subdivisión estable de esa estructura.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png}
+	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png}
 	\caption{Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).}
 	\label{fig:codo_2021}
 \end{figure}
@@ -229,7 +231,7 @@ El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra que la primera divisi
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png}
+	\includegraphics[width=1.1\textwidth]{Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png}
 	\caption{Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).}
 	\label{fig:dendrograma_2021}
 \end{figure}
@@ -241,14 +243,14 @@ Todos los resultados obtenidos deben interpretarse a la luz de tres limitaciones
 
 En primer lugar, existen factores no controlados que pueden influir en la temperatura. Se han añadido aproximaciones que incorporan la altitud y la superficie relativa al área del distrito. La altitud, según el estudio, no es un factor distintivo. La superficie relativa obtiene una silueta media ligeramente superior, aunque la diferencia es modesta. Es posible que haya más variables no consideradas que expliquen la variabilidad de la temperatura, como la densidad de edificación, la orientación de las calles, la presencia de cuerpos de agua, entre otros. La disponibilidad de datos abiertos sobre estas variables es limitada, lo que restringe su inclusión en el análisis.
 
-En segundo lugar, el año 2019 no es directamente comparable con el resto de la serie. El cambio de definición de ``masa forestal'' a ``masa arbórea'' supone un reinventariado, no un crecimiento vegetal real, como reflejan los saltos de ±30 hectáreas en algunos distritos (San Blas pasa de 45 a 15 ha; Villa de Vallecas de 63 a 94 ha). Por este motivo, en el análisis de sensibilidad se ha tratado 2019 por separado y se ha restringido la serie comparable a 2020-2025.
+En segundo lugar, el año 2019 no es directamente comparable con el resto de la serie. El cambio de definición de ``masa forestal'' a ``masa arbórea'' supone un reinventariado, no un crecimiento vegetal real, como reflejan los saltos de $\pm30$ hectáreas en algunos distritos (San Blas pasa de 45 a 15~ha; Villa de Vallecas de 63 a 94~ha). Por este motivo, en el análisis de sensibilidad se ha tratado 2019 por separado y se ha restringido la serie comparable a 2020-2025.
 
 En tercer lugar, el criterio de cobertura mínima propuesto (300 días por estación y año), aunque mejora la robustez de los agrupamientos al descartar estaciones con datos insuficientes, introduce una limitación importante: reduce drásticamente la muestra disponible en años con baja cobertura sensorial. En 2022, por ejemplo, solo quedan 9 distritos, lo que limita la generalización de las correlaciones de ese año ($r = -0,471$), que deben interpretarse con cautela. Este efecto es una consecuencia directa de la calidad de los datos publicados y no del criterio en sí, pero es una limitación que debe tenerse en cuenta al extender el análisis a años con cobertura incompleta.
 
 \section{Comparación entre la ejecución local y las plataformas cloud}
 \label{sec:Resultados_cloud}
 
-Respecto a los entornos, los resultados son idénticos en los tres (local, AWS y GCP) dada la portabilidad del código, lo que confirma la reproducibilidad del análisis. El coste bruto estimado del proyecto en AWS fue de 0,93\$. El análisis interactivo en SageMaker fue el componente más costoso, lo que indica que el coste no está en el cómputo, sino en mantener un entorno encendido. En GCP, el coste bruto fue de 13,14€, concentrado casi íntegramente en el tiempo de instancia de Vertex AI Workbench (Notebooks). El resto de servicios (Cloud Storage, Cloud Run, etc.) tuvieron un coste marginal o nulo.
+Respecto a los entornos, los resultados son idénticos en los tres (local, AWS y GCP) dada la portabilidad del código, lo que confirma la reproducibilidad del análisis. El coste bruto estimado del proyecto en AWS fue de 0,93~\$. El análisis interactivo en SageMaker fue el componente más costoso, lo que indica que el coste no está en el cómputo, sino en mantener un entorno encendido. En GCP, el coste bruto fue de 13,14~€, concentrado casi íntegramente en el tiempo de instancia de Vertex AI Workbench (Notebooks). El resto de servicios (Cloud Storage, Cloud Run, etc.) tuvieron un coste marginal o nulo.
 En ambos casos, los créditos de las capas gratuitas cubrieron la totalidad de los costes, por lo que el coste neto fue de 0 euros.
 
 La Tabla \ref{tab:esfuerzo_plataforma} recoge el esfuerzo medido en horas dedicado a cada etapa y en cada entorno por el investigador. En este caso, el orden en que se abordaron los entornos condiciona el resultado, ya que con el conocimiento acumulado de etapas anteriores, las siguientes son mucho más ágiles. La implementación local fue la primera y llevó la mayor parte del trabajo de comprensión de las fuentes, diseño del proceso en código y resolución de las incidencias de calidad del dato. De igual manera, AWS fue la primera nube evaluada, y la que menos conocía el autor, por lo que el tiempo acumulado incluye el aprendizaje de la plataforma y el coste en tiempo del primer acercamiento a la nube. En cambio, GCP tiene un alto tiempo en limpieza por la evaluación de diferentes métodos que al final no se pudieron aplicar.
@@ -299,6 +301,19 @@ La Tabla \ref{tab:costes_cloud} detalla los costes brutos y netos incurridos en 
 	\label{tab:costes_cloud}
 \end{table}
 
-La principal diferencia radica en el modelo de facturación: AWS ofrece una capa gratuita generosa para servicios como Glue y SageMaker (hasta 6 meses), mientras que en GCP, aunque los créditos iniciales (300 \$) cubren el proyecto, el coste de mantener una instancia de Vertex AI Workbench encendida es el que genera el gasto principal. Si se detuviera la instancia entre sesiones, este coste podría reducirse drásticamente.
+La principal diferencia radica en el modelo de facturación: AWS ofrece una capa gratuita generosa para servicios como Glue y SageMaker (hasta 6 meses), mientras que en GCP, aunque los créditos iniciales (300~\$) cubren el proyecto, el coste de mantener una instancia de Vertex AI Workbench encendida es el que genera el gasto principal. Si se detuviera la instancia entre sesiones, este coste podría reducirse drásticamente.
 
 De todas formas, el precio de la nube no es el único factor a considerar. La facilidad de uso, la documentación, la integración con otros servicios y la experiencia previa son elementos que influyen en la elección de una plataforma sobre otra. En este caso, las diferencias de coste no son significativas, dado que ambos entornos ofrecieron créditos suficientes para cubrir la totalidad del proyecto, y Vertex AI Workbench podría haber sido detenido entre sesiones para reducir el coste.
+
+
+\section*{Conclusiones del capítulo}
+
+Los resultados obtenidos en este capítulo confirman la utilidad del pipeline implementado y ofrecen evidencia empírica sobre las tres partes principales del proyecto.
+
+En el ámbito de los datos, se han revelado problemas de calidad, ya descritos en \hyperref[sec:Metodos_limpieza]{\textit{Sección \ref*{sec:Metodos_limpieza}}}.
+
+En el análisis de la isla de calor, se ha verificado la relación inversa entre superficie arbórea y temperatura, confirmando que se trata de un patrón estructural de la ciudad y no de una particularidad anual. El criterio de cobertura mínima ha demostrado reforzar esta relación, eliminando distorsiones introducidas por estaciones parcialmente operativas. Las aproximaciones con menos variables obtienen mejores agrupamientos, mientras que la altitud no resulta un factor determinante.
+
+En la comparativa cloud, se ha constatado la reproducibilidad de los resultados en los tres entornos, con costes netos nulos gracias a los créditos gratuitos, y una generosa cantidad sobrante. El esfuerzo de desarrollo ha sido mayor en local que en las nubes, aunque el orden de ejecución condiciona estos tiempos. La principal diferencia de coste radica en el modelo de facturación, siendo el análisis interactivo el componente más costoso en ambas plataformas.
+
+Las implicaciones de estos resultados, junto con las lecciones aprendidas y las líneas de trabajo abiertas, se discuten en el \hyperref[sec:conclusiones]{\textit{Capítulo \ref*{sec:conclusiones}}}.

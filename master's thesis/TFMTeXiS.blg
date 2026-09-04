@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99e
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: TFMTeXiS.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
@@ -64,45 +64,45 @@ Warning--there's a number but no volume in TransparenciaEcuador
 Warning--empty journal in vaswani2017attention
 Warning--empty journal in PrivateIaaSComparative2016
 Warning--empty journal in Werbos1974Backpropagation
-You've used 164 entries,
+You've used 171 entries,
             2962 wiz_defined-function locations,
-            1881 strings with 37892 characters,
-and the built_in function-call counts, 78591 in all, are:
-= -- 6255
-> -- 2968
-< -- 188
-+ -- 1207
-- -- 990
-* -- 4915
-:= -- 12660
-add.period$ -- 524
-call.type$ -- 164
-change.case$ -- 1164
-chr.to.int$ -- 141
-cite$ -- 184
-duplicate$ -- 6284
-empty$ -- 5639
-format.name$ -- 1237
-if$ -- 15244
-int.to.chr$ -- 24
+            1904 strings with 39435 characters,
+and the built_in function-call counts, 81124 in all, are:
+= -- 6463
+> -- 3070
+< -- 192
++ -- 1248
+- -- 1023
+* -- 5053
+:= -- 13126
+add.period$ -- 546
+call.type$ -- 171
+change.case$ -- 1210
+chr.to.int$ -- 147
+cite$ -- 191
+duplicate$ -- 6479
+empty$ -- 5803
+format.name$ -- 1279
+if$ -- 15704
+int.to.chr$ -- 25
 int.to.str$ -- 1
-missing$ -- 1238
-newline$ -- 853
-num.names$ -- 656
-pop$ -- 2898
+missing$ -- 1276
+newline$ -- 890
+num.names$ -- 684
+pop$ -- 2994
 preamble$ -- 1
-purify$ -- 985
+purify$ -- 1024
 quote$ -- 0
-skip$ -- 2556
+skip$ -- 2632
 stack$ -- 0
-substring$ -- 2575
-swap$ -- 2863
-text.length$ -- 48
+substring$ -- 2624
+swap$ -- 2927
+text.length$ -- 46
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1616
+type$ -- 1686
 warning$ -- 20
-while$ -- 553
+while$ -- 571
 width$ -- 0
-write$ -- 1940
+write$ -- 2018
 (There were 21 warnings)

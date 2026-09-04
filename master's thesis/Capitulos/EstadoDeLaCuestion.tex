@@ -5,7 +5,7 @@
 
 \vspace{1cm}
 
-En este apartado expondremos el estado actual de los puntos principales de este proyecto, así como los artículos relacionados con los temas a tratar: trabajos relacionados con los principales proveedores Cloud y su comparación, trabajos que traten con grandes volúmenes de datos públicos o que estudien los datos públicos, o trabajos que utilicen diferentes IAs para el tratamiento de datos y la obtención de conclusiones a partir de estos. No es una tarea fácil, ya que los artículos relacionados en ``Google Scholar'' se cuentan por millones al buscar ``data'', ``Artificial Intelligence'' o ``cloud computing'', por lo que, aunque también se estudiarán conjuntos de datos, artículos y aplicaciones de otras partes del globo, la parte práctica del proyecto se intentará centrar en datos del territorio español, de esta manera acotaremos el alcance del proyecto y contribuiremos a aprovechar datos que no han sido tan explotados y explorados como pueden ser los datos abiertos disponibles en plataformas como Google \citep{googleDataCommon} o Amazon \citep{AWSDataCommon}.
+En este apartado expondremos el estado actual de los puntos principales de este proyecto, así como los artículos relacionados con los temas a tratar: trabajos relacionados con los principales proveedores Cloud y su comparación, trabajos que traten con grandes volúmenes de datos públicos o que estudien los datos públicos, o trabajos que utilicen diferentes técnicas de IA para el tratamiento de datos y la obtención de conclusiones a partir de estos. No es una tarea fácil, ya que los artículos relacionados en ``Google Scholar'' se cuentan por millones al buscar ``data'', ``Artificial Intelligence'' o ``cloud computing'', por lo que, aunque también se estudiarán conjuntos de datos, artículos y aplicaciones de otras partes del globo, la parte práctica del proyecto se intentará centrar en datos del territorio español. De esta manera acotaremos el alcance del proyecto y contribuiremos a aprovechar datos que no han sido tan explotados y explorados como pueden ser los datos abiertos disponibles en plataformas como Google \citep{googleDataCommon} o Amazon \citep{AWSDataCommon}.
 
 También dividiremos esta sección en los tres elementos que componen el trabajo, y estudiaremos las posibilidades y estado de la cuestión de cada uno. 
 
@@ -14,447 +14,458 @@ También dividiremos esta sección en los tres elementos que componen el trabajo
 \section{Datos}
 \label{sec:EstudiosDatos}
 
-Llevamos mucho tiempo escuchando que vivimos en la era de la información, o de los datos, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando por la primera vez que se acuñó en 2005 el término ``web 2.0'' y ``Big Data'' \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente Inteligencia Artificial, llegarán a generar, según proyecciones, la asombrosa cifra de 149 Zettabytes de datos creados, capturados, copiados y consumidos en 2024, cifra estimada en 181 Zettabytes para 2025 y que las proyecciones sitúan en torno a los 394 Zettabytes en 2028 \citep{BigDataStatista, BigDataStadisticsMarket} (número impresionante a pesar de la naturaleza especulativa de estas proyecciones).
+Llevamos mucho tiempo escuchando que vivimos en la era de la información, o de los datos, desde la invención del transistor en 1947 \citep{wikiInformationAge}, pasando por la primera vez que se acuñó en 2005 el término ``web 2.0'' y ``Big Data'' \citep{HistoryOfBigData}, así como su rápido crecimiento y adopción en todas las esferas \citep{brown2011you}, hasta el presente, donde los datos y su tratamiento a través de múltiples herramientas, incluyendo la recientemente omnipresente IA, generan enormes volúmenes de datos.
 
-Esta evolución no ha sido lineal ni uniforme, sino que ha estado marcada por distintos enfoques, motivaciones y metodologías en todo el mundo en lo que se denominan las tres olas de datos abiertos \hyperref[def5]{[Definición \ref*{def5}]}, diferentes etapas evolutivas por las que ha transitado el movimiento de apertura de datos.
+Según proyecciones, la asombrosa cifra de 149 Zettabytes de datos creados, capturados, copiados y consumidos en 2024, cifra estimada en 181 Zettabytes para 2025 y que las proyecciones sitúan en torno a los 394 Zettabytes en 2028 \citep{BigDataStatista, BigDataStadisticsMarket} (número impresionante a pesar de la naturaleza especulativa de estas proyecciones).
 
-En España, los datos también muestran un aumento significativo. Según el informe económico de telecomunicaciones y audiovisual de la CNMC \citep{CNMC2026Informe}, en 2025 el tráfico de banda ancha y datos móviles creció hasta los 0.095 Zettabytes, que aunque estas cifras miden el tráfico cursado por las redes de las principales operadoras y no es directamente comparable con las estimaciones globales de datos generados, permiten observar que ambas mediciones son elevadas, y con tendencia común de crecimiento sostenido año tras año.
+Esta evolución no ha sido lineal ni uniforme, sino que ha estado marcada por distintos enfoques, motivaciones y metodologías en todo el mundo en lo que se denominan las tres olas de datos abiertos \hyperref[def5]{\textit{Definición \ref*{def5}}}: diferentes etapas evolutivas por las que ha transitado el movimiento de apertura de datos.
 
-Aún con estas discrepancias en cuanto a números, lo que está claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta más difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e inteligencia artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
+En España, los datos también muestran un aumento significativo. Según el informe económico de telecomunicaciones y audiovisual de la Comisión Nacional de los Mercados y la Competencia (CNMC), en 2025 el tráfico de banda ancha y datos móviles creció hasta los 0,095 Zettabytes \citep{CNMC2026Informe}. Aunque estas cifras miden el tráfico cursado por las redes de las principales operadoras, y no es directamente comparable con las estimaciones globales de datos generados, sí que permiten observar que ambas mediciones son elevadas, con tendencia común de crecimiento sostenido año tras año.
 
-Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, Excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos porque su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicará más en detalle en la \hyperref[sec:Metodos_limpieza]{Sección \ref*{sec:Metodos_limpieza}: Normalización y limpieza}.
+Aún con estas discrepancias en cuanto a números, lo que está claro es que el mercado de los datos no para de crecer año tras año y cada vez resulta más difícil separar la información relevante del ruido, evitando la ``infoxicación'' o sobrecarga informativa \citep{Infoxicacion}. En este escenario, tecnologías como la computación en la nube e Inteligencia Artificial pueden ser claves para encontrar los patrones o llegar a conclusiones.
+
+Mencionar también brevemente que los ``datos'' no suelen aparecer en formatos consistentes, y para este trabajo se han tratado diferentes formatos: CSV, JSON, bases de datos diversas, Excel, APIs, etc. \citep{khan2019fileFormats}. Esto es así porque queríamos que las fuentes de datos fueran heterogéneas y no excluir datos porque su extracción o tratamiento fueran complejos, ya que este es el caso para la mayoría de aplicaciones en el mundo real. Esto se explicará más en detalle en la \hyperref[sec:Metodos_limpieza]{\textit{Sección \ref*{sec:Metodos_limpieza}}: Normalización y limpieza}.
 
 \subsection{Obtención de datos públicos}
-	
-	Lo primero para la realización de este proyecto es la obtención de datos públicos, o datos abiertos \hyperref[def4]{[Definición \ref*{def4}]}. Esto presenta tres grandes complicaciones a tener en cuenta:
-	
-	La primera es que, aunque existe un consenso creciente sobre la importancia de la apertura de datos, la realidad muestra que \textbf{muchos datos de alto valor aún no son accesibles, lo son de forma limitada o su uso es complejo}, ya sea a conciencia o por indolencia. Según la OECD \citep{OECD2023openData}, sólo el 48\% de los conjuntos de datos de gran valor están disponibles como datos abiertos en los países estudiados, datos que bajan al 30\% cuando se trata de datos financieros. Estudios de otras partes del mundo también avalan esta reticencia a la correcta apertura de información pública \citep{TransparenciaEcuador, TransparenciaMexico}.
-	
-	La segunda causa es \textbf{la regulación}, el tratamiento de datos en Europa debe seguir la RGPD de 2016 y las regulaciones propias de cada Estado miembro \citep{LicenciasLibres2017Datos} \& \citep{webRGPD2016Europa}, así como la más reciente Ley de Gobernanza de Datos \citep{webLGD2023Europa, DatosAbiertos2022Cloud}. Para cumplir con estas normativas, en este proyecto nos centraremos en el uso de datos oficiales abiertos, evitando técnicas como el ``web scraping'' que pueden estar sujetas a controversia a la vista de estas regulaciones. También se verificarán las licencias de todos los datos y modelos utilizados para asegurarnos de que no incumplimos ninguna de las regulaciones existentes.
-	
-	En cuanto a datos de otros países fuera de la Unión Europea, tenemos panoramas diversos los cuales vale la pena mencionar, desde una regulación más laxa en Estados Unidos, hasta un control estricto en países como China. Estos datos no se utilizarán en este trabajo por temas de alcance, ya que se prefiere dar prioridad a fuentes de datos nacionales, pero las herramientas desarrolladas serían aplicables a estos mismos datos cumpliendo sus normativas.
-	
-	En Estados Unidos, el panorama es sobre todo abierto, pero fragmentado. Cuentan con regulaciones sectoriales, como la ``Health Insurance Portability and Accountability Act'' (HIPAA) para datos médicos \citep{webHIPAA1996EEUU} y regulaciones estatales como la ``California Consumer Privacy Act'' (CCPA) \citep{webCCPA2018California} para proteger derechos individuales. También existe una legislación nacional que promueve los datos abiertos, la ``OPEN Government Data Act'' (2019) \citep{webOGDA2019EEUU}, que establece que los datos gubernamentales deben ser abiertos y utilizables.
-	
-	Por su parte, China ha establecido un marco regulatorio estricto con leyes como la ``Personal Information Protection Law'' (PIPL) \citep{webPIPL2021China}, que habla de principios de consentimiento y derechos del individuo, y la ``Data Security Law'' (DSL) \citep{webDSL2021China}, que prioriza la seguridad nacional y el control sobre los datos generados en el país.
-	
-	
-	Por último, la tercera causa es \textbf{la tecnología}, como ya se ha hablado, los datos pueden estar en formatos diferentes, y la cantidad de herramientas para su tratamiento va en aumento, y hay que tener en cuenta también la integración, el procesamiento escalable a la cantidad de datos en aumento y el gobierno de los flujos de datos y modelos en un entorno ``cloud'' que está en evolución constante. Por ello, en este trabajo se ha optado por emplear herramientas ampliamente extendidas, soportadas, y principalmente abiertas, así como intentar hacer del conjunto de ellas lo más amplio posible, para estudiar y comparar un amplio abanico de soluciones. \\
+
+Lo primero para la realización de este proyecto es la obtención de datos públicos, o datos abiertos \hyperref[def4]{\textit{Definición \ref*{def4}}}. Esto presenta tres grandes complicaciones a tener en cuenta.
+
+La primera es que, aunque existe un consenso creciente sobre la importancia de la apertura de datos, la realidad muestra que \textbf{muchos datos de alto valor aún no son accesibles, lo son de forma limitada o su uso es complejo}, ya sea a conciencia o por indolencia. Según la Organización para la Cooperación y el Desarrollo Económicos (OECD) \citep{OECD2023openData}, sólo el 48\% de los conjuntos de datos de gran valor están disponibles como datos abiertos en los países estudiados, datos que bajan al 30\% cuando se trata de datos financieros. Estudios de otras partes del mundo también avalan esta reticencia a la correcta apertura de información pública \citep{TransparenciaEcuador, TransparenciaMexico}.
+
+La segunda causa es \textbf{la regulación}. El tratamiento de datos en Europa debe seguir el Reglamento General de Protección de Datos (RGPD) de 2016, además de las regulaciones propias de cada Estado miembro \citep{LicenciasLibres2017Datos} \& \citep{webRGPD2016Europa}, así como la más reciente Ley de Gobernanza de Datos \citep{webLGD2023Europa, DatosAbiertos2022Cloud}. Para cumplir con estas normativas, en este proyecto nos centraremos en el uso de datos oficiales abiertos, evitando técnicas como el ``web scraping'' que pueden estar sujetas a controversia a la vista de estas regulaciones. También se verificarán las licencias de todos los datos y modelos utilizados para asegurarnos de que no incumplimos ninguna de las regulaciones existentes.
+
+En cuanto a datos de otros países fuera de la Unión Europea, tenemos panoramas diversos los cuales vale la pena mencionar, desde una regulación más laxa en Estados Unidos, hasta un control estricto en países como China. Estos datos no se utilizarán en este trabajo por temas de alcance, ya que se prefiere dar prioridad a fuentes de datos nacionales, pero las herramientas desarrolladas serían aplicables a estos mismos datos cumpliendo sus normativas.
+
+En Estados Unidos, el panorama es sobre todo abierto, pero fragmentado. Cuentan con regulaciones sectoriales, como la ``Health Insurance Portability and Accountability Act'' (HIPAA) para datos médicos \citep{webHIPAA1996EEUU} y regulaciones estatales como la ``California Consumer Privacy Act'' (CCPA) \citep{webCCPA2018California} para proteger derechos individuales. También existe una legislación nacional que promueve los datos abiertos, la ``OPEN Government Data Act'' (2019) \citep{webOGDA2019EEUU}, que establece que los datos gubernamentales deben ser abiertos y utilizables.
+
+Por su parte, China ha establecido un marco regulatorio estricto con leyes como la ``Personal Information Protection Law'' (PIPL) \citep{webPIPL2021China}, que habla de principios de consentimiento y derechos del individuo, y la ``Data Security Law'' (DSL) \citep{webDSL2021China}, que prioriza la seguridad nacional y el control sobre los datos generados en el país.
+
+Por último, la tercera complicación es \textbf{la tecnología}. como ya se ha hablado, los datos pueden estar en formatos diferentes, y la cantidad de herramientas para su tratamiento va en aumento, y hay que tener en cuenta también la integración, el procesamiento escalable a la cantidad de datos en aumento y el gobierno de los flujos de datos y modelos en un entorno ``cloud'' que está en evolución constante. Por ello, en este trabajo se ha optado por emplear herramientas ampliamente extendidas, soportadas, y principalmente abiertas, así como intentar hacer del conjunto de ellas lo más amplio posible, para estudiar y comparar un amplio abanico de soluciones. \\
 
 \subsection{Trabajos anteriores y relacionados}
+
+Aparte de todas las referencias ya incluidas en esta sección, nos gustaría destacar todo el trabajo de Jaime Gómez-Obregón para liberar y hacer accesibles los datos de España \citep{JaimeGomezObregon}, con acciones como publicar las subvenciones a las empresas en España a través del portal ministerial y hacerlas accesibles \citep{JaimeGomezObregonSubvenciones}, o estudios sobre donaciones sospechosas de corrupción \citep{JaimeGomezObregonDonacion}. Todo este trabajo ha guiado también a este proyecto hacia un uso ético de los datos.
+
+Sobre ``Big data'' y datos públicos, han surgido trabajos en España desde los inicios del \textit{Open government} (definido en el Apéndice A, \hyperref[def2]{\textit{Definición \ref*{def2}}}) desde 2011 \citep{OperGovernment2011}, y desde diversos campos como las Ciencias de la Información. 
+
+Uno de los más completos que se han podido encontrar en nuestro territorio es el de Mariana Elena Herrera Capriz \citep{HerreraCapriz2024}, un reciente y extenso trabajo sobre los datos abiertos en España donde, partiendo de una extensa experiencia en la administración pública, la autora busca combinar dos campos con demandas complementarias bajo el marco teórico de la ``Teoría de la Ventana'' (explicada en el Apéndice A, \hyperref[def6]{\textit{Definición \ref*{def6}}}) y estudios anteriores de valor público:
+
+\begin{itemize}
+	\item Los Estudios de \textbf{Valor Público} (explicados en \hyperref[def3]{\textit{Definición \ref*{def3}}}) han adolecido tradicionalmente de una base empírica sólida. Existen numerosas definiciones teóricas (desde Moore hasta Meynhardt) \citep{Meynhardt19032009}, pero son escasos los estudios que cuantifiquen de manera rigurosa cómo la transparencia y los datos abiertos generan valor público efectivo en la ciudadanía, lo que limita su capacidad para justificar inversiones y guiar la toma de decisiones.
 	
-	A parte de todas las referencias ya incluidas en esta sección, nos gustaría destacar todo el trabajo de Jaime Gómez-Obregón para liberar y hacer accesibles los datos de España \citep{JaimeGomezObregon}, con acciones como publicar las subvenciones a las empresas en España a través del portal ministerial y hacerlas accesibles \citep{JaimeGomezObregonSubvenciones}, o estudios sobre donaciones sospechosas de corrupción \citep{JaimeGomezObregonDonacion}. Todo este trabajo ha guiado también a este proyecto hacia un uso ético de los datos.
+	\item En lo que respecta a \textbf{transparencia y Datos Abiertos} (explicados en \hyperref[def4]{\textit{Definición \ref*{def4}}}) se ha avanzado significativamente, tanto en la publicación de conjuntos de datos, como en el desarrollo de infraestructuras técnicas. Pero se ha prestado menos atención a la medición del valor final que estos datos generan para los ciudadanos. A menudo se asume que la mera publicación de datos abiertos produce valor, sin evaluar si estos son realmente utilizados, si resuelven problemas concretos o si contribuyen a la creación de servicios que mejoren la calidad de vida de los ciudadanos. Esta falta de evaluación del impacto dificulta la priorización de recursos y la mejora de las políticas de datos abiertos.
+\end{itemize}
+
+La autora trata de medir el valor real que la transparencia y los datos abiertos generan para los ciudadanos, más allá de su mera publicación. Para ello propone un marco metodológico que permite cuantificar el valor de los datos abiertos a través de la percepción de los usuarios. Este enfoque consigue identificar que las dimensiones utilitaria y hedonista (relacionadas con la funcionalidad y la experiencia de usuario) reciben puntuaciones altas, mientras que las dimensiones político-social y moral-ética (relacionadas con la generación de comunidad, equidad y trato justo) lastran el valor potencial, y detectan también que determinantes clave como la frecuencia de uso y el tipo de datos (geoespaciales, movilidad, turismo) son factores condicionantes para maximizar el valor.
+
+Se quiere destacar también la gran labor de investigación sobre datos abiertos del trabajo, que ha sido clave como base para la realización de este mismo proyecto y la utilidad de los resultados, que influirá en la utilización de los datos públicos de este proyecto.
+
+En cuanto a trabajos más práctico-tecnológicos, hay muchos de ellos que destacar. En la Unión Europea, a través de la iniciativa \textit{Use Case Observatory}, ha realizado un extenso estudio sobre la reutilización de datos abiertos. Este proyecto, liderado por el Portal Europeo de Datos (\texttt{data.europa.eu}), tiene como objetivo medir el impacto económico, gubernamental, social y medioambiental de los datos abiertos a partir de casos de uso reales \citep{UseCaseObservatory2022V1}. Para ello, seleccionó una muestra inicial de más de 600 aplicaciones y servicios que utilizaban datos abiertos, de los cuales escogieron a 150 con valor significativo, y 30 pasaron a formar parte del estudio longitudinal. De estos 30 casos, el seguimiento se centró finalmente en 13, cuyos resultados se recogen en los tres volúmenes del observatorio \citep{UseCaseObservatory2024V2}. \\
+
+Entre la amplia variedad de casos estudiados, nos gustaría destacar los siguientes tres españoles y uno francés:
+\begin{itemize}
+	\item \textbf{UniversiDATA:} Un portal que integra seis universidades españolas para el análisis avanzado y dinámico de datos abiertos con el objetivo de crear resultados interactivos y en tiempo real, facilitando el uso compartido de recursos y mejorando la comprensión de datos abiertos \citep{UniversiDATA}. El equipo también fomentó el uso de sus datos con diferentes análisis propios \citep{UniversiDATAAnalisis} o el lanzamiento de eventos centrados en datos (o ``Datathones'' \hyperref[def7]{\textit{Definición \ref*{def7}}} \citep{UniversiDATADatathon} de los cuales hablaremos a continuación). También resuelven dudas de usuarios e investigadores en los conjuntos de datos o análisis a través de comentarios, fomentando aún más la comprensión de los datos.
 	
-	Sobre ``Big data'' y datos públicos, han surgido trabajos en España desde los inicios del \textit{Open government} (\hyperref[def2]{[Definición \ref*{def2}]}) desde 2011 \citep{OperGovernment2011}, y desde diversos campos como las Ciencias de la Información. Uno de los más completos que se han podido encontrar en nuestro territorio es el de Mariana Elena Herrera Capriz: \citep{HerreraCapriz2024}, un reciente y extenso trabajo sobre los datos abiertos en España donde, partiendo de una extensa experiencia en la administración pública, la autora busca combinar dos campos con demandas complementarias bajo el marco teórico de la ``Teoría de la Ventana'' \hyperref[def6]{[Definición \ref*{def6}]} y estudios anteriores de valor público \citep{Meynhardt19032009}:
-	\begin{itemize}
-		\item Los Estudios de \textbf{Valor Público} \hyperref[def3]{[Definición \ref*{def3}]}: Carecen de una extensa evidencia empírica sólida.
-		\item La \textbf{transparencia y los Datos Abiertos} \hyperref[def4]{[Definición \ref*{def4}]}: Carecen de medición del valor final que generan para los ciudadanos.
-	\end{itemize}
+	\item \textbf{Tangible Data:} Transforma datos espaciales digitales en esculturas físicas accesibles.
 	
-	La autora trata de medir el valor real que la transparencia y los datos abiertos generan para los ciudadanos, más allá de su mera publicación. Para ello propone un marco metodológico que permite cuantificar el valor de los datos abiertos a través de la percepción de los usuarios. Este enfoque consigue identificar que las dimensiones utilitaria y hedonista (relacionadas con la funcionalidad y la experiencia de usuario) reciben puntuaciones altas, mientras que las dimensiones político-social y moral-ética (relacionadas con la generación de comunidad, equidad y trato justo) lastran el valor potencial, y detectando también que determinantes clave como la frecuencia de uso y el tipo de datos (geoespaciales, movilidad, turismo) son factores condicionantes para maximizar el valor.
+	\item \textbf{Planttes:} Aplicación que informa sobre la floración de plantas y su impacto en las alergias al polen, combinando datos abiertos con aportaciones de usuarios. Esto fomenta la concienciación, información y educación sobre alergias \citep{PlanttesDataAPP}.
 	
-	Se quiere destacar también la gran labor de investigación sobre datos abiertos del trabajo, que ha sido clave como base para la realización de este mismo proyecto y la utilidad de los resultados, que influenciará en la utilización de los datos públicos de este proyecto.
+	\item \textbf{Open Food Facts:} Aplicación que informa sobre detalles de productos de supermercado. Destaca por la enorme cantidad de datos que ha conseguido recopilar de usuarios de todo el mundo, y lo intuitiva que es a la hora de usar toda esta cantidad de datos (con más de 4,6 millones de productos). \citep{OpenFoodFactsDataAPP}.
 	
-	En cuanto a trabajos más práctico-tecnológicos, hay muchos de ellos donde destacar, la Unión Europea en sus estudios de casos de uso sobre datos públicos, tiene más de 600 casos estudiados, 150 con impacto significativo, 30 participaron en el estudio del volumen 1 \citep{UseCaseObservatory2022V1} y finalmente 13 en el volumen dos del mismo \citep{UseCaseObservatory2024V2}, de los cuales nos gustaría destacar tres españoles y uno francés:
-	\begin{itemize}
-	\item \textbf{UniversiDATA:} Un portal que integra seis universidades españolas para el análisis avanzado y dinámico de datos abiertos con el objetivo de crear resultados interactivos y en tiempo real, facilitando el uso compartido de recursos y mejorando la comprensión de datos abiertos \citep{UniversiDATA}. El equipo también fomentó el uso de sus datos con diferentes análisis propios \citep{UniversiDATAAnalisis} o el lanzamiento de eventos centrados en datos (o ``Datathones'' \hyperref[def7]{[Definición \ref*{def7}]} \citep{UniversiDATADatathon} de los cuales hablaremos a continuación). También resuelven dudas de usuarios e investigadores en los conjuntos de datos o análisis a través de comentarios, fomentando aún más la comprensión de los datos.
-		\item \textbf{Tangible Data:} Transforma datos espaciales digitales en esculturas físicas accesibles.
-		\item \textbf{Planttes:} Aplicación que informa sobre la floración de plantas y su impacto en las alergias al polen, combinando datos abiertos con aportaciones de usuarios, fomentando la concienciación, información y educación sobre alergias \citep{PlanttesDataAPP}.
-	\item \textbf{Open Food Facts:} Aplicación que informa sobre detalles de productos de supermercado, destacable por la enorme cantidad de datos que ha conseguido recopilar de usuarios de todo el mundo y lo intuitiva que es a la hora de usar toda esta cantidad de datos (más de 4,6 millones de productos). \citep{OpenFoodFactsDataAPP}.
-	\end{itemize}
-	
-	Como ya se ha comentado, otra fuente importante de proyectos relacionados con datos serían los ``Datathones'' \hyperref[def7]{[Definición \ref*{def7}]}, de los cuales pueden salir decenas de proyectos relacionados con datos abiertos en muy poco tiempo y que sería inabarcable mencionar en este proyecto debido a los más de 20 Datathones diferentes encontrados y los múltiples proyectos que hay en cada uno, pero sí que nos gustaría mencionar iniciativas como la del gobierno de España \citep{EventosDatosAbiertosGOB, EventosDatathonGOB} con centenares de eventos sobre datos a fecha de publicación de este trabajo.
-	
-	Por último, también mencionaremos trabajos académicos de compañeros que han implementado soluciones con datos públicos, que aunque son algo antiguos siguen aportando valor:
-	
-	\begin{itemize}
+\end{itemize}
+
+Como ya se ha comentado, otra fuente importante de proyectos relacionados con datos serían los ``Datathones'' \hyperref[def7]{\textit{Definición \ref*{def7}}}. De estas competiciones pueden salir decenas de proyectos relacionados con datos abiertos en muy poco tiempo, literatura que sería inabarcable mencionar en este proyecto debido a los más de 20 Datathones diferentes que se pueden encontrar, así como los múltiples proyectos que hay en cada uno. Aun así, nos gustaría mencionar iniciativas como la del gobierno de España \citep{EventosDatosAbiertosGOB, EventosDatathonGOB} con centenares de eventos sobre datos a fecha de publicación de este trabajo.
+
+Por último, también mencionaremos trabajos académicos de fin de máster (TFM) de compañeros que han implementado soluciones con datos públicos, que aunque son algo antiguos siguen aportando valor:
+
+\begin{itemize}
 	\item \textbf{``Auditoría y metodología de implantación de open data para smart cities''} \citep{MelendrezMoreto2016Auditoria}: Donde el autor hace un análisis extensivo de los datos abiertos, de los índices y métricas para evaluar el valor de estos datos y de herramientas como ``CKAN'' para la gestión de los datos. Audita diversas fuentes de datos nacionales dejando todas dentro del umbral de datos abiertos según AENOR. 
-			
-			\item \textbf{``Uso de geolocalización y de fuentes de datos abiertas para la creación de servicios turísticos por la ciudad de Madrid''} \citep{LLamoccaPortela2016Integracion}: El cual utiliza datos abiertos de geolocalización en Madrid para buscar sitios cercanos en una app móvil.
-			
-			\item \textbf{``Integración y visualización de datos abiertos medioambientales''} \citep{ArellanoBruno2019UsoDeGeolocalizacion}: También hace un análisis extensivo de los datos abiertos, de las definiciones para evaluar estos datos y de herramientas como ``CKAN''. Además, comenta iniciativas de limpieza de datos interesantes como ``Data Tamer'' o ``Data Wrangler''. Finalmente, crea una aplicación para el uso de datos medioambientales en tiempo real. \\
-	\end{itemize} 
 	
+	\item \textbf{``Uso de geolocalización y de fuentes de datos abiertas para la creación de servicios turísticos por la ciudad de Madrid''} \citep{LLamoccaPortela2016Integracion}: El cual utiliza datos abiertos de geolocalización en Madrid para buscar sitios cercanos en una app móvil.
+	
+	\item \textbf{``Integración y visualización de datos abiertos medioambientales''} \citep{ArellanoBruno2019UsoDeGeolocalizacion}: También hace un análisis extensivo de los datos abiertos, de las definiciones para evaluar estos datos y de herramientas como ``CKAN''. Además, comenta iniciativas de limpieza de datos interesantes como ``Data Tamer'' o ``Data Wrangler''. Finalmente, crea una aplicación para el uso de datos medioambientales en tiempo real. \\
+\end{itemize} 
+
+
 \subsection{Conjuntos de datos}
 
-	Para embarcarse en el tema de los conjuntos de datos, primero tenemos que saber qué tipos de datos hay en el mundo real \citep{Sarker2021} dependiendo de formato y forma, estos pueden ser:
+Para embarcarse en el tema de los conjuntos de datos, primero tenemos que saber qué tipos de datos hay en el mundo real \citep{Sarker2021} dependiendo de formato y forma, estos pueden ser:
+
+\begin{itemize} \label{tipos_de_datos}
+	\item \textbf{Estructurados:} Datos con un formato definido, siguiendo un modelo de datos estándar como tablas o bases de datos relacionales (ej. fechas, direcciones, geolocalización).
 	
-	\begin{itemize} \label{tipos_de_datos}
-		\item \textbf{Estructurados:} Datos con un formato definido, siguiendo un modelo de datos estándar como tablas o bases de datos relacionales (fechas, direcciones, geolocalización).
-		
-		\item \textbf{No estructurados:} Datos sin un formato o estructura predefinida, más difíciles de procesar y analizar, principalmente texto y multimedia (correos electrónicos, blogs, PDFs, audio, videos, etc.).
-		
-		\item \textbf{Semi-estructurados:} Datos que no se almacenan en bases de datos relacionales, pero tienen cierta organización (HTML, XML, JSON o bases de datos NoSQL).
-		
-		\item \textbf{Metadatos:} Datos sobre otros datos, que describen información relevante para dar significado a los datos (autor de un documento, tamaño de archivo, fecha de creación, palabras clave, etc.).
-	\end{itemize}
+	\item \textbf{No estructurados:} Datos sin un formato o estructura predefinida, más difíciles de procesar y analizar, principalmente texto y multimedia (ej. correos electrónicos, blogs, PDFs, audio, videos, etc.).
+	
+	\item \textbf{Semi-estructurados:} Datos que no se almacenan en bases de datos relacionales, pero tienen cierta organización (ej. HTML, XML, JSON o bases de datos NoSQL).
+	
+	\item \textbf{Metadatos:} Datos sobre otros datos, que describen información relevante para dar significado a los datos (ej. autor de un documento, tamaño de archivo, fecha de creación, palabras clave, etc.).
+\end{itemize}
 
-	Teniendo esto en cuenta, para el desarrollo de este proyecto donde pretendemos obtener valor de los mismos de la forma más automática y escalable, se elegirán principalmente datos estructurados, semiestructurados y los metadatos que proporcionen los portales. También, recalcando la prioridad de este proyecto en conjuntos de datos cercanos, destacamos algunos de los conjuntos de datos e iniciativas más interesantes encontrados durante el estudio:
+Teniendo esto en cuenta, para el desarrollo de este proyecto donde pretendemos obtener valor de los mismos de la forma más automática y escalable, se elegirán principalmente datos estructurados, semiestructurados y los metadatos que proporcionen los portales. También, recalcando la prioridad de este proyecto en conjuntos de datos cercanos, destacamos algunos de los conjuntos de datos e iniciativas más interesantes encontrados durante el estudio:
 
+\begin{itemize}
+	\item \textbf{Internacionales:}  
+	Iniciativas individuales como ``Awesome public datasets'' \citep{awesomePublicDatasets}, que recopila fuentes de datos fiables (aunque principalmente de Estados Unidos) o los repositorios de las nubes privadas, como los de AWS y Google, que alojan petabytes de datos estructurados y no estructurados.
+	
+	\item \textbf{Europeos:}  
+	Europa cuenta con su propio portal para acceder a datos públicos \citep{PortalDatosEuropa} con más de 1,7 millones de conjuntos de datos de 36 países de la eurozona, y con todo tipo de estructuras: datos tabulares (CSV, Excel), geoespaciales y APIs sobre economía, ciencia, medio ambiente, etc.
+	
+	\item \textbf{Españoles:}
 	\begin{itemize}
-		\item \textbf{Internacionales:}  
-		Iniciativas individuales como ``Awesome public datasets'' \citep{awesomePublicDatasets}, que recopila fuentes de datos fiables (aunque principalmente de Estados Unidos) o los repositorios de las nubes privadas, como los de AWS y Google, que alojan petabytes de datos estructurados y no estructurados.
-		
-		\item \textbf{Europeos:}  
-		Europa cuenta con su propio portal para acceder a datos públicos \citep{PortalDatosEuropa} con más de 1,7 millones de conjuntos de datos de 36 países de la eurozona, y con todo tipo de estructuras: datos tabulares (CSV, Excel), geoespaciales y APIs sobre economía, ciencia, medio ambiente, etc.
-		
-		\item \textbf{Españoles:}
-		\begin{itemize}
-			\item El Instituto Nacional de Estadística (INE) y la Agencia Tributaria han sido actores clave en la liberación de datos abiertos y el fomento de su reutilización para investigación e innovación.  
-			\item Proyectos como el Portal de Transparencia del Gobierno de España y las iniciativas de datos abiertos de comunidades autónomas y ayuntamientos \citep{PortalDatosGob, PortalDatosMadrid, PortalRegistradores}, los cuales se esfuerzan por hacer públicos datos de ``alto valor'' \hyperref[def1]{[Definición \ref*{def1}]}.  
-			\item Famosas iniciativas como ``Kaggle'' cuentan con datos de todo tipo sobre España, muchos recopilados de otras fuentes públicas ya nombradas, pero otros interesantes \citep{KaggleDatasetsSpain}.
-			\item Iniciativas que fomentan la transparencia, como InfoParticipa \citep{PortalInfoparticipa}.  
-			\item Iniciativas privadas para la recolección de datos públicos \citep{PortalEsriEspanna}.  
-			\item Iniciativas ya mencionadas como UniversiDATA \citep{UniversiDATA}.  
-		\end{itemize}
+		\item El Instituto Nacional de Estadística (INE) y la Agencia Tributaria han sido actores clave en la liberación de datos abiertos y el fomento de su reutilización para investigación e innovación.  
+		\item Proyectos como el Portal de Transparencia del Gobierno de España y las iniciativas de datos abiertos de comunidades autónomas y ayuntamientos \citep{PortalDatosGob, PortalDatosMadrid, PortalRegistradores}, los cuales se esfuerzan por hacer públicos datos de ``alto valor'' \hyperref[def1]{\textit{Definición \ref*{def1}}}.  
+		\item Famosas iniciativas como ``Kaggle'' cuentan con datos de todo tipo sobre España, muchos recopilados de otras fuentes públicas ya nombradas \citep{KaggleDatasetsSpain}.
+		\item Iniciativas que fomentan la transparencia, como InfoParticipa \citep{PortalInfoparticipa}.  
+		\item Propuestas privadas para la recolección de datos públicos \citep{PortalEsriEspanna}.  
+		\item Iniciativas ya mencionadas como UniversiDATA \citep{UniversiDATA}.  
 	\end{itemize}
-	
-	Todos estos portales y aplicaciones son de gran importancia y constituyen la base material sobre la que se sustentan trabajos como el presente. Los conjuntos de datos escogidos se detallan en el apartado \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Materiales_datos}: Materiales y datos}. \\
-	
-\subsection{Gobierno de los datos} \label{sec:EstudiosDatosGobernanza}
-	
-Por último, y habiendo explicado todo lo relativo a los datos, destacaremos la importancia de la gobernanza \hyperref[def10]{[Definición \ref*{def10}]} de los mismos como uno de los desafíos fundamentales al manejarlos \citep{DataManagement2024Theodorakopoulos}. En el marco europeo llevamos años promulgando mecanismos para aumentar la confianza y lograr un mayor y mejor intercambio de datos \citep{EU_DGA_2022}. El reglamento presenta tres vías principales: la reutilización segura de datos protegidos del sector público, la intermediación neutral de datos y la cesión altruista de datos para el interés general. Estos mecanismos operativos materializan los principios de la gobernanza: calidad, seguridad, interoperabilidad y confianza.
-	
-Para la gestión de datos en este proyecto, adoptaremos un marco de gobernanza de datos basado en el modelo de tres capas propuesto por la OECD (Estratégica, Táctica y Operativa) \citep{OECD2019}, integrado con el resto de normativas europeas vigentes (como ``Data Governance Act'' \citep{EU_DGA_2022} o el Reglamento General de Protección de Datos \citep{webRGPD2016Europa}). La aplicación de este marco se articulará en la \hyperref[sec:Metodos_Gobernanza]{Sección \ref*{sec:Metodos_Gobernanza}: Métodos de Gobernanza}. \newpage
-	
-	
+\end{itemize}
+
+Todos estos portales y aplicaciones son de gran importancia y constituyen la base material sobre la que se sustentan trabajos como el presente. Los conjuntos de datos escogidos se detallan en el apartado \hyperref[sec:Materiales_datos]{\textit{Sección \ref*{sec:Materiales_datos}}: Materiales y datos}. 
+
+\subsection{Gobierno de los datos}
+\label{sec:EstudiosDatosGobernanza}
+
+Por último, y habiendo explicado todo lo relativo a los datos, destacaremos la importancia de la gobernanza (definida en la \hyperref[def10]{\textit{Definición \ref*{def10}}}) de estos datos como uno de los desafíos fundamentales al manejarlos \citep{DataManagement2024Theodorakopoulos}. En el marco europeo llevamos años promulgando mecanismos para aumentar la confianza y lograr un mayor y mejor intercambio de datos, con reglamentos como el Reglamento de Gobernanza de Datos (DGA) \citep{EU_DGA_2022}. Este reglamento presenta tres vías principales: la reutilización segura de datos protegidos del sector público, la intermediación neutral de datos y la cesión altruista de datos para el interés general. Estos mecanismos operativos materializan los principios de la gobernanza: calidad, seguridad, interoperabilidad y confianza.
+
+Para la gestión de datos en este proyecto, adoptaremos un marco de gobernanza de datos basado en el modelo de tres capas propuesto por la OECD (Estratégica, Táctica y Operativa) \citep{OECD2019}, integrado con el resto de normativas europeas vigentes, como el nombrado DGA, o el Reglamento General de Protección de Datos (RGPD) \citep{webRGPD2016Europa}. La aplicación de este marco se articulará en la \hyperref[sec:Metodos_Gobernanza]{\textit{Sección \ref*{sec:Metodos_Gobernanza}}: Métodos de Gobernanza}. 
+
 \section{Nubes}
 \label{sec:EstudiosNubes}
 
-La capacidad real de extraer valor de los volúmenes masivos de datos abiertos detallados en la sección anterior está intrínsecamente ligada a la disponibilidad de recursos computacionales potentes, escalables y económicamente accesibles. Y aunque se lleva años hablando de soluciones como las nubes distribuidas \hyperref[def8]{[Definición \ref*{def8}]}, el paradigma de la computación en la nube gestionada (o pública, que no abierta) (\textit{cloud computing}), con planes gratuitos, es muy relevante para democratizar este acceso, permitiendo a investigadores, startups e instituciones públicas superar las limitaciones del hardware local.
+La capacidad real de extraer valor de los volúmenes masivos de datos abiertos detallados en la sección anterior está intrínsecamente ligada a la disponibilidad de recursos computacionales potentes, escalables y económicamente accesibles. Aunque se lleva años hablando de soluciones como las nubes distribuidas \hyperref[def8]{\textit{Definición \ref*{def8}}}, el paradigma de la computación en la nube gestionada (o pública, que no abierta) (\textit{cloud computing}), con planes gratuitos, es muy relevante para democratizar este acceso, permitiendo a investigadores, startups e instituciones públicas superar las limitaciones del hardware local.
 
 Estas nubes gestionadas nos proporcionan unidades de procesamiento gráfico (GPU) y tensorial (TPU) bajo demanda, además de un ecosistema completo de servicios gestionados diseñados específicamente para el ciclo de vida completo de los datos y la IA. También nos brindan mecanismos de seguridad que, junto a la implementación diligente por parte del usuario (modelo de responsabilidad compartida), aportan la seguridad necesaria para el proyecto. Para este trabajo se ha optado por esta solución.
 Otra opción posible sería la nube híbrida, que combina el control de una infraestructura privada (``On premise'') con la escalabilidad y economía de la nube pública. Esto es ideal para cargas con datos sensibles, pero complicaría el enfoque de este proyecto. 
-Para ayudarnos mejor a valorar todas las opciones, vamos a listar la oferta gratuita de algunas de las nubes estudiadas \citep{MicrosoftCloudTerminology, lisdorf2021cloud}.
 
-En el panorama nacional, la encuesta del INE sitúa en un 44,3\% las empresas españolas de diez o más empleados que utilizaron servicios de computación en la nube de pago en el primer trimestre de 2025, 6,6 puntos porcentuales más que el año anterior \citep{INE2025TIC}. La cifra se mantiene por debajo de la media europea, que Eurostat sitúa en el 52,7\% para ese mismo año, con un crecimiento de 7,4 puntos respecto a la edición anterior de la encuesta \citep{Eurostat2026Cloud}. De cara al futuro, mientras la estrategia europea prioriza el ``edge computing'' frente a la cloud privada para ganar autonomía tecnológica y soberanía de datos \citep{EuroDigitalStrategyEdge}, el enfoque del Plan de Digitalización español \citep{GobEspana2021PlanDigitalizacion} no se aleja de la nube pública, sino que aboga por un modelo híbrido soberano usando NubeSARA (plataforma híbrida que, por sus precios \citep{PreciosNubeSARA}, e información encontrada \citep{InfoNubeSARA, InfoPreparaTICNubeSARA} no vamos a utilizar en este estudio).
+Para ayudarnos mejor a valorar todas las opciones, vamos a listar la oferta gratuita de algunas de las nubes estudiadas en \hyperref[sec:cloud-free-tiers]{\textit{la sección \ref*{sec:cloud-free-tiers}}}, basadas en las páginas facilitadas por las mismas nubes, comparadores de precios y artículos independientes \citep{MicrosoftCloudTerminology, lisdorf2021cloud}.
 
-\emph{Matiz sobre ``edge computing'': Aunque es especialmente importante en el uso de aplicaciones de IA  \hyperref[tab:nube_distribuida]{[Tabla \ref*{tab:nube_distribuida}]}, debido a la importancia de la privacidad en escenarios con datos tratados automáticamente, pero al ser esto una investigación y no una tecnología dirigida a un usuario final (el cual requeriría velocidad y privacidad), se optará por ejecutar los modelos en la nube en vez de en edge, aunque se reconoce su potencial para aplicaciones prácticas.}
+En el panorama español, la encuesta del Instituto Nacional de Estadística (INE), se sitúa en un 44,3\% las empresas españolas de diez o más empleados que utilizaron servicios de computación en la nube de pago en el primer trimestre de 2025, 6,6 puntos porcentuales más que el año anterior \citep{INE2025TIC}. La cifra se mantiene por debajo de la media europea, que Eurostat sitúa en el 52,7\% para ese mismo año, con un crecimiento de 7,4 puntos respecto a la edición anterior de la encuesta \citep{Eurostat2026Cloud}. 
 
-También hay alternativas para usar cloud en el territorio europeo y español, como pueden ser: \citep{cloudingIO, nextcloudCloud, gigasCloud}, en las cuales se podría desplegar máquinas virtuales para la ejecución de modelos y tratamiento de datos, pero que al no tener infraestructura especializada en Inteligencia Artificial y carecer en su mayoría de capa gratuita, se han excluido del estudio. 
-Resultaba interesante, por ejemplo, la iniciativa europea BDTI \citep{BDTIEuropeProject, GobEspana2021BDTI}, que ofrecía infraestructura gratuita a organismos públicos y trabajos como este, pero el proyecto concluyó en marzo de 2025 y sus recursos quedaron archivados. También SIMPL \citep{SIMPLEuropeProject}, un framework tecnológico, un middleware para construir sobre diferentes proveedores cloud y edge. Telefónica Tech también vende una especie de nube pública basada en VMware, pero principalmente son servicios gestionados multi-cloud \citep{TelefonicaTechCloudPlatform}.Por último, nombrar dos herramientas europeas que sí pueden resultar útiles, y que analizaremos en la próxima sección: ``OVHcloud'' (proveedor de cloud francés) y ``OpenNebula'' (plataforma española open-source para gestionar clouds). \\
+De cara al futuro, mientras la estrategia europea prioriza el ``edge computing'' frente a la cloud privada para ganar autonomía tecnológica y soberanía de datos \citep{EuroDigitalStrategyEdge} 
+\footnote{Matiz sobre ``edge computing'': Aunque es especialmente importante en el uso de aplicaciones de IA  \hyperref[tab:nube_distribuida]{\textit{Tabla \ref*{tab:nube_distribuida}}}, debido a la importancia de la privacidad en escenarios con datos tratados automáticamente, al ser esto una investigación y no una tecnología dirigida a un usuario final (el cual requeriría velocidad y privacidad), se optará por ejecutar los modelos en la nube en vez de en edge, aunque se reconoce su potencial para aplicaciones prácticas.}
+, el enfoque del Plan de Digitalización español \citep{GobEspana2021PlanDigitalizacion} no se aleja de la nube pública, sino que aboga por un modelo híbrido soberano usando NubeSARA (plataforma híbrida que, por sus precios \citep{PreciosNubeSARA}, e información encontrada \citep{InfoNubeSARA, InfoPreparaTICNubeSARA} no vamos a utilizar en este estudio).
+
+También hay alternativas para usar cloud en el territorio europeo y español, como pueden ser: \citep{cloudingIO, nextcloudCloud, gigasCloud}, en las cuales se podría desplegar máquinas virtuales para la ejecución de modelos y tratamiento de datos, pero que al no tener infraestructura especializada en IA y carecer en su mayoría de capa gratuita, se han excluido del estudio.
+
+Resultaba interesante, por ejemplo, la iniciativa europea \textit{Big Data Test Infrastructure} (BDTI) \citep{BDTIEuropeProject, GobEspana2021BDTI}, que ofrecía infraestructura gratuita a organismos públicos y trabajos como este, pero el proyecto concluyó en marzo de 2025 y sus recursos quedaron archivados. También SIMPL \citep{SIMPLEuropeProject}, un \textit{framework} para construir sobre diferentes proveedores cloud y edge. Telefónica Tech también vende una especie de nube pública basada en VMware, pero principalmente son servicios gestionados multi-cloud \citep{TelefonicaTechCloudPlatform}. Por último, nombrar dos herramientas europeas que sí pueden resultar útiles, y que analizaremos en \hyperref[sec:cloud-free-tiers]{\textit{la próxima sección \ref*{sec:cloud-free-tiers}}}, como ``OVHcloud'' (proveedor de cloud francés) y ``OpenNebula'' (plataforma española open-source para gestionar clouds). \\
+
 
 \subsection{Principales Proveedores de Nube y sus Capas Gratuitas}
 \label{sec:cloud-free-tiers}
 
-A continuación detallaremos las pruebas gratuitas de los principales proveedores de servicios en la nube, información crucial para la selección tecnológica de este proyecto. \citep{free-for-dev}. Estas cifras se verificaron por última vez en agosto de 2026, pero al ser ofertas comerciales sujetas a cambios (como evidenció el propio desarrollo de este trabajo entre la redacción inicial de esta sección y su revisión final, varios de los servicios consultados modificaron sus límites) se genera una volatilidad que hay que considerar en proyectos que dependan de estos recursos.
+A continuación detallaremos las pruebas gratuitas de los principales proveedores de servicios en la nube, información crucial para la selección tecnológica de este proyecto. \citep{free-for-dev}. Estas cifras se verificaron por última vez en agosto de 2026, pero al ser ofertas comerciales sujetas a cambios \footnote{como evidenció el propio desarrollo de este trabajo entre la redacción inicial de esta sección y su revisión final, varios de los servicios consultados modificaron sus límites} se genera una volatilidad que hay que considerar en proyectos que dependan de estos recursos.
 
 \subsubsection*{Google Cloud Platform}
 
-Ecosistema de servicios en la nube Google con infraestructura escalable, herramientas de análisis y soluciones de inteligencia artificial gestionadas que cubre todo el ciclo de vida de los datos y aplicaciones. A parte de las aplicaciones listadas y muchas más que se pueden encontrar en su \textbf{Lista completa}: \url{https://cloud.google.com/free}, Google también ofrece 300€ para exceder estos límites los primeros 3 meses de prueba, lo cual puede ayudar enormemente a proyectos de tamaño medio.
+Ecosistema de servicios en la nube de Google con infraestructura escalable, herramientas de análisis y soluciones de IA gestionadas que cubre todo el ciclo de vida de los datos y aplicaciones. Aparte de las aplicaciones listadas, Google también ofrece 300€ para exceder estos límites los primeros 3 meses de prueba \footnote{Lista completa: \url{https://cloud.google.com/free}}. A continuación se describen brevemente los servicios más relevantes:
 
-Servicios específicos:
 \begin{itemize}
-	\item \textbf{App Engine}: 28 horas/día de ejecución ``frontend'', 9 horas/día de ejecución ``backend''.
-	\item \textbf{Cloud Firestore}: 1GB almacenamiento, 50.000 lecturas, 20.000 escrituras, 20.000 borrados por día.
-	\item \textbf{Compute Engine}: 1 e2-micro no susceptible de interrupción, 30GB disco duro, 5GB de instantáneas, con regiones restringidas.
-	\item \textbf{Cloud Storage}: 5GB, 1GB de tráfico de salida de red.
-	\item \textbf{Cloud Shell}: Terminal Linux basado en web con 5GB de almacenamiento persistente. Límite de 60 horas/semana.
-	\item \textbf{Cloud Pub/Sub}: 10GB de mensajes por mes.
-	\item \textbf{Cloud Functions}: 2 millones de invocaciones por mes.
-	\item \textbf{Cloud Run}: 2M de peticiones por mes, 360.000 GB/segundos de memoria, 180.000 segundos de CPU virtual.
-	\item \textbf{Google Kubernetes Engine}: Sin tarifa de gestión de clústeres para un clúster zonal.
-	\item \textbf{BigQuery}: 1 TB de consultas por mes, 10 GB de almacenamiento.
-	\item \textbf{Cloud Build}: 120 minutos de construcción por día.
-	\item \textbf{Cloud Source Repositories}: Hasta 5 usuarios, 50 GB de almacenamiento, 50 GB de tráfico de salida.
-	\item \textbf{Google Colab}: Entorno gratuito de desarrollo con ``Jupyter Notebooks''.
+	\item \textbf{App Engine}: plataforma PaaS para desplegar aplicaciones web sin gestionar la infraestructura subyacente (28 horas/día de ejecución ``frontend'', 9 horas/día de ejecución ``backend''). \footnote{Nota: 28 horas/día es el total de horas de instancia que se pueden acumular en un día, por ejempo, 1 hora de 28 instancias diferentes.}
+	\item \textbf{Cloud Firestore}: base de datos NoSQL en tiempo real (1~GB almacenamiento, 50.000 lecturas, 20.000 escrituras, 20.000 borrados por día).
+	\item \textbf{Compute Engine}: máquinas virtuales (IaaS) para cargas de trabajo personalizadas (1 instancia e2-micro, 30~GB disco, 5~GB de instantáneas).
+	\item \textbf{Cloud Storage}: almacenamiento de objetos para cualquier tipo de dato (5~GB, 1~GB de tráfico de salida).
+	\item \textbf{Cloud Shell}: terminal Linux en el navegador con 5~GB de almacenamiento persistente (límite de 60 horas/semana).
+	\item \textbf{Cloud Pub/Sub}: servicio de mensajería para comunicar aplicaciones (10~GB de mensajes por mes).
+	\item \textbf{Cloud Functions}: ejecuta código en respuesta a eventos (2 millones de invocaciones por mes).
+	\item \textbf{Cloud Run}: ejecuta contenedores sin servidor (2M de peticiones por mes, 360.000~GB/segundos de memoria).
+	\item \textbf{Google Kubernetes Engine (GKE)}: orquestación de contenedores con Kubernetes (sin tarifa de gestión para un clúster zonal).
+	\item \textbf{BigQuery}: almacén de datos para análisis SQL (1~TB de consultas por mes, 10~GB de almacenamiento).
+	\item \textbf{Cloud Build}: construcción de imágenes y despliegue continuo (120 minutos de construcción por día).
+	\item \textbf{Cloud Source Repositories}: repositorios Git privados (hasta 5 usuarios, 50~GB de almacenamiento, 50~GB de tráfico).
+	\item \textbf{Google Colab}: entorno de Jupyter Notebooks gratuito para ML.
 \end{itemize}
 
 \subsubsection*{Amazon Web Services}
 
-Plataforma de cloud computing más usada a nivel empresarial, con una enorme cantidad de servicios, desde cómputo básico hasta servicios de IA, aprendizaje automático, IoT, etc. Tiene una capa gratuita de 6 meses y 100 dólares de gastos + 100 adicionales al completar tareas. Aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://aws.amazon.com/free/}
+Plataforma de cloud computing más usada a nivel empresarial, con una enorme cantidad de servicios, desde cómputo básico hasta servicios de IA, ML, IoT, etc. Tiene una capa gratuita de 6 meses y 100 dólares de gastos + 100 adicionales al completar tareas\footnote{Lista completa: \url{https://aws.amazon.com/free/}}.
 
-Servicios específicos:
 \begin{itemize}
-	\item \textbf{CloudFront}: 1TB de tráfico de salida por mes y 2M invocaciones de funciones.
-	\item \textbf{CloudWatch}: 10 métricas personalizadas y 10 alarmas.
-	\item \textbf{CodeBuild}: 100min de tiempo de ejecución por mes.
-	\item \textbf{CodeCommit}: 5 usuarios activos, 50GB almacenamiento, 10000 peticiones por mes.
-	\item \textbf{CodePipeline}: 1 pipeline activo por mes.
-	\item \textbf{DynamoDB}: 25GB base de datos NoSQL.
-	\item \textbf{EC2}: 750 horas/mes de t2.micro o t3.micro, 6 meses.
-	\item \textbf{EBS}: 30GB por mes de SSD propósito general o magnético, 6 meses.
-	\item \textbf{Elastic Load Balancing}: 750 horas por mes, 6 meses.
-	\item \textbf{RDS}: 750 horas/mes de db.t2.micro, 20GB almacenamiento SSD, 6 meses.
-	\item \textbf{S3}: 5GB almacenamiento estándar, 20K peticiones Get, 2K peticiones Put, 6 meses.
-	\item \textbf{Glacier}: 10GB almacenamiento a largo plazo.
-	\item \textbf{Lambda}: 1 millón de peticiones por mes.
-	\item \textbf{SNS}: 1 millón de publicaciones por mes.
-	\item \textbf{SES}: 3.000 mensajes por mes, 6 meses.
-	\item \textbf{SQS}: 1 millón de peticiones de colas de mensajería.
+	\item \textbf{CloudFront}: CDN para distribuir contenido estático y dinámico (1~TB de tráfico de salida por mes y 2M invocaciones de funciones).
+	\item \textbf{CloudWatch}: monitorización y observabilidad de recursos (10 métricas personalizadas y 10 alarmas).
+	\item \textbf{CodeBuild}: servicio de construcción de código (100 min de tiempo de ejecución por mes).
+	\item \textbf{CodeCommit}: repositorios Git privados (5 usuarios activos, 50~GB almacenamiento, 10.000 peticiones por mes).
+	\item \textbf{CodePipeline}: automatización de despliegues (1 pipeline activo por mes).
+	\item \textbf{DynamoDB}: base de datos NoSQL clave-valor (25~GB).
+	\item \textbf{EC2}: máquinas virtuales (750 horas/mes de t2.micro o t3.micro, 6 meses).
+	\item \textbf{EBS}: discos persistentes para EC2 (30~GB por mes de SSD, 6 meses).
+	\item \textbf{Elastic Load Balancing}: distribución de tráfico entre instancias (750 horas por mes, 6 meses).
+	\item \textbf{RDS}: bases de datos relacionales gestionadas (750 horas/mes de db.t2.micro, 20~GB almacenamiento SSD, 6 meses).
+	\item \textbf{S3}: almacenamiento de objetos (5~GB estándar, 20K peticiones Get, 2K peticiones Put, 6 meses).
+	\item \textbf{Glacier}: almacenamiento a largo plazo (10~GB).
+	\item \textbf{Lambda}: código sin servidor basado en eventos (1 millón de peticiones por mes).
+	\item \textbf{SNS}: notificaciones y mensajería push (1 millón de publicaciones por mes).
+	\item \textbf{SES}: envío de correos electrónicos (3.000 mensajes por mes, 6 meses).
+	\item \textbf{SQS}: colas de mensajería desacoplada (1 millón de peticiones).
 \end{itemize}
 
 \subsubsection*{Microsoft Azure}
 
-Ecosistema cloud de Microsoft, muy integrado con todas sus herramientas empresariales y de desarrollo, como la suite de DevOps, copilot y más soluciones de IA, enfoque en el lenguaje .NET. También tiene una capa gratuita de 12 meses. Aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://azure.microsoft.com/free/}
+Ecosistema cloud de Microsoft, muy integrado con todas sus herramientas empresariales y de desarrollo, como la suite de DevOps, soluciones de IA y enfoque en el lenguaje .NET entre otras. También tiene una capa gratuita de 12 meses\footnote{Lista completa: \url{https://azure.microsoft.com/free/}}.
 
-Servicios específicos:
 \begin{itemize}
-	\item \textbf{Virtual Machines}: 1 B1S Linux VM, 1 B1S Windows VM, 12 meses.
-	\item \textbf{App Service}: 10 aplicaciones web, móviles o de API, con 60 minutos CPU/día.
-	\item \textbf{Functions}: 1 millón de peticiones por mes.
-	\item \textbf{DevTest Labs}: Entornos de desarrollo y pruebas.
-	\item \textbf{Active Directory}: 500.000 objetos.
-	\item \textbf{Azure DevOps}: 5 usuarios activos, repositorios Git privados ilimitados.
-	\item \textbf{Azure Pipelines}: 10 trabajos paralelos con minutos ilimitados para código abierto.
-	\item \textbf{Microsoft IoT Hub}: 8.000 mensajes por día.
-	\item \textbf{Load Balancer}: 1 IP pública con balanceo de carga gratuita.
-	\item \textbf{Notification Hubs}: 1 millón de notificaciones ``push''.
-	\item \textbf{Ancho de banda}: 15GB de entrada y 5GB de salida por mes, 12 meses.
-	\item \textbf{Cosmos DB}: 25GB almacenamiento y 1000 unidades de solicitud de rendimiento.
-	\item \textbf{Static Web Apps}: Aplicaciones estáticas con SSL, autenticación y dominios personalizados.
-	\item \textbf{Storage}: 5GB almacenamiento de archivos o ``blobs'' con redundancia local, 12 meses.
-	\item \textbf{Cognitive Services}: APIs de IA/ML con transacciones limitadas.
-	\item \textbf{Cognitive Search}: Búsqueda basada en IA, para 10.000 documentos.
-	\item \textbf{Azure Kubernetes Service}: Servicio Kubernetes gestionado, gestión de clústeres.
-	\item \textbf{Event Grid}: 100K operaciones/mes.
+	\item \textbf{Virtual Machines}: máquinas virtuales IaaS (1 B1S Linux VM, 1 B1S Windows VM, 12 meses).
+	\item \textbf{App Service}: PaaS para aplicaciones web y APIs (10 apps con 60 min CPU/día).
+	\item \textbf{Functions}: computación serverless basada en eventos (1 millón de peticiones por mes).
+	\item \textbf{DevTest Labs}: entornos de desarrollo y pruebas.
+	\item \textbf{Active Directory}: servicio de directorio y autenticación (500.000 objetos).
+	\item \textbf{Azure DevOps}: herramientas de CI/CD (5 usuarios activos, repositorios Git privados ilimitados).
+	\item \textbf{Azure Pipelines}: automatización de construcción y despliegue (10 trabajos paralelos, minutos ilimitados para código abierto).
+	\item \textbf{Microsoft IoT Hub}: plataforma para dispositivos IoT (8.000 mensajes por día).
+	\item \textbf{Load Balancer}: balanceo de carga (1 IP pública con balanceo gratuito).
+	\item \textbf{Notification Hubs}: envío de notificaciones push (1 millón de notificaciones).
+	\item \textbf{Ancho de banda}: transferencia de datos (15~GB de entrada y 5~GB de salida por mes, 12 meses).
+	\item \textbf{Cosmos DB}: base de datos NoSQL global (25~GB y 1.000 unidades de solicitud de rendimiento).
+	\item \textbf{Static Web Apps}: alojamiento de aplicaciones estáticas con SSL y autenticación.
+	\item \textbf{Storage}: almacenamiento de blobs y archivos (5~GB con redundancia local, 12 meses).
+	\item \textbf{Cognitive Services}: APIs de IA pre-entrenadas (transacciones limitadas).
+	\item \textbf{Cognitive Search}: búsqueda basada en IA (10.000 documentos).
+	\item \textbf{Azure Kubernetes Service (AKS)}: Kubernetes gestionado (gestión de clústeres).
+	\item \textbf{Event Grid}: enrutamiento de eventos (100K operaciones/mes).
 \end{itemize}
 
 \subsubsection*{Oracle Cloud}
 
-Nube especializada en bases de datos de alto rendimiento (Oracle Database), aplicaciones Java, y soluciones de analytics. Ofrece una capa gratuita con recursos que no expiran, aquí se puede consultar la \textbf{Lista completa} de servicios: \url{https://www.oracle.com/cloud/free/}
+Nube especializada en bases de datos de alto rendimiento (Oracle Database), aplicaciones Java, y soluciones de analytics. Ofrece una capa gratuita con recursos que no expiran\footnote{Lista completa: \url{https://www.oracle.com/cloud/free/}}.
 
-Servicios específicos:
 \begin{itemize}
-	\item \textbf{Compute}: 2 máquinas virtuales AMD con 1/8 OCPU y 1 GB memoria cada una.
-	\item \textbf{Block Volume}: 2 volúmenes, 200 GB total para computación.
-	\item \textbf{Object Storage}: 10 GB.
-	\item \textbf{Load Balancer}: 1 instancia con 10 Mbps.
-	\item \textbf{Databases}: 2 bases de datos, 20 GB cada una.
-	\item \textbf{Monitoring}: 500 millones de puntos de ingesta de datos, 1 millardo de recuperación.
-	\item \textbf{Ancho de banda}: 10 TB de tráfico de salida por mes, velocidad limitada a 50 Mbps.
-	\item \textbf{IP Pública}: 2 IPv4 para máquinas virtuales, 1 IPv4 para balanceador de carga.
-	\item \textbf{Notifications}: 1 millón de opciones de entrega por mes, 1000 emails enviados por mes.
+	\item \textbf{Compute}: máquinas virtuales IaaS (2 VM AMD con 1/8 OCPU y 1~GB memoria cada una). \footnote{OCPU (Oracle CPU) es la unidad de procesamiento de Oracle.}
+	\item \textbf{Block Volume}: discos persistentes (2 volúmenes, 200~GB total).
+	\item \textbf{Object Storage}: almacenamiento de objetos (10~GB).
+	\item \textbf{Load Balancer}: balanceo de carga (1 instancia con 10~Mbps).
+	\item \textbf{Databases}: bases de datos (2 bases de datos, 20~GB cada una).
+	\item \textbf{Monitoring}: monitorización de recursos (500 millones de puntos de ingesta, 1 millardo de recuperación).
+	\item \textbf{Ancho de banda}: transferencia de datos (10~TB de tráfico de salida por mes, limitado a 50~Mbps).
+	\item \textbf{IP Pública}: direcciones IP (2 IPv4 para VMs, 1 IPv4 para balanceador).
+	\item \textbf{Notifications}: notificaciones push y email (1 millón de entregas por mes, 1.000 emails).
 \end{itemize}
 
 \subsubsection*{IBM Cloud}
 
-Plataforma centrada en la transformación digital de grandes empresas con necesidades híbridas y multicloud, aunque también con una capa gratuita. Se puede consultar la \textbf{Lista completa} de servicios aquí: \url{https://www.ibm.com/cloud/free/}
+Plataforma centrada en la transformación digital de grandes empresas con necesidades híbridas y multicloud, aunque también con una capa gratuita\footnote{Lista completa: \url{https://www.ibm.com/cloud/free/}}.
 
-Servicios específicos:
 \begin{itemize}
-	\item \textbf{Cloudant database}: 1 GB de almacenamiento de datos.
-	\item \textbf{Db2 database}: 100MB de almacenamiento de datos.
-	\item \textbf{API Connect}: 50.000 llamadas API por mes.
-	\item \textbf{Availability Monitoring}: 3 millones de puntos de datos por mes.
-	\item \textbf{Log Analysis}: 500MB de registros diarios.
+	\item \textbf{Cloudant database}: base de datos NoSQL (1~GB de almacenamiento).
+	\item \textbf{Db2 database}: base de datos relacional (100~MB).
+	\item \textbf{API Connect}: gestión y exposición de APIs (50.000 llamadas API por mes).
+	\item \textbf{Availability Monitoring}: monitorización de disponibilidad (3 millones de puntos de datos por mes).
+	\item \textbf{Log Analysis}: análisis de logs (500~MB de registros diarios).
 \end{itemize}
 
 \subsubsection*{Cloudflare}
 
-Plataforma especializada en rendimiento web, seguridad y confiabilidad. Aunque no es una nube generalista, sino más bien una red global que acelera y protege sitios web, APIs y aplicaciones mediante su CDN, DNS, servicios de seguridad, etc. De todas formas también tiene capa gratuita, la \textbf{Lista completa} se encuentra en: \url{https://www.cloudflare.com/plans/free/}
+Plataforma especializada en rendimiento web, seguridad y confiabilidad. Aunque no es una nube generalista, sino más bien una red global que acelera y protege sitios web, APIs y aplicaciones mediante su CDN, DNS, servicios de seguridad, etc. También tiene capa gratuita\footnote{Lista completa: \url{https://www.cloudflare.com/plans/free/}}.
 
 \begin{itemize}
-	\item \textbf{Application Services}: DNS, Protección DDoS, CDN con SSL, Firewall de aplicaciones web.
-	\item \textbf{Zero Trust \& SASE}: Hasta 50 usuarios, 24 horas de registro de actividad.
-	\item \textbf{Cloudflare Tunnel}: Exponer puertos HTTP locales a través de túnel.
-	\item \textbf{Workers}: Desplegar código sin servidor - 100k peticiones diarias.
-	\item \textbf{Workers KV}: 100k lecturas diarias, 1000 escrituras diarias, 1 GB datos almacenados.
-	\item \textbf{R2}: 10 GB por mes, 1 millón operaciones por mes.
-	\item \textbf{D1}: 5 millones de filas leídas por día, 100k filas escritas por día, 1 GB almacenamiento.
-	\item \textbf{Pages}: Desplegar aplicaciones web - 500 despliegues mensuales, 100 dominios personalizados.
-	\item \textbf{Queues}: 1 millón de operaciones por mes.
-	\item \textbf{TURN}: 1TB de tráfico saliente por mes.
+	\item \textbf{Application Services}: DNS, protección DDoS, CDN con SSL, firewall WAF.
+	\item \textbf{Zero Trust \& SASE}: seguridad de acceso (hasta 50 usuarios, 24 horas de registro de actividad).
+	\item \textbf{Cloudflare Tunnel}: exposición de servicios locales sin puertos públicos.
+	\item \textbf{Workers}: computación serverless en el edge (100k peticiones diarias).
+	\item \textbf{Workers KV}: almacenamiento clave-valor para Workers (100k lecturas, 1000 escrituras diarias, 1~GB).
+	\item \textbf{R2}: almacenamiento de objetos compatible con S3 (10~GB por mes, 1 millón operaciones).
+	\item \textbf{D1}: base de datos SQLite distribuida (5 millones de filas leídas, 100k escritas por día, 1~GB).
+	\item \textbf{Pages}: alojamiento de aplicaciones web estáticas (500 despliegues mensuales, 100 dominios personalizados).
+	\item \textbf{Queues}: colas de mensajería (1 millón de operaciones por mes).
+	\item \textbf{TURN}: servidor TURN para WebRTC (1~TB de tráfico saliente por mes).
 \end{itemize}
 
 \subsubsection*{OVHcloud}
 
-Proveedor de cloud francés con un fuerte compromiso con la soberanía de los datos y el RGPD. Ofrece una gama completa de servicios de infraestructura (IaaS) y plataforma (PaaS) desde sus centros de datos. Ofrece 200 euros en créditos para probar el servicio durante un mes, aunque tiene una \textbf{Lista completa} de servicios: \url{https://www.ovhcloud.com/en/public-cloud/prices/}, los disponibles en el plan gratuito son los siguientes \citep{OVHCloudFree}:
+Proveedor de cloud francés con un fuerte compromiso con la soberanía de los datos y el RGPD. Ofrece una gama completa de servicios de infraestructura (IaaS) y plataforma (PaaS) desde sus centros de datos. Ofrece 200 euros en créditos para probar el servicio durante un mes\footnote{Lista completa: \url{https://www.ovhcloud.com/en/public-cloud/prices/}}. Los planes gratuitos disponibles son los siguientes \citep{OVHCloudFree}:
+
 \begin{itemize}
-	\item \textbf{Despliegue de un e-commerce}: con 2 servidores B2-7, 1 base de datos MySQL, 1 IP adicional, 1 Balanceador de Carga y 10 GB de Almacenamiento de Objetos.
-
+	\item \textbf{Despliegue de un e-commerce}: incluye 2 servidores B2-7, 1 base de datos MySQL, 1 IP adicional, 1 Balanceador de Carga y 10~GB de Almacenamiento de Objetos.
 	\item \textbf{Prueba de Kubernetes y escalado}: 3 servidores B2-15 durante 1 mes y 12 horas de picos de tráfico en 10 servidores C2-30.
-
-	\item \textbf{Desarrollo y Entrenamiento de IA}: 1 TB de Almacenamiento de Objetos, 35 horas de IA Notebook (AI1-1-GPU) y 5 horas de entrenamiento de IA en 4 nodos AI1-1-GPU.  \\
+	\item \textbf{Desarrollo y Entrenamiento de IA}: 1~TB de Almacenamiento de Objetos, 35 horas de IA Notebook (AI1-1-GPU) y 5 horas de entrenamiento de IA en 4 nodos AI1-1-GPU.
 \end{itemize}
 
 
 \subsection{Otras herramientas de interés}
 \label{sec:EstudiosNubesOtrasHerramientas}
 
-
 También, aunque no son nubes propiamente dichas, se ha querido añadir en esta sección otras herramientas que tienen interés para el proyecto:
 
 \subsubsection*{Hugging Face Spaces}
 \begin{itemize}
-	\item \textbf{Tipo}: Plataforma para desplegar, compartir y descubrir modelos de Aprendizaje Automático (MLOps). Esencial para proyectos de IA. Permite desplegar demostraciones de modelos con interfaz web de forma sencilla.
+	\item \textbf{Tipo}: Plataforma para desplegar, compartir y descubrir modelos de Aprendizaje Automático (MLOps). Esencial para proyectos de IA. Permite desplegar demostraciones de modelos con interfaz web de forma sencilla \footnote{\textbf{URL}: \url{https://huggingface.co/spaces}}.
 	\item \textbf{Capa Gratuita - CPU}: 
 	\begin{itemize}
 		\item 2 CPUs virtuales por espacio.
-		\item 16 GB de RAM.
-		\item Espacio de almacenamiento: 50 GB (para modelos, datos y código).
-		\item Ancho de banda: 100 MB/hora para CPUs.
+		\item 16~GB de RAM.
+		\item Espacio de almacenamiento: 50~GB (para modelos, datos y código).
+		\item Ancho de banda: 100~MB/hora para CPUs.
 		\item \textbf{Apagado automático}: Los espacios se suspenden tras 48 horas de inactividad para ahorrar recursos, reactivándose con la siguiente visita.
 	\end{itemize}
 	\item \textbf{Capa Gratuita - GPU (T4)}: 
 	\begin{itemize}
 		\item Acceso a una GPU NVIDIA T4 por espacio.
-		\item 16 GB de RAM.
-		\item Espacio de almacenamiento: 50 GB.
-		\item Ancho de banda: 30 MB/hora para GPUs.
+		\item 16~GB de RAM.
+		\item Espacio de almacenamiento: 50~GB.
+		\item Ancho de banda: 30~MB/hora para GPUs.
 		\item Uso: Hasta 30 horas de uso de GPU por mes, pero sujeto a disponibilidad.
 		\item \textbf{Apagado automático}: Las GPU se apagan automáticamente tras 1 hora de inactividad.
 	\end{itemize}
 	\item \textbf{Enfoque}: Despliegue, demostración y compartición de modelos de IA. Integración nativa con el Hub de modelos y conjuntos de datos.
-	\item \textbf{URL}: \url{https://huggingface.co/spaces}
 \end{itemize}
 
 \subsubsection*{Kaggle Kernels/Notebooks}
 \begin{itemize}
-	\item \textbf{Tipo}: Entorno de ejecución para cuadernos ``Jupyter'' en la nube. Proporciona acceso gratuito a aceleradores hardware de gama alta, eliminando la barrera de entrada para entrenar modelos complejos.
+	\item \textbf{Tipo}: Entorno de ejecución para cuadernos ``Jupyter'' en la nube. Proporciona acceso gratuito a aceleradores hardware de gama alta, eliminando la barrera de entrada para entrenar modelos complejos  \footnote{\textbf{URL}: \url{https://www.kaggle.com/code}}..
 	\item \textbf{Capa Gratuita - Sesiones de Ejecución}:
 	\begin{itemize}
-		\item \textbf{GPU (NVIDIA Tesla P100)}: Hasta 30 horas por semana (4.3h/día aprox.).
-		\item \textbf{TPU (v3)}: Hasta 20 horas por semana (2.8h/día aprox.).
+		\item \textbf{GPU (NVIDIA Tesla P100)}: Hasta 30 horas por semana (4,3 h/día aprox.).
+		\item \textbf{TPU (v3)}: Hasta 20 horas por semana (2,8 h/día aprox.).
 		\item \textbf{CPU}: 20 horas de tiempo total por semana, sin límite de sesiones concurrentes.
 	\end{itemize}
 	\item \textbf{Límites por Sesión}:
 	\begin{itemize}
 		\item \textbf{Tiempo máximo de ejecución}: 12 horas por sesión. Tras este tiempo, el kernel se detiene automáticamente.
 		\item \textbf{Internet}: Los cuadernos deben tener la opción de Internet activada manualmente para acceder a datos externos o instalar librerías.
-		\item \textbf{Almacenamiento Volátil}: 20 GB de espacio temporal de disco. Los datos no persisten entre sesiones, aunque se puede usar el sistema de conjuntos de datos de Kaggle para almacenamiento persistente.
+		\item \textbf{Almacenamiento Volátil}: 20~GB de espacio temporal de disco. Los datos no persisten entre sesiones, aunque se puede usar el sistema de conjuntos de datos de Kaggle para almacenamiento persistente.
 	\end{itemize}
 	\item \textbf{Enfoque}: Análisis exploratorio de datos, competiciones de ML y, crucialmente, \textbf{entrenamiento de modelos} que requieran GPU/TPU.
-	\item \textbf{URL}: \url{https://www.kaggle.com/code}
 \end{itemize}
 
 \subsubsection*{Open Data Editor}
-	Herramienta de código abierto \url{https://okfn.org/en/projects/open-data-editor/} diseñada para la gestión y publicación de datos abiertos. Desarrollada por la ``Open Knowledge Foundation'', facilita la creación, validación y limpieza de conjuntos de datos en formatos abiertos, con un enfoque en la usabilidad para usuarios no técnicos, para garantizar la calidad y accesibilidad de los datos públicos. Funcionalidades clave:
-	\begin{itemize}
-		\item Creación y edición tabular de datos.
+Herramienta de código abierto\footnote{\url{https://okfn.org/en/projects/open-data-editor/}} diseñada para la gestión y publicación de datos abiertos. Desarrollada por la ``Open Knowledge Foundation'', facilita la creación, validación y limpieza de conjuntos de datos en formatos abiertos, con un enfoque en la usabilidad para usuarios no técnicos, para garantizar la calidad y accesibilidad de los datos públicos. Funcionalidades clave:
+\begin{itemize}
+	\item Creación y edición tabular de datos.
 	\item Validación de esquemas y metadatos.
-		\item Integración con plataformas de datos abiertos (CKAN, S3, etc.).
-		\item Exportación a formatos estandarizados (CSV, JSON, XLSX).
-	\end{itemize}
+	\item Integración con plataformas de datos abiertos (CKAN, S3, etc.).
+	\item Exportación a formatos estandarizados (CSV, JSON, XLSX).
+\end{itemize}
 
 \subsubsection*{Canonical MicroCloud}
-Se trata de una nube privada impulsada por Canonical \citep{canonical2026microcloud}, (empresa que desarrolla y mantiene el sistema operativo Ubuntu). Está orientada al \textit{edge computing} y a despliegues de pequeña escala, permite orquestar infraestructura agrupando un mínimo de tres servidores físicos (nodos). Su arquitectura esconjunto de tecnologías de código abierto: emplea \textit{LXD} para la gestión conjunta de máquinas virtuales y contenedores de sistema, \textit{MicroCeph} para el almacenamiento distribuido, y \textit{MicroOVN} para la configuración de las redes de forma definida por software (SDN). Para el proyecto, esta solución podria permitir levantar una infraestructura autogestionada y de bajo consumo de recursos en minutos para ejecutar los procesos y modelos.
+Se trata de una nube privada impulsada por Canonical \citep{canonical2026microcloud}, (empresa que desarrolla y mantiene el sistema operativo Ubuntu). Está orientada al \textit{edge computing} y a despliegues de pequeña escala, permite orquestar infraestructura agrupando un mínimo de tres servidores físicos (nodos). Su arquitectura es conjunto de tecnologías de código abierto: emplea \textit{LXD} para la gestión conjunta de máquinas virtuales y contenedores de sistema, \textit{MicroCeph} para el almacenamiento distribuido, y \textit{MicroOVN} para la configuración de las redes de forma definida por software (SDN). Para el proyecto, esta solución podría permitir levantar una infraestructura autogestionada y de bajo consumo de recursos en minutos para ejecutar los procesos y modelos.
 Funcionalidades clave:
 \begin{itemize}
-	\item Despliegue automatizado (\textit{Zero-ops}) atraves de una red (mDNS).
+	\item Despliegue automatizado (\textit{Zero-ops}) a través de una red (mDNS).
 	\item Ejecución tanto de contenedores de sistema como máquinas virtuales completas.
 	\item Almacenamiento y redes distribuidas.
 	\item Optimización con distribución inmutable mediante paquetes \textit{Snap}.
 \end{itemize}
-	
+
 \subsubsection*{RapidMiner Studio (actualmente Altair AI Studio)}
-Aunque sin ser una cloud, tiene relevancia por ser una plataforma de software para el ciclo de vida completo de la ciencia de datos y el aprendizaje automático (ML), abarcando desde la preparación de datos hasta la creación y despliegue de modelos, centrándose en la automatización y la facilidad de uso mediante una interfaz gráfica de usuario con modelo de ``cajas'' \citep{RapidMinerCourse}. 
+Aunque sin ser una cloud, tiene relevancia por ser una plataforma de software para el ciclo de vida completo de la ciencia de datos y ML \footnote{ \textbf{URL:} \url{https://altair.com/altair-rapidminer}}, abarcando desde la preparación de datos hasta la creación y despliegue de modelos, centrándose en la automatización y la facilidad de uso mediante una interfaz gráfica de usuario con modelo de ``cajas'' \citep{RapidMinerCourse}. 
 \begin{itemize}
 	\item \textbf{Tipo:} Plataforma integral de Data Science y Machine Learning (desde ETL hasta MLOps básicos).
 	\item \textbf{Capa Gratuita - RapidMiner Studio Free:} 
 	\begin{itemize}
-		\item \textbf{Funcionalidades:} Acceso a algoritmos de ML (clasificación, regresión, clustering, etc.), herramientas de preparación de datos, evaluación y visualización. Incluye capacidades de AutoML para la selección de modelos y optimización de hiperparámetros.
+		\item \textbf{Funcionalidades:} Acceso a algoritmos de ML (clasificación, regresión, clustering, etc.), herramientas de preparación de datos, evaluación y visualización. Incluye capacidades de AutoML (ML Automatizado, explicado en la \hyperref[subsec:automl]{\textit{Sección \ref*{subsec:automl}}}) para la selección de modelos y optimización de hiperparámetros.
 		\item \textbf{Limitaciones:} Generalmente restringido en el número de filas de datos procesables en memoria y el número de operadores por proceso, adecuado para aprendizaje y proyectos de tamaño pequeño a mediano.
 	\end{itemize}
-	\item \textbf{URL:} \url{https://altair.com/altair-rapidminer}
 \end{itemize}
 
+
 \subsubsection*{Nubes descentralizadas}
-Herramientas como estas: \citep{GolemNetwork, akashCloud, rendernetwork} podrían ser útiles en proyectos con exceso de potencia de computación, ya que se podría alquilar esta a cambio de tokens que más tarde se podría usar para las tareas intensivas cuando fuera necesario \hyperref[def8]{[Definición \ref*{def8}]}.
+Plataformas descentralizadas como \textit{Golem Network} \citep{GolemNetwork}, \textit{Akash cloud} \citep{akashCloud} o \textit{Render Network} \citep{rendernetwork}, podrían ser útiles en proyectos con exceso de potencia de computación, ya que se permiten alquilar este exceso a cambio de tokens, que más tarde se pueden usar para las tareas intensivas cuando fuera necesario (Se definen en más detalle en \hyperref[def8]{\textit{Definición \ref*{def8}}}).
+
 
 \subsubsection*{OpenNebula}
-Plataforma de código abierto con origen en España y EE.UU \url{https://opennebula.io/}, la cual se centra en virtualización de centros de datos y gestión de nubes privadas, híbridas y públicas. Permite construir y gestionar infraestructuras IaaS (Infraestructura como Servicio) para cloud sobre la infraestructura de tecnología existente. Ofrece funcionalidades para el aprovisionamiento automático, es independiente del proveedor y soporta diversas interfaces de nube, proporcionando flexibilidad, control y soberanía de datos \citep{OpenNebula2014Kumar, PrivateIaaSComparative2016}. Sin embargo, pese a ser una opción interesante, es posible que no se tenga en cuenta para este proyecto, que prioriza el acceso inmediato a hardware y servicios de IA gestionados sin coste inicial de infraestructura ni tiempo. \\
- 
- 
-\subsection{Trabajos anteriores y relacionados}
+Plataforma de código abierto con origen en España y EE.UU\footnote{\url{https://opennebula.io/}}, la cual se centra en virtualización de centros de datos y gestión de nubes privadas, híbridas y públicas. Permite construir y gestionar infraestructuras IaaS (Infraestructura como Servicio) para cloud sobre la infraestructura de tecnología existente. Ofrece funcionalidades para el aprovisionamiento automático, es independiente del proveedor y soporta diversas interfaces de nube, proporcionando flexibilidad, control y soberanía de datos \citep{OpenNebula2014Kumar, PrivateIaaSComparative2016}. Sin embargo, pese a ser una opción interesante, no se ha tenido en cuenta para este proyecto, que prioriza el acceso inmediato a hardware y servicios de IA gestionados sin coste inicial de infraestructura ni tiempo. \\
 
-La literatura referente a la computación en la nube es muy extensa, a parte de toda la literatura ya citada hasta ahora, citaré algunos ejemplos más, como el libro \textbf{``Cloud Computing Technology''} \citep{huawei2023cloud}, aunque su traducción al inglés no es excelente, agrupa todos los conceptos del panorama cloud actual, así como los elementos que todas las nubes comparten entre sí, y da un panorama de la situación cloud en China, lo cual amplía los horizontes del conocimiento cloud. Otro libro: \citep{Fowdur2021}, cuyo capítulo 2 tiene interesantes definiciones sobre cloud. También el trabajo de \citep{nigro2022}, que estudia las oportunidades, desafíos y antecedentes de la computación en la nube, o el trabajo de \citep{bommala2024}, que tiene un enfoque muy interesante, denominando al ecosistema ``cloud verse'' y enfocándose en las innovaciones de los últimos años (infraestructuras de nube híbrida, modelos de computación sin servidor o ``serverless'', ``edge computing'', integración de IA, etc.) con un interesante enfoque en seguridad y cumplimiento de normativas, la integración de ``blockchain'' y el énfasis en la computación en la nube "verde" y sostenible. 
+\subsection{Trabajos}
 
-Aunque no únicamente dirigido a cloud, también vale la pena destacar portales o iniciativas que buscan opciones de código abierto o de fácil acceso a las tecnologías sobre las que trata el artículo y las cuales han sido de mucha ayuda, como la iniciativa de la Unión Europea \citep{EuropeanAlternatives} o compilaciones como \citep{free-for-dev}.
+Existen numerosos trabajos que abordan aspectos generales de la computación en la nube, más que herramientas específicas. A continuación se revisan algunos relevantes.
 
-Por último, querría destacar trabajos de compañeros como \textbf{``Optimización de infraestructuras de Cloud Computing basadas en máquinas virtuales''} \citep{sanchez2023optimizacion}, el cual hace una excelente labor de investigación de todo lo relacionado con la computación en la nube para predecir el consumo futuro de recursos en máquinas virtuales de Azure (con sus datos públicos), y así mejorar la eficiencia y la gestión de la infraestructura. \newpage
+El libro \textbf{``Cloud Computing Technology''} \citep{huawei2023cloud} agrupa todos los conceptos del panorama cloud actual, así como los elementos que todas las nubes comparten entre sí. También da un panorama de la situación cloud en China, lo cual amplía los horizontes del conocimiento cloud. 
+El libro \citep{Fowdur2021} introduce en su capítulo 2 interesantes definiciones sobre cloud. También es interesante el trabajo de \citep{nigro2022}, que estudia las oportunidades, desafíos y antecedentes de la computación en la nube, o el trabajo de \citep{bommala2024}, que tiene un enfoque muy interesante, denominando al ecosistema ``cloud verse'' y centrándose en las innovaciones de los últimos años (infraestructuras de nube híbrida, modelos de computación sin servidor o ``serverless'', ``edge computing'', integración de IA, etc.), con un interesante enfoque en seguridad y cumplimiento de normativas, la integración de ``blockchain'' y el énfasis en la computación en la nube ``verde'' y sostenible.
 
+Aunque no únicamente dirigido a cloud, también vale la pena destacar portales o iniciativas que buscan opciones de código abierto o de fácil acceso, las cuales han sido de mucha ayuda, como la iniciativa de la Unión Europea \citep{EuropeanAlternatives} o compilaciones como \citep{free-for-dev}.
 
-\newpage
-
+Por último, querría destacar trabajos de compañeros como \textbf{``Optimización de infraestructuras de Cloud Computing basadas en máquinas virtuales''} \citep{sanchez2023optimizacion}, el cual hace una excelente labor de investigación de todo lo relacionado con la computación en la nube para predecir el consumo futuro de recursos en máquinas virtuales de Azure (con sus datos públicos), y así mejorar la eficiencia y la gestión de la infraestructura.
 
 \section{Inteligencia Artificial}
 \label{sec:EstudiosIA}
 
-La Inteligencia Artificial (IA), y más específicamente el aprendizaje automático (ML), está emergiendo como el paradigma tecnológico más transformador de la década y uno de los más importantes de la historia \hyperref[def12]{[Definición \ref*{def12}]}. Aunque desde sus inicios ha pasado por algunos ``inviernos'' \citep{Cheok2023AIHistory}, el lanzamiento de ``ChatGPT'' en 2022 catapultó la fama de esta tecnología \hyperref[figura_A3]{[Figura \ref*{figura_A3}]}. Estudios del ONTSI \citep{ontsi2025indicadores} revelan que en 2024, el 11,4\% de las empresas españolas de 10 o más empleados usaba IA, un dato ligeramente inferior a la media de la UE (13,5\%), aunque por encima de potencias como EE.UU. (5,7\% según OECD, o 7,3\% del total de empresas según BTOS). En cuanto a la población general, en 2024 un 73,8\% de los españoles tenían conocimiento de la existencia de la IA generativa, y un 56,8\% la utilizó durante el año. Los datos de 2025 según la encuesta del INE \citep{INE2025TIC} aumentan aún más la cifra: el 21,1\% de las empresas españolas de 10 o más empleados utilizó tecnologías de Inteligencia Artificial en el primer trimestre de 2025.
+La IA, y más específicamente el ML, está emergiendo como el paradigma tecnológico más transformador de la década y uno de los más importantes de la historia (\hyperref[def12]{\textit{La historia completa de la IA se define en la definición \ref*{def12}}}). Aunque desde sus inicios ha pasado por algunos ``inviernos'' \citep{Cheok2023AIHistory}, el lanzamiento de ``ChatGPT'' en 2022 catapultó la fama de esta tecnología \hyperref[figura_A3]{\textit{Figura \ref*{fig:A3}}}.
 
-Aunque esta fama viene dada por los modelos generativos basados en \textit{transformers} \citep{vaswani2017attention}, la aplicación de esta tecnología va más allá de esto, el núcleo de esta revolución reside en el conjunto de herramientas algorítmicas para el análisis predictivo y la extracción de patrones en datos masivos, lo cual incluye los modelos generativos, pero no exclusivamente. En este proyecto se pretende utilizar ese potencial a través de plataformas cloud como Google Vertex AI, el uso de diferentes modelos de clasificación y clusterización o de detección de anomalías, con el propósito de intentar transformar el vasto volumen de datos públicos, a menudo infrautilizados, en ``insights'' o conclusiones de valor público.
+Estudios del ONTSI \citep{ontsi2025indicadores} revelan que en 2024, el 11,4\% de las empresas españolas de 10 o más empleados usaba IA, un dato ligeramente inferior a la media de la UE (13,5\%), aunque por encima de potencias como EE.UU. (5,7\% según OECD, o 7,3\% del total de empresas según Business Trends and Outlook Survey (Encuesta de Tendencias y Perspectivas Empresariales)). En cuanto a la población general, en 2024 un 73,8\% de los españoles tenían conocimiento de la existencia de la IA generativa, y un 56,8\% la utilizó durante el año. Los datos de 2025 según la encuesta del INE \citep{INE2025TIC} aumentan la cifra: el 21,1\% de las empresas españolas de 10 o más empleados utilizó tecnologías de IA en el primer trimestre de 2025.
 
-También aclarar que, por acotar el alcance del proyecto, este trabajo no destacará avances en IA que traten datos multimedia, como vídeos, audios e imágenes, aunque reconocemos el increíble avance que han tenido tecnologías de visión por computador o creación de multimedia y su utilidad en LLMs multimodales, los cuales sí entran en el ``scope'' del proyecto. Con esto en mente, en las siguientes secciones vamos a ver cómo aplicar el aprendizaje automático al proyecto, revisando los modelos tradicionales, tecnologías que proporcionan las nubes para usarlos, como el AutoML. Igual que para los datos se han tenido en cuenta ideas de gobernanza de datos, para la aplicación de los modelos se tendrán en cuenta los principios de las Operaciones de aprendizaje automático (MLOps) \hyperref[def14]{[Definición \ref*{def14}]}.
+Aunque la reciente fama de la IA viene dada por los modelos generativos basados en \textit{transformers} \citep{vaswani2017attention}, la aplicación de esta ciencia y sus tecnologías relacionadas va más allá de esto: el núcleo de esta revolución reside en el conjunto de herramientas algorítmicas para el análisis predictivo y la extracción de patrones en datos masivos, lo cual incluye los modelos generativos, pero no exclusivamente. En este proyecto se pretende utilizar ese potencial a través de plataformas cloud como Google Vertex AI, el uso de diferentes modelos de clasificación y clusterización o de detección de anomalías, con el propósito de intentar transformar el vasto volumen de datos públicos, a menudo infrautilizados, en ``insights'' o conclusiones de valor público.
+
+También aclarar que, por acotar el alcance del proyecto, este trabajo no tendrá en cuenta avances en IA que traten datos multimedia, como vídeos, audios e imágenes, aunque reconocemos el increíble avance que han tenido tecnologías de visión por computador o creación de multimedia y su utilidad en LLM multimodales. Con esto en mente, en las siguientes secciones vamos a ver cómo aplicar el ML al proyecto, revisando los modelos tradicionales, tecnologías que proporcionan las nubes para usarlos, como el AutoML. Igual que para los datos se han tenido en cuenta ideas de gobernanza de datos, para la aplicación de los modelos se tendrán en cuenta los principios de las Operaciones de aprendizaje automático (MLOps) \hyperref[def14]{\textit{Definición \ref*{def14}}}.
 
 \subsection{Modelos de ML}
 
-Vamos a estudiar los modelos de aprendizaje automático pertinentes para el análisis predictivo y la extracción de patrones en datos. Aunque se pueden clasificar de varias maneras, clasificaremos los modelos por:
+Vamos a estudiar los modelos de ML pertinentes para el análisis predictivo y la extracción de patrones en datos. Aunque se pueden clasificar de varias maneras, aquí se dividirán según dos tipos de categorías:
 \begin{itemize}
-	\item Tipos de aprendizaje según la disponibilidad y calidad de etiquetas (supervisado, no supervisado, por refuerzo, etc.) \hyperref[def13]{[Definición \ref*{def13}]}
-	\item La naturaleza de los datos (tabulares, no estructurados, etc.) [\ref{tipos_de_datos}]
+	\item Según tipos de aprendizaje según la disponibilidad y calidad de etiquetas (Definidos con detalle en la \hyperref[def13]{\textit{definición \ref*{def13}}})
+	\item Según la naturaleza de los datos (tabulares, no estructurados, etc.) [definidos en la sección \ref*{tipos_de_datos}]
 \end{itemize}
-Debido a la utilización principal de datos estructurados y semiestructurados, se priorizarán los modelos adaptados mejor a este tipo de datos \citep{Fowdur2021}.
 
-Para la elección del modelo, seguiremos el siguiente esquema \citep{Jason2024MLTypes}:
+Debido a la utilización principal de datos estructurados y semiestructurados, se priorizarán los modelos adaptados mejor a este tipo de datos \citep{Fowdur2021}. Para la elección del modelo, seguiremos el esquema extraído del estudio \citep{Jason2024MLTypes}: \\
 
+% TODO esto quedaria mejor como imagen de diagrama de flujo
 \textbf{Paso uno: ¿Se necesita predecir algo?}
+\begin{itemize}
+	\item \textbf{Si (Aprendizaje Supervisado):}
 	\begin{itemize}
-		\item \textbf{Si (Aprendizaje Supervisado):}
-		\begin{itemize}
 		\item Si la predicción es sobre \textbf{categorías} $\rightarrow$ \textit{Tarea de Clasificación}.
 		\item Si la predicción es sobre \textbf{datos temporales} $\rightarrow$ \textit{Predicción de Series Temporales}.
 		\item Si la predicción es sobre \textbf{otras características} $\rightarrow$ \textit{Tarea de Regresión}.
-		\end{itemize}
-		\item \textbf{No (Aprendizaje No Supervisado):}
-		\begin{itemize}
+	\end{itemize}
+	\item \textbf{No (Aprendizaje No Supervisado):}
+	\begin{itemize}
 		\item Si el objetivo es \textbf{encontrar grupos} $\rightarrow$ \textit{Clusterización}.
 		\item Si el objetivo es \textbf{encontrar anomalías} $\rightarrow$ \textit{Detección de Anomalías}.
-		\end{itemize}
 	\end{itemize}
-	
-\textbf{Paso dos: ¿Qué tipo de datos tenemos?}
-	\begin{itemize}
-	\item \textbf{Simple:} Datos Estructurados $\rightarrow$ Algoritmos ML Simples:
-		\begin{itemize}
-			\item \textbf{Árboles de Decisión o k-Nearest Neighbors} (para clasificación / regresión)
-			\item \textbf{K-means} (para clusterización)
-		\end{itemize}
-	\item \textbf{Intermedio:} Múltiples Características / Imágenes de Baja Resolución $\rightarrow$ Métodos de Ensemble:
-		\begin{itemize}
-			\item \textbf{ Random Forests, XGBoost }  (para clasificación / regresión)
-			\item \textbf{DBSCAN} (para clusterización)
-		\end{itemize}
-	\item \textbf{Complejo:} Imágenes / Texto / Audio $\rightarrow$ Algoritmos más complejos:
-		\begin{itemize}
-			\item Redes Neuronales Profundas
-			\item Grandes modelos de Lenguaje (LLM)
-		\end{itemize}
-	\end{itemize}
+\end{itemize}
 
-Para tomar mejor las decisiones, se han estudiado estos modelos para comprobar su valor dependiendo del tipo de datos \hyperref[def15]{[Definición \ref*{def15}]}. Pero debido a que los modelos elegidos para cada conjunto de datos depende del tipo de los mismos (e incluso aun sabiendo el tipo de datos es difícil saber si cierto modelo funcionará mejor que otro), estos se detallarán para cada conjunto de datos en el apartado \hyperref[sec:Materiales_datos]{Sección \ref*{sec:Metodos_ML}: Modelos de Aprendizaje automático}.
+
+\textbf{Paso dos: ¿Qué tipo de datos tenemos?}
+\begin{itemize}
+	\item \textbf{Simple:} Datos Estructurados $\rightarrow$ Algoritmos ML Simples:
+	\begin{itemize}
+		\item \textbf{Árboles de Decisión o k-Nearest Neighbors} (para clasificación / regresión)
+		\item \textbf{K-means} (para clusterización)
+	\end{itemize}
+	\item \textbf{Intermedio:} Múltiples Características / Imágenes de Baja Resolución $\rightarrow$ Métodos de Ensemble:
+	\begin{itemize}
+		\item \textbf{ Random Forests, XGBoost }  (ejemplos para clasificación / regresión)
+		\item \textbf{DBSCAN} (para clusterización)
+	\end{itemize}
+	\item \textbf{Complejo:} Imágenes / Texto / Audio $\rightarrow$ Algoritmos más complejos:
+	\begin{itemize}
+		\item Redes Neuronales Profundas
+		\item LLM
+	\end{itemize}
+\end{itemize}
+
+Para tomar mejor las decisiones, se han estudiado estos modelos para comprobar su valor dependiendo del tipo de datos \hyperref[def15]{\textit{Definición \ref*{def15}}}. Debido a que los modelos elegidos para cada conjunto de datos depende del tipo de los mismos (e incluso aún sabiendo el tipo de datos es difícil saber si cierto modelo funcionará mejor que otro), estos se detallarán para cada conjunto de datos en el apartado \hyperref[sec:Materiales_datos]{\textit{Sección \ref*{sec:Metodos_ML}: Modelos de Aprendizaje automático}}.
 
 \subsection{ML en la nube}
 
-Todos los modelos que se han comentado, particularmente los más complejos, tienen algo en común: son bastante exigentes en el consumo de procesamiento, tanto de CPU, como sobre todo de GPU o TPU \citep{Sze_2017}. Esta barrera de entrada hardware ha sido tradicionalmente un impedimento para investigadores, estudiantes y pequeñas organizaciones para ejecutar estos modelos, y en este punto es donde puede ser muy útil el paradigma de la computación en la nube y, sobre todo, los grandes proveedores con sus capas gratuitas, las cuales no solo proporcionan la infraestructura base para poder crear estos modelos, sino que además tienen herramientas especializadas para ello, facilitando la implementación de un ciclo de vida completo de Machine Learning (MLOps).
+Todos los modelos que se han comentado, particularmente los más complejos, tienen algo en común: son bastante exigentes en el consumo de procesamiento, tanto de CPU como sobre todo de GPU o TPU \citep{Sze_2017}. Esta barrera de entrada hardware ha sido tradicionalmente un impedimento para investigadores, estudiantes y pequeñas organizaciones para ejecutar estos modelos. En este punto es donde puede ser muy útil el paradigma de la computación en la nube, sobre todo los grandes proveedores con sus capas gratuitas. Estas capas no solo proporcionan la infraestructura base para poder crear estos modelos, sino que además tienen herramientas especializadas para ello. Esto facilita la implementación de un ciclo de vida completo de ML con MLOps.
 
-En este proyecto utilizaremos varias herramientas. En cuanto a los datos, los almacenaremos dependiendo de la nube utilizada para su procesamiento, pues cada una de las nubes puede comunicarse con un número limitado y específico de herramientas de almacenamiento. Los modelos entrenados se almacenarán también en la solución de almacenamiento de la propia nube (AWS S3, Azure Storage, etc.) cuando se requiera su uso, pero para entrenamiento o inferencia, a parte de las plataformas de MLOps comentadas, también merece la pena destacar opciones como ``Kaggle notebooks'' o ``HuggingFace Spaces'' que detallaremos en los siguientes apartados.
+En este proyecto se utilizarán varias herramientas. En cuanto a los datos, los almacenaremos dependiendo de la nube utilizada para su procesamiento, pues cada una de las nubes puede comunicarse con un número limitado y específico de herramientas de almacenamiento. Los modelos entrenados se almacenarán también en la solución de almacenamiento de la propia nube (AWS S3, Azure Storage, etc.) cuando se requiera su uso. Para entrenamiento o inferencia, además de las plataformas de MLOps comentadas, también merece la pena destacar opciones como ``Kaggle notebooks'' o ``HuggingFace Spaces'' que detallaremos en los siguientes apartados.
+
 
 \subsubsection{Plataformas MLOps en la Nube}
 
 Los principales proveedores de nube ofrecen plataformas completas diseñadas para gestionar el ciclo de vida de los modelos de ML \citep{comparisonAutoMLServices}:
 \begin{itemize}
-	\item \textbf{Gemini Enterprise Agent Platform (Anteriormente Google Vertex AI):} Integra herramientas para todo el ciclo de vida del aprendizaje automático y la IA generativa: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI / CLI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicación con las herramientas de GCP y ofrece varios modelos preentrenados, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA}. Durante el desarrollo de este trabajo, la plataforma se reestructuró y evolucionando hacia una plataforma centrada en agentes autónomos, lo que ilustra la alta volatilidad en la interfaz y nomenclatura de los servicios en la nube.
+	\item \textbf{Gemini Enterprise Agent Platform (Anteriormente Google Vertex AI):} Integra herramientas para todo el ciclo de vida del ML y la IA generativa: preparación de datos, entrenamiento, despliegue y monitoreo en su GUI / CLI. Abstrae gran parte de la gestión de infraestructura y ofrece comunicación con las herramientas de Google Cloud Platform (GCP) y ofrece varios modelos preentrenados, incluyendo modelos de Hugging Face, Stable Diffusion, etc. \citep{GoogleVertexAI_CloudIA}. Durante el desarrollo de este trabajo, la plataforma se reestructuró y evolucionó hacia una plataforma centrada en agentes autónomos, lo que ilustra la alta volatilidad en la interfaz y nomenclatura de los servicios en la nube.
 	
-	\item \textbf{AWS SageMaker:} Proporciona un conjunto completo de herramientas y servicios para construir, entrenar y desplegar modelos de ML a escala, incluyendo notebooks gestionados, algoritmos y entrenamiento distribuido. Soporta una amplia gama de fuentes de datos como S3, Athena, Redshift, Snowflake y Databricks\citep{AmazonSageMaker_CloudIA}.
+	\item \textbf{AWS SageMaker:} Proporciona un conjunto completo de herramientas y servicios para construir, entrenar y desplegar modelos de ML a escala, incluyendo notebooks gestionados, algoritmos y entrenamiento distribuido. Soporta una amplia gama de fuentes de datos como S3, Athena, Redshift, Snowflake y Databricks  \citep{AmazonSageMaker_CloudIA}.
 	
 	\item \textbf{Azure Machine Learning:} Ofrece un entorno para el desarrollo y despliegue con herramientas para la preparación de datos, entrenamiento de modelos, gestión de experimentos y automatización de flujos de trabajo de ML, además de ofrecer modelos de Hugging Face y OpenAI. Sus fuentes de datos principales incluyen Azure Blob Storage, Azure File Share y Azure Data Lake \citep{AzureMachineLearning_CloudIA}.
 	
-	\item \textbf{OVHcloud (AI Notebook y AI Training):} Ofrece sus servicios "AI Notebook" y "AI Training", con infraestructura gestionada, incluyendo acceso a GPUs, para el desarrollo y entrenamiento de modelos. No tiene un entorno tan potente como el resto de clouds, pero ofrece una capa gratuita generosa y localizada en Europa \citep{OVHcloud_CloudIA}.
-
+	\item \textbf{OVHcloud (AI Notebook y AI Training):} Ofrece sus servicios ``AI Notebook'' y ``AI Training'', con infraestructura gestionada, incluyendo acceso a GPUs, para el desarrollo y entrenamiento de modelos. No tiene un entorno tan potente como el resto de clouds, pero ofrece una capa gratuita generosa y localizada en Europa \citep{OVHcloud_CloudIA}.
+	
 \end{itemize}
 
 \subsubsection{Otras herramientas}
 
-Además de las plataformas comentadas, existen herramientas especializadas de gran utilidad y con capas gratuitas que ya se ha comentado en  \hyperref[sec:EstudiosNubesOtrasHerramientas]{[la sección de cloud \ref*{sec:EstudiosNubesOtrasHerramientas}]}, pero merece la pena concretar:
- 
+Además de las plataformas comentadas, existen herramientas especializadas de gran utilidad y con capas gratuitas que ya se ha comentado en  \hyperref[sec:EstudiosNubesOtrasHerramientas]{\textit{la sección de cloud \ref*{sec:EstudiosNubesOtrasHerramientas}}}, pero merece la pena concretar:
+
 \begin{itemize}
 	\item \textbf{Kaggle Kernels/Notebooks:} Es ideal para análisis exploratorio de datos, competiciones de ML y entrenamiento de modelos intensivos \citep{Kaggle_CloudIA} por el acceso a sus GPUs.
 	\item \textbf{Google Colab:} Alternativa excelente para el entrenamiento de modelos complejos, funcionando como un entorno de desarrollo gratuito con Jupyter Notebooks que ofrece GPUs y TPUs, especialmente popular por su facilidad de uso y su integración con el ecosistema de Google y GCP \citep{GoogleColab_CloudIA}.
 	\item \textbf{Hugging Face Spaces:} Plataforma dedicada al despliegue, compartición y descubrimiento de modelos de ML ya creados, muy útil para pruebas de concepto, permitir la prueba de modelos o utilizar los que la comunidad ha creado \citep{huggingfaceSpaces_CloudIA}.
 \end{itemize}
 
-También vale la pena destacar los grandes modelos generativos, los cuales presentan una capacidad de adaptación enorme, y aunque no están diseñados para la ingesta de grandes volúmenes de datos, el aumento de las ventanas de contexto (número de tokens a los que el modelo ``presta atención'' \citep{vaswani2017attention}) ha hecho que tratar de utilizarlos para el tratamiento de datos tabulares \textbf{no sensibles} sea un caso que vale la pena considerar, siempre teniendo en cuenta estas consideraciones éticas y de privacidad.
+También vale la pena destacar los grandes modelos generativos, los cuales presentan una capacidad de adaptación enorme. Aunque no están diseñados para la ingesta de grandes volúmenes de datos, el aumento de las ventanas de contexto (número de tokens a los que el modelo ``presta atención'' \citep{vaswani2017attention}), ha hecho que tratar de utilizarlos para el tratamiento de datos tabulares \textbf{no sensibles} sea un caso que vale la pena considerar. Teniendo en cuenta, al utilizarlos, todas las consideraciones éticas y de privacidad correspondientes.
 
 Teniendo en cuenta la ventana de contexto de los modelos disponibles en junio de 2026 según el leaderboard de LLM Stats \citep{LLMLeaderboardParameters} y que un token son aproximadamente cuatro caracteres \citep{TokenizacionMicrosoft}, se ha elaborado una tabla con la cantidad de datos tabulares que los principales modelos de LLM podrían asumir. Se consideran dos escenarios realistas:
 
@@ -492,6 +503,7 @@ Teniendo en cuenta la ventana de contexto de los modelos disponibles en junio de
 Con estos datos se puede observar que los modelos más avanzados ya pueden procesar miles de filas tabulares simples en su ventana de contexto, lo que puede ser suficiente para muchos conjuntos de datos. Ya existen estudios que exploran estas capacidades \citep{fang2024llms}.
 
 \subsubsection{AutoML}
+\label{subsec:automl}
 
 Como colofón a las estrategias de construcción de modelos, el Aprendizaje Automático Automatizado (AutoML) representa un conjunto de técnicas y herramientas que simplifican y aceleran el proceso de desarrollo del ML, reduciendo la complejidad de la implementación. Lo consiguen automatizando una, varias o todas las siguientes tareas:
 \begin{itemize}
@@ -504,7 +516,8 @@ Como colofón a las estrategias de construcción de modelos, el Aprendizaje Auto
 	\item \textbf{Reportes y documentación:} Seguimiento automático de todo el proceso de ML.
 	\item \textbf{Despliegue y producción:} Implementación del modelo entrenado en un entorno productivo.
 \end{itemize}
-Aunque esta tecnología es muy útil para tratar grandes volúmenes de datos de forma rápida, también es muy costosa en cuanto a computación, por lo que no todas las nubes ofrecen sus propias herramientas, de todas formas las listaremos brevemente \citep{comparisonAutoMLServices}:
+
+Aunque esta tecnología es muy útil para tratar grandes volúmenes de datos de forma rápida, también es muy costosa en cuanto a computación, por lo que no todos los proveedores cloud ofrecen servicios de AutoML. A continuación se listan los principales que sí disponen de esta funcionalidad \citep{comparisonAutoMLServices}:
 \begin{itemize}
 	\item \textbf{Google Vertex AI AutoML} 
 	\item \textbf{AWS SageMaker Autopilot} 
@@ -515,25 +528,35 @@ Otra opción sería utilizar herramientas especializadas como ``AutoKeras'' \cit
 
 \subsection{IA, normativa y ética}
 
-También hay que tener en cuenta la nueva normativa que la Unión Europea ha establecido con el Reglamento de Inteligencia Artificial \citep{webRIA2024Europa, omnibus2026Europa}, así como el marco en el que este proyecto se engloba. Este reglamento se ha usado de base para el uso de IA en este proyecto, y aunque la mayor parte de las consideraciones éticas desarrolladas en los últimos años, se centran en modelos de procesamiento del lenguaje natural, (como los estudios conducidos por DeepMind) \citep{gabriel2024ethicsadvancedaiassistants}. En Este aspecto, el presente trabajo se compromete con la ``Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial (IA) de la Universidad Complutense de Madrid'' adjunta en el repositorio de este mismo proyecto. Pero además se compromete a seguir los siete estándares definidos por el reglamento de la Unión Europea en \hyperref[sec:Metodos_Principios_EU]{principios éticos de de la Unión Europea: Sección \ref*{sec:Metodos_Principios_EU}}.
+El desarrollo de soluciones con IA debe enmarcarse en el nuevo Reglamento de Inteligencia Artificial de la Unión Europea \citep{webRIA2024Europa, omnibus2026Europa}, que constituye la base normativa de este proyecto. Además del cumplimiento de esta regulación, se han considerado otros principios éticos transversales (supervisión humana, transparencia, equidad y rendición de cuentas), que se detallan en la \hyperref[sec:Metodos_Principios_EU]{\textit{Sección \ref*{sec:Metodos_Principios_EU}}}. Cabe señalar que, aunque la mayor parte de la reflexión ética reciente se ha centrado en modelos de procesamiento del lenguaje natural \citep[como los estudios de DeepMind]{gabriel2024ethicsadvancedaiassistants}, los principios aplicados son de carácter general y extensibles a cualquier dominio de la IA. En este aspecto, el presente trabajo se acoge tanto a la ``Declaración Responsable sobre Autoría y Uso Ético de Herramientas de Inteligencia Artificial (IA) de la Universidad Complutense de Madrid'' como a los siete estándares éticos definidos por el reglamento europeo.
 
-Para terminar, anteriormente se ha hablado sobre la obtención de ``insights'' automáticos: es sabido que la IA acelera la identificación de patrones, pero para poder efectuar una interpretación estratégica se necesita el contexto de política pública y la validación humana experta. El principio HITL ``humano en el bucle'' \citep{MosqueiraRey2023} es un requisito metodológico y ético para convertir patrones en decisiones, por lo que será un requisito que seguiremos en este proyecto.
+Para terminar, anteriormente se ha hablado sobre la obtención de ``insights'' automáticos: es sabido que la IA acelera la identificación de patrones, pero para poder efectuar una interpretación estratégica se necesita el contexto de política pública y la validación humana experta. El principio HITL (``humano en el bucle'', del inglés \textit{Human-In-The-Loop}) \citep{MosqueiraRey2023} es un requisito metodológico y ético para convertir patrones en decisiones, por lo que se ha seguido en este proyecto.
+
+\subsection{Trabajos}
+
+Aunque ya se han nombrado varios trabajos en la \hyperref[def12]{\textit{Historia sobre la IA - Definición \ref*{def12}}}, se ha querido añadir algunas referencias mas en este capítulo. El libro \citep{Fowdur2021}, que introduce en su capítulo 3 un profundo análisis sobre diferentes modelos de IA. También el libro \citep{Brownlee_2016_MMLA} y todo el trabajo del autor en general, el cual ha sido de gran ayuda para afianzar los conceptos de esta sección y todo el trabajo.
+
+También nombrar un par de trabajos muy interesantes sobre AutoML, que al abordar este tema, tratan todas las fases del ciclo completo de los algoritmos de ML. El artículo \citep{SALEHIN202452} desglosa cada etapa del flujo de trabajo y explica cómo AutoML automatiza cada una. Destaca la búsqueda de arquitecturas neuronales, que automatiza el proceso de diseño de la arquitectura de una red neuronal, como motor del crecimiento del AutoML. Por otro lado, \citep{Barbudo2023} se centra más en el campo de investigación de AutoML, con una taxonomía que clasifica todo el campo en fases, tareas y técnicas.
+
+También mencionar trabajos académicos de compañeros con ideas similares a la tratada en este estudio y que han ayudado a guiar el mismo:
+\begin{itemize}
+	\item \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}: Donde se realiza un análisis del impacto de la pandemia en la movilidad peatonal de Madrid con datos públicos del ayuntamiento (2019-2021). El autor utiliza el modelo ARIMA (Autoregresivo) para las series temporales, o K-means para clusterización de datos. En este trabajo, se replicaron las técnicas de tratamiento de datos de este proyecto, aunque su análisis quedó fuera de alcance.
+	
+	\item \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid}: También analizando datos del Ayuntamiento de Madrid, esta vez del clima y la contaminación del año 2021. Los autores utilizaron clusterización, mayormente K-Means, para comprobar hipótesis sobre el clima en la ciudad. Este mismo trabajo se ha replicado y ampliado en este proyecto para comparar las diferentes tecnologías de las que hablamos en esta sección, replicando tanto la descarga y tratamiento de datos, como su uso y análisis en tecnologías cloud y locales.
+\end{itemize}
+De hecho, debido a la cercanía de estos trabajos, se ha contactado con sus autores para poder replicar y ampliar lo que hicieron en favor de poder desarrollar una metodología de tratamiento de datos públicos en la nube, y se utilizarán de base para el estudio posterior.
+
+Por último, un estudio que utiliza métodos y sistemas similares a los tratados finalmente en este proyecto es el de Liu et al. \citep{urbanthermal2025}. Los autores analizan puntos térmicos diurnos y nocturnos mediante técnicas de ML como ``Random Forest'' o ``Gradient Boosting'' sobre datos satelitales y de temperatura, estudiando la formación de islas de calor en zonas urbanas e industriales. Este enfoque y sus conclusiones sobre la influencia de la altura y densidad de los edificios resultan de gran utilidad para orientar el análisis de la ciudad de Madrid que se desarrolla en este trabajo.
 
 
-\subsection{Trabajos anteriores y relacionados}
-	
-	Aunque ya se han nombrado varios anteriormente y en las \hyperref[def12]{[Definiciones \ref*{def12}]}, querría añadir algunas referencias mas, para empezar, el libro \citep{Fowdur2021}, cuyo capítulo 3 hace un profundo análisis sobre diferentes modelos de inteligencia artificial. También el libro \citep{Brownlee_2016_MMLA} y todo el trabajo del autor en general, el cual ha sido de gran ayuda para afianzar los conceptos de esta sección.
+\section*{Conclusiones del capítulo}
 
-	También nombrar un par de trabajos muy interesantes sobre AutoML, que al abordar este tema, tratan todas las fases del ciclo completo de los algoritmos de aprendizaje automático. \citep{SALEHIN202452} desglosa cada etapa del flujo de trabajo y explica cómo AutoML automatiza cada una. Destaca la búsqueda de arquitecturas neuronales (NAS), que automatiza el proceso de diseño de la arquitectura de una red neuronal, como motor del crecimiento del AutoML. Por otro lado, \citep{Barbudo2023} se centra más en el campo de investigación de AutoML, con una taxonomía que clasifica todo el campo en fases, tareas y técnicas.
-	
-	Me gustaria mencionar trabajos académicos de compañeros con ideas similares a la tratada en este estudio y que han ayudado a guiar el mismo:
-	\begin{itemize}
-		\item \textbf{``Análisis de datos de la ciudad de Madrid''} \citep{SaizSantos2023}: Donde se realiza un análisis del impacto de la pandemia en la movilidad peatonal de Madrid con datos públicos del ayuntamiento (2019-2021). El autor utiliza el modelo ARIMA (Autoregresivo) para las series temporales, o K-means para clusterización de datos. En este trabajo, se replicaron las técnicas de tratamiento de datos de este proyecto, aunque su análisis quedó fuera de alcance.
-			
-		\item \textbf{``Madrid, isla de calor''} \citep{Meneses2023Madrid}: También analizando datos del Ayuntamiento de Madrid, esta vez del clima y la contaminación del año 2021. Los autores utilizaron clusterización, mayormente K-Means, para comprobar hipótesis sobre el clima en la ciudad. Este mismo trabajo se ha replicado y ampliado en este proyecto para comparar las diferentes tecnologías de las que hablamos en esta sección, replicando tanto la descarga y tratamiento de datos, como su uso y análisis en tecnologías cloud y locales.
-	\end{itemize}
-	De hecho, debido a la cercanía de estos trabajos, se ha contactado con sus autores para poder replicar y ampliar lo que hicieron en favor de poder desarrollar una metodología de tratamiento de datos públicos en la nube, y se utilizarán de base para el estudio posterior.
-	
-	Por último, un estudio que utiliza métodos y sistemas similares a los tratados finalmente en este proyecto es el de Liu et al. \citep{urbanthermal2025}. Los autores analizan puntos térmicos diurnos y nocturnos mediante técnicas de aprendizaje automatico como  ``Random Forest'' o ``Gradient Boosting'' sobre datos satelitales y de temperatura, estudiando la formación de islas de calor en zonas urbanas e industriales. Este enfoque y sus conclusiones sobre la influencia de la altura y densidad de los edificios resultan de gran utilidad para orientar el análisis de la ciudad de Madrid que se desarrolla en este trabajo.
-	
-	
+En este capítulo se ha realizado un recorrido por el estado actual de las tres tecnologías que vertebran el proyecto: datos abiertos, computación en la nube e IA. 
+
+En el ámbito de los datos, se ha constatado que, pese a los avances normativos y técnicos, existe una brecha entre la apertura declarada y la reutilización efectiva. Los problemas de calidad, la documentación insuficiente y las barreras técnicas dificultan la automatización. La gobernanza de datos se presenta como un marco necesario para asegurar la  calidad, seguridad y transparencia en ciclo de vida del dato.
+
+En el ámbito de la nube, se ha analizado la oferta de los principales proveedores y de otras alternativas, destacando sus capas gratuitas y servicios especializados en IA y ML. Se ha mostrado que la elección de una plataforma no depende únicamente del coste, sino también de la curva de aprendizaje, la integración con otros servicios o la localización de los centros de datos,  entre muchos otros factores.
+
+En el ámbito de la IA, se ha revisado el panorama de modelos de ML, plataformas MLOps y herramientas de AutoML, así como el marco regulatorio y ético que debe guiar su aplicación. La irrupción de los grandes modelos generativos y el aumento de las ventanas de contexto abren nuevas posibilidades para el tratamiento de datos tabulares, siempre que se tengan en cuenta las consideraciones éticas y de privacidad.
+
+Este estado de la cuestión sienta las bases para las decisiones metodológicas que se detallan en el siguiente capítulo, orientado a la implementación práctica del pipeline de datos sobre las plataformas cloud seleccionadas.
