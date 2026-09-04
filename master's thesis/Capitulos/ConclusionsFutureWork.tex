@@ -1,4 +1,80 @@
 \chapter{Conclusions and Future Work}
-\label{cap:conclusions}
+\label{cap:Conclusions}
 
-[TODO]
+This chapter closes the work by gathering the final reflections, the limitations encountered, and the open lines that could enrich it in the future. The conclusions synthesize the achievements attained in relation to the three objectives established at the beginning of the project. The future work section, for its part, invites us to continue exploring paths that have barely been outlined, due to the breadth of the technologies involved.
+
+\section{Conclusions}
+\label{sec:Conclusions}
+
+Reviewing the initial objectives of the project, the three proposed objectives can be considered fulfilled, demonstrating that the combination of open data, cloud computing, and AI can generate value when the barriers of quality and continuity of published data are overcome.
+
+\paragraph{First objective: analysis of the technological landscape.}
+An exhaustive analysis of the current landscape of cloud computing, AI, and the state of public data has been carried out, identifying the most relevant methodologies, techniques, and services. The \hyperref[cap:estadoDeLaCuestion]{\textit{Chapter \ref*{cap:estadoDeLaCuestion}}} has allowed contextualizing the project and justifying the technological decisions adopted, from the selection of datasets to the choice of cloud platforms and machine learning algorithms. Current works and trends on these technologies have also been documented, which can serve as a guide for other researchers wishing to address similar problems.
+
+\paragraph{Second objective: development of a replicable methodology.}
+A methodology has been developed that allows the use of data from its origin to the generation of value, complemented by a user manual that facilitates reproducibility and the inclusion of new datasets in a relatively simple way. The implemented \textit{pipeline} (ingestion, cleaning, and analysis) has proven to be portable across local, AWS, and GCP environments thanks to the applied methodology. Automation has not only provided efficiency but has also acted as an audit instrument on the quality of public information, evidencing undocumented shortcomings in open data portals.
+
+\paragraph{Third objective: application to real case studies.}
+The proposed methodology has been applied to the datasets of the Madrid City Council, evaluating different configurations to identify the most efficient solutions for generating public value. The heat island analysis has extended the work of \citep{Meneses2023Madrid} from 2019 to 2025, incorporating methodological improvements such as the minimum coverage criterion and validation with the silhouette coefficient. The results confirm a sustained inverse relationship between tree cover and average temperature per district, with a mean correlation of $-0.37$ maintained over the seven years analyzed.
+
+The evaluation of the clusterings has revealed that the approach based on a single magnitude (NO$_2$) achieved the best mean silhouette ($0.565$), indicating that the groups formed are well separated and internally coherent. In contrast, the one using the seven meteorological magnitudes obtained the worst values ($0.146$), pointing to a practically random structure. The two own approaches (temperature + altitude and temperature + relative tree cover) have shown that altitude is not a determining factor (silhouette $0.443$) and that relative tree cover slightly improves separation ($0.507$ compared to $0.500$ for the absolute version).
+
+But most importantly, the analysis has demonstrated the possibility and relative ease with which these models can be used to process public data on different platforms and extract conclusions from them. Regarding the cross-environment comparison, it has demonstrated the reproducibility of the analysis, with identical results on local, AWS, and GCP. The net cost has been 0~USD and 0~€ thanks to the free credits, maintaining a comfortable margin of more than 150~€ on each platform. This would allow repeating the study several times and validates the approach of the free tiers of public clouds for moderate-sized research projects.
+
+\section{Known limitations of the project}
+
+The results obtained must be interpreted in light of several known limitations.
+
+Firstly, the discontinuity of the data prevents a completely homogeneous time series, which limits the generalization of the correlations. The changes in variable definitions, gaps in publications, and the degradation of sensor coverage especially affect the years 2019 and 2022, which have had to be treated with caution.
+
+Secondly, the analysis of pedestrian and bicycle mobility, although downloaded and cleaned, was not completed due to scope restrictions. It remains an open line that would have provided a complementary perspective on urban behavior.
+
+Thirdly, the work has been limited to comparing a reduced number of data models, two cloud providers, and a limited set of ML algorithms. It would be much more enriching to be able to compare all the technologies and tools mentioned in the \hyperref[cap:estadoDeLaCuestion]{\textit{Chapter \ref*{cap:estadoDeLaCuestion}}}, to have a broader spectrum of choice when deciding how to work with these three technologies.
+
+\section*{Future work}
+
+Although the work has fulfilled its objectives, inevitably, due to the breadth of the topics addressed, numerous lines remain open that would have been interesting to explore and that could enrich it in the future. Below are the most relevant ones that have been left out of the project, either due to scope or impossibility. They are organized, again, into the three blocks that have guided this project.
+
+\begin{itemize}
+	\item \textbf{In the data domain:}
+	\begin{itemize}
+		\item \emph{Include more data.} The analysis has ultimately focused on a limited number of datasets from a single source. It would be of great value to extend it to other sources, including large-volume data (petabytes), to exploit cloud capabilities and make comparison with technologies like Spark viable.
+		
+		\item \emph{Simulate or impute data for years with low coverage.} In the heat island project, it would have been interesting to test synthetic generation techniques for years with few data and evaluate their impact on the quality of clusterings. Alternatively, include surface temperature and vegetation data from satellites (such as those used in \citep{urbanthermal2025}) to complement the terrestrial station network and analyze the diurnal and nocturnal differences in the city's thermal behavior.
+		
+		\item \emph{Contact those responsible for data portals.} Once the data has been analyzed, it would be very useful to establish a bridge with the teams that maintain the open data portals to help them improve the data offered and the documentation, thus facilitating automated reuse to other researchers.
+		
+		\item \emph{Carry out studies with the population.} It would also be interesting, with the rescued and processed data, to carry out a study with different populations on the level of knowledge of the data, both public and the conclusions drawn from the study.
+	\end{itemize}
+	
+	\item \textbf{In the cloud domain:}
+	\begin{itemize}
+		\item \emph{Evaluate more providers, especially European ones.} It would have been very interesting to test OVHcloud (with its \textit{AI Notebooks}) or open platforms like OpenNebula, as well as extend the analysis to other clouds, something that was limited by time.
+		
+		\item \emph{Add the ecological cost to the comparative analysis.} Measuring the carbon footprint of the different platforms and comparing it with the economic cost would have been an excellent complement, to have a more sustainable vision of the cloud.
+		
+		\item \emph{Test distributed and real-time processing.} Using services such as AWS Glue (Spark) or Dataproc in GCP, as well as real-time analysis tools, to check the usefulness of real-time data would be a great point to expand on in the project.
+		
+		\item \emph{Complete the serverless deployment.} In this work, both Cloud Run and Cloud Functions were discarded; with additional configuration it is technically viable, and it would be worth trying in a next iteration.
+		
+		\item \emph{Build an interactive dashboard for the results.} So that other researchers or the general public could explore the data and conclusions in a visual and intuitive way, it would be very useful to develop an interface with native cloud tools such as a managed \textit{Apache Superset} or \textit{Looker Studio}.
+	\end{itemize}
+	
+	\item \textbf{In the analysis and ML domain:}
+	\begin{itemize}
+		\item \emph{Complete the analysis of pedestrian and bicycle mobility.} With the data already processed from the work of \citep{SaizSantos2023}, also adding new data and time horizon, we would have liked to apply time series models (ARIMA, Prophet, LSTM) to these flow data and study the project.
+		
+		\item \emph{Use Large Language Models (LLMs) in an exploratory way.} It would be fascinating to use LLMs to automatically analyze the documentation of the datasets and to generate interpretative descriptions of the groups obtained in the clustering, thus improving the explainability of the results.
+		
+		\item \emph{Test AutoML on cloud platforms.} During development, the possibility of using \textit{Vertex AI AutoML} (defined in the user manual) and \textit{SageMaker Autopilot} for the modeling phase was evaluated. However, it would be interesting to reformulate the problem as a regression task (predicting temperature from the other variables) and compare AutoML results with classical models or classify the already processed data. This would allow evaluating whether automation brings improvements in hyperparameter selection, in the importance of variables, or in the final quality of predictions.
+	\end{itemize}
+\end{itemize}
+
+\section{Final reflections}
+
+The project has contributed to demonstrating that the combination of cloud computing, machine learning, and public data can generate tangible public value, provided that the barriers of quality and continuity of published data are overcome. The developed methodology is extensible to other datasets and platforms in a relatively simple way, and lays the foundations for future lines of work.
+
+Working with real data, even with its imperfections, has highlighted the importance of data quality as a prerequisite for any automated analysis process. Automation is not a technical luxury, but a necessity to audit the quality of what is published and to return to citizens a value that often remains hidden (or in the hands of a few), due to the lack of tools and knowledge to process open data.
+
+On a personal level, the project has been a fascinating challenge that has allowed me to delve into the state of the art of three exciting technologies, and to apply this knowledge to real problems of public interest. The experience gained and the lessons learned will be of great value for future projects.
+

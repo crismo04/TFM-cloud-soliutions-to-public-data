@@ -2051,19 +2051,13 @@ LaTeX Info: Redefining \% on input line 48.
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `TFMTeXiS.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TFMTeXiS.out':
-(rerunfilecheck)             Before: 52C595D6D6A7E166F9848F94B39CD8B3;16615
-(rerunfilecheck)             After:  7F4C79B9C3A01E2E6E4F8617B429531E;16620.
+Package rerunfilecheck Info: File `TFMTeXiS.out' has not changed.
+(rerunfilecheck)             Checksum: 7F4C79B9C3A01E2E6E4F8617B429531E;16620.
  ) 
 Here is how much of TeX's memory you used:
  19047 strings out of 478868
  309917 string characters out of 2847387
- 1180508 words of memory out of 3000000
+ 1179508 words of memory out of 3000000
  35422 multiletter control sequences out of 15000+600000
  429595 words of font info for 72 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
@@ -2109,7 +2103,7 @@ AN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb
 ><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb>
-Output written on TFMTeXiS.pdf (172 pages, 3785962 bytes).
+Output written on TFMTeXiS.pdf (172 pages, 3785976 bytes).
 PDF statistics:
  3893 PDF objects out of 4296 (max. 8388607)
  828 named destinations out of 1000 (max. 500000)
