@@ -141,7 +141,7 @@ La comparación entre ambas configuraciones mostradas en la figura \ref{fig:evol
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/evolucion_correlacion.png}
+	\includegraphics[width=0.8\textwidth]{Imagenes/Bitmap/evolucion_correlacion.png}
 	\caption{Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.}
 	\label{fig:evolucion_correlacion}
 \end{figure}
@@ -177,14 +177,14 @@ La altitud muestra correlaciones muy débiles y cambiantes de signo, lo que sugi
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png}
+	\includegraphics[width=0.9\textwidth]{Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png}
 	\caption{Relación entre superficie arbórea relativa y temperatura media por distrito, año 2021.}
 	\label{fig:temp_sup_rel_2021}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/scatter3d_variables_externas_2022.png}
+	\includegraphics[width=0.9\textwidth]{Imagenes/Bitmap/scatter3d_variables_externas_2022.png}
 	\caption{Scatter 3D de temperatura, altitud y superficie relativa para el año 2022.}
 	\label{fig:scatter3d_2022}
 \end{figure}
@@ -220,7 +220,7 @@ El diagrama del codo para la aproximación de temperatura y humedad (Figura \ref
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png}
+	\includegraphics[width=0.75\textwidth]{Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png}
 	\caption{Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).}
 	\label{fig:codo_2021}
 \end{figure}
@@ -231,7 +231,7 @@ El dendrograma (Figura \ref{fig:dendrograma_2021}) muestra que la primera divisi
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png}
+	\includegraphics[width=1.1\textwidth]{Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png}
 	\caption{Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).}
 	\label{fig:dendrograma_2021}
 \end{figure}
@@ -308,12 +308,12 @@ De todas formas, el precio de la nube no es el único factor a considerar. La fa
 
 \section*{Conclusiones del capítulo}
 
-En este capítulo se han presentado los resultados obtenidos en el proyecto, organizados en los tres bloques: calidad de los datos, análisis de la isla de calor (con ML) y comparativa entre entornos en la nube.
+Los resultados obtenidos en este capítulo confirman la utilidad del pipeline implementado y ofrecen evidencia empírica sobre las tres partes principales del proyecto.
 
-En el ámbito de los datos, se ha evidenciado que la automatización del \textit{pipeline} actúa como un auditor de la calidad de los datos públicos, revelando problemas de nomenclatura, unidades, formato y continuidad que no están documentados y que dificultan la reutilización automatizada. La cobertura de la red muestra una degradación significativa en 2021-2022, coincidiendo con cambios en los sistemas de información municipales.
+En el ámbito de los datos, se han revelado problemas de calidad, ya descritos en \hyperref[sec:Metodos_limpieza]{\textit{Sección \ref*{sec:Metodos_limpieza}}}.
 
-En el ámbito del análisis de la isla de calor, se ha confirmado la relación inversa entre superficie arbórea y temperatura, con una correlación media de $-0,37$ en el modo propio, y se ha demostrado que el criterio de cobertura mínima refuerza esta relación. Las aproximaciones con menos variables (como NO$_2$) obtienen mejores siluetas, mientras que la altitud no resulta un factor determinante. La robustez de los resultados se ha verificado mediante la comparación de dos algoritmos de agrupamiento independientes.
+En el análisis de la isla de calor, se ha verificado la relación inversa entre superficie arbórea y temperatura, confirmando que se trata de un patrón estructural de la ciudad y no de una particularidad anual. El criterio de cobertura mínima ha demostrado reforzar esta relación, eliminando distorsiones introducidas por estaciones parcialmente operativas. Las aproximaciones con menos variables obtienen mejores agrupamientos, mientras que la altitud no resulta un factor determinante.
 
-En el ámbito de la comparativa cloud, se ha constatado la reproducibilidad de los resultados en los tres entornos, con costes netos nulos gracias a los créditos gratuitos. El esfuerzo de desarrollo ha sido mayor en local (70~h) que en AWS (21~h) o GCP (18~h), aunque el orden de ejecución condiciona estos tiempos. La principal diferencia de coste radica en el modelo de facturación, siendo el análisis interactivo el componente más costoso en ambas plataformas.
+En la comparativa cloud, se ha constatado la reproducibilidad de los resultados en los tres entornos, con costes netos nulos gracias a los créditos gratuitos, y una generosa cantidad sobrante. El esfuerzo de desarrollo ha sido mayor en local que en las nubes, aunque el orden de ejecución condiciona estos tiempos. La principal diferencia de coste radica en el modelo de facturación, siendo el análisis interactivo el componente más costoso en ambas plataformas.
 
-Estos resultados sientan las bases para las conclusiones finales y el trabajo futuro que se presentan en el siguiente capítulo.
+Las implicaciones de estos resultados, junto con las lecciones aprendidas y las líneas de trabajo abiertas, se discuten en el \hyperref[sec:conclusiones]{\textit{Capítulo \ref*{sec:conclusiones}}}.
