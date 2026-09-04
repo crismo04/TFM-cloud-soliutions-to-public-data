@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  4 SEP 2026 13:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  4 SEP 2026 13:44
 entering extended mode
 **./TFMTeXiS.tex
 (TFMTeXiS.tex
@@ -746,7 +746,7 @@ Couldn't patch \ttl@straight@ii
 \evensidemarginOriginal=\skip85
 \oddsidemarginOriginal=\skip86
 \longTitulo=\skip87
-<Imagenes/Vectorial/escudoUCM.pdf, id=347, 597.23125pt x 844.15375pt>
+<Imagenes/Vectorial/escudoUCM.pdf, id=351, 597.23125pt x 844.15375pt>
 File: Imagenes/Vectorial/escudoUCM.pdf Graphic file (type pdf)
 <use Imagenes/Vectorial/escudoUCM.pdf>
 Package pdftex.def Info: Imagenes/Vectorial/escudoUCM.pdf  used on input line 1
@@ -898,10 +898,21 @@ LaTeX Info: Redefining \% on input line 29.
 \tf@lot=\write8
 \openout8 = `TFMTeXiS.lot'.
 
- [22])
+ [22] (TFMTeXiS.lol)
+\tf@lol=\write9
+\openout9 = `TFMTeXiS.lol'.
+
+ [23
+
+]) [24
+
+
+
+]
 \openout2 = `Capitulos/Introduccion.aux'.
 
- (Capitulos/Introduccion.tex
+
+(Capitulos/Introduccion.tex
 Cap\'itulo 1.
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
 .
@@ -915,9 +926,6 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 [1
-
-
-
 
 
 ]
@@ -1263,7 +1271,7 @@ Overfull \hbox (72.11218pt too wide) in paragraph at lines 23--36
  [][] 
  []
 
-<Imagenes/Bitmap/cobertura_temperatura.png, id=1581, 505.89pt x 578.16pt>
+<Imagenes/Bitmap/cobertura_temperatura.png, id=1640, 505.89pt x 578.16pt>
 File: Imagenes/Bitmap/cobertura_temperatura.png Graphic file (type png)
 <use Imagenes/Bitmap/cobertura_temperatura.png>
 Package pdftex.def Info: Imagenes/Bitmap/cobertura_temperatura.png  used on inp
@@ -1285,14 +1293,14 @@ LaTeX Info: Redefining \% on input line 90.
 LaTeX Info: Redefining \. on input line 104.
 LaTeX Info: Redefining \% on input line 104.
  [67]
-<Imagenes/Bitmap/arbolado_vs_temperatura_2021.png, id=1627, 361.35pt x 289.08pt
+<Imagenes/Bitmap/arbolado_vs_temperatura_2021.png, id=1687, 361.35pt x 289.08pt
 >
 File: Imagenes/Bitmap/arbolado_vs_temperatura_2021.png Graphic file (type png)
 <use Imagenes/Bitmap/arbolado_vs_temperatura_2021.png>
 Package pdftex.def Info: Imagenes/Bitmap/arbolado_vs_temperatura_2021.png  used
  on input line 132.
 (pdftex.def)             Requested size: 270.0pt x 216.00224pt.
-<Imagenes/Bitmap/evolucion_correlacion.png, id=1629, 505.89pt x 289.08pt>
+<Imagenes/Bitmap/evolucion_correlacion.png, id=1689, 505.89pt x 289.08pt>
 File: Imagenes/Bitmap/evolucion_correlacion.png Graphic file (type png)
 <use Imagenes/Bitmap/evolucion_correlacion.png>
 Package pdftex.def Info: Imagenes/Bitmap/evolucion_correlacion.png  used on inp
@@ -1305,7 +1313,7 @@ LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
  [69 <./Imagenes/Bitmap/arbolado_vs_temperatura_2021.png> <./Imagenes/Bitmap/ev
 olucion_correlacion.png>]
-<Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png, id=1644, 361.35pt x 289.
+<Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png, id=1703, 361.35pt x 289.
 08pt>
 File: Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png Graphic file (type p
 ng)
@@ -1313,7 +1321,7 @@ ng)
 Package pdftex.def Info: Imagenes/Bitmap/temp_vs_superficie_relativa_2021.png  
 used on input line 180.
 (pdftex.def)             Requested size: 323.9978pt x 259.19916pt.
-<Imagenes/Bitmap/scatter3d_variables_externas_2022.png, id=1645, 505.89pt x 361
+<Imagenes/Bitmap/scatter3d_variables_externas_2022.png, id=1704, 505.89pt x 361
 .35pt>
 File: Imagenes/Bitmap/scatter3d_variables_externas_2022.png Graphic file (type 
 png)
@@ -1339,14 +1347,14 @@ Overfull \hbox (72.00946pt too wide) in paragraph at lines 200--215
 LaTeX Info: Redefining \. on input line 220.
 LaTeX Info: Redefining \% on input line 220.
 [72]
-<Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png, id=1663, 433.62pt x 289.08pt
+<Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png, id=1722, 433.62pt x 289.08pt
 >
 File: Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png Graphic file (type png)
 <use Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png>
 Package pdftex.def Info: Imagenes/Bitmap/codo_meteo_temp_humedad_2021.png  used
  on input line 223.
 (pdftex.def)             Requested size: 270.0pt x 180.00848pt.
-<Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png, id=1665, 722.7pt x 28
+<Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png, id=1724, 722.7pt x 28
 9.08pt>
 File: Imagenes/Bitmap/dendrograma_meteo_temp_humedad_2021.png Graphic file (typ
 e png)
@@ -1413,7 +1421,7 @@ LaTeX Info: Redefining \% on input line 60.
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
  [81]
-<Imagenes/Bitmap/Arbol_directorios_resultados.png, id=1738, 227.34938pt x 741.5
+<Imagenes/Bitmap/Arbol_directorios_resultados.png, id=1794, 227.34938pt x 741.5
 2031pt>
 File: Imagenes/Bitmap/Arbol_directorios_resultados.png Graphic file (type png)
 <use Imagenes/Bitmap/Arbol_directorios_resultados.png>
@@ -1426,7 +1434,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 91.
 LaTeX Info: Redefining \% on input line 91.
  [82 <./Imagenes/Bitmap/Arbol_directorios_resultados.png>]
-<Imagenes/Bitmap/AWS-abrir-consola.png, id=1752, 1138.85475pt x 493.845pt>
+<Imagenes/Bitmap/AWS-abrir-consola.png, id=1808, 1138.85475pt x 493.845pt>
 File: Imagenes/Bitmap/AWS-abrir-consola.png Graphic file (type png)
 <use Imagenes/Bitmap/AWS-abrir-consola.png>
 Package pdftex.def Info: Imagenes/Bitmap/AWS-abrir-consola.png  used on input l
@@ -1449,7 +1457,7 @@ LaTeX Info: Redefining \% on input line 124.
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
  [85]
-<Imagenes/Bitmap/figura_AWS_S3_es.png, id=1803, 1224.07312pt x 685.8122pt>
+<Imagenes/Bitmap/figura_AWS_S3_es.png, id=1857, 1224.07312pt x 685.8122pt>
 File: Imagenes/Bitmap/figura_AWS_S3_es.png Graphic file (type png)
 <use Imagenes/Bitmap/figura_AWS_S3_es.png>
 Package pdftex.def Info: Imagenes/Bitmap/figura_AWS_S3_es.png  used on input li
@@ -1472,7 +1480,7 @@ LaTeX Info: Redefining \% on input line 236.
 LaTeX Info: Redefining \. on input line 236.
 LaTeX Info: Redefining \% on input line 236.
  [88]
-<Imagenes/Bitmap/figura_AWS_Glue_es.png, id=1863, 1002.74625pt x 523.9575pt>
+<Imagenes/Bitmap/figura_AWS_Glue_es.png, id=1912, 1002.74625pt x 523.9575pt>
 File: Imagenes/Bitmap/figura_AWS_Glue_es.png Graphic file (type png)
 <use Imagenes/Bitmap/figura_AWS_Glue_es.png>
 Package pdftex.def Info: Imagenes/Bitmap/figura_AWS_Glue_es.png  used on input 
@@ -1497,7 +1505,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--296
 m / datazone / home ? region = eu-[]west-[]1 #
  []
 
-<Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png, id=1896, 1153.911pt x 459.5
+<Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png, id=1944, 1153.911pt x 459.5
 1675pt>
 File: Imagenes/Bitmap/AWS_SageMaker_console_2026_es.png Graphic file (type png)
 
@@ -1516,7 +1524,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 329.
 LaTeX Info: Redefining \% on input line 329.
 [90]
-<Imagenes/Bitmap/AWS_SageMaker_study_2026.png, id=1916, 1440.13031pt x 688.8234
+<Imagenes/Bitmap/AWS_SageMaker_study_2026.png, id=1963, 1440.13031pt x 688.8234
 4pt>
 File: Imagenes/Bitmap/AWS_SageMaker_study_2026.png Graphic file (type png)
 <use Imagenes/Bitmap/AWS_SageMaker_study_2026.png>
@@ -1540,7 +1548,7 @@ LaTeX Info: Redefining \% on input line 369.
 LaTeX Info: Redefining \. on input line 369.
 LaTeX Info: Redefining \% on input line 369.
  [93]
-<Imagenes/Bitmap/GCP-abrir-consola.png, id=1964, 1433.355pt x 653.44125pt>
+<Imagenes/Bitmap/GCP-abrir-consola.png, id=2009, 1433.355pt x 653.44125pt>
 File: Imagenes/Bitmap/GCP-abrir-consola.png Graphic file (type png)
 <use Imagenes/Bitmap/GCP-abrir-consola.png>
 Package pdftex.def Info: Imagenes/Bitmap/GCP-abrir-consola.png  used on input l
@@ -1560,7 +1568,7 @@ LaTeX Info: Redefining \% on input line 386.
 LaTeX Info: Redefining \. on input line 407.
 LaTeX Info: Redefining \% on input line 407.
  [95 <./Imagenes/Bitmap/GCP-abrir-consola.png>]
-<Imagenes/Bitmap/GCP-cloud-storage.png, id=1995, 1428.08531pt x 682.80093pt>
+<Imagenes/Bitmap/GCP-cloud-storage.png, id=2039, 1428.08531pt x 682.80093pt>
 File: Imagenes/Bitmap/GCP-cloud-storage.png Graphic file (type png)
 <use Imagenes/Bitmap/GCP-cloud-storage.png>
 Package pdftex.def Info: Imagenes/Bitmap/GCP-cloud-storage.png  used on input l
@@ -1577,7 +1585,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 463.
 LaTeX Info: Redefining \% on input line 463.
 [96]
-<Imagenes/Bitmap/GCP-workbench-2026.png, id=2012, 1428.83812pt x 645.91313pt>
+<Imagenes/Bitmap/GCP-workbench-2026.png, id=2055, 1428.83812pt x 645.91313pt>
 File: Imagenes/Bitmap/GCP-workbench-2026.png Graphic file (type png)
 <use Imagenes/Bitmap/GCP-workbench-2026.png>
 Package pdftex.def Info: Imagenes/Bitmap/GCP-workbench-2026.png  used on input 
@@ -1597,7 +1605,7 @@ LaTeX Info: Redefining \% on input line 493.
 LaTeX Info: Redefining \. on input line 522.
 LaTeX Info: Redefining \% on input line 522.
  [98 <./Imagenes/Bitmap/GCP-cloud-storage.png>]
-<Imagenes/Bitmap/GCP_datos_AutoML.png, id=2050, 1144.275pt x 654.94687pt>
+<Imagenes/Bitmap/GCP_datos_AutoML.png, id=2091, 1144.275pt x 654.94687pt>
 File: Imagenes/Bitmap/GCP_datos_AutoML.png Graphic file (type png)
 <use Imagenes/Bitmap/GCP_datos_AutoML.png>
 Package pdftex.def Info: Imagenes/Bitmap/GCP_datos_AutoML.png  used on input li
@@ -1769,7 +1777,7 @@ LaTeX Info: Redefining \% on input line 128.
 LaTeX Info: Redefining \. on input line 128.
 LaTeX Info: Redefining \% on input line 128.
  [119]
-<Imagenes/Bitmap/data_gobernance.png, id=2231, 1388.18625pt x 737.00343pt>
+<Imagenes/Bitmap/data_gobernance.png, id=2267, 1388.18625pt x 737.00343pt>
 File: Imagenes/Bitmap/data_gobernance.png Graphic file (type png)
 <use Imagenes/Bitmap/data_gobernance.png>
 Package pdftex.def Info: Imagenes/Bitmap/data_gobernance.png  used on input lin
@@ -1861,7 +1869,7 @@ LaTeX Info: Redefining \% on input line 171.
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
  [122]
-<Imagenes/Bitmap/distintos_tipos_clouds.png, id=2285, 886.81313pt x 541.27219pt
+<Imagenes/Bitmap/distintos_tipos_clouds.png, id=2322, 886.81313pt x 541.27219pt
 >
 File: Imagenes/Bitmap/distintos_tipos_clouds.png Graphic file (type png)
 <use Imagenes/Bitmap/distintos_tipos_clouds.png>
@@ -1888,7 +1896,7 @@ LaTeX Info: Redefining \% on input line 269.
 LaTeX Info: Redefining \. on input line 269.
 LaTeX Info: Redefining \% on input line 269.
  [127]
-<Imagenes/Bitmap/IA_Trends2011_2025.png, id=2355, 1186.4325pt x 599.23875pt>
+<Imagenes/Bitmap/IA_Trends2011_2025.png, id=2392, 1186.4325pt x 599.23875pt>
 File: Imagenes/Bitmap/IA_Trends2011_2025.png Graphic file (type png)
 <use Imagenes/Bitmap/IA_Trends2011_2025.png>
 Package pdftex.def Info: Imagenes/Bitmap/IA_Trends2011_2025.png  used on input 
@@ -2046,13 +2054,13 @@ LaTeX Info: Redefining \% on input line 48.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `TFMTeXiS.out' has not changed.
-(rerunfilecheck)             Checksum: 7F4C79B9C3A01E2E6E4F8617B429531E;16620.
+(rerunfilecheck)             Checksum: 287CBFCC5259F6ADBA29EF9F0575D5DB;16851.
  ) 
 Here is how much of TeX's memory you used:
- 19070 strings out of 478868
- 310396 string characters out of 2847387
- 1182386 words of memory out of 3000000
- 35445 multiletter control sequences out of 15000+600000
+ 19081 strings out of 478868
+ 310654 string characters out of 2847387
+ 1182388 words of memory out of 3000000
+ 35449 multiletter control sequences out of 15000+600000
  429595 words of font info for 72 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
  94i,13n,100p,1600b,1359s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2097,9 +2105,9 @@ AN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb
 ><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb>
-Output written on TFMTeXiS.pdf (172 pages, 3786733 bytes).
+Output written on TFMTeXiS.pdf (174 pages, 3794530 bytes).
 PDF statistics:
- 3895 PDF objects out of 4296 (max. 8388607)
- 828 named destinations out of 1000 (max. 500000)
- 794 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3934 PDF objects out of 4296 (max. 8388607)
+ 832 named destinations out of 1000 (max. 500000)
+ 802 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,30 +8,30 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos mayores a 100) durante 2021 y 2022.\relax }}{65}{figure.caption.122}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{69}{figure.caption.133}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{69}{figure.caption.135}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Relación entre superficie arbórea relativa y temperatura media por distrito, año 2021.\relax }}{71}{figure.caption.138}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Scatter 3D de temperatura, altitud y superficie relativa para el año 2022.\relax }}{71}{figure.caption.139}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{73}{figure.caption.142}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{74}{figure.caption.143}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos mayores a 100) durante 2021 y 2022.\relax }}{65}{figure.caption.123}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{69}{figure.caption.134}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{69}{figure.caption.136}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Relación entre superficie arbórea relativa y temperatura media por distrito, año 2021.\relax }}{71}{figure.caption.139}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Scatter 3D de temperatura, altitud y superficie relativa para el año 2022.\relax }}{71}{figure.caption.140}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{73}{figure.caption.143}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{74}{figure.caption.144}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados\relax }}{82}{figure.caption.177}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola\relax }}{84}{figure.caption.180}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3\relax }}{87}{figure.caption.226}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{91}{figure.caption.303}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Consola de SageMaker\relax }}{92}{figure.caption.306}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Ejecucion de Jupyter en SageMaker\relax }}{94}{figure.caption.323}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Abrir terminal GCP en consola\relax }}{95}{figure.caption.334}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Conjuntos de datos cargados en Cloud Storage\relax }}{98}{figure.caption.382}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Instancia de Vertex AI Workbench\relax }}{99}{figure.caption.394}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Consola para crear un estudio de regresión y clasificación en Vertex AI AutoML\relax }}{101}{figure.caption.419}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados\relax }}{82}{figure.caption.178}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola\relax }}{84}{figure.caption.181}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3\relax }}{87}{figure.caption.227}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{91}{figure.caption.304}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Consola de SageMaker\relax }}{92}{figure.caption.307}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Ejecucion de Jupyter en SageMaker\relax }}{94}{figure.caption.324}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Abrir terminal GCP en consola\relax }}{95}{figure.caption.335}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Conjuntos de datos cargados en Cloud Storage\relax }}{98}{figure.caption.383}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Instancia de Vertex AI Workbench\relax }}{99}{figure.caption.395}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Consola para crear un estudio de regresión y clasificación en Vertex AI AutoML\relax }}{101}{figure.caption.420}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{120}{figure.caption.447}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{124}{figure.caption.452}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{128}{figure.caption.457}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{120}{figure.caption.448}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{124}{figure.caption.453}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{128}{figure.caption.458}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
