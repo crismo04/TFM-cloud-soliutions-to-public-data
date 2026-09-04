@@ -89,6 +89,7 @@
    \pdfbookmark[1]{Índice de figuras}{indice de figuras}
 \fi
 
+%\addcontentsline{toc}{chapter}{Índice de figuras}
 \cabeceraEspecial{\'Indice de figuras}
 
 \listoffigures
@@ -102,9 +103,22 @@
   \pdfbookmark[1]{Índice de tablas}{indice de tablas}
 \fi
 
+%\addcontentsline{toc}{chapter}{Índice de tablas}
+
 \cabeceraEspecial{\'Indice de tablas}
 
 \listoftables
+
+\newpage
+
+\ifpdf
+\pdfbookmark[1]{Índice de bloques de código}{indice de bloques de codigo}
+\fi
+
+%\addcontentsline{toc}{chapter}{Índice de bloques de código}
+\cabeceraEspecial{\'Indice de bloques de c\'odigo}
+
+\lstlistoflistings
 
 \newpage
 

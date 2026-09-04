@@ -66,25 +66,25 @@ Warning--empty journal in PrivateIaaSComparative2016
 Warning--empty journal in Werbos1974Backpropagation
 You've used 171 entries,
             2962 wiz_defined-function locations,
-            1904 strings with 39435 characters,
-and the built_in function-call counts, 81124 in all, are:
+            1900 strings with 39407 characters,
+and the built_in function-call counts, 81128 in all, are:
 = -- 6463
 > -- 3070
 < -- 192
-+ -- 1248
++ -- 1249
 - -- 1023
-* -- 5053
+* -- 5057
 := -- 13126
 add.period$ -- 546
 call.type$ -- 171
 change.case$ -- 1210
-chr.to.int$ -- 147
+chr.to.int$ -- 146
 cite$ -- 191
 duplicate$ -- 6479
 empty$ -- 5803
 format.name$ -- 1279
 if$ -- 15704
-int.to.chr$ -- 25
+int.to.chr$ -- 26
 int.to.str$ -- 1
 missing$ -- 1276
 newline$ -- 890
@@ -93,10 +93,10 @@ pop$ -- 2994
 preamble$ -- 1
 purify$ -- 1024
 quote$ -- 0
-skip$ -- 2632
+skip$ -- 2629
 stack$ -- 0
 substring$ -- 2624
-swap$ -- 2927
+swap$ -- 2929
 text.length$ -- 46
 text.prefix$ -- 0
 top$ -- 0

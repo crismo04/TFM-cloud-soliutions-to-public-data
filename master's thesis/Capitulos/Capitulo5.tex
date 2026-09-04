@@ -31,9 +31,9 @@ Los procesos se ejecutan secuencialmente y cada uno utiliza la salida del anteri
 
 El proceso de ingesta requiere Python 3.12 o superior e instalar las dependencias de \texttt{requirements.txt} (preferiblemente en un entorno virtual). El comportamiento del \textit{pipeline} se controla desde el fichero, \texttt{config.py}, que centraliza las rutas de las capas de almacenamiento, las direcciones web de los conjuntos en los portales de datos, los años a descargar, los filtros de formato, las reglas de limpieza y demás parámetros de entorno. Para incorporar un conjunto de datos nuevo solo habría que añadir una entrada en los diccionarios correspondientes, y modificar, si es necesario, la lógica de los procesos.
 
-La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}. Si esta no existe, se utiliza el directorio local del proyecto. Aunque no se añada en este apartado, se recomienda configurarla tanto aquí como en otros entornos. Con esto, lo primero sería descargar el código y crear el entorno virtual.
+La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}. Si esta no existe, se utiliza el directorio local del proyecto. Aunque no se añada en este apartado, se recomienda configurarla tanto aquí como en otros entornos. Con esto, lo primero sería descargar el código y crear el entorno virtual, como se muestra en el bloque \ref*{lst:local_preparacion}.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Preparación del entorno y ejecución de la ingesta}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Preparación del entorno y ejecución de la ingesta}, label=lst:local_preparacion]
 	# Descarga de codigo
 	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
 	cd TFM-cloud-soliutions-to-public-data/code/files
@@ -48,9 +48,9 @@ La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}. Si e
 	python 01_descarga.py             # Descarga completa y metadatos
 \end{lstlisting}
 
-Después de esto, ya tendríamos los datos definidos, y ahora podemos pasar a ejecutar el proceso de limpieza:
+Después de esto, ya tendríamos los datos definidos, y ahora podemos pasar a ejecutar el proceso de limpieza (bloque \ref*{lst:local_limpieza}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución local de limpieza}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución local de limpieza}, label=lst:local_limpieza]
 	python 02_limpieza.py
 \end{lstlisting}
 
@@ -61,9 +61,9 @@ El proceso es idempotente, es decir, puede relanzarse sin volver a descargar lo 
 \subsection{Ejecución de modelos y resultados}
 \label{subsec:Manual_Local_Modelos}
 
-Una vez superada la fase ETL, el modelado se ejecuta mediante:
+Una vez superada la fase ETL, el modelado se ejecuta mediante el bloque \ref*{lst:local_modelado}:
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución local del modelado analítico}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución local del modelado analítico}, label=lst:local_modelado]
 	python 03_analisis_isla_calor.py
 \end{lstlisting}
 
@@ -111,18 +111,18 @@ Con los 200~\$ disponibles, se dispone de créditos de sobra para poder realizar
 
 Aunque desde \textbf{AWS CloudShell} se gestionan las credenciales de acceso con el usuario que hemos registrado, es posible configurar credenciales de acceso externas para otros usuarios, para que los diferentes servicios en la nube los utilicen, o para ejecutar los comandos desde local. El proyecto se realizó siguiendo las mejores prácticas, mediante el modelo de control de acceso basado en roles y grupos (RBAC). Aunque se podrían establecer permisos más estrictos, este modelo tiene más sentido para manejar un número mayor de usuarios, pero se realizó para futuras extensiones del proyecto y para la utilización de herramientas y roles de servicio. 
 
-Lo primero para trabajar con la nube es seleccionar la región que más convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, de la siguiente manera:
+Lo primero para trabajar con la nube es seleccionar la región que más convenga al proyecto, que en este caso es la región \texttt{eu-west-1} (Irlanda), ya que es la que mayor número de servicios ofrece dentro de la Unión Europea. Con esto, en la propia \textbf{AWS CloudShell}, se puede obtener el código del proyecto, publicado bajo licencia abierta, como se muestra en el bloque \ref*{lst:aws_clonar}.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Obtención del código fuente del proyecto}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Obtención del código fuente del proyecto}, label=lst:aws_clonar]
 	cd ~
 	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
 	cd TFM-cloud-soliutions-to-public-data/code/files
 	pip install -r requirements.txt --quiet
 \end{lstlisting}
 
-También conviene tener creadas las variables de entorno que vamos a utilizar en el proyecto. Además, al trabajar con la terminal, se conserva el directorio personal entre sesiones, pero no las variables de entorno definidas. Para no tener que volver a crearlas cada sesión, se pueden almacenar en un fichero que se carga al comenzar cada sesión:
+También conviene tener creadas las variables de entorno que vamos a utilizar en el proyecto (bloque \ref*{lst:aws_variables}). Además, al trabajar con la terminal, se conserva el directorio personal entre sesiones, pero no las variables de entorno definidas. Para no tener que volver a crearlas cada sesión, se pueden almacenar en un fichero que se carga al comenzar cada sesión:
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Persistencia de las variables del proyecto}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Persistencia de las variables del proyecto}, label=lst:aws_variables]
 	cat > ~/tfm-env.sh << 'EOF'
 	export BUCKET="tfm-ucm-datos-publicos"
 	export REGION="eu-west-1"
@@ -135,9 +135,9 @@ También conviene tener creadas las variables de entorno que vamos a utilizar en
 
 \subsection{Infraestructura de Almacenamiento en Amazon S3}
 
-El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local y de otras nubes: \texttt{data/bronze/}, \texttt{data/silver/}, \texttt{resultados/} (como capa Gold) y \texttt{scripts/}. Esto permite que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también, mediante los siguientes comandos, bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
+El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 denominado \texttt{tfm-ucm-datos-publicos}. Su estructura replica exactamente la jerarquía de directorios local y de otras nubes: \texttt{data/bronze/}, \texttt{data/silver/}, \texttt{resultados/} (como capa Gold) y \texttt{scripts/}. Esto permite que el código de Python migre entre ambos entornos cambiando únicamente el prefijo de ruta de archivo. Se aplican también, mediante los comandos del bloque \ref*{lst:aws_crear_bucket}, bloqueo total de acceso público, versionado de objetos y etiquetado para el seguimiento de costes.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Creación y configuración del contenedor en S3}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Creación y configuración del contenedor en S3}, label=lst:aws_crear_bucket]
 	# Creacion del bucket
 	aws s3api create-bucket --bucket "$BUCKET" --region "$REGION" \
 	--create-bucket-configuration LocationConstraint="$REGION"
@@ -155,9 +155,9 @@ El almacenamiento en la nube se fundamenta en un \textit{bucket} de Amazon S3 de
 	--tagging 'TagSet=[{Key=proyecto,Value=tfm}]'
 \end{lstlisting}
 
-Una vez creado el contenedor, se puede ver en el apartado de S3 instantáneamente y ya podemos proceder a cargar los procesos de ingesta directamente sobre el almacenamiento creado. Con esto, validamos la portabilidad, ya que el mismo proceso que se ejecutó en local escribe ahora en S3 sin ninguna modificación de su lógica, gracias a la abstracción del sistema de ficheros con \texttt{fsspec} descrita en la \hyperref[sec:Metodos_ingesta]{\textit{Sección \ref*{sec:Metodos_ingesta}}}.
+Una vez creado el contenedor, se puede ver en el apartado de S3 instantáneamente y ya podemos proceder a cargar los procesos de ingesta directamente sobre el almacenamiento creado (bloque \ref*{lst:aws_cargar_scripts}). Con esto, validamos la portabilidad, ya que el mismo proceso que se ejecutó en local escribe ahora en S3 sin ninguna modificación de su lógica, gracias a la abstracción del sistema de ficheros con \texttt{fsspec} descrita en la \hyperref[sec:Metodos_ingesta]{\textit{Sección \ref*{sec:Metodos_ingesta}}}.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Carga de procesos e ingesta directa sobre S3}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Carga de procesos e ingesta directa sobre S3}, label=lst:aws_cargar_scripts]
 	# Carga de los scripts del pipeline
 	aws s3 cp . "s3://$BUCKET/scripts/" --recursive --exclude "*" --include "*.py"
 	
@@ -179,9 +179,9 @@ Con esto ya tendremos la estructura de carpetas y la ingesta completa en S3 con 
 	\end{center}
 \end{figure}
 
-En caso de querer descargar otros datos públicos, hay dos opciones. Se podría descargar directamente con un comando de descarga como este:
+En caso de querer descargar otros datos públicos, hay dos opciones. Se podría descargar directamente con un comando de descarga como el del bloque \ref*{lst:aws_descarga_manual}.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ingesta manual directa de un nuevo dataset a S3}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ingesta manual directa de un nuevo dataset a S3}, label=lst:aws_descarga_manual]
 	# SOLO PARA DESCARGAR NUEVOS DATOS! CAMBIANDO LA URL!
 	wget -qO- "$URL_DATOS" | aws s3 cp - "s3://$BUCKET/data/bronze/nombre_archivo.csv"
 \end{lstlisting}
@@ -192,9 +192,9 @@ También, como opción más elegante, se podría integrar en el proceso y modifi
 
 Para el procesamiento de datos en la nube se ha optado por ``AWS Glue Python Shell'' en lugar de entornos distribuidos basados en ``Apache Spark''. Dado que los conjuntos de datos tratados en este proyecto ocupan 272~MB en su capa bronce, el uso de \textit{Spark} implicaría una sobrecarga innecesaria y un coste mínimo de 2~DPU (Data Processing Units), mientras que \textit{Python Shell} permite ejecutar con un mínimo de 0,0625~DPU ($\approx 0,03$~\$/hora), incluyendo librerías como \texttt{pandas}, \texttt{numpy} y \texttt{scikit-learn} ya instaladas. 
 
-A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es más fácil de automatizar, además de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio, siguiendo los principios que hemos comentado al principio de este capítulo:
+A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta desde su propio apartado en AWS, puede programarse o encadenarse con otros, y es más fácil de automatizar, además de que nos permite explorar las posibilidades de la nube. El primer paso es crear la cuenta de servicio (bloque \ref*{lst:aws_glue_rol}), siguiendo los principios que hemos comentado al principio de este capítulo.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Creación del rol de servicio de Glue}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Creación del rol de servicio de Glue}, label=lst:aws_glue_rol]
 	# Politica para que solo Glue tenga el rol
 	cat > trust.json << 'EOF'
 	{"Version":"2012-10-17","Statement":[{"Effect":"Allow", "Principal":{"Service":"glue.amazonaws.com"},"Action":"sts:AssumeRole"}]}
@@ -211,9 +211,9 @@ A diferencia de la ejecución en terminal del apartado anterior, Glue se ejecuta
 	--policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 \end{lstlisting}
 
-Para utilizar \textit{Python Shell} es necesario empaquetar los módulos propios que hemos creado, como el fichero de configuración. Durante el desarrollo se ha comprobado que un fichero comprimido en formato \texttt{zip} se descarga correctamente pero no llega a importarse, mientras que un paquete en formato \textit{wheel} sí se instala como cualquier otra dependencia, por lo que lo hemos hecho de la siguiente manera:
+Para utilizar \textit{Python Shell} es necesario empaquetar los módulos propios que hemos creado, como el fichero de configuración. Durante el desarrollo se ha comprobado que un fichero comprimido en formato \texttt{zip} se descarga correctamente pero no llega a importarse, mientras que un paquete en formato \textit{wheel} sí se instala como cualquier otra dependencia, por lo que lo hemos hecho de la siguiente manera (bloque \ref*{lst:aws_glue_wheel}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Empaquetado del módulo de configuración}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Empaquetado del módulo de configuración}, label=lst:aws_glue_wheel]
 	rm -rf /tmp/pkg && mkdir -p /tmp/pkg
 	cp ~/TFM-cloud-soliutions-to-public-data/code/files/config.py /tmp/pkg/
 	
@@ -232,9 +232,9 @@ Para utilizar \textit{Python Shell} es necesario empaquetar los módulos propios
 
 Si posteriormente se modifica el fichero de configuración, es necesario regenerar el paquete e \textbf{incrementar su número de versión}, ya que en caso contrario el gestor de dependencias reutilizaría la copia previamente instalada.
 
-Con el rol y los procesos disponibles solo falta crear la función. Para esto, fijaremos un tiempo máximo de ejecución, una capacidad máxima y desactivaremos los reintentos automáticos como medida de control de costes. También añadiremos etiquetas para poder desglosar el gasto. La definición se declara en JSON en lugar de como argumentos en línea, para mayor visibilidad de rutas y evitar el escapado de comillas, ya que ambas han dado problemas en la ejecución:
+Con el rol y los procesos disponibles solo falta crear la función. Para esto, fijaremos un tiempo máximo de ejecución, una capacidad máxima y desactivaremos los reintentos automáticos como medida de control de costes. También añadiremos etiquetas para poder desglosar el gasto. La definición se declara en JSON en lugar de como argumentos en línea, para mayor visibilidad de rutas y evitar el escapado de comillas, ya que ambas han dado problemas en la ejecución (bloque \ref*{lst:aws_glue_job}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Definición y despliegue del trabajo de limpieza en Glue}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Definición y despliegue del trabajo de limpieza en Glue}, label=lst:aws_glue_job]
 	source ~/tfm-env.sh
 	# Aborta si la variable esta vacia, evitando rutas del tipo s3:///
 	: "${BUCKET:?Variable BUCKET vacia, ejecutar source ~/tfm-env.sh}"
@@ -260,9 +260,9 @@ Con el rol y los procesos disponibles solo falta crear la función. Para esto, f
 	aws glue create-job --cli-input-json file://job-limpieza.json
 \end{lstlisting}
 
-Esto, de nuevo, es sencillo por tener los \texttt{.py} configurados. Para añadir más datos solo sería necesario incluir su entrada en \texttt{config.py}, actualizar el repositorio con las especificidades de estos, y volver a sincronizar los procesos con el almacenamiento mediante el ciclo descrito en este trabajo. Con esto ya podemos lanzar la ejecución y ver el resultado:
+Esto, de nuevo, es sencillo por tener los \texttt{.py} configurados. Para añadir más datos solo sería necesario incluir su entrada en \texttt{config.py}, actualizar el repositorio con las especificidades de estos, y volver a sincronizar los procesos con el almacenamiento mediante el ciclo descrito en este trabajo. Con esto ya podemos lanzar la ejecución y ver el resultado (bloque \ref*{lst:aws_glue_run}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución, seguimiento y verificación del resultado}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución, seguimiento y verificación del resultado}, label=lst:aws_glue_run]
 	RUN=$(aws glue start-job-run --job-name tfm-02-limpieza \
 	--query JobRunId --output text)
 	
@@ -306,9 +306,9 @@ AWS aprovisionará automáticamente las redes virtuales (VPC, Virtual Private Cl
 	\end{center}
 \end{figure}
 
-Desde la terminal integrada en el entorno, se descarga el repositorio, se instalan librerías y se sincronizan \textit{Silver} y datos descargados en el paso de ingesta. Todo esto debe instalarse en el mismo intérprete que ejecuta el proceso y hay que tener en cuenta que el explorador de ficheros del entorno se abre por defecto en un directorio distinto a donde clonamos el repositorio, por lo que es necesario ir hasta él para visualizar las figuras generadas. Los comandos para todo esto, y para sincronizar los resultados en S3, son los siguientes:
+Desde la terminal integrada en el entorno, se descarga el repositorio, se instalan librerías y se sincronizan \textit{Silver} y datos descargados en el paso de ingesta. Todo esto debe instalarse en el mismo intérprete que ejecuta el proceso y hay que tener en cuenta que el explorador de ficheros del entorno se abre por defecto en un directorio distinto a donde clonamos el repositorio, por lo que es necesario ir hasta él para visualizar las figuras generadas. Los comandos para todo esto, y para sincronizar los resultados en S3, se muestran en el bloque \ref*{lst:aws_sagemaker_ejecucion}.
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución del análisis en SageMaker, (Tambien se pueden crear volviendo a ejecutar los archivos 01 y 02 en el mismo proceso)}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución del análisis en SageMaker}, label=lst:aws_sagemaker_ejecucion]
 	# Dentro de JupyterLab en SageMaker, creamos o actualizamos el repositorio
 	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git \
 	|| (cd TFM-cloud-soliutions-to-public-data && git pull)
@@ -346,9 +346,9 @@ Este manual ha empleado tres modalidades de ejecución dentro de AWS, cada una a
 
 \subsection*{Consulta de costes en AWS}
 
-Los costes pueden consultarse desde la consola web de cada plataforma, pero para mantener la reproducibilidad, el siguiente comando de AWS Cost Explorer obtiene el coste no amortizado (\textit{UnblendedCost}) desglosado por servicio para el periodo dado, y teniendo en cuenta los créditos de bienvenida:
+Los costes pueden consultarse desde la consola web de cada plataforma, pero para mantener la reproducibilidad, el siguiente comando de AWS Cost Explorer obtiene el coste no amortizado (\textit{UnblendedCost}) desglosado por servicio para el periodo dado, y teniendo en cuenta los créditos de bienvenida (bloque \ref*{lst:aws_costes}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Consulta de costes históricos en AWS CLI}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Consulta de costes históricos en AWS CLI}, label=lst:aws_costes]
 	aws ce get-cost-and-usage \
 	--time-period Start=2026-08-01,End=2026-09-01 \
 	--granularity MONTHLY \
@@ -382,9 +382,9 @@ Para no alargar este capítulo, simplemente redirigimos al usuario al propio tut
 
 A diferencia de AWS, GCP ya crea automáticamente una jerarquía de organización con varios proyectos al registrar la cuenta, pero crearemos un proyecto específico y aislado de la organización por defecto para este trabajo, para tener todo bajo un mismo entorno. 
 
-Todos los comandos se ejecutan en la \textit{Google Cloud Shell}, que ya incluye la CLI de GCP configurada y con los permisos necesarios:
+Todos los comandos se ejecutan en la \textit{Google Cloud Shell}, que ya incluye la CLI de GCP configurada y con los permisos necesarios (bloque \ref*{lst:gcp_crear_proyecto}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Creación del proyecto en GCP}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Creación del proyecto en GCP}, label=lst:gcp_crear_proyecto]
 	# Crear un proyecto y activarlo
 	gcloud projects create tfm-ucm-datos-publicos --name="TFM UCM Datos Publicos"
 	gcloud config set project tfm-ucm-datos-publicos
@@ -407,9 +407,9 @@ Todos los comandos se ejecutan en la \textit{Google Cloud Shell}, que ya incluye
 
 Además, para un seguimiento detallado de los costes, es necesario habilitar desde la consola web la exportación de costes detallados (\textit{Detailed usage cost}) a BigQuery. Esta configuración no puede realizarse mediante comandos de \texttt{gcloud}, ya que no hay una instrucción específica para ello. Una vez activada, los datos de facturación se almacenan en una tabla de BigQuery desde la que se pueden consultar.
 
-Una vez creado y vinculado el proyecto, definimos las variables de entorno que usaremos en el resto del manual de GCP, al igual que en AWS. Aquí hay que tener en cuenta que los contenedores tienen nombres globales, por lo que si el nombre propuesto ya está en uso, habrá que cambiarlo, por lo que no sirve copiar y pegar del manual en este caso:
+Una vez creado y vinculado el proyecto, definimos las variables de entorno que usaremos en el resto del manual de GCP (bloque \ref*{lst:gcp_variables}), al igual que en AWS. Aquí hay que tener en cuenta que los contenedores tienen nombres globales, por lo que si el nombre propuesto ya está en uso, habrá que cambiarlo, por lo que no sirve copiar y pegar del manual en este caso:
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Creación del archivo de variables de entorno}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Creación del archivo de variables de entorno}, label=lst:gcp_variables]
 	cat > ~/tfm-env-gcp.sh << 'EOF'
 	export BUCKET="tfm-ucm-datos-publicos"   # Debe ser cambiado
 	export REGION="europe-west1" 
@@ -423,9 +423,9 @@ Una vez creado y vinculado el proyecto, definimos las variables de entorno que u
 
 \subsection{Infraestructura de almacenamiento en Cloud Storage}
 
-Como tecnología de almacenamiento para el proyecto, creamos un \textit{bucket en Cloud Storage}, que alojará las capas del mismo, con la misma estructura de directorios que local y AWS:
+Como tecnología de almacenamiento para el proyecto, creamos un \textit{bucket en Cloud Storage}, que alojará las capas del mismo, con la misma estructura de directorios que local y AWS (bloque \ref*{lst:gcp_crear_bucket}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Creación y configuración del contenedor de Cloud Storage}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Creación y configuración del contenedor de Cloud Storage}, label=lst:gcp_crear_bucket]
 	# Crear el bucket en la region de europe-west1
 	gcloud storage buckets create gs://$BUCKET --location=$REGION
 	
@@ -435,9 +435,9 @@ Como tecnología de almacenamiento para el proyecto, creamos un \textit{bucket e
 	gcloud storage buckets update gs://$BUCKET --update-labels=proyecto=tfm
 \end{lstlisting}
 
-Con el contenedor listo, el siguiente paso es obtener el código fuente del repositorio. En GCP, la propia terminal de \textit{Cloud Shell} viene preconfigurada con las credenciales del usuario, por lo que la librería \texttt{gcsfs} (implementación de \texttt{fsspec} para Google) se autentica automáticamente:
+Con el contenedor listo, el siguiente paso es obtener el código fuente del repositorio. En GCP, la propia terminal de \textit{Cloud Shell} viene preconfigurada con las credenciales del usuario, por lo que la librería \texttt{gcsfs} (implementación de \texttt{fsspec} para Google) se autentica automáticamente (bloque \ref*{lst:gcp_ingesta}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Descarga del código e ingesta en Cloud Storage}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Descarga del código e ingesta en Cloud Storage}, label=lst:gcp_ingesta]
 	# Clonar el repositorio y situarse en la ruta de trabajo
 	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
 	cd TFM-cloud-soliutions-to-public-data/code/files
@@ -464,9 +464,9 @@ Una vez finalizada la carga de datos, el siguiente paso del \textit{pipeline} es
 \subsection{Procesamiento y análisis en Vertex AI Workbench}
 \label{subsec:Manual_VertexAI}
 
-Para esta fase de transformación (\textit{Silver}) y análisis, se optó por \textbf{Vertex AI Workbench}, un entorno de \textit{JupyterLab} con instancia de máquina virtual dedicada, equivalente directo a los \textit{Amazon SageMaker Spaces} empleados en la \hyperref[sec:Manual_Modelos_sagemaker]{\textit{Sección \ref*{sec:Manual_Modelos_sagemaker}}}. Vertex AI simplifica la gestión de credenciales, al heredar las del proyecto activo, y permite ejecutar los \textit{scripts} originales sin modificaciones. El primer paso es crear la instancia de trabajo:
+Para esta fase de transformación (\textit{Silver}) y análisis, se optó por \textbf{Vertex AI Workbench}, un entorno de \textit{JupyterLab} con instancia de máquina virtual dedicada, equivalente directo a los \textit{Amazon SageMaker Spaces} empleados en la \hyperref[sec:Manual_Modelos_sagemaker]{\textit{Sección \ref*{sec:Manual_Modelos_sagemaker}}}. Vertex AI simplifica la gestión de credenciales, al heredar las del proyecto activo, y permite ejecutar los \textit{scripts} originales sin modificaciones. El primer paso es crear la instancia de trabajo (bloque \ref*{lst:gcp_vertex_crear}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Creación de la instancia de Vertex AI Workbench}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Creación de la instancia de Vertex AI Workbench}, label=lst:gcp_vertex_crear]
 	# Activamos la API
 	source ~/tfm-env-gcp.sh
 	gcloud services enable notebooks.googleapis.com workbench.googleapis.com
@@ -489,9 +489,9 @@ La instancia tarda unos minutos en aprovisionarse; una vez que el estado indica 
 \end{figure}
 
 
-Para simplificar la gestión de rutas y credenciales, y dado el reducido volumen de datos (272~MB en la capa bronce), se decidió descargar de nuevo la capa bronze al disco local de la instancia y ejecutar el \textit{pipeline} completo, evitando así el uso de \texttt{gcsfs} durante el procesamiento. 
+Para simplificar la gestión de rutas y credenciales, y dado el reducido volumen de datos (272~MB en la capa bronce), se decidió descargar de nuevo la capa bronze al disco local de la instancia y ejecutar el \textit{pipeline} completo, evitando así el uso de \texttt{gcsfs} durante el procesamiento (bloque \ref*{lst:gcp_vertex_limpieza}). 
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución de limpieza en Vertex AI Workbench}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución de limpieza en Vertex AI Workbench}, label=lst:gcp_vertex_limpieza]
 	# Clonar el repositorio
 	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
 	cd TFM-cloud-soliutions-to-public-data/code/files
@@ -506,9 +506,9 @@ Para simplificar la gestión de rutas y credenciales, y dado el reducido volumen
 	python3 02_limpieza.py
 \end{lstlisting}
 
-Ahora, para ejecutar el análisis no es necesario mover ni cargar datos, ya que están en el mismo entorno que el resto del proceso; simplemente se ejecuta el script de análisis:
+Ahora, para ejecutar el análisis no es necesario mover ni cargar datos, ya que están en el mismo entorno que el resto del proceso; simplemente se ejecuta el script de análisis (bloque \ref*{lst:gcp_vertex_analisis}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución del análisis en Vertex AI Workbench}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Ejecución del análisis en Vertex AI Workbench}, label=lst:gcp_vertex_analisis]
 	# Ejecutar analisis sin variable TFM_BASE (usa rutas locales)
 	python3 03_analisis_isla_calor.py
 	
@@ -518,9 +518,9 @@ Ahora, para ejecutar el análisis no es necesario mover ni cargar datos, ya que 
 
 \textbf{Alternativa interactiva:} Al igual que en AWS, el repositorio incluye un cuaderno \texttt{analisis\_isla\_calor.ipynb} que puede abrirse directamente en JupyterLab para ejecutar el análisis de forma incremental y visualizar las figuras en el propio entorno.
 
-\textbf{Control de costes:} al igual que con SageMaker, las instancias de Vertex AI Workbench facturan por tiempo de aprovisionamiento mientras permanecen encendidas. Conviene detenerlas manualmente al finalizar cada sesión:
+\textbf{Control de costes:} al igual que con SageMaker, las instancias de Vertex AI Workbench facturan por tiempo de aprovisionamiento mientras permanecen encendidas. Conviene detenerlas manualmente al finalizar cada sesión (bloque \ref*{lst:gcp_vertex_stop}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Detención de la instancia de Vertex AI}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Detención de la instancia de Vertex AI}, label=lst:gcp_vertex_stop]
 	gcloud workbench instances stop tfm-notebook --location="$REGION-b"
 \end{lstlisting}
 
@@ -538,9 +538,9 @@ La nube de Google cuenta además con servicios de AutoML que permiten estudiar d
 
 \subsection*{Consulta de costes en GCP}
 
-En GCP, la consulta de costes se realiza a través de la pestaña de \texttt{Billing}, o a través de BigQuery, una vez activada la exportación de costes detallados. La ruta de la tabla de facturación sigue el patrón \texttt{<proyecto>.<dataset>.<tabla>}, donde el nombre exacto depende de la configuración de exportación. El siguiente comando ejecuta una consulta SQL que agrupa los costes por servicio:
+En GCP, la consulta de costes se realiza a través de la pestaña de \texttt{Billing}, o a través de BigQuery, una vez activada la exportación de costes detallados. La ruta de la tabla de facturación sigue el patrón \texttt{<proyecto>.<dataset>.<tabla>}, donde el nombre exacto depende de la configuración de exportación. El siguiente comando ejecuta una consulta SQL que agrupa los costes por servicio (bloque \ref*{lst:gcp_costes}):
 
-\begin{lstlisting}[language=bash, float=htbp, caption={Consulta de costes históricos en BigQuery}]
+\begin{lstlisting}[language=bash, float=htbp, caption={Consulta de costes históricos en BigQuery}, label=lst:gcp_costes]
 	bq query --use_legacy_sql=false --format=json \
 	"SELECT service.description, SUM(cost) as total_cost \
 	FROM \`$PROJECT.facturacion_tfm.gcp_billing_export_resource_v1_*\` \
