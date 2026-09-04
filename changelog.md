@@ -4,7 +4,7 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 
 ## [Memoria] - 2026-09-03
 ### Change
-* Revision de los tutores aplicada a la memoria
+* Revision de los tutores aplicada a la memoria, final de conclusiones.
 
 
 ## [Memoria] - 2026-09-03

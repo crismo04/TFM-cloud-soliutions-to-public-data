@@ -8,23 +8,23 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Ventanas de contexto en tokens de principales LLM (Junio 2026), con su cálculo de filas de datos posibles que entrarían dentro de esa ventana.\relax }}{34}{table.caption.62}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Conjuntos de datos utilizados, su procedencia es \citep {AytoMadrid2025PortalDatos}.\relax }}{40}{table.caption.69}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Correspondencia entre los procesos del \textit {pipeline} y las etapas de la arquitectura de medalla.\relax }}{47}{table.caption.79}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Conjuntos de datos utilizados, su procedencia es \citep {AytoMadrid2025PortalDatos}.\relax }}{40}{table.caption.70}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Correspondencia entre los procesos del \textit {pipeline} y las etapas de la arquitectura de medalla.\relax }}{47}{table.caption.80}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Patologías de calidad detectadas en los conjuntos publicados, su efecto sobre la reutilización automatizada y nivel de documentación.\relax }}{66}{table.caption.117}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Replicación del agrupamiento de \citep {Meneses2023Madrid} para 2021. El acuerdo se calcula sobre el total de pares posibles entre las estaciones comunes: para cada par se comprueba si ambos trabajos coinciden en agruparlas juntas o en grupos distintos, con independencia de la etiqueta numérica del grupo.\relax }}{68}{table.caption.122}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019-2025), reproduciendo las condiciones del trabajo original, y aplicando el criterio de cobertura mínima propio.\relax }}{69}{table.caption.129}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Correlación de Pearson entre temperatura media anual y altitud (por estación) y superficie arbórea relativa (por distrito).\relax }}{71}{table.caption.134}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Coeficiente de silueta por año y aproximación, aplicando el criterio de cobertura mínima. Se incluyen las cinco aproximaciones originales y las dos propias. ``---'' indica que la aproximación no reunió estaciones suficientes ese año.\relax }}{73}{table.caption.138}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Comparativa de esfuerzo de desarrollo, tiempo de ejecución y coste por etapa y entorno.\relax }}{76}{table.caption.143}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Comparativa de costes brutos y netos en AWS y GCP durante el período de ejecución del proyecto.\relax }}{77}{table.caption.145}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Patologías de calidad detectadas en los conjuntos publicados, su efecto sobre la reutilización automatizada y nivel de documentación.\relax }}{64}{table.caption.120}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Replicación del agrupamiento de \citep {Meneses2023Madrid} para 2021. El acuerdo se calcula sobre el total de pares posibles entre las estaciones comunes: para cada par se comprueba si ambos trabajos coinciden en agruparlas juntas o en grupos distintos, con independencia de la etiqueta numérica del grupo.\relax }}{67}{table.caption.125}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Correlación de Pearson entre superficie arbórea y temperatura media por distrito (2019-2025), reproduciendo las condiciones del trabajo original, y aplicando el criterio de cobertura mínima propio.\relax }}{68}{table.caption.132}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Correlación de Pearson entre temperatura media anual y altitud (por estación) y superficie arbórea relativa (por distrito).\relax }}{70}{table.caption.137}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Coeficiente de silueta por año y aproximación, aplicando el criterio de cobertura mínima. Se incluyen las cinco aproximaciones originales y las dos propias. ``---'' indica que la aproximación no reunió estaciones suficientes ese año.\relax }}{72}{table.caption.141}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Comparativa de esfuerzo de desarrollo, tiempo de ejecución y coste por etapa y entorno.\relax }}{75}{table.caption.146}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Comparativa de costes brutos y netos en AWS y GCP durante el período de ejecución del proyecto.\relax }}{76}{table.caption.148}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Resumen de las principales características de las denominadas olas de datos abiertos.\relax }}{111}{table.caption.436}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Comparación de modelos relacionados con la computación distribuida.\relax }}{114}{table.caption.443}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Línea de tiempo de la IA\relax }}{119}{table.caption.449}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Resumen de las principales características de las denominadas olas de datos abiertos.\relax }}{111}{table.caption.439}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Comparación de modelos relacionados con la computación distribuida.\relax }}{114}{table.caption.446}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Línea de tiempo de la IA\relax }}{119}{table.caption.452}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
