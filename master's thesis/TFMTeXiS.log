@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  4 SEP 2026 04:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  4 SEP 2026 13:31
 entering extended mode
 **./TFMTeXiS.tex
 (TFMTeXiS.tex
@@ -1018,12 +1018,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 146.
 
-Overfull \hbox (11.43433pt too wide) in paragraph at lines 151--152
-\T1/cmr/m/it/10.95 fras-truc-tu-re \T1/cmr/m/n/10.95 (BD-TI) ([]Eu-ro-pean Com-
-mis-sion[], []s.f.b[]; []Go-bierno de Es-pa-ña[], []2021a[]),
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
@@ -1493,7 +1487,7 @@ Overfull \hbox (91.23164pt too wide) in paragraph at lines 283--286
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1377) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 295.
 LaTeX Info: Redefining \% on input line 295.
@@ -1560,8 +1554,8 @@ Overfull \hbox (70.00983pt too wide) in paragraph at lines 375--378
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
+LaTeX Info: Redefining \. on input line 386.
+LaTeX Info: Redefining \% on input line 386.
 [94 <./Imagenes/Bitmap/AWS_SageMaker_study_2026.png>]
 LaTeX Info: Redefining \. on input line 407.
 LaTeX Info: Redefining \% on input line 407.
@@ -2055,13 +2049,13 @@ Package rerunfilecheck Info: File `TFMTeXiS.out' has not changed.
 (rerunfilecheck)             Checksum: 7F4C79B9C3A01E2E6E4F8617B429531E;16620.
  ) 
 Here is how much of TeX's memory you used:
- 19047 strings out of 478868
- 309917 string characters out of 2847387
- 1179508 words of memory out of 3000000
- 35422 multiletter control sequences out of 15000+600000
+ 19070 strings out of 478868
+ 310396 string characters out of 2847387
+ 1182386 words of memory out of 3000000
+ 35445 multiletter control sequences out of 15000+600000
  429595 words of font info for 72 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
- 94i,13n,100p,1600b,1357s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,13n,100p,1600b,1359s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\e
 ccc0800.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecit0900.pk> <C:\Users\CRISTIAN\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
@@ -2103,9 +2097,9 @@ AN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb
 ><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb>
-Output written on TFMTeXiS.pdf (172 pages, 3785976 bytes).
+Output written on TFMTeXiS.pdf (172 pages, 3786733 bytes).
 PDF statistics:
- 3893 PDF objects out of 4296 (max. 8388607)
+ 3895 PDF objects out of 4296 (max. 8388607)
  828 named destinations out of 1000 (max. 500000)
  794 words of extra memory for PDF output out of 10000 (max. 10000000)
 

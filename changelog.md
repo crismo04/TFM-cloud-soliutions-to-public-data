@@ -2,6 +2,12 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el mas reciente primero.
 
+
+## [VERSION DEL TRIBUNAL] - 2026-09-04
+### Change
+* Asociar bloques de codigo en el capitulo 5 y recompilar, PDF revisado
+
+
 ## [Memoria] - 2026-09-03
 ### Change
 * Revision de los tutores aplicada a la memoria, final de conclusiones.

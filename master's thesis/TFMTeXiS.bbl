@@ -6,10 +6,10 @@
 \newblock An ai bubble? what altman actually said, the facts and nano banana.
 \newblock 2025.
 
-\bibitem[{Akash(s.f.)}]{akashCloud}
+\bibitem[{Akash(2026)}]{akashCloud}
 {\sc Akash}.
 \newblock The decentralized cloud built for ai's next frontier.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{Albert~Barron(2015)}]{cloudPizza2014}
 {\sc Albert~Barron, t. p. C.~M.}
@@ -170,10 +170,10 @@
   From regression to neural networks.
 \newblock 2024{\natexlab{b}}.
 
-\bibitem[{Brownlee(s.f)}]{JasonMachinelearningmastery}
+\bibitem[{Brownlee(2026)}]{JasonMachinelearningmastery}
 {\sc Brownlee, J.}
 \newblock Machine learning mastery.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{Campbell et\ al.(2002)Campbell, Hoane~Jr. y
   Hsu}]{Campbell2002DeepBlue}
@@ -210,10 +210,10 @@
   the evolution and applications of generative transformer models.
 \newblock 2023.
 
-\bibitem[{clouding.io(s.f.)}]{cloudingIO}
+\bibitem[{clouding.io(2026)}]{cloudingIO}
 {\sc clouding.io}.
 \newblock clouding.io, infraestructura cloud a tu servicio.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{{Comisi{\'{o}}n Nacional de los Mercados y la
   Competencia}(2026)}]{CNMC2026Informe}
@@ -249,10 +249,10 @@
 \newblock Conferencia - c{\'{o}}mo sobrevivir a la infoxicaci{\'{o}}n.
 \newblock 2000.
 
-\bibitem[{{Danysoft}(s.f.)}]{12Botnets}
+\bibitem[{{Danysoft}(2026)}]{12Botnets}
 {\sc {Danysoft}}.
 \newblock El ataque de los botnets.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{de~Datos Abiertos del Gobierno~de
   Espa{\~{n}}a(2021)}]{Gob_metodologia_Dama}
@@ -276,15 +276,15 @@
 \newblock Simpl: Cloud-to-edge federations empowering eu data spaces.
 \newblock 2024.
 
-\bibitem[{{European Commission}(s.f.{\natexlab{a}})}]{EuroDigitalStrategyEdge}
+\bibitem[{{European Commission}(2026{\natexlab{a}})}]{EuroDigitalStrategyEdge}
 {\sc {European Commission}}.
 \newblock Cloud computing.
-\newblock s.f.{\natexlab{a}}.
+\newblock 2026{\natexlab{a}}.
 
-\bibitem[{{European Commission}(s.f.{\natexlab{b}})}]{BDTIEuropeProject}
+\bibitem[{{European Commission}(2026{\natexlab{b}})}]{BDTIEuropeProject}
 {\sc {European Commission}}.
 \newblock From hype to action using the big data test infrastructure (bdti).
-\newblock s.f.{\natexlab{b}}.
+\newblock 2026{\natexlab{b}}.
 
 \bibitem[{{European Parliament}(2022)}]{EU_DGA_2022}
 {\sc {European Parliament}, C.}
@@ -292,7 +292,7 @@
   council of 30 may 2022 on european data governance and amending regulation
   (eu) 2018/1724 (data governance act).
 \newblock Official Journal of the European Union, L 152, pp. 1-44, 2022.
-\newblock Accessed: 28 August 2025.
+\newblock Accessed: 2026-09-01.
 
 \bibitem[{{Eurostat}(2026)}]{Eurostat2026Cloud}
 {\sc {Eurostat}}.
@@ -368,15 +368,15 @@
 \newblock Geopandas: Python tools for geographic data.
 \newblock 2026.
 
-\bibitem[{Gigas(s.f.)}]{gigasCloud}
+\bibitem[{Gigas(2026)}]{gigasCloud}
 {\sc Gigas}.
 \newblock Gigas - cloud hosting solutions.
-\newblock s.f.
+\newblock 2026.
 
-\bibitem[{GmbH(s.f.)}]{nextcloudCloud}
+\bibitem[{GmbH(2026)}]{nextcloudCloud}
 {\sc GmbH, N.}
 \newblock Nextcloud - your own private cloud.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{{Gobierno de Espa{\~{n}}a}(2021{\natexlab{a}})}]{GobEspana2021BDTI}
 {\sc {Gobierno de Espa{\~{n}}a}}.
@@ -407,20 +407,20 @@
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{c}}.
 
-\bibitem[{{Gobierno de Espa{\~{n}}a}(s.f.{\natexlab{a}})}]{InfoNubeSARA}
+\bibitem[{{Gobierno de Espa{\~{n}}a}(2026{\natexlab{a}})}]{InfoNubeSARA}
 {\sc {Gobierno de Espa{\~{n}}a}}.
 \newblock Nubesara.
-\newblock s.f.{\natexlab{a}}.
+\newblock 2026{\natexlab{a}}.
 
-\bibitem[{{Gobierno de Espa{\~{n}}a}(s.f.{\natexlab{b}})}]{PreciosNubeSARA}
+\bibitem[{{Gobierno de Espa{\~{n}}a}(2026{\natexlab{b}})}]{PreciosNubeSARA}
 {\sc {Gobierno de Espa{\~{n}}a}}.
 \newblock Plan de precios de nubesara.
-\newblock s.f.{\natexlab{b}}.
+\newblock 2026{\natexlab{b}}.
 
-\bibitem[{{Golem Network}(s.f.)}]{GolemNetwork}
+\bibitem[{{Golem Network}(2026)}]{GolemNetwork}
 {\sc {Golem Network}}.
 \newblock Golem network.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{G{\'{o}}mez-Obreg{\'{o}}n(2025{\natexlab{a}})}]{JaimeGomezObregon}
 {\sc G{\'{o}}mez-Obreg{\'{o}}n, J.}
@@ -452,15 +452,15 @@
 \newblock Welcome to colab!
 \newblock 2025{\natexlab{c}}.
 
-\bibitem[{{Google Cloud}(2026)}]{GCPArchitectureFramework2026}
-{\sc {Google Cloud}}.
-\newblock Google cloud architecture framework.
-\newblock 2026.
-
-\bibitem[{{Google Cloud}(s.f.)}]{distributedGCP}
+\bibitem[{{Google Cloud}(2026{\natexlab{a}})}]{distributedGCP}
 {\sc {Google Cloud}}.
 \newblock Ampl{\'{i}}a la infraestructura y la ia de google cloud on-premise.
-\newblock s.f.
+\newblock 2026{\natexlab{a}}.
+
+\bibitem[{{Google Cloud}(2026{\natexlab{b}})}]{GCPArchitectureFramework2026}
+{\sc {Google Cloud}}.
+\newblock Google cloud architecture framework.
+\newblock 2026{\natexlab{b}}.
 
 \bibitem[{{Google Cloud Platform}(2026{\natexlab{a}})}]{GCP2026Signup}
 {\sc {Google Cloud Platform}}.
@@ -514,9 +514,9 @@
 \newblock ISBN 978-981-19-3026-3.
 \newblock Open access book.
 
-\bibitem[{huggingface(2025)}]{huggingfaceSpaces_CloudIA}
-{\sc huggingface}.
-\newblock huggingface spaces.
+\bibitem[{{Hugging Face}(2025)}]{huggingfaceSpaces_CloudIA}
+{\sc {Hugging Face}}.
+\newblock Hugging face spaces.
 \newblock 2025.
 
 \bibitem[{{Instituto Nacional de Estad{\'{i}}stica}(2025)}]{INE2025TIC}
@@ -601,7 +601,7 @@
 \newblock {\em Cloud Computing Basics: A Non-Technical Introduction\/}.
 \newblock Apress, 2021.
 \newblock ISBN 978-1-4842-6921-3.
-\newblock Accessed: 2025-08-27.
+\newblock Accessed: 2026-09-01.
 
 \bibitem[{Liu et\ al.(2025)Liu, Li, Zhan, Ma y He}]{urbanthermal2025}
 {\sc Liu, H.}, {\sc Li, M.}, {\sc Zhan, Q.}, {\sc Ma, Z.} y {\sc He, B.-J.}
@@ -616,10 +616,10 @@
 \newblock 2016.
 \newblock M{\'{a}}ster en Ingenier{\'{i}}a Inform{\'{a}}tica, curso 2015-2016.
 
-\bibitem[{{LLM Stats}(s.f.)}]{LLMLeaderboardParameters}
+\bibitem[{{LLM Stats}(2026)}]{LLMLeaderboardParameters}
 {\sc {LLM Stats}}.
 \newblock Llm leaderboard.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{Matheus y Janssen(2020)}]{Matheus03052020}
 {\sc Matheus, R.} y {\sc Janssen, M.}
@@ -649,25 +649,25 @@
 \newblock {\em International Journal of Public Administration\/}, vol.\
   32(3-4), p\'aginas 192--219, 2009.
 
-\bibitem[{microsoft(2025)}]{AzureMachineLearning_CloudIA}
-{\sc microsoft}.
+\bibitem[{Microsoft(2025)}]{AzureMachineLearning_CloudIA}
+{\sc Microsoft}.
 \newblock microsoft azure machine learning.
 \newblock 2025.
 
-\bibitem[{Microsoft(s.f.{\natexlab{a}})}]{MicrosoftCloudTerminology}
+\bibitem[{Microsoft(2026{\natexlab{a}})}]{MicrosoftCloudTerminology}
 {\sc Microsoft}.
 \newblock Cloud computing terminology.
-\newblock s.f.{\natexlab{a}}.
+\newblock 2026{\natexlab{a}}.
 
-\bibitem[{Microsoft(s.f.{\natexlab{b}})}]{TokenizacionMicrosoft}
+\bibitem[{Microsoft(2026{\natexlab{b}})}]{TokenizacionMicrosoft}
 {\sc Microsoft}.
 \newblock ¿qu{\'{e}} es la tokenizaci{\'{o}}n?
-\newblock s.f.{\natexlab{b}}.
+\newblock 2026{\natexlab{b}}.
 
-\bibitem[{Microsoft(s.f.{\natexlab{c}})}]{MedallionMicrosoft}
+\bibitem[{Microsoft(2026{\natexlab{c}})}]{MedallionMicrosoft}
 {\sc Microsoft}.
 \newblock What is the medallion lakehouse architecture?
-\newblock s.f.{\natexlab{c}}.
+\newblock 2026{\natexlab{c}}.
 
 \bibitem[{Moore(1995)}]{moore1995creating}
 {\sc Moore, M.}
@@ -730,10 +730,10 @@
 \newblock {\em OECD Public Governance Policy Papers, No. 43, OECD Publishing,
   Paris\/}, 2023.
 
-\bibitem[{{Open Data Charter}(s.f.)}]{Open_Data_Charter}
+\bibitem[{{Open Data Charter}(2026)}]{Open_Data_Charter}
 {\sc {Open Data Charter}}.
 \newblock ¿qu{\'{e}} son los datos abiertos?
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{{Open Knowledge Foundation}(2025)}]{OpenKnowledgeFoundation}
 {\sc {Open Knowledge Foundation}}.
@@ -757,15 +757,15 @@
 \newblock openpyxl - a python library to read/write excel 2010 xlsx/xlsm files.
 \newblock 2026.
 
-\bibitem[{ovhcloud(2025)}]{OVHcloud_CloudIA}
-{\sc ovhcloud}.
+\bibitem[{OVHcloud(2025)}]{OVHcloud_CloudIA}
+{\sc OVHcloud}.
 \newblock Ovhcloud ai training.
 \newblock 2025.
 
-\bibitem[{OVHCloud(s.f.)}]{OVHCloudFree}
+\bibitem[{OVHCloud(2026)}]{OVHCloudFree}
 {\sc OVHCloud}.
 \newblock Public cloud free trial ovhcloud.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{Pangarkar(2025)}]{BigDataStadisticsMarket}
 {\sc Pangarkar, T.}
@@ -785,21 +785,21 @@
 \newblock ¿qu{\'{e}} son los datos abiertos?
 \newblock 2025.
 
-\bibitem[{PreparaTIC(s.f.)}]{InfoPreparaTICNubeSARA}
+\bibitem[{PreparaTIC(2026)}]{InfoPreparaTICNubeSARA}
 {\sc PreparaTIC}.
 \newblock Servicio nubesara. casos pr{\'{a}}cticos y ejemplos de
   aplicaci{\'{o}}n.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{Press(2013)}]{HistoryOfBigData}
 {\sc Press, G.}
 \newblock A very short history of big data.
 \newblock 2013.
 
-\bibitem[{{radwere}(s.f.)}]{MydoomDDoSMalware}
+\bibitem[{{radwere}(2026)}]{MydoomDDoSMalware}
 {\sc {radwere}}.
 \newblock What is mydoom malware?
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{Ramos-Sim{\'{o}}n(2017)}]{LicenciasLibres2017Datos}
 {\sc Ramos-Sim{\'{o}}n, L.~F.}
@@ -821,10 +821,10 @@
 \newblock Portal de datos abiertos de los registradores de espa{\~{n}}a.
 \newblock 2025.
 
-\bibitem[{{Render Network}(s.f.)}]{rendernetwork}
+\bibitem[{{Render Network}(2026)}]{rendernetwork}
 {\sc {Render Network}}.
 \newblock The distributed gpu render network.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{{Requests project}(2026)}]{Requests2026}
 {\sc {Requests project}}.
@@ -877,10 +877,10 @@
 \newblock scikit-learn: Machine learning in python.
 \newblock 2026.
 
-\bibitem[{{SONM}(s.f.)}]{SONMWhitepaper}
+\bibitem[{{SONM}(2026)}]{SONMWhitepaper}
 {\sc {SONM}}.
 \newblock Sonm whitepaper.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{{Standing Committee of the National People's
   Congress}(2021{\natexlab{a}})}]{webDSL2021China}
@@ -906,15 +906,20 @@
 \newblock Paradoxes and prospects of public value.
 \newblock {\em Public Money \& Management\/}, vol.\ 31(1), 2011.
 
+\bibitem[{{Tallin university (TLU)}(2024)}]{RapidMinerCourse}
+{\sc {Tallin university (TLU)}}.
+\newblock Data mining without coding.
+\newblock 2024.
+
 \bibitem[{Taylor(2025)}]{BigDataStatista}
 {\sc Taylor, P.}
 \newblock Big data - statistics and facts.
 \newblock 2025.
 
-\bibitem[{Telef{\'{o}}nica(s.f.)}]{TelefonicaTechCloudPlatform}
+\bibitem[{Telef{\'{o}}nica(2026)}]{TelefonicaTechCloudPlatform}
 {\sc Telef{\'{o}}nica}.
 \newblock Telef{\'{o}}nica tech cloud platform.
-\newblock s.f.
+\newblock 2026.
 
 \bibitem[{{The Matplotlib development team}(2026)}]{Matplotlib2026}
 {\sc {The Matplotlib development team}}.
@@ -990,11 +995,6 @@
 \newblock infoparticipa.
 \newblock 2025.
 
-\bibitem[{university(2024)}]{RapidMinerCourse}
-{\sc university, T.}
-\newblock Data mining without coding.
-\newblock 2024.
-
 \bibitem[{Uriarte y De~Nicola(2018)}]{BlockchainBasedDecentralisedCloud2018}
 {\sc Uriarte, R.~B.} y {\sc De~Nicola, R.}
 \newblock Blockchain-based decentralised cloud/fog solutions: Challenges,
@@ -1046,9 +1046,9 @@
 \newblock Information age.
 \newblock 2025.
 
-\bibitem[{Wikipedia(s.f)}]{MachineLearningMethodsList}
+\bibitem[{Wikipedia(2026)}]{MachineLearningMethodsList}
 {\sc Wikipedia}.
 \newblock List of machine learning methods.
-\newblock s.f.
+\newblock 2026.
 
 \end{thebibliography}
