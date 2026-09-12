@@ -1,4 +1,4 @@
-\begin{thebibliography}{171}
+\begin{thebibliography}{172}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{AI Explained}(2025)}]{Video_AIExplained_AIBubble_2025}
@@ -233,13 +233,15 @@
 \newblock Planttes.
 \newblock 2025{\natexlab{b}}.
 
-\bibitem[{{Congreso de los Estados Unidos de America}(1996)}]{webHIPAA1996EEUU}
-{\sc {Congreso de los Estados Unidos de America}}.
+\bibitem[{{Congreso de los Estados Unidos de
+  Am{\'{e}}rica}(1996)}]{webHIPAA1996EEUU}
+{\sc {Congreso de los Estados Unidos de Am{\'{e}}rica}}.
 \newblock Health insurance portability and accountability act of 1996 (hipaa).
 \newblock 1996.
 
-\bibitem[{{Congreso de los Estados Unidos de America}(2019)}]{webOGDA2019EEUU}
-{\sc {Congreso de los Estados Unidos de America}}.
+\bibitem[{{Congreso de los Estados Unidos de
+  Am{\'{e}}rica}(2019)}]{webOGDA2019EEUU}
+{\sc {Congreso de los Estados Unidos de Am{\'{e}}rica}}.
 \newblock Foundations for evidence-based policymaking act of 2018, title ii:
   Open government data act.
 \newblock 2019.
@@ -944,33 +946,39 @@
 \newblock Copyright - Copyright null 2023; {\'{U}}ltima actualizaci{\'{o}}n -
   2024-12-12; SubjectsTermNotLitGenreText - Ecuador.
 
-\bibitem[{{Union Europea}(2016)}]{webRGPD2016Europa}
-{\sc {Union Europea}}.
+\bibitem[{{Uni{\'{o}}n Europea}(2016)}]{webRGPD2016Europa}
+{\sc {Uni{\'{o}}n Europea}}.
 \newblock Data protection under gdpr.
 \newblock 2016.
 
-\bibitem[{{Union Europea}(2023)}]{webLGD2023Europa}
-{\sc {Union Europea}}.
+\bibitem[{{Uni{\'{o}}n Europea}(2023)}]{webLGD2023Europa}
+{\sc {Uni{\'{o}}n Europea}}.
 \newblock Explicaci{\'{o}}n de la ley de gobernanza de datos.
 \newblock 2023.
 
-\bibitem[{{Union Europea}(2024)}]{webRIA2024Europa}
-{\sc {Union Europea}}.
+\bibitem[{{Uni{\'{o}}n Europea}(2024{\natexlab{a}})}]{webRIA2024Europa}
+{\sc {Uni{\'{o}}n Europea}}.
 \newblock Reglamento de inteligencia artificial.
-\newblock 2024.
+\newblock 2024{\natexlab{a}}.
 
-\bibitem[{{Union Europea}(2025{\natexlab{a}})}]{EuropeanAlternatives}
-{\sc {Union Europea}}.
+\bibitem[{{Uni{\'{o}}n Europea}(2024{\natexlab{b}})}]{RIA2024Art50}
+{\sc {Uni{\'{o}}n Europea}}.
+\newblock Reglamento (ue) 2024/1689, art{\'{i}}culo 50: obligaciones de
+  transparencia para determinados sistemas de ia.
+\newblock 2024{\natexlab{b}}.
+
+\bibitem[{{Uni{\'{o}}n Europea}(2025{\natexlab{a}})}]{EuropeanAlternatives}
+{\sc {Uni{\'{o}}n Europea}}.
 \newblock European alternatives for popular services.
 \newblock 2025{\natexlab{a}}.
 
-\bibitem[{{Union Europea}(2025{\natexlab{b}})}]{PortalDatosEuropa}
-{\sc {Union Europea}}.
+\bibitem[{{Uni{\'{o}}n Europea}(2025{\natexlab{b}})}]{PortalDatosEuropa}
+{\sc {Uni{\'{o}}n Europea}}.
 \newblock Portal de datos abiertos.
 \newblock 2025{\natexlab{b}}.
 
-\bibitem[{{Union Europea}(2026)}]{omnibus2026Europa}
-{\sc {Union Europea}}.
+\bibitem[{{Uni{\'{o}}n Europea}(2026)}]{omnibus2026Europa}
+{\sc {Uni{\'{o}}n Europea}}.
 \newblock Reglamento {\'{o}}mnibus digital sobre ia.
 \newblock 2026.
 
