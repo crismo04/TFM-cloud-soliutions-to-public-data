@@ -16,7 +16,7 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 ## [CORRECCIONES POST ENVÍO, SOLO MEMORIA] - 2026-09-12
 ### Change
 * Correcciones de algunos enlaces dañados.
-* Los enlaces clicables de la introducción, en cursiva.
+* Los enlaces clickables de la introducción, en cursiva.
 * Cambio en algunos títulos de sección por repetitivos.
 * Mejoras de redacción propuestas por los tutores.
 * Correcciones ortográficas (incluido este changelog).
