@@ -2,6 +2,16 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el más reciente primero.
 
+## [COSAS DETECTADAS] - 2026-09-15
+### Change
+* Quitar trabajo futuro del capitulo 4 en la introduccion en español, va al 6
+* Nueva presentacion en pptx
+
+### TODO
+* Unificar moneda en la parte de costes de nube
+* La url del github tiene un typo (https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/commits/develop/) en vez de (https://github.com/crismo04/TFM-cloud-solutions-to-public-data/commits/develop/) - para la ultima version
+
+
 
 ## [CORRECCIONES POST ENVÍO, SOLO MEMORIA] - 2026-09-12
 ### Change

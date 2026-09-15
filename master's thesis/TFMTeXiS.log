@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  12 SEP 2026 20:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  15 SEP 2026 21:20
 entering extended mode
 **./TFMTeXiS.tex
 (TFMTeXiS.tex
@@ -2012,7 +2012,7 @@ Package rerunfilecheck Info: File `TFMTeXiS.out' has not changed.
 Here is how much of TeX's memory you used:
  19111 strings out of 478868
  311048 string characters out of 2847387
- 1285688 words of memory out of 3000000
+ 1285695 words of memory out of 3000000
  35462 multiletter control sequences out of 15000+600000
  429595 words of font info for 72 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
@@ -2058,9 +2058,9 @@ AN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb
 ><C:/Users/CRISTIAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb>
-Output written on TFMTeXiS.pdf (174 pages, 3832796 bytes).
+Output written on TFMTeXiS.pdf (174 pages, 3833148 bytes).
 PDF statistics:
- 4076 PDF objects out of 4296 (max. 8388607)
+ 4077 PDF objects out of 4296 (max. 8388607)
  849 named destinations out of 1000 (max. 500000)
  866 words of extra memory for PDF output out of 10000 (max. 10000000)
 
