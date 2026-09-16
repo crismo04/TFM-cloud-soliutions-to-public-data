@@ -236,7 +236,7 @@ El diagrama del codo para la aproximación de temperatura y humedad (\hyperref[f
 	\label{fig:codo_2021}
 \end{figure}
 
-Como comprobación de robustez se ejecutaron sobre los mismos datos dos algoritmos de agrupamiento independientes, \textit{k-means} y el método jerárquico de Ward. En cuatro de las cinco aproximaciones ambos produjeron particiones idénticas, y en la restante difirieron en dos de veintiuna estaciones. Que dos procedimientos con fundamentos distintos converjan en la misma agrupación indica que la estructura detectada responde a los datos y no a las particularidades de un algoritmo concreto, comprobación que el trabajo original no realizaba de forma explícita.
+Como comprobación de robustez se ejecutaron sobre los mismos datos dos algoritmos de agrupamiento independientes, \textit{k-means} y el método jerárquico de Ward. En cuatro de las cinco aproximaciones originales ambos produjeron particiones idénticas, y en la restante difirieron en dos de veintiuna estaciones. Que dos procedimientos con fundamentos distintos converjan en la misma agrupación indica que la estructura detectada responde a los datos y no a las particularidades de un algoritmo concreto, comprobación que el trabajo original no realizaba de forma explícita. Estas etiquetas se registran en los ficheros \texttt{clusters\_*.csv} de cada ejecución. Para 2021, acuerdo agregado por pares entre ambos métodos fue del $96,6 \%$ (797 de 825 pares).
 
 El dendrograma (\hyperref[fig:dendrograma_2021]{\textit{figura \ref*{fig:dendrograma_2021}}}) muestra que la primera división del conjunto separa las estaciones situadas en la periferia y en grandes zonas verdes (Casa de Campo, El Pardo, Juan Carlos I) de las ubicadas en el núcleo urbano denso (Centro, Arganzuela, Puente de Vallecas), una partición que reproduce la estructura espacial del fenómeno estudiado sin haber sido impuesta al algoritmo.
 
@@ -281,7 +281,7 @@ La tabla \ref{tab:esfuerzo_plataforma} recoge el esfuerzo medido en horas dedica
 		Limpieza & 20 & 6 & 10 & 45 & 227 & 51 & 0,01 & 0,04 \\
 		Análisis & 35 & 5 & 5 & 120 & 300 & 115 & 0,92 & 12,87 \\
 		\hline
-		\textbf{Total} & \textbf{70 h} & \textbf{21 h} & \textbf{18 h} & & & & \textbf{0,93} & \textbf{12,91} \\
+		\textbf{Total} & \textbf{70 h} & \textbf{21 h} & \textbf{18 h} & \textbf{165} & \textbf{707} & \textbf{342} & \textbf{0,93} & \textbf{12,91} \\
 		\hline
 	\end{tabular}
 	\caption{Comparativa de esfuerzo de desarrollo, tiempo de ejecución y coste por etapa y entorno.}

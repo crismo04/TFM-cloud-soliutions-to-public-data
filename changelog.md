@@ -6,6 +6,7 @@ Todos los cambios notables de este proyecto se documentarán en este archivo, el
 ### Change
 * Quitar trabajo futuro del capitulo 4 en la introduccion en español, va al 6
 * Nueva presentacion en pptx
+* Las validaciones de robustez entre ward y k-means no estaban actualizadas a las aproximaciones propias
 
 ### TODO
 * Unificar moneda en la parte de costes de nube
