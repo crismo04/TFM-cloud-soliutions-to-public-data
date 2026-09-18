@@ -2,16 +2,17 @@
 
 Todos los cambios notables de este proyecto se documentarán en este archivo, el más reciente primero.
 
+## [VERSION PRESENTADA] - 2026-09-18
+### Change
+* La url del github tiene un typo (https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/commits/develop/) en vez de (https://github.com/crismo04/TFM-cloud-solutions-to-public-data/commits/develop/)
+* Comentarios del tribunal añadidos a trabajo futuro (análisis estadístico, regresión multivariable, control de variables de confusión, modelos de panel con efectos fijos, intervalos de confianza por transformación z de Fisher y bootstrap, análisis geoespacial formal y modelización de la discontinuidad como variable).
+
+
 ## [COSAS DETECTADAS] - 2026-09-15
 ### Change
 * Quitar trabajo futuro del capitulo 4 en la introduccion en español, va al 6
 * Nueva presentacion en pptx
 * Las validaciones de robustez entre ward y k-means no estaban actualizadas a las aproximaciones propias
-
-### TODO
-* Unificar moneda en la parte de costes de nube
-* La url del github tiene un typo (https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/commits/develop/) en vez de (https://github.com/crismo04/TFM-cloud-solutions-to-public-data/commits/develop/) - para la ultima version
-
 
 
 ## [CORRECCIONES POST ENVÍO, SOLO MEMORIA] - 2026-09-12

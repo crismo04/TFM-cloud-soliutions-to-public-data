@@ -67,7 +67,18 @@ Aunque el trabajo ha cumplido sus objetivos, inevitablemente, debido a la extens
 		\item \emph{Usar Grandes Modelos de Lenguaje (LLMs) de forma exploratoria.} Sería fascinante emplear LLMs para analizar automáticamente la documentación de los conjuntos y para generar descripciones interpretativas de los grupos obtenidos en el clustering, mejorando así la explicabilidad de los resultados.
 		
 		\item \emph{Probar AutoML en las plataformas cloud.} Durante el desarrollo se evaluó la posibilidad de emplear \textit{Vertex AI AutoML} (definido en el manual de usuario) y \textit{SageMaker Autopilot} para la fase de modelado. Estos servicios resuelven tareas supervisadas, no agrupamiento, por lo que para utilizarlos sería necesario reformular el problema como una regresión (p.\,ej. predecir la temperatura de una estación a partir del resto de variables). Haría falta además trabajar con granularidad diaria en vez de anual para aumentar el tamaño de la muestra. El interés no estaría tanto en la calidad de la predicción como en la importancia de variables, calculadas automáticamente, lo que daría una respuesta cuantitativa a qué factores importan y en qué proporción, algo que el agrupamiento no permite establecer.
+		\item \emph{Enumero tambien las mejoras estadísticas en el análisis que quedaron fuera del alcance.}
+		\begin{itemize}
+			\item \emph{Regresión multivariable.} Estimar el efecto de cada variable manteniendo las demás constantes, en lugar de correlaciones por pares.
 
+			\item \emph{Modelos de panel con efectos fijos.} Aprovechar la estructura de panel de los siete años para controlar las variables de confusión y acercarse a una interpretación causal.
+
+			\item \emph{Intervalos de confianza.} Acompañar los coeficientes de una medida de incertidumbre, mediante técnicas como la transformación $z$ de Fisher o el remuestreo por \textit{bootstrap}. Esto permitiría ir más allá de estimaciones puntuales y valorar la solidez estadística de las correlaciones observadas.
+
+			\item \emph{Análisis geoespacial formal.} Contrastar la autocorrelación espacial entre distritos colindantes.
+
+			\item \emph{Modelizar la discontinuidad como variable.} Incorporar la cobertura al modelo en lugar de usarla solo como criterio de exclusión.
+		\end{itemize}
 	\end{itemize}
 \end{itemize}
 

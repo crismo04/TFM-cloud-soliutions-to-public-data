@@ -67,6 +67,19 @@ Although the work has fulfilled its objectives, inevitably, due to the breadth o
 		\item \emph{Use Large Language Models (LLMs) in an exploratory way.} It would be fascinating to use LLMs to automatically analyze the documentation of the datasets and to generate interpretative descriptions of the groups obtained in the clustering, thus improving the explainability of the results.
 		
 		\item \emph{Test AutoML on cloud platforms.} During development, the possibility of using \textit{Vertex AI AutoML} (defined in the user manual) and \textit{SageMaker Autopilot} for the modelling phase was evaluated. These services solve supervised tasks, not clustering, so using them would require reformulating the problem as a regression (e.g. predicting a station's temperature from the remaining variables). It would also be necessary to work with daily rather than annual granularity in order to increase the sample size. The interest would lie not so much in the quality of the prediction as in the automatically computed variable importance, which would give a quantitative answer as to which factors matter and in what proportion, something that clustering cannot establish.
+		
+		\item \emph{Statistical improvements to the analysis that fell outside the scope:}
+		\begin{itemize}
+			\item \emph{Multivariate regression.} Estimating the effect of each variable while holding the others constant, instead of relying on pairwise correlations.
+			
+			\item \emph{Fixed-effects panel models.} Exploiting the panel structure of the seven years to control for confounding variables and move closer to a causal interpretation.
+			
+			\item \emph{Confidence intervals.} Reporting coefficients together with a measure of uncertainty, through techniques such as Fisher's $z$ transformation or bootstrap resampling. This would go beyond point estimates and allow the statistical strength of the observed correlations to be assessed.
+			
+			\item \emph{Formal geospatial analysis.} Testing for spatial autocorrelation between neighbouring districts.
+			
+			\item \emph{Model discontinuity as a variable.} Including coverage in the model rather than using it only as an exclusion criterion.
+		\end{itemize}
 	\end{itemize}
 \end{itemize}
 

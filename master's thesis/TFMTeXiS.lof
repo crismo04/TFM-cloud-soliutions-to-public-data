@@ -8,30 +8,30 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos mayores a 100) durante 2021 y 2022.\relax }}{66}{figure.caption.132}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.\relax }}{69}{figure.caption.143}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.\relax }}{70}{figure.caption.145}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Relación entre superficie arbórea relativa y temperatura media por distrito, año 2021.\relax }}{71}{figure.caption.148}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Scatter 3D de temperatura, altitud y superficie relativa para el año 2022.\relax }}{72}{figure.caption.149}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).\relax }}{73}{figure.caption.152}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).\relax }}{74}{figure.caption.153}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Días válidos de temperatura por estación y año. Se aprecia la degradación de la subred municipal (códigos mayores a 100) durante 2021 y 2022.}}{66}{figure.caption.132}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Relación entre superficie arbórea y temperatura media por distrito, año 2021.}}{69}{figure.caption.143}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Evolución de la correlación entre superficie arbórea y temperatura media por distrito (2019-2025) en ambas configuraciones del análisis.}}{70}{figure.caption.145}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Relación entre superficie arbórea relativa y temperatura media por distrito, año 2021.}}{71}{figure.caption.148}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Scatter 3D de temperatura, altitud y superficie relativa para el año 2022.}}{72}{figure.caption.149}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama del codo de la aproximación de temperatura y humedad relativa (2021).}}{73}{figure.caption.152}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Dendrograma del agrupamiento jerárquico de Ward sobre temperatura y humedad relativa (2021).}}{74}{figure.caption.153}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados\relax }}{82}{figure.caption.188}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola\relax }}{84}{figure.caption.191}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3\relax }}{86}{figure.caption.237}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue\relax }}{90}{figure.caption.314}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Consola de SageMaker\relax }}{91}{figure.caption.317}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Ejecucion de Jupyter en SageMaker\relax }}{93}{figure.caption.334}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Abrir terminal GCP en consola\relax }}{94}{figure.caption.346}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Conjuntos de datos cargados en Cloud Storage\relax }}{97}{figure.caption.396}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Instancia de Vertex AI Workbench\relax }}{98}{figure.caption.408}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Consola para crear un estudio de regresión y clasificación en Vertex AI AutoML\relax }}{100}{figure.caption.433}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Árbol de archivos de resultados}}{82}{figure.caption.188}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Abrir terminal AWS en consola}}{84}{figure.caption.191}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de carpetas generada en S3}}{86}{figure.caption.237}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Ejecuciones del trabajo ETL en AWS Glue}}{90}{figure.caption.314}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Consola de SageMaker}}{91}{figure.caption.317}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Ejecucion de Jupyter en SageMaker}}{93}{figure.caption.334}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Abrir terminal GCP en consola}}{94}{figure.caption.346}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Conjuntos de datos cargados en Cloud Storage}}{97}{figure.caption.396}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Instancia de Vertex AI Workbench}}{98}{figure.caption.408}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Consola para crear un estudio de regresión y clasificación en Vertex AI AutoML}}{100}{figure.caption.433}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato\relax }}{120}{figure.caption.464}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud\relax }}{124}{figure.caption.469}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA\relax }}{128}{figure.caption.474}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Capas de gobierno del dato}}{120}{figure.caption.464}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Distintos tipos de cloud}}{124}{figure.caption.469}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Tendencias de búsqueda de IA}}{127}{figure.caption.474}%
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }

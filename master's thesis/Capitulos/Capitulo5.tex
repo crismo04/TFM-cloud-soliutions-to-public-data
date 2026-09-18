@@ -35,8 +35,8 @@ La ruta base del proyecto es la definida en la variable \texttt{TFM\_BASE}. Si e
 
 \begin{lstlisting}[language=bash, float=htbp, caption={Preparación del entorno y ejecución de la ingesta}, label=lst:local_preparacion]
 	# Descarga de codigo
-	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
-	cd TFM-cloud-soliutions-to-public-data/code/files
+	git clone https://github.com/crismo04/TFM-cloud-solutions-to-public-data.git
+	cd TFM-cloud-solutions-to-public-data/code/files
 	
 	# Entorno virtual de python
 	python -m venv .venv
@@ -113,8 +113,8 @@ Lo primero para trabajar con la nube es seleccionar la región que más convenga
 
 \begin{lstlisting}[language=bash, float=htbp, caption={Obtención del código fuente del proyecto}, label=lst:aws_clonar]
 	cd ~
-	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
-	cd TFM-cloud-soliutions-to-public-data/code/files
+	git clone https://github.com/crismo04/TFM-cloud-solutions-to-public-data.git
+	cd TFM-cloud-solutions-to-public-data/code/files
 	pip install -r requirements.txt --quiet
 \end{lstlisting}
 
@@ -213,7 +213,7 @@ Para utilizar \textit{Python Shell} es necesario empaquetar los módulos propios
 
 \begin{lstlisting}[language=bash, float=htbp, caption={Empaquetado del módulo de configuración}, label=lst:aws_glue_wheel]
 	rm -rf /tmp/pkg && mkdir -p /tmp/pkg
-	cp ~/TFM-cloud-soliutions-to-public-data/code/files/config.py /tmp/pkg/
+	cp ~/TFM-cloud-solutions-to-public-data/code/files/config.py /tmp/pkg/
 	
 	cat > /tmp/pkg/setup.py << 'EOF'
 	from setuptools import setup
@@ -223,7 +223,7 @@ Para utilizar \textit{Python Shell} es necesario empaquetar los módulos propios
 	cd /tmp/pkg && pip wheel . -w dist --no-deps --quiet
 	aws s3 cp dist/tfmconfig-1.0.0-py3-none-any.whl "s3://$BUCKET/scripts/"
 	
-	cd ~/TFM-cloud-soliutions-to-public-data/code/files
+	cd ~/TFM-cloud-solutions-to-public-data/code/files
 	aws s3 cp . "s3://$BUCKET/scripts/" --recursive --exclude "*" --include "*.py"
 	
 \end{lstlisting}
@@ -308,9 +308,9 @@ Desde la terminal integrada en el entorno, se descarga el repositorio, se instal
 
 \begin{lstlisting}[language=bash, float=htbp, caption={Ejecución del análisis en SageMaker.}, label=lst:aws_sagemaker_ejecucion]
 	# Dentro de JupyterLab en SageMaker, creamos o actualizamos el repositorio
-	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git \
-	|| (cd TFM-cloud-soliutions-to-public-data && git pull)
-	cd TFM-cloud-soliutions-to-public-data/code/files
+	git clone https://github.com/crismo04/TFM-cloud-solutions-to-public-data.git \
+	|| (cd TFM-cloud-solutions-to-public-data && git pull)
+	cd TFM-cloud-solutions-to-public-data/code/files
 	pip install -r requirements.txt --quiet
 	python -m pip install geopandas --quiet
 	
@@ -433,8 +433,8 @@ Con el contenedor listo, el siguiente paso es obtener el código fuente del repo
 
 \begin{lstlisting}[language=bash, float=htbp, caption={Descarga del código e ingesta en Cloud Storage}, label=lst:gcp_ingesta]
 	# Clonar el repositorio y situarse en la ruta de trabajo
-	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
-	cd TFM-cloud-soliutions-to-public-data/code/files
+	git clone https://github.com/crismo04/TFM-cloud-solutions-to-public-data.git
+	cd TFM-cloud-solutions-to-public-data/code/files
 	pip install -r requirements.txt gcsfs --quiet
 	
 	# Ejecutar la ingesta en el CLI
@@ -487,8 +487,8 @@ Para simplificar la gestión de rutas y credenciales, y dado el reducido volumen
 
 \begin{lstlisting}[language=bash, float=htbp, caption={Ejecución de limpieza en Vertex AI Workbench}, label=lst:gcp_vertex_limpieza]
 	# Clonar el repositorio
-	git clone https://github.com/crismo04/TFM-cloud-soliutions-to-public-data.git
-	cd TFM-cloud-soliutions-to-public-data/code/files
+	git clone https://github.com/crismo04/TFM-cloud-solutions-to-public-data.git
+	cd TFM-cloud-solutions-to-public-data/code/files
 	pip install -r requirements.txt gcsfs geopandas --quiet
 	
 	# Descargar la capa bronze del bucket al disco local

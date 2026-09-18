@@ -100,7 +100,7 @@
 \contentsline {paragraph}{Tercer objetivo: aplicación a casos de estudio reales.}{104}{section.444}%
 \contentsline {section}{\numberline {6.2}Limitaciones conocidas del proyecto}{105}{section.445}%
 \contentsline {section}{\numberline {6.3}Trabajo futuro}{105}{section.446}%
-\contentsline {section}{\numberline {6.4}Valoración final}{107}{section.447}%
+\contentsline {section}{\numberline {6.4}Valoración final}{108}{section.447}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Work}{109}{chapter.448}%
 \contentsline {section}{\numberline {6.1}Conclusions}{109}{section.449}%
 \contentsline {paragraph}{First objective: analysis of the technological landscape.}{109}{section.449}%
@@ -114,7 +114,7 @@
 \contentsline {subsection}{\numberline {A.1.1}Referentes a datos}{115}{subsection.454}%
 \contentsline {subsection}{\numberline {A.1.2}Referentes a Cloud}{121}{subsection.465}%
 \contentsline {subsection}{\numberline {A.1.3}Referentes a Inteligencia Artificial}{125}{subsection.471}%
-\contentsline {section}{\numberline {A.2}Acrónimos}{132}{section.495}%
+\contentsline {section}{\numberline {A.2}Acrónimos}{131}{section.495}%
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {B}Apéndice B: Uso ético de herramientas de IA}{137}{appendix.496}%
 \contentsline {chapter}{Bibliograf\'{\i }a}{139}{appendix*.497}%
