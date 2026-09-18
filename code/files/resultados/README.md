@@ -10,7 +10,7 @@ Dos ejecuciones completas del mismo análisis (`config.MODO_REPLICA`):
 - `propio/`: aplica los criterios metodológicos de este trabajo (`MIN_DIAS_ANIO` días válidos mínimos por estación y año).
 
 
-Cada carpeta contiene un subdirectorio por año con los diagramas del codo, dendrogramas, gráficos de correlación y las tablas de grupos por estació.
-Tambien los resúmenes entre años (`resumen_silhouette.csv`, `resumen_arbolado.csv`), el gráfico de evolución y el log de la ejecución con su configuración.
+Cada carpeta contiene un subdirectorio por año con los diagramas del codo, dendrogramas, gráficos de correlación y las tablas de grupos por estación.
+También los resúmenes entre años (`resumen_silhouette.csv`, `resumen_arbolado.csv`), el gráfico de evolución y el log de la ejecución con su configuración. El log completo se encuentra en el apartado `propio/`.
 
 `cobertura_temperatura.csv` (días válidos por estación y año) es común a ambos modos.

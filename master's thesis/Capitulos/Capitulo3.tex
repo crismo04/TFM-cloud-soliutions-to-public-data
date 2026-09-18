@@ -12,7 +12,7 @@ En esta sección se detallarán los programas, nubes y conjuntos de datos espec�
 
 \subsection{Conjuntos de Datos} \label{sec:Materiales_datos}
 
-Los conjuntos empleados proceden del portal de datos abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos} \footnote{\url{https://datos.madrid.es/portal/site/egob}}, bajo licencia ``Creative Commons Attribution 4.0 (CC BY 4.0)''. La ingesta se realizó de forma automatizada, registrando los metadatos de procedencia de cada fichero en el archivo \texttt{code/files/data/bronze/\_metadatos.csv}. La tabla \ref{tab:conjuntos} los resume:
+Los conjuntos empleados proceden del portal de datos abiertos del Ayuntamiento de Madrid \citep{AytoMadrid2025PortalDatos} \footnote{\url{https://datos.madrid.es/portal/site/egob}}, bajo licencia ``Creative Commons Attribution 4.0 (CC BY 4.0)''. La ingesta se realizó de forma automatizada, registrando los metadatos de procedencia de cada fichero en el archivo \texttt{code/files/data/bronze/\_metadatos.csv}. La tabla \ref{tab:conjuntos} los resume.
 
 \begin{table}[h]
 	\centering
@@ -66,12 +66,12 @@ Dentro de su catálogo, se emplearon los siguientes servicios gestionados como h
 \subsubsection{Google Cloud Platform}
 \label{subsec:GCP_materiales}
 
-\textbf{Google Cloud Platform (GCP)} es la plataforma de computación en la nube gestionada por Google, que ofrece servicios de infraestructura, almacenamiento, análisis y machine learning, entre muchos otros. Se seleccionó como segunda nube por su programa de créditos gratuitos (300 dólares durante 90 días) y por su enfoque en ML e IA. Los servicios empleados fueron los siguientes:
+\textbf{Google Cloud Platform (GCP)} es la plataforma de computación en la nube gestionada por Google, que ofrece servicios de infraestructura, almacenamiento, análisis y ML, entre muchos otros. Se seleccionó como segunda nube por su programa de créditos gratuitos (300 dólares durante 90 días) y por su enfoque en ML e IA. Los servicios empleados fueron los siguientes:
 
 \begin{itemize}
 	\item \textbf{Cloud Storage}: almacenamiento de objetos equivalente a Amazon S3. Se utilizó para alojar las capas \textit{bronze}, \textit{silver} y los resultados, replicando la misma estructura de directorios que en local y en AWS.
 	\item \textbf{Cloud Shell}: terminal Linux basada en navegador con la Consola de comando (CLI, Command line interface) de GCP preconfigurada, utilizada para la ingesta inicial, la gestión de recursos y la creación del manual de usuario.
-	\item \textbf{Vertex AI Workbench}: entorno gestionado de \textit{JupyterLab}, integrado en la plataforma \textit{Gemini Enterprise Agent Platform}, que permite ejecutar cuadernos y scripts de Python en máquinas virtuales. Se empleó para las fases de limpieza y análisis, unificando ambos procesos en un mismo entorno interactivo y evitando la complejidad de configurar servicios ETL desatendidos.
+	\item \textbf{Vertex AI Workbench}: entorno gestionado de \textit{JupyterLab}, integrado en la plataforma \textit{Gemini Enterprise Agent Platform}, que permite ejecutar cuadernos y scripts de Python en VM. Se empleó para las fases de limpieza y análisis, unificando ambos procesos en un mismo entorno interactivo y evitando la complejidad de configurar servicios ETL desatendidos.
 \end{itemize}
 
 Durante la fase de diseño se evaluaron también dos servicios \textit{serverless} para el procesamiento ETL: \textbf{Cloud Run Jobs} y \textbf{Cloud Functions}. Ambos se descartaron tras varias pruebas debido a problemas en la configuración y los accesos. Cloud Run Jobs presentó problemas con la detección del punto de entrada en procesos que no son servicios web (error \texttt{Application exec likely failed}), y Cloud Functions, aunque se desplegó correctamente, introdujo discrepancias en la resolución de rutas relativas y en la inyección de variables de entorno, lo que obligaba a modificar el código fuente. Se priorizó la simplicidad y la reproducibilidad, optando por ejecutar todo en \textit{Gemini Enterprise Agent Platform}, dentro de un \textit{Vertex AI Workbench}.
@@ -80,11 +80,11 @@ Durante la fase de diseño se evaluaron también dos servicios \textit{serverles
 
 Además de AWS y GCP, se consideraron otras plataformas en la nube:
 \begin{itemize}
-	\item \textbf{Microsoft Azure}: ofrece servicios análogos a las nubes utilizadas (Azure Blob Storage, Azure Functions y Azure Machine Learning). Se descartó por acotar el alcance del proyecto y por su similitud con las nubes ya tratadas.
+	\item \textbf{Microsoft Azure}: ofrece servicios análogos a las nubes utilizadas (Azure Blob Storage, Azure Functions y Azure ML). Se descartó por acotar el alcance del proyecto y por su similitud con las nubes ya tratadas.
 	\item \textbf{OVHcloud}: proveedor europeo con entornos interactivos gestionados para modelado (\textit{AI Notebooks}). Hubiera sido una opción interesante debido a su localización europea y novedad, pero debido a su menor capa gratuita y variedad de servicios, se decidió dejar fuera de alcance como trabajo futuro.
 \end{itemize}
 
-\subsection{Materiales para el desarrollo}
+\subsection{Recursos para el desarrollo}
 
 \subsubsection{Lenguajes}
 
@@ -131,7 +131,7 @@ Las siguientes herramientas y programas han sido esenciales para la elaboración
 
 \begin{itemize}
 	\item \textbf{Visual Studio Code}: editor de código abierto desarrollado por Microsoft. Se ha utilizado como entorno de desarrollo por la gran comunidad que tiene detrás, la cual mantiene extensiones y tutoriales al día. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código, entre muchas otras funciones.
-	\item \textbf{Git y GitHub}: GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El repositorio de este proyecto es: \url{https://github.com/crismo04/TFM-cloud-soliutions-to-public-data/}. Sigue las recomendaciones de buenas prácticas de GitHub e incluye archivos como el \texttt{changelog} para poder ver los cambios y el \texttt{README.md} para resumir el proyecto. Además, se han usado varias herramientas como extensiones de VSCode para la gestión de repositorios y GitHub Desktop.
+	\item \textbf{Git y GitHub}: GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git, que se utiliza principalmente para la creación, almacenamiento y control de código fuente. El repositorio de este proyecto es: \url{https://github.com/crismo04/TFM-cloud-solutions-to-public-data/}. Sigue las recomendaciones de buenas prácticas de GitHub e incluye archivos como el \texttt{changelog} para poder ver los cambios y el \texttt{README.md} para resumir el proyecto. Además, se han usado varias herramientas como extensiones de VSCode para la gestión de repositorios y GitHub Desktop.
 	\item \textbf{CLIs de nube (AWS CLI y Google Cloud CLI)}: interfaces de línea de comandos que permiten interactuar con los servicios de AWS y GCP. Se utilizaron desde CloudShell y desde entornos locales para todo tipo de tareas.
 	\item \textbf{\LaTeX\ con TeXstudio}: se ha usado \LaTeX\ para desarrollar este documento en la aplicación TeXstudio, así como para tomar las notas del proyecto.
 	\item \textbf{Trello}: herramienta de gestión de proyectos basada en tableros Kanban que se empleó para la planificación y priorización de tareas y el seguimiento del progreso de las mismas a lo largo del desarrollo del trabajo.
@@ -155,6 +155,19 @@ Para empezar las primeras iteraciones, se optó por conjuntos de datos que ya ha
 
 El detalle de los conjuntos se recoge en la \hyperref[sec:Materiales_datos]{\textit{Sección \ref*{sec:Materiales_datos}}}.
 
+
+\subsection{Marco metodológico} \label{sec:Metodos_marco}
+
+Este trabajo no propuso una metodología desde cero. Cada pieza del problema cuenta ya con un marco consolidado: la arquitectura de medalla \hyperref[def11]{[\textit{Definición \ref*{def11}}]} para la organización del dato, el modelo de tres capas de la OECD \citep{OECD2019} para la gobernanza, las prácticas de MLOps \citep{Kreuzberger2023MLOps} para la trazabilidad del análisis, los marcos de buenas prácticas de cada proveedor \citep{AWSWellArchitected2026, GCPArchitectureFramework2026} para el diseño en la nube y el marco normativo europeo para acotar qué datos y qué modelos son adecuados. Lo que se propuso fue la unión de todos ellos. El escenario es el de la reutilización automatizada de datos públicos sobre varias fuentes y sin presupuesto de infraestructura. Esa unión se dividió en cinco principios de diseño, independientes del dominio y transversales a todas las etapas:
+
+\begin{enumerate}
+	\item \textbf{Portabilidad y abstracción del almacenamiento de datos}: el destino de la escritura se definió como un parámetro de configuración, de modo que la ejecución entre entornos fuera una comparación real.
+	\item \textbf{Configuración declarativa por patrón}: las reglas se declararon por tipo de fichero y no por conjunto de datos. Así, incorporar una fuente nueva que encaje en un patrón conocido no requiere modificaciones y facilita la ampliación del proyecto.
+	\item \textbf{Replicar antes de extender}: el proceso reprodujo las condiciones del trabajo de referencia, lo que permitió atribuir las diferencias observadas al criterio introducido y no al cambio de herramienta o de periodo. Esto solo se aplicó a los datos con estudio anterior.
+	\item \textbf{Ingesta como auditoría}: el proceso no solo descargó los datos, sino que registró metadatos de procedencia y calidad. Esto convirtió la automatización en una herramienta de evaluación del portal que los publica.
+	\item \textbf{El coste nulo como restricción de diseño}: la elección de servicios se basó en las capas gratuitas, de modo que cualquiera pueda replicarlo, dimensionando cada etapa al volumen del problema.
+\end{enumerate}
+
 \subsection{Desarrollo de la solución} \label{sec:Metodos_desarrollo}
 
 Esta es la sección más extensa, ya que explica el proceso que se ha seguido para ingestar, procesar y analizar estos datos de forma automática, mientras que el resto de las secciones de datos, nube y ML se centran en las partes específicas de estas tecnologías. Para llevar a cabo el trabajo se creó un conjunto de procesos en Python que implementa los pasos del desarrollo, configurados por un único fichero \texttt{config.py}. El \textit{pipeline} se ejecutó primero íntegramente en local con un doble propósito: validar la replicación de los trabajos originales en un entorno controlado antes de introducir la variable de la nube, y establecer una línea base para comparar posteriormente con las implementaciones en cada nube en términos de esfuerzo, tiempo de ejecución y coste. Se describen a continuación sus etapas, siguiendo el orden de los módulos.
@@ -174,7 +187,7 @@ Las fases y sus ficheros correspondientes en local y en el repositorio Git del p
 		\texttt{03\_analisis\_isla\_calor.py} & Análisis y modelado & Resultados \\
 		\hline
 	\end{tabular}
-	\caption{Correspondencia entre los procesos del \textit{pipeline} y las etapas de la arquitectura de medalla.}
+	\caption{Correspondencia entre los procesos del \textit{pipeline} y las etapas de la arquitectura de medalla (\hyperref[def11]{[\textit{Definición \ref*{def11}}]}).}
 	\label{tab:ficheros_pipeline}
 \end{table}
 
@@ -184,9 +197,9 @@ Estas etapas se describen en más detalle a continuación.
 
 La descarga se estudió primero como descarga manual en los portales, pero se implementó como un proceso programático y reproducible para mayor facilidad a la hora de replicar resultados. El portal opera sobre la plataforma CKAN \citep{CKAN2024Software} (API REST), versión 2.9.11, que está dos ramas por detrás de la versión estable disponible en el momento de redactar este trabajo, lo que ya es un dato sobre el mantenimiento de la infraestructura de publicación de estos datos. Sobre esta plataforma, el proceso resuelve el identificador de cada conjunto y consulta sus recursos mediante la acción \texttt{package\_show}, como se muestra en la guía \citep{CKAN2024ApiGuide}. Esta automatización tuvo sus complicaciones.
 
-El portal del ayuntamiento y su API de descarga \footnote{\url{API utilizada en la descarga de datos en el fichero 01\_descarga.py: https://datos.madrid.es/api/3/action}}, pese a declarar sus datos como abiertos, presenta dificultades en la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. Para solucionarlo, el proceso incorpora pausas entre descargas y reintentos con espera creciente. Esta fricción entre la apertura que se supone que hay y la que realmente se aplica ilustra en la práctica las limitaciones en el estado real de los datos abiertos señaladas en el estado de la cuestión \citep{verhulst2020, OECD2023openData}.
+El portal del Ayuntamiento y su API de descarga \footnote{\url{API utilizada en la descarga de datos en el fichero 01\_descarga.py: https://datos.madrid.es/api/3/action}}, pese a declarar sus datos como abiertos, presenta dificultades en la automatización de la descarga, ya que incorpora protección anti-bot que penaliza descargas sucesivas, y su interfaz JavaScript no expone los enlaces en el HTML inicial. Para solucionarlo, el proceso incorpora pausas entre descargas y reintentos con espera creciente. Esta fricción entre la apertura que se supone que hay y la que realmente se aplica ilustra en la práctica las limitaciones en el estado real de los datos abiertos señaladas en el estado de la cuestión \citep{verhulst2020, OECD2023openData}.
 
-De todas formas, el proceso aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y \textbf{abstrae el almacenamiento} mediante \texttt{fsspec} \citep{fsspec2024}, de modo que el mismo código escribe en local o en las nubes evaluadas sin cambios en su lógica. Además, los datos se organizan siguiendo el modelo \textit{medallion} ya definido: la capa \textit{bronze} almacena los datos en crudo, la capa \textit{silver} contiene los datos limpios y normalizados, y la capa \textit{gold} (denominada \textit{resultados} en el código) guarda los productos del análisis.
+De todas formas, el proceso aporta tres propiedades relevantes para la gobernanza del dato: es \textbf{idempotente} (re-ejecutarlo no vuelve a descargar lo ya presente, permitiendo automatización periódica), registra \textbf{metadatos} de procedencia por fichero (origen, fecha, tamaño y licencia) y \textbf{abstrae el almacenamiento} mediante \texttt{fsspec} \citep{fsspec2024}, de modo que el mismo código escribe en local o en las nubes evaluadas sin cambios en su lógica. Además, los datos se organizan siguiendo el modelo \textit{medallion}: la capa \textit{bronze} almacena los datos en crudo, la capa \textit{silver} contiene los datos limpios y normalizados, y la capa \textit{gold} (denominada \textit{resultados} en el código) guarda los productos del análisis.
 
 \subsubsection{Normalización y limpieza} \label{sec:Metodos_limpieza}
 
@@ -228,7 +241,7 @@ Para que la réplica funcionara correctamente y poder comparar con los resultado
 
 \begin{itemize}
 	\item \textbf{Variable real de temperatura}: como ya se ha dicho, el trabajo original denomina a la tercera aproximación como ``temperatura'', pero en realidad combina la temperatura de la estación con la superficie arbórea del distrito donde se ubica. Ambas variables residen en conjuntos distintos (meteorología diaria y masas arbóreas anuales) y con granularidad diferente (estación-día frente a distrito-año). Para resolverlo, se implementó un cruce geoespacial que asigna cada estación a su distrito mediante un \textit{shapefile} municipal, y se incorporó la variable externa \texttt{superficie\_ha} en el agrupamiento.
-	\item \textbf{Criterio de selección de estaciones con superficie arbórea}: el trabajo original declara que selecciona las estaciones que ``disponen de datos de masas arbóreas'', lo que en la práctica excluye a los distritos que publican una superficie de cero hectáreas. Esta interpretación se ha replicado. Sin embargo, en el análisis de correlación \hyperref[sec:Resultados_arbolado]{\textit{sección \ref*{sec:Resultados_arbolado}}} se optó por conservar los distritos con superficie 0.
+	\item \textbf{Criterio de selección de estaciones con superficie arbórea}: el trabajo original declara que selecciona las estaciones que ``disponen de datos de masas arbóreas'', lo que en la práctica excluye a los distritos que publican una superficie de cero hectáreas. Esta interpretación se ha replicado. Sin embargo, en el análisis de correlación \hyperref[sec:Resultados_arbolado]{\textit{Sección \ref*{sec:Resultados_arbolado}}} se optó por conservar los distritos con superficie 0.
 \end{itemize}
 
 Para evaluar la réplica, se utilizó un índice de Rand por pares. Dado un conjunto de $n$ estaciones comunes entre el trabajo original y la réplica, se consideran todos los $\frac{n(n-1)}{2}$ pares posibles. Para cada par de estaciones $(A, B)$, se verifica si ambos trabajos las clasifican en el mismo grupo o en grupos distintos (independientemente de la etiqueta numérica del grupo). El porcentaje de acuerdo se calcula como:
@@ -245,7 +258,7 @@ A continuación se enumeran los cambios realizados para esta extensión:
 \begin{enumerate}
 	\item \textbf{Dos nuevas aproximaciones}: tras estudiar la réplica y sus limitaciones, se decidió añadir dos nuevas aproximaciones:
 	\begin{itemize}	
-		\item \textbf{Temperatura y altitud}: incorpora la altitud de la estación como variable externa para evaluar el efecto de la orografía en los datos, ya que estaciones en la sierra de Madrid pueden diferir de algunas como Vallecas por su altitud.
+		\item \textbf{Temperatura y altitud}: incorpora la altitud de la estación como variable externa para evaluar el efecto de la orografía en los datos, ya que estaciones en el norte de Madrid pueden diferir de algunas como Vallecas por su altitud.
 		\item \textbf{Temperatura y superficie relativa}: utiliza la superficie arbórea dividida por el área total del distrito, en lugar del valor absoluto que publica el Ayuntamiento de Madrid, para controlar así el tamaño del distrito.
 	\end{itemize}
 	\item \textbf{Criterio de cobertura mínima}: la media anual de una estación solo se considera válida si supera un número mínimo de días con dato (configurable mediante \texttt{MIN\_DIAS\_ANIO} en \texttt{config.py}), ya que una estación que operó únicamente durante una pequeña parte del año produce una media sesgada hacia la estación climática en que estuvo activa. El valor por defecto es de 300 días como mínimo.
@@ -259,7 +272,7 @@ Para tratar los datos del proyecto, se han seguido principios éticos y los prin
 
 \subsubsection{Aplicación de la gobernanza de datos como método} \label{sec:Metodos_Gobernanza}
 
-Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{\textit{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}}, la gobernanza de datos en este proyecto se implementó adoptando el modelo de tres capas (estratégica, táctica y operativa o de entrega), \textit{no confundir con las capas de la arquitectura medallón}. El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos, y la obtención de valor mediante IA, se ha realizado de forma ética, segura y en pleno cumplimiento del marco regulatorio actual. Aunque las tres capas cobran mayor importancia en proyectos grandes con múltiples equipos, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en la gestión de datos y procesos.
+Como ya se introdujo en la \hyperref[sec:EstudiosDatosGobernanza]{\textit{Sección \ref*{sec:EstudiosDatosGobernanza}: Estudios de datos y gobernanza}}, la gobernanza de datos en este proyecto se implementó adoptando el modelo de tres capas (estratégica, táctica y operativa o de entrega) \footnote{no confundir con las capas de la arquitectura medallón}. El objetivo fue garantizar que el proceso de análisis, adquisición y almacenamiento de datos públicos, y la obtención de valor mediante IA, se ha realizado de forma ética, segura y en pleno cumplimiento del marco regulatorio actual. Aunque las tres capas cobran mayor importancia en proyectos grandes con múltiples equipos, se han adaptado a este trabajo por la estructura metodológica que proponen y la utilidad en la gestión de datos y procesos.
 
 \begin{enumerate}
 	\item \textbf{Capa estratégica: liderazgo y visión}. En esta capa se definen los objetivos generales y principios de la gobernanza de datos en el proyecto:
@@ -279,7 +292,7 @@ Como ya se ha definido en la \hyperref[sec:EstudiosDatosGobernanza]{\textit{Secc
 	
 	\item \textbf{Capa operativa: infraestructura, integración del ciclo de valor y arquitectura}. Esta última capa corresponde a la implementación práctica de la estrategia, la gestión diaria del ciclo de valor de los datos para integrarlo con la infraestructura técnica:
 	\begin{itemize}
-		\item \textbf{Infraestructura}: se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con mecanismos de seguridad correspondientes. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos \textit{on-premise} (equipo personal) para la ingesta de datos y pruebas base, para su posterior almacenamiento en cloud.
+		\item \textbf{Infraestructura}: se emplearon servicios en la nube principalmente para el almacenamiento, procesamiento y análisis de los datos. Los entornos se han configurado con los mecanismos de seguridad correspondientes. Aunque una de las ideas de este proyecto es el tratamiento de datos con el menor número de recursos posibles, también se usaron dispositivos \textit{on-premise} (equipo personal) para la ingesta de datos y pruebas base, para su posterior almacenamiento en cloud.
 		\item \textbf{Arquitectura de datos y ciclo de valor}: se diseñó un flujo simple de trabajo centrado en cloud y basado en la ingesta de datos abiertos de fuentes oficiales que cubrió todo el ciclo de vida del dato:
 		\begin{itemize}
 			\item \textbf{Adquisición}: se descargaron conjuntos de datos abiertos, registrando metadatos sobre origen, licencia, calidad, formato y condiciones de uso.
@@ -386,7 +399,7 @@ Al igual que en la sección anterior, la especificación técnica paso a paso y 
 	\item \textbf{Arquitectura de medalla en Cloud Storage}: las capas se almacenaron en un contenedor (\textit{bucket}) de Google Cloud Storage. Se aplicó la política \textit{Public Access Prevention} de forma nativa para evitar la modificación externa de los ficheros, y se habilitó también el versionado y el etiquetado de recursos.
 	\item \textbf{Servicios para el procesamiento ETL descartados}: para la fase de transformación se analizaron dos opciones, que se descartaron tras las pruebas iniciales.
 	\begin{itemize}
-		\item \textbf{Cloud Run Jobs}: servicio para ejecutar procesos bajo demanda. Se preparó un fichero \texttt{Procfile} con la instrucción de arranque (\texttt{python3 02\_limpieza.py}) y un \texttt{.gcloudignore} para excluir archivos locales. Sin embargo, surgió un problema relacionado con la detección del punto de entrada en procesos que no son servicios web, no se resolvía el comando de arranque para este tipo de tareas, y tras varias horas de intento no se logró un arranque exitoso.
+		\item \textbf{Cloud Run Jobs}: servicio para ejecutar procesos bajo demanda. Se preparó un fichero \texttt{Procfile} con la instrucción de arranque (\texttt{python3 02\_limpieza.py}) y un \texttt{.gcloudignore} para excluir archivos locales. Sin embargo, surgió un problema relacionado con la detección del punto de entrada en procesos que no son servicios web: no se resolvía el comando de arranque para este tipo de tareas, y tras varias horas de intento no se logró un arranque exitoso.
 		\item \textbf{Cloud Functions}: como alternativa, se desplegó una función con el script original mediante \texttt{subprocess}. El despliegue y la llamada funcionaron, pero falló la resolución de rutas relativas, lo que impedía que el script descargara o guardara los ficheros de origen en el \textit{bucket}, tras varios intentos, también se descartó.
 	\end{itemize}
 	
@@ -395,7 +408,7 @@ Al igual que en la sección anterior, la especificación técnica paso a paso y 
 	\item \textbf{Aislamiento de proyecto}: aunque GCP crea varios proyectos en una organización al crear la cuenta, el entorno se desplegó fuera de la jerarquía de la organización principal para evitar heredar políticas de los proyectos creados y mantener la facturación separada del entorno corporativo.
 \end{enumerate}
 
-\section*{Conclusiones del capítulo}
+\section{Conclusiones del capítulo}
 
 Frente a los desafíos identificados en el estado de la cuestión, este capítulo ha presentado una propuesta metodológica concreta y replicable, organizada también en los tres ejes del proyecto (datos, nube, y IA).
 
